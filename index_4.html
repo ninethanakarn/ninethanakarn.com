@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>นายธนาคารประจำบ้าน — ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต</title>
+<meta name="description" content="ที่ปรึกษาทางการเงิน ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต คอนโดลงทุน เช่า-เช่าซื้อ-ผ่อนตรง โดยบริษัท ทัช เรียลเอสเตท">
+<meta name="theme-color" content="#1e40af">
+
+<!-- Open Graph -->
+<meta property="og:title" content="นายธนาคารประจำบ้าน — ที่ปรึกษาสินเชื่อมืออาชีพ">
+<meta property="og:description" content="ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต คอนโดลงทุน เช่า-เช่าซื้อ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ninethanakarn.com">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Prompt:wght@500;600;700;800&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: 'IBM Plex Sans Thai', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  /* Light theme */
+  --color-bg: #fafaf7;
+  --color-bg-alt: #f5f5f0;
+  --color-surface: #ffffff;
+  --color-text: #1c1917;
+  --color-text-muted: #57534e;
+  --color-text-subtle: #78716c;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-primary-light: #3b82f6;
+  --color-accent: #d97706;
+  --color-accent-soft: #fef3c7;
+  --color-border: #e7e5e4;
+  --color-border-soft: #f5f5f4;
+  --color-success: #15803d;
+  --color-success-soft: #dcfce7;
+
+  /* Typography */
+  --font-display: 'Prompt', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans Thai', system-ui, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+
+  /* Layout */
+  --container: 1200px;
+  --container-narrow: 960px;
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px rgba(28,25,23,0.04), 0 2px 8px rgba(28,25,23,0.04);
+  --shadow-md: 0 4px 12px rgba(28,25,23,0.06), 0 16px 40px rgba(28,25,23,0.08);
+  --shadow-lg: 0 12px 24px rgba(30,64,175,0.10), 0 24px 64px rgba(30,64,175,0.14);
+  --shadow-glow: 0 0 0 1px rgba(30,64,175,0.08), 0 8px 32px rgba(30,64,175,0.16);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --color-bg: #0c0a09;
+  --color-bg-alt: #1c1917;
+  --color-surface: #1c1917;
+  --color-text: #f5f5f4;
+  --color-text-muted: #a8a29e;
+  --color-text-subtle: #78716c;
+  --color-primary: #60a5fa;
+  --color-primary-dark: #3b82f6;
+  --color-primary-light: #93c5fd;
+  --color-accent: #fbbf24;
+  --color-accent-soft: rgba(251,191,36,0.12);
+  --color-border: #292524;
+  --color-border-soft: #1c1917;
+  --color-success-soft: rgba(34,197,94,0.12);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 0 1px rgba(96,165,250,0.16), 0 8px 32px rgba(96,165,250,0.20);
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container { padding-inline: 2rem; }
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--color-border-soft);
+  transition: background 0.3s var(--ease);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.nav-logo-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary);
+  border-radius: 10px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--color-text-muted);
+  transition: background 0.2s, color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 999px;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  padding-block: 3rem 4rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero { padding-block: 5rem 6rem; }
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, color-mix(in srgb, var(--color-primary) 8%, transparent), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, color-mix(in srgb, var(--color-accent) 5%, transparent), transparent 50%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--color-border-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border-soft) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 30%, black 30%, transparent 80%);
+  opacity: 0.5;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1.15fr 1fr;
+    gap: 4rem;
+  }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--color-success);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--color-success-soft);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.hero-title-accent {
+  color: var(--color-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title-accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.05em;
+  height: 0.25em;
+  background: var(--color-accent-soft);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  max-width: 540px;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  transition: all 0.25s var(--ease);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-text-muted);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Stats */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.hero-stat {
+  padding-right: 1rem;
+}
+
+.hero-stat:not(:last-child) {
+  border-right: 1px solid var(--color-border);
+  margin-right: 1rem;
+}
+
+.hero-stat-value {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Mascot */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.hero-visual-card {
+  position: absolute;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-visual-card-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.hero-visual-card-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.hero-visual-card-1 {
+  top: 8%;
+  left: 0;
+  animation-delay: 0s;
+}
+
+.hero-visual-card-2 {
+  top: 38%;
+  right: 0;
+  animation-delay: 2s;
+}
+
+.hero-visual-card-3 {
+  bottom: 6%;
+  left: 12%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero-visual-house {
+  position: absolute;
+  inset: 18% 18%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-lg);
+  color: white;
+}
+
+[data-theme="dark"] .hero-visual-house {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+}
+
+/* ============================================
+   SECTION SHARED
+   ============================================ */
+.section {
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section { padding-block: 6rem; }
+}
+
+.section-alt {
+  background: var(--color-bg-alt);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: 3.5rem;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.875rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ============================================
+   SERVICES
+   ============================================ */
+.services-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.3s var(--ease);
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 60%, color-mix(in srgb, var(--color-primary) 4%, transparent) 100%);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  color: var(--color-primary);
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin-bottom: 0.625rem;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  position: relative;
+}
+
+/* ============================================
+   TOOLS
+   ============================================ */
+.tools-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (min-width: 768px) {
+  .tools-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tool-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  transition: all 0.25s var(--ease);
+  text-align: left;
+}
+
+.tool-card-active {
+  cursor: pointer;
+}
+
+.tool-card-active:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.tool-card-disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.tool-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  color: var(--color-primary);
+  border-radius: 12px;
+}
+
+.tool-card-disabled .tool-icon {
+  background: var(--color-bg-alt);
+  color: var(--color-text-subtle);
+}
+
+.tool-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  align-self: flex-start;
+  letter-spacing: 0.02em;
+}
+
+.tool-badge-active {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+[data-theme="dark"] .tool-badge-active {
+  color: #4ade80;
+}
+
+.tool-badge-soon {
+  background: var(--color-bg-alt);
+  color: var(--color-text-subtle);
+}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.875rem;
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.about-features {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.about-feature-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  color: var(--color-primary);
+  border-radius: 8px;
+}
+
+.about-feature-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.about-feature-text strong {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.125rem;
+  font-family: var(--font-display);
+}
+
+.about-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.about-card-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-card-stat:last-child { border-bottom: none; padding-bottom: 0; }
+.about-card-stat:first-child { padding-top: 0; }
+
+.about-card-stat-label {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.about-card-stat-value {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.25s var(--ease);
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-card-line {
+  border-color: #06C755;
+  background: linear-gradient(135deg, var(--color-surface) 0%, color-mix(in srgb, #06C755 5%, var(--color-surface)) 100%);
+}
+
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  color: white;
+}
+
+.contact-icon-line { background: #06C755; }
+.contact-icon-phone { background: var(--color-primary); }
+
+.contact-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.contact-value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.contact-hint {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  transition: gap 0.2s var(--ease);
+}
+
+.contact-link:hover {
+  gap: 0.625rem;
+}
+
+.contact-link-line {
+  color: #06C755;
+}
+
+/* Contact info row */
+.contact-info {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .contact-info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+}
+
+.contact-info-icon {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  margin-top: 0.25rem;
+}
+
+.contact-info-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-info-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding-block: 3rem;
+}
+
+.footer-inner {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.footer-text strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.footer-meta {
+  font-size: 0.825rem;
+  color: var(--color-text-subtle);
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .footer-meta { text-align: right; }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s var(--ease) backwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+/* Mobile fixes */
+@media (max-width: 767px) {
+  .hero-stats { font-size: 0.85em; }
+  .hero-visual { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12 12 3l9 9"/>
+          <path d="M5 10v10h14V10"/>
+        </svg>
+      </span>
+      <span>นายธนาคารประจำบ้าน</span>
+    </a>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="สลับโหมดมืด/สว่าง">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+      </button>
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="nav-cta" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.631.629.629.629 0 0 1-.5-.25l-2.443-3.317v2.94a.63.63 0 0 1-1.26 0V8.108a.629.629 0 0 1 .629-.626c.198 0 .38.097.495.241l2.467 3.33V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-.629.629.629.629 0 0 1-.629-.629V8.108c0-.345.283-.63.629-.63.347 0 .629.285.629.63v4.771zm-2.466.629H4.917a.63.63 0 0 1-.629-.629V8.108c0-.345.283-.63.629-.63.348 0 .63.285.63.63v4.141h1.756a.63.63 0 0 1 0 1.259M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        ปรึกษา LINE
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow animate-fade-up">
+        ที่ปรึกษาทางการเงินมืออาชีพ ตั้งแต่ปี 2562
+      </div>
+
+      <h1 class="hero-title animate-fade-up delay-1">
+        ปิดหนี้ก่อนยื่นกู้<br>
+        <span class="hero-title-accent">รวมหนี้บัตรเครดิต</span>
+      </h1>
+
+      <p class="hero-subtitle animate-fade-up delay-2">
+        ที่ปรึกษาสินเชื่อบ้าน คอนโดลงทุน และการรวมหนี้บัตรเครดิต<br>
+        ช่วยให้ลูกค้าผ่านการอนุมัติ ด้วยประสบการณ์ในวงการสินเชื่อ
+      </p>
+
+      <div class="hero-ctas animate-fade-up delay-3">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-primary" target="_blank" rel="noopener">
+          ปรึกษาฟรี ทาง LINE
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#tools" class="btn btn-secondary">
+          เครื่องมือคำนวณ
+        </a>
+      </div>
+
+      <div class="hero-stats animate-fade-up delay-4">
+        <div class="hero-stat">
+          <div class="hero-stat-value">7+</div>
+          <div class="hero-stat-label">ปี ประสบการณ์</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">DSR 60%</div>
+          <div class="hero-stat-label">มาตรฐานทีมเรา</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">100%</div>
+          <div class="hero-stat-label">ฟรี ทุกการปรึกษา</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <!-- House mark -->
+      <div class="hero-visual-house">
+        <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12 12 3l9 9"/>
+          <path d="M5 10v10h14V10"/>
+          <path d="M10 20v-6h4v6"/>
+        </svg>
+      </div>
+
+      <!-- Floating cards -->
+      <div class="hero-visual-card hero-visual-card-1">
+        <div class="hero-visual-card-icon" style="background: var(--color-accent-soft); color: var(--color-accent);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/>
+            <path d="M12 18V6"/>
+          </svg>
+        </div>
+        <div class="hero-visual-card-text">รวมหนี้<br>บัตรเครดิต</div>
+      </div>
+
+      <div class="hero-visual-card hero-visual-card-2">
+        <div class="hero-visual-card-icon" style="background: color-mix(in srgb, var(--color-success) 12%, transparent); color: var(--color-success);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+            <polyline points="16 7 22 7 22 13"/>
+          </svg>
+        </div>
+        <div class="hero-visual-card-text">คอนโดลงทุน<br>ปล่อยเช่า</div>
+      </div>
+
+      <div class="hero-visual-card hero-visual-card-3">
+        <div class="hero-visual-card-icon" style="background: color-mix(in srgb, var(--color-primary) 12%, transparent); color: var(--color-primary);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="hero-visual-card-text">เช่า-เช่าซื้อ<br>ผ่อนตรง</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICES
+     ============================================ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">บริการของเรา</div>
+      <h2 class="section-title">ทางเลือกที่ใช่ สำหรับทุกสถานการณ์</h2>
+      <p class="section-subtitle">
+        ไม่ว่าหนี้จะหนัก กู้ไม่ผ่าน หรือมองหาโอกาสลงทุน — เรามีทางออกให้คุณ
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12 12 3l9 9"/>
+            <path d="M5 10v10h14V10"/>
+            <path d="M10 20v-6h4v6"/>
+          </svg>
+        </div>
+        <h3 class="service-title">ปิดหนี้ก่อนกู้บ้าน</h3>
+        <p class="service-desc">
+          ลดภาระหนี้ก่อนยื่นขอสินเชื่อ เพิ่มโอกาสผ่านการอนุมัติจาก 8 ธนาคารชั้นนำ — BBL, KTB, BAY, SCB, TTB, GSB, GHB, KBANK
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2"/>
+            <line x1="9" y1="22" x2="9" y2="2"/>
+            <line x1="15" y1="22" x2="15" y2="2"/>
+            <line x1="4" y1="8" x2="20" y2="8"/>
+            <line x1="4" y1="14" x2="20" y2="14"/>
+          </svg>
+        </div>
+        <h3 class="service-title">คอนโดลงทุนปล่อยเช่า</h3>
+        <p class="service-desc">
+          คัดเฉพาะทำเลศักยภาพ มีผู้เช่ารองรับ ผลตอบแทนคุ้มค่า เหมาะสำหรับนักลงทุนที่ต้องการ passive income
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+          </svg>
+        </div>
+        <h3 class="service-title">เช่า-เช่าซื้อ ผ่อนตรง</h3>
+        <p class="service-desc">
+          กู้ไม่ผ่าน ก็ยังมีทางเลือก ทางเลือกผ่อนตรงกับเจ้าของ มีบ้านอยู่อาศัยได้ ไม่ต้องผ่านธนาคาร
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TOOLS
+     ============================================ -->
+<section class="section section-alt" id="tools">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">เครื่องมือคำนวณ ฟรี</div>
+      <h2 class="section-title">ตัดสินใจดีขึ้น ด้วยตัวเลขจริง</h2>
+      <p class="section-subtitle">
+        เครื่องมือคำนวณเพื่อให้คุณวางแผนการเงินได้อย่างมั่นใจ
+      </p>
+    </div>
+
+    <div class="tools-grid">
+      <a href="https://ninethanakarn.github.io/loan-app/" class="tool-card tool-card-active" target="_blank" rel="noopener">
+        <div class="tool-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="2" width="16" height="20" rx="2"/>
+            <line x1="8" y1="6" x2="16" y2="6"/>
+            <line x1="16" y1="14" x2="16" y2="18"/>
+            <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/>
+          </svg>
+        </div>
+        <div class="tool-title">คำนวณสินเชื่อ</div>
+        <span class="tool-badge tool-badge-active">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
+          พร้อมใช้
+        </span>
+      </a>
+
+      <div class="tool-card tool-card-disabled">
+        <div class="tool-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+          </svg>
+        </div>
+        <div class="tool-title">คำนวณภาษี</div>
+        <span class="tool-badge tool-badge-soon">เร็วๆ นี้</span>
+      </div>
+
+      <div class="tool-card tool-card-disabled">
+        <div class="tool-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="tool-title">วางแผนออมเงิน</div>
+        <span class="tool-badge tool-badge-soon">เร็วๆ นี้</span>
+      </div>
+
+      <div class="tool-card tool-card-disabled">
+        <div class="tool-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+            <polyline points="17 6 23 6 23 12"/>
+          </svg>
+        </div>
+        <div class="tool-title">ดอกเบี้ยทบต้น</div>
+        <span class="tool-badge tool-badge-soon">เร็วๆ นี้</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="about-eyebrow">เกี่ยวกับเรา</div>
+        <h2 class="about-title">ที่ปรึกษาที่เข้าใจ<br>ทั้งเงิน และความรู้สึก</h2>
+        <p class="about-text">
+          บริษัท ทัช เรียลเอสเตท จำกัด ที่ปรึกษาทางการเงินและอสังหาริมทรัพย์
+          เชี่ยวชาญด้านสินเชื่อบ้าน คอนโดลงทุน และการรวมหนี้
+        </p>
+        <p class="about-text">
+          เราเชื่อว่าทุกเคสมีทางออก — แม้แต่กู้ไม่ผ่านก็ยังมีทางเลือก เราให้คำปรึกษาฟรี ตรงไปตรงมา และคิดเพื่อลูกค้าก่อนเสมอ
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="about-feature-text">
+              <strong>ปรึกษาฟรี ไม่มีค่าใช้จ่ายซ่อน</strong>
+              คุยจบ มีแผน เห็นทางออก ก่อนตัดสินใจ
+            </div>
+          </div>
+
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="about-feature-text">
+              <strong>เข้าใจระบบธนาคารแบบลึก</strong>
+              ใช้มาตรฐาน DSR 60% ในการประเมิน เพื่อโอกาสผ่านที่สูงขึ้น
+            </div>
+          </div>
+
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="about-feature-text">
+              <strong>มีทีมช่วยเตรียมเอกสารยื่นกู้</strong>
+              ดูแลทุกขั้นตอน ชัดเจน เข้าใจก่อนตัดสินใจ
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-card">
+        <div class="about-card-stat">
+          <div class="about-card-stat-label">ก่อตั้งเมื่อ</div>
+          <div class="about-card-stat-value">2562</div>
+        </div>
+        <div class="about-card-stat">
+          <div class="about-card-stat-label">DSR ที่ทีมใช้ประเมิน</div>
+          <div class="about-card-stat-value">60%</div>
+        </div>
+        <div class="about-card-stat">
+          <div class="about-card-stat-label">ธนาคารที่ทำงานด้วย</div>
+          <div class="about-card-stat-value" style="font-size: 1rem; line-height: 1.5;">BBL · KTB · BAY · SCB<br>TTB · GSB · GHB · KBANK</div>
+        </div>
+        <div class="about-card-stat">
+          <div class="about-card-stat-label">ค่าปรึกษา</div>
+          <div class="about-card-stat-value">ฟรี</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONTACT
+     ============================================ -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">ติดต่อเรา</div>
+      <h2 class="section-title">เริ่มต้นได้เลย วันนี้</h2>
+      <p class="section-subtitle">
+        ทักไลน์ปรึกษาฟรี ก่อนตัดสินใจ ไม่มีค่าใช้จ่ายแอบแฝง
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="contact-card contact-card-line" target="_blank" rel="noopener">
+        <div class="contact-icon contact-icon-line">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.631.629.629.629 0 0 1-.5-.25l-2.443-3.317v2.94a.63.63 0 0 1-1.26 0V8.108a.629.629 0 0 1 .629-.626c.198 0 .38.097.495.241l2.467 3.33V8.108a.63.63 0 0 1 1.26 0v4.771zm-5.741 0a.63.63 0 0 1-.629.629.629.629 0 0 1-.629-.629V8.108c0-.345.283-.63.629-.63.347 0 .629.285.629.63v4.771zm-2.466.629H4.917a.63.63 0 0 1-.629-.629V8.108c0-.345.283-.63.629-.63.348 0 .63.285.63.63v4.141h1.756a.63.63 0 0 1 0 1.259M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </div>
+        <div class="contact-label">LINE OFFICIAL</div>
+        <div class="contact-value">@ninethanakarn</div>
+        <div class="contact-hint">ตอบเร็ว · ฟรี · ตลอด 24 ชม.</div>
+        <div class="contact-link contact-link-line">
+          ทักเลย
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+
+      <a href="tel:023340940" class="contact-card">
+        <div class="contact-icon contact-icon-phone">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div class="contact-label">โทรศัพท์สำนักงาน</div>
+        <div class="contact-value">02-334-0940</div>
+        <div class="contact-hint">จันทร์ - เสาร์ · 9:00 - 17:00 น.</div>
+        <div class="contact-link">
+          โทรเลย
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <span class="contact-info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </span>
+        <div>
+          <div class="contact-info-label">ที่ตั้ง</div>
+          <div class="contact-info-value">
+            55/15 หมู่ 3 ตำบลคลองสาม<br>
+            อำเภอคลองหลวง จังหวัดปทุมธานี 12120
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <span class="contact-info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </span>
+        <div>
+          <div class="contact-info-label">เวลาทำการ</div>
+          <div class="contact-info-value">
+            จันทร์ - เสาร์<br>
+            9:00 - 17:00 น.
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <span class="contact-info-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </span>
+        <div>
+          <div class="contact-info-label">ทะเบียนนิติบุคคล</div>
+          <div class="contact-info-value">
+            บริษัท ทัช เรียลเอสเตท จำกัด<br>
+            เลขผู้เสียภาษี 0-1355-62017-93-7
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <div class="footer-brand">
+        <span class="nav-logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12 12 3l9 9"/>
+            <path d="M5 10v10h14V10"/>
+          </svg>
+        </span>
+        <strong style="font-family: var(--font-display); font-size: 1rem;">นายธนาคารประจำบ้าน</strong>
+      </div>
+      <p class="footer-text" style="margin-top: 0.75rem;">
+        © 2026 บริษัท ทัช เรียลเอสเตท จำกัด · TOUCH REAL ESTATE CO., LTD.
+      </p>
+    </div>
+    <div class="footer-meta">
+      ปรึกษาฟรี LINE: <strong>@ninethanakarn</strong><br>
+      โทร: <strong>02-334-0940</strong>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     SCRIPTS
+     ============================================ -->
+<script>
+  // Theme toggle with localStorage
+  (function() {
+    const STORAGE_KEY = 'nine-theme';
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    // Load saved theme or system preference
+    const saved = localStorage.getItem(STORAGE_KEY);
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = saved || (systemDark ? 'dark' : 'light');
+    root.setAttribute('data-theme', initial);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem(STORAGE_KEY, next);
+    });
+  })();
+</script>
+
+</body>
+</html>
