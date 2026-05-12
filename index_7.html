@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1e40af">
+<title>นายธนาคารประจำบ้าน — ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต ที่ปรึกษาสินเชื่อ</title>
+<meta name="description" content="ที่ปรึกษาทางการเงินมืออาชีพ ตั้งแต่ปี 2562 ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต คอนโดลงทุนปล่อยเช่า เช่าซื้อ-ผ่อนตรง บริการครบจบในที่เดียว ปรึกษาฟรี">
+<meta property="og:title" content="นายธนาคารประจำบ้าน — ทางออกเรื่องบ้านและหนี้ ครบจบในที่เดียว">
+<meta property="og:description" content="ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต ที่ปรึกษาสินเชื่อมืออาชีพ 7+ ปี">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ninethanakarn.com">
+
+<link rel="icon" type="image/png" href="logo1.png">
+<link rel="apple-touch-icon" href="logo1.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --c-primary: #1e40af;
+  --c-primary-dark: #1e3a8a;
+  --c-primary-light: #3b82f6;
+  --c-accent: #d97706;
+  --c-accent-light: #f59e0b;
+  --c-success: #059669;
+  --c-danger: #dc2626;
+
+  --c-bg: #fafaf9;
+  --c-bg-elev: #ffffff;
+  --c-bg-soft: #f5f5f4;
+  --c-text: #1c1917;
+  --c-text-soft: #57534e;
+  --c-text-mute: #a8a29e;
+  --c-border: #e7e5e4;
+  --c-border-soft: #f5f5f4;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04);
+  --shadow-xl: 0 24px 60px rgba(30,64,175,.15), 0 4px 12px rgba(0,0,0,.06);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  --font-display: 'Prompt', sans-serif;
+  --font-body: 'IBM Plex Sans Thai', 'Prompt', sans-serif;
+  --font-numeric: 'Fraunces', serif;
+
+  --container: 1180px;
+  --gutter: 20px;
+}
+
+body.theme-dark {
+  --c-bg: #0c0a09;
+  --c-bg-elev: #1c1917;
+  --c-bg-soft: #292524;
+  --c-text: #fafaf9;
+  --c-text-soft: #d6d3d1;
+  --c-text-mute: #78716c;
+  --c-border: #292524;
+  --c-border-soft: #1c1917;
+  --c-primary-light: #60a5fa;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background .3s ease, color .3s ease;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;
+}
+
+/* ============================================
+   TOP NAV
+   ============================================ */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 250, 249, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--c-border);
+  transition: background .3s ease;
+}
+body.theme-dark .topnav {
+  background: rgba(12, 10, 9, 0.85);
+}
+
+.topnav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -.01em;
+}
+.brand img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--c-text-mute);
+  letter-spacing: .03em;
+}
+
+.nav-actions { display: flex; align-items: center; gap: 8px; }
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--c-text-soft);
+  transition: background .2s, color .2s;
+}
+.theme-toggle:hover { background: var(--c-bg-soft); color: var(--c-text); }
+
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #06C755;
+  color: #fff;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(6,199,85,.3);
+  transition: transform .15s, box-shadow .2s;
+}
+.btn-line:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(6,199,85,.4); }
+.btn-line svg { width: 18px; height: 18px; }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  padding: 32px 0 48px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero-card {
+  position: relative;
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+  border-radius: var(--radius-xl);
+  padding: 36px 24px 0;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: var(--shadow-xl);
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Decorative grid pattern */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+/* Decorative glow */
+.hero-card::after {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(217,119,6,.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+.hero-badge .dot {
+  width: 8px; height: 8px;
+  background: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #34d399;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .6; }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 7vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  margin-bottom: 10px;
+}
+.hero h1 .accent {
+  color: var(--c-accent-light);
+  font-style: italic;
+  font-family: var(--font-numeric);
+  font-weight: 500;
+  display: block;
+  font-size: 1.05em;
+  position: relative;
+}
+
+.hero p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.85);
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform .15s, box-shadow .2s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(217,119,6,.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(217,119,6,.5); }
+.btn-secondary {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+.btn-secondary:hover { background: rgba(255,255,255,.18); }
+
+.hero-portrait {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  margin-bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+.hero-portrait img {
+  max-width: 280px;
+  height: auto;
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,.35));
+  position: relative;
+  z-index: 2;
+}
+.hero-portrait::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(ellipse at center, rgba(245,158,11,.5) 0%, transparent 60%);
+  z-index: 1;
+}
+
+/* ============================================
+   STATS STRIP
+   ============================================ */
+.stats {
+  background: var(--c-bg-elev);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  margin: -24px 0 0;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 5;
+  border: 1px solid var(--c-border-soft);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.stat {
+  text-align: center;
+  padding: 0 4px;
+  position: relative;
+}
+.stat:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 20%;
+  bottom: 20%;
+  width: 1px;
+  background: var(--c-border);
+}
+.stat-num {
+  font-family: var(--font-numeric);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(22px, 5vw, 32px);
+  color: var(--c-primary);
+  line-height: 1;
+  display: block;
+}
+body.theme-dark .stat-num { color: var(--c-primary-light); }
+.stat-label {
+  font-size: 11px;
+  color: var(--c-text-mute);
+  margin-top: 4px;
+  letter-spacing: .02em;
+}
+
+/* ============================================
+   SECTION HEADING
+   ============================================ */
+section.block {
+  padding: 56px 0;
+}
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 16px;
+}
+.section-head-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4.5vw, 30px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+}
+.section-head .sub {
+  display: block;
+  font-size: 13px;
+  color: var(--c-text-mute);
+  font-weight: 400;
+  margin-top: 4px;
+}
+.section-head .star {
+  color: var(--c-accent);
+  font-size: 18px;
+}
+.section-link {
+  font-size: 13px;
+  color: var(--c-primary);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+body.theme-dark .section-link { color: var(--c-primary-light); }
+
+/* ============================================
+   SERVICES 4 (Hero Services)
+   ============================================ */
+.services-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.svc-card {
+  background: var(--c-bg-elev);
+  border: 1px solid var(--c-border-soft);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  text-align: center;
+  position: relative;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  overflow: hidden;
+}
+.svc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--c-primary);
+}
+.svc-num {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--c-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-numeric);
+  font-style: italic;
+}
+.svc-icon-wrap {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 12px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.svc-icon-wrap svg { width: 36px; height: 36px; color: #fff; }
+.svc-1 .svc-icon-wrap { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.svc-2 .svc-icon-wrap { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.svc-3 .svc-icon-wrap { background: linear-gradient(135deg, #10b981, #047857); }
+.svc-4 .svc-icon-wrap { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.svc-1 .svc-num { background: #dc2626; }
+.svc-2 .svc-num { background: #1d4ed8; }
+.svc-3 .svc-num { background: #047857; }
+.svc-4 .svc-num { background: #d97706; }
+
+.svc-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.svc-sub {
+  font-size: 12px;
+  color: var(--c-text-mute);
+  line-height: 1.5;
+}
+
+/* ============================================
+   TOOLS 8 (Quick Tools)
+   ============================================ */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 8px;
+  background: var(--c-bg-elev);
+  border-radius: var(--radius-lg);
+  padding: 24px 16px;
+  border: 1px solid var(--c-border-soft);
+}
+.tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: var(--radius-md);
+  transition: background .2s;
+}
+.tool:hover { background: var(--c-bg-soft); }
+.tool-ico {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  position: relative;
+}
+.tool-ico svg { width: 26px; height: 26px; }
+.tool-label {
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--c-text);
+}
+/* color variants */
+.t-article .tool-ico { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+.t-loan .tool-ico { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+.t-tax .tool-ico { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.t-expert .tool-ico { background: linear-gradient(135deg, #059669, #047857); }
+.t-cases .tool-ico { background: linear-gradient(135deg, #f97316, #ea580c); }
+.t-youtube .tool-ico { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.t-save .tool-ico { background: linear-gradient(135deg, #ec4899, #be185d); }
+.t-line .tool-ico { background: linear-gradient(135deg, #22c55e, #16a34a); }
+
+/* ============================================
+   PROCESS STEPS
+   ============================================ */
+.process-bg {
+  background: var(--c-bg-soft);
+}
+.steps {
+  display: grid;
+  gap: 12px;
+}
+.step {
+  background: var(--c-bg-elev);
+  border-radius: var(--radius-md);
+  padding: 18px 18px 18px 60px;
+  position: relative;
+  border: 1px solid var(--c-border-soft);
+  transition: border-color .2s, transform .2s;
+}
+.step:hover {
+  border-color: var(--c-primary);
+  transform: translateX(4px);
+}
+.step-num {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-primary), var(--c-primary-light));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-numeric);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(30,64,175,.3);
+}
+.step h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+.step p {
+  font-size: 13px;
+  color: var(--c-text-soft);
+  line-height: 1.5;
+}
+
+/* ============================================
+   BANKS
+   ============================================ */
+.banks-wrap {
+  background: var(--c-bg-elev);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  border: 1px solid var(--c-border-soft);
+}
+.banks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.bank {
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 14px 8px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--c-text);
+  transition: border-color .2s, transform .2s;
+}
+.bank:hover {
+  border-color: var(--c-primary);
+  transform: translateY(-2px);
+}
+.bank small {
+  display: block;
+  font-size: 10px;
+  color: var(--c-text-mute);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about-grid {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+.about-img {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  aspect-ratio: 4/5;
+  max-width: 380px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.about-text h2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  letter-spacing: -.01em;
+}
+.about-text h2 em {
+  font-family: var(--font-numeric);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--c-accent);
+}
+.about-text p {
+  color: var(--c-text-soft);
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.about-features {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+.about-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+}
+.about-features svg {
+  width: 20px; height: 20px;
+  color: var(--c-success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testi-bg {
+  background: var(--c-bg-soft);
+}
+.testi-grid {
+  display: grid;
+  gap: 16px;
+}
+.testi {
+  background: var(--c-bg-elev);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid var(--c-border-soft);
+  position: relative;
+}
+.testi-quote {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-family: var(--font-numeric);
+  font-style: italic;
+  font-size: 60px;
+  color: var(--c-accent);
+  opacity: .15;
+  line-height: 1;
+}
+.testi-stars { color: var(--c-accent); margin-bottom: 10px; font-size: 14px; letter-spacing: 2px; }
+.testi-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--c-text-soft);
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--c-border-soft);
+}
+.testi-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-primary), var(--c-accent));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+}
+.testi-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.testi-role { font-size: 12px; color: var(--c-text-mute); }
+
+/* ============================================
+   CTA STRIP
+   ============================================ */
+.cta-strip {
+  background: linear-gradient(135deg, var(--c-primary-dark), var(--c-primary));
+  border-radius: var(--radius-xl);
+  padding: 36px 24px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.cta-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.cta-strip > * { position: relative; z-index: 2; }
+.cta-strip h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4.5vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.cta-strip p {
+  font-size: 15px;
+  opacity: .9;
+  margin-bottom: 22px;
+}
+.cta-strip .btn-primary {
+  background: #fff;
+  color: var(--c-primary);
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+.cta-strip .btn-primary:hover { transform: translateY(-2px); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--c-text);
+  color: rgba(255,255,255,.8);
+  padding: 48px 0 24px;
+  margin-top: 0;
+}
+body.theme-dark .footer { background: #000; }
+
+.footer-grid {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.footer h5 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 14px;
+  letter-spacing: .02em;
+}
+.footer ul { list-style: none; }
+.footer li { margin-bottom: 8px; font-size: 13.5px; line-height: 1.6; }
+.footer a { transition: color .2s; }
+.footer a:hover { color: var(--c-accent-light); }
+
+.footer-brand .brand {
+  color: #fff;
+  margin-bottom: 12px;
+}
+.footer-brand p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: rgba(255,255,255,.7);
+}
+.footer-social {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+.footer-social a {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  display: grid;
+  place-items: center;
+  transition: background .2s, transform .2s;
+}
+.footer-social a:hover { background: var(--c-accent); transform: translateY(-2px); }
+.footer-social svg { width: 18px; height: 18px; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+}
+
+/* ============================================
+   FLOATING LINE BUTTON
+   ============================================ */
+.float-line {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #06C755, #04a847);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(6,199,85,.4), 0 0 0 6px rgba(6,199,85,.12);
+  z-index: 90;
+  animation: float-pulse 3s ease-in-out infinite;
+  transition: transform .2s;
+}
+.float-line:hover { transform: scale(1.05); }
+.float-line svg { width: 22px; height: 22px; }
+@keyframes float-pulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(6,199,85,.4), 0 0 0 6px rgba(6,199,85,.12); }
+  50% { box-shadow: 0 8px 24px rgba(6,199,85,.5), 0 0 0 12px rgba(6,199,85,.06); }
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+@media (min-width: 640px) {
+  .services-4 { grid-template-columns: repeat(4, 1fr); }
+  .tools-grid { grid-template-columns: repeat(4, 1fr); padding: 28px 24px; }
+  .tool-label { font-size: 12.5px; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+}
+
+/* ============================================
+   RESPONSIVE — DESKTOP
+   ============================================ */
+@media (min-width: 900px) {
+  :root { --gutter: 32px; }
+  .hero { padding: 48px 0 60px; }
+  .hero-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+  }
+  .hero-card {
+    min-height: 540px;
+    padding: 48px 48px 0 48px;
+    border-radius: var(--radius-xl);
+  }
+  .hero-portrait img { max-width: 380px; }
+  .hero-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hero-aside .stats {
+    margin-top: 0;
+    padding: 28px 24px;
+  }
+  .stat-num { font-size: 36px; }
+  .tools-grid { grid-template-columns: repeat(8, 1fr); }
+  .steps { grid-template-columns: repeat(5, 1fr); }
+  .step { padding: 60px 16px 16px; text-align: center; }
+  .step-num {
+    left: 50%;
+    top: 16px;
+    transform: translateX(-50%);
+  }
+  .banks-grid { grid-template-columns: repeat(8, 1fr); }
+  .about-grid { grid-template-columns: 1fr 1.3fr; gap: 48px; }
+  .testi-grid { grid-template-columns: repeat(3, 1fr); }
+  .cta-strip { padding: 56px 40px; }
+  section.block { padding: 80px 0; }
+}
+
+/* Hide stats from in-card overlap on mobile, show below */
+.hero-aside-mobile { display: block; }
+.hero-aside-desktop { display: none; }
+@media (min-width: 900px) {
+  .hero-aside-mobile { display: none; }
+  .hero-aside-desktop { display: flex; flex-direction: column; gap: 16px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     TOP NAV
+     ============================================ -->
+<header class="topnav">
+  <div class="container topnav-inner">
+    <a href="#" class="brand" aria-label="นายธนาคารประจำบ้าน หน้าแรก">
+      <img src="logo1.png" alt="โลโก้ นายธนาคารประจำบ้าน" onerror="this.style.display='none'">
+      <span class="brand-text">
+        นายธนาคารประจำบ้าน
+        <small>Mr. Home Banker · est. 2562</small>
+      </span>
+    </a>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="สลับโหมดมืด/สว่าง">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+      </button>
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn-line" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+        ปรึกษา LINE
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- HERO CARD -->
+      <div class="hero-card">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            ที่ปรึกษาทางการเงินมืออาชีพ · 7+ ปี
+          </div>
+          <h1>
+            อยากมีบ้าน
+            <span class="accent">แต่ติดหนี้?</span>
+          </h1>
+          <p>เราช่วยวางแผนให้กู้ผ่าน · ปิดหนี้ก่อนยื่นกู้ · รวมหนี้บัตรเครดิต · บริการครบจบในที่เดียว</p>
+          <div class="hero-cta">
+            <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn-primary" target="_blank" rel="noopener">
+              ปรึกษาฟรี! คลิกเลย
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="tel:0233409400" class="btn-secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              02-334-0940
+            </a>
+          </div>
+        </div>
+        <div class="hero-portrait">
+          <img src="touch.png" alt="อ.ธรรศ ที่ปรึกษาทางการเงิน นายธนาคารประจำบ้าน" onerror="this.parentElement.style.display='none'">
+        </div>
+      </div>
+
+      <!-- ASIDE: Desktop stats + key features -->
+      <aside class="hero-aside-desktop">
+        <div class="stats">
+          <div class="stats-grid">
+            <div class="stat">
+              <span class="stat-num">7<small style="font-size:.6em">+</small></span>
+              <div class="stat-label">ปี ประสบการณ์</div>
+            </div>
+            <div class="stat">
+              <span class="stat-num">60<small style="font-size:.6em">%</small></span>
+              <div class="stat-label">DSR ทีมเรา</div>
+            </div>
+            <div class="stat">
+              <span class="stat-num">8</span>
+              <div class="stat-label">ธนาคารพันธมิตร</div>
+            </div>
+            <div class="stat">
+              <span class="stat-num">100<small style="font-size:.6em">%</small></span>
+              <div class="stat-label">ฟรี ทุกการปรึกษา</div>
+            </div>
+          </div>
+        </div>
+        <div style="background: var(--c-bg-elev); border-radius: var(--radius-lg); padding: 24px; border: 1px solid var(--c-border-soft);">
+          <h3 style="font-family: var(--font-display); font-weight:600; font-size:18px; margin-bottom:14px;">ทำไมต้องเลือกเรา?</h3>
+          <ul style="list-style:none; display:grid; gap:12px;">
+            <li style="display:flex; gap:10px; font-size:14px; line-height:1.5;">
+              <span style="color:var(--c-accent); font-weight:700;">✓</span>
+              <span><b>เข้าใจระบบธนาคาร</b> — รู้เกณฑ์การอนุมัติของ 8 แบงก์</span>
+            </li>
+            <li style="display:flex; gap:10px; font-size:14px; line-height:1.5;">
+              <span style="color:var(--c-accent); font-weight:700;">✓</span>
+              <span><b>ทีมเตรียมเอกสาร</b> — ช่วยทำเอกสารยื่นกู้ครบถ้วน</span>
+            </li>
+            <li style="display:flex; gap:10px; font-size:14px; line-height:1.5;">
+              <span style="color:var(--c-accent); font-weight:700;">✓</span>
+              <span><b>ปรึกษาฟรี ไม่มีค่าใช้จ่าย</b> — จนกว่าจะปิดดีล</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- Mobile only stats below hero -->
+    <div class="hero-aside-mobile">
+      <div class="stats">
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-num">7<small style="font-size:.6em">+</small></span>
+            <div class="stat-label">ปี ประสบการณ์</div>
+          </div>
+          <div class="stat">
+            <span class="stat-num">60<small style="font-size:.6em">%</small></span>
+            <div class="stat-label">DSR ทีมเรา</div>
+          </div>
+          <div class="stat">
+            <span class="stat-num">8</span>
+            <div class="stat-label">ธนาคาร</div>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100<small style="font-size:.6em">%</small></span>
+            <div class="stat-label">ฟรี</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================
+     SERVICES 4 — บริการหลัก
+     ============================================ -->
+<section class="block" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-text">
+        <span class="star">★</span>
+        <div>
+          <h2>บริการหลัก 4 ตัว</h2>
+          <span class="sub">ทางออกเรื่องบ้านและหนี้ ครบจบในที่เดียว</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-4">
+      <a href="#contact" class="svc-card svc-1">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M7 15h2M11 15h6"/></svg>
+        </div>
+        <div class="svc-title">รวมหนี้บัตรเครดิต</div>
+        <div class="svc-sub">แก้หนี้ ลดภาระ<br>กู้ผ่านง่ายขึ้น</div>
+      </a>
+      <a href="#contact" class="svc-card svc-2">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="svc-title">ปิดหนี้ก่อนกู้บ้าน</div>
+        <div class="svc-sub">บ้านมือสอง-มือหนึ่ง<br>ทำเลดี ราคาคุ้ม</div>
+      </a>
+      <a href="#contact" class="svc-card svc-3">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V12h6v10M9 6h.01M15 6h.01M9 10h.01M15 10h.01"/><polyline points="13 2 17 7 17 2"/></svg>
+        </div>
+        <div class="svc-title">คอนโดลงทุน ปล่อยเช่า</div>
+        <div class="svc-sub">คัดห้องน่าลงทุน<br>ปล่อยเช่าง่าย</div>
+      </a>
+      <a href="#contact" class="svc-card svc-4">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.39 0 4.68.94 6.36 2.64"/></svg>
+        </div>
+        <div class="svc-title">เช่าซื้อ / ผ่อนตรง</div>
+        <div class="svc-sub">ไม่ต้องกู้ธนาคาร<br>เป็นเจ้าของได้เร็วขึ้น</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TOOLS 8 — เครื่องมือ & ทรัพยากร
+     ============================================ -->
+<section class="block" style="padding-top: 0;" id="tools">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-text">
+        <span class="star">★</span>
+        <div>
+          <h2>เครื่องมือ &amp; แหล่งความรู้</h2>
+          <span class="sub">ใช้ฟรี ไม่ต้องสมัครสมาชิก</span>
+        </div>
+      </div>
+      <a class="section-link" href="#contact">ดูทั้งหมด <span>›</span></a>
+    </div>
+
+    <div class="tools-grid">
+      <a href="#" class="tool t-article">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <span class="tool-label">บทความ<br>ให้ความรู้</span>
+      </a>
+      <a href="https://ninethanakarn.github.io/loan-app/" class="tool t-loan" target="_blank" rel="noopener">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="13" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="13" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></div>
+        <span class="tool-label">คำนวณ<br>วงเงินกู้</span>
+      </a>
+      <a href="#" class="tool t-tax">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
+        <span class="tool-label">คำนวณ<br>ยื่นภาษี</span>
+      </a>
+      <a href="#" class="tool t-save">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+        <span class="tool-label">ตาราง<br>เงินออม</span>
+      </a>
+      <a href="#testimonials" class="tool t-cases">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <span class="tool-label">ตัวอย่าง<br>เคสจริง</span>
+      </a>
+      <a href="#" class="tool t-youtube">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></div>
+        <span class="tool-label">YouTube<br>อ.ธรรศ</span>
+      </a>
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="tool t-expert" target="_blank" rel="noopener">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <span class="tool-label">ปรึกษาฟรี<br>กับผู้เชี่ยวชาญ</span>
+      </a>
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="tool t-line" target="_blank" rel="noopener">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8zM7.62 12.27h-2.3c-.14 0-.25-.11-.25-.25V8.3c0-.14.11-.25.25-.25s.25.11.25.25v3.47h2.05c.14 0 .25.11.25.25s-.11.25-.25.25zm1.05-.25c0 .14-.11.25-.25.25s-.25-.11-.25-.25V8.3c0-.14.11-.25.25-.25s.25.11.25.25v3.72zm4.27 0c0 .11-.07.21-.18.24-.03.01-.05.01-.08.01-.08 0-.16-.04-.21-.1l-1.91-2.6v2.45c0 .14-.11.25-.25.25s-.25-.11-.25-.25V8.3c0-.11.07-.21.18-.24.03-.01.05-.01.08-.01.08 0 .16.04.2.1l1.91 2.6V8.3c0-.14.11-.25.25-.25s.25.11.25.25v3.72zm2.93-2.11c.14 0 .25.11.25.25s-.11.25-.25.25h-1.55v.85h1.55c.14 0 .25.11.25.25s-.11.25-.25.25h-1.81c-.14 0-.25-.11-.25-.25V8.3c0-.14.11-.25.25-.25h1.81c.14 0 .25.11.25.25s-.11.25-.25.25h-1.55v.85h1.55z"/></svg></div>
+        <span class="tool-label">LINE OA<br>ปรึกษาด่วน</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROCESS STEPS — ขั้นตอนบริการ
+     ============================================ -->
+<section class="block process-bg" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-text">
+        <span class="star">★</span>
+        <div>
+          <h2>ขั้นตอนการให้บริการ</h2>
+          <span class="sub">ง่าย ชัดเจน ไม่มีค่าบริการแอบแฝง</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>ทักทาย LINE</h4>
+        <p>เพิ่มเพื่อน @ninethanakarn พูดคุยปัญหาเบื้องต้น</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>วิเคราะห์เคส</h4>
+        <p>ทีมตรวจสอบเครดิต DSR และวางแผนการเงิน</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>เตรียมเอกสาร</h4>
+        <p>เราช่วยจัดเอกสารให้ครบถ้วน ตรงเกณฑ์ธนาคาร</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h4>เลือกธนาคารยื่นกู้</h4>
+        <p>ตามโปรไฟล์ลูกค้าที่มีโอกาสอนุมัติสูงสุด</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h4>รับวงเงินกู้ โอนกรรมสิทธิ์</h4>
+        <p>ส่งมอบบ้าน รับกุญแจ เริ่มต้นชีวิตใหม่</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     BANKS — ธนาคารพันธมิตร
+     ============================================ -->
+<section class="block" id="banks">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-text">
+        <span class="star">★</span>
+        <div>
+          <h2>ทำงานกับ 8 ธนาคารชั้นนำ</h2>
+          <span class="sub">ยื่นกู้ตามโปรไฟล์ลูกค้า เพื่อเพิ่มโอกาสได้รับการอนุมัติจากธนาคาร</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="banks-wrap">
+      <div class="banks-grid">
+        <div class="bank">BBL<small>กรุงเทพ</small></div>
+        <div class="bank">KTB<small>กรุงไทย</small></div>
+        <div class="bank">BAY<small>กรุงศรี</small></div>
+        <div class="bank">SCB<small>ไทยพาณิชย์</small></div>
+        <div class="bank">TTB<small>ทีเอ็มบีฯ</small></div>
+        <div class="bank">GSB<small>ออมสิน</small></div>
+        <div class="bank">GHB<small>อาคารฯ</small></div>
+        <div class="bank">KBANK<small>กสิกรไทย</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     ABOUT — เกี่ยวกับเรา
+     ============================================ -->
+<section class="block process-bg" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="touch1.png" alt="อ.ธรรศ ที่ปรึกษาทางการเงิน นายธนาคารประจำบ้าน" onerror="this.parentElement.innerHTML='<div style=&quot;display:grid;place-items:center;height:100%;font-size:80px;&quot;>🏠</div>'">
+      </div>
+      <div class="about-text">
+        <h2>ที่ปรึกษาทางการเงิน <em>ที่เข้าใจคุณ</em></h2>
+        <p>ดูแลโดย <b>อ.ธรรศ (Touch)</b> ผู้ก่อตั้ง บริษัท ทัช เรียลเอสเตท จำกัด ตั้งแต่ปี <b>2562</b> ประสบการณ์ตรงสาย Banking และ Real Estate กว่า 7 ปี</p>
+        <p>เรามองว่าทุกเคสมีทางออก — มีหนี้บัตรเครดิตเยอะ หรือเคยกู้ไม่ผ่าน เราจะช่วยวางแผนให้คุณกู้ผ่านได้</p>
+        <ul class="about-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><b>ปรึกษาฟรี ไม่มีค่าใช้จ่าย</b> — เคสไม่ผ่านก็ไม่เสียค่าบริการ</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><b>เข้าใจระบบ 8 ธนาคารชั้นนำ</b> — รู้เกณฑ์การอนุมัติของแต่ละแห่ง</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><b>ทีมเตรียมเอกสารยื่นกู้</b> — ครบถ้วน ถูกต้อง ตรงเกณฑ์</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIALS
+     ============================================ -->
+<section class="block testi-bg" id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head-text">
+        <span class="star">★</span>
+        <div>
+          <h2>เสียงจากลูกค้า</h2>
+          <span class="sub">เรื่องจริงจากผู้ที่ผ่านการกู้กับเรา</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">ผมเคยถูกธนาคารปฏิเสธมาแล้ว 3 แห่ง พอมาปรึกษาทีมอ.ธรรศ ช่วยปิดหนี้บัตรเครดิตและจัดเอกสารใหม่ ตอนนี้กู้ผ่านได้บ้านในฝันแล้วครับ</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ส</div>
+          <div>
+            <div class="testi-name">คุณสมชาย ก.</div>
+            <div class="testi-role">ลูกค้ากู้บ้านมือสอง · 2.8 ล้านบาท</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">มีหนี้บัตรเครดิตหลายใบ ดอกแพง อ.ธรรศ ช่วยรวมหนี้ให้เป็นก้อนเดียว ผ่อนน้อยลง แถมยังเตรียมแผนกู้บ้านให้ในอนาคต ขอบคุณมากค่ะ</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ม</div>
+          <div>
+            <div class="testi-name">คุณมาลี ภ.</div>
+            <div class="testi-role">ลูกค้ารวมหนี้บัตรเครดิต</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">ทีมเข้าใจระบบธนาคารดีมาก ธนาคารอนุมัติวงเงินให้ทั้งหมดที่ยื่นกู้ เลือกอันที่ดอกถูกที่สุด คุ้มค่าจริง ๆ ครับ</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ป</div>
+          <div>
+            <div class="testi-name">คุณประยุทธ ว.</div>
+            <div class="testi-role">ลูกค้ากู้คอนโดลงทุน</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CTA STRIP
+     ============================================ -->
+<section class="block">
+  <div class="container">
+    <div class="cta-strip">
+      <h3>พร้อมเริ่มต้นแล้วใช่ไหม?</h3>
+      <p>ปรึกษาฟรี ไม่มีค่าใช้จ่าย ทีมพร้อมตอบทุกคำถาม</p>
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+        เพิ่มเพื่อน LINE
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <img src="logo1.png" alt="" onerror="this.style.display='none'" style="width:42px;height:42px;border-radius:8px;background:rgba(255,255,255,.1);padding:4px;">
+          <span class="brand-text">
+            นายธนาคารประจำบ้าน
+            <small style="color:rgba(255,255,255,.6);">Mr. Home Banker</small>
+          </span>
+        </div>
+        <p>ที่ปรึกษาทางการเงินมืออาชีพ ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต ดำเนินการโดย บริษัท ทัช เรียลเอสเตท จำกัด</p>
+        <div class="footer-social">
+          <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener" aria-label="LINE">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM10 15V8l6 3.5z"/></svg>
+          </a>
+          <a href="https://twitter.com/ninethanakarn" target="_blank" rel="noopener" aria-label="Twitter/X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h5>บริการของเรา</h5>
+        <ul>
+          <li><a href="#services">รวมหนี้บัตรเครดิต</a></li>
+          <li><a href="#services">ปิดหนี้ก่อนกู้บ้าน</a></li>
+          <li><a href="#services">คอนโดลงทุนปล่อยเช่า</a></li>
+          <li><a href="#services">เช่าซื้อ / ผ่อนตรง</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>เครื่องมือ</h5>
+        <ul>
+          <li><a href="https://ninethanakarn.github.io/loan-app/" target="_blank">คำนวณวงเงินกู้</a></li>
+          <li><a href="#tools">คำนวณภาษี</a></li>
+          <li><a href="#tools">ตารางเงินออม</a></li>
+          <li><a href="#testimonials">ตัวอย่างเคสจริง</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>ติดต่อเรา</h5>
+        <ul>
+          <li>📞 <a href="tel:0233409400">02-334-0940</a></li>
+          <li>💬 LINE: <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank">@ninethanakarn</a></li>
+          <li>✉️ <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a></li>
+          <li>🕐 จันทร์–เสาร์ 9:00–17:00 น.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 บริษัท ทัช เรียลเอสเตท จำกัด · เลขที่ผู้เสียภาษี 0-1355-62017-93-7 · All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     FLOATING LINE BUTTON
+     ============================================ -->
+<a href="https://line.me/R/ti/p/@ninethanakarn" class="float-line" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+  ปรึกษาด่วน
+</a>
+
+<!-- ============================================
+     JAVASCRIPT — Theme Toggle
+     ============================================ -->
+<script>
+(function() {
+  const root = document.body;
+  const toggle = document.getElementById('themeToggle');
+  const icon = document.getElementById('themeIcon');
+
+  const sunIcon = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>';
+  const moonIcon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+
+  // Init from localStorage or system preference
+  const saved = localStorage.getItem('nine-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDark = saved === 'dark' || (!saved && prefersDark);
+
+  if (isDark) {
+    root.classList.add('theme-dark');
+    icon.innerHTML = moonIcon;
+  }
+
+  toggle.addEventListener('click', () => {
+    root.classList.toggle('theme-dark');
+    const dark = root.classList.contains('theme-dark');
+    icon.innerHTML = dark ? moonIcon : sunIcon;
+    localStorage.setItem('nine-theme', dark ? 'dark' : 'light');
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href');
+      if (id.length > 1) {
+        const el = document.querySelector(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
