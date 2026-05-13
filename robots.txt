@@ -1,0 +1,8 @@
+# robots.txt for ninethanakarn.com
+# นายธนาคารประจำบ้าน — ที่ปรึกษาสินเชื่อ
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ninethanakarn.com/sitemap.xml
