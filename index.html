@@ -6,72 +6,10 @@
 <meta name="theme-color" content="#1e40af">
 <title>นายธนาคารประจำบ้าน — ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต ที่ปรึกษาสินเชื่อ</title>
 <meta name="description" content="ที่ปรึกษาทางการเงินมืออาชีพ ตั้งแต่ปี 2562 ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต คอนโดลงทุนปล่อยเช่า เช่าซื้อ-ผ่อนตรง บริการครบจบในที่เดียว ปรึกษาฟรี">
-<!-- Open Graph (Facebook, LINE, etc.) -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="นายธนาคารประจำบ้าน">
-<meta property="og:locale" content="th_TH">
-<meta property="og:url" content="https://ninethanakarn.com">
 <meta property="og:title" content="นายธนาคารประจำบ้าน — ทางออกเรื่องบ้านและหนี้ ครบจบในที่เดียว">
-<meta property="og:description" content="ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต ที่ปรึกษาสินเชื่อมืออาชีพ 7+ ปี ยื่นกู้ได้ 8 ธนาคารชั้นนำ">
-<meta property="og:image" content="https://ninethanakarn.com/og-image.png">
-<meta property="og:image:secure_url" content="https://ninethanakarn.com/og-image.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="นายธนาคารประจำบ้าน — ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://ninethanakarn.com">
-<meta name="twitter:title" content="นายธนาคารประจำบ้าน — ทางออกเรื่องบ้านและหนี้ ครบจบในที่เดียว">
-<meta name="twitter:description" content="ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต ที่ปรึกษาสินเชื่อมืออาชีพ 7+ ปี ยื่นกู้ได้ 8 ธนาคารชั้นนำ">
-<meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
-<meta name="twitter:image:alt" content="นายธนาคารประจำบ้าน — ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต">
-
-<!-- Google tag (gtag.js) - Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKC3DMS6P5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-EKC3DMS6P5');
-
-  // Custom event tracking: track key user actions
-  document.addEventListener('DOMContentLoaded', function() {
-    // Track phone clicks (tel: links)
-    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
-      link.addEventListener('click', function() {
-        gtag('event', 'phone_click', {
-          'event_category': 'lead',
-          'event_label': 'office_phone',
-          'value': 1
-        });
-      });
-    });
-
-    // Track LINE button clicks
-    document.querySelectorAll('a[href*="line.me"], a[href*="@ninethanakarn"]').forEach(function(link) {
-      link.addEventListener('click', function() {
-        gtag('event', 'line_click', {
-          'event_category': 'lead',
-          'event_label': 'line_oa',
-          'value': 1
-        });
-      });
-    });
-
-    // Track loan calculator clicks
-    document.querySelectorAll('a[href*="loan-app"], a[href*="คำนวณ"]').forEach(function(link) {
-      link.addEventListener('click', function() {
-        gtag('event', 'tool_click', {
-          'event_category': 'engagement',
-          'event_label': 'loan_calculator',
-          'value': 1
-        });
-      });
-    });
-  });
-</script>
+<meta property="og:description" content="ปิดหนี้ก่อนยื่นกู้ รวมหนี้บัตรเครดิต ที่ปรึกษาสินเชื่อมืออาชีพ 7+ ปี">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ninethanakarn.com">
 
 <link rel="icon" type="image/png" href="logo1.png">
 <link rel="apple-touch-icon" href="logo1.png">
@@ -632,7 +570,6 @@ body.theme-dark .section-link { color: var(--c-primary-light); }
 .t-cases .tool-ico { background: linear-gradient(135deg, #f97316, #ea580c); }
 .t-youtube .tool-ico { background: linear-gradient(135deg, #ef4444, #dc2626); }
 .t-save .tool-ico { background: linear-gradient(135deg, #ec4899, #be185d); }
-.t-compound .tool-ico { background: linear-gradient(135deg, #f59e0b, #d97706); }
 .t-line .tool-ico { background: linear-gradient(135deg, #22c55e, #16a34a); }
 
 /* ============================================
@@ -1245,11 +1182,15 @@ body.theme-dark .footer { background: #000; }
     </div>
 
     <div class="tools-grid">
+      <a href="#" class="tool t-article">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <span class="tool-label">บทความ<br>ให้ความรู้</span>
+      </a>
       <a href="https://ninethanakarn.github.io/loan-app/" class="tool t-loan" target="_blank" rel="noopener">
         <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="13" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="13" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></div>
         <span class="tool-label">คำนวณ<br>วงเงินกู้</span>
       </a>
-      <a href="#" class="tool t-tax">
+      <a href="/tax/" class="tool t-tax">
         <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></div>
         <span class="tool-label">คำนวณ<br>ยื่นภาษี</span>
       </a>
@@ -1257,21 +1198,17 @@ body.theme-dark .footer { background: #000; }
         <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
         <span class="tool-label">ตาราง<br>เงินออม</span>
       </a>
-      <a href="#" class="tool t-compound">
-        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
-        <span class="tool-label">ตาราง<br>ร่วมทุน</span>
-      </a>
-      <a href="#" class="tool t-article">
-        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <span class="tool-label">บทความ<br>ให้ความรู้</span>
-      </a>
       <a href="#testimonials" class="tool t-cases">
         <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <span class="tool-label">ตัวอย่าง<br>เคสจริง</span>
       </a>
-      <a href="tel:023340940" class="tool t-expert">
-        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <span class="tool-label">โทรคุย<br>เบื้องต้น</span>
+      <a href="#" class="tool t-youtube">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></div>
+        <span class="tool-label">YouTube<br>อ.ธรรศ</span>
+      </a>
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="tool t-expert" target="_blank" rel="noopener">
+        <div class="tool-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <span class="tool-label">ปรึกษาฟรี<br>กับผู้เชี่ยวชาญ</span>
       </a>
       <a href="https://line.me/R/ti/p/@ninethanakarn" class="tool t-line" target="_blank" rel="noopener">
         <div class="tool-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8zM7.62 12.27h-2.3c-.14 0-.25-.11-.25-.25V8.3c0-.14.11-.25.25-.25s.25.11.25.25v3.47h2.05c.14 0 .25.11.25.25s-.11.25-.25.25zm1.05-.25c0 .14-.11.25-.25.25s-.25-.11-.25-.25V8.3c0-.14.11-.25.25-.25s.25.11.25.25v3.72zm4.27 0c0 .11-.07.21-.18.24-.03.01-.05.01-.08.01-.08 0-.16-.04-.21-.1l-1.91-2.6v2.45c0 .14-.11.25-.25.25s-.25-.11-.25-.25V8.3c0-.11.07-.21.18-.24.03-.01.05-.01.08-.01.08 0 .16.04.2.1l1.91 2.6V8.3c0-.14.11-.25.25-.25s.25.11.25.25v3.72zm2.93-2.11c.14 0 .25.11.25.25s-.11.25-.25.25h-1.55v.85h1.55c.14 0 .25.11.25.25s-.11.25-.25.25h-1.81c-.14 0-.25-.11-.25-.25V8.3c0-.14.11-.25.25-.25h1.81c.14 0 .25.11.25.25s-.11.25-.25.25h-1.55v.85h1.55z"/></svg></div>
@@ -1503,9 +1440,8 @@ body.theme-dark .footer { background: #000; }
         <h5>เครื่องมือ</h5>
         <ul>
           <li><a href="https://ninethanakarn.github.io/loan-app/" target="_blank">คำนวณวงเงินกู้</a></li>
-          <li><a href="#tools">คำนวณภาษี</a></li>
+          <li><a href="/tax/">คำนวณภาษี</a></li>
           <li><a href="#tools">ตารางเงินออม</a></li>
-          <li><a href="#tools">ตารางร่วมทุน</a></li>
           <li><a href="#testimonials">ตัวอย่างเคสจริง</a></li>
         </ul>
       </div>
