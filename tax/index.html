@@ -896,7 +896,19 @@ function removeIncome(id){
 }
 function updateIncomeAmount(id, val){
   const inc = state.extraIncomes.find(i => i.id === id);
-  if(inc){ inc.amount = Number(val) || 0; calc(); }
+  if(!inc) return;
+  inc.amount = Number(val) || 0;
+  // Update label inline (without re-rendering input — preserves focus)
+  const info = M40_RATES[inc.type];
+  const expense = Math.min(inc.amount * info.rate, info.cap);
+  const net = inc.amount - expense;
+  const idx = state.extraIncomes.indexOf(inc);
+  const rowEl = document.querySelectorAll('#extra-incomes .income-row')[idx];
+  if(rowEl){
+    const capEl = rowEl.querySelector('.field-cap');
+    if(capEl) capEl.textContent = `หัก ${(info.rate*100).toFixed(0)}%${info.cap !== Infinity && info.cap > 0 ? ' ≤'+fmt(info.cap) : ''} → ค่าใช้จ่าย ${fmt(expense)} · สุทธิ ${fmt(net)}`;
+  }
+  calc();
 }
 function renderIncomes(){
   const c = $('extra-incomes');
