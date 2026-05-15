@@ -1,0 +1,4188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>เครื่องคำนวณสินเชื่อ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: linear-gradient(145deg, #e8f4fc 0%, #d4ebf7 45%, #c5e3f5 100%);
+      --bg-solid: #d4ebf7;
+      --card: rgba(255, 255, 255, 0.92);
+      --border: rgba(100, 170, 220, 0.35);
+      --accent: #2b8fd4;
+      --accent-dark: #1e6fa8;
+      --text: #1a3a52;
+      --muted: #5a7a8f;
+      --success-bg: #e6f7ee;
+      --success-border: #8fd4b0;
+      --shadow: 0 12px 40px rgba(30, 100, 160, 0.12);
+      --radius: 16px;
+      --input-bg: #fafdff;
+      --surface-muted: #fafdff;
+      --result-row-bg: var(--success-bg);
+      --toggle-btn-bg: rgba(255, 255, 255, 0.85);
+    }
+
+    body.theme-dark {
+      --bg: #0f172a;
+      --bg-solid: #0f172a;
+      --card: #1e293b;
+      --border: rgba(71, 85, 105, 0.55);
+      --accent: #38bdf8;
+      --accent-dark: #38bdf8;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --success-bg: rgba(34, 197, 94, 0.12);
+      --success-border: rgba(52, 211, 153, 0.4);
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      --input-bg: #334155;
+      --surface-muted: #334155;
+      --result-row-bg: rgba(33, 38, 45, 0.95);
+      --toggle-btn-bg: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Sarabun", "Segoe UI", system-ui, sans-serif;
+      font-size: 17px;
+      color: var(--text);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      line-height: 1.55;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 200;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--toggle-btn-bg);
+      cursor: pointer;
+      font-size: 1.35rem;
+      line-height: 1;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+    }
+
+    body.theme-dark .theme-toggle:hover {
+      background: #475569;
+    }
+
+    .theme-toggle .icon-sun,
+    body.theme-dark .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    body.theme-dark .theme-toggle .icon-sun {
+      display: inline;
+    }
+
+    body:not(.theme-dark) .theme-toggle .icon-moon {
+      display: inline;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 920px;
+    }
+
+    .wrap > div.card {
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .site-brand-block {
+      margin: 0 auto 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(43, 143, 212, 0.22);
+      max-width: 420px;
+    }
+
+    body.theme-dark .site-brand-block {
+      border-bottom-color: rgba(56, 189, 248, 0.28);
+    }
+
+    .site-brand-name {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--accent-dark);
+    }
+
+    body.theme-dark .site-brand-name {
+      color: #7dd3fc;
+    }
+
+    .site-brand-slogan {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #1e6fa8;
+      line-height: 1.45;
+    }
+
+    body.theme-dark .site-brand-slogan {
+      color: #93c5fd;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .services-section {
+      margin-top: 18px;
+    }
+
+    .services-section-title {
+      margin: 0 0 14px;
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      text-align: center;
+    }
+
+    body.theme-dark .services-section-title {
+      color: var(--accent);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 720px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+    }
+
+    .service-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--card);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(30, 100, 160, 0.16);
+      border-color: rgba(43, 143, 212, 0.45);
+    }
+
+    body.theme-dark .service-card:hover {
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    .service-card-icon {
+      font-size: 1.85rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .service-card-title {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .service-card-desc {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .contact-section {
+      margin-top: 18px;
+    }
+
+    .contact-section-title {
+      margin: 0 0 14px;
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      text-align: center;
+    }
+
+    body.theme-dark .contact-section-title {
+      color: var(--accent);
+    }
+
+    .contact-line-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-line-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 420px;
+      padding: 18px 22px;
+      font-family: inherit;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      background: #06c755;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(6, 199, 85, 0.38);
+      transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .contact-line-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+      box-shadow: 0 12px 30px rgba(6, 199, 85, 0.48);
+    }
+
+    .contact-line-btn:active {
+      transform: translateY(0);
+    }
+
+    .input-char-count {
+      margin-top: 5px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .input-char-count.is-warning {
+      color: #b91c1c;
+    }
+
+    body.theme-dark .input-char-count.is-warning {
+      color: #f87171;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-family: inherit;
+      font-size: 1.05rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--input-bg);
+      color: var(--text);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(43, 143, 212, 0.22);
+    }
+
+    body.theme-dark input[type="number"]:focus {
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+    }
+
+    input[type="number"]::placeholder {
+      color: #9ab;
+    }
+
+    body.theme-dark input[type="number"]::placeholder {
+      color: #94a3b8;
+    }
+
+    .hint {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      margin-top: 8px;
+      padding: 15px 20px;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(43, 143, 212, 0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 26px rgba(43, 143, 212, 0.42);
+    }
+
+    button[type="submit"]:active {
+      transform: translateY(0);
+    }
+
+    body.theme-dark button[type="submit"] {
+      background: linear-gradient(180deg, #38bdf8 0%, #0ea5e9 100%);
+      box-shadow: 0 6px 22px rgba(14, 165, 233, 0.4);
+      color: #0f172a;
+    }
+
+    body.theme-dark button[type="submit"]:hover {
+      box-shadow: 0 8px 28px rgba(14, 165, 233, 0.5);
+    }
+
+    .results {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px dashed var(--border);
+      display: none;
+    }
+
+    .results.visible {
+      display: block;
+    }
+
+    .results h2 {
+      margin: 0 0 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 14px;
+      background: var(--result-row-bg);
+      border: 1px solid var(--success-border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .result-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .result-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .result-value {
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: var(--text);
+      text-align: right;
+      word-break: break-all;
+    }
+
+    .result-value.accent-num {
+      color: var(--accent-dark);
+    }
+
+    .charts-stack {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border);
+      transition: border-color 0.3s ease;
+    }
+
+    .chart-section-title {
+      margin: 0 0 12px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      text-align: center;
+    }
+
+    .chart-follow {
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px dashed var(--border);
+      transition: border-color 0.3s ease;
+    }
+
+    .chart-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .chart-pie-shell {
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .chart-line-shell {
+      position: relative;
+      width: 100%;
+      height: clamp(220px, 42vw, 320px);
+      margin-top: 4px;
+    }
+
+    body.theme-dark .prepay-compare {
+      background: linear-gradient(
+        165deg,
+        rgba(22, 163, 74, 0.12) 0%,
+        rgba(30, 41, 59, 0.95) 100%
+      );
+      border-color: rgba(52, 211, 153, 0.35);
+    }
+
+    body.theme-dark .prepay-compare h3 {
+      color: #a7f3d0;
+    }
+
+    body.theme-dark .prepay-label {
+      color: #d1fae5;
+    }
+
+    body.theme-dark .prepay-value.save-num {
+      color: #34d399;
+    }
+
+    body.theme-dark .compare-scroll,
+    body.theme-dark .schedule-scroll {
+      background: var(--surface-muted);
+    }
+
+    body.theme-dark .compare-table tbody tr:nth-child(odd),
+    body.theme-dark .schedule-table tbody tr:nth-child(odd) {
+      background: rgba(30, 41, 59, 0.88);
+    }
+
+    body.theme-dark .compare-table tbody tr:nth-child(even),
+    body.theme-dark .schedule-table tbody tr:nth-child(even) {
+      background: rgba(51, 65, 85, 0.45);
+    }
+
+    body.theme-dark .compare-table tbody tr.is-user-term {
+      background: rgba(56, 189, 248, 0.2) !important;
+    }
+
+    body.theme-dark .compare-tip {
+      background: rgba(51, 65, 85, 0.6);
+      border-color: rgba(56, 189, 248, 0.3);
+      color: var(--text);
+    }
+
+    body.theme-dark .schedule-table thead th,
+    body.theme-dark .compare-table thead th {
+      background: #0ea5e9;
+      color: #0f172a;
+    }
+
+    body.theme-dark .error {
+      background: rgba(127, 29, 29, 0.35);
+      border-color: rgba(252, 165, 165, 0.35);
+      color: #fecaca;
+    }
+
+    body.theme-dark .btn-toggle-schedule {
+      background: var(--surface-muted);
+      color: var(--accent);
+    }
+
+    body.theme-dark .btn-toggle-schedule:hover {
+      background: #475569;
+    }
+
+    .prepay-compare {
+      margin-top: 18px;
+      padding: 18px 16px;
+      background: linear-gradient(165deg, #e8f8ef 0%, #dcf5e8 100%);
+      border: 1px solid rgba(72, 168, 122, 0.45);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(40, 120, 80, 0.08);
+    }
+
+    .prepay-compare h3 {
+      margin: 0 0 14px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #1a5238;
+    }
+
+    .prepay-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(72, 168, 122, 0.35);
+      font-size: 0.93rem;
+    }
+
+    .prepay-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .prepay-row:first-of-type {
+      padding-top: 0;
+    }
+
+    .prepay-label {
+      font-weight: 600;
+      color: #356048;
+      flex-shrink: 0;
+      max-width: 52%;
+    }
+
+    .prepay-value {
+      font-weight: 700;
+      text-align: right;
+      word-break: break-word;
+    }
+
+    .prepay-value.accent-num {
+      color: var(--accent-dark);
+    }
+
+    .prepay-value.save-num {
+      color: #15803d;
+      font-weight: 700;
+    }
+
+    .prepay-sub {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .error {
+      margin-top: 18px;
+      padding: 12px 14px;
+      background: #fff0f0;
+      border: 1px solid #f0b4b4;
+      border-radius: 10px;
+      color: #8b2e2e;
+      font-size: 0.92rem;
+      font-weight: 500;
+      display: none;
+    }
+
+    .error.visible {
+      display: block;
+    }
+
+    .compare-block {
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .compare-block h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .compare-desc {
+      margin: 0 0 14px;
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .compare-scroll {
+      overflow-x: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fafdff;
+      margin-bottom: 14px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      min-width: 520px;
+    }
+
+    .compare-table thead th {
+      padding: 11px 10px;
+      text-align: right;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent-dark);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+      white-space: nowrap;
+    }
+
+    .compare-table thead th:first-child {
+      text-align: left;
+      padding-left: 14px;
+    }
+
+    .compare-table tbody td {
+      padding: 11px 10px;
+      text-align: right;
+      border-bottom: 1px solid rgba(100, 170, 220, 0.22);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .compare-table tbody td:first-child {
+      text-align: left;
+      padding-left: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .compare-table tbody tr:nth-child(odd) {
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .compare-table tbody tr:nth-child(even) {
+      background: rgba(232, 244, 252, 0.88);
+    }
+
+    .compare-table tbody tr.is-user-term {
+      background: rgba(186, 230, 253, 0.92) !important;
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+
+    .compare-table tbody tr.is-user-term td {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .compare-save {
+      color: #15803d;
+      font-weight: 700;
+    }
+
+    .compare-dash {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .compare-tips {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .compare-tip {
+      margin: 0;
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text);
+      background: linear-gradient(165deg, #e8f4fc 0%, #dceefa 100%);
+      border: 1px solid rgba(100, 170, 220, 0.45);
+      border-radius: 10px;
+      font-weight: 500;
+    }
+
+    .schedule-block {
+      margin-top: 22px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .schedule-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .schedule-toolbar h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .btn-toggle-schedule {
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 16px;
+      color: var(--accent-dark);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(30, 100, 160, 0.08);
+    }
+
+    .btn-toggle-schedule:hover {
+      background: #fff;
+      border-color: var(--accent);
+      box-shadow: 0 4px 14px rgba(43, 143, 212, 0.15);
+    }
+
+    .schedule-scroll {
+      max-height: 400px;
+      overflow: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fafdff;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .schedule-scroll.is-hidden {
+      display: none;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      min-width: 520px;
+    }
+
+    .schedule-table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      padding: 12px 10px;
+      text-align: right;
+      font-weight: 700;
+      color: #fff;
+      background: var(--accent-dark);
+      border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+      white-space: nowrap;
+    }
+
+    .schedule-table thead th:first-child {
+      text-align: center;
+      width: 4rem;
+    }
+
+    .schedule-table tbody td {
+      padding: 10px 10px;
+      text-align: right;
+      border-bottom: 1px solid rgba(100, 170, 220, 0.22);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .schedule-table tbody td:first-child {
+      text-align: center;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .schedule-table tbody tr:nth-child(odd) {
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    .schedule-table tbody tr:nth-child(even) {
+      background: rgba(232, 244, 252, 0.85);
+    }
+
+    .schedule-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* --- Export PDF --- */
+    .btn-pdf {
+      width: 100%;
+      margin-top: 16px;
+      padding: 15px 20px;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(180deg, #16a34a 0%, #15803d 100%);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(22, 163, 74, 0.35);
+      transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn-pdf:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(22, 163, 74, 0.42);
+      filter: brightness(1.05);
+    }
+
+    .btn-pdf:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .btn-pdf:disabled {
+      cursor: wait;
+      opacity: 0.78;
+      box-shadow: none;
+    }
+
+    .pdf-export-wrapper {
+      background: white !important;
+      color: #000 !important;
+      font-family: "Sarabun", "Segoe UI", system-ui, sans-serif !important;
+    }
+
+    .pdf-export-wrapper * {
+      color: inherit !important;
+    }
+
+    .pdf-export-wrapper table {
+      page-break-inside: auto;
+    }
+
+    .pdf-export-wrapper tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+    }
+
+    .saved-plans-section {
+      margin-top: 18px;
+      padding-top: 24px;
+    }
+
+    .saved-plans-title {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .saved-plans-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .saved-plans-head-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .saved-plans-subtitle {
+      margin: 0 0 14px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .saved-plans-empty {
+      margin: 0;
+      padding: 14px;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      color: var(--muted);
+      background: var(--surface-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .saved-plans-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .saved-plan-card {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      padding: 14px;
+    }
+
+    .saved-plan-card.is-compare-selected {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(43, 143, 212, 0.28);
+    }
+
+    body.theme-dark .saved-plan-card.is-compare-selected {
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.36);
+    }
+
+    .saved-plan-compare {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      user-select: none;
+    }
+
+    .saved-plan-compare input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .saved-plan-compare.is-disabled {
+      opacity: 0.5;
+    }
+
+    .saved-plan-name {
+      margin: 0 0 2px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .saved-plan-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 2px;
+    }
+
+    .saved-plan-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      background: rgba(43, 143, 212, 0.14);
+      border: 1px solid rgba(43, 143, 212, 0.25);
+    }
+
+    body.theme-dark .saved-plan-tag {
+      color: #7dd3fc;
+      background: rgba(56, 189, 248, 0.18);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .saved-plan-date {
+      margin: 0 0 8px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .saved-plan-summary {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .saved-plan-payment {
+      margin: 10px 0 0;
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .saved-plan-note {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--muted);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .saved-plan-actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-plan {
+      border: 1px solid var(--border);
+      background: var(--surface-muted);
+      color: var(--text);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .btn-plan:hover {
+      border-color: var(--accent);
+    }
+
+    .btn-plan:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      border-color: var(--border);
+    }
+
+    .btn-plan-secondary {
+      font-size: 0.8rem;
+      padding: 7px 10px;
+      font-weight: 700;
+    }
+
+    .btn-plan-save {
+      width: 100%;
+      margin-top: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface-muted);
+      color: var(--accent-dark);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 12px 14px;
+      cursor: pointer;
+    }
+
+    .btn-plan-save:hover {
+      border-color: var(--accent);
+    }
+
+    .saved-compare-cta {
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .saved-compare-hint {
+      margin: 8px 0 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .btn-compare-selected {
+      border: none;
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dark) 100%);
+      box-shadow: 0 6px 20px rgba(43, 143, 212, 0.28);
+    }
+
+    .btn-compare-selected:disabled {
+      cursor: not-allowed;
+      opacity: 0.65;
+      box-shadow: none;
+    }
+
+    body.theme-dark .btn-compare-selected {
+      color: #0f172a;
+      background: linear-gradient(180deg, #38bdf8 0%, #0ea5e9 100%);
+    }
+
+    .plan-compare-section {
+      margin-top: 18px;
+      position: relative;
+    }
+
+    .plan-compare-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .plan-compare-title {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .btn-close-compare {
+      border: 1px solid var(--border);
+      background: var(--surface-muted);
+      color: var(--text);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.86rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .btn-close-compare:hover {
+      border-color: var(--accent);
+    }
+
+    .plan-compare-scroll {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-muted);
+    }
+
+    .plan-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+
+    .plan-compare-table th,
+    .plan-compare-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .plan-compare-table thead th {
+      background: var(--accent-dark);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      vertical-align: top;
+    }
+
+    body.theme-dark .plan-compare-table thead th {
+      color: #0f172a;
+      background: #38bdf8;
+    }
+
+    .plan-compare-table th:first-child,
+    .plan-compare-table td:first-child {
+      text-align: left;
+      width: 42%;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .plan-compare-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .plan-compare-better {
+      background: var(--success-bg);
+      color: #166534;
+      font-weight: 700;
+    }
+
+    .plan-compare-head-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .plan-compare-head-main {
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .plan-compare-head-date {
+      font-size: 0.74rem;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    .plan-compare-head-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: inherit;
+    }
+
+    .plan-compare-note-cell {
+      text-align: left;
+      font-size: 0.83rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: var(--muted);
+    }
+
+    body.theme-dark .plan-compare-better {
+      color: #86efac;
+    }
+
+    .plan-compare-conclusion {
+      margin-top: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-muted);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .refinance-section {
+      margin-top: 18px;
+    }
+
+    .refinance-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 0;
+    }
+
+    .refinance-title {
+      margin: 0 0 4px;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .refinance-sub {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .refinance-panel {
+      margin-top: 16px;
+    }
+
+    .refinance-panel[hidden] {
+      display: none;
+    }
+
+    .refinance-groups {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 20px;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .refinance-groups {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .refinance-group {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      background: var(--surface-muted);
+    }
+
+    .refinance-group h3 {
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .refinance-saved-row {
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+
+    .refinance-saved-row label {
+      font-size: 0.86rem;
+    }
+
+    .refinance-saved-row select {
+      width: 100%;
+      margin-top: 6px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--input-bg);
+      color: var(--text);
+    }
+
+    .refinance-scroll {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface-muted);
+      margin-top: 16px;
+    }
+
+    .refinance-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+    }
+
+    .refinance-table th,
+    .refinance-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .refinance-table thead th {
+      background: var(--accent-dark);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    body.theme-dark .refinance-table thead th {
+      color: #0f172a;
+      background: #38bdf8;
+    }
+
+    .refinance-table th:first-child,
+    .refinance-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .refinance-results-block {
+      margin-top: 16px;
+    }
+
+    .refinance-results-block[hidden] {
+      display: none;
+    }
+
+    .refinance-summary {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .refinance-summary.is-win {
+      background: var(--success-bg);
+      border-color: var(--success-border);
+      color: #166534;
+    }
+
+    body.theme-dark .refinance-summary.is-win {
+      color: #86efac;
+    }
+
+    .refinance-summary.is-lose {
+      background: #fff0f0;
+      border-color: #f0b4b4;
+      color: #8b2e2e;
+    }
+
+    body.theme-dark .refinance-summary.is-lose {
+      background: rgba(127, 29, 29, 0.35);
+      border-color: rgba(252, 165, 165, 0.35);
+      color: #fecaca;
+    }
+
+    .refinance-summary.is-tie {
+      background: var(--surface-muted);
+      color: var(--muted);
+    }
+
+    .refinance-summary.is-warn {
+      background: #fffbeb;
+      border-color: #fcd34d;
+      color: #92400e;
+    }
+
+    body.theme-dark .refinance-summary.is-warn {
+      background: rgba(120, 53, 15, 0.35);
+      border-color: rgba(251, 191, 36, 0.45);
+      color: #fde68a;
+    }
+
+    .refinance-summary-reason {
+      margin: 10px 0 0;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    body.theme-dark .refinance-summary-reason {
+      border-top-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .refinance-summary-title {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .refinance-summary-grid {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-weight: 600;
+    }
+
+    .refinance-summary-grid li {
+      margin-bottom: 6px;
+    }
+
+    .refinance-summary-grid li:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 640px) {
+      .plan-compare-scroll {
+        overflow-x: visible;
+      }
+
+      .plan-compare-table {
+        min-width: 0;
+      }
+
+      .plan-compare-table thead {
+        display: none;
+      }
+
+      .plan-compare-table,
+      .plan-compare-table tbody,
+      .plan-compare-table tr,
+      .plan-compare-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .plan-compare-table tr {
+        border-bottom: 1px solid var(--border);
+        padding: 8px 0;
+      }
+
+      .plan-compare-table td {
+        border-bottom: none;
+        text-align: left;
+        padding: 6px 12px;
+      }
+
+      .plan-compare-table td:first-child {
+        width: 100%;
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding-top: 10px;
+      }
+
+      .plan-compare-table td:nth-child(2)::before,
+      .plan-compare-table td:nth-child(3)::before {
+        display: block;
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+
+      .plan-compare-table td:nth-child(2)::before {
+        content: "แผน A";
+      }
+
+      .plan-compare-table td:nth-child(3)::before {
+        content: "แผน B";
+      }
+    }
+
+    .plan-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 260;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: rgba(15, 23, 42, 0.58);
+    }
+
+    .plan-modal-backdrop[hidden] {
+      display: none;
+    }
+
+    .plan-modal {
+      width: min(100%, 540px);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .plan-modal h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      color: var(--accent-dark);
+    }
+
+    .plan-modal-field {
+      margin-bottom: 12px;
+    }
+
+    .plan-modal-field input,
+    .plan-modal-field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--input-bg);
+      color: var(--text);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 10px 12px;
+    }
+
+    .plan-modal-field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .plan-modal-readonly {
+      margin: 0 0 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px dashed var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .plan-modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .import-mode-modal {
+      width: min(100%, 460px);
+    }
+
+    .import-mode-text {
+      margin: 0 0 12px;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .import-mode-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .import-mode-actions .btn-plan {
+      width: 100%;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 640px) {
+      .saved-plans-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+    /* ===== Customer Name Field (PDF header) ===== */
+    .customer-input-card {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      padding: 12px 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .customer-input-card label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .customer-input-card input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--text);
+      padding: 6px 0;
+    }
+    .customer-input-card input::placeholder {
+      color: var(--muted);
+      font-style: italic;
+      opacity: 0.85;
+    }
+    @media (max-width: 540px) {
+      .customer-input-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+      }
+      .customer-input-card input {
+        background: var(--input-bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button type="button" class="theme-toggle" id="theme-toggle" title="สลับโหมดสว่าง/มืด" aria-label="สลับโหมดสว่างมืด">
+    <span class="icon-moon" aria-hidden="true">🌙</span>
+    <span class="icon-sun" aria-hidden="true">☀️</span>
+  </button>
+  <div class="wrap">
+    <header>
+      <div class="site-brand-block">
+        <p class="site-brand-name">นายธนาคารประจำบ้าน</p>
+        <p class="site-brand-slogan">ปิดหนี้ก่อนยื่นกู้-แก้เคสกู้ไม่ผ่าน</p>
+      </div>
+      <h1>เครื่องคำนวณสินเชื่อ</h1>
+      <p>ผ่อนคงที่ต่อเดือน (ดอกเบี้ยคงที่ / คำนวณแบบลดต้นลดดอก)</p>
+    </header>
+
+    <div class="customer-input-card no-pdf">
+      <label for="customer-name">👤 ชื่อลูกค้า:</label>
+      <input type="text" id="customer-name" placeholder="ใส่ชื่อลูกค้า (สำหรับพิมพ์ PDF)" autocomplete="off" />
+    </div>
+
+    <div class="card">
+      <form id="loan-form" novalidate>
+        <div class="field">
+          <label for="principal">จำนวนเงินกู้ (บาท)</label>
+          <input type="number" id="principal" name="principal" min="1" step="1" placeholder="เช่น 500000" required />
+          <div class="hint">กรอกเป็นจำนวนเต็มบาท</div>
+        </div>
+
+        <div class="field">
+          <label for="annual-rate">อัตราดอกเบี้ยต่อปี (%)</label>
+          <input type="number" id="annual-rate" name="annualRate" min="0" max="100" step="0.01" placeholder="เช่น 6.5" required />
+          <div class="hint">ใส่เป็นเปอร์เซ็นต์ต่อปี</div>
+        </div>
+
+        <div class="field">
+          <label for="months">ระยะเวลาผ่อน (เดือน)</label>
+          <input type="number" id="months" name="months" min="1" max="600" step="1" placeholder="เช่น 360" required />
+        </div>
+
+        <div class="field">
+          <label for="extra-prepay">โปะต้นเพิ่มต่อเดือน (บาท)</label>
+          <input type="number" id="extra-prepay" name="extraPrepay" min="0" step="1" placeholder="เช่น 5000" value="" />
+          <div class="hint">เงินที่จ่ายเพิ่มจากค่างวดทุกเดือน เพื่อตัดเงินต้น</div>
+        </div>
+
+        <button type="submit">คำนวณ</button>
+      </form>
+
+      <div id="error" class="error" role="alert"></div>
+
+      <section id="results" class="results" aria-live="polite">
+        <h2>ผลการคำนวณ</h2>
+        <div class="result-row">
+          <span class="result-label">ค่างวดต่อเดือน</span>
+          <span class="result-value accent-num" id="out-payment">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">ดอกเบี้ยรวมทั้งหมด</span>
+          <span class="result-value accent-num" id="out-interest">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">ยอดรวมที่ต้องจ่าย</span>
+          <span class="result-value accent-num" id="out-total">—</span>
+        </div>
+
+        <button type="button" class="btn-pdf no-pdf" id="btn-pdf" hidden disabled>
+          📄 ดาวน์โหลด PDF
+        </button>
+        <button type="button" class="btn-plan-save no-pdf" id="btn-save-plan" hidden>
+          💾 บันทึกแผนนี้
+        </button>
+
+        <div class="charts-stack" id="charts-stack" hidden>
+          <div class="chart-section chart-section-pie">
+            <h3 class="chart-section-title">🥧 สัดส่วนเงินต้น vs ดอกเบี้ย</h3>
+            <div class="chart-center">
+              <div class="chart-pie-shell">
+                <canvas id="chart-pie" aria-label="กราฟวงกลมเงินต้นและดอกเบี้ย"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="chart-section chart-follow">
+            <h3 class="chart-section-title">📈 เงินต้นคงเหลือตลอดระยะเวลาผ่อน</h3>
+            <div class="chart-line-shell">
+              <canvas id="chart-line" aria-label="กราฟเส้นเงินต้นคงเหลือ"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="prepay-compare" id="prepay-box" hidden>
+          <h3>💰 ผลของการโปะต้น</h3>
+          <div class="prepay-row">
+            <span class="prepay-label">ระยะเวลาผ่อนจริง</span>
+            <span class="prepay-value accent-num" id="prepay-duration"></span>
+          </div>
+          <div class="prepay-row">
+            <span class="prepay-label">ดอกเบี้ยรวมจริง</span>
+            <span class="prepay-value accent-num" id="prepay-interest-actual"></span>
+          </div>
+          <div class="prepay-row">
+            <span class="prepay-label">ประหยัดดอกเบี้ยได้</span>
+            <span class="prepay-value save-num" id="prepay-saved-interest"></span>
+          </div>
+          <div class="prepay-row">
+            <span class="prepay-label">ผ่อนหมดเร็วขึ้น</span>
+            <span class="prepay-value accent-num" id="prepay-saved-months"></span>
+          </div>
+        </div>
+
+        <div class="compare-block" id="compare-block" hidden>
+          <h3>📊 เปรียบเทียบระยะเวลาผ่อน</h3>
+          <p class="compare-desc">
+            เปรียบเทียบแผนผ่อนต่างๆ จากเงินกู้และดอกเบี้ยที่กรอก (ไม่รวมการโปะต้น)
+          </p>
+          <div class="compare-scroll">
+            <table class="compare-table" id="compare-table">
+              <thead>
+                <tr>
+                  <th scope="col">ระยะเวลา</th>
+                  <th scope="col">ค่างวด/เดือน</th>
+                  <th scope="col">ดอกเบี้ยรวม</th>
+                  <th scope="col">ยอดรวมที่จ่าย</th>
+                  <th scope="col">เทียบกับ 30 ปี</th>
+                </tr>
+              </thead>
+              <tbody id="compare-body"></tbody>
+            </table>
+          </div>
+          <div class="compare-tips">
+            <p class="compare-tip" id="compare-tip-10"></p>
+            <p class="compare-tip" id="compare-tip-15"></p>
+          </div>
+        </div>
+
+        <div class="schedule-block" id="schedule-block" hidden>
+          <div class="schedule-toolbar">
+            <h3>ตารางผ่อนรายเดือน</h3>
+            <button type="button" class="btn-toggle-schedule no-pdf" id="toggle-schedule" aria-expanded="true">
+              ซ่อนตารางผ่อน
+            </button>
+          </div>
+          <div class="schedule-scroll" id="schedule-scroll">
+            <table class="schedule-table" id="schedule-table">
+              <thead>
+                <tr>
+                  <th scope="col">งวดที่</th>
+                  <th scope="col">เงินต้นที่จ่าย</th>
+                  <th scope="col">ดอกเบี้ย</th>
+                  <th scope="col">ค่างวดรวม</th>
+                  <th scope="col">โปะต้นเพิ่ม</th>
+                  <th scope="col">เงินต้นคงเหลือ</th>
+                </tr>
+              </thead>
+              <tbody id="schedule-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card saved-plans-section no-pdf" id="saved-plans-section">
+      <div class="saved-plans-head">
+        <h2 class="saved-plans-title">📚 แผนที่บันทึกไว้</h2>
+        <div class="saved-plans-head-actions">
+          <button type="button" class="btn-plan btn-plan-secondary" id="btn-export-plans">📤 ส่งออก</button>
+          <button type="button" class="btn-plan btn-plan-secondary" id="btn-import-plans">📥 นำเข้า</button>
+        </div>
+      </div>
+      <p class="saved-plans-subtitle">บันทึกหลายแผนไว้เปรียบเทียบและเรียกดูภายหลัง</p>
+      <div id="saved-plans-list"></div>
+      <div class="saved-compare-cta">
+        <button type="button" id="btn-open-plan-compare" class="btn-compare-selected" disabled>
+          📊 เปรียบเทียบ 2 แผนนี้
+        </button>
+        <p class="saved-compare-hint" id="saved-compare-hint">เลือก 2 แผนเพื่อเปรียบเทียบ</p>
+      </div>
+    </section>
+
+    <section class="card plan-compare-section no-pdf" id="plan-compare-section" hidden>
+      <div class="plan-compare-head">
+        <h2 class="plan-compare-title">📊 เปรียบเทียบ 2 แผน</h2>
+        <button type="button" class="btn-close-compare" id="btn-close-plan-compare">✕ ปิดการเปรียบเทียบ</button>
+      </div>
+      <div class="plan-compare-scroll">
+        <table class="plan-compare-table">
+          <thead>
+            <tr>
+              <th scope="col">หัวข้อ</th>
+              <th scope="col" id="plan-compare-head-a">แผน A</th>
+              <th scope="col" id="plan-compare-head-b">แผน B</th>
+            </tr>
+          </thead>
+          <tbody id="plan-compare-body"></tbody>
+        </table>
+      </div>
+      <div class="plan-compare-conclusion" id="plan-compare-conclusion"></div>
+    </section>
+
+    <div class="plan-modal-backdrop" id="plan-modal-backdrop" hidden>
+      <div class="plan-modal" role="dialog" aria-modal="true" aria-labelledby="plan-modal-title">
+        <h3 id="plan-modal-title">บันทึกแผน</h3>
+        <form id="plan-modal-form" novalidate>
+          <div class="plan-modal-field">
+            <label for="plan-modal-name">ชื่อแผน</label>
+            <input type="text" id="plan-modal-name" required maxlength="80" />
+          </div>
+          <div class="plan-modal-field">
+            <label for="plan-modal-tag">🏷️ Tag</label>
+            <input type="text" id="plan-modal-tag" maxlength="30" placeholder="เช่น กสิกร, SCB" />
+            <div class="input-char-count" id="plan-modal-tag-count" aria-live="polite">0 / 30</div>
+          </div>
+          <div class="plan-modal-field">
+            <label for="plan-modal-note">📝 หมายเหตุ</label>
+            <textarea id="plan-modal-note" maxlength="200" placeholder="เช่น Promotion 0% 6 เดือน"></textarea>
+            <div class="input-char-count" id="plan-modal-note-count" aria-live="polite">0 / 200</div>
+          </div>
+          <p class="plan-modal-readonly" id="plan-modal-readonly"></p>
+          <div class="plan-modal-actions">
+            <button type="button" class="btn-plan" id="plan-modal-cancel">ยกเลิก</button>
+            <button type="submit" class="btn-plan" id="plan-modal-submit">บันทึก</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <input type="file" id="import-plans-file" accept=".json,application/json" hidden />
+
+    <div class="plan-modal-backdrop" id="import-mode-backdrop" hidden>
+      <div class="plan-modal import-mode-modal" role="dialog" aria-modal="true" aria-labelledby="import-mode-title">
+        <h3 id="import-mode-title">นำเข้าแผนจากไฟล์ JSON</h3>
+        <p class="import-mode-text" id="import-mode-text"></p>
+        <div class="import-mode-actions">
+          <button type="button" class="btn-plan" id="import-mode-merge">➕ รวมกับแผนปัจจุบัน</button>
+          <button type="button" class="btn-plan" id="import-mode-replace">🔄 แทนที่ทั้งหมด</button>
+          <button type="button" class="btn-plan" id="import-mode-cancel">✕ ยกเลิก</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="card refinance-section no-pdf" id="refinance-section">
+      <div class="refinance-head">
+        <div>
+          <h2 class="refinance-title">🔄 คำนวณรีไฟแนนซ์</h2>
+          <p class="refinance-sub">เปรียบเทียบสินเชื่อเดิมกับการรีไฟแนนซ์ใหม่</p>
+        </div>
+        <button type="button" class="btn-plan btn-plan-secondary" id="refinance-toggle" aria-expanded="false" aria-controls="refinance-panel">
+          แสดง
+        </button>
+      </div>
+      <div class="refinance-panel" id="refinance-panel" hidden>
+        <form id="refinance-form" novalidate>
+          <div class="refinance-groups">
+            <div class="refinance-group">
+              <h3>สินเชื่อเดิม</h3>
+              <div class="field refinance-saved-row">
+                <label for="refinance-saved-select">📥 ใช้ข้อมูลจากแผนที่บันทึก</label>
+                <select id="refinance-saved-select">
+                  <option value="">— เลือกแผน —</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ref-old-principal">จำนวนเงินกู้เดิม (บาท)</label>
+                <input type="number" id="ref-old-principal" min="1" step="1" placeholder="เช่น 3000000" required />
+              </div>
+              <div class="field">
+                <label for="ref-old-rate">อัตราดอกเบี้ยเดิม (%)</label>
+                <input type="number" id="ref-old-rate" min="0.01" max="29.99" step="0.01" placeholder="เช่น 6.5" required />
+              </div>
+              <div class="field">
+                <label for="ref-old-months">ระยะเวลาเดิม (เดือน)</label>
+                <input type="number" id="ref-old-months" min="1" max="600" step="1" placeholder="เช่น 360" required />
+              </div>
+              <div class="field">
+                <label for="ref-paid-months">ผ่อนมาแล้วกี่เดือน</label>
+                <input type="number" id="ref-paid-months" min="0" max="599" step="1" placeholder="เช่น 36" required />
+              </div>
+            </div>
+            <div class="refinance-group">
+              <h3>เงื่อนไขรีไฟแนนซ์ใหม่</h3>
+              <div class="field">
+                <label for="ref-new-rate">อัตราดอกเบี้ยใหม่ (%)</label>
+                <input type="number" id="ref-new-rate" min="0.01" max="29.99" step="0.01" placeholder="เช่น 4.5" required />
+              </div>
+              <div class="field">
+                <label for="ref-new-months">ระยะเวลาใหม่ (เดือน)</label>
+                <input type="number" id="ref-new-months" min="1" max="600" step="1" placeholder="เว้นว่าง = ใช้เวลาที่เหลือ" />
+                <div class="hint">ค่าเริ่มต้นเท่ากับเดือนที่เหลือของสินเชื่อเดิม (ถ้าไม่กรอก)</div>
+              </div>
+              <div class="field">
+                <label for="ref-fee">ค่าธรรมเนียมรีไฟแนนซ์ (บาท)</label>
+                <input type="number" id="ref-fee" min="0" step="1" placeholder="0" value="" />
+                <div class="hint">เช่น ค่าจัดทำ ค่าประเมิน ค่าจดจำนอง</div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn-plan-save" id="refinance-submit">🔍 คำนวณรีไฟแนนซ์</button>
+        </form>
+
+        <div class="refinance-results-block" id="refinance-results" hidden>
+          <div class="refinance-scroll">
+            <table class="refinance-table" aria-label="ผลเปรียบเทียบรีไฟแนนซ์">
+              <thead>
+                <tr>
+                  <th scope="col">หัวข้อ</th>
+                  <th scope="col">ผ่อนต่อ (ไม่รีไฟแนนซ์)</th>
+                  <th scope="col">รีไฟแนนซ์ใหม่</th>
+                </tr>
+              </thead>
+              <tbody id="refinance-tbody"></tbody>
+            </table>
+          </div>
+          <div class="refinance-summary" id="refinance-summary" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card services-section no-pdf" aria-labelledby="services-heading">
+      <h2 class="services-section-title" id="services-heading">🛠️ บริการของเรา</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🏠</div>
+          <h3 class="service-card-title">ปิดหนี้ก่อนกู้บ้าน</h3>
+          <p class="service-card-desc">ลดภาระหนี้ เพิ่มโอกาสผ่าน</p>
+        </article>
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🏢</div>
+          <h3 class="service-card-title">คอนโดลงทุนปล่อยเช่า</h3>
+          <p class="service-card-desc">ทำเลดี มีผู้เช่า</p>
+        </article>
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">🔑</div>
+          <h3 class="service-card-title">เช่า-เช่าซื้อ / ผ่อนตรง</h3>
+          <p class="service-card-desc">กู้ไม่ผ่านก็มีทางเลือก</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card contact-section no-pdf" aria-labelledby="contact-heading">
+      <h2 class="contact-section-title" id="contact-heading">📞 ติดต่อเรา</h2>
+      <div class="contact-line-wrap">
+        <a
+          class="contact-line-btn"
+          href="https://line.me/R/ti/p/@ninethanakarn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span aria-hidden="true">💬</span>
+          <span>LINE: @ninethanakarn</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      สูตรผ่อนคงที่: ดอกเบี้ยคิดเป็นรายเดือนจากอัตราต่อปี ÷ 12
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    (function () {
+      var THEME_KEY = "loan-app-theme";
+
+      try {
+        if (localStorage.getItem(THEME_KEY) === "dark") {
+          document.body.classList.add("theme-dark");
+        }
+      } catch (eIgnore) {}
+
+      var form = document.getElementById("loan-form");
+      var errorEl = document.getElementById("error");
+      var resultsEl = document.getElementById("results");
+      var scheduleBlock = document.getElementById("schedule-block");
+      var scheduleScroll = document.getElementById("schedule-scroll");
+      var scheduleBody = document.getElementById("schedule-body");
+      var toggleScheduleBtn = document.getElementById("toggle-schedule");
+      var prepayBox = document.getElementById("prepay-box");
+      var compareBlock = document.getElementById("compare-block");
+      var chartsStack = document.getElementById("charts-stack");
+      var themeToggle = document.getElementById("theme-toggle");
+      var btnPdf = document.getElementById("btn-pdf");
+      var btnSavePlan = document.getElementById("btn-save-plan");
+      var savedPlansListEl = document.getElementById("saved-plans-list");
+      var btnOpenPlanCompare = document.getElementById("btn-open-plan-compare");
+      var savedCompareHint = document.getElementById("saved-compare-hint");
+      var planCompareSection = document.getElementById("plan-compare-section");
+      var btnClosePlanCompare = document.getElementById("btn-close-plan-compare");
+      var planCompareHeadA = document.getElementById("plan-compare-head-a");
+      var planCompareHeadB = document.getElementById("plan-compare-head-b");
+      var planCompareBody = document.getElementById("plan-compare-body");
+      var planCompareConclusion = document.getElementById("plan-compare-conclusion");
+      var planModalBackdrop = document.getElementById("plan-modal-backdrop");
+      var planModalForm = document.getElementById("plan-modal-form");
+      var planModalTitle = document.getElementById("plan-modal-title");
+      var planModalName = document.getElementById("plan-modal-name");
+      var planModalTag = document.getElementById("plan-modal-tag");
+      var planModalNote = document.getElementById("plan-modal-note");
+      var planModalTagCount = document.getElementById("plan-modal-tag-count");
+      var planModalNoteCount = document.getElementById("plan-modal-note-count");
+      var planModalReadonly = document.getElementById("plan-modal-readonly");
+      var planModalCancel = document.getElementById("plan-modal-cancel");
+      var planModalSubmit = document.getElementById("plan-modal-submit");
+      var btnExportPlans = document.getElementById("btn-export-plans");
+      var btnImportPlans = document.getElementById("btn-import-plans");
+      var importPlansFile = document.getElementById("import-plans-file");
+      var importModeBackdrop = document.getElementById("import-mode-backdrop");
+      var importModeText = document.getElementById("import-mode-text");
+      var importModeMerge = document.getElementById("import-mode-merge");
+      var importModeReplace = document.getElementById("import-mode-replace");
+      var importModeCancel = document.getElementById("import-mode-cancel");
+      var refinanceToggle = document.getElementById("refinance-toggle");
+      var refinancePanel = document.getElementById("refinance-panel");
+      var refinanceForm = document.getElementById("refinance-form");
+      var refinanceSavedSelect = document.getElementById("refinance-saved-select");
+      var refinanceResults = document.getElementById("refinance-results");
+      var refinanceTbody = document.getElementById("refinance-tbody");
+      var refinanceSummary = document.getElementById("refinance-summary");
+
+      var SAVED_PLANS_KEY = "loan-app-saved-plans";
+      var MAX_SAVED_PLANS = 20;
+      var selectedComparePlanIds = [];
+      var planModalSubmitHandler = null;
+      var pendingImportPlans = null;
+
+      var pieChartRef = null;
+      var lineChartRef = null;
+      var chartSeed = null;
+      var latestCalculation = null;
+
+      var COMPARE_TERM_YEARS = [10, 15, 20, 25, 30];
+
+      function formatBaht(n) {
+        return (
+          n.toLocaleString("th-TH", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          }) + " บาท"
+        );
+      }
+
+      function formatMoneyCell(n) {
+        return n.toLocaleString("th-TH", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        });
+      }
+
+      function isDarkTheme() {
+        return document.body.classList.contains("theme-dark");
+      }
+
+      function pad2Num(n) {
+        return ("0" + n).slice(-2);
+      }
+
+      function formatDateTimeTH(ts) {
+        var d = new Date(ts);
+        if (!Number.isFinite(d.getTime())) return "-";
+        return (
+          pad2Num(d.getDate()) +
+          "/" +
+          pad2Num(d.getMonth() + 1) +
+          "/" +
+          d.getFullYear() +
+          " " +
+          pad2Num(d.getHours()) +
+          ":" +
+          pad2Num(d.getMinutes())
+        );
+      }
+
+      function thaiPdfDatePhrase() {
+        var d = new Date();
+        var be = d.getFullYear() + 543;
+        return (
+          pad2Num(d.getDate()) +
+          "/" +
+          pad2Num(d.getMonth() + 1) +
+          "/" +
+          be
+        );
+      }
+
+      function pdfFilenameStamp() {
+        var d = new Date();
+        return (
+          d.getFullYear() +
+          pad2Num(d.getMonth() + 1) +
+          pad2Num(d.getDate()) +
+          pad2Num(d.getHours()) +
+          pad2Num(d.getMinutes())
+        );
+      }
+
+      function removeNoPdfNodes(root) {
+        root.querySelectorAll(".no-pdf").forEach(function (n) {
+          if (n && n.parentNode) n.parentNode.removeChild(n);
+        });
+      }
+
+      function forceVisible(el) {
+        if (!el) return;
+        el.hidden = false;
+        el.removeAttribute("hidden");
+      }
+
+      function canvasToImgIn(root) {
+        root.querySelectorAll("canvas").forEach(function (canvas) {
+          var img = document.createElement("img");
+          img.src = canvas.toDataURL("image/png");
+          img.alt = canvas.getAttribute("aria-label") || "chart";
+          img.style.display = "block";
+          img.style.width = "100%";
+          img.style.maxWidth = "100%";
+          img.style.height = "auto";
+          canvas.parentNode.replaceChild(img, canvas);
+        });
+      }
+
+      function readSavedPlans() {
+        try {
+          var raw = localStorage.getItem(SAVED_PLANS_KEY);
+          if (!raw) return [];
+          var parsed = JSON.parse(raw);
+          if (!Array.isArray(parsed)) return [];
+          return parsed;
+        } catch (eIgnore) {
+          return [];
+        }
+      }
+
+      function writeSavedPlans(plans) {
+        try {
+          localStorage.setItem(SAVED_PLANS_KEY, JSON.stringify(plans));
+          return true;
+        } catch (eIgnore) {
+          return false;
+        }
+      }
+
+      function toYearsPhrase(months) {
+        var y = Math.round((months / 12) * 10) / 10;
+        if (!Number.isFinite(y)) return "-";
+        return (Number.isInteger(y) ? String(y) : y.toFixed(1)) + " ปี";
+      }
+
+      function cleanTextInput(value, maxLen) {
+        var text = String(value == null ? "" : value).trim();
+        return text.slice(0, maxLen);
+      }
+
+      function makePlanId() {
+        return Date.now() + Math.random();
+      }
+
+      function safeNum(value) {
+        var n = Number(value);
+        return Number.isFinite(n) ? n : 0;
+      }
+
+      function exportDateStamp() {
+        var d = new Date();
+        return (
+          d.getFullYear() +
+          "-" +
+          pad2Num(d.getMonth() + 1) +
+          "-" +
+          pad2Num(d.getDate()) +
+          "-" +
+          pad2Num(d.getHours()) +
+          pad2Num(d.getMinutes())
+        );
+      }
+
+      function toImportablePlan(raw) {
+        if (!raw || typeof raw !== "object") return null;
+        if (!raw.inputs || typeof raw.inputs !== "object") return null;
+        if (!raw.results || typeof raw.results !== "object") return null;
+        var name = cleanTextInput(raw.name, 80);
+        if (!name) return null;
+        var loanAmount = Number(raw.inputs.loanAmount);
+        var interestRate = Number(raw.inputs.interestRate);
+        var months = Number(raw.inputs.months);
+        var monthlyPayment = Number(raw.results.monthlyPayment);
+        if (
+          !Number.isFinite(loanAmount) ||
+          !Number.isFinite(interestRate) ||
+          !Number.isFinite(months) ||
+          !Number.isFinite(monthlyPayment)
+        ) {
+          return null;
+        }
+        var normalized = {
+          id: Number(raw.id),
+          name: name,
+          savedAt: Number.isFinite(Number(raw.savedAt)) ? Number(raw.savedAt) : Date.now(),
+          inputs: {
+            loanAmount: loanAmount,
+            interestRate: interestRate,
+            months: months,
+            extraPayment: safeNum(raw.inputs.extraPayment),
+          },
+          results: {
+            monthlyPayment: monthlyPayment,
+            totalInterest: safeNum(raw.results.totalInterest),
+            totalPayment: safeNum(raw.results.totalPayment),
+          },
+          tag: cleanTextInput(raw.tag || "", 30),
+          note: cleanTextInput(raw.note || "", 200),
+        };
+        if (!Number.isFinite(normalized.id)) {
+          normalized.id = makePlanId();
+        }
+        return normalized;
+      }
+
+      function closeImportModeModal() {
+        pendingImportPlans = null;
+        if (importModeBackdrop) importModeBackdrop.hidden = true;
+      }
+
+      function openImportModeModal(importedPlans) {
+        if (!importModeBackdrop || !importModeText) return;
+        pendingImportPlans = importedPlans.slice();
+        importModeText.textContent =
+          "พบ " +
+          importedPlans.length +
+          " แผนในไฟล์ ต้องการนำเข้าแบบไหน?";
+        importModeBackdrop.hidden = false;
+      }
+
+      function applyImportedPlans(mode) {
+        if (!pendingImportPlans || !pendingImportPlans.length) {
+          closeImportModeModal();
+          return;
+        }
+        var incoming = pendingImportPlans.slice();
+        var current = readSavedPlans();
+        var merged;
+        var existingIds = {};
+        var i;
+
+        if (mode === "merge") {
+          if (current.length + incoming.length > MAX_SAVED_PLANS) {
+            alert(
+              "นำเข้าไม่ได้ — เกินจำนวนสูงสุด 20 แผน (ปัจจุบัน " +
+                current.length +
+                " + นำเข้า " +
+                incoming.length +
+                ")"
+            );
+            return;
+          }
+          for (i = 0; i < current.length; i++) {
+            existingIds[current[i].id] = true;
+          }
+          for (i = 0; i < incoming.length; i++) {
+            if (existingIds[incoming[i].id]) {
+              incoming[i].id = makePlanId();
+            }
+            existingIds[incoming[i].id] = true;
+          }
+          merged = current.concat(incoming);
+        } else if (mode === "replace") {
+          var ok = confirm("ยืนยันแทนที่แผนทั้งหมดด้วยไฟล์ที่นำเข้า?");
+          if (!ok) return;
+          if (incoming.length > MAX_SAVED_PLANS) {
+            alert(
+              "นำเข้าไม่ได้ — เกินจำนวนสูงสุด 20 แผน (ปัจจุบัน " +
+                current.length +
+                " + นำเข้า " +
+                incoming.length +
+                ")"
+            );
+            return;
+          }
+          for (i = 0; i < incoming.length; i++) {
+            if (existingIds[incoming[i].id]) {
+              incoming[i].id = makePlanId();
+            }
+            existingIds[incoming[i].id] = true;
+          }
+          merged = incoming;
+        } else {
+          return;
+        }
+
+        if (!writeSavedPlans(merged)) {
+          alert("ไม่สามารถนำเข้าแผนได้");
+          return;
+        }
+        selectedComparePlanIds = [];
+        if (planCompareSection) {
+          planCompareSection.hidden = true;
+        }
+        closeImportModeModal();
+        renderSavedPlans();
+        var savedSection = document.getElementById("saved-plans-section");
+        if (savedSection) {
+          savedSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        alert("นำเข้าสำเร็จ " + incoming.length + " แผน");
+      }
+
+      function handleImportFile(file) {
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function () {
+          var payload;
+          try {
+            payload = JSON.parse(String(reader.result || ""));
+          } catch (_e) {
+            alert("ไฟล์ไม่ใช่รูปแบบ JSON ที่ถูกต้อง");
+            return;
+          }
+          if (!payload || !Array.isArray(payload.plans)) {
+            alert("ไฟล์ไม่ใช่ไฟล์แผนสินเชื่อ — กรุณาตรวจสอบ");
+            return;
+          }
+          var cleaned = [];
+          var i;
+          for (i = 0; i < payload.plans.length; i++) {
+            var normalized = toImportablePlan(payload.plans[i]);
+            if (!normalized) {
+              alert("ไฟล์ไม่ใช่ไฟล์แผนสินเชื่อ — กรุณาตรวจสอบ");
+              return;
+            }
+            cleaned.push(normalized);
+          }
+          openImportModeModal(cleaned);
+        };
+        reader.onerror = function () {
+          alert("ไฟล์ไม่ใช่รูปแบบ JSON ที่ถูกต้อง");
+        };
+        reader.readAsText(file, "utf-8");
+      }
+
+      function exportPlansAsJson() {
+        var plans = readSavedPlans();
+        if (!plans.length) return;
+        var payload = {
+          version: 1,
+          exportedAt: new Date().toISOString(),
+          plans: plans,
+        };
+        var filename = "loan-plans-" + exportDateStamp() + ".json";
+        var blob = new Blob([JSON.stringify(payload, null, 2)], {
+          type: "application/json",
+        });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement("a");
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+        alert("ส่งออก " + plans.length + " แผนสำเร็จ — ไฟล์: " + filename);
+      }
+
+      function updatePlanModalCharCounts() {
+        if (!planModalTag || !planModalNote) return;
+        var tagLen = planModalTag.value.length;
+        var noteLen = planModalNote.value.length;
+        if (planModalTagCount) {
+          planModalTagCount.textContent = tagLen + " / 30";
+          planModalTagCount.classList.toggle("is-warning", tagLen > 24);
+        }
+        if (planModalNoteCount) {
+          planModalNoteCount.textContent = noteLen + " / 200";
+          planModalNoteCount.classList.toggle("is-warning", noteLen > 160);
+        }
+      }
+
+      function openPlanModal(config) {
+        if (!planModalBackdrop || !planModalForm) return;
+        var nameValue = (config && config.name) || "";
+        var tagValue = (config && config.tag) || "";
+        var noteValue = (config && config.note) || "";
+        planModalTitle.textContent = (config && config.title) || "บันทึกแผน";
+        planModalSubmit.textContent = (config && config.submitLabel) || "บันทึก";
+        planModalReadonly.textContent = (config && config.readonlyText) || "";
+        planModalReadonly.hidden = !planModalReadonly.textContent;
+        planModalName.value = cleanTextInput(nameValue, 80);
+        planModalTag.value = cleanTextInput(tagValue, 30);
+        planModalNote.value = cleanTextInput(noteValue, 200);
+        updatePlanModalCharCounts();
+        planModalSubmitHandler = config && typeof config.onSubmit === "function" ? config.onSubmit : null;
+        planModalBackdrop.hidden = false;
+        planModalName.focus();
+      }
+
+      function closePlanModal() {
+        if (!planModalBackdrop) return;
+        planModalBackdrop.hidden = true;
+        planModalSubmitHandler = null;
+      }
+
+      function editSavedPlan(plan) {
+        if (!plan) return;
+        var amount = Number(plan && plan.inputs && plan.inputs.loanAmount) || 0;
+        var rate = Number(plan && plan.inputs && plan.inputs.interestRate) || 0;
+        var months = Number(plan && plan.inputs && plan.inputs.months) || 0;
+        var payment = Number(plan && plan.results && plan.results.monthlyPayment) || 0;
+        var readonlyText =
+          "ข้อมูลคำนวณจะถูกล็อก: " +
+          formatMoneyCell(amount) +
+          " บาท · ดอกเบี้ย " +
+          (Number.isFinite(rate) ? rate.toFixed(2) : "0.00") +
+          "% · " +
+          toYearsPhrase(months) +
+          " · ค่างวด " +
+          formatBaht(payment);
+        openPlanModal({
+          title: "แก้ไขแผนที่บันทึกไว้",
+          submitLabel: "บันทึกการแก้ไข",
+          name: plan.name || "",
+          tag: plan.tag || "",
+          note: plan.note || "",
+          readonlyText: readonlyText,
+          onSubmit: function (payload) {
+            var plans = readSavedPlans();
+            var found = false;
+            plans = plans.map(function (item) {
+              if (item.id !== plan.id) return item;
+              found = true;
+              return {
+                id: item.id,
+                name: payload.name,
+                savedAt: item.savedAt,
+                inputs: item.inputs,
+                results: item.results,
+                tag: payload.tag,
+                note: payload.note,
+              };
+            });
+            if (!found) return;
+            if (!writeSavedPlans(plans)) {
+              alert("ไม่สามารถบันทึกการแก้ไขได้");
+              return;
+            }
+            closePlanModal();
+            renderSavedPlans();
+            if (!planCompareSection.hidden && selectedComparePlanIds.length === 2) {
+              renderPlanCompareSection();
+            }
+          },
+        });
+      }
+
+      function updateCompareActionUI() {
+        var count = selectedComparePlanIds.length;
+        if (!btnOpenPlanCompare || !savedCompareHint) return;
+        btnOpenPlanCompare.disabled = count !== 2;
+        savedCompareHint.textContent = count === 2 ? "พร้อมแล้ว! กดปุ่มเพื่อเปรียบเทียบ" : "เลือก 2 แผนเพื่อเปรียบเทียบ";
+      }
+
+      function normalizeValueByType(value, type) {
+        if (type === "percent") return Number(value);
+        return Number(value);
+      }
+
+      function compareCellState(a, b) {
+        if (!Number.isFinite(a) || !Number.isFinite(b)) return "equal";
+        if (Math.abs(a - b) < 1e-9) return "equal";
+        return a < b ? "a" : "b";
+      }
+
+      function renderPlanCompareSection() {
+        if (!planCompareBody || selectedComparePlanIds.length !== 2) return;
+        var plans = readSavedPlans();
+        var planA = plans.find(function (p) {
+          return p.id === selectedComparePlanIds[0];
+        });
+        var planB = plans.find(function (p) {
+          return p.id === selectedComparePlanIds[1];
+        });
+        if (!planA || !planB) return;
+
+        function setCompareHead(el, titlePrefix, plan) {
+          if (!el) return;
+          el.textContent = "";
+          var wrap = document.createElement("div");
+          wrap.className = "plan-compare-head-wrap";
+          var main = document.createElement("span");
+          main.className = "plan-compare-head-main";
+          main.textContent = titlePrefix + ": " + (plan.name || "ไม่มีชื่อ");
+          var date = document.createElement("span");
+          date.className = "plan-compare-head-date";
+          date.textContent = formatDateTimeTH(plan.savedAt);
+          wrap.appendChild(main);
+          wrap.appendChild(date);
+          if (plan.tag) {
+            var badge = document.createElement("span");
+            badge.className = "plan-compare-head-tag";
+            badge.textContent = plan.tag;
+            wrap.appendChild(badge);
+          }
+          el.appendChild(wrap);
+        }
+
+        var dataRows = [
+          {
+            label: "จำนวนเงินกู้ (บาท)",
+            type: "money",
+            a: Number(planA.inputs && planA.inputs.loanAmount) || 0,
+            b: Number(planB.inputs && planB.inputs.loanAmount) || 0,
+          },
+          {
+            label: "อัตราดอกเบี้ย (%)",
+            type: "percent",
+            a: Number(planA.inputs && planA.inputs.interestRate) || 0,
+            b: Number(planB.inputs && planB.inputs.interestRate) || 0,
+          },
+          {
+            label: "ระยะเวลา (ปี)",
+            type: "years",
+            a: (Number(planA.inputs && planA.inputs.months) || 0) / 12,
+            b: (Number(planB.inputs && planB.inputs.months) || 0) / 12,
+          },
+          {
+            label: "โปะต้นเพิ่ม/เดือน (บาท)",
+            type: "money",
+            a: Number(planA.inputs && planA.inputs.extraPayment) || 0,
+            b: Number(planB.inputs && planB.inputs.extraPayment) || 0,
+          },
+          {
+            label: "ค่างวด/เดือน (บาท)",
+            type: "money",
+            a: Number(planA.results && planA.results.monthlyPayment) || 0,
+            b: Number(planB.results && planB.results.monthlyPayment) || 0,
+          },
+          {
+            label: "ดอกเบี้ยรวมทั้งหมด (บาท)",
+            type: "money",
+            a: Number(planA.results && planA.results.totalInterest) || 0,
+            b: Number(planB.results && planB.results.totalInterest) || 0,
+          },
+          {
+            label: "ยอดรวมที่ต้องจ่าย (บาท)",
+            type: "money",
+            a: Number(planA.results && planA.results.totalPayment) || 0,
+            b: Number(planB.results && planB.results.totalPayment) || 0,
+          },
+        ];
+
+        setCompareHead(planCompareHeadA, "แผน A", planA);
+        setCompareHead(planCompareHeadB, "แผน B", planB);
+        planCompareBody.textContent = "";
+
+        dataRows.forEach(function (row) {
+          var tr = document.createElement("tr");
+          var tdLabel = document.createElement("td");
+          var tdA = document.createElement("td");
+          var tdB = document.createElement("td");
+          var winner = compareCellState(normalizeValueByType(row.a, row.type), normalizeValueByType(row.b, row.type));
+
+          tdLabel.textContent = row.label;
+          if (row.type === "percent") {
+            tdA.textContent = (Number.isFinite(row.a) ? row.a.toFixed(2) : "0.00") + (winner === "a" ? " ✓" : "");
+            tdB.textContent = (Number.isFinite(row.b) ? row.b.toFixed(2) : "0.00") + (winner === "b" ? " ✓" : "");
+          } else if (row.type === "years") {
+            tdA.textContent = (Number.isFinite(row.a) ? row.a.toFixed(1) : "0.0") + (winner === "a" ? " ✓" : "");
+            tdB.textContent = (Number.isFinite(row.b) ? row.b.toFixed(1) : "0.0") + (winner === "b" ? " ✓" : "");
+          } else {
+            tdA.textContent = formatMoneyCell(row.a) + (winner === "a" ? " ✓" : "");
+            tdB.textContent = formatMoneyCell(row.b) + (winner === "b" ? " ✓" : "");
+          }
+
+          if (winner === "a") tdA.classList.add("plan-compare-better");
+          if (winner === "b") tdB.classList.add("plan-compare-better");
+
+          tr.appendChild(tdLabel);
+          tr.appendChild(tdA);
+          tr.appendChild(tdB);
+          planCompareBody.appendChild(tr);
+        });
+
+        var trNote = document.createElement("tr");
+        var tdNoteLabel = document.createElement("td");
+        var tdNoteA = document.createElement("td");
+        var tdNoteB = document.createElement("td");
+        tdNoteLabel.textContent = "📝 หมายเหตุ";
+        tdNoteA.className = "plan-compare-note-cell";
+        tdNoteB.className = "plan-compare-note-cell";
+        tdNoteA.textContent = planA.note ? planA.note : "—";
+        tdNoteB.textContent = planB.note ? planB.note : "—";
+        trNote.appendChild(tdNoteLabel);
+        trNote.appendChild(tdNoteA);
+        trNote.appendChild(tdNoteB);
+        planCompareBody.appendChild(trNote);
+
+        var totalA = Number(planA.results && planA.results.totalPayment) || 0;
+        var totalB = Number(planB.results && planB.results.totalPayment) || 0;
+        var diff = Math.abs(totalA - totalB);
+        if (Math.abs(totalA - totalB) < 1e-9) {
+          planCompareConclusion.textContent = "💡 ข้อสรุป: ทั้งสองแผนมียอดรวมที่ต้องจ่ายเท่ากัน";
+        } else {
+          var winnerPlan = totalA < totalB ? planA : planB;
+          planCompareConclusion.textContent =
+            "💡 ข้อสรุป: " + (winnerPlan.name || "ไม่มีชื่อ") + " ประหยัดกว่า " + formatMoneyCell(diff) + " บาท";
+        }
+
+        planCompareSection.hidden = false;
+      }
+
+      function clearPlanCompareSelection() {
+        selectedComparePlanIds = [];
+        if (planCompareSection) {
+          planCompareSection.hidden = true;
+        }
+        renderSavedPlans();
+      }
+
+      function refreshRefinancePlanSelect() {
+        if (!refinanceSavedSelect) return;
+        var prev = refinanceSavedSelect.value;
+        refinanceSavedSelect.textContent = "";
+        var opt0 = document.createElement("option");
+        opt0.value = "";
+        opt0.textContent = "— เลือกแผน —";
+        refinanceSavedSelect.appendChild(opt0);
+        var plans = readSavedPlans().sort(function (a, b) {
+          return (b.savedAt || 0) - (a.savedAt || 0);
+        });
+        plans.forEach(function (p) {
+          var o = document.createElement("option");
+          o.value = String(p.id);
+          var amt = Number(p.inputs && p.inputs.loanAmount) || 0;
+          o.textContent = (p.name || "ไม่มีชื่อ") + " · " + formatMoneyCell(amt) + " บาท";
+          refinanceSavedSelect.appendChild(o);
+        });
+        var found = false;
+        var i;
+        for (i = 0; i < refinanceSavedSelect.options.length; i++) {
+          if (refinanceSavedSelect.options[i].value === prev) {
+            found = true;
+            break;
+          }
+        }
+        if (found) refinanceSavedSelect.value = prev;
+      }
+
+      function refinanceWinner(contVal, refVal) {
+        if (!Number.isFinite(contVal) || !Number.isFinite(refVal)) return "tie";
+        if (Math.abs(contVal - refVal) < 1e-9) return "tie";
+        return contVal < refVal ? "cont" : "ref";
+      }
+
+      function appendRefinanceRow(label, leftText, rightText, winner) {
+        var tr = document.createElement("tr");
+        var td0 = document.createElement("td");
+        var tdC = document.createElement("td");
+        var tdR = document.createElement("td");
+        td0.textContent = label;
+        tdC.textContent = leftText;
+        tdR.textContent = rightText;
+        if (winner === "cont") tdC.classList.add("plan-compare-better");
+        if (winner === "ref") tdR.classList.add("plan-compare-better");
+        tr.appendChild(td0);
+        tr.appendChild(tdC);
+        tr.appendChild(tdR);
+        refinanceTbody.appendChild(tr);
+      }
+
+      function runRefinanceCalculation() {
+        if (!refinanceTbody || !refinanceResults || !refinanceSummary) return;
+
+        var principal = parseFloat(document.getElementById("ref-old-principal").value);
+        var oldAnnual = parseFloat(document.getElementById("ref-old-rate").value);
+        var contractMonths = parseInt(document.getElementById("ref-old-months").value, 10);
+        var paidMonths = parseInt(document.getElementById("ref-paid-months").value, 10);
+        var newAnnual = parseFloat(document.getElementById("ref-new-rate").value);
+        var newMonthsRaw = document.getElementById("ref-new-months").value;
+        var feeRaw = document.getElementById("ref-fee").value;
+
+        if (!Number.isFinite(principal) || principal <= 0) {
+          alert("กรุณากรอกจำนวนเงินกู้เดิมให้ถูกต้อง (มากกว่า 0)");
+          return;
+        }
+        if (!Number.isFinite(oldAnnual) || oldAnnual <= 0 || oldAnnual >= 30) {
+          alert("อัตราดอกเบี้ยเดิมต้องมากกว่า 0 และน้อยกว่า 30");
+          return;
+        }
+        if (!Number.isFinite(newAnnual) || newAnnual <= 0 || newAnnual >= 30) {
+          alert("อัตราดอกเบี้ยใหม่ต้องมากกว่า 0 และน้อยกว่า 30");
+          return;
+        }
+        if (!Number.isFinite(contractMonths) || contractMonths < 1 || contractMonths > 600) {
+          alert("กรุณากรอกระยะเวลาเดิมให้ถูกต้อง");
+          return;
+        }
+        if (!Number.isFinite(paidMonths) || paidMonths < 0) {
+          alert("กรุณากรอกจำนวนเดือนที่ผ่อนแล้วให้ถูกต้อง");
+          return;
+        }
+        if (paidMonths >= contractMonths) {
+          alert("ผ่อนมาแล้วต้องน้อยกว่าระยะเวลาเดิม");
+          return;
+        }
+
+        var fee = feeRaw === "" || feeRaw === null ? 0 : parseFloat(feeRaw);
+        if (!Number.isFinite(fee) || fee < 0) {
+          alert("กรุณากรอกค่าธรรมเนียมให้ถูกต้อง (ไม่ติดลบ)");
+          return;
+        }
+
+        var monthsLeft = contractMonths - paidMonths;
+        var newTermMonths =
+          newMonthsRaw === "" || newMonthsRaw === null
+            ? monthsLeft
+            : parseInt(newMonthsRaw, 10);
+        if (!Number.isFinite(newTermMonths) || newTermMonths < 1 || newTermMonths > 600) {
+          alert("ระยะเวลาใหม่ต้องมากกว่า 0");
+          return;
+        }
+
+        var monthlyOld = oldAnnual / 100 / 12;
+        var monthlyNew = newAnnual / 100 / 12;
+
+        var balance = remainingPrincipalAfterMonths(principal, monthlyOld, contractMonths, paidMonths);
+        if (!Number.isFinite(balance) || balance <= 0) {
+          alert("ไม่สามารถคำนวณเงินต้นคงเหลือได้ — กรุณาตรวจสอบตัวเลข");
+          return;
+        }
+
+        var paymentContinue = monthlyPaymentFor(principal, monthlyOld, contractMonths);
+        var rowsContinue = buildBaselineSchedule(balance, monthlyOld, monthsLeft, paymentContinue);
+        var interestContinue = sumScheduleInterest(rowsContinue);
+
+        var paymentRefi = monthlyPaymentFor(balance, monthlyNew, newTermMonths);
+        var rowsRefi = buildBaselineSchedule(balance, monthlyNew, newTermMonths, paymentRefi);
+        var interestRefi = sumScheduleInterest(rowsRefi);
+        var totalRefiCost = interestRefi + fee;
+
+        var savings = interestContinue - totalRefiCost;
+        var monthlySave = paymentContinue - paymentRefi;
+
+        var paybackLine;
+        var paybackMonthsForVerdict;
+        if (fee <= 1e-9) {
+          paybackLine = "ไม่มีค่าธรรมเนียม";
+          paybackMonthsForVerdict = 0;
+        } else if (monthlySave > 1e-6) {
+          var paybackMo = fee / monthlySave;
+          paybackMonthsForVerdict = paybackMo;
+          paybackLine =
+            "ประมาณ " +
+            paybackMo.toFixed(1) +
+            " เดือน (" +
+            formatMoneyCell(fee) +
+            " ÷ " +
+            formatMoneyCell(monthlySave) +
+            " บาท/เดือน)";
+        } else {
+          paybackLine = "ไม่คำนวณได้ — ค่างวดใหม่ไม่ต่ำกว่าค่างวดเดิม";
+          paybackMonthsForVerdict = Infinity;
+        }
+
+        var rateCompareText;
+        if (newAnnual < oldAnnual - 1e-9) {
+          rateCompareText = "ลดลง " + (oldAnnual - newAnnual).toFixed(1) + "%";
+        } else if (newAnnual > oldAnnual + 1e-9) {
+          rateCompareText = "สูงกว่าเดิม " + (newAnnual - oldAnnual).toFixed(1) + "%";
+        } else {
+          rateCompareText = "เท่าเดิม";
+        }
+
+        refinanceTbody.textContent = "";
+
+        appendRefinanceRow(
+          "เงินต้นคงเหลือ (บาท)",
+          formatMoneyCell(balance),
+          formatMoneyCell(balance),
+          "tie"
+        );
+
+        var wRate = refinanceWinner(oldAnnual, newAnnual);
+        appendRefinanceRow(
+          "อัตราดอกเบี้ย (%)",
+          oldAnnual.toFixed(2),
+          newAnnual.toFixed(2),
+          wRate === "tie" ? "tie" : wRate === "cont" ? "cont" : "ref"
+        );
+
+        appendRefinanceRow(
+          "ระยะเวลาที่เหลือ (เดือน)",
+          String(monthsLeft),
+          String(newTermMonths),
+          "none"
+        );
+
+        var wPay = refinanceWinner(paymentContinue, paymentRefi);
+        appendRefinanceRow(
+          "ค่างวด/เดือน (บาท)",
+          formatMoneyCell(paymentContinue),
+          formatMoneyCell(paymentRefi),
+          wPay === "tie" ? "tie" : wPay === "cont" ? "cont" : "ref"
+        );
+
+        var wInt = refinanceWinner(interestContinue, interestRefi);
+        appendRefinanceRow(
+          "ดอกเบี้ยรวมในอนาคต (บาท)",
+          formatMoneyCell(interestContinue),
+          formatMoneyCell(interestRefi),
+          wInt === "tie" ? "tie" : wInt === "cont" ? "cont" : "ref"
+        );
+
+        appendRefinanceRow(
+          "ค่าธรรมเนียม (บาท)",
+          formatMoneyCell(0),
+          formatMoneyCell(fee),
+          "none"
+        );
+
+        var wTot = refinanceWinner(interestContinue, totalRefiCost);
+        appendRefinanceRow(
+          "รวมค่าใช้จ่ายในอนาคต (บาท)",
+          formatMoneyCell(interestContinue),
+          formatMoneyCell(totalRefiCost),
+          wTot === "tie" ? "tie" : wTot === "cont" ? "cont" : "ref"
+        );
+
+        refinanceSummary.textContent = "";
+        refinanceSummary.hidden = false;
+        refinanceSummary.className = "refinance-summary";
+
+        var verdictClass = "is-tie";
+        var verdictTitle = "⚖️ ผลพอๆ กัน";
+        if (savings <= 1e-6) {
+          verdictClass = "is-lose";
+          verdictTitle = "🔴 ขาดทุน";
+        } else if (paybackMonthsForVerdict > monthsLeft) {
+          verdictClass = "is-lose";
+          verdictTitle = "⚠️ ไม่คุ้มแน่นอน - คืนทุนไม่ทันก่อนผ่อนหมด";
+        } else if (paybackMonthsForVerdict > 60) {
+          verdictClass = "is-lose";
+          verdictTitle = "⚠️ ไม่คุ้ม - คืนทุนนานเกิน 5 ปี";
+        } else if (paybackMonthsForVerdict > 24) {
+          verdictClass = "is-warn";
+          verdictTitle = "🟡 พอจะคุ้ม - ถ้าไม่ขายบ้าน/รีไฟอีก";
+        } else {
+          verdictClass = "is-win";
+          verdictTitle = "🎉 คุ้มมาก!";
+        }
+        refinanceSummary.classList.add(verdictClass);
+
+        var titleEl = document.createElement("p");
+        titleEl.className = "refinance-summary-title";
+        titleEl.textContent = verdictTitle;
+
+        var ul = document.createElement("ul");
+        ul.className = "refinance-summary-grid";
+        var liSave = document.createElement("li");
+        liSave.textContent = "💰 ประหยัดได้: " + formatMoneyCell(savings) + " บาท";
+        var liPayback = document.createElement("li");
+        liPayback.textContent = "📅 ระยะเวลาคืนทุน: " + paybackLine;
+        var liRate = document.createElement("li");
+        liRate.textContent = "📊 % ดอกเบี้ยที่ลดลง: " + rateCompareText;
+        ul.appendChild(liSave);
+        ul.appendChild(liPayback);
+        ul.appendChild(liRate);
+        refinanceSummary.appendChild(titleEl);
+        refinanceSummary.appendChild(ul);
+
+        var reasonEl = document.createElement("p");
+        reasonEl.className = "refinance-summary-reason";
+        if (savings <= 1e-6) {
+          reasonEl.textContent =
+            "ประหยัดสุทธิจากดอกเบี้ยไม่เป็นบวกเมื่อรวมค่าธรรมเนียม";
+        } else if (fee <= 1e-9) {
+          reasonEl.textContent =
+            "คืนทุนทันที (ไม่มีค่าธรรมเนียม) จากที่เหลือ " + monthsLeft + " เดือน";
+        } else if (!Number.isFinite(paybackMonthsForVerdict)) {
+          reasonEl.textContent =
+            "จากที่เหลือ " +
+            monthsLeft +
+            " เดือน — ไม่มีส่วนต่างงวดพอให้คืนค่าธรรมเนียมจากการลดค่างวด";
+        } else {
+          reasonEl.textContent =
+            "คืนทุน " +
+            Math.round(paybackMonthsForVerdict) +
+            " เดือน จากที่เหลือ " +
+            monthsLeft +
+            " เดือน";
+        }
+        refinanceSummary.appendChild(reasonEl);
+
+        refinanceResults.hidden = false;
+      }
+
+      function renderSavedPlans() {
+        if (!savedPlansListEl) return;
+        var plans = readSavedPlans().sort(function (a, b) {
+          return (b.savedAt || 0) - (a.savedAt || 0);
+        });
+        if (btnExportPlans) {
+          btnExportPlans.disabled = !plans.length;
+        }
+        savedPlansListEl.textContent = "";
+
+        if (!plans.length) {
+          var empty = document.createElement("p");
+          empty.className = "saved-plans-empty";
+          empty.textContent =
+            "ยังไม่มีแผนที่บันทึก — กดปุ่มบันทึกหลังคำนวณเพื่อเก็บแผนแรก";
+          savedPlansListEl.appendChild(empty);
+          refreshRefinancePlanSelect();
+          return;
+        }
+
+        var list = document.createElement("div");
+        list.className = "saved-plans-list";
+
+        plans.forEach(function (plan) {
+          var card = document.createElement("article");
+          card.className = "saved-plan-card";
+          var isSelected = selectedComparePlanIds.indexOf(plan.id) !== -1;
+          var disableUnchecked = selectedComparePlanIds.length >= 2 && !isSelected;
+          if (isSelected) card.classList.add("is-compare-selected");
+
+          var monthly = Number(plan && plan.results && plan.results.monthlyPayment) || 0;
+          var amount = Number(plan && plan.inputs && plan.inputs.loanAmount) || 0;
+          var rate = Number(plan && plan.inputs && plan.inputs.interestRate) || 0;
+          var months = Number(plan && plan.inputs && plan.inputs.months) || 0;
+
+          card.innerHTML =
+            '<label class="saved-plan-compare">' +
+            '<input type="checkbox" data-action="compare-select" />' +
+            "<span>เลือกเปรียบเทียบ</span>" +
+            "</label>" +
+            '<div class="saved-plan-title-row">' +
+            '<h3 class="saved-plan-name"></h3>' +
+            '<span class="saved-plan-tag" data-role="plan-tag" hidden></span>' +
+            "</div>" +
+            '<p class="saved-plan-date"></p>' +
+            '<p class="saved-plan-summary"></p>' +
+            '<p class="saved-plan-payment"></p>' +
+            '<p class="saved-plan-note" data-role="plan-note" hidden></p>' +
+            '<div class="saved-plan-actions">' +
+            '<button type="button" class="btn-plan" data-action="edit">✏️ แก้ไข</button>' +
+            '<button type="button" class="btn-plan" data-action="load">📥 โหลด</button>' +
+            '<button type="button" class="btn-plan" data-action="delete">🗑 ลบ</button>' +
+            "</div>";
+
+          card.querySelector(".saved-plan-name").textContent = plan.name || "ไม่มีชื่อ";
+          card.querySelector(".saved-plan-date").textContent = formatDateTimeTH(plan.savedAt);
+          card.querySelector(".saved-plan-summary").textContent =
+            "💰 " +
+            formatMoneyCell(amount) +
+            " บาท · ดอกเบี้ย " +
+            (Number.isFinite(rate) ? rate.toFixed(1) : "0.0") +
+            "% · " +
+            toYearsPhrase(months);
+          card.querySelector(".saved-plan-payment").textContent =
+            "ค่างวด/เดือน " + formatBaht(monthly);
+          var tagEl = card.querySelector('[data-role="plan-tag"]');
+          var noteEl = card.querySelector('[data-role="plan-note"]');
+          var normalizedTag = cleanTextInput(plan.tag || "", 30);
+          var normalizedNote = cleanTextInput(plan.note || "", 200);
+          if (normalizedTag) {
+            tagEl.hidden = false;
+            tagEl.textContent = normalizedTag;
+          }
+          if (normalizedNote) {
+            noteEl.hidden = false;
+            noteEl.textContent = "📝 " + normalizedNote;
+          }
+          var compareCheckbox = card.querySelector('[data-action="compare-select"]');
+          compareCheckbox.checked = isSelected;
+          compareCheckbox.disabled = disableUnchecked;
+          if (disableUnchecked) {
+            card.querySelector(".saved-plan-compare").classList.add("is-disabled");
+          }
+          compareCheckbox.addEventListener("change", function () {
+            var hasId = selectedComparePlanIds.indexOf(plan.id) !== -1;
+            if (compareCheckbox.checked) {
+              if (selectedComparePlanIds.length >= 2 && !hasId) {
+                compareCheckbox.checked = false;
+                return;
+              }
+              if (!hasId) selectedComparePlanIds.push(plan.id);
+            } else {
+              selectedComparePlanIds = selectedComparePlanIds.filter(function (id) {
+                return id !== plan.id;
+              });
+            }
+            if (selectedComparePlanIds.length !== 2 && planCompareSection) {
+              planCompareSection.hidden = true;
+            }
+            renderSavedPlans();
+          });
+
+          card.querySelector('[data-action="load"]').addEventListener("click", function () {
+            loadSavedPlan(plan);
+          });
+          card.querySelector('[data-action="edit"]').addEventListener("click", function () {
+            editSavedPlan(plan);
+          });
+          card.querySelector('[data-action="delete"]').addEventListener("click", function () {
+            deleteSavedPlan(plan);
+          });
+
+          list.appendChild(card);
+        });
+
+        savedPlansListEl.appendChild(list);
+        updateCompareActionUI();
+        refreshRefinancePlanSelect();
+      }
+
+      function saveCurrentPlan() {
+        if (!latestCalculation) return;
+
+        openPlanModal({
+          title: "บันทึกแผนที่คำนวณล่าสุด",
+          submitLabel: "บันทึก",
+          readonlyText: "",
+          onSubmit: function (payload) {
+            var plans = readSavedPlans();
+            if (plans.length >= MAX_SAVED_PLANS) {
+              alert("บันทึกได้สูงสุด 20 แผน กรุณาลบแผนเก่าก่อน");
+              return;
+            }
+            var entry = {
+              id: Date.now() + Math.random(),
+              name: payload.name,
+              savedAt: Date.now(),
+              inputs: latestCalculation.inputs,
+              results: latestCalculation.results,
+              tag: payload.tag,
+              note: payload.note,
+            };
+            plans.push(entry);
+            if (!writeSavedPlans(plans)) {
+              alert("ไม่สามารถบันทึกแผนได้");
+              return;
+            }
+            closePlanModal();
+            renderSavedPlans();
+          },
+        });
+      }
+
+      function loadSavedPlan(plan) {
+        if (!plan || !plan.inputs) return;
+        document.getElementById("principal").value = plan.inputs.loanAmount;
+        document.getElementById("annual-rate").value = plan.inputs.interestRate;
+        document.getElementById("months").value = plan.inputs.months;
+        document.getElementById("extra-prepay").value = plan.inputs.extraPayment;
+        form.requestSubmit();
+        if (resultsEl) {
+          resultsEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        alert("โหลดแผน " + (plan.name || "") + " แล้ว");
+      }
+
+      function deleteSavedPlan(plan) {
+        if (!plan) return;
+        var ok = confirm("ต้องการลบแผน " + (plan.name || "") + "?");
+        if (!ok) return;
+        var plans = readSavedPlans().filter(function (p) {
+          return p.id !== plan.id;
+        });
+        selectedComparePlanIds = selectedComparePlanIds.filter(function (id) {
+          return id !== plan.id;
+        });
+        if (selectedComparePlanIds.length !== 2 && planCompareSection) {
+          planCompareSection.hidden = true;
+        }
+        writeSavedPlans(plans);
+        renderSavedPlans();
+      }
+
+      async function exportPDF() {
+        if (typeof html2pdf === "undefined") {
+          alert("ไม่สามารถสร้าง PDF ได้: html2pdf ยังไม่พร้อมใช้งาน");
+          return;
+        }
+
+        var tempWrapper = null;
+        var oldLabel = btnPdf.textContent;
+        btnPdf.textContent = "กำลังสร้าง PDF...";
+        btnPdf.disabled = true;
+
+        try {
+          var main = document.querySelector(".wrap");
+          if (!main) throw new Error("ไม่พบ container หลักของแอป");
+
+          tempWrapper = main.cloneNode(true);
+          tempWrapper.classList.add("pdf-export-wrapper");
+          tempWrapper.style.position = "fixed";
+          tempWrapper.style.left = "-9999px";
+          tempWrapper.style.top = "0";
+          tempWrapper.style.width = "1080px";
+          tempWrapper.style.maxWidth = "1080px";
+          tempWrapper.style.padding = "20px";
+          tempWrapper.style.background = "#ffffff";
+          tempWrapper.style.color = "#000000";
+          tempWrapper.style.zIndex = "-1";
+          tempWrapper.style.opacity = "1";
+          tempWrapper.style.setProperty("--bg", "#ffffff");
+          tempWrapper.style.setProperty("--card", "#ffffff");
+          tempWrapper.style.setProperty("--text", "#000000");
+          tempWrapper.style.setProperty("--muted", "#334155");
+          tempWrapper.style.setProperty("--accent", "#1d4ed8");
+          tempWrapper.style.setProperty("--accent-dark", "#1e3a8a");
+          tempWrapper.style.setProperty("--border", "rgba(100, 170, 220, 0.35)");
+
+          removeNoPdfNodes(tempWrapper);
+
+          // === Customer + Date header block (replaces old dateTag) ===
+          var customerNameInput = document.getElementById("customer-name");
+          var customerNameValue = customerNameInput ? (customerNameInput.value || "").trim() : "";
+
+          var headerBlock = document.createElement("div");
+          headerBlock.style.cssText =
+            "margin:0 0 18px;padding:12px 18px;background:#f1f5f9;" +
+            "border:2px solid #1d4ed8;border-radius:10px;" +
+            "display:flex;justify-content:space-between;align-items:center;gap:16px";
+
+          var customerSide = document.createElement("div");
+          customerSide.style.cssText = "text-align:left;flex:1";
+          customerSide.innerHTML =
+            '<div style="font-size:10pt;color:#64748b;font-weight:500;margin-bottom:3pt">เอกสารสำหรับ:</div>' +
+            '<div style="font-size:15pt;font-weight:700;color:#1d4ed8">' +
+            (customerNameValue || "— (ไม่ระบุชื่อ)") +
+            "</div>";
+
+          var dateSide = document.createElement("div");
+          dateSide.style.cssText = "text-align:right";
+          dateSide.innerHTML =
+            '<div style="font-size:9pt;color:#64748b;font-weight:500">วันที่ออกเอกสาร</div>' +
+            '<div style="font-size:11pt;font-weight:600;color:#000;margin-top:2pt">' +
+            thaiPdfDatePhrase() +
+            "</div>";
+
+          headerBlock.appendChild(customerSide);
+          headerBlock.appendChild(dateSide);
+
+          var header = tempWrapper.querySelector("header");
+          if (header && header.parentNode) {
+            header.parentNode.insertBefore(headerBlock, header.nextSibling);
+          }
+
+          var title = tempWrapper.querySelector("header h1");
+          if (title) title.textContent = "รายงานการคำนวณสินเชื่อ";
+
+          forceVisible(tempWrapper.querySelector("#results"));
+          forceVisible(tempWrapper.querySelector("#charts-stack"));
+          forceVisible(tempWrapper.querySelector("#compare-block"));
+          forceVisible(tempWrapper.querySelector("#schedule-block"));
+
+          var prepayLiveHidden = prepayBox.hidden || prepayBox.hasAttribute("hidden");
+          var prepayInTemp = tempWrapper.querySelector("#prepay-box");
+          if (prepayInTemp) {
+            if (prepayLiveHidden) {
+              prepayInTemp.parentNode.removeChild(prepayInTemp);
+            } else {
+              forceVisible(prepayInTemp);
+            }
+          }
+
+          var scheduleScrollTemp = tempWrapper.querySelector("#schedule-scroll");
+          if (scheduleScrollTemp) {
+            scheduleScrollTemp.style.maxHeight = "none";
+            scheduleScrollTemp.style.overflow = "visible";
+            scheduleScrollTemp.classList.remove("is-hidden");
+          }
+
+          var compareScrollTemp = tempWrapper.querySelector(".compare-scroll");
+          if (compareScrollTemp) {
+            compareScrollTemp.style.overflow = "visible";
+            compareScrollTemp.style.maxHeight = "none";
+          }
+
+          var scheduleBlockTemp = tempWrapper.querySelector("#schedule-block");
+          if (scheduleBlockTemp) {
+            scheduleBlockTemp.style.pageBreakBefore = "always";
+          }
+
+          var livePie = document.getElementById("chart-pie");
+          var liveLine = document.getElementById("chart-line");
+          var pieTemp = tempWrapper.querySelector("#chart-pie");
+          var lineTemp = tempWrapper.querySelector("#chart-line");
+          if (livePie && pieTemp) {
+            var pieImg = document.createElement("img");
+            pieImg.src = livePie.toDataURL("image/png");
+            pieImg.style.width = "100%";
+            pieImg.style.height = "auto";
+            pieImg.style.display = "block";
+            pieTemp.parentNode.replaceChild(pieImg, pieTemp);
+          }
+          if (liveLine && lineTemp) {
+            var lineImg = document.createElement("img");
+            lineImg.src = liveLine.toDataURL("image/png");
+            lineImg.style.width = "100%";
+            lineImg.style.height = "auto";
+            lineImg.style.display = "block";
+            lineTemp.parentNode.replaceChild(lineImg, lineTemp);
+          }
+          canvasToImgIn(tempWrapper);
+
+          document.body.appendChild(tempWrapper);
+          await new Promise(function (r) {
+            setTimeout(r, 300);
+          });
+
+          console.log("PDF debug: tempWrapper.innerHTML.length =", tempWrapper.innerHTML.length);
+          console.log(
+            "PDF debug: img count =",
+            tempWrapper.querySelectorAll("img").length,
+            "canvas count =",
+            tempWrapper.querySelectorAll("canvas").length
+          );
+          console.log(
+            "PDF debug: table rows =",
+            tempWrapper.querySelectorAll("tr").length
+          );
+
+          var options = {
+            margin: [10, 10, 10, 10],
+            filename: "loan-calculation-" + pdfFilenameStamp() + ".pdf",
+            image: { type: "jpeg", quality: 0.95 },
+            html2canvas: {
+              scale: 2,
+              useCORS: true,
+              backgroundColor: "#ffffff",
+              logging: true,
+            },
+            jsPDF: {
+              unit: "mm",
+              format: "a4",
+              orientation: "portrait",
+            },
+            pagebreak: { mode: ["css", "legacy"] },
+          };
+
+          await html2pdf().from(tempWrapper).set(options).save();
+        } catch (error) {
+          console.error("PDF export error:", error);
+          alert("ไม่สามารถสร้าง PDF ได้: " + error.message);
+        } finally {
+          if (tempWrapper && tempWrapper.parentNode) {
+            tempWrapper.parentNode.removeChild(tempWrapper);
+          }
+          btnPdf.textContent = "📄 ดาวน์โหลด PDF";
+          btnPdf.disabled = false;
+          if (oldLabel && oldLabel !== "กำลังสร้าง PDF...") {
+            btnPdf.textContent = "📄 ดาวน์โหลด PDF";
+          }
+        }
+      }
+
+      function destroyCharts() {
+        if (pieChartRef) {
+          pieChartRef.destroy();
+          pieChartRef = null;
+        }
+        if (lineChartRef) {
+          lineChartRef.destroy();
+          lineChartRef = null;
+        }
+      }
+
+      /** จัดแนวยอดคงเหลือแบบโปะให้ความยาวเท่าแผน baseline (เกินช่วงเป็น null) */
+      function alignPrepayBalances(baselineRows, prepayRows) {
+        var n = baselineRows.length;
+        var out = [];
+        var i;
+        for (i = 0; i < n; i++) {
+          out.push(i < prepayRows.length ? prepayRows[i].balanceRemaining : null);
+        }
+        return out;
+      }
+
+      /** ไม่เรียก destroy —ใช้ร่วมกับ drawCharts และสลับธีม */
+      function buildChartsFromSeed() {
+        if (!chartSeed || typeof Chart === "undefined") return;
+
+        var principal = chartSeed.principal;
+        var totalInterest = chartSeed.totalInterest;
+        var scheduleRows = chartSeed.scheduleRows;
+        var baselineRows = chartSeed.baselineRows;
+        var extraPrepay = chartSeed.extraPrepay;
+
+        var fg = isDarkTheme() ? "#e2e8f0" : "#475569";
+        var grid = isDarkTheme() ? "rgba(148,163,184,0.22)" : "rgba(100,116,139,0.18)";
+        var pieStroke = isDarkTheme() ? "#1e293b" : "#ffffff";
+
+        Chart.defaults.color = fg;
+
+        var pieCtx = document.getElementById("chart-pie");
+        var lineCtx = document.getElementById("chart-line");
+        if (!pieCtx || !lineCtx) return;
+
+        pieChartRef = new Chart(pieCtx, {
+          type: "pie",
+          data: {
+            labels: ["เงินต้น", "ดอกเบี้ยรวม"],
+            datasets: [
+              {
+                data: [principal, totalInterest],
+                backgroundColor: ["#2563eb", "#ef4444"],
+                borderColor: pieStroke,
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  color: fg,
+                  padding: 14,
+                  usePointStyle: true,
+                  generateLabels: function (chart) {
+                    var ds = chart.data.datasets[0];
+                    var lbls = chart.data.labels || [];
+                    if (!lbls.length || !ds) return [];
+                    var total = ds.data.reduce(function (a, b) {
+                      return a + b;
+                    }, 0);
+                    return lbls.map(function (label, i) {
+                      var val = ds.data[i];
+                      var pct = total > 0 ? ((val / total) * 100).toFixed(1) : "0.0";
+                      var bg = Array.isArray(ds.backgroundColor)
+                        ? ds.backgroundColor[i]
+                        : ds.backgroundColor;
+                      return {
+                        text:
+                          label + " " + pct + "% (" + formatMoneyCell(val) + " บาท)",
+                        fillStyle: bg,
+                        strokeStyle: bg,
+                        lineWidth: 0,
+                        hidden: false,
+                        index: i,
+                        datasetIndex: 0,
+                      };
+                    });
+                  },
+                },
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (ctx) {
+                    var val = ctx.raw;
+                    var tot = ctx.dataset.data.reduce(function (a, b) {
+                      return a + b;
+                    }, 0);
+                    var pct = tot > 0 ? ((val / tot) * 100).toFixed(1) : "0.0";
+                    return (
+                      ctx.label +
+                      ": " +
+                      formatMoneyCell(val) +
+                      " บาท (" +
+                      pct +
+                      "%)"
+                    );
+                  },
+                },
+              },
+            },
+          },
+        });
+
+        var labels = baselineRows.map(function (_r, idx) {
+          return String(idx + 1);
+        });
+
+        var datasets;
+        if (extraPrepay > 0) {
+          datasets = [
+            {
+              label: "ไม่โปะต้น",
+              data: baselineRows.map(function (r) {
+                return r.balanceRemaining;
+              }),
+              borderColor: isDarkTheme() ? "#94a3b8" : "#64748b",
+              backgroundColor: isDarkTheme()
+                ? "rgba(148,163,184,0.15)"
+                : "rgba(100,116,139,0.12)",
+              fill: true,
+              tension: 0.35,
+              pointRadius: 0,
+              borderWidth: 2,
+              spanGaps: false,
+            },
+            {
+              label: "โปะต้นตามที่กำหนด",
+              data: alignPrepayBalances(baselineRows, scheduleRows),
+              borderColor: isDarkTheme() ? "#34d399" : "#16a34a",
+              backgroundColor: isDarkTheme()
+                ? "rgba(52,211,153,0.18)"
+                : "rgba(34,197,94,0.14)",
+              fill: true,
+              tension: 0.35,
+              pointRadius: 0,
+              borderWidth: 2,
+              spanGaps: false,
+            },
+          ];
+        } else {
+          datasets = [
+            {
+              label: "เงินต้นคงเหลือ",
+              data: scheduleRows.map(function (r) {
+                return r.balanceRemaining;
+              }),
+              borderColor: isDarkTheme() ? "#60a5fa" : "#2563eb",
+              backgroundColor: isDarkTheme()
+                ? "rgba(96,165,250,0.15)"
+                : "rgba(37,99,235,0.12)",
+              fill: true,
+              tension: 0.35,
+              pointRadius: 0,
+              borderWidth: 2,
+            },
+          ];
+        }
+
+        lineChartRef = new Chart(lineCtx, {
+          type: "line",
+          data: {
+            labels: labels,
+            datasets: datasets,
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: "index", intersect: false },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "เดือนที่",
+                  color: fg,
+                },
+                ticks: { color: fg },
+                grid: { color: grid },
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: "เงินต้นคงเหลือ (บาท)",
+                  color: fg,
+                },
+                ticks: {
+                  color: fg,
+                  callback: function (value) {
+                    return formatMoneyCell(value);
+                  },
+                },
+                grid: { color: grid },
+              },
+            },
+            plugins: {
+              legend: {
+                labels: { color: fg, padding: 12 },
+              },
+              tooltip: {
+                callbacks: {
+                  title: function (items) {
+                    return "เดือนที่ " + (items.length ? items[0].label : "");
+                  },
+                  label: function (ctx) {
+                    if (ctx.parsed.y === null || ctx.parsed.y === undefined)
+                      return ctx.dataset.label + ": —";
+                    return (
+                      ctx.dataset.label + ": " + formatMoneyCell(ctx.parsed.y) + " บาท"
+                    );
+                  },
+                },
+              },
+            },
+          },
+        });
+      }
+
+      function drawCharts(principal, totalInterest, scheduleRows, baselineRows, extraPrepay) {
+        chartSeed = {
+          principal: principal,
+          totalInterest: totalInterest,
+          scheduleRows: scheduleRows,
+          baselineRows: baselineRows,
+          extraPrepay: extraPrepay,
+        };
+        destroyCharts();
+        buildChartsFromSeed();
+      }
+
+      function applyThemeCharts() {
+        if (!chartSeed) return;
+        destroyCharts();
+        buildChartsFromSeed();
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", function () {
+          document.body.classList.toggle("theme-dark");
+          try {
+            localStorage.setItem(
+              THEME_KEY,
+              document.body.classList.contains("theme-dark") ? "dark" : "light"
+            );
+          } catch (eIgnore) {}
+          applyThemeCharts();
+        });
+      }
+
+      function durationPhrase(totalMonths) {
+        var y = Math.floor(totalMonths / 12);
+        var mo = totalMonths % 12;
+        return totalMonths + " เดือน (" + y + " ปี " + mo + " เดือน)";
+      }
+
+      function sumScheduleInterest(rows) {
+        var s = 0;
+        var i;
+        for (i = 0; i < rows.length; i++) s += rows[i].interest;
+        return s;
+      }
+
+      function sumSchedulePayment(rows) {
+        var s = 0;
+        var i;
+        for (i = 0; i < rows.length; i++) s += rows[i].payment;
+        return s;
+      }
+
+      /** เงินต้นคงเหลือหลังผ่อนไป paidMonths งวด (ดอกเบี้ยคงที่ / ลดต้นลดดอก) */
+      function remainingPrincipalAfterMonths(principal, monthlyRate, contractMonths, paidMonths) {
+        if (!Number.isFinite(principal) || principal <= 0) return NaN;
+        if (!Number.isFinite(contractMonths) || contractMonths < 1) return NaN;
+        if (!Number.isFinite(paidMonths) || paidMonths < 0 || paidMonths > contractMonths) {
+          return NaN;
+        }
+        if (paidMonths === 0) return principal;
+        if (paidMonths === contractMonths) return 0;
+        if (monthlyRate === 0) {
+          return (principal * (contractMonths - paidMonths)) / contractMonths;
+        }
+        var powN = Math.pow(1 + monthlyRate, contractMonths);
+        var powK = Math.pow(1 + monthlyRate, paidMonths);
+        return (principal * (powN - powK)) / (powN - 1);
+      }
+
+      /** ค่างวดผ่อนคงที่ — ใช้ร่วมกับเปรียบเทียบหลายแผน */
+      function monthlyPaymentFor(principal, monthlyRate, contractMonths) {
+        if (!Number.isFinite(contractMonths) || contractMonths < 1) return NaN;
+        if (monthlyRate === 0) return principal / contractMonths;
+        var pow = Math.pow(1 + monthlyRate, contractMonths);
+        return (principal * monthlyRate * pow) / (pow - 1);
+      }
+
+      function planMetrics(principal, monthlyRate, years) {
+        var n = years * 12;
+        var pmt = monthlyPaymentFor(principal, monthlyRate, n);
+        var rows = buildBaselineSchedule(principal, monthlyRate, n, pmt);
+        return {
+          years: years,
+          months: n,
+          payment: pmt,
+          totalInterest: sumScheduleInterest(rows),
+          totalPaid: sumSchedulePayment(rows),
+        };
+      }
+
+      function renderComparePlans(principal, monthlyRate, userMonths) {
+        var plans = COMPARE_TERM_YEARS.map(function (y) {
+          return planMetrics(principal, monthlyRate, y);
+        });
+        var int30 = plans[plans.length - 1].totalInterest;
+        var bestIdx = 0;
+        var i;
+        for (i = 1; i < plans.length; i++) {
+          if (plans[i].totalInterest < plans[bestIdx].totalInterest - 1e-9) bestIdx = i;
+        }
+
+        var tbody = document.getElementById("compare-body");
+        tbody.textContent = "";
+
+        for (i = 0; i < plans.length; i++) {
+          var pl = plans[i];
+          var tr = document.createElement("tr");
+          if (userMonths === pl.months) tr.classList.add("is-user-term");
+
+          var tdTerm = document.createElement("td");
+          tdTerm.textContent = (i === bestIdx ? "⭐ " : "") + pl.years + " ปี";
+
+          var tdPay = document.createElement("td");
+          tdPay.textContent = formatMoneyCell(pl.payment);
+
+          var tdInt = document.createElement("td");
+          tdInt.textContent = formatMoneyCell(pl.totalInterest);
+
+          var tdTot = document.createElement("td");
+          tdTot.textContent = formatMoneyCell(pl.totalPaid);
+
+          var tdCmp = document.createElement("td");
+          if (pl.years === 30) {
+            tdCmp.innerHTML = '<span class="compare-dash">—</span>';
+          } else {
+            var sav = int30 - pl.totalInterest;
+            if (sav > 1e-6) {
+              tdCmp.innerHTML =
+                '<span class="compare-save">ประหยัด ' + formatBaht(sav) + "</span>";
+            } else {
+              tdCmp.innerHTML = '<span class="compare-dash">—</span>';
+            }
+          }
+
+          tr.appendChild(tdTerm);
+          tr.appendChild(tdPay);
+          tr.appendChild(tdInt);
+          tr.appendChild(tdTot);
+          tr.appendChild(tdCmp);
+          tbody.appendChild(tr);
+        }
+
+        var p10 = plans[0];
+        var p15 = plans[1];
+        var p30 = plans[4];
+        var sav10 = Math.max(0, p30.totalInterest - p10.totalInterest);
+        var sav15 = Math.max(0, p30.totalInterest - p15.totalInterest);
+        var diffPay1030 = p10.payment - p30.payment;
+
+        document.getElementById("compare-tip-10").textContent =
+          "💡 ผ่อน 10 ปี ประหยัดดอกเบี้ยกว่า 30 ปี ถึง " +
+          formatBaht(sav10) +
+          " แต่ค่างวดสูงกว่า " +
+          formatMoneyCell(diffPay1030) +
+          " บาท/เดือน";
+
+        document.getElementById("compare-tip-15").textContent =
+          "💡 ผ่อน 15 ปี เป็นจุดสมดุลที่ดี: ค่างวด " +
+          formatMoneyCell(p15.payment) +
+          " บาท/เดือน ประหยัดดอกเบี้ย " +
+          formatBaht(sav15);
+      }
+
+      /** แผนเดิมไม่โปะ — ใช้เปรียบเทียบดอกเบี้ยและระยะเวลา */
+      function buildBaselineSchedule(principal, monthlyRate, contractMonths, monthlyPayment) {
+        var rows = [];
+        var balance = principal;
+        var m;
+
+        if (monthlyRate === 0) {
+          var pmt = principal / contractMonths;
+          for (m = 1; m <= contractMonths; m++) {
+            var prin0 = pmt;
+            var int0 = 0;
+            var pay0 = prin0;
+            balance -= prin0;
+            if (m === contractMonths) balance = 0;
+            rows.push({
+              period: m,
+              principalPaid: prin0,
+              interest: int0,
+              payment: pay0,
+              prepayExtra: 0,
+              balanceRemaining: balance,
+            });
+          }
+          return rows;
+        }
+
+        for (m = 1; m <= contractMonths; m++) {
+          var interest = balance * monthlyRate;
+          var principalPaid;
+          var payment;
+          if (m === contractMonths) {
+            principalPaid = balance;
+            payment = principalPaid + interest;
+            balance = 0;
+          } else {
+            payment = monthlyPayment;
+            principalPaid = payment - interest;
+            balance -= principalPaid;
+          }
+          rows.push({
+            period: m,
+            principalPaid: principalPaid,
+            interest: interest,
+            payment: payment,
+            prepayExtra: 0,
+            balanceRemaining: balance,
+          });
+        }
+        return rows;
+      }
+
+      /**
+       * จำลองโปะต้น: จ่ายดอก + เงินต้นตามค่างวดคงที่ แล้วหักโปะเพิ่มจากยอดคงเหลือ
+       */
+      function buildScheduleWithPrepay(principal, monthlyRate, contractMonths, monthlyPayment, extraMonthly) {
+        var rows = [];
+        var balance = principal;
+        var period = 1;
+        var extra = Math.max(0, extraMonthly);
+        var maxIter = Math.max(contractMonths * 4 + 48, 3600);
+        var EPS = 1e-8;
+
+        while (balance > EPS && period <= maxIter) {
+          var interest = balance * monthlyRate;
+          var rawPrincipal = monthlyPayment - interest;
+          var principalScheduled = Math.min(Math.max(0, rawPrincipal), balance);
+          balance -= principalScheduled;
+
+          var prepay = Math.min(extra, Math.max(0, balance));
+          balance -= prepay;
+
+          var reduction = principalScheduled + prepay;
+          if (reduction < EPS && balance > EPS) {
+            return { rows: rows, ok: false };
+          }
+
+          if (balance < EPS) balance = 0;
+
+          rows.push({
+            period: period,
+            principalPaid: principalScheduled,
+            interest: interest,
+            payment: interest + principalScheduled + prepay,
+            prepayExtra: prepay,
+            balanceRemaining: balance,
+          });
+          period++;
+        }
+
+        if (balance > 1e-4) {
+          return { rows: rows, ok: false };
+        }
+
+        return { rows: rows, ok: true };
+      }
+
+      function renderSchedule(rows) {
+        var frag = document.createDocumentFragment();
+        var i;
+        for (i = 0; i < rows.length; i++) {
+          var r = rows[i];
+          var tr = document.createElement("tr");
+          tr.innerHTML =
+            "<td>" +
+            r.period +
+            "</td><td>" +
+            formatMoneyCell(r.principalPaid) +
+            "</td><td>" +
+            formatMoneyCell(r.interest) +
+            "</td><td>" +
+            formatMoneyCell(r.payment) +
+            "</td><td>" +
+            formatMoneyCell(r.prepayExtra) +
+            "</td><td>" +
+            formatMoneyCell(r.balanceRemaining) +
+            "</td>";
+          frag.appendChild(tr);
+        }
+        scheduleBody.textContent = "";
+        scheduleBody.appendChild(frag);
+      }
+
+      function setScheduleVisible(showTable) {
+        scheduleScroll.classList.toggle("is-hidden", !showTable);
+        toggleScheduleBtn.textContent = showTable ? "ซ่อนตารางผ่อน" : "แสดงตารางผ่อน";
+        toggleScheduleBtn.setAttribute("aria-expanded", showTable ? "true" : "false");
+      }
+
+      toggleScheduleBtn.addEventListener("click", function () {
+        var hidden = scheduleScroll.classList.contains("is-hidden");
+        setScheduleVisible(hidden);
+      });
+
+      function showError(msg) {
+        errorEl.textContent = msg;
+        errorEl.classList.add("visible");
+        resultsEl.classList.remove("visible");
+        destroyCharts();
+        chartSeed = null;
+        chartsStack.hidden = true;
+        scheduleBlock.hidden = true;
+        prepayBox.hidden = true;
+        compareBlock.hidden = true;
+        latestCalculation = null;
+        if (btnSavePlan) {
+          btnSavePlan.hidden = true;
+        }
+        if (btnPdf) {
+          btnPdf.hidden = true;
+          btnPdf.disabled = true;
+          btnPdf.textContent = "📄 ดาวน์โหลด PDF";
+        }
+      }
+
+      function hideError() {
+        errorEl.classList.remove("visible");
+        errorEl.textContent = "";
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        hideError();
+
+        var principal = parseFloat(document.getElementById("principal").value);
+        var annualPercent = parseFloat(document.getElementById("annual-rate").value);
+        var months = parseInt(document.getElementById("months").value, 10);
+        var extraRaw = document.getElementById("extra-prepay").value;
+        var extraPrepay = extraRaw === "" || extraRaw === null ? 0 : parseFloat(extraRaw);
+
+        if (!Number.isFinite(principal) || principal <= 0) {
+          showError("กรุณากรอกจำนวนเงินกู้ให้ถูกต้อง (มากกว่า 0)");
+          return;
+        }
+        if (!Number.isFinite(annualPercent) || annualPercent < 0 || annualPercent > 100) {
+          showError("กรุณากรอกอัตราดอกเบี้ยต่อปีให้ถูกต้อง (0–100)");
+          return;
+        }
+        if (!Number.isFinite(months) || months < 1 || months > 600) {
+          showError("กรุณากรอกระยะเวลาผ่อนเป็นจำนวนเดือน (1–600)");
+          return;
+        }
+        if (!Number.isFinite(extraPrepay) || extraPrepay < 0) {
+          showError("กรุณากรอกโปะต้นเพิ่มต่อเดือนให้ถูกต้อง (ไม่ติดลบ)");
+          return;
+        }
+
+        var monthlyRate = annualPercent / 100 / 12;
+        var monthlyPayment = monthlyPaymentFor(principal, monthlyRate, months);
+
+        var prepayResult = buildScheduleWithPrepay(principal, monthlyRate, months, monthlyPayment, extraPrepay);
+        if (!prepayResult.ok) {
+          showError("ไม่สามารถปิดยอดได้ด้วยค่างวดนี้ (ดอกเบี้ยต่อเดือนอาจสูงกว่าค่างวด)");
+          return;
+        }
+
+        var schedule = prepayResult.rows;
+        var baselineRows = buildBaselineSchedule(principal, monthlyRate, months, monthlyPayment);
+        var baselineInterest = sumScheduleInterest(baselineRows);
+
+        var sumPay = sumSchedulePayment(schedule);
+        var sumInt = sumScheduleInterest(schedule);
+
+        latestCalculation = {
+          inputs: {
+            loanAmount: principal,
+            interestRate: annualPercent,
+            months: months,
+            extraPayment: extraPrepay,
+          },
+          results: {
+            monthlyPayment: monthlyPayment,
+            totalInterest: sumInt,
+            totalPayment: sumPay,
+          },
+        };
+
+        document.getElementById("out-payment").textContent = formatBaht(monthlyPayment);
+        document.getElementById("out-interest").textContent = formatBaht(sumInt);
+        document.getElementById("out-total").textContent = formatBaht(sumPay);
+
+        if (extraPrepay > 0) {
+          var actualMonths = schedule.length;
+          var savedInterest = Math.max(0, baselineInterest - sumInt);
+          var faster = Math.max(0, months - actualMonths);
+
+          document.getElementById("prepay-duration").innerHTML =
+            durationPhrase(actualMonths) +
+            '<span class="prepay-sub">เปรียบเทียบกับแผนเดิม ' +
+            durationPhrase(months) +
+            "</span>";
+
+          document.getElementById("prepay-interest-actual").textContent = formatBaht(sumInt);
+          document.getElementById("prepay-saved-interest").textContent = formatBaht(savedInterest);
+          document.getElementById("prepay-saved-months").textContent = durationPhrase(faster);
+
+          prepayBox.hidden = false;
+        } else {
+          prepayBox.hidden = true;
+        }
+
+        renderComparePlans(principal, monthlyRate, months);
+        compareBlock.hidden = false;
+
+        chartsStack.hidden = false;
+        drawCharts(principal, sumInt, schedule, baselineRows, extraPrepay);
+
+        renderSchedule(schedule);
+        scheduleBlock.hidden = false;
+        setScheduleVisible(true);
+        scheduleScroll.scrollTop = 0;
+
+        resultsEl.classList.add("visible");
+        if (btnSavePlan) {
+          btnSavePlan.hidden = false;
+        }
+        if (btnPdf) {
+          btnPdf.hidden = false;
+          btnPdf.disabled = false;
+          btnPdf.textContent = "📄 ดาวน์โหลด PDF";
+        }
+      });
+
+      if (btnPdf) {
+        btnPdf.addEventListener("click", function () {
+          if (!resultsEl.classList.contains("visible") || btnPdf.disabled) return;
+          exportPDF();
+        });
+      }
+
+      if (btnSavePlan) {
+        btnSavePlan.addEventListener("click", saveCurrentPlan);
+      }
+
+      if (planModalCancel) {
+        planModalCancel.addEventListener("click", closePlanModal);
+      }
+
+      if (planModalBackdrop) {
+        planModalBackdrop.addEventListener("click", function (e) {
+          if (e.target === planModalBackdrop) closePlanModal();
+        });
+      }
+
+      if (planModalTag) {
+        planModalTag.addEventListener("input", updatePlanModalCharCounts);
+      }
+      if (planModalNote) {
+        planModalNote.addEventListener("input", updatePlanModalCharCounts);
+      }
+
+      if (planModalForm) {
+        planModalForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var payload = {
+            name: cleanTextInput(planModalName.value, 80),
+            tag: cleanTextInput(planModalTag.value, 30),
+            note: cleanTextInput(planModalNote.value, 200),
+          };
+          if (!payload.name) {
+            alert("กรุณากรอกชื่อแผน");
+            planModalName.focus();
+            return;
+          }
+          if (planModalSubmitHandler) {
+            planModalSubmitHandler(payload);
+          }
+        });
+      }
+
+      if (btnExportPlans) {
+        btnExportPlans.addEventListener("click", function () {
+          exportPlansAsJson();
+        });
+      }
+
+      if (btnImportPlans && importPlansFile) {
+        btnImportPlans.addEventListener("click", function () {
+          importPlansFile.value = "";
+          importPlansFile.click();
+        });
+        importPlansFile.addEventListener("change", function (e) {
+          var file = e.target && e.target.files && e.target.files[0];
+          handleImportFile(file);
+        });
+      }
+
+      if (importModeCancel) {
+        importModeCancel.addEventListener("click", closeImportModeModal);
+      }
+
+      if (importModeBackdrop) {
+        importModeBackdrop.addEventListener("click", function (e) {
+          if (e.target === importModeBackdrop) closeImportModeModal();
+        });
+      }
+
+      if (importModeMerge) {
+        importModeMerge.addEventListener("click", function () {
+          applyImportedPlans("merge");
+        });
+      }
+
+      if (importModeReplace) {
+        importModeReplace.addEventListener("click", function () {
+          applyImportedPlans("replace");
+        });
+      }
+
+      if (refinanceToggle && refinancePanel) {
+        refinanceToggle.addEventListener("click", function () {
+          var wasHidden = refinancePanel.hidden;
+          refinancePanel.hidden = !wasHidden;
+          refinanceToggle.setAttribute("aria-expanded", wasHidden ? "true" : "false");
+          refinanceToggle.textContent = wasHidden ? "ซ่อน" : "แสดง";
+        });
+      }
+
+      if (refinanceSavedSelect) {
+        refinanceSavedSelect.addEventListener("change", function () {
+          var id = refinanceSavedSelect.value;
+          if (!id) return;
+          var plans = readSavedPlans();
+          var plan = plans.find(function (p) {
+            return String(p.id) === id;
+          });
+          if (!plan || !plan.inputs) return;
+          document.getElementById("ref-old-principal").value = plan.inputs.loanAmount;
+          document.getElementById("ref-old-rate").value = plan.inputs.interestRate;
+          document.getElementById("ref-old-months").value = plan.inputs.months;
+          document.getElementById("ref-paid-months").value = 0;
+          var remain =
+            (Number(plan.inputs.months) || 0) -
+            (parseInt(document.getElementById("ref-paid-months").value, 10) || 0);
+          document.getElementById("ref-new-months").value = remain > 0 ? remain : "";
+        });
+      }
+
+      if (refinanceForm) {
+        refinanceForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          runRefinanceCalculation();
+        });
+      }
+
+      if (btnOpenPlanCompare) {
+        btnOpenPlanCompare.addEventListener("click", function () {
+          if (selectedComparePlanIds.length !== 2) return;
+          renderPlanCompareSection();
+          if (planCompareSection) {
+            planCompareSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
+
+      if (btnClosePlanCompare) {
+        btnClosePlanCompare.addEventListener("click", function () {
+          clearPlanCompareSelection();
+        });
+      }
+
+      renderSavedPlans();
+    })();
+  </script>
+</body>
+</html>
