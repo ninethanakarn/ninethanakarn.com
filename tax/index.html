@@ -49,6 +49,124 @@ gtag('event', 'tool_view', { tool_name: 'tax_calculator', phase: 'v2_advanced' }
   --radius:12px;
   --radius-lg:16px;
 }
+
+/* ===== Dark Mode ===== */
+body.dark {
+  --bg:#0b1220;
+  --bg-card:#1e293b;
+  --text:#f1f5f9;
+  --text-soft:#cbd5e1;
+  --text-mute:#64748b;
+  --border:#334155;
+  --border-strong:#475569;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  --shadow:0 4px 6px rgba(0,0,0,.4);
+  --shadow-lg:0 10px 25px rgba(0,0,0,.5);
+}
+body.dark .topbar{background:#020617}
+body.dark .input,body.dark .select,body.dark .year-select{background:#0f172a;color:#f1f5f9}
+body.dark .input::placeholder{color:#64748b}
+body.dark .hint-box{background:#292524;border-color:#57534e;color:#fbbf24}
+body.dark .hint-box strong{color:#fde68a}
+body.dark .collapsible-head{background:#0f172a;color:#f1f5f9}
+body.dark .collapsible-head:hover{background:#1e293b}
+body.dark .collapsible-body{background:#1e293b}
+body.dark .income-row,body.dark .add-income-btn{background:#0f172a;border-color:#334155}
+body.dark .add-income-btn{color:#93c5fd}
+body.dark .income-summary{background:#1e3a8a;border-color:#3b82f6;color:#dbeafe}
+body.dark .income-summary strong{color:#fff}
+body.dark .suggestion-item{background:#1e293b;border-color:#3730a3}
+body.dark .suggestions{background:linear-gradient(135deg,#1e1b4b 0%,#312e81 100%);border-color:#4338ca}
+body.dark .suggestions-head h3{color:#a5b4fc}
+body.dark .scenarios{background:#1e293b;border-color:#334155}
+body.dark .scenario-card{background:#0f172a;border-color:#334155}
+body.dark .scenario-card .scenario-value{color:#93c5fd}
+body.dark .scenario-card.compare{background:linear-gradient(135deg,#14532d,#15803d);border-color:#22c55e}
+body.dark .scenario-card.compare .scenario-value,body.dark .scenario-card.compare .scenario-meta{color:#bbf7d0}
+body.dark .cta-section{background:linear-gradient(135deg,#451a03 0%,#7c2d12 100%);color:#fed7aa}
+body.dark .cta-section h3{color:#fde68a}
+body.dark .cta-section p{color:#fdba74}
+body.dark .mode-toggle{background:#1e293b;border-color:#334155}
+body.dark .mode-btn:not(.active){color:#cbd5e1}
+body.dark .mode-btn:hover:not(.active){background:#334155}
+body.dark .toggle-group{background:#0f172a}
+body.dark .toggle-btn{color:#cbd5e1}
+body.dark .toggle-btn.active{background:#1e293b;color:#93c5fd}
+body.dark .card-head{background:linear-gradient(180deg,#1e293b 0%,#1e293b 100%);border-color:#334155}
+body.dark .card.featured{border-color:#d97706}
+body.dark .card.featured .card-head{background:linear-gradient(135deg,#451a03 0%,#7c2d12 100%);color:#fed7aa}
+body.dark .btn-ghost{background:#1e293b;color:#93c5fd;border-color:#3b82f6}
+body.dark .btn-ghost:hover{background:#0f172a}
+body.dark .del-btn{background:#1e293b;border-color:#475569}
+
+/* ===== Theme + Print Buttons ===== */
+.icon-btn{
+  width:36px;height:36px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);
+  color:#fff;border-radius:8px;cursor:pointer;font-size:16px;
+  display:flex;align-items:center;justify-content:center;transition:all .15s;
+}
+.icon-btn:hover{background:rgba(255,255,255,.2);transform:translateY(-1px)}
+.topbar-actions{display:flex;align-items:center;gap:8px}
+@media (max-width:640px){.back-link{display:none}}
+
+/* ===== Print Mode ===== */
+@media print {
+  @page{margin:1.2cm;size:A4}
+  body{background:#fff !important;color:#000 !important;font-size:10pt;line-height:1.4}
+  body.dark{background:#fff !important;color:#000 !important}
+  .topbar,.mode-toggle-wrap,.year-wrap,.add-income-btn,.del-btn,
+  .scenarios-actions,.cta-section,.footer,.icon-btn,#add-income-dialog,
+  .toggle-group,.collapsible-arrow,.bracket-head .toggle{display:none !important}
+  .hero{background:#fff !important;color:#000 !important;padding:6pt 0;border-bottom:2pt solid #1e40af}
+  .hero h1{color:#1e40af;font-size:18pt}
+  .hero p{color:#475569;font-size:9pt}
+  .hero-badge{display:none}
+  .calc-wrap{grid-template-columns:1fr 1fr !important;gap:8pt;padding:0;max-width:none}
+  .card,.suggestions,.scenarios{box-shadow:none !important;border:1pt solid #cbd5e1 !important;page-break-inside:avoid;margin-bottom:6pt}
+  .card-head{background:#f1f5f9 !important;padding:6pt 10pt}
+  .card-head h3{color:#000 !important;font-size:10pt}
+  .card-body{padding:8pt 10pt}
+  .result-card{background:#fff !important;color:#000 !important;border:2pt solid #1e40af !important;position:static !important;padding:10pt}
+  .result-label{color:#475569 !important}
+  .result-main{color:#1e40af !important;font-size:24pt}
+  .result-main.zero{color:#15803d !important}
+  .result-rate{color:#475569 !important}
+  .result-row{color:#000 !important}
+  .result-row.net .v{color:#15803d !important}
+  .bracket-detail{background:#f8fafc !important;color:#000 !important;border:1pt solid #cbd5e1}
+  .bracket-list{display:block !important}
+  .collapsible{border:1pt solid #cbd5e1 !important;page-break-inside:avoid}
+  .collapsible-head{background:#f1f5f9 !important;color:#000 !important;cursor:default;padding:5pt 10pt;font-size:10pt}
+  .collapsible-body{display:block !important;background:#fff !important;padding:8pt 10pt}
+  .input,.select{background:#fff !important;color:#000 !important;border:1pt solid #cbd5e1 !important;padding:4pt 8pt;font-size:9pt}
+  .input-suffix{font-size:8pt;color:#94a3b8 !important}
+  .hint-box{background:#fffbeb !important;color:#92400e !important;border:1pt solid #fed7aa !important;font-size:9pt;padding:6pt 8pt}
+  .field{margin-bottom:6pt}
+  .field-label{font-size:9pt;color:#000 !important}
+  .field-cap{font-size:8pt;color:#64748b !important}
+  .suggestions{background:#fff !important;border:1pt solid #c7d2fe !important;page-break-before:auto}
+  .suggestions-head h3{color:#1e40af !important;font-size:11pt}
+  .suggestion-item{background:#fff !important;border:1pt solid #e0e7ff !important;color:#000 !important;padding:5pt 8pt}
+  .suggestion-text{color:#000 !important;font-size:9pt}
+  .suggestion-save{background:#dcfce7 !important;color:#15803d !important;font-size:9pt}
+  .suggestions-total{background:#1e40af !important;color:#fff !important;font-size:10pt;padding:6pt 10pt}
+  .scenarios{background:#fff !important;border:1pt solid #cbd5e1 !important;page-break-inside:avoid}
+  .scenarios-head h3{color:#000 !important;font-size:11pt}
+  .scenario-card{background:#f8fafc !important;border:1pt solid #cbd5e1 !important;color:#000 !important;padding:8pt}
+  .scenario-card.compare{background:#dcfce7 !important;border-color:#16a34a !important}
+  .scenario-card.compare .scenario-value,.scenario-card.compare .scenario-meta{color:#15803d !important}
+  .scenario-value{color:#1e40af !important}
+  .scenario-label{color:#475569 !important}
+  .income-row{background:#f8fafc !important;border:1pt solid #cbd5e1 !important;padding:6pt;page-break-inside:avoid}
+  .income-summary{background:#eff6ff !important;color:#1e3a8a !important;border:1pt solid #bfdbfe !important;font-size:9pt}
+  .print-only{display:block !important}
+  body::after{
+    content:"นายธนาคารประจำบ้าน · ninethanakarn.com · 02-334-0940";
+    display:block;text-align:center;font-size:8pt;color:#64748b;
+    margin-top:10pt;padding-top:6pt;border-top:1pt solid #cbd5e1;
+  }
+}
+.print-only{display:none}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
@@ -402,7 +520,11 @@ body.advanced-mode .advanced-only{display:block}
       <div class="brand-icon">🏠</div>
       <div class="brand-text">นายธนาคารประจำบ้าน</div>
     </a>
-    <a href="https://ninethanakarn.com/" class="back-link">← กลับหน้าหลัก</a>
+    <div class="topbar-actions">
+      <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="สลับโหมดกลางวัน/กลางคืน">🌙</button>
+      <button class="icon-btn" onclick="window.print()" title="พิมพ์ / Save PDF">🖨️</button>
+      <a href="https://ninethanakarn.com/" class="back-link">← กลับหน้าหลัก</a>
+    </div>
   </div>
 </header>
 
@@ -1274,7 +1396,31 @@ function resetScenarios(){
 // ============================================================
 // INIT
 // ============================================================
+function toggleTheme(){
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  $('theme-btn').textContent = isDark ? '☀️' : '🌙';
+  $('theme-btn').title = isDark ? 'สลับเป็นโหมดกลางวัน' : 'สลับเป็นโหมดกลางคืน';
+  gtag('event', 'theme_change', {theme: isDark ? 'dark' : 'light'});
+}
+
 window.addEventListener('DOMContentLoaded', () => {
+  // Press Enter to blur number input (better mobile UX)
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' && e.target.tagName === 'INPUT' && (e.target.type === 'number' || e.target.type === 'text')){
+      e.preventDefault();
+      e.target.blur();
+    }
+  });
+
+  // Auto-detect system dark mode preference (initial only)
+  try {
+    if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+      document.body.classList.add('dark');
+      $('theme-btn').textContent = '☀️';
+    }
+  } catch(e){}
+
   calc();
 });
 </script>
