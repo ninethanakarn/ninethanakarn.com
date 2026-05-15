@@ -99,6 +99,31 @@ body.dark .btn-ghost{background:#1e293b;color:#93c5fd;border-color:#3b82f6}
 body.dark .btn-ghost:hover{background:#0f172a}
 body.dark .del-btn{background:#1e293b;border-color:#475569}
 
+/* ===== Customer Name Field ===== */
+.customer-wrap{
+  max-width:1200px;margin:0 auto;padding:0 20px 12px;
+}
+.customer-row{
+  display:flex;align-items:center;gap:10px;background:#fff;
+  border:1px solid var(--border);border-radius:10px;padding:8px 14px;
+  box-shadow:var(--shadow-sm);
+}
+.customer-row label{
+  font-size:13px;color:var(--text-soft);font-weight:600;white-space:nowrap;
+  display:flex;align-items:center;gap:6px;
+}
+.customer-row input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-family:'IBM Plex Sans Thai',sans-serif;font-size:14px;
+  color:var(--text);padding:6px 0;
+}
+.customer-row input::placeholder{color:var(--text-mute);font-style:italic}
+body.dark .customer-row{background:#1e293b;border-color:#334155}
+body.dark .customer-row input{color:#f1f5f9}
+
+/* Print-only header block */
+.print-header{display:none}
+
 /* ===== Theme + Print Buttons ===== */
 .icon-btn{
   width:36px;height:36px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);
@@ -114,13 +139,24 @@ body.dark .del-btn{background:#1e293b;border-color:#475569}
   @page{margin:1.2cm;size:A4}
   body{background:#fff !important;color:#000 !important;font-size:10pt;line-height:1.4}
   body.dark{background:#fff !important;color:#000 !important}
-  .topbar,.mode-toggle-wrap,.year-wrap,.add-income-btn,.del-btn,
+  .topbar,.mode-toggle-wrap,.year-wrap,.customer-wrap,.add-income-btn,.del-btn,
   .scenarios-actions,.cta-section,.footer,.icon-btn,#add-income-dialog,
   .toggle-group,.collapsible-arrow,.bracket-head .toggle{display:none !important}
-  .hero{background:#fff !important;color:#000 !important;padding:6pt 0;border-bottom:2pt solid #1e40af}
+  .hero{background:#fff !important;color:#000 !important;padding:6pt 0 4pt;border-bottom:2pt solid #1e40af}
   .hero h1{color:#1e40af;font-size:18pt}
   .hero p{color:#475569;font-size:9pt}
   .hero-badge{display:none}
+  /* Customer info block (only in print) */
+  .print-header{
+    display:block !important;
+    background:#f8fafc;border:1pt solid #1e40af;border-radius:6pt;
+    padding:8pt 12pt;margin:8pt 0;
+    display:grid !important;grid-template-columns:1fr auto;gap:10pt;align-items:center;
+  }
+  .print-header .ph-customer{font-size:13pt;font-weight:700;color:#1e40af}
+  .print-header .ph-customer-label{font-size:8pt;color:#64748b;font-weight:500;display:block;margin-bottom:2pt}
+  .print-header .ph-date{font-size:9pt;color:#475569;text-align:right}
+  .print-header .ph-date strong{color:#000;font-size:10pt}
   .calc-wrap{grid-template-columns:1fr 1fr !important;gap:8pt;padding:0;max-width:none}
   .card,.suggestions,.scenarios{box-shadow:none !important;border:1pt solid #cbd5e1 !important;page-break-inside:avoid;margin-bottom:6pt}
   .card-head{background:#f1f5f9 !important;padding:6pt 10pt}
@@ -522,7 +558,7 @@ body.advanced-mode .advanced-only{display:block}
     </a>
     <div class="topbar-actions">
       <button class="icon-btn" onclick="toggleTheme()" id="theme-btn" title="สลับโหมดกลางวัน/กลางคืน">🌙</button>
-      <button class="icon-btn" onclick="window.print()" title="พิมพ์ / Save PDF">🖨️</button>
+      <button class="icon-btn" onclick="doPrint()" title="พิมพ์ / Save PDF">🖨️</button>
       <a href="https://ninethanakarn.com/" class="back-link">← กลับหน้าหลัก</a>
     </div>
   </div>
@@ -536,6 +572,26 @@ body.advanced-mode .advanced-only{display:block}
     <p>ครบทุกลดหย่อน · รายได้หลายแหล่ง (ม.40 1-8) · เปรียบเทียบ scenarios · แนะนำการวางแผนภาษี</p>
   </div>
 </section>
+
+<!-- CUSTOMER NAME (visible in app, formatted nicely in PDF) -->
+<div class="customer-wrap">
+  <div class="customer-row">
+    <label>👤 ชื่อลูกค้า:</label>
+    <input type="text" id="customer-name" placeholder="ใส่ชื่อลูกค้า (สำหรับพิมพ์ PDF)" autocomplete="off">
+  </div>
+</div>
+
+<!-- Print-only header — shows customer + date prominently -->
+<div class="print-header" id="print-header">
+  <div>
+    <span class="ph-customer-label">เอกสารสำหรับ:</span>
+    <div class="ph-customer" id="print-customer-name">—</div>
+  </div>
+  <div class="ph-date">
+    วันที่ออกเอกสาร<br>
+    <strong id="print-date">—</strong>
+  </div>
+</div>
 
 <!-- MODE TOGGLE -->
 <div class="mode-toggle-wrap">
@@ -1402,6 +1458,27 @@ function toggleTheme(){
   $('theme-btn').textContent = isDark ? '☀️' : '🌙';
   $('theme-btn').title = isDark ? 'สลับเป็นโหมดกลางวัน' : 'สลับเป็นโหมดกลางคืน';
   gtag('event', 'theme_change', {theme: isDark ? 'dark' : 'light'});
+}
+
+function preparePrint(){
+  // Customer name → print header
+  const name = ($('customer-name')?.value || '').trim();
+  $('print-customer-name').textContent = name || '— (ไม่ระบุชื่อ)';
+
+  // Thai date format DD/M/พ.ศ.
+  const now = new Date();
+  const thaiMonths = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+  const day = now.getDate();
+  const month = thaiMonths[now.getMonth()];
+  const year = now.getFullYear() + 543;
+  $('print-date').textContent = `${day} ${month} ${year}`;
+
+  gtag('event', 'print_pdf', {has_name: name.length > 0});
+}
+
+function doPrint(){
+  preparePrint();
+  setTimeout(() => window.print(), 50);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
