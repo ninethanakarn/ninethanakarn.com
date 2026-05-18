@@ -2,6 +2,7 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1e40af">
   <meta name="description" content="วิเคราะห์ทรัพย์ ลุมพินี วิลล์ พระนั่งเกล้า-ริเวอร์วิว — Yield, แผนกู้, Verdict ครบ 7 sections — นายธนาคารประจำบ้าน">
@@ -19,6 +20,10 @@
         <div class="header-brand-tagline">ที่ปรึกษาทางการเงินมืออาชีพ · 7+ ปี</div>
       </div>
       <a href="../index.html" class="header-back">← Portfolio</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+        <span class="theme-icon theme-icon-dark">🌙</span>
+        <span class="theme-icon theme-icon-light">☀️</span>
+      </button>
     </div>
   </header>
 
@@ -515,5 +520,19 @@
     <a href="tel:023340940" class="btn-phone-sm">📞</a>
   </div>
 
+
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
 </body>
 </html>
