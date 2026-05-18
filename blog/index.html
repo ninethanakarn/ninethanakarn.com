@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="บทความให้ความรู้เรื่องบ้าน หนี้ การเงิน DSR สำหรับคนเตรียมกู้บ้าน — โดยทีม Touch Real Estate ที่ปรึกษาทางการเงิน 7+ ปี">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="บทความให้ความรู้ — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="บทความเรื่องบ้าน หนี้ DSR ปิดหนี้ก่อนกู้ รวมหนี้ในบ้าน คอนโดลงทุน เช่าซื้อ — เขียนโดย อ.ธรรศ 7+ ปี">
+  <meta property="og:url" content="https://ninethanakarn.com/blog/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="บทความให้ความรู้ — นายธนาคารประจำบ้าน">
+  <meta name="twitter:description" content="บทความเรื่องบ้าน หนี้ DSR ปิดหนี้ รวมหนี้ในบ้าน คอนโดลงทุน เช่าซื้อ">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>บทความให้ความรู้ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="/condo/assets/style.css">
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .blog-card {
+      background: var(--bg-subtle, rgba(255,255,255,0.03));
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.15s, border-color 0.2s;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .blog-card:hover {
+      transform: translateY(-3px);
+      border-color: #3b82f6;
+    }
+    .blog-category {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .blog-category.cat-debt { background: rgba(239, 68, 68, 0.12); color: #f87171; border-color: rgba(239, 68, 68, 0.3); }
+    .blog-category.cat-home { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border-color: rgba(59, 130, 246, 0.3); }
+    .blog-category.cat-rent { background: rgba(251, 191, 36, 0.12); color: #fbbf24; border-color: rgba(251, 191, 36, 0.3); }
+    .blog-category.cat-consolidate { background: rgba(34, 197, 94, 0.12); color: #22c55e; border-color: rgba(34, 197, 94, 0.3); }
+    .blog-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .blog-excerpt {
+      font-size: 0.92rem;
+      color: var(--muted, #9ca3af);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+    .blog-meta {
+      font-size: 0.8rem;
+      color: var(--muted, #6b7280);
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .category-tab {
+      padding: 0.4rem 0.85rem;
+      background: var(--bg-subtle, rgba(255,255,255,0.05));
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--muted, #9ca3af);
+    }
+    .category-tab.active {
+      background: #1e40af;
+      color: #fff;
+      border-color: #1e40af;
+    }
+    .featured-badge {
+      display: inline-block;
+      background: rgba(251, 191, 36, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" class="header-logo">
+      <div class="header-brand">
+        <div class="header-brand-name">นายธนาคารประจำบ้าน</div>
+        <div class="header-brand-tagline">ที่ปรึกษาทางการเงินมืออาชีพ · 7+ ปี</div>
+      </div>
+      <a href="/" class="header-back">← กลับเว็บหลัก</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+        <span class="theme-icon theme-icon-dark">🌙</span>
+        <span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>บทความให้ความรู้</h1>
+      <p class="hero-subtitle">
+        เรื่องบ้าน หนี้ การเงิน DSR · เขียนโดย อ.ธรรศ ที่ปรึกษาทางการเงิน 7+ ปี · อัพเดทตามตลาดจริง
+      </p>
+      <div class="hero-cta-group">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener">
+          💬 ปรึกษา → LINE
+        </a>
+        <a href="tel:023340940" class="btn btn-phone">
+          📞 02-334-0940
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="star-divider"><span>★</span></div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="category-tabs">
+        <span class="category-tab active">ทั้งหมด (5)</span>
+        <span class="category-tab">ปิดหนี้</span>
+        <span class="category-tab">รวมหนี้</span>
+        <span class="category-tab">บ้านมือ 1</span>
+        <span class="category-tab">เช่าซื้อ</span>
+      </div>
+
+      <div class="blog-grid">
+
+        <a href="close-debt-before-loan.html" class="blog-card">
+          <span class="blog-category cat-debt">💳 ปิดหนี้</span>
+          <span class="featured-badge">⭐ แนะนำ</span>
+          <div class="blog-title">ปิดหนี้ก่อนยื่นกู้บ้าน: ทำไม + ยังไง + ใช้เวลาเท่าไหร่ (2569)</div>
+          <div class="blog-excerpt">
+            70% ของลูกค้ามา Touch มี DSR เกิน 60% — บทความนี้บอกครบทั้งเหตุผล · หนี้ไหนต้องปิดก่อน · ขั้นตอน 5 step · ตัวอย่างเคสจริง 3 เคส · timeline 1-12 เดือน
+          </div>
+          <div class="blog-meta">
+            <span>📅 19 พ.ค. 2569</span>
+            <span>⏱️ อ่าน 9 นาที</span>
+            <span>👤 อ.ธรรศ</span>
+          </div>
+        </a>
+
+        <a href="consolidate-debt-into-home-loan.html" class="blog-card">
+          <span class="blog-category cat-consolidate">🏠 รวมหนี้ในบ้าน</span>
+          <span class="featured-badge">⭐ แนะนำ</span>
+          <div class="blog-title">รวมหนี้ไว้ในหนี้บ้าน: ดอกบัตร 18% → ดอกบ้าน 5% ทำได้จริงไหม</div>
+          <div class="blog-excerpt">
+            วิธี <strong>"ลดดอกเฉลี่ย 60-70%"</strong> ที่ unique สำหรับคนมีบ้านปลอดหนี้ — Home Equity vs Cash-out Refi · ตัวอย่างประหยัด 18k/เดือน · ความเสี่ยง 4 ข้อ · เกณฑ์ Touch
+          </div>
+          <div class="blog-meta">
+            <span>📅 19 พ.ค. 2569</span>
+            <span>⏱️ อ่าน 10 นาที</span>
+            <span>👤 อ.ธรรศ</span>
+          </div>
+        </a>
+
+        <a href="dsr-calculator-guide.html" class="blog-card">
+          <span class="blog-category cat-debt">📊 DSR</span>
+          <div class="blog-title">DSR คืออะไร? วิธีคำนวณ + เกณฑ์ผ่านกู้ 8 แบงค์ในปี 2569</div>
+          <div class="blog-excerpt">
+            DSR (Debt Service Ratio) คือตัวเลขสำคัญที่ทุกแบงค์ใช้พิจารณาก่อนอนุมัติสินเชื่อบ้าน — เข้าใจสูตรคำนวณ + เกณฑ์ของ 8 แบงค์หลัก + ตัวอย่างเคสจริง 3 แบบ
+          </div>
+          <div class="blog-meta">
+            <span>📅 18 พ.ค. 2569</span>
+            <span>⏱️ อ่าน 6 นาที</span>
+            <span>👤 อ.ธรรศ</span>
+          </div>
+        </a>
+
+        <a href="home-first-hand-vs-second-hand.html" class="blog-card">
+          <span class="blog-category cat-home">🏠 บ้านมือ 1</span>
+          <div class="blog-title">บ้านมือ 1 vs บ้านมือ 2 ต่างกันยังไง? เลือกแบบไหนดีในปี 2569</div>
+          <div class="blog-excerpt">
+            เปรียบเทียบราคา · คุณภาพ · ดอกเบี้ยกู้ · DSR · พร้อมเช็คลิสต์เลือกแบบที่เหมาะกับคุณ — บ้านใหม่ (มี warranty · ดอกถูก · รอนาน) vs มือ 2 (โอนเร็ว · ทำเลดี · ต่อรองได้)
+          </div>
+          <div class="blog-meta">
+            <span>📅 18 พ.ค. 2569</span>
+            <span>⏱️ อ่าน 7 นาที</span>
+            <span>👤 อ.ธรรศ</span>
+          </div>
+        </a>
+
+        <a href="rent-to-own-thailand-guide.html" class="blog-card">
+          <span class="blog-category cat-rent">🔑 เช่าซื้อ</span>
+          <div class="blog-title">เช่าซื้อบ้านในไทย: สัญญาที่ปลอดภัยต้องมีอะไร + เกณฑ์ Touch 4 ข้อ</div>
+          <div class="blog-excerpt">
+            ทางออกของคนกู้แบงค์ไม่ผ่าน — เช่าซื้อ/ผ่อนตรงเจ้าของ มีความเสี่ยง 4 ข้อ + สัญญาที่ปลอดภัยต้องมีอะไรบ้าง · เกณฑ์ Touch · ตัวอย่างเคสจริง
+          </div>
+          <div class="blog-meta">
+            <span>📅 19 พ.ค. 2569</span>
+            <span>⏱️ อ่าน 8 นาที</span>
+            <span>👤 อ.ธรรศ</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="star-divider"><span>★</span></div>
+  </div>
+
+  <section class="section" style="background: var(--bg-subtle);">
+    <div class="container" style="text-align: center; max-width: 600px;">
+      <h2 class="section-title">มีคำถามอื่น? ปรึกษา LINE ฟรี</h2>
+      <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 1.5rem;">
+        บทความตอบไม่ครบ? ทีม Touch Real Estate ยินดีตอบทุกคำถามเรื่องบ้าน · หนี้ · DSR · การกู้ — ไม่มีค่าใช้จ่าย
+      </p>
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener" style="font-size: 1rem; padding: 0.875rem 2rem;">
+        💬 ปรึกษา → LINE @ninethanakarn
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · บทความในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta">
+    <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener">
+      💬 ปรึกษา → LINE
+    </a>
+    <a href="tel:023340940" class="btn-phone-sm">📞</a>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</body>
+</html>
