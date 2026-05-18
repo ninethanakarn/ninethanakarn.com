@@ -34,8 +34,8 @@
   --header-text-muted: #9ca3af;
   --header-border: #1f2937;
   --footer-bg: #0a0a0a;
-  --footer-text: #d1d5db;
-  --footer-text-muted: #9ca3af;
+  --footer-text: #f3f4f6;
+  --footer-text-muted: #d1d5db;
 
   /* Body theme — light default */
   --bg: #ffffff;
@@ -704,10 +704,15 @@ tr:nth-child(even) td {
 
 .footer-disclaimer {
   margin-top: 0.75rem;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--footer-text-muted);
-  line-height: 1.5;
+  line-height: 1.6;
 }
+
+.site-footer a[href*="line.me"] { color: var(--line); font-weight: 500; }
+.site-footer a[href^="tel:"] { color: var(--footer-text); font-weight: 500; }
+.site-footer a[href^="mailto:"] { color: var(--footer-text); }
+.site-footer p, .site-footer .footer-brand, .site-footer .footer-contact { color: var(--footer-text); }
 
 /* --- Sticky Bottom CTA --- */
 .sticky-cta {
