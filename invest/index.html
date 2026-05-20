@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#d97706">
+<title>ตารางลงทุน | นายธนาคารประจำบ้าน</title>
+<meta name="description" content="คำนวณตารางลงทุน — ลงทุนครั้งเดียวหรือ DCA ทุกเดือน ดูมูลค่าเติบโตรายปี รองรับดอกเบี้ยทบต้น">
+<meta property="og:title" content="ตารางลงทุน | นายธนาคารประจำบ้าน">
+<meta property="og:description" content="วางแผนลงทุน ดู port เติบโตแบบทบต้น — ลงครั้งเดียวหรือ DCA ทุกเดือน ฟรี ไม่ต้องสมัคร">
+<meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+<meta property="og:url" content="https://ninethanakarn.com/invest/">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E📈%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKC3DMS6P5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EKC3DMS6P5');
+</script>
+
+<style>
+:root{
+  --gold-50:#fffbeb; --gold-100:#fef3c7; --gold-200:#fde68a;
+  --gold-400:#fbbf24; --gold-500:#f59e0b; --gold-600:#d97706; --gold-700:#b45309;
+  --blue-700:#1d4ed8; --blue-800:#1e40af; --blue-900:#1e3a8a;
+  --bg:#fafaf9; --card:#ffffff; --text:#0f172a; --muted:#64748b; --border:#e5e7eb;
+  --green:#16a34a; --red:#dc2626;
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg:0 10px 25px -5px rgba(217,119,6,.18),0 8px 10px -6px rgba(217,119,6,.1);
+  --radius:14px; --radius-sm:10px;
+}
+[data-theme="dark"]{
+  --bg:#0f172a; --card:#1e293b; --text:#f1f5f9; --muted:#94a3b8; --border:#334155;
+  --gold-50:#2d1f00; --gold-100:#3d2b00;
+  --shadow:0 1px 3px rgba(0,0,0,.4);
+  --shadow-lg:0 10px 25px -5px rgba(217,119,6,.3);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Sarabun',system-ui,-apple-system,sans-serif;
+  background:var(--bg); color:var(--text);
+  line-height:1.55; font-size:16px;
+  -webkit-text-size-adjust:100%;
+  transition:background .2s,color .2s;
+}
+a{color:var(--gold-600); text-decoration:none}
+a:hover{text-decoration:underline}
+[data-theme="dark"] a{color:var(--gold-400)}
+
+/* Topbar */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:var(--card); border-bottom:1px solid var(--border);
+  padding:10px 16px;
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+}
+.brand{display:flex; align-items:center; gap:8px; font-weight:700; color:var(--blue-900); font-size:15px}
+[data-theme="dark"] .brand{color:#dbeafe}
+.brand-icon{font-size:22px}
+.brand-text{display:flex; flex-direction:column; line-height:1.1}
+.brand-text small{font-size:11px; color:var(--muted); font-weight:500}
+.topbar-spacer{flex:1}
+.customer-input-card{
+  display:flex; align-items:center; gap:6px;
+  background:var(--gold-50); border:1px solid var(--gold-200);
+  padding:5px 10px; border-radius:999px;
+  font-size:13px;
+}
+.customer-input-card label{color:var(--muted); white-space:nowrap}
+.customer-input-card input{
+  border:none; background:transparent; outline:none;
+  font:inherit; color:var(--text); width:130px;
+  padding:2px 0;
+}
+.customer-input-card input::placeholder{color:var(--muted); opacity:.7}
+.icon-btn{
+  width:36px; height:36px; border:1px solid var(--border); background:var(--card);
+  border-radius:10px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;
+  font-size:16px; color:var(--text);
+  transition:all .15s;
+}
+.icon-btn:hover{background:var(--gold-50); border-color:var(--gold-400)}
+.back-link{
+  display:inline-flex; align-items:center; gap:4px;
+  padding:6px 12px; border-radius:8px;
+  font-size:13px; color:var(--muted); font-weight:500;
+}
+.back-link:hover{background:var(--gold-50); color:var(--gold-600); text-decoration:none}
+
+/* Layout */
+.wrap{max-width:1080px; margin:0 auto; padding:20px 16px 80px}
+.hero{text-align:center; padding:24px 0 20px}
+.hero h1{font-size:clamp(22px,5vw,32px); margin:0 0 8px; font-weight:800; letter-spacing:-.5px}
+.hero h1 .emoji{margin-right:6px}
+.hero p{margin:0 auto; color:var(--muted); font-size:15px; max-width:560px}
+
+/* Mode tabs */
+.mode-tabs{
+  display:grid; grid-template-columns:1fr 1fr; gap:8px;
+  background:var(--card); border:1px solid var(--border);
+  padding:6px; border-radius:14px; margin:20px auto 24px; max-width:560px;
+}
+.mode-tab{
+  padding:12px 10px; border:none; background:transparent;
+  border-radius:10px; cursor:pointer; font:inherit; color:var(--muted); font-weight:600;
+  font-size:14px; line-height:1.3;
+  transition:all .15s;
+}
+.mode-tab.active{
+  background:linear-gradient(135deg,var(--gold-500),var(--gold-600));
+  color:#fff; box-shadow:var(--shadow-lg);
+}
+
+/* Card */
+.card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px;
+  box-shadow:var(--shadow); margin-bottom:16px;
+}
+.card-title{font-size:14px; font-weight:700; color:var(--gold-700); margin:0 0 14px; letter-spacing:.3px}
+[data-theme="dark"] .card-title{color:var(--gold-400)}
+
+/* Inputs */
+.field{display:flex; flex-direction:column; gap:6px; margin-bottom:14px}
+.field label{font-size:13px; color:var(--muted); font-weight:500}
+.field .label-hint{font-size:11px; color:var(--muted); font-weight:400; margin-left:4px}
+.input-wrap{
+  display:flex; align-items:stretch;
+  border:1.5px solid var(--border); border-radius:var(--radius-sm);
+  background:var(--card); overflow:hidden;
+  transition:border-color .15s;
+}
+.input-wrap:focus-within{border-color:var(--gold-500)}
+.input-wrap input{
+  flex:1; border:none; background:transparent; outline:none;
+  font:inherit; color:var(--text); font-size:16px;
+  padding:11px 12px;
+}
+.input-wrap .unit{
+  display:inline-flex; align-items:center; padding:0 12px;
+  color:var(--muted); font-size:14px; font-weight:500;
+  background:var(--bg); border-left:1px solid var(--border);
+}
+[data-theme="dark"] .input-wrap{background:#0b1424}
+[data-theme="dark"] .input-wrap .unit{background:#0b1424}
+
+/* Presets */
+.presets{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+.preset-chip{
+  padding:7px 12px; border:1px solid var(--border); border-radius:999px;
+  background:var(--card); color:var(--text); font:inherit; font-size:12.5px;
+  cursor:pointer; transition:all .15s; font-weight:500;
+}
+.preset-chip:hover{border-color:var(--gold-500); color:var(--gold-600); background:var(--gold-50)}
+
+/* Result card */
+.result-card{
+  background:linear-gradient(135deg,#fffbeb,#fef3c7);
+  border:2px solid var(--gold-200);
+  border-radius:18px; padding:24px 20px;
+  margin:8px 0 20px;
+  position:relative; overflow:hidden;
+}
+[data-theme="dark"] .result-card{
+  background:linear-gradient(135deg,#2d1f00,#3d2b00);
+  border-color:var(--gold-700);
+}
+.result-card::before{
+  content:''; position:absolute; top:-30px; right:-30px;
+  width:120px; height:120px; border-radius:50%;
+  background:radial-gradient(circle, rgba(245,158,11,.18), transparent 70%);
+}
+.result-label{font-size:13px; color:var(--gold-700); font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin:0 0 6px}
+[data-theme="dark"] .result-label{color:var(--gold-400)}
+.result-main{
+  font-size:clamp(28px,7vw,42px);
+  font-weight:800; color:var(--gold-700);
+  line-height:1.15; margin:0 0 6px;
+  letter-spacing:-.5px;
+}
+[data-theme="dark"] .result-main{color:var(--gold-400)}
+.result-sub{color:var(--muted); font-size:14px; margin:0}
+.result-stats{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
+  margin-top:18px; padding-top:18px; border-top:1px dashed var(--gold-200);
+}
+[data-theme="dark"] .result-stats{border-color:var(--gold-700)}
+.stat-item{text-align:center}
+.stat-label{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.3px; margin-bottom:3px}
+.stat-value{font-size:15px; font-weight:700; color:var(--text)}
+.stat-value.gold{color:var(--gold-600)}
+[data-theme="dark"] .stat-value.gold{color:var(--gold-400)}
+.stat-value.green{color:var(--green)}
+
+/* Table */
+.table-controls{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px}
+.table-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+table.sched{width:100%; border-collapse:collapse; font-size:13.5px; min-width:520px}
+table.sched th,table.sched td{padding:9px 10px; border-bottom:1px solid var(--border); text-align:right}
+table.sched th{
+  background:var(--gold-50); color:var(--gold-700); font-weight:700;
+  position:sticky; top:0; font-size:12.5px; letter-spacing:.2px;
+}
+[data-theme="dark"] table.sched th{background:#2d1f00; color:var(--gold-400)}
+table.sched th:first-child,table.sched td:first-child{text-align:left; font-weight:600}
+table.sched tbody tr:hover{background:var(--gold-50)}
+[data-theme="dark"] table.sched tbody tr:hover{background:#2d1f00}
+table.sched .highlight-row td{font-weight:700; color:var(--gold-700)}
+[data-theme="dark"] table.sched .highlight-row td{color:var(--gold-400)}
+.badge-milestone{
+  display:inline-block; font-size:10px; padding:1px 6px;
+  border-radius:999px; background:var(--gold-100); color:var(--gold-700);
+  font-weight:700; margin-left:4px;
+}
+[data-theme="dark"] .badge-milestone{background:#3d2b00; color:var(--gold-400)}
+
+/* CTA Section */
+.cta-section{
+  background:linear-gradient(135deg,var(--blue-900),var(--blue-700));
+  border-radius:18px; padding:24px 20px; margin-top:24px;
+  text-align:center; color:#fff;
+}
+.cta-section h3{margin:0 0 8px; font-size:20px; font-weight:700}
+.cta-section p{margin:0 0 18px; color:#dbeafe; font-size:14px}
+.cta-grid{display:grid; gap:10px; grid-template-columns:1fr; max-width:520px; margin:0 auto}
+@media(min-width:560px){.cta-grid{grid-template-columns:1fr 1fr 1fr}}
+.cta-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:13px 16px; border-radius:12px; font-weight:700; font-size:14px;
+  border:none; cursor:pointer; text-decoration:none;
+  transition:transform .15s, box-shadow .15s;
+}
+.cta-btn:hover{transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.2); text-decoration:none}
+.cta-primary{background:linear-gradient(135deg,var(--gold-400),var(--gold-600)); color:#1a1a1a}
+.cta-call{background:#16a34a; color:#fff}
+.cta-line{background:#06c755; color:#fff}
+
+/* PDF Header */
+.pdf-header{display:none; padding:14px 0 18px; border-bottom:2px solid var(--gold-500); margin-bottom:16px}
+.pdf-header .row{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:8px}
+.pdf-header .customer{font-size:18px; font-weight:700; color:var(--blue-900)}
+.pdf-header .date{font-size:13px; color:var(--muted)}
+.pdf-header .brandline{font-size:11px; color:var(--muted); margin-top:4px}
+
+/* Footer */
+.footer{text-align:center; color:var(--muted); font-size:12.5px; padding:30px 16px 12px}
+.footer a{color:var(--muted)}
+.footer .disclaimer{max-width:640px; margin:8px auto 0; line-height:1.5}
+
+/* Toast */
+.toast{
+  position:fixed; bottom:20px; left:50%; transform:translateX(-50%) translateY(60px);
+  background:var(--text); color:var(--card); padding:10px 18px; border-radius:999px;
+  font-size:13.5px; font-weight:500; z-index:100; opacity:0;
+  transition:all .25s; pointer-events:none;
+}
+.toast.show{transform:translateX(-50%) translateY(0); opacity:1}
+
+/* Mobile */
+@media(max-width:640px){
+  .topbar{padding:8px 12px; gap:8px}
+  .brand{font-size:13px}
+  .customer-input-card{order:99; width:100%; justify-content:flex-start}
+  .customer-input-card input{flex:1; width:auto}
+  .wrap{padding:16px 12px 60px}
+  .card{padding:16px; border-radius:12px}
+  .result-card{padding:18px 16px}
+  .result-stats{grid-template-columns:1fr; gap:8px; text-align:left}
+  .stat-item{display:flex; justify-content:space-between; align-items:baseline}
+  .stat-label{margin-bottom:0}
+  table.sched{font-size:12.5px}
+  table.sched th,table.sched td{padding:7px 8px}
+  .back-link{padding:6px 8px}
+}
+
+/* Print */
+@media print{
+  @page{size:A4; margin:14mm}
+  body{background:#fff; color:#000; font-size:11pt}
+  .topbar,.cta-section,.footer,.no-pdf,.mode-tabs,.presets,.icon-btn,.back-link{display:none !important}
+  .wrap{padding:0; max-width:none}
+  .hero{padding:0 0 8px; text-align:left}
+  .hero h1{font-size:18pt; color:#0f172a}
+  .pdf-header{display:block !important}
+  .card{box-shadow:none; border:1px solid #cbd5e1; page-break-inside:avoid; padding:12px}
+  .card-title{font-size:11pt; color:#b45309}
+  .result-card{background:#fffbeb !important; border:1px solid var(--gold-500); -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .result-main{font-size:22pt; color:#b45309}
+  table.sched{font-size:9.5pt}
+  table.sched th{background:#fef3c7 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .result-stats{display:flex; gap:18px; border-top:1px solid #cbd5e1}
+  .stat-item{flex:1}
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar no-pdf">
+  <a href="/" class="brand" aria-label="กลับหน้าหลัก">
+    <span class="brand-icon">🏠</span>
+    <span class="brand-text">นายธนาคารประจำบ้าน<small>เครื่องมือฟรี · วางแผนเงิน</small></span>
+  </a>
+  <div class="topbar-spacer"></div>
+  <div class="customer-input-card">
+    <label for="customerName">ลูกค้า:</label>
+    <input id="customerName" type="text" placeholder="คุณ..." autocomplete="off">
+  </div>
+  <button class="icon-btn" id="themeToggle" type="button" aria-label="สลับโหมดมืด/สว่าง" title="สลับโหมดมืด/สว่าง">🌙</button>
+  <button class="icon-btn" id="printBtn" type="button" aria-label="พิมพ์ / PDF" title="พิมพ์ / PDF">🖨️</button>
+  <a href="/" class="back-link">← หน้าหลัก</a>
+</div>
+
+<div class="wrap">
+
+  <!-- PDF Header (print only) -->
+  <div class="pdf-header">
+    <div class="row">
+      <div>
+        <div class="customer" id="pdfCustomer">วางแผนลงทุน</div>
+        <div class="brandline">นายธนาคารประจำบ้าน · ninethanakarn.com</div>
+      </div>
+      <div class="date" id="pdfDate">—</div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1><span class="emoji">📈</span>ตารางลงทุน</h1>
+    <p>วางแผน port ระยะยาว ดูเงินเติบโตแบบทบต้น — ลงครั้งเดียวหรือ DCA ทุกเดือน</p>
+  </header>
+
+  <!-- Mode Tabs -->
+  <div class="mode-tabs no-pdf">
+    <button class="mode-tab active" data-mode="A" type="button">💰 ลงทุนครั้งเดียว (Lump Sum)</button>
+    <button class="mode-tab" data-mode="B" type="button">📅 ลงทุนทุกเดือน (DCA)</button>
+  </div>
+
+  <!-- Input Card -->
+  <section class="card">
+    <h2 class="card-title" id="inputTitle">📝 กรอกข้อมูล</h2>
+
+    <!-- Initial investment (always) -->
+    <div class="field">
+      <label for="initInvest">💰 เงินลงทุนตั้งต้น <span class="label-hint">(บาท)</span></label>
+      <div class="input-wrap">
+        <input id="initInvest" type="text" inputmode="decimal" placeholder="เช่น 100,000" autocomplete="off">
+        <span class="unit">฿</span>
+      </div>
+      <div class="presets">
+        <button class="preset-chip" data-init="10000" type="button">1 หมื่น</button>
+        <button class="preset-chip" data-init="50000" type="button">5 หมื่น</button>
+        <button class="preset-chip" data-init="100000" type="button">1 แสน</button>
+        <button class="preset-chip" data-init="500000" type="button">5 แสน</button>
+        <button class="preset-chip" data-init="1000000" type="button">1 ล้าน</button>
+      </div>
+    </div>
+
+    <!-- DCA monthly (mode B only) -->
+    <div class="field" id="fieldMonthly" style="display:none">
+      <label for="monthlyInvest">📅 ลงทุนเพิ่มทุกเดือน <span class="label-hint">(บาท)</span></label>
+      <div class="input-wrap">
+        <input id="monthlyInvest" type="text" inputmode="decimal" placeholder="เช่น 5,000" autocomplete="off">
+        <span class="unit">฿/เดือน</span>
+      </div>
+      <div class="presets">
+        <button class="preset-chip" data-monthly="1000" type="button">1,000</button>
+        <button class="preset-chip" data-monthly="3000" type="button">3,000</button>
+        <button class="preset-chip" data-monthly="5000" type="button">5,000</button>
+        <button class="preset-chip" data-monthly="10000" type="button">10,000</button>
+      </div>
+    </div>
+
+    <!-- Return rate -->
+    <div class="field">
+      <label for="returnRate">📊 ผลตอบแทนต่อปี <span class="label-hint">(%)</span></label>
+      <div class="input-wrap">
+        <input id="returnRate" type="text" inputmode="decimal" placeholder="เช่น 7" autocomplete="off">
+        <span class="unit">% / ปี</span>
+      </div>
+      <div class="presets">
+        <button class="preset-chip" data-rate="1.5" type="button">🏦 ฝากประจำ 1.5%</button>
+        <button class="preset-chip" data-rate="3" type="button">📜 พันธบัตร 3%</button>
+        <button class="preset-chip" data-rate="7" type="button">📈 SET เฉลี่ย 7%</button>
+        <button class="preset-chip" data-rate="8" type="button">🌏 RMF/LTF 8%</button>
+        <button class="preset-chip" data-rate="10" type="button">🚀 Global 10%</button>
+      </div>
+    </div>
+
+    <!-- Duration -->
+    <div class="field">
+      <label for="years">⏱️ ระยะเวลาลงทุน <span class="label-hint">(ปี)</span></label>
+      <div class="input-wrap">
+        <input id="years" type="text" inputmode="decimal" placeholder="เช่น 10" autocomplete="off">
+        <span class="unit">ปี</span>
+      </div>
+      <div class="presets">
+        <button class="preset-chip" data-years="5" type="button">5 ปี</button>
+        <button class="preset-chip" data-years="10" type="button">10 ปี</button>
+        <button class="preset-chip" data-years="20" type="button">20 ปี</button>
+        <button class="preset-chip" data-years="30" type="button">30 ปี</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result -->
+  <div id="resultSection" style="display:none">
+    <div class="result-card">
+      <p class="result-label" id="resultLabel">มูลค่าสุดท้าย</p>
+      <p class="result-main" id="resultMain">—</p>
+      <p class="result-sub" id="resultSub">—</p>
+      <div class="result-stats">
+        <div class="stat-item">
+          <div class="stat-label">เงินลงทุนรวม</div>
+          <div class="stat-value" id="statTotal">—</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">กำไรสุทธิ</div>
+          <div class="stat-value green" id="statProfit">—</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">ผลตอบแทนรวม</div>
+          <div class="stat-value gold" id="statReturnPct">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <section class="card">
+      <div class="table-controls">
+        <h2 class="card-title" style="margin:0">📋 ตารางเติบโตรายปี</h2>
+      </div>
+      <div class="table-scroll">
+        <table class="sched" id="schedTable">
+          <thead id="schedHead"></thead>
+          <tbody id="schedBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section no-pdf">
+    <h3>อยากลงทุนให้ถูกต้อง ปรึกษาเราฟรี</h3>
+    <p>วางแผนการเงินก่อนลงทุน — ตรวจ DSR, เลือกสินทรัพย์ที่เหมาะกับ Profile</p>
+    <div class="cta-grid">
+      <a href="https://line.me/R/ti/p/@ninethanakarn" class="cta-btn cta-line" target="_blank" rel="noopener">
+        💬 ปรึกษา LINE
+      </a>
+      <a href="tel:023340940" class="cta-btn cta-call">
+        📞 02-334-0940
+      </a>
+      <a href="/saving/" class="cta-btn cta-primary">
+        🐷 ตารางเงินออม
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div><a href="/">นายธนาคารประจำบ้าน</a> · <a href="tel:023340940">02-334-0940</a> · <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE @ninethanakarn</a></div>
+    <p class="disclaimer">ผลตอบแทนในอดีตไม่ได้การันตีอนาคต · ตัวเลขนี้เป็นเพียงการประมาณการเพื่อวางแผน ไม่ใช่คำแนะนำลงทุน · กรุณา recheck กับที่ปรึกษาการเงินก่อนตัดสินใจ</p>
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  var s = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', s);
+  document.getElementById('themeToggle').textContent = s === 'dark' ? '☀️' : '🌙';
+})();
+
+var mode = 'A';
+
+// Theme toggle
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var cur = document.documentElement.getAttribute('data-theme') || 'light';
+  var next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  this.textContent = next === 'dark' ? '☀️' : '🌙';
+});
+
+// Print
+document.getElementById('printBtn').addEventListener('click', function(){
+  var name = document.getElementById('customerName').value.trim();
+  document.getElementById('pdfCustomer').textContent = name ? 'วางแผนลงทุน — คุณ' + name : 'วางแผนลงทุน';
+  document.getElementById('pdfDate').textContent = new Date().toLocaleDateString('th-TH', {year:'numeric',month:'long',day:'numeric'});
+  window.print();
+});
+
+// Mode tabs
+document.querySelectorAll('.mode-tab').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.mode-tab').forEach(function(b){ b.classList.remove('active'); });
+    this.classList.add('active');
+    mode = this.dataset.mode;
+    document.getElementById('fieldMonthly').style.display = mode === 'B' ? 'flex' : 'none';
+    document.getElementById('inputTitle').textContent = mode === 'A' ? '📝 กรอกข้อมูล — ลงทุนครั้งเดียว' : '📝 กรอกข้อมูล — DCA ทุกเดือน';
+    calc();
+  });
+});
+
+// Preset chips
+document.querySelectorAll('.preset-chip[data-init]').forEach(function(b){
+  b.addEventListener('click', function(){ setVal('initInvest', this.dataset.init); calc(); });
+});
+document.querySelectorAll('.preset-chip[data-monthly]').forEach(function(b){
+  b.addEventListener('click', function(){ setVal('monthlyInvest', this.dataset.monthly); calc(); });
+});
+document.querySelectorAll('.preset-chip[data-rate]').forEach(function(b){
+  b.addEventListener('click', function(){ setVal('returnRate', this.dataset.rate); calc(); });
+});
+document.querySelectorAll('.preset-chip[data-years]').forEach(function(b){
+  b.addEventListener('click', function(){ setVal('years', this.dataset.years); calc(); });
+});
+
+// Live inputs
+['initInvest','monthlyInvest','returnRate','years'].forEach(function(id){
+  document.getElementById(id).addEventListener('input', calc);
+});
+
+function setVal(id, v){
+  var el = document.getElementById(id);
+  el.value = Number(v).toLocaleString('th-TH');
+}
+
+function parseNum(id){
+  var v = document.getElementById(id).value.replace(/,/g,'').replace(/[^0-9.]/g,'');
+  return parseFloat(v) || 0;
+}
+
+function fmt(n){
+  if(n >= 1e6) return (n/1e6).toFixed(2) + ' ล้านบาท';
+  return n.toLocaleString('th-TH', {minimumFractionDigits:0, maximumFractionDigits:0}) + ' บาท';
+}
+function fmtShort(n){
+  return n.toLocaleString('th-TH', {minimumFractionDigits:0, maximumFractionDigits:0});
+}
+
+function calc(){
+  var init = parseNum('initInvest');
+  var monthly = mode === 'B' ? parseNum('monthlyInvest') : 0;
+  var rate = parseNum('returnRate') / 100;
+  var yrs = Math.min(Math.floor(parseNum('years')), 50);
+
+  if(!init || !rate || !yrs){ document.getElementById('resultSection').style.display='none'; return; }
+
+  var r = rate / 12; // monthly rate
+  var rows = [];
+  var balance = init;
+  var totalInvested = init;
+
+  for(var y = 1; y <= yrs; y++){
+    var openBal = balance;
+    var yearlyAdded = monthly * 12;
+    // compound monthly for 12 months
+    for(var m = 1; m <= 12; m++){
+      balance = balance * (1 + r) + monthly;
+    }
+    totalInvested += yearlyAdded;
+    var interest = balance - totalInvested;
+    rows.push({
+      year: y,
+      invested: totalInvested,
+      balance: balance,
+      gain: interest,
+      returnPct: totalInvested > 0 ? (interest / (totalInvested)) * 100 : 0
+    });
+  }
+
+  var last = rows[rows.length - 1];
+  var totalGain = last.balance - (init + monthly * 12 * yrs);
+  var totalPut = init + monthly * 12 * yrs;
+  var totalReturnPct = totalPut > 0 ? (totalGain / totalPut) * 100 : 0;
+
+  // Show result
+  document.getElementById('resultSection').style.display = 'block';
+  document.getElementById('resultLabel').textContent = 'มูลค่า port หลัง ' + yrs + ' ปี';
+  document.getElementById('resultMain').textContent = fmt(last.balance);
+  if(mode === 'B'){
+    document.getElementById('resultSub').textContent = 'ลงทุน ' + fmtShort(init) + ' บาท + DCA ' + fmtShort(monthly) + ' บาท/เดือน @ ' + (rate*100).toFixed(1) + '%/ปี';
+  } else {
+    document.getElementById('resultSub').textContent = 'ลงทุน ' + fmtShort(init) + ' บาท ครั้งเดียว @ ' + (rate*100).toFixed(1) + '%/ปี';
+  }
+  document.getElementById('statTotal').textContent = fmtShort(totalPut) + ' บ.';
+  document.getElementById('statProfit').textContent = '+' + fmtShort(Math.round(totalGain)) + ' บ.';
+  document.getElementById('statReturnPct').textContent = '+' + totalReturnPct.toFixed(0) + '%';
+
+  // Build table
+  var head = document.getElementById('schedHead');
+  var body = document.getElementById('schedBody');
+  head.innerHTML = '<tr><th>ปีที่</th><th>เงินลงทุนสะสม (฿)</th><th>มูลค่า port (฿)</th><th>กำไรสะสม (฿)</th><th>ผลตอบแทน (%)</th></tr>';
+  body.innerHTML = '';
+
+  // Milestone: 2x, 3x, 5x
+  var milestones = {};
+  var doubles = [2, 3, 5];
+  doubles.forEach(function(x){
+    for(var i = 0; i < rows.length; i++){
+      if(rows[i].balance >= init * x && !milestones[x]){
+        milestones[x] = rows[i].year;
+      }
+    }
+  });
+
+  rows.forEach(function(r){
+    var tr = document.createElement('tr');
+    var milestone = '';
+    if(milestones[2] === r.year) milestone = '<span class="badge-milestone">2×</span>';
+    else if(milestones[3] === r.year) milestone = '<span class="badge-milestone">3×</span>';
+    else if(milestones[5] === r.year) milestone = '<span class="badge-milestone">5×</span>';
+    if(milestone) tr.classList.add('highlight-row');
+
+    tr.innerHTML =
+      '<td>ปีที่ ' + r.year + milestone + '</td>' +
+      '<td>' + fmtShort(Math.round(r.invested)) + '</td>' +
+      '<td>' + fmtShort(Math.round(r.balance)) + '</td>' +
+      '<td style="color:var(--green)">+' + fmtShort(Math.round(r.gain)) + '</td>' +
+      '<td style="color:var(--gold-600)">+' + r.returnPct.toFixed(1) + '%</td>';
+    body.appendChild(tr);
+  });
+}
+
+// Initial placeholder
+window.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('initInvest').value = '';
+  document.getElementById('returnRate').value = '';
+  document.getElementById('years').value = '';
+});
+</script>
+</body>
+</html>
