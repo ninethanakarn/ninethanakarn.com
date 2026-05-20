@@ -281,6 +281,60 @@ table.sched .highlight-row td{font-weight:700; color:var(--gold-700)}
   .back-link{padding:6px 8px}
 }
 
+/* Guide accordion */
+.guide-wrap{max-width:680px; margin:0 auto 20px}
+details.guide{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--shadow);
+}
+details.guide summary{
+  display:flex; align-items:center; gap:8px;
+  padding:14px 18px; cursor:pointer;
+  font-weight:700; font-size:14px; color:var(--gold-700);
+  list-style:none; user-select:none;
+  transition:background .15s;
+}
+[data-theme="dark"] details.guide summary{color:var(--gold-400)}
+details.guide summary::-webkit-details-marker{display:none}
+details.guide summary::after{
+  content:'▾'; margin-left:auto; font-size:16px;
+  color:var(--muted); transition:transform .2s;
+}
+details.guide[open] summary::after{transform:rotate(-180deg)}
+details.guide summary:hover{background:var(--gold-50)}
+.guide-body{padding:0 18px 18px; border-top:1px solid var(--border)}
+.guide-step{
+  display:grid; grid-template-columns:28px 1fr; gap:10px;
+  padding:12px 0; border-bottom:1px dashed var(--border);
+  align-items:start;
+}
+.guide-step:last-child{border-bottom:none; padding-bottom:0}
+.step-num{
+  width:28px; height:28px; border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-500),var(--gold-600));
+  color:#fff; font-weight:800; font-size:13px;
+  display:grid; place-items:center; flex-shrink:0;
+  margin-top:1px;
+}
+.step-content h4{margin:0 0 4px; font-size:14px; font-weight:700; color:var(--text)}
+.step-content p{margin:0 0 6px; font-size:13px; color:var(--muted); line-height:1.55}
+.step-content p:last-child{margin-bottom:0}
+.eg{
+  display:inline-block; background:var(--gold-50); border:1px solid var(--gold-200);
+  border-radius:6px; padding:3px 8px; font-size:12px;
+  color:var(--gold-700); font-weight:600; margin:2px 2px 2px 0;
+}
+[data-theme="dark"] .eg{background:#2d1f00; border-color:#78350f; color:var(--gold-400)}
+.guide-tip{
+  margin-top:14px; padding:12px 14px;
+  background:var(--gold-50); border-left:3px solid var(--gold-500);
+  border-radius:0 8px 8px 0; font-size:13px; color:var(--text);
+}
+[data-theme="dark"] .guide-tip{background:#2d1f00}
+.guide-tip strong{color:var(--gold-700)}
+[data-theme="dark"] .guide-tip strong{color:var(--gold-400)}
+
 /* Print */
 @media print{
   @page{size:A4; margin:14mm}
@@ -337,6 +391,85 @@ table.sched .highlight-row td{font-weight:700; color:var(--gold-700)}
     <h1><span class="emoji">📈</span>ตารางลงทุน</h1>
     <p>วางแผน port ระยะยาว ดูเงินเติบโตแบบทบต้น — ลงครั้งเดียวหรือ DCA ทุกเดือน</p>
   </header>
+
+  <!-- Guide -->
+  <div class="guide-wrap no-pdf">
+    <details class="guide">
+      <summary>📖 วิธีใช้งานตารางลงทุน</summary>
+      <div class="guide-body">
+
+        <div class="guide-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>เลือก Mode การลงทุน</h4>
+            <p><strong>💰 ลงทุนครั้งเดียว (Lump Sum)</strong> — มีเงินก้อน ลงทีเดียวแล้วปล่อยทบต้น เช่น เงินออม 1 แสน ลง LTF ทีเดียว</p>
+            <p><strong>📅 ลงทุนทุกเดือน (DCA)</strong> — ลงทุนสม่ำเสมอทุกเดือน เช่น กันเงิน 5,000 บาทต่อเดือนซื้อกองทุนรวม</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>กรอกเงินลงทุน</h4>
+            <p><strong>เงินลงทุนตั้งต้น</strong> — เงินก้อนแรกที่มีตอนเริ่ม (ทั้ง 2 mode) เช่น <span class="eg">100,000</span> <span class="eg">500,000</span></p>
+            <p><strong>ลงทุนเพิ่มทุกเดือน</strong> (เฉพาะ DCA) — ยอดที่จะลงเพิ่มทุกเดือน เช่น <span class="eg">3,000</span> <span class="eg">5,000</span></p>
+            <p>กดปุ่ม preset ด้านล่างช่องเพื่อเติมตัวเลขสำเร็จรูป หรือพิมพ์เองได้</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>เลือกผลตอบแทนต่อปี (%)</h4>
+            <p>ใช้ตัวเลขผลตอบแทนเฉลี่ยของสินทรัพย์ที่สนใจ:</p>
+            <p>
+              <span class="eg">🏦 ฝากประจำ 1.5%</span>
+              <span class="eg">📜 พันธบัตร 3%</span>
+              <span class="eg">📈 SET เฉลี่ย 7%</span>
+              <span class="eg">🌏 RMF/LTF 8%</span>
+              <span class="eg">🚀 Global 10%</span>
+            </p>
+            <p>หรือพิมพ์ตัวเลขเองได้ เช่น <span class="eg">6</span> <span class="eg">12</span></p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>ตั้งระยะเวลา (ปี)</h4>
+            <p>ใส่จำนวนปีที่ต้องการลงทุน สูงสุด 50 ปี เช่น <span class="eg">10 ปี</span> <span class="eg">20 ปี</span> <span class="eg">30 ปี</span></p>
+            <p>ตัวเลขจะคำนวณอัตโนมัติทันทีที่กรอกครบทุกช่อง ไม่ต้องกดปุ่ม</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>อ่านผลลัพธ์</h4>
+            <p><strong>มูลค่า port</strong> — เงินที่จะมีทั้งหมดเมื่อครบกำหนด (ต้นทุน + กำไรทบต้น)</p>
+            <p><strong>เงินลงทุนรวม</strong> — เงินที่คุณใส่เข้าไปจริงๆ ทั้งหมด</p>
+            <p><strong>กำไรสุทธิ</strong> — มูลค่า port ลบเงินลงทุนรวม = ดอกเบี้ยทบต้นที่ได้มา</p>
+            <p><strong>ผลตอบแทนรวม (%)</strong> — กำไร ÷ เงินลงทุนรวม × 100</p>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <h4>อ่านตารางรายปี</h4>
+            <p>ตารางแสดงการเติบโตทีละปี — ดูว่าปีไหน port โต 2 เท่า 3 เท่า หรือ 5 เท่า</p>
+            <p>แถวที่มีป้าย <span class="eg">2×</span> <span class="eg">3×</span> <span class="eg">5×</span> = ปีที่ port ทะลุ milestone นั้น</p>
+          </div>
+        </div>
+
+        <div class="guide-tip">
+          <strong>💡 เคล็ดลับ:</strong> กด 🖨️ (print) เพื่อบันทึกเป็น PDF — ใส่ชื่อลูกค้าในช่อง "คุณ..." ก่อน print จะขึ้นชื่อใน PDF ด้วย<br>
+          <strong>⚠️ หมายเหตุ:</strong> ผลตอบแทนในอดีตไม่การันตีอนาคต ตัวเลขนี้เป็นการประมาณการเพื่อวางแผนเท่านั้น
+        </div>
+
+      </div>
+    </details>
+  </div>
 
   <!-- Mode Tabs -->
   <div class="mode-tabs no-pdf">
