@@ -546,6 +546,61 @@ body.advanced-mode .advanced-only{display:block}
   .result-card{position:static}
   .result-main{font-size:36px}
 }
+
+/* Guide accordion */
+.guide-wrap{max-width:900px;margin:0 auto 20px;padding:0 16px}
+details.guide{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow);
+}
+details.guide summary{
+  display:flex;align-items:center;gap:8px;
+  padding:14px 18px;cursor:pointer;
+  font-weight:700;font-size:14px;color:var(--blue);
+  list-style:none;user-select:none;
+  transition:background .15s;
+}
+body.dark details.guide summary{color:#60a5fa}
+details.guide summary::-webkit-details-marker{display:none}
+details.guide summary::after{
+  content:'▾';margin-left:auto;font-size:16px;
+  color:var(--text-mute);transition:transform .2s;
+}
+details.guide[open] summary::after{transform:rotate(-180deg)}
+details.guide summary:hover{background:rgba(30,64,175,.06)}
+body.dark details.guide summary:hover{background:rgba(96,165,250,.08)}
+.guide-body{padding:0 18px 18px;border-top:1px solid var(--border)}
+.guide-step{
+  display:grid;grid-template-columns:28px 1fr;gap:10px;
+  padding:12px 0;border-bottom:1px dashed var(--border);
+  align-items:start;
+}
+.guide-step:last-child{border-bottom:none;padding-bottom:0}
+.step-num{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue-light),var(--blue));
+  color:#fff;font-weight:800;font-size:13px;
+  display:grid;place-items:center;flex-shrink:0;
+  margin-top:1px;
+}
+.step-content h4{margin:0 0 4px;font-size:14px;font-weight:700;color:var(--text)}
+.step-content p{margin:0 0 6px;font-size:13px;color:var(--text-soft);line-height:1.55}
+.step-content p:last-child{margin-bottom:0}
+.eg{
+  display:inline-block;background:rgba(30,64,175,.08);border:1px solid rgba(30,64,175,.2);
+  border-radius:6px;padding:3px 8px;font-size:12px;
+  color:var(--blue);font-weight:600;margin:2px 2px 2px 0;
+}
+body.dark .eg{background:rgba(96,165,250,.12);border-color:rgba(96,165,250,.3);color:#60a5fa}
+.guide-tip{
+  margin-top:14px;padding:12px 14px;
+  background:rgba(30,64,175,.06);border-left:3px solid var(--blue);
+  border-radius:0 8px 8px 0;font-size:13px;color:var(--text);
+}
+body.dark .guide-tip{background:rgba(96,165,250,.08)}
+.guide-tip strong{color:var(--blue)}
+body.dark .guide-tip strong{color:#60a5fa}
 </style>
 </head>
 <body>
@@ -572,6 +627,76 @@ body.advanced-mode .advanced-only{display:block}
     <p>ครบทุกลดหย่อน · รายได้หลายแหล่ง (ม.40 1-8) · เปรียบเทียบ scenarios · แนะนำการวางแผนภาษี</p>
   </div>
 </section>
+
+<!-- GUIDE -->
+<div class="guide-wrap">
+  <details class="guide" open>
+    <summary>📖 วิธีใช้งานเครื่องคำนวณภาษี — คลิกย่อ/ขยาย</summary>
+    <div class="guide-body">
+
+      <div class="guide-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>เลือก Mode การคำนวณ</h4>
+          <p><strong>⚡ Simple</strong> — สำหรับมนุษย์เงินเดือนทั่วไป กรอกเงินเดือน โบนัส และรายได้อื่นๆ ใน 3 ช่องเดียว เหมาะสำหรับคนที่มีรายได้แหล่งเดียวและต้องการตัวเลขเร็ว</p>
+          <p><strong>🚀 Advanced</strong> — สำหรับผู้มีรายได้หลายแหล่ง รองรับ ม.40 ประเภท 1-8 ครบ เช่น เงินเดือน + ค่าเช่า + Freelance + เงินปันผล + ธุรกิจ พร้อมระบบ Scenarios เปรียบเทียบ</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>กรอกรายได้ตามประเภท ม.40</h4>
+          <p><strong>Simple:</strong> กรอกเงินเดือน/ปี, โบนัส, รายได้อื่นๆ — ระบบหักค่าใช้จ่ายให้อัตโนมัติ 50% (ไม่เกิน 100,000 บาท)</p>
+          <p><strong>Advanced:</strong> กด <strong>"+ เพิ่มรายได้"</strong> แล้วเลือกประเภท ม.40 ที่ตรงกับรายได้จริง เช่น</p>
+          <p>
+            <span class="eg">ม.40(1) เงินเดือน</span>
+            <span class="eg">ม.40(5) ค่าเช่า</span>
+            <span class="eg">ม.40(8) ธุรกิจ/Freelance</span>
+          </p>
+          <p>ระบบจะหักค่าใช้จ่ายตามอัตรา ม.40 ให้อัตโนมัติ เช่น ค่าเช่าบ้านหัก 30%, ธุรกิจหัก 60%</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>กรอกค่าลดหย่อน 4 หมวด</h4>
+          <p><strong>หมวด 1 — ส่วนตัว/ครอบครัว:</strong> ลดหย่อนส่วนตัว 60,000, คู่สมรส, บุตร, บิดามารดา, ผู้พิการ</p>
+          <p><strong>หมวด 2 — ประกัน/ลงทุน:</strong> ประกันชีวิต, ประกันสุขภาพ, RMF, LTF/TLTF, SSF (ถูกตัดปี 2568 แล้ว), PVD, กบข.</p>
+          <p><strong>หมวด 3 — มาตรการรัฐ:</strong> ดอกเบี้ยบ้าน (ลดหย่อนได้สูงสุด 100,000 บาท), ช้อปดีมีคืน, Easy E-Receipt</p>
+          <p><strong>หมวด 4 — บริจาค:</strong> บริจาคการศึกษา (2 เท่า), บริจาคทั่วไป</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>อ่านผลการคำนวณ</h4>
+          <p><strong>เงินได้สุทธิ</strong> — รายได้รวม หักค่าใช้จ่าย หักลดหย่อนทั้งหมด = ฐานคำนวณภาษี</p>
+          <p><strong>ภาษีที่ต้องจ่าย</strong> — ตัวเลขจริงที่ต้องนำส่งกรมสรรพากร (Progressive Rate 0-35%)</p>
+          <p><strong>Effective Rate (%)</strong> — อัตราภาษีเฉลี่ยที่แท้จริง เทียบกับรายได้รวมทั้งปี ใช้ประเมินความคุ้มค่าของการวางแผน</p>
+          <p>ผลลัพธ์อัปเดต real-time ทุกครั้งที่เปลี่ยนตัวเลข ไม่ต้องกดปุ่มคำนวณ</p>
+        </div>
+      </div>
+
+      <div class="guide-step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>Scenarios + แนะนำวางแผนภาษี (Advanced)</h4>
+          <p>กด <strong>"บันทึก Scenario"</strong> เพื่อเก็บผลคำนวณชุดปัจจุบัน — จากนั้นปรับลดหย่อนแล้วบันทึก Scenario ที่ 2 เพื่อเปรียบเทียบว่าซื้อ RMF เพิ่ม 50,000 ประหยัดภาษีได้เท่าไหร่</p>
+          <p>ระบบจะแสดง <strong>"คำแนะนำวางแผนภาษี"</strong> อัตโนมัติ เช่น "ซื้อ RMF เพิ่มได้อีก X บาท ประหยัดภาษีได้ Y บาท"</p>
+        </div>
+      </div>
+
+      <div class="guide-tip">
+        <strong>💡 เคล็ดลับ:</strong> ใส่ชื่อลูกค้าในช่องด้านล่าง แล้วกด 🖨️ เพื่อ Save PDF ส่งให้ลูกค้าได้เลย — ชื่อและวันที่จะขึ้นอัตโนมัติใน PDF<br>
+        <strong>⚠️ ปี 2568:</strong> SSF ถูกตัดสิทธิ์ลดหย่อนแล้ว · วงเงินกลุ่มเกษียณ (ประกันบำนาญ+PVD+RMF+กบข.) รวมไม่เกิน 500,000 บาท
+      </div>
+
+    </div>
+  </details>
+</div>
 
 <!-- CUSTOMER NAME (visible in app, formatted nicely in PDF) -->
 <div class="customer-wrap">
