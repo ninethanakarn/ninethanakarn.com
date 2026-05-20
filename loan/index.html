@@ -1762,6 +1762,58 @@
         padding: 8px 12px;
       }
     }
+
+    /* Guide accordion */
+    .guide-wrap { margin-bottom: 18px; }
+    details.guide {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    details.guide summary {
+      display: flex; align-items: center; gap: 8px;
+      padding: 14px 18px; cursor: pointer;
+      font-weight: 700; font-size: 14px; color: var(--accent-dark);
+      list-style: none; user-select: none;
+      transition: background .15s;
+    }
+    details.guide summary::-webkit-details-marker { display: none; }
+    details.guide summary::after {
+      content: '▾'; margin-left: auto; font-size: 16px;
+      color: var(--muted); transition: transform .2s;
+    }
+    details.guide[open] summary::after { transform: rotate(-180deg); }
+    details.guide summary:hover { background: rgba(43,143,212,.07); }
+    .guide-body { padding: 0 18px 18px; border-top: 1px solid var(--border); }
+    .guide-step {
+      display: grid; grid-template-columns: 28px 1fr; gap: 10px;
+      padding: 12px 0; border-bottom: 1px dashed var(--border);
+      align-items: start;
+    }
+    .guide-step:last-child { border-bottom: none; padding-bottom: 0; }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; font-weight: 800; font-size: 13px;
+      display: grid; place-items: center; flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .step-content h4 { margin: 0 0 4px; font-size: 14px; font-weight: 700; color: var(--text); }
+    .step-content p { margin: 0 0 6px; font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .step-content p:last-child { margin-bottom: 0; }
+    .eg {
+      display: inline-block; background: rgba(43,143,212,.1); border: 1px solid rgba(43,143,212,.3);
+      border-radius: 6px; padding: 3px 8px; font-size: 12px;
+      color: var(--accent-dark); font-weight: 600; margin: 2px 2px 2px 0;
+    }
+    body.theme-dark .eg { background: rgba(56,189,248,.12); border-color: rgba(56,189,248,.3); color: #38bdf8; }
+    .guide-tip {
+      margin-top: 14px; padding: 12px 14px;
+      background: rgba(43,143,212,.07); border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0; font-size: 13px; color: var(--text);
+    }
+    .guide-tip strong { color: var(--accent-dark); }
+    body.theme-dark .guide-tip strong { color: #38bdf8; }
   </style>
 </head>
 <body>
@@ -1778,6 +1830,70 @@
       <h1>เครื่องคำนวณสินเชื่อ</h1>
       <p>ผ่อนคงที่ต่อเดือน (ดอกเบี้ยคงที่ / คำนวณแบบลดต้นลดดอก)</p>
     </header>
+
+    <!-- Guide -->
+    <div class="guide-wrap no-pdf">
+      <details class="guide">
+        <summary>📖 วิธีใช้งานเครื่องคำนวณสินเชื่อ</summary>
+        <div class="guide-body">
+
+          <div class="guide-step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>กรอกข้อมูลสินเชื่อ 4 ช่อง</h4>
+              <p><strong>จำนวนเงินกู้</strong> — วงเงินที่ขอกู้ (ไม่รวมเงินดาวน์) เช่น <span class="eg">2,000,000</span> <span class="eg">3,500,000</span></p>
+              <p><strong>อัตราดอกเบี้ยต่อปี (%)</strong> — ใส่อัตราของธนาคารที่สนใจ เช่น ช่วงโปร 3 ปีแรก <span class="eg">2.55</span> หรืออัตราหลังโปร <span class="eg">5.68</span></p>
+              <p><strong>ระยะเวลาผ่อน (เดือน)</strong> — เช่น ผ่อน 20 ปี = <span class="eg">240</span> หรือ 30 ปี = <span class="eg">360</span></p>
+              <p><strong>โปะต้นเพิ่มต่อเดือน</strong> (ไม่บังคับ) — เงินที่โปะเพิ่มนอกจากค่างวดปกติ เพื่อตัดเงินต้นเร็วขึ้น เช่น <span class="eg">2,000</span> <span class="eg">5,000</span></p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>กด "คำนวณ" → อ่านผลลัพธ์</h4>
+              <p><strong>ค่างวดต่อเดือน</strong> — ยอดที่ต้องจ่ายทุกเดือนตลอดสัญญา</p>
+              <p><strong>ดอกเบี้ยรวมทั้งหมด</strong> — ต้นทุนรวมที่จ่ายให้ธนาคารตลอดอายุสัญญา</p>
+              <p><strong>ยอดรวมที่ต้องจ่าย</strong> — เงินกู้ + ดอกเบี้ยรวม = เงินที่ออกจากกระเป๋าจริงๆ</p>
+              <p>💡 ลองเปลี่ยนระยะผ่อนสั้น-ยาว แล้วเปรียบเทียบดอกเบี้ยรวม — ยิ่งผ่อนสั้นยิ่งประหยัดดอกเบี้ย</p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>อ่านกราฟ 2 ตัว</h4>
+              <p><strong>🥧 กราฟวงกลม</strong> — แสดงสัดส่วนเงินต้น vs ดอกเบี้ยรวม ทำให้เห็นว่าดอกเบี้ยกินสัดส่วนเท่าไหร่จากยอดจ่ายทั้งหมด</p>
+              <p><strong>📈 กราฟเงินต้นคงเหลือ</strong> — ดูว่าแต่ละปีเงินต้นลดลงเร็วแค่ไหน ถ้าโปะเพิ่มทุกเดือนจะเห็นกราฟชันลงเร็วกว่าปกติ</p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>บันทึกแผนและเปรียบเทียบ</h4>
+              <p>กด <strong>💾 บันทึกแผนนี้</strong> เพื่อเก็บผลคำนวณไว้ — จากนั้นเปลี่ยนอัตราดอกเบี้ยหรือระยะผ่อนแล้วบันทึกแผนที่ 2</p>
+              <p>เปิด <strong>เปรียบเทียบแผน</strong> เพื่อดูแบบเคียงข้างกัน เช่น เปรียบธนาคาร A vs B หรือ ผ่อน 20 ปี vs 30 ปี</p>
+            </div>
+          </div>
+
+          <div class="guide-step">
+            <div class="step-num">5</div>
+            <div class="step-content">
+              <h4>คำนวณรีไฟแนนซ์</h4>
+              <p>เลื่อนลงไปที่ <strong>section รีไฟแนนซ์</strong> — ใส่ยอดหนี้คงเหลือ อัตราดอกเบี้ยใหม่ และระยะผ่อนใหม่</p>
+              <p>ระบบจะคำนวณว่า <strong>ประหยัดค่างวดได้เดือนละเท่าไหร่</strong> และ <strong>คุ้มค่ากับค่าธรรมเนียมรีไฟแนนซ์ไหม</strong></p>
+            </div>
+          </div>
+
+          <div class="guide-tip">
+            <strong>💡 เคล็ดลับ:</strong> ใส่ชื่อลูกค้าในช่องด้านบน แล้วกด <strong>📄 ดาวน์โหลด PDF</strong> เพื่อส่งสรุปให้ลูกค้าได้เลย<br>
+            <strong>⚠️ หมายเหตุ:</strong> คำนวณแบบลดต้นลดดอก (Amortization) อัตราคงที่ตลอด — อัตราจริงอาจปรับเปลี่ยนตาม MRR ของแต่ละธนาคาร
+          </div>
+
+        </div>
+      </details>
+    </div>
 
     <div class="customer-input-card no-pdf">
       <label for="customer-name">👤 ชื่อลูกค้า:</label>
