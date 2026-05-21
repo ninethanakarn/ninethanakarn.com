@@ -224,6 +224,18 @@ body.theme-dark .footer { background: #000; }
 .hero-aside-mobile { display: block; }
 .hero-aside-desktop { display: none; }
 @media (min-width: 900px) { .hero-aside-mobile { display: none; } .hero-aside-desktop { display: flex; flex-direction: column; gap: 16px; } }
+/* Guide accordion */
+.guide-wrap { max-width: 760px; margin: 0 auto; }
+.lp-guide { border: 1px solid var(--c-border); border-radius: var(--radius-lg); overflow: hidden; }
+.lp-guide summary { padding: 1rem 1.25rem; cursor: pointer; font-weight: 600; font-size: 0.95rem; background: var(--c-bg-elev); list-style: none; display: flex; align-items: center; gap: 0.5rem; color: var(--c-text); border: none; }
+.lp-guide summary::-webkit-details-marker { display: none; }
+.lp-guide summary::after { content: "▾"; margin-left: auto; transition: transform 0.2s; color: var(--c-text-mute); }
+.lp-guide[open] summary::after { transform: rotate(-180deg); }
+.lp-guide-body { padding: 1.1rem 1.25rem; display: grid; gap: 0.85rem; background: var(--c-bg); }
+.lp-guide-step { display: grid; grid-template-columns: 2rem 1fr; gap: 0.6rem; align-items: start; }
+.lp-guide-num { width: 2rem; height: 2rem; background: linear-gradient(135deg, var(--c-primary), var(--c-primary-light, #3b82f6)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+.lp-guide-step b { color: var(--c-primary); font-size: 0.95rem; }
+.lp-guide-step p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--c-text-mute); line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -287,6 +299,53 @@ body.theme-dark .footer { background: #000; }
         <div class="stat"><span class="stat-num">8</span><div class="stat-label">ธนาคาร</div></div>
         <div class="stat"><span class="stat-num">100<small style="font-size:.6em">%</small></span><div class="stat-label">ฟรี</div></div>
       </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top:0; padding-bottom:20px;">
+  <div class="container">
+    <div class="guide-wrap">
+      <details class="lp-guide" open>
+        <summary>📖 วิธีใช้งานเว็บนี้ — คลิกย่อ/ขยาย</summary>
+        <div class="lp-guide-body">
+          <div class="lp-guide-step">
+            <div class="lp-guide-num">1</div>
+            <div>
+              <b>เลือกบริการที่ตรงกับสถานการณ์คุณ</b>
+              <p>มี 4 บริการ: <strong>ปิดหนี้/รวมหนี้</strong> · <strong>บ้านมือ 1 อยู่เอง</strong> · <strong>คอนโดลงทุน</strong> · <strong>เช่าซื้อ/ผ่อนตรง</strong> — เลือกที่ตรงกับเป้าหมายของคุณตอนนี้</p>
+            </div>
+          </div>
+          <div class="lp-guide-step">
+            <div class="lp-guide-num">2</div>
+            <div>
+              <b>ใช้เครื่องมือฟรีก่อนตัดสินใจ</b>
+              <p>คำนวณ DSR · สินเชื่อบ้าน · ภาษี · ออมเงิน · ตารางลงทุน — ฟรี ไม่ต้องสมัคร ดูตัวเลขของตัวเองก่อนปรึกษาทีม</p>
+            </div>
+          </div>
+          <div class="lp-guide-step">
+            <div class="lp-guide-num">3</div>
+            <div>
+              <b>ดูดอกเบี้ยธนาคาร 12 แห่ง</b>
+              <p><strong>กดการ์ดธนาคาร</strong> ในส่วน "ทำงานกับ 12 ธนาคารชั้นนำ" เพื่อดูรายละเอียดดอกเบี้ยปีที่ 1 / 2–3 / 4+ ของแต่ละแห่ง</p>
+            </div>
+          </div>
+          <div class="lp-guide-step">
+            <div class="lp-guide-num">4</div>
+            <div>
+              <b>อ่านเคสจริงและบทความ</b>
+              <p>ดูตัวอย่างลูกค้าที่ผ่านมาแล้วที่ /case/ · อ่านบทความให้ความรู้ที่ /blog/ — เพื่อประเมินว่าสถานการณ์ของคุณใกล้เคียงกับเคสไหน</p>
+            </div>
+          </div>
+          <div class="lp-guide-step">
+            <div class="lp-guide-num">5</div>
+            <div>
+              <b>ปรึกษาทีม — ฟรี ไม่มีค่าใช้จ่าย</b>
+              <p>LINE @ninethanakarn หรือโทร 02-334-0940 · ทีมวิเคราะห์เคสและวางแผนเฉพาะตัวให้ · ไม่มีค่าบริการจนกว่าจะปิดดีล</p>
+            </div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 </section>
