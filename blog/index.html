@@ -109,6 +109,51 @@
       margin-left: 0.4rem;
       vertical-align: middle;
     }
+
+    /* Guide accordion */
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
   </style>
 </head>
 <body>
@@ -146,6 +191,41 @@
   </section>
 
   <div class="container">
+    <div class="guide-wrap">
+      <details class="guide" open>
+        <summary>📖 วิธีใช้งานหน้านี้ — คลิกย่อ/ขยาย</summary>
+        <div class="guide-body">
+          <div class="guide-step">
+            <div class="guide-num">1</div>
+            <div class="guide-step-body">
+              <b>เลือกหมวดที่ตรงกับสถานการณ์คุณ</b>
+              <p>กรองบทความด้วย tab ด้านบน: ปิดหนี้ · รวมหนี้ · บ้านมือ 1 · เช่าซื้อ — เลือกหมวดที่ตรงกับปัญหาหรือเป้าหมายของคุณตอนนี้</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">2</div>
+            <div class="guide-step-body">
+              <b>อ่านบทความที่ตรง — ใช้เวลา 5-10 นาที</b>
+              <p>แต่ละบทความมี ⏱️ ระบุเวลาอ่าน · มีตัวเลขจริง ตัวอย่างเคส timeline · เขียนโดย อ.ธรรศ จากประสบการณ์ลูกค้าจริง 7+ ปี</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">3</div>
+            <div class="guide-step-body">
+              <b>ใช้เครื่องมือในบทความ</b>
+              <p>บทความบางชิ้นมีลิงก์ไปยังเครื่องมือฟรี: คำนวณ DSR · คำนวณสินเชื่อ · คำนวณการออม — ใช้ตรวจสอบตัวเลขของคุณเองได้เลย</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">4</div>
+            <div class="guide-step-body">
+              <b>ถ้าสถานการณ์ใกล้เคียง → ปรึกษาต่อ</b>
+              <p>ถ้าอ่านแล้วรู้สึกว่าตรงกับสถานการณ์ → ปรึกษาทาง LINE หรือโทร 02-334-0940 เพื่อวางแผนเฉพาะสำหรับตัวเลขของคุณ</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
     <div class="star-divider"><span>★</span></div>
   </div>
 
