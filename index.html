@@ -185,6 +185,7 @@ body.theme-dark .section-link { color: var(--c-primary-light); }
 .about-features svg { width: 20px; height: 20px; color: var(--c-success); flex-shrink: 0; margin-top: 2px; }
 .testi-bg { background: var(--c-bg-soft); }
 .testi-grid { display: grid; gap: 16px; }
+.testi-grid .testi:nth-child(n+4) { display: none; }
 .testi { background: var(--c-bg-elev); border-radius: var(--radius-lg); padding: 24px; border: 1px solid var(--c-border-soft); position: relative; }
 .testi-quote { position: absolute; top: 12px; right: 18px; font-family: var(--font-numeric); font-style: italic; font-size: 60px; color: var(--c-accent); opacity: .15; line-height: 1; }
 .testi-stars { color: var(--c-accent); margin-bottom: 10px; font-size: 14px; letter-spacing: 2px; }
@@ -470,10 +471,12 @@ body.theme-dark .footer { background: #000; }
       <div class="testi"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">มีหนี้บัตรเครดิตหลายใบ ดอกแพง ทีมนายธนาคารประจำบ้าน ช่วยรวมหนี้ให้เป็นก้อนเดียว ผ่อนน้อยลง แถมยังเตรียมแผนกู้บ้านให้ในอนาคต ขอบคุณมากค่ะ</p><div class="testi-author"><div class="testi-avatar">ม</div><div><div class="testi-name">คุณมาลี ภ.</div><div class="testi-role">ลูกค้ารวมหนี้บัตรเครดิต</div></div></div></div>
       <div class="testi"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">ทีมเข้าใจระบบธนาคารดีมาก ธนาคารอนุมัติวงเงินให้ทั้งหมดที่ยื่นกู้ เลือกอันที่ดอกถูกที่สุด คุ้มค่าจริง ๆ ครับ</p><div class="testi-author"><div class="testi-avatar">ป</div><div><div class="testi-name">คุณประยุทธ ว.</div><div class="testi-role">ลูกค้ากู้คอนโดลงทุน</div></div></div></div>
     </div>
-    <div style="text-align:center; margin-top:1.75rem;">
-      <p style="font-size:0.88rem; color:var(--c-text-mute); margin-bottom:0.85rem;">ใช้บริการแล้ว? ช่วยแชร์ประสบการณ์บน Google เพื่อเป็นกำลังใจให้ทีม 🙏</p>
-      <a href="https://g.page/r/CX8kEhZv7IBZEBM/review" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.7rem 1.5rem; background:#fff; color:#1a1a1a; border-radius:8px; font-weight:600; font-size:0.95rem; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.15); border:1px solid rgba(0,0,0,0.1);">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+    <div style="text-align:center; margin-top:1.75rem; display:flex; flex-wrap:wrap; justify-content:center; gap:0.75rem;">
+      <a href="https://maps.app.goo.gl/nh69zuzy9M1nBXLf6" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.65rem 1.25rem; background:transparent; color:var(--c-text-mute); border-radius:8px; font-weight:500; font-size:0.88rem; text-decoration:none; border:1px solid var(--c-border-soft);">
+        ดูรีวิวทั้งหมดบน Google →
+      </a>
+      <a href="https://g.page/r/CX8kEhZv7IBZEBM/review" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.65rem 1.25rem; background:#fff; color:#1a1a1a; border-radius:8px; font-weight:600; font-size:0.88rem; text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.12); border:1px solid rgba(0,0,0,0.1);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
         ⭐ เขียนรีวิว Google
       </a>
     </div>
