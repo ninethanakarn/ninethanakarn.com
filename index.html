@@ -158,6 +158,22 @@ body.theme-dark .section-link { color: var(--c-primary-light); }
 .bank-rate { display: block; font-size: 11px; font-weight: 700; color: #16a34a; margin-top: 5px; }
 .bank-rate.na { color: var(--c-text-mute); font-weight: 400; }
 .banks-note { font-size: 0.78rem; color: var(--c-text-mute); text-align: center; margin-top: 14px; }
+.bank { cursor: pointer; }
+/* Bank Modal */
+.bank-modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:1000; align-items:center; justify-content:center; padding:16px; }
+.bank-modal-overlay.open { display:flex; }
+.bank-modal { background:var(--c-bg); border:1px solid var(--c-border); border-radius:16px; padding:24px; max-width:420px; width:100%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.3); }
+.bank-modal-close { position:absolute; top:12px; right:14px; background:none; border:none; font-size:20px; cursor:pointer; color:var(--c-text-mute); line-height:1; }
+.bank-modal-title { font-size:1.2rem; font-weight:700; margin-bottom:4px; }
+.bank-modal-sub { font-size:0.82rem; color:var(--c-text-mute); margin-bottom:16px; }
+.bank-rate-table { width:100%; border-collapse:collapse; font-size:0.88rem; margin-bottom:14px; }
+.bank-rate-table th { text-align:left; font-size:0.75rem; color:var(--c-text-mute); font-weight:600; padding:6px 8px; border-bottom:1px solid var(--c-border); }
+.bank-rate-table td { padding:8px 8px; border-bottom:1px solid var(--c-border-soft); }
+.bank-rate-table tr:last-child td { border-bottom:none; }
+.bank-rate-table .rate-val { font-weight:700; color:#16a34a; }
+.bank-modal-note { font-size:0.75rem; color:var(--c-text-mute); line-height:1.5; }
+.bank-modal-mrr { font-size:0.8rem; background:var(--c-bg-elev); border-radius:8px; padding:8px 12px; margin-bottom:12px; }
+.bank-modal-mrr span { font-weight:700; color:var(--c-primary); }
 .about-grid { display: grid; gap: 24px; align-items: center; }
 .about-img { position: relative; border-radius: var(--radius-xl); overflow: hidden; background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%); aspect-ratio: 4/5; max-width: 380px; margin: 0 auto; box-shadow: var(--shadow-lg); }
 .about-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
@@ -336,21 +352,36 @@ body.theme-dark .footer { background: #000; }
   <div class="container">
     <div class="section-head"><div class="section-head-text"><span class="star">★</span><div><h2>ทำงานกับ 12 ธนาคารชั้นนำ</h2><span class="sub">ยื่นกู้ตามโปรไฟล์ลูกค้า เพื่อเพิ่มโอกาสได้รับการอนุมัติจากธนาคาร</span></div></div></div>
     <div class="banks-wrap"><div class="banks-grid">
-      <div class="bank">BBL<small>กรุงเทพ</small><span class="bank-rate">เริ่ม 4.35%</span></div>
-      <div class="bank">KTB<small>กรุงไทย</small><span class="bank-rate">เริ่ม 2.29%</span></div>
-      <div class="bank">BAY<small>กรุงศรี</small><span class="bank-rate">เริ่ม 2.35%</span></div>
-      <div class="bank">SCB<small>ไทยพาณิชย์</small><span class="bank-rate">เริ่ม 2.55%</span></div>
-      <div class="bank">TTB<small>ทีเอ็มบีฯ</small><span class="bank-rate">เริ่ม 3.10%</span></div>
-      <div class="bank">GSB<small>ออมสิน</small><span class="bank-rate">เริ่ม 4.25%</span></div>
-      <div class="bank">GHB<small>อาคารฯ</small><span class="bank-rate">เริ่ม 2.50%</span></div>
-      <div class="bank">KBANK<small>กสิกรไทย</small><span class="bank-rate">เริ่ม 1.99%</span></div>
-      <div class="bank">UOB<small>ยูโอบี</small><span class="bank-rate">เริ่ม 5.90%</span></div>
-      <div class="bank">KKP<small>เกียรตินาคินฯ</small><span class="bank-rate">เริ่ม 2.88%</span></div>
-      <div class="bank">TISCO<small>ทิสโก้</small><span class="bank-rate">เริ่ม 3.30%</span></div>
-      <div class="bank">iBank<small>อิสลามแห่งไทย</small><span class="bank-rate">เริ่ม 2.49%</span></div>
+      <div class="bank" data-bank="BBL">BBL<small>กรุงเทพ</small><span class="bank-rate">เริ่ม 4.35%</span></div>
+      <div class="bank" data-bank="KTB">KTB<small>กรุงไทย</small><span class="bank-rate">เริ่ม 2.29%</span></div>
+      <div class="bank" data-bank="BAY">BAY<small>กรุงศรี</small><span class="bank-rate">เริ่ม 2.35%</span></div>
+      <div class="bank" data-bank="SCB">SCB<small>ไทยพาณิชย์</small><span class="bank-rate">เริ่ม 2.55%</span></div>
+      <div class="bank" data-bank="TTB">TTB<small>ทีเอ็มบีฯ</small><span class="bank-rate">เริ่ม 3.10%</span></div>
+      <div class="bank" data-bank="GSB">GSB<small>ออมสิน</small><span class="bank-rate">เริ่ม 4.25%</span></div>
+      <div class="bank" data-bank="GHB">GHB<small>อาคารฯ</small><span class="bank-rate">เริ่ม 2.50%</span></div>
+      <div class="bank" data-bank="KBANK">KBANK<small>กสิกรไทย</small><span class="bank-rate">เริ่ม 1.99%</span></div>
+      <div class="bank" data-bank="UOB">UOB<small>ยูโอบี</small><span class="bank-rate">เริ่ม 5.90%</span></div>
+      <div class="bank" data-bank="KKP">KKP<small>เกียรตินาคินฯ</small><span class="bank-rate">เริ่ม 2.88%</span></div>
+      <div class="bank" data-bank="TISCO">TISCO<small>ทิสโก้</small><span class="bank-rate">เริ่ม 3.30%</span></div>
+      <div class="bank" data-bank="IBANK">iBank<small>อิสลามแห่งไทย</small><span class="bank-rate">เริ่ม 2.49%</span></div>
     </div>
-    <p class="banks-note">* ดอกเบี้ยปีแรก อ้างอิง apthai.com / amoney.co.th (อัพเดท มี.ค. 2569) · ตัวเลขจริงขึ้นกับโปรไฟล์ลูกค้าและเงื่อนไขของแต่ละธนาคาร · ปรึกษาทีมเพื่อเลือกแบงค์ที่ตรงกับคุณ</p>
+    <p class="banks-note">* ดอกเบี้ยปีแรก · กดการ์ดเพื่อดูรายละเอียด · อ้างอิง apthai.com / amoney.co.th (อัพเดท มี.ค. 2569) · ตัวเลขจริงขึ้นกับโปรไฟล์ลูกค้าและเงื่อนไขของแต่ละธนาคาร</p>
     </div>
+
+  <!-- Bank Modal -->
+  <div class="bank-modal-overlay" id="bankModal">
+    <div class="bank-modal">
+      <button class="bank-modal-close" id="bankModalClose">✕</button>
+      <div class="bank-modal-title" id="modalTitle"></div>
+      <div class="bank-modal-sub" id="modalSub"></div>
+      <div class="bank-modal-mrr" id="modalMrr"></div>
+      <table class="bank-rate-table">
+        <thead><tr><th>ช่วงเวลา</th><th>อัตราดอกเบี้ย</th></tr></thead>
+        <tbody id="modalRates"></tbody>
+      </table>
+      <div class="bank-modal-note" id="modalNote"></div>
+    </div>
+  </div>
   </div>
 </section>
 
@@ -441,6 +472,46 @@ body.theme-dark .footer { background: #000; }
       }
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var banks = {
+    BBL:   { name:'ธนาคารกรุงเทพ (BBL)', ref:'MRR = 6.60%', rates:[['ปีที่ 1','4.35%'],['ปีที่ 2–3 (วงเงิน ≤5 ล้าน)','MRR−1.00% ≈ 5.60%'],['ปีที่ 2–3 (วงเงิน >5 ล้าน)','MRR−1.50% ≈ 5.10%'],['ปีที่ 4+','MRR−0.75% ≈ 5.85%']], note:'อัตรา MRR อาจปรับเปลี่ยนได้ · EIR ตลอดสัญญา 5.42–6.35%' },
+    KTB:   { name:'ธนาคารกรุงไทย (KTB)', ref:'MRR = 6.30%', rates:[['ปีที่ 1 (มี MRTA)','2.29%'],['ปีที่ 1 (ไม่มี MRTA)','2.59%'],['ปีที่ 2–3','4.25%'],['ปีที่ 4+ (MLR-based)','MLR−0.425% ≈ 6.53%']], note:'ปีที่ 4+ ใช้ MLR แทน MRR' },
+    BAY:   { name:'ธนาคารกรุงศรีอยุธยา (BAY)', ref:'MRR = 6.77%', rates:[['ปีที่ 1','2.35%'],['ปีที่ 2','2.35%'],['ปีที่ 3','3.45%'],['ปีที่ 4+','MRR−1.60% ≈ 5.17%']], note:'ปีที่ 1–2 อัตราเดียวกัน' },
+    SCB:   { name:'ธนาคารไทยพาณิชย์ (SCB)', ref:'MRR = 6.68%', rates:[['ปีที่ 1 (มี MRTA)','2.55%'],['ปีที่ 1 (ไม่มี MRTA)','2.80%'],['ปีที่ 2–3','MRR−3.78% ≈ 2.90%'],['ปีที่ 4+','MRR−1.55% ≈ 5.13%']], note:'ปีที่ 2–3 ต่ำเพราะ MRR หักมาก' },
+    TTB:   { name:'ธนาคารทีเอ็มบีธนชาต (TTB)', ref:'MRR = 7.21%', rates:[['ปีที่ 1–3 (ครบผลิตภัณฑ์)','3.10%'],['ปีที่ 1–3 (ไม่ครบผลิตภัณฑ์)','3.50–4.10%'],['ปีที่ 4+','MRR−1.43% ≈ 5.78%']], note:'ต้องครบผลิตภัณฑ์ TTB จึงได้ 3.10%' },
+    GSB:   { name:'ธนาคารออมสิน (GSB)', ref:'MRR = 6.045%', rates:[['ปีที่ 1–3','MRR−1.80% ≈ 4.25%'],['ปีที่ 4+','MRR−0.75% ≈ 5.30%']], note:'อัตรา MRR-based ตลอด · รัฐวิสาหกิจ' },
+    GHB:   { name:'ธนาคารอาคารสงเคราะห์ (ธอส.)', ref:'MRR = 6.145%', rates:[['ปีที่ 1 (มี MRTA)','2.50%'],['ปีที่ 1 (ไม่มี MRTA)','2.90%'],['ปีที่ 2 (มี MRTA)','3.10%'],['ปีที่ 3 (มี MRTA)','4.00%'],['ปีที่ 4+','MRR−0.50% ≈ 5.65%']], note:'เฉพาะผู้ซื้อบ้านอยู่เอง · รัฐวิสาหกิจ' },
+    KBANK: { name:'ธนาคารกสิกรไทย (KBANK)', ref:'MRR = 6.68%', rates:[['ปีที่ 1 (มี MRTA)','1.99%'],['ปีที่ 1 (ไม่มี MRTA)','2.49%'],['ปีที่ 2–3','MRR−2.24% ≈ 4.44%'],['ปีที่ 4+','MRR−2.00% ≈ 4.68%']], note:'ดอกเบี้ยปีแรกต่ำสุดในกลุ่ม · ปีที่ 2+ สูงขึ้น' },
+    UOB:   { name:'ธนาคารยูโอบี (UOB)', ref:'MRR = 8.18%', rates:[['ปีที่ 1–3 (มี MRTA)','5.90%'],['ปีที่ 1–3 (ไม่มี MRTA)','6.10%'],['ปีที่ 4+','MRR−0.65% ≈ 7.53%']], note:'อัตราสูงกว่าธนาคารไทย · เหมาะลูกค้าที่มีบัญชีกับ UOB' },
+    KKP:   { name:'ธนาคารเกียรตินาคินภัทร (KKP)', ref:'MLR ≈ 7.50%', rates:[['ปีที่ 1–3','MLR−4.625% ≈ 2.88%'],['ปีที่ 4+','MLR−1.75% ≈ 5.75%']], note:'ใช้ MLR เป็นอัตราอ้างอิง (ไม่ใช่ MRR)' },
+    TISCO: { name:'ธนาคารทิสโก้ (TISCO)', ref:'MRR = 8.15%', rates:[['ปีที่ 1–3','~3.30%'],['ปีที่ 4+','~5.50%']], note:'ให้บริการเฉพาะ กทม. และปริมณฑล 6 จังหวัด · EIR 5.22–5.57%' },
+    IBANK: { name:'ธนาคารอิสลามแห่งประเทศไทย (iBank)', ref:'SPRL = 7.80%', rates:[['ปีที่ 1 (มี MRTA)','2.49%'],['ปีที่ 2–3','3.49%'],['ปีที่ 4+','SPRL = 7.80% (เต็ม ไม่มีส่วนลด)']], note:'ใช้ระบบกำไร (Profit Rate) ตามหลัก Sharia · ไม่ใช่ดอกเบี้ยทั่วไป' }
+  };
+
+  var overlay = document.getElementById('bankModal');
+  var closeBtn = document.getElementById('bankModalClose');
+
+  document.querySelectorAll('.bank[data-bank]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var key = this.dataset.bank;
+      var d = banks[key];
+      if(!d) return;
+      document.getElementById('modalTitle').textContent = d.name;
+      document.getElementById('modalSub').textContent = 'ดอกเบี้ยสินเชื่อบ้าน / ที่อยู่อาศัย';
+      document.getElementById('modalMrr').innerHTML = 'อัตราอ้างอิงปัจจุบัน: <span>' + d.ref + '</span>';
+      var rows = d.rates.map(function(r){ return '<tr><td>'+r[0]+'</td><td class="rate-val">'+r[1]+'</td></tr>'; }).join('');
+      document.getElementById('modalRates').innerHTML = rows;
+      document.getElementById('modalNote').textContent = '⚠️ ' + d.note + ' · อ้างอิง apthai.com / amoney.co.th (มี.ค. 2569) · ตัวเลขจริงขึ้นกับโปรไฟล์ลูกค้า';
+      overlay.classList.add('open');
+    });
+  });
+
+  closeBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') overlay.classList.remove('open'); });
 })();
 </script>
 </body>
