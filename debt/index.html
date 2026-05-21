@@ -74,6 +74,51 @@
       text-align: center;
       font-size: 0.95rem;
     }
+
+    /* Guide accordion */
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
   </style>
 </head>
 <body>
@@ -111,6 +156,48 @@
   </section>
 
   <div class="container">
+    <div class="guide-wrap">
+      <details class="guide" open>
+        <summary>📖 วิธีใช้งานหน้านี้ — คลิกย่อ/ขยาย</summary>
+        <div class="guide-body">
+          <div class="guide-step">
+            <div class="guide-num">1</div>
+            <div class="guide-step-body">
+              <b>คำนวณ DSR ก่อน</b>
+              <p>กรอก รายได้สุทธิต่อเดือน · ยอดผ่อนหนี้รวมปัจจุบัน · ยอดผ่อนบ้านที่ต้องการ · และหนี้ที่จะปิด — ระบบจะคำนวณ DSR ก่อน/หลังปิดหนี้ให้ทันที</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">2</div>
+            <div class="guide-step-body">
+              <b>อ่านผล DSR</b>
+              <p>DSR &lt; 40% = ผ่านเกณฑ์ธนาคาร · DSR 40–50% = เสี่ยง · DSR &gt; 50% = ธนาคารปฏิเสธสินเชื่อบ้าน ปิดหนี้เพื่อลด DSR ก่อนยื่นกู้</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">3</div>
+            <div class="guide-step-body">
+              <b>เลือกวิธีปิด/รวมหนี้</b>
+              <p>มี 4 วิธี: รวมหนี้ · ปิดหนี้บัตรเครดิต · รีไฟแนนซ์รถ · สินเชื่อส่วนบุคคลดอกต่ำ — แต่ละวิธีเหมาะกับโครงสร้างหนี้ต่างกัน</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">4</div>
+            <div class="guide-step-body">
+              <b>เช็ค Touch Criteria</b>
+              <p>Touch รับเคสที่: DSR หลังปิดหนี้ &lt; 40% · ประวัติเครดิตไม่มีค้างเกิน 90 วัน · มีรายได้ประจำยืนยันได้ · ไม่มีคดีความที่ยังค้าง</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">5</div>
+            <div class="guide-step-body">
+              <b>ขั้นตอนต่อไป</b>
+              <p>ถ้าผ่านเกณฑ์ → ปรึกษาผ่าน LINE หรือโทร 02-334-0940 เพื่อวางแผนปิดหนี้และเตรียมเอกสารยื่นกู้บ้านได้เลย</p>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
     <div class="star-divider"><span>★</span></div>
   </div>
 
