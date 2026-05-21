@@ -152,9 +152,12 @@ body.theme-dark .section-link { color: var(--c-primary-light); }
 .step p { font-size: 13px; color: var(--c-text-soft); line-height: 1.5; }
 .banks-wrap { background: var(--c-bg-elev); border-radius: var(--radius-lg); padding: 28px 20px; border: 1px solid var(--c-border-soft); }
 .banks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-.bank { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius-md); padding: 14px 8px; text-align: center; font-family: var(--font-display); font-weight: 700; font-size: 13px; color: var(--c-text); transition: border-color .2s, transform .2s; }
+.bank { background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius-md); padding: 12px 8px; text-align: center; font-family: var(--font-display); font-weight: 700; font-size: 13px; color: var(--c-text); transition: border-color .2s, transform .2s; }
 .bank:hover { border-color: var(--c-primary); transform: translateY(-2px); }
 .bank small { display: block; font-size: 10px; color: var(--c-text-mute); font-weight: 400; margin-top: 2px; }
+.bank-rate { display: block; font-size: 11px; font-weight: 700; color: #16a34a; margin-top: 5px; }
+.bank-rate.na { color: var(--c-text-mute); font-weight: 400; }
+.banks-note { font-size: 0.78rem; color: var(--c-text-mute); text-align: center; margin-top: 14px; }
 .about-grid { display: grid; gap: 24px; align-items: center; }
 .about-img { position: relative; border-radius: var(--radius-xl); overflow: hidden; background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%); aspect-ratio: 4/5; max-width: 380px; margin: 0 auto; box-shadow: var(--shadow-lg); }
 .about-img img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
@@ -333,19 +336,21 @@ body.theme-dark .footer { background: #000; }
   <div class="container">
     <div class="section-head"><div class="section-head-text"><span class="star">★</span><div><h2>ทำงานกับ 12 ธนาคารชั้นนำ</h2><span class="sub">ยื่นกู้ตามโปรไฟล์ลูกค้า เพื่อเพิ่มโอกาสได้รับการอนุมัติจากธนาคาร</span></div></div></div>
     <div class="banks-wrap"><div class="banks-grid">
-      <div class="bank">BBL<small>กรุงเทพ</small></div>
-      <div class="bank">KTB<small>กรุงไทย</small></div>
-      <div class="bank">BAY<small>กรุงศรี</small></div>
-      <div class="bank">SCB<small>ไทยพาณิชย์</small></div>
-      <div class="bank">TTB<small>ทีเอ็มบีฯ</small></div>
-      <div class="bank">GSB<small>ออมสิน</small></div>
-      <div class="bank">GHB<small>อาคารฯ</small></div>
-      <div class="bank">KBANK<small>กสิกรไทย</small></div>
-      <div class="bank">UOB<small>ยูโอบี</small></div>
-      <div class="bank">KKP<small>เกียรตินาคินฯ</small></div>
-      <div class="bank">LHB<small>แลนด์ แอนด์ เฮ้าส์</small></div>
-      <div class="bank">CIMB<small>ซีไอเอ็มบี</small></div>
-    </div></div>
+      <div class="bank">BBL<small>กรุงเทพ</small><span class="bank-rate">เริ่ม 4.35%</span></div>
+      <div class="bank">KTB<small>กรุงไทย</small><span class="bank-rate">เริ่ม 2.29%</span></div>
+      <div class="bank">BAY<small>กรุงศรี</small><span class="bank-rate">เริ่ม 2.35%</span></div>
+      <div class="bank">SCB<small>ไทยพาณิชย์</small><span class="bank-rate">เริ่ม 2.55%</span></div>
+      <div class="bank">TTB<small>ทีเอ็มบีฯ</small><span class="bank-rate">เริ่ม 3.10%</span></div>
+      <div class="bank">GSB<small>ออมสิน</small><span class="bank-rate">เริ่ม 4.25%</span></div>
+      <div class="bank">GHB<small>อาคารฯ</small><span class="bank-rate">เริ่ม 2.50%</span></div>
+      <div class="bank">KBANK<small>กสิกรไทย</small><span class="bank-rate">เริ่ม 1.99%</span></div>
+      <div class="bank">UOB<small>ยูโอบี</small><span class="bank-rate">เริ่ม 5.90%</span></div>
+      <div class="bank">KKP<small>เกียรตินาคินฯ</small><span class="bank-rate">เริ่ม 2.88%</span></div>
+      <div class="bank">LHB<small>แลนด์ แอนด์ เฮ้าส์</small><span class="bank-rate na">ติดต่อธนาคาร</span></div>
+      <div class="bank">CIMB<small>ซีไอเอ็มบี</small><span class="bank-rate na">ติดต่อธนาคาร</span></div>
+    </div>
+    <p class="banks-note">* ดอกเบี้ยปีแรก อ้างอิง apthai.com / amoney.co.th (อัพเดท มี.ค. 2569) · ตัวเลขจริงขึ้นกับโปรไฟล์ลูกค้าและเงื่อนไขของแต่ละธนาคาร · ปรึกษาทีมเพื่อเลือกแบงค์ที่ตรงกับคุณ</p>
+    </div>
   </div>
 </section>
 
