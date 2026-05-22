@@ -4302,7 +4302,7 @@
         var capacityRow = document.getElementById("out-capacity-row");
         var capacityEl = document.getElementById("out-capacity");
         if (incomeTotal > 0) {
-          capacityEl.textContent = formatBaht(principal) + " (DSR " + selectedDsr + "%)";
+          capacityEl.textContent = formatBaht(principal);
           capacityRow.style.display = "";
         } else {
           capacityRow.style.display = "none";
