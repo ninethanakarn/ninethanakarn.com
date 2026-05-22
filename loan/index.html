@@ -1985,7 +1985,7 @@
               <input type="number" id="f-fixed-debt" placeholder="บาท/เดือน" min="0" step="1" />
             </div>
             <div class="field">
-              <label for="f-var-debt">ภาระแปรผัน <span class="field-inline-hint">บัตรเครดิต/บัตรกดเงินสด เฉลี่ย 6 เดือน</span></label>
+              <label for="f-var-debt">ภาระแปรผัน <span class="field-inline-hint">บัตรเครดิต/บัตรกด เฉลี่ย 6 เดือน</span></label>
               <input type="number" id="f-var-debt" placeholder="บาท/เดือน" min="0" step="1" />
             </div>
           </div>
@@ -2022,7 +2022,7 @@
             <div class="field">
               <label for="f-years">ระยะเวลาผ่อน (ปี)</label>
               <input type="number" id="f-years" min="1" max="50" step="1" placeholder="เช่น 30" required />
-              <div class="hint">×12 อัตโนมัติ</div>
+              <div class="hint">×12 อัตโนมัติ &nbsp;·&nbsp; 20 ปี = 240 &nbsp;·&nbsp; 30 ปี = 360</div>
               <input type="hidden" id="months" name="months" />
             </div>
           </div>
@@ -3467,176 +3467,6 @@
 
       function exportPDF() {
         window.print();
-      }
-
-      // ── kept for reference but no longer used ──
-      function _exportPDF_legacy() {
-        var main = document.querySelector(".wrap");
-        if (!main) throw new Error("ไม่พบ container หลักของแอป");
-
-          tempWrapper = main.cloneNode(true);
-          tempWrapper.classList.add("pdf-export-wrapper");
-          tempWrapper.style.position = "fixed";
-          tempWrapper.style.left = "-9999px";
-          tempWrapper.style.top = "0";
-          tempWrapper.style.width = "1080px";
-          tempWrapper.style.maxWidth = "1080px";
-          tempWrapper.style.padding = "20px";
-          tempWrapper.style.background = "#ffffff";
-          tempWrapper.style.color = "#000000";
-          tempWrapper.style.zIndex = "-1";
-          tempWrapper.style.opacity = "1";
-          tempWrapper.style.setProperty("--bg", "#ffffff");
-          tempWrapper.style.setProperty("--card", "#ffffff");
-          tempWrapper.style.setProperty("--text", "#000000");
-          tempWrapper.style.setProperty("--muted", "#334155");
-          tempWrapper.style.setProperty("--accent", "#1d4ed8");
-          tempWrapper.style.setProperty("--accent-dark", "#1e3a8a");
-          tempWrapper.style.setProperty("--border", "rgba(100, 170, 220, 0.35)");
-
-          removeNoPdfNodes(tempWrapper);
-
-          // === Customer + Date header block (replaces old dateTag) ===
-          var customerNameInput = document.getElementById("customer-name");
-          var customerNameValue = customerNameInput ? (customerNameInput.value || "").trim() : "";
-
-          var headerBlock = document.createElement("div");
-          headerBlock.style.cssText =
-            "margin:0 0 18px;padding:12px 18px;background:#f1f5f9;" +
-            "border:2px solid #1d4ed8;border-radius:10px;" +
-            "display:flex;justify-content:space-between;align-items:center;gap:16px";
-
-          var customerSide = document.createElement("div");
-          customerSide.style.cssText = "text-align:left;flex:1";
-          customerSide.innerHTML =
-            '<div style="font-size:10pt;color:#64748b;font-weight:500;margin-bottom:3pt">เอกสารสำหรับ:</div>' +
-            '<div style="font-size:15pt;font-weight:700;color:#1d4ed8">' +
-            (customerNameValue || "— (ไม่ระบุชื่อ)") +
-            "</div>";
-
-          var dateSide = document.createElement("div");
-          dateSide.style.cssText = "text-align:right";
-          dateSide.innerHTML =
-            '<div style="font-size:9pt;color:#64748b;font-weight:500">วันที่ออกเอกสาร</div>' +
-            '<div style="font-size:11pt;font-weight:600;color:#000;margin-top:2pt">' +
-            thaiPdfDatePhrase() +
-            "</div>";
-
-          headerBlock.appendChild(customerSide);
-          headerBlock.appendChild(dateSide);
-
-          var header = tempWrapper.querySelector("header");
-          if (header && header.parentNode) {
-            header.parentNode.insertBefore(headerBlock, header.nextSibling);
-          }
-
-          var title = tempWrapper.querySelector("header h1");
-          if (title) title.textContent = "รายงานการคำนวณสินเชื่อ";
-
-          forceVisible(tempWrapper.querySelector("#results"));
-          forceVisible(tempWrapper.querySelector("#charts-stack"));
-          forceVisible(tempWrapper.querySelector("#compare-block"));
-          forceVisible(tempWrapper.querySelector("#schedule-block"));
-
-          var prepayLiveHidden = prepayBox.hidden || prepayBox.hasAttribute("hidden");
-          var prepayInTemp = tempWrapper.querySelector("#prepay-box");
-          if (prepayInTemp) {
-            if (prepayLiveHidden) {
-              prepayInTemp.parentNode.removeChild(prepayInTemp);
-            } else {
-              forceVisible(prepayInTemp);
-            }
-          }
-
-          var scheduleScrollTemp = tempWrapper.querySelector("#schedule-scroll");
-          if (scheduleScrollTemp) {
-            scheduleScrollTemp.style.maxHeight = "none";
-            scheduleScrollTemp.style.overflow = "visible";
-            scheduleScrollTemp.classList.remove("is-hidden");
-          }
-
-          var compareScrollTemp = tempWrapper.querySelector(".compare-scroll");
-          if (compareScrollTemp) {
-            compareScrollTemp.style.overflow = "visible";
-            compareScrollTemp.style.maxHeight = "none";
-          }
-
-          var scheduleBlockTemp = tempWrapper.querySelector("#schedule-block");
-          if (scheduleBlockTemp) {
-            scheduleBlockTemp.style.pageBreakBefore = "always";
-          }
-
-          var livePie = document.getElementById("chart-pie");
-          var liveLine = document.getElementById("chart-line");
-          var pieTemp = tempWrapper.querySelector("#chart-pie");
-          var lineTemp = tempWrapper.querySelector("#chart-line");
-          if (livePie && pieTemp) {
-            var pieImg = document.createElement("img");
-            pieImg.src = livePie.toDataURL("image/png");
-            pieImg.style.width = "100%";
-            pieImg.style.height = "auto";
-            pieImg.style.display = "block";
-            pieTemp.parentNode.replaceChild(pieImg, pieTemp);
-          }
-          if (liveLine && lineTemp) {
-            var lineImg = document.createElement("img");
-            lineImg.src = liveLine.toDataURL("image/png");
-            lineImg.style.width = "100%";
-            lineImg.style.height = "auto";
-            lineImg.style.display = "block";
-            lineTemp.parentNode.replaceChild(lineImg, lineTemp);
-          }
-          canvasToImgIn(tempWrapper);
-
-          document.body.appendChild(tempWrapper);
-          await new Promise(function (r) {
-            setTimeout(r, 300);
-          });
-
-          console.log("PDF debug: tempWrapper.innerHTML.length =", tempWrapper.innerHTML.length);
-          console.log(
-            "PDF debug: img count =",
-            tempWrapper.querySelectorAll("img").length,
-            "canvas count =",
-            tempWrapper.querySelectorAll("canvas").length
-          );
-          console.log(
-            "PDF debug: table rows =",
-            tempWrapper.querySelectorAll("tr").length
-          );
-
-          var options = {
-            margin: [10, 10, 10, 10],
-            filename: "loan-calculation-" + pdfFilenameStamp() + ".pdf",
-            image: { type: "jpeg", quality: 0.95 },
-            html2canvas: {
-              scale: 2,
-              useCORS: true,
-              backgroundColor: "#ffffff",
-              logging: true,
-            },
-            jsPDF: {
-              unit: "mm",
-              format: "a4",
-              orientation: "portrait",
-            },
-            pagebreak: { mode: ["css", "legacy"] },
-          };
-
-          await html2pdf().from(tempWrapper).set(options).save();
-        } catch (error) {
-          console.error("PDF export error:", error);
-          alert("ไม่สามารถสร้าง PDF ได้: " + error.message);
-        } finally {
-          if (tempWrapper && tempWrapper.parentNode) {
-            tempWrapper.parentNode.removeChild(tempWrapper);
-          }
-          btnPdf.textContent = "📄 ดาวน์โหลด PDF";
-          btnPdf.disabled = false;
-          if (oldLabel && oldLabel !== "กำลังสร้าง PDF...") {
-            btnPdf.textContent = "📄 ดาวน์โหลด PDF";
-          }
-        }
       }
 
       function destroyCharts() {
