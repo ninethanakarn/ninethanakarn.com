@@ -224,7 +224,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
 
@@ -242,7 +242,7 @@
 
     @media (min-width: 720px) {
       .services-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 16px;
       }
     }
@@ -1881,61 +1881,64 @@
     <!-- Guide -->
     <div class="guide-wrap no-pdf">
       <details class="guide" open>
-        <summary>📖 วิธีใช้งานApp คำนวณสินเชื่อบ้าน — คลิกย่อ/ขยาย</summary>
+        <summary>📖 วิธีใช้งาน App คำนวณสินเชื่อบ้าน — คลิกย่อ/ขยาย</summary>
         <div class="guide-body">
 
           <div class="guide-step">
             <div class="step-num">1</div>
             <div class="step-content">
-              <h4>กรอกข้อมูลสินเชื่อ 4 ช่อง</h4>
-              <p><strong>จำนวนเงินกู้</strong> — วงเงินที่ขอกู้ (ไม่รวมเงินดาวน์) เช่น <span class="eg">2,000,000</span> <span class="eg">3,500,000</span></p>
-              <p><strong>อัตราดอกเบี้ยต่อปี (%)</strong> — ใส่อัตราของธนาคารที่สนใจ เช่น ช่วงโปร 3 ปีแรก <span class="eg">2.55</span> หรืออัตราหลังโปร <span class="eg">5.68</span></p>
-              <p><strong>ระยะเวลาผ่อน (เดือน)</strong> — เช่น ผ่อน 20 ปี = <span class="eg">240</span> หรือ 30 ปี = <span class="eg">360</span></p>
-              <p><strong>โปะต้นเพิ่มต่อเดือน</strong> (ไม่บังคับ) — เงินที่โปะเพิ่มนอกจากค่างวดปกติ เพื่อตัดเงินต้นเร็วขึ้น เช่น <span class="eg">2,000</span> <span class="eg">5,000</span></p>
+              <h4>กรอกรายได้ (Section 01)</h4>
+              <p><strong>เงินเดือน</strong> — เงินเดือนประจำตามสลิป เช่น <span class="eg">50,000</span></p>
+              <p><strong>รายได้ Fix</strong> — ค่าตำแหน่ง / ค่าครองชีพ (ถ้ามี)</p>
+              <p><strong>รายได้แปรผัน</strong> — OT / คอมมิชชั่น เฉลี่ย 6 เดือนย้อนหลัง</p>
+              <p><strong>โบนัส</strong> — กรอกเป็นบาท/ปี ระบบหาร 12 ให้อัตโนมัติ</p>
+              <p>💡 ระบบแสดง <em>รายได้รวมที่ธนาคารนับ</em> ให้ดูทันที</p>
             </div>
           </div>
 
           <div class="guide-step">
             <div class="step-num">2</div>
             <div class="step-content">
-              <h4>กด "คำนวณ" → อ่านผลลัพธ์</h4>
-              <p><strong>ค่างวดต่อเดือน</strong> — ยอดที่ต้องจ่ายทุกเดือนตลอดสัญญา</p>
-              <p><strong>ดอกเบี้ยรวมทั้งหมด</strong> — ต้นทุนรวมที่จ่ายให้ธนาคารตลอดอายุสัญญา</p>
-              <p><strong>ยอดรวมที่ต้องจ่าย</strong> — เงินกู้ + ดอกเบี้ยรวม = เงินที่ออกจากกระเป๋าจริงๆ</p>
-              <p>💡 ลองเปลี่ยนระยะผ่อนสั้น-ยาว แล้วเปรียบเทียบดอกเบี้ยรวม — ยิ่งผ่อนสั้นยิ่งประหยัดดอกเบี้ย</p>
+              <h4>กรอกภาระหนี้ต่อเดือน (Section 02)</h4>
+              <p><strong>ภาระ Fix</strong> — ค่างวดรถ / สินเชื่อส่วนบุคคล / หนี้ผ่อนคงที่</p>
+              <p><strong>ภาระแปรผัน</strong> — ยอดจ่ายขั้นต่ำบัตรเครดิต / บัตรกด เฉลี่ย 6 เดือน</p>
+              <p>💡 ระบบคำนวณ <em>DSR</em> และ <em>วงเงินกู้สูงสุด</em> จาก DSR 70% ให้เห็นทันที</p>
             </div>
           </div>
 
           <div class="guide-step">
             <div class="step-num">3</div>
             <div class="step-content">
-              <h4>อ่านกราฟ 2 ตัว</h4>
-              <p><strong>🥧 กราฟวงกลม</strong> — แสดงสัดส่วนเงินต้น vs ดอกเบี้ยรวม ทำให้เห็นว่าดอกเบี้ยกินสัดส่วนเท่าไหร่จากยอดจ่ายทั้งหมด</p>
-              <p><strong>📈 กราฟเงินต้นคงเหลือ</strong> — ดูว่าแต่ละปีเงินต้นลดลงเร็วแค่ไหน ถ้าโปะเพิ่มทุกเดือนจะเห็นกราฟชันลงเร็วกว่าปกติ</p>
+              <h4>กรอกรายละเอียดสินเชื่อ (Section 03)</h4>
+              <p><strong>ยื่นกู้ธนาคาร</strong> — เลือกธนาคาร → ดอกเบี้ยปีแรกจะใส่ให้อัตโนมัติ</p>
+              <p><strong>ระยะเวลาผ่อน (ปี)</strong> — กรอกเป็นปี เช่น <span class="eg">20</span> หรือ <span class="eg">30</span> ระบบแปลงเป็นเดือนให้</p>
+              <p><strong>โปะต้นเพิ่มต่อเดือน</strong> (ไม่บังคับ) — เช่น <span class="eg">2,000</span> <span class="eg">5,000</span> เพื่อตัดเงินต้นเร็วขึ้น</p>
             </div>
           </div>
 
           <div class="guide-step">
             <div class="step-num">4</div>
             <div class="step-content">
-              <h4>บันทึกแผนและเปรียบเทียบ</h4>
-              <p>กด <strong>💾 บันทึกแผนนี้</strong> เพื่อเก็บผลคำนวณไว้ — จากนั้นเปลี่ยนอัตราดอกเบี้ยหรือระยะผ่อนแล้วบันทึกแผนที่ 2</p>
-              <p>เปิด <strong>เปรียบเทียบแผน</strong> เพื่อดูแบบเคียงข้างกัน เช่น เปรียบธนาคาร A vs B หรือ ผ่อน 20 ปี vs 30 ปี</p>
+              <h4>กด "คำนวณ" หรือ Enter → อ่านผลลัพธ์</h4>
+              <p><strong>ความสามารถในการกู้</strong> — วงเงินสูงสุดจากรายได้ของคุณ (DSR 70%)</p>
+              <p><strong>ค่างวดต่อเดือน</strong> — ยอดที่ต้องจ่ายทุกเดือนตลอดสัญญา</p>
+              <p><strong>ดอกเบี้ยรวม / ยอดรวม</strong> — ต้นทุนรวมจริงที่ออกจากกระเป๋า</p>
+              <p>💡 ลองเปลี่ยนระยะผ่อนสั้น-ยาว เปรียบดอกเบี้ยรวม — ยิ่งผ่อนสั้นยิ่งประหยัด</p>
             </div>
           </div>
 
           <div class="guide-step">
             <div class="step-num">5</div>
             <div class="step-content">
-              <h4>คำนวณรีไฟแนนซ์</h4>
-              <p>เลื่อนลงไปที่ <strong>section รีไฟแนนซ์</strong> — ใส่ยอดหนี้คงเหลือ อัตราดอกเบี้ยใหม่ และระยะผ่อนใหม่</p>
-              <p>ระบบจะคำนวณว่า <strong>ประหยัดค่างวดได้เดือนละเท่าไหร่</strong> และ <strong>คุ้มค่ากับค่าธรรมเนียมรีไฟแนนซ์ไหม</strong></p>
+              <h4>บันทึก / เปรียบเทียบ / รีไฟแนนซ์</h4>
+              <p>กด <strong>💾 บันทึกแผนนี้</strong> → เปลี่ยนธนาคารหรือระยะผ่อนแล้วบันทึกแผนที่ 2 → เปิด <strong>เปรียบเทียบแผน</strong> เพื่อดูแบบเคียงข้างกัน</p>
+              <p>เลื่อนลงที่ <strong>section รีไฟแนนซ์</strong> — ใส่ยอดหนี้คงเหลือ อัตราใหม่ ระบบคำนวณว่าคุ้มไหมกับค่าธรรมเนียม</p>
             </div>
           </div>
 
           <div class="guide-tip">
-            <strong>💡 เคล็ดลับ:</strong> ใส่ชื่อลูกค้าในช่องด้านบน แล้วกด <strong>📄 ดาวน์โหลด PDF</strong> เพื่อส่งสรุปให้ลูกค้าได้เลย<br>
-            <strong>⚠️ หมายเหตุ:</strong> คำนวณแบบลดต้นลดดอก (Amortization) อัตราคงที่ตลอด — อัตราจริงอาจปรับเปลี่ยนตาม MRR ของแต่ละธนาคาร
+            <strong>💡 เคล็ดลับ:</strong> ใส่ชื่อลูกค้าในช่องด้านบน แล้วกด <strong>🖨️ พิมพ์ / บันทึก PDF</strong> → เลือก <em>Save as PDF</em> เพื่อส่งสรุปให้ลูกค้าได้เลย<br>
+            <strong>⚠️ หมายเหตุ:</strong> คำนวณแบบลดต้นลดดอก (Amortization) อัตราคงที่ตลอด — อัตราจริงอาจปรับตาม MRR ของแต่ละธนาคาร
           </div>
 
         </div>
@@ -2028,7 +2031,7 @@
           </div>
           <div class="field">
             <label for="extra-prepay">โป๊ะต้นเพิ่มต่อเดือน (บาท) <span class="field-inline-hint">ไม่บังคับ</span></label>
-            <input type="number" id="extra-prepay" name="extraPrepay" min="0" step="1" placeholder="เช่น 5,000" />
+            <input type="text" inputmode="numeric" id="extra-prepay" name="extraPrepay" placeholder="เช่น 5,000" autocomplete="off" />
           </div>
         </div>
 
@@ -2046,6 +2049,7 @@
       <div id="error" class="error" role="alert"></div>
 
       <section id="results" class="results" aria-live="polite">
+        <div id="pdf-customer-line" style="display:none; font-size:0.95rem; font-weight:600; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #dde;"></div>
         <h2>ผลการคำนวณ</h2>
         <div class="result-row">
           <span class="result-label">ค่างวดต่อเดือน</span>
@@ -2318,18 +2322,23 @@
       <h2 class="services-section-title" id="services-heading">🛠️ บริการของเรา</h2>
       <div class="services-grid">
         <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">💳</div>
+          <h3 class="service-card-title">ปิดหนี้ / รวมหนี้</h3>
+          <p class="service-card-desc">ลด DSR เพิ่มโอกาสผ่านกู้บ้าน</p>
+        </article>
+        <article class="service-card">
           <div class="service-card-icon" aria-hidden="true">🏠</div>
-          <h3 class="service-card-title">ปิดหนี้ก่อนกู้บ้าน</h3>
-          <p class="service-card-desc">ลดภาระหนี้ เพิ่มโอกาสผ่าน</p>
+          <h3 class="service-card-title">บ้านมือ 1 อยู่เอง</h3>
+          <p class="service-card-desc">วางแผนกู้ซื้อบ้านใหม่จากโครงการ</p>
         </article>
         <article class="service-card">
           <div class="service-card-icon" aria-hidden="true">🏢</div>
-          <h3 class="service-card-title">คอนโดลงทุนปล่อยเช่า</h3>
-          <p class="service-card-desc">ทำเลดี มีผู้เช่า</p>
+          <h3 class="service-card-title">คอนโดมือ 1 ลงทุน</h3>
+          <p class="service-card-desc">ทำเลดี Yield ดี มีผู้เช่า</p>
         </article>
         <article class="service-card">
           <div class="service-card-icon" aria-hidden="true">🔑</div>
-          <h3 class="service-card-title">เช่า-เช่าซื้อ / ผ่อนตรง</h3>
+          <h3 class="service-card-title">เช่าซื้อ / ผ่อนตรง</h3>
           <p class="service-card-desc">กู้ไม่ผ่านก็มีทางเลือก</p>
         </article>
       </div>
@@ -3473,7 +3482,17 @@
       }
 
       function exportPDF() {
+        var nameVal = (document.getElementById("customer-name").value || "").trim();
+        var pdfLine = document.getElementById("pdf-customer-line");
+        if (nameVal) {
+          pdfLine.textContent = "👤 ลูกค้า: " + nameVal + "   |   App คำนวณสินเชื่อบ้าน · ninethanakarn.com";
+          pdfLine.style.display = "block";
+        } else {
+          pdfLine.style.display = "none";
+        }
         window.print();
+        // hide again after print dialog closes
+        setTimeout(function(){ pdfLine.style.display = "none"; }, 1000);
       }
 
       function destroyCharts() {
@@ -4033,7 +4052,7 @@
       function fmt(n) { return Math.round(n).toLocaleString("th-TH"); }
 
       // Comma-format number text inputs while typing
-      var COMMA_INPUT_IDS = ["f-salary","f-fixed-income","f-var-income","f-bonus","f-fixed-debt","f-var-debt"];
+      var COMMA_INPUT_IDS = ["f-salary","f-fixed-income","f-var-income","f-bonus","f-fixed-debt","f-var-debt","extra-prepay"];
       function formatNumInput(e) {
         var el = e.target;
         var caret = el.selectionStart;
@@ -4121,10 +4140,12 @@
           el.addEventListener("input", formatNumInput);
         }
       });
+      // extra-prepay: comma formatting only (ไม่ต้องอัพเดต income/DSR preview)
+      document.getElementById("extra-prepay").addEventListener("input", formatNumInput);
 
       // Enter key on any form field → submit
       ["f-salary","f-fixed-income","f-var-income","f-bonus",
-       "f-fixed-debt","f-var-debt","annual-rate","f-years"].forEach(function(id) {
+       "f-fixed-debt","f-var-debt","annual-rate","f-years","extra-prepay"].forEach(function(id) {
         document.getElementById(id).addEventListener("keydown", function(e) {
           if (e.key === "Enter") {
             e.preventDefault();
