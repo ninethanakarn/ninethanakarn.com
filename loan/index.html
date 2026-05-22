@@ -228,6 +228,18 @@
       gap: 14px;
     }
 
+    @media print {
+      @page { margin: 1.2cm; size: A4; }
+      body { background: #fff !important; color: #000 !important; padding: 0; }
+      .theme-toggle, .no-pdf, .btn-pdf, .btn-plan-save,
+      .services-section, .contact-section, .site-brand-block,
+      #btn-pdf, #btn-save-plan { display: none !important; }
+      .card { box-shadow: none !important; border: 1px solid #dde !important; }
+      .wrap { max-width: 100% !important; }
+      .result-value { color: #1e3a8a !important; }
+      .chart-section canvas { max-width: 100%; }
+    }
+
     @media (min-width: 720px) {
       .services-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1947,13 +1959,13 @@
               <input type="number" id="f-salary" placeholder="เช่น 50,000" min="0" step="1" />
             </div>
             <div class="field">
-              <label for="f-fixed-income">รายได้ Fix <span class="field-inline-hint">OT/เบี้ยเลี้ยง</span></label>
+              <label for="f-fixed-income">รายได้ Fix <span class="field-inline-hint">ค่าตำแหน่ง/ค่าครองชีพ</span></label>
               <input type="number" id="f-fixed-income" placeholder="บาท/เดือน" min="0" step="1" />
             </div>
           </div>
           <div class="field-row">
             <div class="field">
-              <label for="f-var-income">รายได้แปรผัน <span class="field-inline-hint">เฉลี่ย 6 เดือน</span></label>
+              <label for="f-var-income">รายได้แปรผัน <span class="field-inline-hint">OT/คอมมิชชั่น เฉลี่ย 6 เดือน</span></label>
               <input type="number" id="f-var-income" placeholder="บาท/เดือน" min="0" step="1" />
             </div>
             <div class="field">
@@ -1973,8 +1985,8 @@
               <input type="number" id="f-fixed-debt" placeholder="บาท/เดือน" min="0" step="1" />
             </div>
             <div class="field">
-              <label for="f-var-debt">ภาระแปรผัน <span class="field-inline-hint">เฉลี่ย 6 เดือน</span></label>
-              <input type="number" id="f-var-debt" placeholder="บัตรเครดิต" min="0" step="1" />
+              <label for="f-var-debt">ภาระแปรผัน <span class="field-inline-hint">บัตรเครดิต/บัตรกดเงินสด เฉลี่ย 6 เดือน</span></label>
+              <input type="number" id="f-var-debt" placeholder="บาท/เดือน" min="0" step="1" />
             </div>
           </div>
           <div class="income-preview" id="dsr-preview">DSR ปัจจุบัน: — &nbsp;|&nbsp; วงเงินกู้สูงสุด: —</div>
@@ -2008,9 +2020,10 @@
               <input type="number" id="annual-rate" name="annualRate" min="0" max="100" step="0.01" placeholder="เช่น 3.5" required />
             </div>
             <div class="field">
-              <label for="months">ระยะเวลาผ่อน (เดือน)</label>
-              <input type="number" id="months" name="months" min="1" max="600" step="1" placeholder="เช่น 360" required />
-              <div class="hint">20 ปี = 240 · 30 ปี = 360</div>
+              <label for="f-years">ระยะเวลาผ่อน (ปี)</label>
+              <input type="number" id="f-years" min="1" max="50" step="1" placeholder="เช่น 30" required />
+              <div class="hint">×12 อัตโนมัติ</div>
+              <input type="hidden" id="months" name="months" />
             </div>
           </div>
           <div class="field">
@@ -3452,20 +3465,14 @@
         renderSavedPlans();
       }
 
-      async function exportPDF() {
-        if (typeof html2pdf === "undefined") {
-          alert("ไม่สามารถสร้าง PDF ได้: html2pdf ยังไม่พร้อมใช้งาน");
-          return;
-        }
+      function exportPDF() {
+        window.print();
+      }
 
-        var tempWrapper = null;
-        var oldLabel = btnPdf.textContent;
-        btnPdf.textContent = "กำลังสร้าง PDF...";
-        btnPdf.disabled = true;
-
-        try {
-          var main = document.querySelector(".wrap");
-          if (!main) throw new Error("ไม่พบ container หลักของแอป");
+      // ── kept for reference but no longer used ──
+      function _exportPDF_legacy() {
+        var main = document.querySelector(".wrap");
+        if (!main) throw new Error("ไม่พบ container หลักของแอป");
 
           tempWrapper = main.cloneNode(true);
           tempWrapper.classList.add("pdf-export-wrapper");
@@ -4205,7 +4212,7 @@
         var income = calcIncome();
         var debt = calcDebt();
         var annualPct = parseFloat(document.getElementById("annual-rate").value) || 0;
-        var n = parseInt(document.getElementById("months").value, 10) || 0;
+        var n = (parseFloat(document.getElementById("f-years").value) || 0) * 12;
 
         // Income preview
         var incPrev = document.getElementById("income-preview");
@@ -4239,9 +4246,18 @@
         }
       }
 
-      // Wire income/debt/rate/months inputs to live preview
+      // f-years → months (hidden) sync
+      function syncYears() {
+        var yrs = parseFloat(document.getElementById("f-years").value) || 0;
+        document.getElementById("months").value = Math.round(yrs * 12) || "";
+      }
+      document.getElementById("f-years").addEventListener("input", function() {
+        syncYears(); updatePreviews();
+      });
+
+      // Wire income/debt/rate inputs to live preview
       ["f-salary","f-fixed-income","f-var-income","f-bonus",
-       "f-fixed-debt","f-var-debt","annual-rate","months"].forEach(function(id) {
+       "f-fixed-debt","f-var-debt","annual-rate"].forEach(function(id) {
         document.getElementById(id).addEventListener("input", updatePreviews);
       });
 
@@ -4257,6 +4273,9 @@
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         hideError();
+
+        // Sync years → months
+        syncYears();
 
         // If income fields filled → use calculated principal; else require manual
         var incomeTotal = calcIncome();
