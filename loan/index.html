@@ -1996,6 +1996,15 @@
             </div>
           </div>
           <div class="income-preview" id="dsr-preview">DSR ปัจจุบัน: — &nbsp;|&nbsp; วงเงินกู้สูงสุด: —</div>
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-top:0.5rem; flex-wrap:wrap;">
+            <span style="font-size:0.8rem; color:var(--muted); font-weight:600;">คำนวณวงเงินที่ DSR:</span>
+            <div id="dsr-selector" style="display:flex; gap:0.3rem;">
+              <button type="button" class="dsr-btn" data-dsr="40" style="padding:3px 10px;border-radius:20px;font-size:0.78rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--muted);">40%</button>
+              <button type="button" class="dsr-btn" data-dsr="50" style="padding:3px 10px;border-radius:20px;font-size:0.78rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--muted);">50%</button>
+              <button type="button" class="dsr-btn" data-dsr="60" style="padding:3px 10px;border-radius:20px;font-size:0.78rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--muted);">60%</button>
+              <button type="button" class="dsr-btn dsr-btn-active" data-dsr="70" style="padding:3px 10px;border-radius:20px;font-size:0.78rem;font-weight:600;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:#fff;">70%</button>
+            </div>
+          </div>
         </div>
 
         <!-- 03 รายละเอียดสินเชื่อ -->
@@ -2020,15 +2029,10 @@
             </select>
             <div class="hint">เลือกธนาคาร → ดอกเบี้ยปีแรกจะใส่ให้อัตโนมัติ</div>
           </div>
-          <div class="field-row" style="grid-template-columns:repeat(3,1fr)">
+          <div class="field-row">
             <div class="field">
               <label for="annual-rate">อัตราดอกเบี้ยต่อปี (%)</label>
               <input type="number" id="annual-rate" name="annualRate" min="0" max="100" step="0.01" placeholder="เช่น 3.5" required />
-            </div>
-            <div class="field">
-              <label for="f-loan-amount">วงเงินกู้ (บาท)</label>
-              <input type="text" inputmode="numeric" id="f-loan-amount" placeholder="กรอกเอง หรือกด ↓" autocomplete="off" />
-              <button type="button" id="btn-fill-dsr" style="display:inline-flex;align-items:center;gap:4px;margin-top:5px;padding:4px 10px;background:rgba(43,143,212,0.1);color:var(--accent);border:1px solid rgba(43,143,212,0.25);border-radius:20px;font-size:0.76rem;font-weight:600;cursor:pointer;white-space:nowrap;">📊 ดึงจาก DSR</button>
             </div>
             <div class="field">
               <label for="f-years">ระยะเวลาผ่อน (ปี)</label>
@@ -2059,6 +2063,10 @@
       <section id="results" class="results" aria-live="polite">
         <div id="pdf-customer-line" style="display:none; font-size:0.95rem; font-weight:600; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #dde;"></div>
         <h2>ผลการคำนวณ</h2>
+        <div class="result-row" id="out-capacity-row" style="display:none;">
+          <span class="result-label">ความสามารถในการยื่นกู้</span>
+          <span class="result-value accent-num" id="out-capacity">—</span>
+        </div>
         <div class="result-row">
           <span class="result-label">ค่างวดต่อเดือน</span>
           <span class="result-value accent-num" id="out-payment">—</span>
@@ -4095,7 +4103,8 @@
       function fmt(n) { return Math.round(n).toLocaleString("th-TH"); }
 
       // Comma-format number text inputs while typing
-      var COMMA_INPUT_IDS = ["f-salary","f-fixed-income","f-var-income","f-bonus","f-fixed-debt","f-var-debt","extra-prepay","f-loan-amount"];
+      var COMMA_INPUT_IDS = ["f-salary","f-fixed-income","f-var-income","f-bonus","f-fixed-debt","f-var-debt","extra-prepay"];
+      var selectedDsr = 70; // DSR % สำหรับคำนวณวงเงิน (default 70%)
       function formatNumInput(e) {
         var el = e.target;
         var caret = el.selectionStart;
@@ -4121,7 +4130,7 @@
         if (annualPct <= 0 || n <= 0) return 0;
         var income = calcIncome();
         var debt = calcDebt();
-        var avail = income * 0.70 - debt;
+        var avail = income * (selectedDsr / 100) - debt;
         if (avail <= 0) return 0;
         var r = annualPct / 100 / 12;
         return avail * (1 - Math.pow(1 + r, -n)) / r;
@@ -4147,27 +4156,19 @@
           var dsr = debt / income * 100;
           var maxLoan = maxLoanFromIncome(annualPct, n);
           dsrPrev.innerHTML = "DSR ปัจจุบัน: <strong>" + dsr.toFixed(1) + "%</strong>" +
-            (annualPct > 0 && n > 0 ? " &nbsp;|&nbsp; วงเงินกู้สูงสุด: <strong>" + fmt(maxLoan) + " บาท</strong>" : " &nbsp;|&nbsp; วงเงินกู้: (กรอกดอกเบี้ย+ระยะเวลาก่อน)");
+            (annualPct > 0 && n > 0 ? " &nbsp;|&nbsp; วงเงินกู้สูงสุด (DSR " + selectedDsr + "%): <strong>" + fmt(maxLoan) + " บาท</strong>" : " &nbsp;|&nbsp; วงเงินกู้: (กรอกดอกเบี้ย+ระยะเวลาก่อน)");
         } else {
           dsrPrev.innerHTML = "DSR ปัจจุบัน: — &nbsp;|&nbsp; วงเงินกู้สูงสุด: —";
         }
 
-        // อัพเดตปุ่ม DSR + hidden principal
+        // อัพเดต hidden principal
         var calcPrev = document.getElementById("loan-calc-preview");
-        var btnFillDsr = document.getElementById("btn-fill-dsr");
         var income2 = calcIncome();
         if (income2 > 0 && annualPct > 0 && n > 0) {
           var loanAmt = maxLoanFromIncome(annualPct, n);
           document.getElementById("principal").value = Math.round(loanAmt);
-          calcPrev.style.display = "none";
-          if (btnFillDsr) {
-            var dsrFmt = String(Math.round(loanAmt)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            btnFillDsr.textContent = "📊 ดึงจาก DSR: " + dsrFmt + " บาท";
-          }
-        } else {
-          calcPrev.style.display = "none";
-          if (btnFillDsr) btnFillDsr.textContent = "📊 ดึงจาก DSR";
         }
+        calcPrev.style.display = "none";
       }
 
       // f-years → months (hidden) sync
@@ -4188,27 +4189,28 @@
           el.addEventListener("input", formatNumInput);
         }
       });
-      // extra-prepay / f-loan-amount: comma formatting only
+      // extra-prepay: comma formatting only
       document.getElementById("extra-prepay").addEventListener("input", formatNumInput);
-      document.getElementById("f-loan-amount").addEventListener("input", formatNumInput);
 
-      // btn-fill-dsr: เติมวงเงินจาก DSR calculation
-      document.getElementById("btn-fill-dsr").addEventListener("click", function() {
-        var annualPct = parseFloat(document.getElementById("annual-rate").value) || 0;
-        var n = (parseFloat(document.getElementById("f-years").value) || 0) * 12;
-        var loanAmt = maxLoanFromIncome(annualPct, n);
-        if (loanAmt > 0) {
-          var el = document.getElementById("f-loan-amount");
-          el.value = String(Math.round(loanAmt)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        } else {
-          showError("กรุณากรอกรายได้ (Section 01) + ดอกเบี้ย + ระยะเวลาก่อน");
-          setTimeout(hideError, 3000);
-        }
+      // DSR selector buttons
+      document.querySelectorAll(".dsr-btn").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          selectedDsr = parseInt(this.dataset.dsr, 10);
+          document.querySelectorAll(".dsr-btn").forEach(function(b) {
+            b.style.background = "var(--card)";
+            b.style.color = "var(--muted)";
+            b.style.borderColor = "var(--border)";
+          });
+          this.style.background = "var(--accent)";
+          this.style.color = "#fff";
+          this.style.borderColor = "var(--accent)";
+          updatePreviews();
+        });
       });
 
       // Enter key on any form field → submit
       ["f-salary","f-fixed-income","f-var-income","f-bonus",
-       "f-fixed-debt","f-var-debt","annual-rate","f-loan-amount","f-years","extra-prepay"].forEach(function(id) {
+       "f-fixed-debt","f-var-debt","annual-rate","f-years","extra-prepay"].forEach(function(id) {
         document.getElementById(id).addEventListener("keydown", function(e) {
           if (e.key === "Enter") {
             e.preventDefault();
@@ -4233,18 +4235,13 @@
         // Sync years → months
         syncYears();
 
-        // Priority: 1) manual f-loan-amount  2) DSR calc จากรายได้
-        var manualLoan = parseFloat(String(document.getElementById("f-loan-amount").value).replace(/,/g, ""));
-        if (manualLoan > 0) {
-          document.getElementById("principal").value = Math.round(manualLoan);
-        } else {
-          var incomeTotal = calcIncome();
-          if (incomeTotal > 0) {
-            var annualPctTemp = parseFloat(document.getElementById("annual-rate").value) || 0;
-            var nTemp = parseInt(document.getElementById("months").value, 10) || 0;
-            if (annualPctTemp > 0 && nTemp > 0) {
-              document.getElementById("principal").value = Math.round(maxLoanFromIncome(annualPctTemp, nTemp));
-            }
+        // คำนวณ principal จากรายได้ (DSR ที่เลือก)
+        var incomeTotal = calcIncome();
+        if (incomeTotal > 0) {
+          var annualPctTemp = parseFloat(document.getElementById("annual-rate").value) || 0;
+          var nTemp = parseInt(document.getElementById("months").value, 10) || 0;
+          if (annualPctTemp > 0 && nTemp > 0) {
+            document.getElementById("principal").value = Math.round(maxLoanFromIncome(annualPctTemp, nTemp));
           }
         }
 
@@ -4300,6 +4297,16 @@
             totalPayment: sumPay,
           },
         };
+
+        // ความสามารถในการยื่นกู้ (แสดงเฉพาะเมื่อคำนวณจากรายได้)
+        var capacityRow = document.getElementById("out-capacity-row");
+        var capacityEl = document.getElementById("out-capacity");
+        if (incomeTotal > 0) {
+          capacityEl.textContent = formatBaht(principal) + " (DSR " + selectedDsr + "%)";
+          capacityRow.style.display = "";
+        } else {
+          capacityRow.style.display = "none";
+        }
 
         document.getElementById("out-payment").textContent = formatBaht(monthlyPayment);
         document.getElementById("out-interest").textContent = formatBaht(sumInt);
