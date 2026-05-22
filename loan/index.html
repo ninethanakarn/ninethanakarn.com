@@ -364,8 +364,43 @@
     }
 
     .field {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
+
+    /* Form sections */
+    .form-section { margin-bottom: 1.1rem; }
+    .form-section-label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin: 0 0 0.6rem;
+      padding-bottom: 0.35rem; border-bottom: 1px solid var(--border);
+      display: block;
+    }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .field-inline-hint { font-size: 0.72rem; color: var(--muted); font-weight: 400; margin-left: 4px; }
+    .income-preview {
+      background: rgba(43,143,212,0.07); border: 1px solid rgba(43,143,212,0.2);
+      border-radius: 10px; padding: 0.55rem 0.85rem; font-size: 0.84rem;
+      color: var(--accent-dark); margin-top: 0.4rem; font-weight: 600;
+    }
+    body.theme-dark .income-preview { background: rgba(56,189,248,0.08); border-color: rgba(56,189,248,0.2); color: #7dd3fc; }
+    .loan-calc-preview {
+      background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.25);
+      border-radius: 10px; padding: 0.55rem 0.85rem; font-size: 0.84rem;
+      color: #166534; margin-bottom: 1rem; font-weight: 600;
+    }
+    body.theme-dark .loan-calc-preview { background: rgba(34,197,94,0.1); border-color: rgba(52,211,153,0.3); color: #86efac; }
+    select.loan-select {
+      width: 100%; padding: 13px 16px; font-family: inherit; font-size: 1rem;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: var(--input-bg); color: var(--text); cursor: pointer;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      -webkit-appearance: none; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a7a8f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center;
+      padding-right: 40px;
+    }
+    select.loan-select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(43,143,212,0.22); }
+    body.theme-dark select.loan-select { background-color: var(--input-bg); color: var(--text); }
 
     input[type="number"] {
       width: 100%;
@@ -1902,28 +1937,91 @@
 
     <div class="card">
       <form id="loan-form" novalidate>
-        <div class="field">
-          <label for="principal">จำนวนเงินกู้ (บาท)</label>
-          <input type="number" id="principal" name="principal" min="1" step="1" placeholder="เช่น 500000" required />
-          <div class="hint">กรอกเป็นจำนวนเต็มบาท</div>
+
+        <!-- 01 รายได้ -->
+        <div class="form-section">
+          <span class="form-section-label">01 · รายได้</span>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-salary">เงินเดือน (บาท)</label>
+              <input type="number" id="f-salary" placeholder="เช่น 50,000" min="0" step="1" />
+            </div>
+            <div class="field">
+              <label for="f-fixed-income">รายได้ Fix <span class="field-inline-hint">OT/เบี้ยเลี้ยง</span></label>
+              <input type="number" id="f-fixed-income" placeholder="บาท/เดือน" min="0" step="1" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-var-income">รายได้แปรผัน <span class="field-inline-hint">เฉลี่ย 6 เดือน</span></label>
+              <input type="number" id="f-var-income" placeholder="บาท/เดือน" min="0" step="1" />
+            </div>
+            <div class="field">
+              <label for="f-bonus">โบนัส <span class="field-inline-hint">บาท/ปี</span></label>
+              <input type="number" id="f-bonus" placeholder="÷12 อัตโนมัติ" min="0" step="1" />
+            </div>
+          </div>
+          <div class="income-preview" id="income-preview">รายได้รวมที่ธนาคารนับ: — บาท/เดือน</div>
         </div>
 
-        <div class="field">
-          <label for="annual-rate">อัตราดอกเบี้ยต่อปี (%)</label>
-          <input type="number" id="annual-rate" name="annualRate" min="0" max="100" step="0.01" placeholder="เช่น 6.5" required />
-          <div class="hint">ใส่เป็นเปอร์เซ็นต์ต่อปี</div>
+        <!-- 02 ภาระหนี้ -->
+        <div class="form-section">
+          <span class="form-section-label">02 · ภาระหนี้ต่อเดือน <span style="font-weight:400;opacity:0.65">(ถ้ามี)</span></span>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-fixed-debt">ภาระ Fix <span class="field-inline-hint">รถ/สินเชื่อ</span></label>
+              <input type="number" id="f-fixed-debt" placeholder="บาท/เดือน" min="0" step="1" />
+            </div>
+            <div class="field">
+              <label for="f-var-debt">ภาระแปรผัน <span class="field-inline-hint">เฉลี่ย 6 เดือน</span></label>
+              <input type="number" id="f-var-debt" placeholder="บัตรเครดิต" min="0" step="1" />
+            </div>
+          </div>
+          <div class="income-preview" id="dsr-preview">DSR ปัจจุบัน: — &nbsp;|&nbsp; วงเงินกู้สูงสุด: —</div>
         </div>
 
-        <div class="field">
-          <label for="months">ระยะเวลาผ่อน (เดือน)</label>
-          <input type="number" id="months" name="months" min="1" max="600" step="1" placeholder="เช่น 360" required />
+        <!-- 03 รายละเอียดสินเชื่อ -->
+        <div class="form-section">
+          <span class="form-section-label">03 · รายละเอียดสินเชื่อ</span>
+          <div class="field">
+            <label for="f-bank">ยื่นกู้ธนาคาร</label>
+            <select id="f-bank" class="loan-select">
+              <option value="">— เลือกธนาคาร (ไม่บังคับ) —</option>
+              <option value="1.99">ธนาคารกสิกรไทย (KBANK) · เริ่ม 1.99%</option>
+              <option value="1.99">ธนาคารทหารไทยธนชาต (TTB) · เริ่ม 1.99%</option>
+              <option value="2.00">ธนาคารกรุงศรีฯ (BAY) · เริ่ม 2.00%</option>
+              <option value="2.29">ธนาคารกรุงไทย (KTB) · เริ่ม 2.29%</option>
+              <option value="2.49">ธนาคารไทยพาณิชย์ (SCB) · เริ่ม 2.49%</option>
+              <option value="2.49">ธนาคารอิสลามแห่งประเทศไทย (iBank) · เริ่ม 2.49%</option>
+              <option value="3.00">ธนาคารออมสิน (GSB) · เริ่ม 3.00%</option>
+              <option value="3.00">ธนาคารอาคารสงเคราะห์ (GHB) · เริ่ม 3.00%</option>
+              <option value="3.50">ธนาคารทิสโก้ (TISCO) · เริ่ม 3.50%</option>
+              <option value="3.75">ธนาคารยูโอบี (UOB) · เริ่ม 3.75%</option>
+              <option value="4.35">ธนาคารกรุงเทพ (BBL) · เริ่ม 4.35%</option>
+              <option value="4.50">ธนาคารเกียรตินาคินภัทร (KKP) · เริ่ม 4.50%</option>
+            </select>
+            <div class="hint">เลือกธนาคาร → ดอกเบี้ยปีแรกจะใส่ให้อัตโนมัติ</div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="annual-rate">อัตราดอกเบี้ยต่อปี (%)</label>
+              <input type="number" id="annual-rate" name="annualRate" min="0" max="100" step="0.01" placeholder="เช่น 3.5" required />
+            </div>
+            <div class="field">
+              <label for="months">ระยะเวลาผ่อน (เดือน)</label>
+              <input type="number" id="months" name="months" min="1" max="600" step="1" placeholder="เช่น 360" required />
+              <div class="hint">20 ปี = 240 · 30 ปี = 360</div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="extra-prepay">โป๊ะต้นเพิ่มต่อเดือน (บาท) <span class="field-inline-hint">ไม่บังคับ</span></label>
+            <input type="number" id="extra-prepay" name="extraPrepay" min="0" step="1" placeholder="เช่น 5,000" />
+          </div>
         </div>
 
-        <div class="field">
-          <label for="extra-prepay">โปะต้นเพิ่มต่อเดือน (บาท)</label>
-          <input type="number" id="extra-prepay" name="extraPrepay" min="0" step="1" placeholder="เช่น 5000" value="" />
-          <div class="hint">เงินที่จ่ายเพิ่มจากค่างวดทุกเดือน เพื่อตัดเงินต้น</div>
-        </div>
+        <!-- hidden principal — คำนวณจากรายได้ -->
+        <input type="hidden" id="principal" name="principal" />
+        <div class="loan-calc-preview" id="loan-calc-preview" style="display:none"></div>
 
         <button type="submit">คำนวณ</button>
       </form>
@@ -4083,9 +4181,92 @@
         errorEl.textContent = "";
       }
 
+      // ── Income / Debt live calculator ──────────────────────────────
+      function v(id) { return parseFloat(document.getElementById(id).value) || 0; }
+      function fmt(n) { return Math.round(n).toLocaleString("th-TH"); }
+
+      function calcIncome() {
+        return v("f-salary") + v("f-fixed-income") + v("f-var-income") + v("f-bonus") / 12;
+      }
+      function calcDebt() {
+        return v("f-fixed-debt") + v("f-var-debt");
+      }
+      function maxLoanFromIncome(annualPct, n) {
+        if (annualPct <= 0 || n <= 0) return 0;
+        var income = calcIncome();
+        var debt = calcDebt();
+        var avail = income * 0.70 - debt;
+        if (avail <= 0) return 0;
+        var r = annualPct / 100 / 12;
+        return avail * (1 - Math.pow(1 + r, -n)) / r;
+      }
+
+      function updatePreviews() {
+        var income = calcIncome();
+        var debt = calcDebt();
+        var annualPct = parseFloat(document.getElementById("annual-rate").value) || 0;
+        var n = parseInt(document.getElementById("months").value, 10) || 0;
+
+        // Income preview
+        var incPrev = document.getElementById("income-preview");
+        if (income > 0) {
+          incPrev.textContent = "รายได้รวมที่ธนาคารนับ: " + fmt(income) + " บาท/เดือน";
+        } else {
+          incPrev.textContent = "รายได้รวมที่ธนาคารนับ: — บาท/เดือน";
+        }
+
+        // DSR + max loan preview
+        var dsrPrev = document.getElementById("dsr-preview");
+        if (income > 0) {
+          var dsr = debt / income * 100;
+          var maxLoan = maxLoanFromIncome(annualPct, n);
+          dsrPrev.innerHTML = "DSR ปัจจุบัน: <strong>" + dsr.toFixed(1) + "%</strong>" +
+            (annualPct > 0 && n > 0 ? " &nbsp;|&nbsp; วงเงินกู้สูงสุด: <strong>" + fmt(maxLoan) + " บาท</strong>" : " &nbsp;|&nbsp; วงเงินกู้: (กรอกดอกเบี้ย+ระยะเวลาก่อน)");
+        } else {
+          dsrPrev.innerHTML = "DSR ปัจจุบัน: — &nbsp;|&nbsp; วงเงินกู้สูงสุด: —";
+        }
+
+        // Loan calc preview + set hidden principal
+        var calcPrev = document.getElementById("loan-calc-preview");
+        var income2 = calcIncome();
+        if (income2 > 0 && annualPct > 0 && n > 0) {
+          var loanAmt = maxLoanFromIncome(annualPct, n);
+          document.getElementById("principal").value = Math.round(loanAmt);
+          calcPrev.style.display = "";
+          calcPrev.textContent = "✅ วงเงินกู้ที่ใช้คำนวณ: " + fmt(loanAmt) + " บาท (จาก DSR 70%)";
+        } else {
+          calcPrev.style.display = "none";
+        }
+      }
+
+      // Wire income/debt/rate/months inputs to live preview
+      ["f-salary","f-fixed-income","f-var-income","f-bonus",
+       "f-fixed-debt","f-var-debt","annual-rate","months"].forEach(function(id) {
+        document.getElementById(id).addEventListener("input", updatePreviews);
+      });
+
+      // Bank dropdown → auto-fill interest rate
+      document.getElementById("f-bank").addEventListener("change", function() {
+        var rate = this.value;
+        if (rate) {
+          document.getElementById("annual-rate").value = rate;
+          updatePreviews();
+        }
+      });
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         hideError();
+
+        // If income fields filled → use calculated principal; else require manual
+        var incomeTotal = calcIncome();
+        if (incomeTotal > 0) {
+          var annualPctTemp = parseFloat(document.getElementById("annual-rate").value) || 0;
+          var nTemp = parseInt(document.getElementById("months").value, 10) || 0;
+          if (annualPctTemp > 0 && nTemp > 0) {
+            document.getElementById("principal").value = Math.round(maxLoanFromIncome(annualPctTemp, nTemp));
+          }
+        }
 
         var principal = parseFloat(document.getElementById("principal").value);
         var annualPercent = parseFloat(document.getElementById("annual-rate").value);
@@ -4094,7 +4275,7 @@
         var extraPrepay = extraRaw === "" || extraRaw === null ? 0 : parseFloat(extraRaw);
 
         if (!Number.isFinite(principal) || principal <= 0) {
-          showError("กรุณากรอกจำนวนเงินกู้ให้ถูกต้อง (มากกว่า 0)");
+          showError("กรุณากรอกรายได้ (ส่วนที่ 01) หรือจำนวนเงินกู้ให้ถูกต้อง");
           return;
         }
         if (!Number.isFinite(annualPercent) || annualPercent < 0 || annualPercent > 100) {
