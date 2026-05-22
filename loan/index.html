@@ -36,22 +36,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: linear-gradient(145deg, #e8f4fc 0%, #d4ebf7 45%, #c5e3f5 100%);
-      --bg-solid: #d4ebf7;
-      --card: rgba(255, 255, 255, 0.92);
-      --border: rgba(100, 170, 220, 0.35);
-      --accent: #2b8fd4;
-      --accent-dark: #1e6fa8;
-      --text: #1a3a52;
-      --muted: #5a7a8f;
-      --success-bg: #e6f7ee;
-      --success-border: #8fd4b0;
-      --shadow: 0 12px 40px rgba(30, 100, 160, 0.12);
+      --bg: linear-gradient(160deg, #f8fafc 0%, #eff6ff 55%, #f0f9ff 100%);
+      --bg-solid: #f8fafc;
+      --card: #ffffff;
+      --border: rgba(148, 163, 184, 0.28);
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --text: #0f172a;
+      --muted: #64748b;
+      --success-bg: #f0fdf4;
+      --success-border: #86efac;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.04), 0 8px 28px rgba(37, 99, 235, 0.07);
       --radius: 16px;
-      --input-bg: #fafdff;
-      --surface-muted: #fafdff;
-      --result-row-bg: var(--success-bg);
-      --toggle-btn-bg: rgba(255, 255, 255, 0.85);
+      --input-bg: #f8fafc;
+      --surface-muted: #f8fafc;
+      --result-row-bg: #f0fdf4;
+      --toggle-btn-bg: #ffffff;
     }
 
     body.theme-dark {
@@ -159,7 +159,7 @@
     .site-brand-block {
       margin: 0 auto 22px;
       padding-bottom: 18px;
-      border-bottom: 1px solid rgba(43, 143, 212, 0.22);
+      border-bottom: 1px solid rgba(37, 99, 235, 0.15);
       max-width: 420px;
     }
 
@@ -366,7 +366,6 @@
       border-radius: var(--radius);
       padding: 28px 26px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
       transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -393,7 +392,7 @@
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
     .field-inline-hint { font-size: 0.72rem; color: var(--muted); font-weight: 400; margin-left: 4px; }
     .income-preview {
-      background: rgba(43,143,212,0.07); border: 1px solid rgba(43,143,212,0.2);
+      background: rgba(37,99,235,0.05); border: 1px solid rgba(37,99,235,0.16);
       border-radius: 10px; padding: 0.55rem 0.85rem; font-size: 0.84rem;
       color: var(--accent-dark); margin-top: 0.4rem; font-weight: 600;
     }
@@ -466,13 +465,13 @@
       border: none;
       border-radius: 12px;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(43, 143, 212, 0.35);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.32);
       transition: transform 0.15s, box-shadow 0.15s;
     }
 
     button[type="submit"]:hover {
       transform: translateY(-1px);
-      box-shadow: 0 8px 26px rgba(43, 143, 212, 0.42);
+      box-shadow: 0 6px 22px rgba(37, 99, 235, 0.44);
     }
 
     button[type="submit"]:active {
