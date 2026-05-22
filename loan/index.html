@@ -1956,21 +1956,21 @@
           <div class="field-row">
             <div class="field">
               <label for="f-salary">เงินเดือน (บาท)</label>
-              <input type="number" id="f-salary" placeholder="เช่น 50,000" min="0" step="1" />
+              <input type="text" inputmode="numeric" id="f-salary" placeholder="เช่น 50,000" autocomplete="off" />
             </div>
             <div class="field">
               <label for="f-fixed-income">รายได้ Fix <span class="field-inline-hint">ค่าตำแหน่ง/ค่าครองชีพ</span></label>
-              <input type="number" id="f-fixed-income" placeholder="บาท/เดือน" min="0" step="1" />
+              <input type="text" inputmode="numeric" id="f-fixed-income" placeholder="บาท/เดือน" autocomplete="off" />
             </div>
           </div>
           <div class="field-row">
             <div class="field">
               <label for="f-var-income">รายได้แปรผัน <span class="field-inline-hint">OT/คอมมิชชั่น เฉลี่ย 6 เดือน</span></label>
-              <input type="number" id="f-var-income" placeholder="บาท/เดือน" min="0" step="1" />
+              <input type="text" inputmode="numeric" id="f-var-income" placeholder="บาท/เดือน" autocomplete="off" />
             </div>
             <div class="field">
               <label for="f-bonus">โบนัส <span class="field-inline-hint">บาท/ปี</span></label>
-              <input type="number" id="f-bonus" placeholder="÷12 อัตโนมัติ" min="0" step="1" />
+              <input type="text" inputmode="numeric" id="f-bonus" placeholder="÷12 อัตโนมัติ" autocomplete="off" />
             </div>
           </div>
           <div class="income-preview" id="income-preview">รายได้รวมที่ธนาคารนับ: — บาท/เดือน</div>
@@ -1982,11 +1982,11 @@
           <div class="field-row">
             <div class="field">
               <label for="f-fixed-debt">ภาระ Fix <span class="field-inline-hint">รถ/สินเชื่อ</span></label>
-              <input type="number" id="f-fixed-debt" placeholder="บาท/เดือน" min="0" step="1" />
+              <input type="text" inputmode="numeric" id="f-fixed-debt" placeholder="บาท/เดือน" autocomplete="off" />
             </div>
             <div class="field">
               <label for="f-var-debt">ภาระแปรผัน <span class="field-inline-hint">บัตรเครดิต/บัตรกด เฉลี่ย 6 เดือน</span></label>
-              <input type="number" id="f-var-debt" placeholder="บาท/เดือน" min="0" step="1" />
+              <input type="text" inputmode="numeric" id="f-var-debt" placeholder="บาท/เดือน" autocomplete="off" />
             </div>
           </div>
           <div class="income-preview" id="dsr-preview">DSR ปัจจุบัน: — &nbsp;|&nbsp; วงเงินกู้สูงสุด: —</div>
@@ -4026,8 +4026,28 @@
       }
 
       // ── Income / Debt live calculator ──────────────────────────────
-      function v(id) { return parseFloat(document.getElementById(id).value) || 0; }
+      function v(id) {
+        var raw = String(document.getElementById(id).value).replace(/,/g, "");
+        return parseFloat(raw) || 0;
+      }
       function fmt(n) { return Math.round(n).toLocaleString("th-TH"); }
+
+      // Comma-format number text inputs while typing
+      var COMMA_INPUT_IDS = ["f-salary","f-fixed-income","f-var-income","f-bonus","f-fixed-debt","f-var-debt"];
+      function formatNumInput(e) {
+        var el = e.target;
+        var caret = el.selectionStart;
+        var prevLen = el.value.length;
+        var digits = el.value.replace(/[^0-9]/g, "");
+        if (digits === "") { el.value = ""; return; }
+        var formatted = parseInt(digits, 10).toLocaleString("th-TH");
+        // Use Western digits only (regex fallback for locales with Thai digits)
+        formatted = formatted.replace(/[๐-๙]/g, function(d){ return d.charCodeAt(0) - 3664; });
+        el.value = formatted;
+        // Restore caret position (accounting for added commas)
+        var newLen = el.value.length;
+        el.selectionStart = el.selectionEnd = caret + (newLen - prevLen);
+      }
 
       function calcIncome() {
         return v("f-salary") + v("f-fixed-income") + v("f-var-income") + v("f-bonus") / 12;
@@ -4077,7 +4097,7 @@
           var loanAmt = maxLoanFromIncome(annualPct, n);
           document.getElementById("principal").value = Math.round(loanAmt);
           calcPrev.style.display = "";
-          calcPrev.textContent = "✅ วงเงินกู้ที่ใช้คำนวณ: " + fmt(loanAmt) + " บาท (จาก DSR 70%)";
+          calcPrev.textContent = "✅ ความสามารถในการกู้: " + fmt(loanAmt) + " บาท (จาก DSR 70%)";
         } else {
           calcPrev.style.display = "none";
         }
@@ -4092,10 +4112,25 @@
         syncYears(); updatePreviews();
       });
 
-      // Wire income/debt/rate inputs to live preview
+      // Wire income/debt/rate inputs to live preview + comma formatting
       ["f-salary","f-fixed-income","f-var-income","f-bonus",
        "f-fixed-debt","f-var-debt","annual-rate"].forEach(function(id) {
-        document.getElementById(id).addEventListener("input", updatePreviews);
+        var el = document.getElementById(id);
+        el.addEventListener("input", updatePreviews);
+        if (COMMA_INPUT_IDS.indexOf(id) !== -1) {
+          el.addEventListener("input", formatNumInput);
+        }
+      });
+
+      // Enter key on any form field → submit
+      ["f-salary","f-fixed-income","f-var-income","f-bonus",
+       "f-fixed-debt","f-var-debt","annual-rate","f-years"].forEach(function(id) {
+        document.getElementById(id).addEventListener("keydown", function(e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            form.dispatchEvent(new Event("submit", {bubbles: true, cancelable: true}));
+          }
+        });
       });
 
       // Bank dropdown → auto-fill interest rate
