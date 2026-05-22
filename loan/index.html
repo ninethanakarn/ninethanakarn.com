@@ -1999,18 +1999,18 @@
             <label for="f-bank">ยื่นกู้ธนาคาร</label>
             <select id="f-bank" class="loan-select">
               <option value="">— เลือกธนาคาร (ไม่บังคับ) —</option>
-              <option value="1.99">ธนาคารกสิกรไทย (KBANK) · เริ่ม 1.99%</option>
-              <option value="1.99">ธนาคารทหารไทยธนชาต (TTB) · เริ่ม 1.99%</option>
-              <option value="2.00">ธนาคารกรุงศรีฯ (BAY) · เริ่ม 2.00%</option>
-              <option value="2.29">ธนาคารกรุงไทย (KTB) · เริ่ม 2.29%</option>
-              <option value="2.49">ธนาคารไทยพาณิชย์ (SCB) · เริ่ม 2.49%</option>
-              <option value="2.49">ธนาคารอิสลามแห่งประเทศไทย (iBank) · เริ่ม 2.49%</option>
-              <option value="3.00">ธนาคารออมสิน (GSB) · เริ่ม 3.00%</option>
-              <option value="3.00">ธนาคารอาคารสงเคราะห์ (GHB) · เริ่ม 3.00%</option>
-              <option value="3.50">ธนาคารทิสโก้ (TISCO) · เริ่ม 3.50%</option>
-              <option value="3.75">ธนาคารยูโอบี (UOB) · เริ่ม 3.75%</option>
-              <option value="4.35">ธนาคารกรุงเทพ (BBL) · เริ่ม 4.35%</option>
-              <option value="4.50">ธนาคารเกียรตินาคินภัทร (KKP) · เริ่ม 4.50%</option>
+              <option value="1.99">KBANK กสิกรไทย · เริ่ม 1.99% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="1.99">TTB ทหารไทยธนชาต · เริ่ม 1.99% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="2.00">BAY กรุงศรีฯ · เริ่ม 2.00% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="2.29">KTB กรุงไทย · เริ่ม 2.29% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="2.49">SCB ไทยพาณิชย์ · เริ่ม 2.49% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="2.49">iBank อิสลามแห่งประเทศไทย · เริ่ม 2.49% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 65 ปี</option>
+              <option value="3.00">GSB ออมสิน · เริ่ม 3.00% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 65 ปี</option>
+              <option value="3.00">GHB ธอส. · เริ่ม 3.00% · ผ่อนสูงสุด 40 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="3.50">TISCO ทิสโก้ · เริ่ม 3.50% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="3.75">UOB ยูโอบี · เริ่ม 3.75% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="4.35">BBL กรุงเทพ · เริ่ม 4.35% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
+              <option value="4.50">KKP เกียรตินาคินภัทร · เริ่ม 4.50% · ผ่อนสูงสุด 30 ปี · อายุรวม ≤ 70 ปี</option>
             </select>
             <div class="hint">เลือกธนาคาร → ดอกเบี้ยปีแรกจะใส่ให้อัตโนมัติ</div>
           </div>
@@ -2057,8 +2057,11 @@
         </div>
 
         <button type="button" class="btn-pdf no-pdf" id="btn-pdf" hidden disabled>
-          📄 ดาวน์โหลด PDF
+          🖨️ พิมพ์ / บันทึก PDF
         </button>
+        <div id="pdf-hint" class="hint no-pdf" style="display:none; text-align:center; margin-top:6px;">
+          💡 ในหน้าต่าง Print → เปลี่ยน <b>Destination</b> เป็น <b>"Save as PDF"</b> → กด Save
+        </div>
         <button type="button" class="btn-plan-save no-pdf" id="btn-save-plan" hidden>
           💾 บันทึกแผนนี้
         </button>
@@ -4212,7 +4215,9 @@
         if (btnPdf) {
           btnPdf.hidden = false;
           btnPdf.disabled = false;
-          btnPdf.textContent = "📄 ดาวน์โหลด PDF";
+          btnPdf.textContent = "🖨️ พิมพ์ / บันทึก PDF";
+          var pdfHint = document.getElementById("pdf-hint");
+          if (pdfHint) pdfHint.style.display = "";
         }
       });
 
