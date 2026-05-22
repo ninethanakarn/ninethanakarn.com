@@ -2020,10 +2020,15 @@
             </select>
             <div class="hint">เลือกธนาคาร → ดอกเบี้ยปีแรกจะใส่ให้อัตโนมัติ</div>
           </div>
-          <div class="field-row">
+          <div class="field-row" style="grid-template-columns:repeat(3,1fr)">
             <div class="field">
               <label for="annual-rate">อัตราดอกเบี้ยต่อปี (%)</label>
               <input type="number" id="annual-rate" name="annualRate" min="0" max="100" step="0.01" placeholder="เช่น 3.5" required />
+            </div>
+            <div class="field">
+              <label for="f-loan-amount">วงเงินกู้ (บาท)</label>
+              <input type="text" inputmode="numeric" id="f-loan-amount" placeholder="กรอกเอง หรือกด ↓" autocomplete="off" />
+              <button type="button" id="btn-fill-dsr" style="display:inline-flex;align-items:center;gap:4px;margin-top:5px;padding:4px 10px;background:rgba(43,143,212,0.1);color:var(--accent);border:1px solid rgba(43,143,212,0.25);border-radius:20px;font-size:0.76rem;font-weight:600;cursor:pointer;white-space:nowrap;">📊 ดึงจาก DSR</button>
             </div>
             <div class="field">
               <label for="f-years">ระยะเวลาผ่อน (ปี)</label>
@@ -4090,7 +4095,7 @@
       function fmt(n) { return Math.round(n).toLocaleString("th-TH"); }
 
       // Comma-format number text inputs while typing
-      var COMMA_INPUT_IDS = ["f-salary","f-fixed-income","f-var-income","f-bonus","f-fixed-debt","f-var-debt","extra-prepay"];
+      var COMMA_INPUT_IDS = ["f-salary","f-fixed-income","f-var-income","f-bonus","f-fixed-debt","f-var-debt","extra-prepay","f-loan-amount"];
       function formatNumInput(e) {
         var el = e.target;
         var caret = el.selectionStart;
@@ -4147,16 +4152,21 @@
           dsrPrev.innerHTML = "DSR ปัจจุบัน: — &nbsp;|&nbsp; วงเงินกู้สูงสุด: —";
         }
 
-        // Loan calc preview + set hidden principal
+        // อัพเดตปุ่ม DSR + hidden principal
         var calcPrev = document.getElementById("loan-calc-preview");
+        var btnFillDsr = document.getElementById("btn-fill-dsr");
         var income2 = calcIncome();
         if (income2 > 0 && annualPct > 0 && n > 0) {
           var loanAmt = maxLoanFromIncome(annualPct, n);
           document.getElementById("principal").value = Math.round(loanAmt);
-          calcPrev.style.display = "";
-          calcPrev.textContent = "✅ ความสามารถในการกู้: " + fmt(loanAmt) + " บาท (จาก DSR 70%)";
+          calcPrev.style.display = "none";
+          if (btnFillDsr) {
+            var dsrFmt = String(Math.round(loanAmt)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            btnFillDsr.textContent = "📊 ดึงจาก DSR: " + dsrFmt + " บาท";
+          }
         } else {
           calcPrev.style.display = "none";
+          if (btnFillDsr) btnFillDsr.textContent = "📊 ดึงจาก DSR";
         }
       }
 
@@ -4178,12 +4188,27 @@
           el.addEventListener("input", formatNumInput);
         }
       });
-      // extra-prepay: comma formatting only (ไม่ต้องอัพเดต income/DSR preview)
+      // extra-prepay / f-loan-amount: comma formatting only
       document.getElementById("extra-prepay").addEventListener("input", formatNumInput);
+      document.getElementById("f-loan-amount").addEventListener("input", formatNumInput);
+
+      // btn-fill-dsr: เติมวงเงินจาก DSR calculation
+      document.getElementById("btn-fill-dsr").addEventListener("click", function() {
+        var annualPct = parseFloat(document.getElementById("annual-rate").value) || 0;
+        var n = (parseFloat(document.getElementById("f-years").value) || 0) * 12;
+        var loanAmt = maxLoanFromIncome(annualPct, n);
+        if (loanAmt > 0) {
+          var el = document.getElementById("f-loan-amount");
+          el.value = String(Math.round(loanAmt)).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        } else {
+          showError("กรุณากรอกรายได้ (Section 01) + ดอกเบี้ย + ระยะเวลาก่อน");
+          setTimeout(hideError, 3000);
+        }
+      });
 
       // Enter key on any form field → submit
       ["f-salary","f-fixed-income","f-var-income","f-bonus",
-       "f-fixed-debt","f-var-debt","annual-rate","f-years","extra-prepay"].forEach(function(id) {
+       "f-fixed-debt","f-var-debt","annual-rate","f-loan-amount","f-years","extra-prepay"].forEach(function(id) {
         document.getElementById(id).addEventListener("keydown", function(e) {
           if (e.key === "Enter") {
             e.preventDefault();
@@ -4208,13 +4233,18 @@
         // Sync years → months
         syncYears();
 
-        // If income fields filled → use calculated principal; else require manual
-        var incomeTotal = calcIncome();
-        if (incomeTotal > 0) {
-          var annualPctTemp = parseFloat(document.getElementById("annual-rate").value) || 0;
-          var nTemp = parseInt(document.getElementById("months").value, 10) || 0;
-          if (annualPctTemp > 0 && nTemp > 0) {
-            document.getElementById("principal").value = Math.round(maxLoanFromIncome(annualPctTemp, nTemp));
+        // Priority: 1) manual f-loan-amount  2) DSR calc จากรายได้
+        var manualLoan = parseFloat(String(document.getElementById("f-loan-amount").value).replace(/,/g, ""));
+        if (manualLoan > 0) {
+          document.getElementById("principal").value = Math.round(manualLoan);
+        } else {
+          var incomeTotal = calcIncome();
+          if (incomeTotal > 0) {
+            var annualPctTemp = parseFloat(document.getElementById("annual-rate").value) || 0;
+            var nTemp = parseInt(document.getElementById("months").value, 10) || 0;
+            if (annualPctTemp > 0 && nTemp > 0) {
+              document.getElementById("principal").value = Math.round(maxLoanFromIncome(annualPctTemp, nTemp));
+            }
           }
         }
 
