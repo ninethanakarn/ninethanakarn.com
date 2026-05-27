@@ -241,6 +241,27 @@ body.theme-dark .footer { background: #000; }
 .lp-guide-num { width: 2rem; height: 2rem; background: linear-gradient(135deg, var(--c-primary), var(--c-primary-light, #3b82f6)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; color: #fff; flex-shrink: 0; }
 .lp-guide-step b { color: var(--c-primary); font-size: 0.95rem; }
 .lp-guide-step p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--c-text-mute); line-height: 1.5; }
+/* Bank icon grid */
+.banks-icon-grid { background: var(--c-bg-elev); border-radius: var(--radius-lg); padding: 24px 16px; border: 1px solid var(--c-border-soft); grid-template-columns: repeat(4, 1fr); }
+@media (min-width: 640px) { .tools-grid.banks-icon-grid { grid-template-columns: repeat(6, 1fr); } }
+@media (min-width: 900px) { .tools-grid.banks-icon-grid { grid-template-columns: repeat(6, 1fr); } }
+.tool.bank { cursor: pointer; }
+.tool.bank:hover .tool-ico { transform: scale(1.1); transition: transform 0.15s ease; }
+.tool-ico { transition: transform 0.15s ease; }
+.bico { font-size: 9px; font-weight: 800; color: #fff; font-family: var(--font-display); letter-spacing: 0; }
+.brate { font-size: 10px; font-weight: 700; color: #16a34a; display: block; margin-top: 1px; }
+.b-bbl { background: linear-gradient(135deg, #1e40af, #1e3a8a); }
+.b-ktb { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+.b-bay { background: linear-gradient(135deg, #ef4444, #dc2626); }
+.b-scb { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+.b-ttb { background: linear-gradient(135deg, #0891b2, #0e7490); }
+.b-gsb { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.b-ghb { background: linear-gradient(135deg, #16a34a, #15803d); }
+.b-kbank { background: linear-gradient(135deg, #059669, #047857); }
+.b-uob { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+.b-kkp { background: linear-gradient(135deg, #3730a3, #312e81); }
+.b-tisco { background: linear-gradient(135deg, #d97706, #b45309); }
+.b-ibank { background: linear-gradient(135deg, #10b981, #059669); }
 </style>
 </head>
 <body>
@@ -410,23 +431,22 @@ body.theme-dark .footer { background: #000; }
 
 <section class="block" id="banks">
   <div class="container">
-    <div class="section-head"><div class="section-head-text"><span class="star">★</span><div><h2>ทำงานกับ 12 ธนาคารชั้นนำ</h2><span class="sub">ยื่นกู้ตามโปรไฟล์ลูกค้า เพื่อเพิ่มโอกาสได้รับการอนุมัติจากธนาคาร</span></div></div></div>
-    <div class="banks-wrap"><div class="banks-grid">
-      <div class="bank" data-bank="BBL">BBL<small>กรุงเทพ</small><span class="bank-rate">เริ่ม 4.35%</span></div>
-      <div class="bank" data-bank="KTB">KTB<small>กรุงไทย</small><span class="bank-rate">เริ่ม 2.29%</span></div>
-      <div class="bank" data-bank="BAY">BAY<small>กรุงศรี</small><span class="bank-rate">เริ่ม 2.35%</span></div>
-      <div class="bank" data-bank="SCB">SCB<small>ไทยพาณิชย์</small><span class="bank-rate">เริ่ม 2.55%</span></div>
-      <div class="bank" data-bank="TTB">TTB<small>ทีเอ็มบีฯ</small><span class="bank-rate">เริ่ม 3.10%</span></div>
-      <div class="bank" data-bank="GSB">GSB<small>ออมสิน</small><span class="bank-rate">เริ่ม 4.25%</span></div>
-      <div class="bank" data-bank="GHB">GHB<small>อาคารฯ</small><span class="bank-rate">เริ่ม 2.50%</span></div>
-      <div class="bank" data-bank="KBANK">KBANK<small>กสิกรไทย</small><span class="bank-rate">เริ่ม 1.99%</span></div>
-      <div class="bank" data-bank="UOB">UOB<small>ยูโอบี</small><span class="bank-rate">เริ่ม 5.90%</span></div>
-      <div class="bank" data-bank="KKP">KKP<small>เกียรตินาคินฯ</small><span class="bank-rate">เริ่ม 2.88%</span></div>
-      <div class="bank" data-bank="TISCO">TISCO<small>ทิสโก้</small><span class="bank-rate">เริ่ม 3.30%</span></div>
-      <div class="bank" data-bank="IBANK">iBank<small>อิสลามแห่งไทย</small><span class="bank-rate">เริ่ม 2.49%</span></div>
+    <div class="section-head"><div class="section-head-text"><span class="star">★</span><div><h2>ยื่นกู้กับธนาคารชั้นนำ</h2><span class="sub">วิเคราะห์โปรไฟล์ เพื่อเพิ่มโอกาสอนุมัติ</span></div></div></div>
+    <div class="tools-grid banks-icon-grid">
+      <div class="tool bank" data-bank="BBL"><div class="tool-ico b-bbl"><span class="bico">BBL</span></div><span class="tool-label">กรุงเทพ<br><span class="brate">4.35%</span></span></div>
+      <div class="tool bank" data-bank="KTB"><div class="tool-ico b-ktb"><span class="bico">KTB</span></div><span class="tool-label">กรุงไทย<br><span class="brate">2.29%</span></span></div>
+      <div class="tool bank" data-bank="BAY"><div class="tool-ico b-bay"><span class="bico">BAY</span></div><span class="tool-label">กรุงศรี<br><span class="brate">2.35%</span></span></div>
+      <div class="tool bank" data-bank="SCB"><div class="tool-ico b-scb"><span class="bico">SCB</span></div><span class="tool-label">ไทยพาณิชย์<br><span class="brate">2.55%</span></span></div>
+      <div class="tool bank" data-bank="TTB"><div class="tool-ico b-ttb"><span class="bico">TTB</span></div><span class="tool-label">ทีเอ็มบีฯ<br><span class="brate">3.10%</span></span></div>
+      <div class="tool bank" data-bank="GSB"><div class="tool-ico b-gsb"><span class="bico">GSB</span></div><span class="tool-label">ออมสิน<br><span class="brate">4.25%</span></span></div>
+      <div class="tool bank" data-bank="GHB"><div class="tool-ico b-ghb"><span class="bico">GHB</span></div><span class="tool-label">อาคารฯ<br><span class="brate">2.50%</span></span></div>
+      <div class="tool bank" data-bank="KBANK"><div class="tool-ico b-kbank"><span class="bico">KBANK</span></div><span class="tool-label">กสิกรไทย<br><span class="brate">1.99%</span></span></div>
+      <div class="tool bank" data-bank="UOB"><div class="tool-ico b-uob"><span class="bico">UOB</span></div><span class="tool-label">ยูโอบี<br><span class="brate">5.90%</span></span></div>
+      <div class="tool bank" data-bank="KKP"><div class="tool-ico b-kkp"><span class="bico">KKP</span></div><span class="tool-label">เกียรตินาคินฯ<br><span class="brate">2.88%</span></span></div>
+      <div class="tool bank" data-bank="TISCO"><div class="tool-ico b-tisco"><span class="bico">TISCO</span></div><span class="tool-label">ทิสโก้<br><span class="brate">3.30%</span></span></div>
+      <div class="tool bank" data-bank="IBANK"><div class="tool-ico b-ibank"><span class="bico">iBank</span></div><span class="tool-label">อิสลามแห่งไทย<br><span class="brate">2.49%</span></span></div>
     </div>
-    <p class="banks-note">* ดอกเบี้ยปีแรก · กดการ์ดเพื่อดูรายละเอียด · อ้างอิง apthai.com / amoney.co.th (อัพเดท มี.ค. 2569) · ตัวเลขจริงขึ้นกับโปรไฟล์ลูกค้าและเงื่อนไขของแต่ละธนาคาร</p>
-    </div>
+    <p class="banks-note">* ดอกเบี้ยปีแรก · กดไอคอนธนาคารเพื่อดูรายละเอียด · อ้างอิง apthai.com / amoney.co.th (อัพเดท มี.ค. 2569) · ตัวเลขจริงขึ้นกับโปรไฟล์ลูกค้าและเงื่อนไขของแต่ละธนาคาร</p>
 
   <!-- Bank Modal -->
   <div class="bank-modal-overlay" id="bankModal">
