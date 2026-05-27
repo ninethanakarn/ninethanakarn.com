@@ -284,6 +284,17 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
 /* Hero flowchart */
 .hero-flow { display: flex; align-items: flex-start; gap: 2px; margin-top: 20px; }
 .hero-flow-step { display: flex; flex-direction: column; align-items: center; gap: 7px; flex: 1; min-width: 0; }
+.hero-flow-clickable { cursor: pointer; }
+.hero-flow-clickable:hover .hero-flow-ico { background: rgba(255,255,255,0.22); border-color: rgba(255,255,255,0.4); transform: scale(1.07); transition: transform .15s, background .15s; }
+.flow-modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:1100; align-items:center; justify-content:center; padding:16px; }
+.flow-modal-overlay.open { display:flex; }
+.flow-modal { background:var(--c-bg); border:1px solid var(--c-border); border-radius:16px; padding:28px 24px 24px; max-width:400px; width:100%; position:relative; box-shadow:0 20px 60px rgba(0,0,0,.3); }
+.flow-modal-close { position:absolute; top:12px; right:14px; background:none; border:none; font-size:20px; cursor:pointer; color:var(--c-text-mute); line-height:1; }
+.flow-modal-ico { width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg,var(--c-primary),var(--c-primary-light)); display:grid; place-items:center; color:#fff; margin-bottom:16px; }
+.flow-modal-ico svg { width:26px; height:26px; }
+.flow-modal-title { font-size:1.05rem; font-weight:700; margin-bottom:12px; line-height:1.4; color:var(--c-text); }
+.flow-modal-body p { font-size:0.9rem; color:var(--c-text-mute); line-height:1.7; margin-bottom:10px; }
+.flow-modal-body p:last-child { margin-bottom:0; }
 .hero-flow-ico { width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.2); display: grid; place-items: center; flex-shrink: 0; }
 .hero-flow-ico svg { width: 22px; height: 22px; color: #fff; stroke-width: 1.6; }
 .hero-flow-label { font-size: 10.5px; color: rgba(255,255,255,0.82); text-align: center; line-height: 1.45; }
@@ -320,9 +331,9 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
           <h1>มีหนี้อยู่<span class="accent">ก็เริ่มมีบ้านได้</span></h1>
           <p style="margin-bottom:16px;">วางแผนก่อนยื่นกู้ อย่างมืออาชีพ</p>
           <div class="hero-flow">
-            <div class="hero-flow-step">
+            <div class="hero-flow-step hero-flow-clickable" data-flow="1" title="คลิกดูรายละเอียด">
               <div class="hero-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="15.65" y2="15.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg></div>
-              <span class="hero-flow-label">วิเคราะห์เครดิต<br>ตามโปรไฟล์จริง</span>
+              <span class="hero-flow-label">วิเคราะห์<br>เครดิต</span>
             </div>
             <div class="hero-flow-sep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
             <div class="hero-flow-step">
@@ -570,6 +581,15 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
   </div>
 </footer>
 
+<div class="flow-modal-overlay" id="flowModal">
+  <div class="flow-modal">
+    <button class="flow-modal-close" id="flowModalClose">✕</button>
+    <div class="flow-modal-ico" id="flowModalIco"></div>
+    <div class="flow-modal-title" id="flowModalTitle"></div>
+    <div class="flow-modal-body" id="flowModalBody"></div>
+  </div>
+</div>
+
 <a href="https://line.me/R/ti/p/@ninethanakarn" class="float-line" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>ปรึกษา Line</a>
 
 <script>
@@ -638,6 +658,31 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
   closeBtn.addEventListener('click', function(){ overlay.classList.remove('open'); });
   overlay.addEventListener('click', function(e){ if(e.target === overlay) overlay.classList.remove('open'); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') overlay.classList.remove('open'); });
+})();
+
+(function(){
+  var flowData = {
+    '1': {
+      svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="15.65" y2="15.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg>',
+      title: 'วิเคราะห์เครดิตตามโปรไฟล์จริงของผู้กู้',
+      body: '<p>ตรวจสอบภาระหนี้ รายได้ คะแนนเครดิตบูโร และความพร้อมก่อนยื่นกู้</p><p>ช่วยวางแผนให้เหมาะกับโปรไฟล์จริงของผู้กู้และโครงการที่เลือก เพื่อเพิ่มโอกาสอนุมัติสินเชื่ออย่างเป็นระบบ</p>'
+    }
+  };
+  var fOverlay = document.getElementById('flowModal');
+  var fClose = document.getElementById('flowModalClose');
+  document.querySelectorAll('.hero-flow-clickable[data-flow]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var d = flowData[this.dataset.flow];
+      if(!d) return;
+      document.getElementById('flowModalIco').innerHTML = d.svg;
+      document.getElementById('flowModalTitle').textContent = d.title;
+      document.getElementById('flowModalBody').innerHTML = d.body;
+      fOverlay.classList.add('open');
+    });
+  });
+  fClose.addEventListener('click', function(){ fOverlay.classList.remove('open'); });
+  fOverlay.addEventListener('click', function(e){ if(e.target === fOverlay) fOverlay.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') fOverlay.classList.remove('open'); });
 })();
 </script>
 </body>
