@@ -263,11 +263,10 @@ body.theme-dark .footer { background: #000; }
 .b-tisco { background: linear-gradient(135deg, #003F87, #002766); }   /* ทิสโก้ — Dark Blue */
 .b-ibank { background: linear-gradient(135deg, #007A4C, #005535); }   /* iBank — Dark Green */
 /* Nav CTA buttons */
-.btn-nav-call { display: inline-flex; align-items: center; gap: 5px; padding: 8px 10px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); color: #fff; border-radius: var(--radius-pill); font-weight: 600; font-size: 13px; transition: background .2s; white-space: nowrap; }
-.btn-nav-call:hover { background: rgba(255,255,255,.18); }
-.btn-nav-call svg { width: 15px; height: 15px; flex-shrink: 0; }
-.btn-nav-call .nav-btn-txt { display: none; }
-@media (min-width: 480px) { .btn-nav-call .nav-btn-txt { display: inline; } }
+.btn-nav-call { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: #f59e0b; color: #fff; border-radius: var(--radius-pill); font-weight: 600; font-size: 14px; box-shadow: 0 2px 8px rgba(245,158,11,.4); transition: transform .15s, box-shadow .2s; white-space: nowrap; }
+.btn-nav-call:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(245,158,11,.5); background: #d97706; }
+.btn-nav-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+.topnav .theme-toggle { width: 40px; height: 40px; }
 /* Stat icons */
 .stat-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
 .stat-icon svg { width: 26px; height: 26px; color: var(--c-primary-light); stroke-width: 1.5; }
@@ -306,7 +305,7 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
       </button>
       <a href="tel:023340940" class="btn-nav-call" aria-label="โทรคุยเบื้องต้น">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span class="nav-btn-txt">โทรคุยเบื้องต้น</span>
+        โทรคุย
       </a>
       <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn-line" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
