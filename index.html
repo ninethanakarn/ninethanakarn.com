@@ -346,9 +346,9 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
               <span class="hero-flow-label">ยื่นกู้บ้าน<br>คอนโด</span>
             </div>
             <div class="hero-flow-sep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
-            <div class="hero-flow-step">
-              <div class="hero-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-              <span class="hero-flow-label">ปรึกษาเบื้องต้น<br>ฟรี ไม่มีค่าใช้จ่าย</span>
+            <div class="hero-flow-step hero-flow-clickable" data-flow="4" title="คลิกดูรายละเอียด">
+              <div class="hero-flow-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+              <span class="hero-flow-label">ส่งมอบ<br>เริ่มต้นใหม่</span>
             </div>
           </div>
         </div>
@@ -676,6 +676,11 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
       svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>',
       title: 'ยื่นกู้บ้านและคอนโด',
       body: '<p>ช่วยวางแผนและเตรียมความพร้อมก่อนยื่นสินเชื่อบ้านและคอนโด เปรียบเทียบแนวทางจากหลายธนาคารตามโปรไฟล์ของผู้กู้และโครงการที่เลือก</p><p>ทีมช่วยเตรียมเอกสารให้ครบถ้วน ถูกต้อง ตรงตามเกณฑ์ธนาคาร เพื่อเพิ่มโอกาสอนุมัติสินเชื่ออย่างเป็นระบบ</p>'
+    },
+    '4': {
+      svg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>',
+      title: 'ส่งมอบบ้าน เริ่มต้นชีวิตใหม่',
+      body: '<p>ดูแลตั้งแต่การวางแผนสินเชื่อ จนถึงวันโอนกรรมสิทธิ์และส่งมอบบ้าน ช่วยให้ลูกค้าเริ่มต้นชีวิตใหม่ได้อย่างมั่นใจ</p><p>พร้อมบริการบริหารงานเช่าต่อ สำหรับนักลงทุนคอนโดปล่อยเช่า และวางแผนทางการเงินระยะยาว</p>'
     }
   };
   var fOverlay = document.getElementById('flowModal');
