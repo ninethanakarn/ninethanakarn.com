@@ -399,7 +399,7 @@
             </div>
 
           </div>
-          <p style="font-size:0.72rem; color:var(--muted); margin-top:0.75rem; line-height:1.5;">* คำนวณจาก DSR 60% · อัตราดอก 6.5% · 30 ปี · ตัวเลขจริงขึ้นกับเครดิตและเงื่อนไขธนาคาร</p>
+          <p style="font-size:0.72rem; color:var(--muted); margin-top:0.75rem; line-height:1.5;">* คำนวณจาก DSR 60% · อัตราดอกเฉลี่ย 3 ปีแรก 3.5% · 30 ปี · ตัวเลขจริงขึ้นกับเครดิตและเงื่อนไขธนาคาร</p>
         </div>
       </div>
     </div>
@@ -676,8 +676,9 @@
       savEl.textContent = (gap > 0 ? '+' : '') + Math.round(gap).toLocaleString() + ' บ./เดือน';
       savEl.style.color = gap > 0 ? '#ef4444' : '#34d399';
 
-      // Loan eligibility: 6.5% / 30yr → 6,321 บ./เดือน per million
-      var loanFactor = 6321 / 1000000; // PMT per baht
+      // Loan eligibility: 3.5% / 30yr → ~4,490 บ./เดือน per million
+      var r35 = 0.035 / 12;
+      var loanFactor = (r35 / (1 - Math.pow(1 + r35, -360))) / 1000000; // PMT per baht
       var housingPay2 = getVal('dHousingPay');
       var carPay2     = getVal('dCarPay');
 
