@@ -328,20 +328,20 @@
 
       <div id="calcResult" class="calc-result">
         <div class="calc-row">
-          <span class="calc-row-label">ค่างวดรวมต่อเดือน (ปัจจุบัน)</span>
-          <span class="calc-row-value" id="payBefore">—</span>
+          <span class="calc-row-label">รายได้รวมที่ธนาคารนับ</span>
+          <span class="calc-row-value" id="resIncome">—</span>
         </div>
         <div class="calc-row">
-          <span class="calc-row-label">ค่างวดรวมต่อเดือน (หลังรวมหนี้รถ+สินเชื่อ+บัตร · ดอก 8% · 5 ปี)</span>
-          <span class="calc-row-value" id="payAfter" style="color: #34d399;">—</span>
+          <span class="calc-row-label">ค่างวดรวมต่อเดือน (ปัจจุบัน)</span>
+          <span class="calc-row-value" id="payBefore">—</span>
         </div>
         <div class="calc-row">
           <span class="calc-row-label">DSR ปัจจุบัน</span>
           <span class="calc-row-value" id="dsrBefore">—</span>
         </div>
         <div class="calc-row">
-          <span class="calc-row-label">DSR หลังรวมหนี้</span>
-          <span class="calc-row-value" id="dsrAfter" style="color: #34d399;">—</span>
+          <span class="calc-row-label">DSR หลังรวมหนี้ <small style="font-weight:400;font-size:0.78rem;color:var(--muted);">(เกณฑ์ธนาคาร ≤70%)</small></span>
+          <span class="calc-row-value" id="dsrAfter">—</span>
         </div>
         <div class="calc-row">
           <span class="calc-row-label">ประหยัดต่อเดือน</span>
@@ -614,10 +614,12 @@
       var dsrAfter  = ((housingPay + consolidatedPay) / income) * 100;
       var savings   = totalMonthlyPay - (housingPay + consolidatedPay);
 
+      document.getElementById('resIncome').textContent  = Math.round(income).toLocaleString() + ' บ./เดือน';
       document.getElementById('payBefore').textContent = Math.round(totalMonthlyPay).toLocaleString() + ' บ./เดือน';
-      document.getElementById('payAfter').textContent  = Math.round(housingPay + consolidatedPay).toLocaleString() + ' บ./เดือน';
       document.getElementById('dsrBefore').textContent = dsrBefore.toFixed(1) + '%';
-      document.getElementById('dsrAfter').textContent  = dsrAfter.toFixed(1) + '%';
+      var dsrAfterEl = document.getElementById('dsrAfter');
+      dsrAfterEl.textContent = dsrAfter.toFixed(1) + '%';
+      dsrAfterEl.style.color = dsrAfter < 60 ? '#34d399' : dsrAfter < 70 ? '#fbbf24' : '#ef4444';
       document.getElementById('savings').textContent   = (savings > 0 ? '+' : '') + Math.round(savings).toLocaleString() + ' บ./เดือน';
 
       var verdictEl = document.getElementById('verdict');
