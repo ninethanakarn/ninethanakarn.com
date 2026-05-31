@@ -371,7 +371,7 @@
           <div class="loan-scenario-grid">
 
             <div class="loan-scenario-card">
-              <div class="loan-scenario-hd">คำนวณวงเงินกู้ (DSR 70%) เหลือภาระ 2 รายการ</div>
+              <div class="loan-scenario-hd">ปิดหนี้ รวมหนี้: สินเชื่อ+บัตรเครดิต+อื่นๆ = <span id="consolidate2Amt">—</span> บาท</div>
               <table class="loan-debt-mini">
                 <thead>
                   <tr><th>รายการ</th><th>ยอดหนี้คงเหลือ</th><th>ยอดชำระ/เดือน</th></tr>
@@ -386,7 +386,7 @@
             </div>
 
             <div class="loan-scenario-card">
-              <div class="loan-scenario-hd">คำนวณวงเงินกู้ (DSR 70%) เหลือภาระ 1 รายการ</div>
+              <div class="loan-scenario-hd">ปิดหนี้ รวมหนี้: รถ+สินเชื่อ+บัตรเครดิต+อื่นๆ = <span id="consolidate1Amt">—</span> บาท</div>
               <table class="loan-debt-mini">
                 <thead>
                   <tr><th>รายการ</th><th>ยอดหนี้คงเหลือ</th><th>ยอดชำระ/เดือน</th></tr>
@@ -707,6 +707,11 @@
       var loan1  = avail1 / loanFactor / 1000000;
 
       var fmt = function(v) { return v > 0 ? Math.round(v).toLocaleString() : '—'; };
+      // Consolidated amounts shown in header
+      var consolidate2Bal = getVal('dLoanBal') + getVal('dCardBal') + getVal('dSlipBal');
+      var consolidate1Bal = getVal('dCarBal') + getVal('dLoanBal') + getVal('dCardBal') + getVal('dSlipBal');
+      document.getElementById('consolidate2Amt').textContent = fmt(consolidate2Bal);
+      document.getElementById('consolidate1Amt').textContent = fmt(consolidate1Bal);
       // Scenario 2: housing + car detail
       document.getElementById('s2HousingBal').textContent = fmt(getVal('dHousingBal'));
       document.getElementById('s2HousingPay').textContent = fmt(housingPay2);
