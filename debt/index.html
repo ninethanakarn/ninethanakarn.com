@@ -155,6 +155,57 @@
     .loan-eligible-section { margin-top: 1.25rem; border-top: 1px solid var(--border, rgba(255,255,255,0.1)); padding-top: 1rem; }
     .loan-eligible-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.4rem; }
     .loan-scenario-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+    /* Print button */
+    .icon-btn { width:36px;height:36px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;border-radius:8px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0; }
+    .icon-btn:hover { background:rgba(255,255,255,.2);transform:translateY(-1px); }
+    /* Print-only header */
+    .print-header { display:none; }
+    /* Print mode */
+    @media print {
+      @page { margin:1.2cm; size:A4; }
+      body { background:#fff !important; color:#000 !important; font-size:10pt; line-height:1.45; }
+      .site-header, .hero, .guide-wrap, .star-divider, .sticky-cta, .calc-btn,
+      .site-footer, #sections-after-calc { display:none !important; }
+      .section.no-print { display:none !important; }
+      .icon-btn, .theme-toggle { display:none !important; }
+      /* Print header */
+      .print-header { display:grid !important; background:#f8fafc; border:1pt solid #1e40af; border-radius:6pt; padding:8pt 12pt; margin:0 0 8pt; grid-template-columns:1fr auto; gap:10pt; align-items:center; }
+      .ph-customer { font-size:13pt; font-weight:700; color:#1e40af; }
+      .ph-customer-label { font-size:8pt; color:#64748b; display:block; margin-bottom:2pt; }
+      .ph-date { font-size:9pt; color:#475569; text-align:right; }
+      /* Form cards */
+      .form-card { background:#f8fafc !important; border:1pt solid #cbd5e1 !important; border-radius:6pt; page-break-inside:avoid; margin-bottom:6pt; padding:8pt 10pt; }
+      .form-card-hd { color:#1e40af !important; background:#eff6ff !important; margin:-8pt -10pt 8pt; padding:4pt 10pt; font-size:9pt; border-bottom:1pt solid #cbd5e1; }
+      .income-grid { grid-template-columns:1fr 1fr !important; gap:4pt; }
+      .calc-field label { font-size:8pt; color:#475569 !important; }
+      .calc-field label small { font-size:7pt; }
+      .calc-field input, .debt-tbl input[type="number"] { background:transparent !important; border:none !important; border-bottom:1pt dotted #94a3b8 !important; padding:1pt 2pt !important; color:#000 !important; font-size:9pt !important; width:auto !important; max-width:none !important; text-align:right; }
+      .calc-input-text { background:transparent !important; border:none !important; border-bottom:1pt solid #cbd5e1 !important; padding:1pt 4pt !important; color:#000 !important; font-size:9pt !important; }
+      .income-total { background:#eff6ff !important; border:1pt solid #93c5fd !important; color:#1e40af !important; font-size:9pt; padding:4pt 8pt; }
+      /* Debt table */
+      .debt-tbl th { background:#f1f5f9 !important; color:#475569 !important; font-size:8pt; padding:3pt 5pt; }
+      .debt-tbl td { font-size:9pt; padding:3pt 5pt; }
+      .debt-tbl .row-housing td { background:rgba(239,68,68,.04) !important; }
+      .debt-tbl .row-car td { background:rgba(59,130,246,.04) !important; }
+      .debt-tbl .row-card td { background:rgba(245,158,11,.04) !important; }
+      .debt-tbl .row-slip td { background:rgba(34,197,94,.04) !important; }
+      .debt-tbl .row-total td { background:#fef9c3 !important; font-size:9pt; }
+      /* Results */
+      .calc-result { display:block !important; background:#f8fafc !important; border:1pt solid #1e40af !important; border-radius:6pt; padding:8pt 10pt; margin-top:8pt; }
+      .calc-row { padding:3pt 0; border-bottom:1pt solid #e2e8f0 !important; }
+      .calc-row-label { font-size:8.5pt; color:#475569 !important; }
+      .calc-row-value { font-size:10pt; color:#1e40af !important; }
+      /* Loan cards */
+      .loan-eligible-section { margin-top:8pt; border-top:1pt solid #cbd5e1; padding-top:8pt; }
+      .loan-scenario-card { background:#eff6ff !important; border:1pt solid #93c5fd !important; border-radius:6pt; padding:8pt; page-break-inside:avoid; margin-bottom:6pt; }
+      .loan-scenario-hd { color:#1e40af !important; font-size:8.5pt; font-weight:700; }
+      .loan-debt-mini th { background:#dbeafe !important; font-size:7.5pt; padding:2pt 4pt; }
+      .loan-debt-mini td { font-size:8.5pt; padding:2pt 4pt; }
+      .loan-scenario-avail { font-size:8.5pt; color:#475569 !important; }
+      .loan-scenario-amount { font-size:12pt; color:#1e40af !important; font-weight:700; }
+      .loan-eligible-section p { font-size:7.5pt; color:#94a3b8 !important; }
+      body::after { content:"นายธนาคารประจำบ้าน · ninethanakarn.com · 02-334-0940"; display:block; text-align:center; font-size:8pt; color:#64748b; margin-top:10pt; padding-top:6pt; border-top:1pt solid #cbd5e1; }
+    }
     .loan-scenario-card { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 10px; padding: 0.875rem; }
     .loan-scenario-hd { font-size: 0.75rem; font-weight: 700; color: #3b82f6; margin-bottom: 0.35rem; }
     .loan-scenario-items { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.6rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(59,130,246,0.15); line-height: 1.6; }
@@ -179,12 +230,22 @@
         <div class="header-brand-tagline">ที่ปรึกษาทางการเงินมืออาชีพ · 7+ ปี</div>
       </div>
       <a href="/" class="header-back">← กลับเว็บหลัก</a>
+      <button class="icon-btn" onclick="doPrint()" title="พิมพ์ / Save PDF">🖨️</button>
       <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
         <span class="theme-icon theme-icon-dark">🌙</span>
         <span class="theme-icon theme-icon-light">☀️</span>
       </button>
     </div>
   </header>
+
+  <!-- Print-only header -->
+  <div class="print-header" id="print-header">
+    <div>
+      <span class="ph-customer-label">ชื่อลูกค้า</span>
+      <div class="ph-customer" id="print-customer-name">—</div>
+    </div>
+    <div class="ph-date">วันที่คำนวณ<br><strong id="print-date">—</strong></div>
+  </div>
 
   <section class="hero">
     <div class="container">
@@ -408,7 +469,7 @@
     <div class="star-divider"><span>★</span></div>
   </div>
 
-  <section class="section" style="background: var(--bg-subtle);">
+  <section class="section no-print" style="background: var(--bg-subtle);">
     <div class="container">
       <h2 class="section-title">วิธีปิดหนี้/รวมหนี้ 4 รูปแบบ</h2>
       <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.25rem;">
@@ -452,7 +513,7 @@
     <div class="star-divider"><span>★</span></div>
   </div>
 
-  <section class="section">
+  <section class="section no-print">
     <div class="container">
       <h2 class="section-title">เกณฑ์ นายธนาคารประจำบ้าน ในการคัด deal ปิดหนี้</h2>
       <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.25rem;">
@@ -496,7 +557,7 @@
     <div class="star-divider"><span>★</span></div>
   </div>
 
-  <section class="section" style="background: var(--bg-subtle);">
+  <section class="section no-print" style="background: var(--bg-subtle);">
     <div class="container">
       <h2 class="section-title">ขั้นตอนการปิดหนี้/รวมหนี้</h2>
 
@@ -550,7 +611,7 @@
     <div class="star-divider"><span>★</span></div>
   </div>
 
-  <section class="section">
+  <section class="section no-print">
     <div class="container">
       <h2 class="section-title">หลังปิดหนี้ — เตรียมกู้บ้าน</h2>
       <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.25rem;">
@@ -615,6 +676,15 @@
       var saved = localStorage.getItem('theme') || 'dark';
       document.documentElement.setAttribute('data-theme', saved);
     })();
+
+    function doPrint() {
+      var name = (document.getElementById('clientName').value || '').trim();
+      document.getElementById('print-customer-name').textContent = name || '— (ไม่ระบุชื่อ)';
+      var now = new Date();
+      var m = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+      document.getElementById('print-date').textContent = now.getDate() + ' ' + m[now.getMonth()] + ' ' + (now.getFullYear() + 543);
+      setTimeout(function(){ window.print(); }, 50);
+    }
 
     function getVal(id) { return parseFloat(document.getElementById(id).value) || 0; }
 
