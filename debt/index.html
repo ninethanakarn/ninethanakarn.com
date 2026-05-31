@@ -220,7 +220,7 @@
             <div class="guide-num">2</div>
             <div class="guide-step-body">
               <b>อ่านผล DSR</b>
-              <p>DSR &lt; 60% = ผ่านเกณฑ์ธนาคาร · DSR 70% = เสี่ยง · DSR &gt; 70% = ธนาคารปฏิเสธสินเชื่อบ้าน ปิดหนี้เพื่อลด DSR ก่อนยื่นกู้</p>
+              <p>DSR &lt; 60% = ผ่านเกณฑ์ธนาคาร · DSR 60% = เสี่ยง · DSR &gt; 70% = ธนาคารปฏิเสธสินเชื่อบ้าน ปิดหนี้เพื่อลด DSR ก่อนยื่นกู้</p>
             </div>
           </div>
           <div class="guide-step">
@@ -357,11 +357,11 @@
           <span class="calc-row-value" id="dsrBefore">—</span>
         </div>
         <div class="calc-row">
-          <span class="calc-row-label">ค่างวดสูงสุดที่ธนาคารรับได้ <small style="font-weight:400;font-size:0.78rem;color:var(--muted);">(หลังรวมหนี้: DSR 70%)</small></span>
+          <span class="calc-row-label">ค่างวดสูงสุดที่ธนาคารรับได้ <small style="font-weight:400;font-size:0.78rem;color:var(--muted);">(หลังรวมหนี้: DSR 60%)</small></span>
           <span class="calc-row-value" id="dsrAfter">—</span>
         </div>
         <div class="calc-row">
-          <span class="calc-row-label">ประหยัดต่อเดือน <small style="font-weight:400;font-size:0.78rem;color:var(--muted);">(หลังรวมหนี้: คำนวณจาก DSR 70%)</small></span>
+          <span class="calc-row-label">ประหยัดต่อเดือน <small style="font-weight:400;font-size:0.78rem;color:var(--muted);">(หลังรวมหนี้: คำนวณจาก DSR 60%)</small></span>
           <span class="calc-row-value" id="savings">—</span>
         </div>
 
@@ -399,7 +399,7 @@
             </div>
 
           </div>
-          <p style="font-size:0.72rem; color:var(--muted); margin-top:0.75rem; line-height:1.5;">* คำนวณจาก DSR 70% · อัตราดอก 6.5% · 30 ปี · ตัวเลขจริงขึ้นกับเครดิตและเงื่อนไขธนาคาร</p>
+          <p style="font-size:0.72rem; color:var(--muted); margin-top:0.75rem; line-height:1.5;">* คำนวณจาก DSR 60% · อัตราดอก 6.5% · 30 ปี · ตัวเลขจริงขึ้นกับเครดิตและเงื่อนไขธนาคาร</p>
         </div>
       </div>
     </div>
@@ -667,7 +667,7 @@
       document.getElementById('resIncome').textContent  = Math.round(income).toLocaleString() + ' บ./เดือน';
       document.getElementById('payBefore').textContent = Math.round(totalMonthlyPay).toLocaleString() + ' บ./เดือน';
       document.getElementById('dsrBefore').textContent = dsrBefore.toFixed(1) + '%';
-      var threshold70 = income * 0.70;
+      var threshold70 = income * 0.60;
       var gap = totalMonthlyPay - threshold70;
       var dsrAfterEl = document.getElementById('dsrAfter');
       dsrAfterEl.textContent = Math.round(threshold70).toLocaleString() + ' บ./เดือน';
