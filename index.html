@@ -224,10 +224,9 @@ body.theme-dark .footer { background: #000; }
 .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: var(--radius-pill); display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
 .float-call:hover { background: #222; transform: scale(1.04); }
 .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
-.float-line { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 14px 20px; border-radius: var(--radius-pill); display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; box-shadow: 0 8px 24px rgba(6,199,85,.4), 0 0 0 6px rgba(6,199,85,.12); z-index: 90; animation: float-pulse 3s ease-in-out infinite; transition: transform .2s; }
-.float-line:hover { transform: scale(1.05); }
-.float-line svg { width: 22px; height: 22px; }
-@keyframes float-pulse { 0%, 100% { box-shadow: 0 8px 24px rgba(6,199,85,.4), 0 0 0 6px rgba(6,199,85,.12); } 50% { box-shadow: 0 8px 24px rgba(6,199,85,.5), 0 0 0 12px rgba(6,199,85,.06); } }
+.float-line { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: var(--radius-pill); display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 90; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+.float-line:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+.float-line svg { width: 18px; height: 18px; flex-shrink: 0; }
 @media (min-width: 640px) { .services-4 { grid-template-columns: repeat(4, 1fr); } .tools-grid { grid-template-columns: repeat(4, 1fr); padding: 28px 24px; } .tool-label { font-size: 12.5px; } .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; } }
 @media (min-width: 900px) { :root { --gutter: 32px; } .hero { padding: 48px 0 60px; } .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 40px; } .hero-card { min-height: 540px; padding: 48px 48px 0 48px; border-radius: var(--radius-xl); } .hero-portrait img { max-width: 380px; } .hero-aside { display: flex; flex-direction: column; gap: 16px; } .hero-aside .stats { margin-top: 0; padding: 28px 24px; } .stat-num { font-size: 36px; } .tools-grid { grid-template-columns: repeat(8, 1fr); } .steps { grid-template-columns: repeat(5, 1fr); } .step { padding: 60px 16px 16px; text-align: center; } .step-num { left: 50%; top: 16px; transform: translateX(-50%); } .banks-grid { grid-template-columns: repeat(8, 1fr); } .about-grid { grid-template-columns: 1fr 1.3fr; gap: 48px; } .testi-grid { grid-template-columns: repeat(3, 1fr); } .cta-strip { padding: 56px 40px; } section.block { padding: 80px 0; } }
 .hero-aside-mobile { display: block; }
@@ -571,7 +570,7 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
     <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     โทรปรึกษา
   </a>
-  <a href="https://line.me/R/ti/p/@ninethanakarn" class="float-line" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>ปรึกษา Line</a>
+  <a href="https://line.me/R/ti/p/@ninethanakarn" class="float-line" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>Line ปรึกษา</a>
 </div>
 
 <script>
