@@ -678,7 +678,7 @@
 
       // Loan eligibility: 3.5% / 30yr → ~4,490 บ./เดือน per million
       var r35 = 0.035 / 12;
-      var loanFactor = (r35 / (1 - Math.pow(1 + r35, -360))) / 1000000; // PMT per baht
+      var loanFactor = r35 / (1 - Math.pow(1 + r35, -360)); // ~0.004491 (PMT factor)
       var housingPay2 = getVal('dHousingPay');
       var carPay2     = getVal('dCarPay');
 
