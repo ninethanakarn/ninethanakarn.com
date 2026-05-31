@@ -162,6 +162,12 @@
     .loan-scenario-avail { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.25rem; }
     .loan-scenario-avail strong { color: var(--text); }
     .loan-scenario-amount { font-size: 1.05rem; font-weight: 700; color: #3b82f6; }
+    .loan-debt-mini { width: 100%; border-collapse: collapse; font-size: 0.75rem; margin-bottom: 0.625rem; }
+    .loan-debt-mini th { padding: 0.25rem 0.35rem; background: rgba(59,130,246,0.1); font-size: 0.7rem; font-weight: 600; color: var(--muted); text-align: right; white-space: nowrap; }
+    .loan-debt-mini th:first-child { text-align: left; border-radius: 4px 0 0 0; }
+    .loan-debt-mini th:last-child { border-radius: 0 4px 0 0; }
+    .loan-debt-mini td { padding: 0.25rem 0.35rem; border-bottom: 1px solid rgba(59,130,246,0.1); font-size: 0.75rem; }
+    .loan-debt-mini td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
   </style>
 </head>
 <body>
@@ -370,14 +376,29 @@
 
             <div class="loan-scenario-card">
               <div class="loan-scenario-hd">คำนวณวงเงินกู้ (DSR 70%) เหลือภาระ 2 รายการ</div>
-              <div class="loan-scenario-items">01 · สินเชื่อที่อยู่อาศัย<br>02 · สินเชื่อรถยนต์</div>
+              <table class="loan-debt-mini">
+                <thead>
+                  <tr><th>รายการ</th><th>ยอดหนี้คงเหลือ</th><th>ยอดชำระ/เดือน</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>01 · สินเชื่อที่อยู่อาศัย</td><td id="s2HousingBal">—</td><td id="s2HousingPay">—</td></tr>
+                  <tr><td>02 · สินเชื่อรถยนต์</td><td id="s2CarBal">—</td><td id="s2CarPay">—</td></tr>
+                </tbody>
+              </table>
               <div class="loan-scenario-avail">ผ่อนบ้านได้ <strong id="avail2">—</strong> บ./เดือน</div>
               <div class="loan-scenario-amount">วงเงินกู้ ~<span id="loan2">—</span> ล้านบาท</div>
             </div>
 
             <div class="loan-scenario-card">
               <div class="loan-scenario-hd">คำนวณวงเงินกู้ (DSR 70%) เหลือภาระ 1 รายการ</div>
-              <div class="loan-scenario-items">01 · สินเชื่อที่อยู่อาศัย</div>
+              <table class="loan-debt-mini">
+                <thead>
+                  <tr><th>รายการ</th><th>ยอดหนี้คงเหลือ</th><th>ยอดชำระ/เดือน</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>01 · สินเชื่อที่อยู่อาศัย</td><td id="s1HousingBal">—</td><td id="s1HousingPay">—</td></tr>
+                </tbody>
+              </table>
               <div class="loan-scenario-avail">ผ่อนบ้านได้ <strong id="avail1">—</strong> บ./เดือน</div>
               <div class="loan-scenario-amount">วงเงินกู้ ~<span id="loan1">—</span> ล้านบาท</div>
             </div>
@@ -689,6 +710,16 @@
       var loan2  = avail2 / loanFactor / 1000000;
       var loan1  = avail1 / loanFactor / 1000000;
 
+      var fmt = function(v) { return v > 0 ? Math.round(v).toLocaleString() : '—'; };
+      // Scenario 2: housing + car detail
+      document.getElementById('s2HousingBal').textContent = fmt(getVal('dHousingBal'));
+      document.getElementById('s2HousingPay').textContent = fmt(housingPay2);
+      document.getElementById('s2CarBal').textContent     = fmt(getVal('dCarBal'));
+      document.getElementById('s2CarPay').textContent     = fmt(carPay2);
+      // Scenario 1: housing only detail
+      document.getElementById('s1HousingBal').textContent = fmt(getVal('dHousingBal'));
+      document.getElementById('s1HousingPay').textContent = fmt(housingPay2);
+      // Result amounts
       document.getElementById('avail2').textContent = Math.round(avail2).toLocaleString();
       document.getElementById('loan2').textContent  = loan2 >= 0.01 ? loan2.toFixed(2) : '0';
       document.getElementById('avail1').textContent = Math.round(avail1).toLocaleString();
