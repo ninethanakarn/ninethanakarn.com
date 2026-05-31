@@ -677,25 +677,6 @@
       savEl.textContent = (gap > 0 ? '+' : '') + Math.round(gap).toLocaleString() + ' บ./เดือน';
       savEl.style.color = gap > 0 ? '#ef4444' : '#34d399';
 
-      var verdictEl = document.getElementById('verdict');
-      if (dsrBefore < 50) {
-        verdictEl.textContent = '✅ พร้อมกู้บ้าน — DSR ผ่านเกณฑ์ดี ทุกแบงค์น่าจะอนุมัติ';
-        verdictEl.style.background = 'rgba(34, 197, 94, 0.15)';
-        verdictEl.style.color = '#22c55e';
-      } else if (dsrBefore < 60) {
-        verdictEl.textContent = '✅ พร้อมกู้บ้าน — DSR ผ่านเกณฑ์ 12 ธนาคาร';
-        verdictEl.style.background = 'rgba(34, 197, 94, 0.15)';
-        verdictEl.style.color = '#22c55e';
-      } else if (dsrBefore < 70) {
-        verdictEl.textContent = '⚠️ DSR ใกล้เกณฑ์ — บางแบงค์ไม่ผ่าน ปรึกษา LINE เพื่อวางแผนเพิ่ม';
-        verdictEl.style.background = 'rgba(251, 191, 36, 0.15)';
-        verdictEl.style.color = '#fbbf24';
-      } else {
-        verdictEl.textContent = '❌ DSR เกิน 70% — ต้องลดหนี้/เพิ่มรายได้ก่อนกู้บ้าน · ปรึกษา LINE';
-        verdictEl.style.background = 'rgba(239, 68, 68, 0.15)';
-        verdictEl.style.color = '#ef4444';
-      }
-
       // Loan eligibility: 6.5% / 30yr → 6,321 บ./เดือน per million
       var loanFactor = 6321 / 1000000; // PMT per baht
       var housingPay2 = getVal('dHousingPay');
