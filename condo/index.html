@@ -22,6 +22,15 @@
   <title>คอนโดมือ 1 ลงทุนปล่อยเช่า — นายธนาคารประจำบ้าน</title>
   <link rel="stylesheet" href="assets/style.css">
   <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
     .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
     .guide {
       border: 1px solid rgba(59,130,246,0.3);
@@ -285,12 +294,15 @@
     </div>
   </footer>
 
-  <!-- ===== STICKY BOTTOM CTA (mobile only) ===== -->
-  <div class="sticky-cta">
-    <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener">
-      💬 ปรึกษาทรัพย์ → LINE
+  <div class="float-cta-pair">
+    <a href="tel:023340940" class="float-call" aria-label="โทร ปรึกษา">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      โทร ปรึกษา
     </a>
-    <a href="tel:023340940" class="btn-phone-sm">📞</a>
+    <a href="https://line.me/R/ti/p/@ninethanakarn" class="float-line-btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+      Line ปรึกษา
+    </a>
   </div>
 
 
