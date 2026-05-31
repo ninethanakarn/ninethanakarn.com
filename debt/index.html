@@ -119,6 +119,38 @@
     .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
     [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
     [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+
+    /* Form cards */
+    .calc-input-text { width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--border, rgba(255,255,255,0.15)); border-radius: 8px; background: var(--bg-subtle, rgba(255,255,255,0.05)); color: inherit; font-size: 0.95rem; font-family: inherit; box-sizing: border-box; }
+    .calc-input-text:focus { outline: 2px solid #3b82f6; outline-offset: 1px; }
+    .form-card { background: var(--bg-subtle, rgba(255,255,255,0.03)); border: 1px solid var(--border, rgba(255,255,255,0.1)); border-radius: 12px; padding: 1.1rem 1.15rem; }
+    .form-card-hd { font-weight: 700; font-size: 0.85rem; color: #3b82f6; margin-bottom: 0.9rem; padding-bottom: 0.55rem; border-bottom: 1px solid var(--border, rgba(255,255,255,0.1)); letter-spacing: 0.01em; }
+    .calc-field label small { font-size: 0.75rem; font-weight: 400; color: var(--muted); display: block; line-height: 1.2; margin-top: 0.1rem; }
+    .income-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    @media (max-width: 500px) { .income-grid { grid-template-columns: 1fr; } }
+    .income-total { margin-top: 0.75rem; padding: 0.7rem 0.9rem; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); border-radius: 8px; font-size: 0.88rem; color: #3b82f6; font-weight: 700; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.25rem; }
+    .income-total small { font-weight: 400; font-size: 0.72rem; color: var(--muted); }
+    /* Debt table */
+    .debt-tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .debt-tbl { width: 100%; border-collapse: collapse; min-width: 300px; }
+    .debt-tbl th { padding: 0.5rem 0.5rem; background: rgba(59,130,246,0.1); font-size: 0.75rem; font-weight: 600; color: var(--muted); white-space: nowrap; text-align: right; }
+    .debt-tbl th:first-child { text-align: left; border-radius: 6px 0 0 0; }
+    .debt-tbl th:last-child { border-radius: 0 6px 0 0; }
+    .debt-tbl td { padding: 0.3rem 0.5rem; border-bottom: 1px solid rgba(128,128,128,0.08); vertical-align: middle; }
+    .debt-tbl td:first-child { font-size: 0.8rem; font-weight: 500; white-space: nowrap; }
+    .debt-tbl td:not(:first-child) { text-align: right; }
+    .debt-tbl input[type="number"] { width: 100%; min-width: 80px; max-width: 130px; padding: 0.38rem 0.45rem; border: 1px solid var(--border, rgba(255,255,255,0.15)); border-radius: 6px; background: var(--bg-subtle, rgba(255,255,255,0.05)); color: inherit; font-size: 0.8rem; font-family: inherit; text-align: right; }
+    .debt-tbl input[type="number"]:focus { outline: 1.5px solid #3b82f6; }
+    .debt-tbl .row-housing td { background: rgba(239,68,68,0.04); }
+    .debt-tbl .row-housing td:first-child { border-left: 3px solid rgba(239,68,68,0.6); padding-left: 0.7rem; }
+    .debt-tbl .row-car td { background: rgba(59,130,246,0.04); }
+    .debt-tbl .row-car td:first-child { border-left: 3px solid rgba(59,130,246,0.6); padding-left: 0.7rem; }
+    .debt-tbl .row-loan td:first-child { border-left: 3px solid rgba(139,92,246,0.5); padding-left: 0.7rem; }
+    .debt-tbl .row-card td { background: rgba(245,158,11,0.04); }
+    .debt-tbl .row-card td:first-child { border-left: 3px solid rgba(245,158,11,0.7); padding-left: 0.7rem; }
+    .debt-tbl .row-slip td { background: rgba(34,197,94,0.04); }
+    .debt-tbl .row-slip td:first-child { border-left: 3px solid rgba(34,197,94,0.5); padding-left: 0.7rem; }
+    .debt-tbl .row-total td { background: rgba(245,158,11,0.09) !important; font-size: 0.88rem; font-weight: 700; padding: 0.55rem 0.5rem; border-bottom: none; }
   </style>
 </head>
 <body>
@@ -205,36 +237,102 @@
     <div class="container">
       <h2 class="section-title">คำนวณ DSR — เตรียมพร้อมกู้บ้าน</h2>
       <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; text-align: center;">
-        กรอกตัวเลข 4 ช่อง → ดูว่าถ้ารวมหนี้ทั้งหมดของคุณ DSR จะลดเหลือเท่าไร พร้อมกู้บ้านหรือยัง
+        กรอกรายได้และภาระหนี้แยกตามประเภท → ระบบคำนวณ DSR ก่อน/หลังปิดหนี้ให้ทันที
       </p>
 
-      <form class="calc-form" onsubmit="event.preventDefault(); calcDSR();">
-        <div class="calc-field">
-          <label for="income">รายได้สุทธิต่อเดือน (บาท)</label>
-          <input type="number" id="income" placeholder="เช่น 50000" required min="1">
+      <form class="calc-form" onsubmit="event.preventDefault(); calcDSR();" autocomplete="off">
+
+        <!-- ชื่อลูกค้า -->
+        <div class="form-card">
+          <div class="form-card-hd">👤 ชื่อลูกค้า</div>
+          <input type="text" id="clientName" placeholder="ใส่ชื่อลูกค้า (สำหรับพิมพ์ PDF)" class="calc-input-text">
         </div>
-        <div class="calc-field">
-          <label for="cardTotal">ยอดหนี้คงค้างรวมทั้งหมด (บาท) — บัตร + สินเชื่อ + อื่นๆ</label>
-          <input type="number" id="cardTotal" placeholder="เช่น 300000" required min="0">
+
+        <!-- 01 รายได้ -->
+        <div class="form-card">
+          <div class="form-card-hd">01 · รายได้</div>
+          <div class="income-grid">
+            <div class="calc-field">
+              <label for="incSalary">เงินเดือน (บาท/เดือน)</label>
+              <input type="number" id="incSalary" placeholder="เช่น 50,000" min="0" oninput="updateIncome()">
+            </div>
+            <div class="calc-field">
+              <label for="incFix">รายได้ Fix<small>ค่าตำแหน่ง / ค่าครองชีพ</small></label>
+              <input type="number" id="incFix" placeholder="บาท/เดือน" min="0" oninput="updateIncome()">
+            </div>
+            <div class="calc-field">
+              <label for="incVar">รายได้แปรผัน<small>OT / คอมมิชชั่น เฉลี่ย 6 เดือน</small></label>
+              <input type="number" id="incVar" placeholder="บาท/เดือน" min="0" oninput="updateIncome()">
+            </div>
+            <div class="calc-field">
+              <label for="incBonus">โบนัส<small>บาท/ปี · ÷12 อัตโนมัติ</small></label>
+              <input type="number" id="incBonus" placeholder="÷12 อัตโนมัติ" min="0" oninput="updateIncome()">
+            </div>
+          </div>
+          <div class="income-total">
+            <span>รายได้รวมที่ธนาคารนับ: <strong id="incomeDisplay">—</strong> บาท/เดือน</span>
+            <small>แปรผัน ×50% · โบนัส ÷12×50%</small>
+          </div>
         </div>
-        <div class="calc-field">
-          <label for="cardPayment">ยอดผ่อนหนี้รวมต่อเดือน (บาท) — บัตร + สินเชื่อ + อื่นๆ</label>
-          <input type="number" id="cardPayment" placeholder="เช่น 15000 (ปกติ 5-10% ของยอดคงค้าง)" required min="0">
+
+        <!-- 02 ภาระหนี้ -->
+        <div class="form-card">
+          <div class="form-card-hd">02 · ภาระหนี้</div>
+          <div class="debt-tbl-wrap">
+            <table class="debt-tbl">
+              <thead>
+                <tr>
+                  <th>รายการ</th>
+                  <th>ยอดหนี้คงเหลือ</th>
+                  <th>ยอดชำระ/เดือน</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row-housing">
+                  <td>สินเชื่อที่อยู่อาศัย</td>
+                  <td><input type="number" id="dHousingBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                  <td><input type="number" id="dHousingPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                </tr>
+                <tr class="row-car">
+                  <td>สินเชื่อรถยนต์</td>
+                  <td><input type="number" id="dCarBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                  <td><input type="number" id="dCarPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                </tr>
+                <tr class="row-loan">
+                  <td>สินเชื่อ</td>
+                  <td><input type="number" id="dLoanBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                  <td><input type="number" id="dLoanPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                </tr>
+                <tr class="row-card">
+                  <td>บัตรเครดิต</td>
+                  <td><input type="number" id="dCardBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                  <td><input type="number" id="dCardPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                </tr>
+                <tr class="row-slip">
+                  <td>หักหน้าสลิปไม่โชว์บูโร</td>
+                  <td><input type="number" id="dSlipBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                  <td><input type="number" id="dSlipPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                </tr>
+                <tr class="row-total">
+                  <td>รวม</td>
+                  <td id="totalBal">—</td>
+                  <td id="totalPay">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="calc-field">
-          <label for="otherDebt">ภาระผ่อนคงที่อื่น (บาท) — รถ บ้านปัจจุบัน</label>
-          <input type="number" id="otherDebt" placeholder="เช่น 8000 (ใส่ 0 ถ้าไม่มี)" required min="0">
-        </div>
+
         <button type="submit" class="calc-btn">คำนวณ DSR</button>
       </form>
 
       <div id="calcResult" class="calc-result">
         <div class="calc-row">
-          <span class="calc-row-label">ค่างวดรวมต่อเดือน (ก่อนรวมหนี้)</span>
+          <span class="calc-row-label">ค่างวดรวมต่อเดือน (ปัจจุบัน)</span>
           <span class="calc-row-value" id="payBefore">—</span>
         </div>
         <div class="calc-row">
-          <span class="calc-row-label">ค่างวดรวมต่อเดือน (หลังรวมหนี้ ดอก 8% · 5 ปี)</span>
+          <span class="calc-row-label">ค่างวดรวมต่อเดือน (หลังรวมหนี้รถ+สินเชื่อ+บัตร · ดอก 8% · 5 ปี)</span>
           <span class="calc-row-value" id="payAfter" style="color: #34d399;">—</span>
         </div>
         <div class="calc-row">
@@ -469,28 +567,58 @@
       document.documentElement.setAttribute('data-theme', saved);
     })();
 
-    function calcDSR() {
-      var income = parseFloat(document.getElementById('income').value) || 0;
-      var cardTotal = parseFloat(document.getElementById('cardTotal').value) || 0;
-      var cardPayment = parseFloat(document.getElementById('cardPayment').value) || 0;
-      var otherDebt = parseFloat(document.getElementById('otherDebt').value) || 0;
+    function getVal(id) { return parseFloat(document.getElementById(id).value) || 0; }
 
-      if (income <= 0) return;
+    function updateIncome() {
+      var salary  = getVal('incSalary');
+      var fix     = getVal('incFix');
+      var varInc  = getVal('incVar') * 0.5;
+      var bonus   = (getVal('incBonus') / 12) * 0.5;
+      var total   = salary + fix + varInc + bonus;
+      document.getElementById('incomeDisplay').textContent = total > 0 ? Math.round(total).toLocaleString() : '—';
+    }
+
+    function updateDebtTotal() {
+      var balIds = ['dHousingBal','dCarBal','dLoanBal','dCardBal','dSlipBal'];
+      var payIds = ['dHousingPay','dCarPay','dLoanPay','dCardPay','dSlipPay'];
+      var totalBal = balIds.reduce(function(s,id){ return s + getVal(id); }, 0);
+      var totalPay = payIds.reduce(function(s,id){ return s + getVal(id); }, 0);
+      document.getElementById('totalBal').textContent = totalBal > 0 ? totalBal.toLocaleString() : '—';
+      document.getElementById('totalPay').textContent = totalPay > 0 ? totalPay.toLocaleString() : '—';
+    }
+
+    function calcDSR() {
+      var salary = getVal('incSalary');
+      var fix    = getVal('incFix');
+      var varInc = getVal('incVar') * 0.5;
+      var bonus  = (getVal('incBonus') / 12) * 0.5;
+      var income = salary + fix + varInc + bonus;
+
+      if (income <= 0) {
+        alert('กรุณากรอกรายได้ก่อนคำนวณ');
+        document.getElementById('incSalary').focus();
+        return;
+      }
+
+      var totalMonthlyPay = getVal('dHousingPay') + getVal('dCarPay') + getVal('dLoanPay') + getVal('dCardPay') + getVal('dSlipPay');
+      // consolidate: รถ + สินเชื่อ + บัตร + สลิป (ไม่รวมบ้านที่อยู่อาศัย)
+      var consolidateBal  = getVal('dCarBal') + getVal('dLoanBal') + getVal('dCardBal') + getVal('dSlipBal');
+      var housingPay      = getVal('dHousingPay');
 
       var r = 0.08 / 12;
       var n = 60;
       var pmtFactor = r / (1 - Math.pow(1 + r, -n));
-      var consolidatedPayment = cardTotal * pmtFactor;
+      var consolidatedPay = consolidateBal > 0 ? consolidateBal * pmtFactor : 0;
 
-      var dsrBefore = ((cardPayment + otherDebt) / income) * 100;
-      var dsrAfter = ((consolidatedPayment + otherDebt) / income) * 100;
-      var savings = (cardPayment + otherDebt) - (consolidatedPayment + otherDebt);
+      var dsrBefore = (totalMonthlyPay / income) * 100;
+      var dsrAfter  = ((housingPay + consolidatedPay) / income) * 100;
+      var savings   = totalMonthlyPay - (housingPay + consolidatedPay);
 
-      document.getElementById('payBefore').textContent = Math.round(cardPayment + otherDebt).toLocaleString() + ' บ./เดือน';
-      document.getElementById('payAfter').textContent = Math.round(consolidatedPayment + otherDebt).toLocaleString() + ' บ./เดือน';
+      document.getElementById('payBefore').textContent = Math.round(totalMonthlyPay).toLocaleString() + ' บ./เดือน';
+      document.getElementById('payAfter').textContent  = Math.round(housingPay + consolidatedPay).toLocaleString() + ' บ./เดือน';
       document.getElementById('dsrBefore').textContent = dsrBefore.toFixed(1) + '%';
-      document.getElementById('dsrAfter').textContent = dsrAfter.toFixed(1) + '%';
-      document.getElementById('savings').textContent = (savings > 0 ? '+' : '') + Math.round(savings).toLocaleString() + ' บ./เดือน';
+      document.getElementById('dsrAfter').textContent  = dsrAfter.toFixed(1) + '%';
+      document.getElementById('savings').textContent   = (savings > 0 ? '+' : '') + Math.round(savings).toLocaleString() + ' บ./เดือน';
 
       var verdictEl = document.getElementById('verdict');
       if (dsrAfter < 50) {
