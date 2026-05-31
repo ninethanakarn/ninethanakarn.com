@@ -315,15 +315,15 @@
                   <td><input type="number" id="dCarBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
                   <td><input type="number" id="dCarPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
                 </tr>
-                <tr class="row-loan">
-                  <td>สินเชื่อ</td>
-                  <td><input type="number" id="dLoanBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
-                  <td><input type="number" id="dLoanPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
-                </tr>
                 <tr class="row-card">
                   <td>บัตรเครดิต</td>
                   <td><input type="number" id="dCardBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
                   <td><input type="number" id="dCardPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                </tr>
+                <tr class="row-loan">
+                  <td>สินเชื่อ</td>
+                  <td><input type="number" id="dLoanBal" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
+                  <td><input type="number" id="dLoanPay" placeholder="—" min="0" oninput="updateDebtTotal()"></td>
                 </tr>
                 <tr class="row-slip">
                   <td>หักหน้าสลิปไม่โชว์บูโร</td>
@@ -370,7 +370,7 @@
           <div class="loan-scenario-grid">
 
             <div class="loan-scenario-card">
-              <div class="loan-scenario-hd">📍 ปิดหนี้ รวมหนี้: สินเชื่อ+บัตรเครดิต+อื่นๆ = <span id="consolidate2Amt">—</span> บาท</div>
+              <div class="loan-scenario-hd">📍 ปิดหนี้ รวมหนี้ (บัตรเครดิต+สินเชื่อ+อื่นๆ) = <span id="consolidate2Amt">—</span> บาท</div>
               <table class="loan-debt-mini">
                 <thead>
                   <tr><th>รายการ</th><th>ยอดหนี้คงเหลือ</th><th>ยอดชำระ/เดือน</th></tr>
@@ -385,7 +385,7 @@
             </div>
 
             <div class="loan-scenario-card">
-              <div class="loan-scenario-hd">📍 ปิดหนี้ รวมหนี้: รถ+สินเชื่อ+บัตรเครดิต+อื่นๆ = <span id="consolidate1Amt">—</span> บาท</div>
+              <div class="loan-scenario-hd">📍 ปิดหนี้ รวมหนี้ (รถ+บัตรเครดิต+สินเชื่อ+อื่นๆ) = <span id="consolidate1Amt">—</span> บาท</div>
               <table class="loan-debt-mini">
                 <thead>
                   <tr><th>รายการ</th><th>ยอดหนี้คงเหลือ</th><th>ยอดชำระ/เดือน</th></tr>
