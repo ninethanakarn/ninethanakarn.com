@@ -151,6 +151,17 @@
     .debt-tbl .row-slip td { background: rgba(34,197,94,0.04); }
     .debt-tbl .row-slip td:first-child { border-left: 3px solid rgba(34,197,94,0.5); padding-left: 0.7rem; }
     .debt-tbl .row-total td { background: rgba(245,158,11,0.09) !important; font-size: 0.88rem; font-weight: 700; padding: 0.55rem 0.5rem; border-bottom: none; }
+    /* Loan eligibility section */
+    .loan-eligible-section { margin-top: 1.25rem; border-top: 1px solid var(--border, rgba(255,255,255,0.1)); padding-top: 1rem; }
+    .loan-eligible-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.4rem; }
+    .loan-scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    @media (max-width: 500px) { .loan-scenario-grid { grid-template-columns: 1fr; } }
+    .loan-scenario-card { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.2); border-radius: 10px; padding: 0.875rem; }
+    .loan-scenario-hd { font-size: 0.75rem; font-weight: 700; color: #3b82f6; margin-bottom: 0.35rem; }
+    .loan-scenario-items { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.6rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(59,130,246,0.15); line-height: 1.6; }
+    .loan-scenario-avail { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.25rem; }
+    .loan-scenario-avail strong { color: var(--text); }
+    .loan-scenario-amount { font-size: 1.05rem; font-weight: 700; color: #3b82f6; }
   </style>
 </head>
 <body>
@@ -351,6 +362,29 @@
         <p style="font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; text-align: center;">
           * คำนวณคร่าวๆ จากดอก 8% effective ระยะ 60 เดือน · ตัวเลขจริงขึ้นกับแบงค์ + เครดิตของลูกค้า · ปรึกษา LINE เพื่อ verify
         </p>
+
+        <!-- Loan eligibility -->
+        <div class="loan-eligible-section">
+          <div class="loan-eligible-title">📍 ปิดหนี้ รวมหนี้ เตรียมพร้อมกู้บ้าน</div>
+          <div class="loan-scenario-grid">
+
+            <div class="loan-scenario-card">
+              <div class="loan-scenario-hd">คำนวณวงเงินกู้ (DSR 70%) เหลือภาระ 2 รายการ</div>
+              <div class="loan-scenario-items">01 · สินเชื่อที่อยู่อาศัย<br>02 · สินเชื่อรถยนต์</div>
+              <div class="loan-scenario-avail">ผ่อนบ้านได้ <strong id="avail2">—</strong> บ./เดือน</div>
+              <div class="loan-scenario-amount">วงเงินกู้ ~<span id="loan2">—</span> ล้านบาท</div>
+            </div>
+
+            <div class="loan-scenario-card">
+              <div class="loan-scenario-hd">คำนวณวงเงินกู้ (DSR 70%) เหลือภาระ 1 รายการ</div>
+              <div class="loan-scenario-items">01 · สินเชื่อที่อยู่อาศัย</div>
+              <div class="loan-scenario-avail">ผ่อนบ้านได้ <strong id="avail1">—</strong> บ./เดือน</div>
+              <div class="loan-scenario-amount">วงเงินกู้ ~<span id="loan1">—</span> ล้านบาท</div>
+            </div>
+
+          </div>
+          <p style="font-size:0.72rem; color:var(--muted); margin-top:0.75rem; line-height:1.5;">* คำนวณจาก DSR 70% · อัตราดอก 6.5% · 30 ปี · ตัวเลขจริงขึ้นกับเครดิตและเงื่อนไขธนาคาร</p>
+        </div>
       </div>
     </div>
   </section>
@@ -644,6 +678,21 @@
         verdictEl.style.background = 'rgba(239, 68, 68, 0.15)';
         verdictEl.style.color = '#ef4444';
       }
+
+      // Loan eligibility: 6.5% / 30yr → 6,321 บ./เดือน per million
+      var loanFactor = 6321 / 1000000; // PMT per baht
+      var housingPay2 = getVal('dHousingPay');
+      var carPay2     = getVal('dCarPay');
+
+      var avail2 = Math.max(0, threshold70 - housingPay2 - carPay2);
+      var avail1 = Math.max(0, threshold70 - housingPay2);
+      var loan2  = avail2 / loanFactor / 1000000;
+      var loan1  = avail1 / loanFactor / 1000000;
+
+      document.getElementById('avail2').textContent = Math.round(avail2).toLocaleString();
+      document.getElementById('loan2').textContent  = loan2 >= 0.01 ? loan2.toFixed(2) : '0';
+      document.getElementById('avail1').textContent = Math.round(avail1).toLocaleString();
+      document.getElementById('loan1').textContent  = loan1 >= 0.01 ? loan1.toFixed(2) : '0';
 
       document.getElementById('calcResult').classList.add('show');
       document.getElementById('calcResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
