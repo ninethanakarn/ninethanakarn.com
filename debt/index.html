@@ -276,22 +276,17 @@
       .loan-eligible-section p { font-size: 0.68rem; }
     }
     /* Sticky CTA overrides */
-    /* Sticky CTA — 2 equal pill buttons */
-    .sticky-cta { background:transparent !important; gap:10px; padding:10px 14px; display:flex; box-shadow:none !important; }
-    .sticky-btn-line {
-      flex:1; display:inline-flex; align-items:center; justify-content:center; gap:7px;
-      padding:0.78rem 1rem; background:#06c755; color:#fff;
-      border:none; border-radius:999px; font-weight:700; font-size:0.95rem;
-      text-decoration:none; white-space:nowrap;
-    }
-    .sticky-btn-line:hover { background:#05b04b; }
-    .sticky-btn-call {
-      flex:1; display:inline-flex; align-items:center; justify-content:center; gap:7px;
-      padding:0.78rem 1rem; background:#111; color:#fff;
-      border:1.5px solid #fff; border-radius:999px; font-weight:700; font-size:0.95rem;
-      text-decoration:none; white-space:nowrap;
-    }
-    .sticky-btn-call:hover { background:#222; }
+    /* Float LINE button (same as landing page) */
+    .float-line { position:fixed; bottom:20px; right:20px; background:linear-gradient(135deg,#06C755,#04a847); color:#fff; padding:14px 20px; border-radius:999px; display:flex; align-items:center; gap:8px; font-weight:600; font-size:14px; box-shadow:0 8px 24px rgba(6,199,85,.4),0 0 0 6px rgba(6,199,85,.12); z-index:200; animation:float-pulse 3s ease-in-out infinite; transition:transform .2s; text-decoration:none; }
+    .float-line:hover { transform:scale(1.05); }
+    .float-line svg { width:22px; height:22px; }
+    @keyframes float-pulse { 0%,100%{box-shadow:0 8px 24px rgba(6,199,85,.4),0 0 0 6px rgba(6,199,85,.12)}50%{box-shadow:0 8px 24px rgba(6,199,85,.5),0 0 0 12px rgba(6,199,85,.06)} }
+    /* Nav call button */
+    .btn-nav-call { display:inline-flex; align-items:center; gap:6px; padding:8px 14px; background:#111; color:#fff; border:1.5px solid #fff; border-radius:999px; font-weight:600; font-size:14px; box-shadow:0 2px 8px rgba(0,0,0,.4); transition:transform .15s,box-shadow .2s; white-space:nowrap; text-decoration:none; }
+    .btn-nav-call:hover { transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.5); background:#222; }
+    .btn-nav-call svg { width:18px; height:18px; flex-shrink:0; }
+    /* Hide old sticky bar completely */
+    .sticky-cta { display:none !important; }
     /* App-icon link buttons */
     .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
     .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
@@ -310,6 +305,10 @@
         <div class="header-brand-name">นายธนาคารประจำบ้าน</div>
         <div class="header-brand-tagline">Mr. Home Banker</div>
       </div>
+      <a href="tel:023340940" class="btn-nav-call" aria-label="โทรปรึกษา">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.0 2.89 2 2 0 012 .67h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.52a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        โทรปรึกษา
+      </a>
       <button class="icon-btn" onclick="doPrint()" title="พิมพ์ / Save PDF">🖨️</button>
       <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
         <span class="theme-icon theme-icon-dark">🌙</span>
@@ -648,15 +647,10 @@
     </div>
   </footer>
 
-  <div class="sticky-cta">
-    <a href="https://line.me/R/ti/p/@ninethanakarn" class="sticky-btn-line" target="_blank" rel="noopener">
-      💬 ปรึกษา Line
-    </a>
-    <a href="tel:023340940" class="sticky-btn-call">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.0 2.89 2 2 0 012 .67h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.52a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      โทรปรึกษา
-    </a>
-  </div>
+  <a href="https://line.me/R/ti/p/@ninethanakarn" class="float-line" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+    ปรึกษา Line
+  </a>
 
   <script>
     function toggleTheme() {
