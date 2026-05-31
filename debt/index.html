@@ -340,12 +340,12 @@
           <span class="calc-row-value" id="dsrBefore">—</span>
         </div>
         <div class="calc-row">
-          <span class="calc-row-label">DSR หลังรวมหนี้ <small style="font-weight:400;font-size:0.78rem;color:var(--muted);">(เกณฑ์ธนาคาร ≤70%)</small></span>
+          <span class="calc-row-label">ค่างวดสูงสุดที่แบงค์รับได้ <small style="font-weight:400;font-size:0.78rem;color:var(--muted);">(DSR 70% ของรายได้)</small></span>
           <span class="calc-row-value" id="dsrAfter">—</span>
         </div>
         <div class="calc-row">
-          <span class="calc-row-label">ประหยัดต่อเดือน</span>
-          <span class="calc-row-value" id="savings" style="color: #fbbf24;">—</span>
+          <span class="calc-row-label">ต้องลดค่างวดต่อเดือน <small style="font-weight:400;font-size:0.78rem;color:var(--muted);">(ปัจจุบัน − เกณฑ์ 70%)</small></span>
+          <span class="calc-row-value" id="savings">—</span>
         </div>
         <div class="calc-verdict" id="verdict">—</div>
         <p style="font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; text-align: center;">
@@ -617,26 +617,30 @@
       document.getElementById('resIncome').textContent  = Math.round(income).toLocaleString() + ' บ./เดือน';
       document.getElementById('payBefore').textContent = Math.round(totalMonthlyPay).toLocaleString() + ' บ./เดือน';
       document.getElementById('dsrBefore').textContent = dsrBefore.toFixed(1) + '%';
+      var threshold70 = income * 0.70;
+      var gap = totalMonthlyPay - threshold70;
       var dsrAfterEl = document.getElementById('dsrAfter');
-      dsrAfterEl.textContent = dsrAfter.toFixed(1) + '%';
-      dsrAfterEl.style.color = dsrAfter < 60 ? '#34d399' : dsrAfter < 70 ? '#fbbf24' : '#ef4444';
-      document.getElementById('savings').textContent   = (savings > 0 ? '+' : '') + Math.round(savings).toLocaleString() + ' บ./เดือน';
+      dsrAfterEl.textContent = Math.round(threshold70).toLocaleString() + ' บ./เดือน';
+      dsrAfterEl.style.color = '';
+      var savEl = document.getElementById('savings');
+      savEl.textContent = (gap > 0 ? '+' : '') + Math.round(gap).toLocaleString() + ' บ./เดือน';
+      savEl.style.color = gap > 0 ? '#ef4444' : '#34d399';
 
       var verdictEl = document.getElementById('verdict');
-      if (dsrAfter < 50) {
+      if (dsrBefore < 50) {
         verdictEl.textContent = '✅ พร้อมกู้บ้าน — DSR ผ่านเกณฑ์ดี ทุกแบงค์น่าจะอนุมัติ';
         verdictEl.style.background = 'rgba(34, 197, 94, 0.15)';
         verdictEl.style.color = '#22c55e';
-      } else if (dsrAfter < 60) {
+      } else if (dsrBefore < 60) {
         verdictEl.textContent = '✅ พร้อมกู้บ้าน — DSR ผ่านเกณฑ์ 12 ธนาคาร';
         verdictEl.style.background = 'rgba(34, 197, 94, 0.15)';
         verdictEl.style.color = '#22c55e';
-      } else if (dsrAfter < 70) {
-        verdictEl.textContent = '⚠️ ยังเสี่ยง — บางแบงค์ไม่ผ่าน ปรึกษา LINE เพื่อวางแผนเพิ่ม';
+      } else if (dsrBefore < 70) {
+        verdictEl.textContent = '⚠️ DSR ใกล้เกณฑ์ — บางแบงค์ไม่ผ่าน ปรึกษา LINE เพื่อวางแผนเพิ่ม';
         verdictEl.style.background = 'rgba(251, 191, 36, 0.15)';
         verdictEl.style.color = '#fbbf24';
       } else {
-        verdictEl.textContent = '❌ DSR ยังสูงเกิน — ต้องลดหนี้/เพิ่มรายได้ก่อน · ปรึกษา LINE';
+        verdictEl.textContent = '❌ DSR เกิน 70% — ต้องลดหนี้/เพิ่มรายได้ก่อนกู้บ้าน · ปรึกษา LINE';
         verdictEl.style.background = 'rgba(239, 68, 68, 0.15)';
         verdictEl.style.color = '#ef4444';
       }
