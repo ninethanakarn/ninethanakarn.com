@@ -540,42 +540,60 @@
     <div class="star-divider"><span>★</span></div>
   </div>
 
-  <section class="section no-print">
+  <section class="section no-print" style="background:linear-gradient(135deg,#0f2460 0%,#1e3a8a 60%,#1e40af 100%); padding:2rem 0;">
     <div class="container">
-      <h2 class="section-title">เกณฑ์ นายธนาคารประจำบ้าน ในการคัด deal ปิดหนี้</h2>
-      <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.25rem;">
-        Deal ปิดหนี้/รวมหนี้ทุกตัวที่ ทีมนายธนาคารประจำบ้าน แนะนำต้องผ่านเกณฑ์ 4 ข้อ — ไม่มีข้อยกเว้น
+      <h2 class="section-title" style="color:#fff; border-bottom-color:rgba(255,255,255,0.25); margin-bottom:0.5rem;">เกณฑ์ Mr. Home Banker ในการคัด deal ปิดหนี้</h2>
+      <p style="font-size:0.85rem; color:rgba(255,255,255,0.65); margin-bottom:1.75rem; text-align:center;">
+        Deal ปิดหนี้/รวมหนี้ทุกตัวที่แนะนำต้องผ่านเกณฑ์ 4 ข้อ — ไม่มีข้อยกเว้น
       </p>
+      <div class="debt-method-flow">
 
-      <div class="criteria-grid">
-        <div class="criteria-item">
-          <span class="criteria-icon">📉</span>
-          <div class="criteria-text">
-            <strong>ดอกเบี้ยใหม่ลดลง ≥ 50% จากดอกเดิม</strong>
-            <span>ถ้าดอกบัตร 18% ต้องได้สินเชื่อใหม่ ≤ 9% — ถ้าไม่ลด ครึ่ง ปิดหนี้ไม่คุ้ม</span>
+        <div class="debt-method-step">
+          <div class="debt-method-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/>
+            </svg>
           </div>
+          <span class="debt-method-label">ดอกลดลง<br>≥ 50%</span>
+          <span class="debt-method-sub">จากดอกเดิม<br>ถึงจะคุ้ม</span>
         </div>
-        <div class="criteria-item">
-          <span class="criteria-icon">💰</span>
-          <div class="criteria-text">
-            <strong>DSR หลังรวมหนี้ ≤ 60%</strong>
-            <span>ค่างวดรวมไม่เกิน 60% ของรายได้สุทธิ — เป็นเกณฑ์ที่ 12 ธนาคารยอมรับสำหรับการยื่นกู้บ้านต่อ</span>
+
+        <div class="debt-method-sep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
+
+        <div class="debt-method-step">
+          <div class="debt-method-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>
+            </svg>
           </div>
+          <span class="debt-method-label">DSR ≤ 60%</span>
+          <span class="debt-method-sub">หลังรวมหนี้<br>12 แบงค์รับ</span>
         </div>
-        <div class="criteria-item">
-          <span class="criteria-icon">⏱️</span>
-          <div class="criteria-text">
-            <strong>ระยะผ่อน 3-7 ปี (ไม่ยืดเกินจำเป็น)</strong>
-            <span>ยืดผ่อนจาก 5 ปี → 10 ปี = ลดค่างวด แต่จ่ายดอกรวมเพิ่ม 60% — เลือก sweet spot ที่ผ่อนไหวและจบเร็ว</span>
+
+        <div class="debt-method-sep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
+
+        <div class="debt-method-step">
+          <div class="debt-method-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
           </div>
+          <span class="debt-method-label">ผ่อน 3-7 ปี</span>
+          <span class="debt-method-sub">ไม่ยืดเทอม<br>เกินจำเป็น</span>
         </div>
-        <div class="criteria-item">
-          <span class="criteria-icon">🚫</span>
-          <div class="criteria-text">
-            <strong>ไม่มี hidden fees / penalty rate ฉุกเฉิน</strong>
-            <span>อ่านสัญญาให้ครบก่อนเซ็น · ต้องระบุค่าธรรมเนียม ค่าปิดก่อนกำหนด · ห้ามมี penalty rate ขึ้นโดยอัตโนมัติ</span>
+
+        <div class="debt-method-sep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
+
+        <div class="debt-method-step">
+          <div class="debt-method-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+            </svg>
           </div>
+          <span class="debt-method-label">ไม่มี<br>Hidden Fee</span>
+          <span class="debt-method-sub">ไม่มี penalty<br>rate ซ่อน</span>
         </div>
+
       </div>
     </div>
   </section>
