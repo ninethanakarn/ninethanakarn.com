@@ -24,6 +24,20 @@
   <style>
     .sticky-cta { display: none !important; }
     body { padding-bottom: 0 !important; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .toc-table { width: 100%; border-collapse: collapse; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .toc-table th { text-align: left; padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); background: var(--section-bg); font-weight: 600; }
+    .toc-table td { padding: 0.7rem 0.75rem; font-size: 0.88rem; border-top: 1px solid var(--card-border); }
+    .toc-brand-row { cursor: pointer; transition: background 0.15s; }
+    .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
+    .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--muted); cursor: pointer; margin-bottom: 1rem; padding: 0.45rem 0.9rem; border: 1px solid var(--card-border); border-radius: 999px; background: var(--section-bg); transition: background 0.15s; text-decoration: none; }
     .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
     .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
     .float-call:hover { background: #222; transform: scale(1.04); }
@@ -192,8 +206,35 @@
       <!-- LPN Brand Panel -->
       <div class="dev-brand-panel active" id="dev-lpn">
 
-      <div class="property-grid">
+      <!-- สารบัญ -->
+      <div class="brand-toc" id="lpn-toc">
+        <div class="toc-group">
+          <div class="toc-group-title">🏠 ทาวน์โฮม — 3 แบรนด์</div>
+          <table class="toc-table">
+            <thead><tr><th>#</th><th>แบรนด์</th><th>สไตล์</th></tr></thead>
+            <tbody>
+              <tr class="toc-brand-row" onclick="showBrand('venue-24')"><td>1</td><td><span class="toc-brand-name">Venue 24</span></td><td>Modern / New Design</td></tr>
+              <tr class="toc-brand-row" onclick="showBrand('lumpini-townville')"><td>2</td><td><span class="toc-brand-name">Lumpini Townville</span></td><td>Oriental 2 ชั้น</td></tr>
+              <tr class="toc-brand-row" onclick="showBrand('lumpini-town-place')"><td>3</td><td><span class="toc-brand-name">Lumpini Town Place</span></td><td>Classic</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-title">🏠 บ้านเดี่ยว — 3 แบรนด์</div>
+          <table class="toc-table">
+            <thead><tr><th>#</th><th>แบรนด์</th><th>สไตล์</th></tr></thead>
+            <tbody>
+              <tr class="toc-brand-row" onclick="showBrand('baan-365')"><td>1</td><td><span class="toc-brand-name">Baan 365</span></td><td>Modern</td></tr>
+              <tr class="toc-brand-row" onclick="showBrand('haus-24')"><td>2</td><td><span class="toc-brand-name">Haus 24</span></td><td>Contemporary</td></tr>
+              <tr class="toc-brand-row" onclick="showBrand('villa-168')"><td>3</td><td><span class="toc-brand-name">Villa 168</span></td><td>Modern</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
+      <!-- Brand Details -->
+      <div id="brand-venue-24" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
         <!-- VENUE 24 -->
         <div class="property-card">
           <div class="card-img-wrap">
@@ -240,6 +281,10 @@
           </div>
         </div>
 
+      </div><!-- /brand-venue-24 -->
+
+      <div id="brand-lumpini-townville" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
         <!-- LUMPINI TOWNVILLE -->
         <div class="property-card">
           <div class="card-img-wrap">
@@ -289,6 +334,10 @@
           </div>
         </div>
 
+      </div><!-- /brand-lumpini-townville -->
+
+      <div id="brand-haus-24" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
         <!-- HAUS 24 -->
         <div class="property-card">
           <div class="card-img-wrap">
@@ -337,7 +386,10 @@
           </div>
         </div>
 
-        <!-- LUMPINI TOWN PLACE -->
+      </div><!-- /brand-haus-24 -->
+
+      <div id="brand-lumpini-town-place" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
         <div class="property-card">
           <div class="card-img-wrap">
             <img src="https://www.homenayoo.com/wp-content/uploads/2020/04/lpn-townplace-sri-150.jpg" alt="LUMPINI TOWN PLACE - ตัวอย่างโครงการ" loading="lazy">
@@ -350,38 +402,25 @@
             <div class="card-title">LUMPINI TOWN PLACE</div>
             <div class="card-meta">Modern Art Deco · ทาวน์โฮมสูง 3 ชั้น · พื้นที่กว้างขวาง · เหมาะครอบครัวที่ต้องการพื้นที่มากขึ้น</div>
             <div class="card-stats">
-              <div class="stat-item">
-                <div class="stat-label">ราคาเริ่มต้น</div>
-                <div class="stat-value">4.1 – 10.8 ล้าน</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">พื้นที่ใช้สอย</div>
-                <div class="stat-value">155 – 209 ตร.ม.</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">ที่ดิน</div>
-                <div class="stat-value">18 – 38 ตร.ว.</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">ฟังก์ชัน</div>
-                <div class="stat-value">3-4 นอน · 2-3 จอด</div>
-              </div>
+              <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">4.1 – 10.8 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">155 – 209 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">18 – 38 ตร.ว.</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชัน</div><div class="stat-value">3-4 นอน · 2-3 จอด</div></div>
             </div>
             <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
             <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
               <li><strong style="color:var(--text);">พระราม 2–ท่าข้าม</strong> — บางขุนเทียน กทม. · เริ่ม 5.29 ล้าน <span style="font-size:0.75rem; background:rgba(34,197,94,0.15); color:#16a34a; border:1px solid rgba(34,197,94,0.3); border-radius:4px; padding:0.05rem 0.35rem;">เปิดขาย</span></li>
             </ul>
-            <div class="callout info">
-              <span class="callout-icon">💳</span>
-              <span>ผ่อนประมาณ <strong>33,400 – 37,200 บ./เดือน</strong> (โครงการ กทม.)<br>รายได้รวมที่แนะนำ <strong>47,700 – 93,000 บ./เดือน</strong> (DSR 40–70%)</span>
-            </div>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>33,400 – 37,200 บ./เดือน</strong> (โครงการ กทม.)<br>รายได้รวมที่แนะนำ <strong>47,700 – 93,000 บ./เดือน</strong> (DSR 40–70%)</span></div>
           </div>
           <div class="card-footer">
             <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ TOWN PLACE → LINE</a>
           </div>
         </div>
+      </div><!-- /brand-lumpini-town-place -->
 
-        <!-- VILLA 168 -->
+      <div id="brand-villa-168" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
         <div class="property-card">
           <div class="card-img-wrap">
             <img src="https://www.homenayoo.com/wp-content/uploads/2024/01/Villa-168-New-Krungthepkreetha.jpg" alt="VILLA 168 - ตัวอย่างโครงการ" loading="lazy">
@@ -394,39 +433,26 @@
             <div class="card-title">VILLA 168</div>
             <div class="card-meta">Modern Tropical · Courtyard ส่วนตัวทุกหลัง · Smart Home · EV Charger · เหมาะครอบครัวขนาดใหญ่</div>
             <div class="card-stats">
-              <div class="stat-item">
-                <div class="stat-label">ราคาเริ่มต้น</div>
-                <div class="stat-value">8.99 – 15 ล้าน</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">พื้นที่ใช้สอย</div>
-                <div class="stat-value">183 – 378 ตร.ม.</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">ที่ดิน</div>
-                <div class="stat-value">50 – 80 ตร.ว.</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">ฟังก์ชัน</div>
-                <div class="stat-value">3-4 นอน · 2-4 จอด</div>
-              </div>
+              <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">8.99 – 15 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">183 – 378 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">50 – 80 ตร.ว.</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชัน</div><div class="stat-value">3-4 นอน · 2-4 จอด</div></div>
             </div>
             <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
             <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
               <li><strong style="color:var(--text);">นิวกรุงเทพกรีฑา</strong> — ลาดกระบัง กทม. · ใกล้ ARL ลาดกระบัง · เริ่ม 8.99 ล้าน</li>
               <li><strong style="color:var(--text);">เวสต์เกต</strong> — บางบัวทอง นนทบุรี · ใกล้ Central Westgate / IKEA · เริ่ม 12 ล้าน <span style="font-size:0.75rem; background:rgba(59,130,246,0.12); color:#1e40af; border:1px solid rgba(59,130,246,0.3); border-radius:4px; padding:0.05rem 0.35rem;">เปิด 2026</span></li>
             </ul>
-            <div class="callout info">
-              <span class="callout-icon">💳</span>
-              <span>ผ่อนประมาณ <strong>56,800 – 94,800 บ./เดือน</strong><br>รายได้รวมที่แนะนำ <strong>81,100 – 237,000 บ./เดือน</strong> (DSR 40–70%)</span>
-            </div>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>56,800 – 94,800 บ./เดือน</strong><br>รายได้รวมที่แนะนำ <strong>81,100 – 237,000 บ./เดือน</strong> (DSR 40–70%)</span></div>
           </div>
           <div class="card-footer">
             <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VILLA 168 → LINE</a>
           </div>
         </div>
+      </div><!-- /brand-villa-168 -->
 
-        <!-- BAAN 365 -->
+      <div id="brand-baan-365" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
         <div class="property-card">
           <div class="card-img-wrap">
             <img src="https://www.homenayoo.com/wp-content/uploads/2024/07/Baan-365-Sukhumvit-77-scaled.jpg" alt="BAAN 365 - ตัวอย่างโครงการ" loading="lazy">
@@ -439,39 +465,23 @@
             <div class="card-title">BAAN 365</div>
             <div class="card-meta">Modern Luxury · Simply Luxurious · ลิฟต์ส่วนตัว · สระว่ายน้ำส่วนตัว (option) · Smart Home · Prime Location กรุงเทพ</div>
             <div class="card-stats">
-              <div class="stat-item">
-                <div class="stat-label">ราคาเริ่มต้น</div>
-                <div class="stat-value">18 – 60 ล้าน</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">พื้นที่ใช้สอย</div>
-                <div class="stat-value">310 – 493 ตร.ม.</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">ที่ดิน</div>
-                <div class="stat-value">26 – 100 ตร.ว.</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label">ฟังก์ชัน</div>
-                <div class="stat-value">3-4 นอน · 5-6 น้ำ · 2-4 จอด</div>
-              </div>
+              <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">18 – 60 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">310 – 493 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">26 – 100 ตร.ว.</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชัน</div><div class="stat-value">3-4 นอน · 5-6 น้ำ · 2-4 จอด</div></div>
             </div>
             <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
             <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
               <li><strong style="color:var(--text);">พระราม 3</strong> — ยานนาวา กทม. · บ้านแฝดเริ่ม 18 ล้าน / บ้านเดี่ยวเริ่ม 30+ ล้าน · Last Chance</li>
               <li><strong style="color:var(--text);">สุขุมวิท 77</strong> — สวนหลวง กทม. · ใกล้ BTS อ่อนนุช · เริ่ม 27 ล้าน (38 หลัง) <span style="font-size:0.75rem; background:rgba(59,130,246,0.12); color:#1e40af; border:1px solid rgba(59,130,246,0.3); border-radius:4px; padding:0.05rem 0.35rem;">เปิด 2025</span></li>
             </ul>
-            <div class="callout info">
-              <span class="callout-icon">💳</span>
-              <span>ผ่อนประมาณ <strong>113,800 – 252,800 บ./เดือน</strong><br>รายได้รวมที่แนะนำ <strong>163,000+ บ./เดือน</strong> <span style="font-size:0.78rem;">(Luxury Segment · DSR ≤70%)</span></span>
-            </div>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>113,800 – 252,800 บ./เดือน</strong><br>รายได้รวมที่แนะนำ <strong>163,000+ บ./เดือน</strong> <span style="font-size:0.78rem;">(Luxury Segment · DSR ≤70%)</span></span></div>
           </div>
           <div class="card-footer">
             <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BAAN 365 → LINE</a>
           </div>
         </div>
-
-      </div>
+      </div><!-- /brand-baan-365 -->
 
       <!-- DSR Explainer -->
       <div style="margin-top:1.5rem;">
@@ -671,6 +681,16 @@
   </div>
 
   <script>
+    function showBrand(brandId) {
+      document.getElementById('lpn-toc').classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc() {
+      document.getElementById('lpn-toc').classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
     function toggleTheme() {
       var html = document.documentElement;
       var current = html.getAttribute('data-theme') || 'dark';
