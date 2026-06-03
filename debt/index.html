@@ -168,6 +168,7 @@
       .site-footer, #sections-after-calc { display:none !important; }
       .section.no-print { display:none !important; }
       .icon-btn, .theme-toggle { display:none !important; }
+      .float-cta-pair { display:none !important; }
       /* Print header */
       .print-header { display:grid !important; background:#f8fafc; border:1pt solid #1e40af; border-radius:6pt; padding:8pt 12pt; margin:0 0 8pt; grid-template-columns:1fr auto; gap:10pt; align-items:center; }
       .ph-customer { font-size:13pt; font-weight:700; color:#1e40af; }
@@ -185,11 +186,12 @@
       /* Debt table */
       .debt-tbl th { background:#f1f5f9 !important; color:#475569 !important; font-size:8pt; padding:3pt 5pt; }
       .debt-tbl td { font-size:9pt; padding:3pt 5pt; }
-      .debt-tbl .row-housing td { background:rgba(239,68,68,.04) !important; }
-      .debt-tbl .row-car td { background:rgba(59,130,246,.04) !important; }
-      .debt-tbl .row-card td { background:rgba(245,158,11,.04) !important; }
-      .debt-tbl .row-slip td { background:rgba(34,197,94,.04) !important; }
-      .debt-tbl .row-total td { background:#fef9c3 !important; font-size:9pt; }
+      .debt-tbl .row-housing td { background:rgba(239,68,68,.04) !important; color:#000 !important; }
+      .debt-tbl .row-car td { background:rgba(59,130,246,.04) !important; color:#000 !important; }
+      .debt-tbl .row-card td { background:rgba(245,158,11,.04) !important; color:#000 !important; }
+      .debt-tbl .row-loan td { background:rgba(139,92,246,.04) !important; color:#000 !important; }
+      .debt-tbl .row-slip td { background:rgba(34,197,94,.04) !important; color:#000 !important; }
+      .debt-tbl .row-total td { background:#fef9c3 !important; color:#000 !important; font-size:9pt; }
       /* Results */
       .calc-result { display:block !important; background:#f8fafc !important; border:1pt solid #1e40af !important; border-radius:6pt; padding:8pt 10pt; margin-top:8pt; }
       .calc-row { padding:3pt 0; border-bottom:1pt solid #e2e8f0 !important; }
@@ -199,8 +201,8 @@
       .loan-eligible-section { margin-top:8pt; border-top:1pt solid #cbd5e1; padding-top:8pt; }
       .loan-scenario-card { background:#eff6ff !important; border:1pt solid #93c5fd !important; border-radius:6pt; padding:8pt; page-break-inside:avoid; margin-bottom:6pt; }
       .loan-scenario-hd { color:#1e40af !important; font-size:8.5pt; font-weight:700; }
-      .loan-debt-mini th { background:#dbeafe !important; font-size:7.5pt; padding:2pt 4pt; }
-      .loan-debt-mini td { font-size:8.5pt; padding:2pt 4pt; }
+      .loan-debt-mini th { background:#dbeafe !important; color:#475569 !important; font-size:7.5pt; padding:2pt 4pt; }
+      .loan-debt-mini td { font-size:8.5pt; padding:2pt 4pt; color:#000 !important; background:#fff !important; }
       .loan-scenario-avail { font-size:8.5pt; color:#475569 !important; }
       .loan-scenario-amount { font-size:12pt; color:#1e40af !important; font-weight:700; }
       .loan-eligible-section p { font-size:7.5pt; color:#94a3b8 !important; }
@@ -383,7 +385,7 @@
 
   <section class="section">
     <div class="container">
-      <h2 class="section-title">คำนวณ DSR — เตรียมพร้อม ปิดหนี้ รวมหนี้</h2>
+      <h2 class="section-title">ปิดหนี้ รวมหนี้ เตรียมพร้อมกู้ บ้าน/คอนโด</h2>
       <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; text-align: center;">
         กรอกรายได้และภาระหนี้แยกตามประเภท → ระบบคำนวณ DSR ก่อน/หลังปิดหนี้ให้ทันที
       </p>
