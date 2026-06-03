@@ -971,6 +971,11 @@ function init(){
 }
 
 document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('details')) {
+    document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+  }
+});
 </script>
 </body>
 </html>

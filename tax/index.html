@@ -1624,6 +1624,11 @@ window.addEventListener('DOMContentLoaded', () => {
   } catch(e){}
 
   calc();
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('details')) {
+      document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+    }
+  });
 });
 </script>
 </body>

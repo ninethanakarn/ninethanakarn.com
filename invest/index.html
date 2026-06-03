@@ -772,6 +772,11 @@ window.addEventListener('DOMContentLoaded', function(){
   document.getElementById('returnRate').value = '';
   document.getElementById('years').value = '';
 });
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('details')) {
+    document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+  }
+});
 </script>
 </body>
 </html>
