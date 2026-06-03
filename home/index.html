@@ -647,38 +647,95 @@
     <div class="container">
       <h2 class="section-title">ขั้นตอนการเลือกบ้านมือ 1 อยู่เอง</h2>
 
-      <ol class="screening-list">
-        <li>
-          <div>
-            <strong>คุย LINE บอกความต้องการครอบครัว</strong><br>
-            <span style="font-size: 0.82rem; color: var(--muted);">Location · งบ · ขนาดครอบครัว · ที่ทำงาน · โรงเรียนลูก · ระยะเวลาที่ต้องการเข้าอยู่</span>
+      <!-- 4 step icons -->
+      <div class="crit-flow" id="stepFlow2">
+
+        <div class="crit-flow-item" onclick="toggleStep2('s2_1')">
+          <div class="crit-flow-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           </div>
-        </li>
-        <li>
-          <div>
-            <strong>ทีมนายธนาคารประจำบ้าน ช่วย vet DSR + เลือกแบงค์ที่อนุมัติ</strong><br>
-            <span style="font-size: 0.82rem; color: var(--muted);">คำนวณวงเงินสูงสุด + เปรียบเทียบดอกเบี้ยหลายแบงค์ · ถ้ามีหนี้ค้าง → แนะนำไป /debt/ ก่อน</span>
+          <span class="crit-flow-label">Line ปรึกษา<br>บอกความต้องการ</span>
+          <span class="crit-flow-sub">คลิกดูรายละเอียด</span>
+        </div>
+
+        <div class="crit-flow-sep">›</div>
+
+        <div class="crit-flow-item" onclick="toggleStep2('s2_2')">
+          <div class="crit-flow-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="15.65" y2="15.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/></svg>
           </div>
-        </li>
-        <li>
-          <div>
-            <strong>ส่งรายการบ้านมือ 1 ที่ match กับครอบครัว</strong><br>
-            <span style="font-size: 0.82rem; color: var(--muted);">บ้านใหม่จาก developer Top 20 SET พร้อมข้อมูล DSR + ทำเล + ค่าส่วนกลาง</span>
+          <span class="crit-flow-label">Vet DSR<br>เลือกแบงค์</span>
+          <span class="crit-flow-sub">คลิกดูรายละเอียด</span>
+        </div>
+
+        <div class="crit-flow-sep">›</div>
+
+        <div class="crit-flow-item" onclick="toggleStep2('s2_3')">
+          <div class="crit-flow-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-        </li>
-        <li>
-          <div>
-            <strong>นัดดูโครงการจริง + ช่วยเจรจาราคา</strong><br>
-            <span style="font-size: 0.82rem; color: var(--muted);">ทีมไปด้วย · พาดูพื้นที่ส่วนกลาง · เจรจากับ developer sales ให้ได้ราคา/โปรโมชั่นดีที่สุด</span>
+          <span class="crit-flow-label">คัดบ้านมือ 1<br>ที่ match</span>
+          <span class="crit-flow-sub">คลิกดูรายละเอียด</span>
+        </div>
+
+        <div class="crit-flow-sep">›</div>
+
+        <div class="crit-flow-item" onclick="toggleStep2('s2_4')">
+          <div class="crit-flow-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
           </div>
-        </li>
-        <li>
-          <div>
-            <strong>ยื่นกู้ + ปิดดีล + รับกุญแจ + เข้าอยู่</strong><br>
-            <span style="font-size: 0.82rem; color: var(--muted);">ดูแลตลอดกระบวนการโอนกรรมสิทธิ์ · บ้านใหม่พร้อมเข้าอยู่ได้เลย</span>
-          </div>
-        </li>
-      </ol>
+          <span class="crit-flow-label">ดูโครงการ<br>ยื่นกู้ รับกุญแจ</span>
+          <span class="crit-flow-sub">คลิกดูรายละเอียด</span>
+        </div>
+
+      </div>
+
+      <!-- Step detail cards -->
+      <div class="crit-detail-wrap" id="s2_1">
+        <div class="crit-detail-card">
+          <div class="crit-detail-title">💬 Line ปรึกษา — บอกความต้องการครอบครัว</div>
+          <ul class="crit-detail-list">
+            <li>บอกทำเล: ใกล้ที่ทำงาน / โรงเรียนลูก / โรงพยาบาล / ตลาด</li>
+            <li>งบประมาณ + ค่างวดที่รับได้ต่อเดือน</li>
+            <li>ขนาดครอบครัว + จำนวนห้องนอนที่ต้องการ</li>
+            <li>ระยะเวลาที่ต้องการเข้าอยู่ (เร่งด่วน / ภายใน 1-2 ปี)</li>
+            <li>กด <strong>Line ปรึกษา</strong> หรือ <strong>โทร ปรึกษา</strong> มุมขวาล่างได้เลย ฟรี</li>
+          </ul>
+        </div>
+      </div>
+      <div class="crit-detail-wrap" id="s2_2">
+        <div class="crit-detail-card">
+          <div class="crit-detail-title">🔍 Vet DSR + เลือกแบงค์ที่อนุมัติ</div>
+          <ul class="crit-detail-list">
+            <li>คำนวณวงเงินกู้สูงสุดจากรายได้ + ภาระหนี้ปัจจุบัน</li>
+            <li>เปรียบเทียบดอกเบี้ยและเงื่อนไขหลายธนาคาร</li>
+            <li>ถ้า DSR เกิน 60% → วางแผนปิดหนี้ก่อน เพื่อเพิ่มวงเงินกู้บ้าน</li>
+            <li>แนะนำธนาคารที่มีโอกาสอนุมัติสูงสุดสำหรับโปรไฟล์คุณ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="crit-detail-wrap" id="s2_3">
+        <div class="crit-detail-card">
+          <div class="crit-detail-title">🏠 คัดบ้านมือ 1 ที่ match ครอบครัว</div>
+          <ul class="crit-detail-list">
+            <li>บ้านใหม่จาก developer Top 20 SET ผ่านเกณฑ์ 4 ข้อเท่านั้น</li>
+            <li>ข้อมูลครบ: DSR · ทำเล · ค่าส่วนกลาง · ระยะทางถึงที่ทำงาน/โรงเรียน</li>
+            <li>เปรียบเทียบหลายโครงการในงบเดียวกัน เห็นข้อดีข้อเสียชัดเจน</li>
+            <li>มีแบรนด์หลากหลาย: ทาวน์โฮม / บ้านแฝด / บ้านเดี่ยว ตรงทุก segment</li>
+          </ul>
+        </div>
+      </div>
+      <div class="crit-detail-wrap" id="s2_4">
+        <div class="crit-detail-card">
+          <div class="crit-detail-title">🔑 ดูโครงการจริง → ยื่นกู้ → รับกุญแจ</div>
+          <ul class="crit-detail-list">
+            <li>ทีมไปด้วย พาดูส่วนกลาง ที่จอดรถ สวน สนามเด็กเล่น</li>
+            <li>เจรจากับ developer sales เพื่อราคา/โปรโมชั่นดีที่สุด</li>
+            <li>ดูแลกระบวนการยื่นกู้ เตรียมเอกสาร ลดโอกาส reject</li>
+            <li>ดูแลตลอดจนโอนกรรมสิทธิ์ · บ้านใหม่พร้อมเข้าอยู่ · ไม่มีค่าบริการเพิ่ม</li>
+          </ul>
+        </div>
+      </div>
 
       <div style="text-align: center; margin-top: 2rem;">
         <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener" style="font-size: 1rem; padding: 0.875rem 2rem;">
@@ -769,10 +826,23 @@
         allItems[idx] && allItems[idx].classList.add('active');
       }
     }
+    function toggleStep2(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#stepFlow2 .crit-flow-item');
+      var ids = ['s2_1','s2_2','s2_3','s2_4'];
+      var isOpen = el.classList.contains('show');
+      ids.forEach(function(i){ var d=document.getElementById(i); if(d) d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = ids.indexOf(id);
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
     document.addEventListener('click', function(e) {
-      if (!e.target.closest('#critFlow') && !e.target.closest('.crit-detail-wrap')) {
+      if (!e.target.closest('#critFlow') && !e.target.closest('#stepFlow2') && !e.target.closest('.crit-detail-wrap')) {
         document.querySelectorAll('.crit-detail-wrap').forEach(function(d){ d.classList.remove('show'); });
-        document.querySelectorAll('#critFlow .crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
+        document.querySelectorAll('.crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
       }
     });
     function showBrand(brandId) {
