@@ -1863,19 +1863,34 @@
     }
     .guide-tip strong { color: var(--accent-dark); }
     body.theme-dark .guide-tip strong { color: #38bdf8; }
+    /* Standard site-header */
+    .site-header { position: sticky; top: 0; z-index: 100; background: #111; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .site-header .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; gap: 12px; }
+    .header-logo { width: 40px; height: 40px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
+    .header-brand { flex: 1; min-width: 0; }
+    .header-brand-name { font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.2; }
+    .header-brand-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.55); line-height: 1.2; }
+    .header-theme-btn { background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.25); border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.1rem; flex-shrink: 0; }
   </style>
 </head>
 <body>
-  <button type="button" class="theme-toggle" id="theme-toggle" title="สลับโหมดสว่าง/มืด" aria-label="สลับโหมดสว่างมืด">
-    <span class="icon-moon" aria-hidden="true">🌙</span>
-    <span class="icon-sun" aria-hidden="true">☀️</span>
-  </button>
-  <div class="wrap">
-    <header>
-      <div class="site-brand-block">
-        <p class="site-brand-name">นายธนาคารประจำบ้าน</p>
-        <p class="site-brand-slogan">ปิดหนี้ก่อนยื่นกู้-แก้เคสกู้ไม่ผ่าน</p>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" class="header-logo" style="cursor:pointer;">
+      </a>
+      <div class="header-brand">
+        <div class="header-brand-name">นายธนาคารประจำบ้าน</div>
+        <div class="header-brand-tagline">Mr. Home Banker</div>
       </div>
+      <button type="button" class="header-theme-btn" id="theme-toggle" title="สลับโหมดสว่าง/มืด" aria-label="สลับโหมดสว่างมืด">
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+      </button>
+    </div>
+  </header>
+  <div class="wrap">
+    <header style="text-align:center; margin-bottom:20px;">
       <h1>App คำนวณสินเชื่อบ้าน</h1>
       <p>ผ่อนคงที่ต่อเดือน (ดอกเบี้ยคงที่ / คำนวณแบบลดต้นลดดอก)</p>
     </header>
