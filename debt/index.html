@@ -231,7 +231,18 @@
     .debt-method-sep svg { width:13px; height:13px; }
     /* Step flow (on default bg — blue gradient icons) */
     .step-flow { display:flex; align-items:flex-start; gap:2px; justify-content:center; }
-    .step-flow-item { display:flex; flex-direction:column; align-items:center; gap:7px; flex:1; min-width:0; }
+    .step-flow-item { display:flex; flex-direction:column; align-items:center; gap:7px; flex:1; min-width:0; cursor:pointer; }
+    .step-flow-item .step-flow-ico { transition:transform .15s, box-shadow .15s; }
+    .step-flow-item:hover .step-flow-ico, .step-flow-item.active .step-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(30,64,175,0.35); }
+    /* Step detail card */
+    .step-detail-wrap { display:none; margin-top:0.75rem; }
+    .step-detail-wrap.show { display:block; }
+    .step-detail-card { background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2); border-radius:12px; padding:0.875rem 1rem; font-size:0.82rem; line-height:1.6; position:relative; }
+    .step-detail-card::before { content:''; position:absolute; top:-7px; left:50%; transform:translateX(-50%); border-left:7px solid transparent; border-right:7px solid transparent; border-bottom:7px solid rgba(59,130,246,0.2); }
+    .step-detail-title { font-weight:700; color:#3b82f6; margin-bottom:0.4rem; font-size:0.85rem; }
+    .step-detail-list { list-style:none; padding:0; margin:0; }
+    .step-detail-list li { padding:0.18rem 0; color:var(--text); }
+    .step-detail-list li::before { content:'• '; color:#3b82f6; }
     .step-flow-ico { width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg,#1e40af,#3b82f6); display:grid; place-items:center; box-shadow:0 4px 16px rgba(30,64,175,0.2); flex-shrink:0; }
     .step-flow-ico svg { width:26px; height:26px; color:#fff; stroke-width:1.6; }
     .step-flow-label { font-size:11px; color:var(--text,#111); text-align:center; line-height:1.4; font-weight:600; }
@@ -546,54 +557,104 @@
     <div class="container">
       <h2 class="section-title">ขั้นตอนการปิดหนี้/รวมหนี้</h2>
 
-      <div class="step-flow" style="margin-bottom:1.75rem;">
+      <div class="step-flow" style="margin-bottom:0.5rem;" id="stepFlow">
 
-        <div class="step-flow-item">
+        <div class="step-flow-item" onclick="toggleStep('s1')">
           <div class="step-flow-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
             </svg>
           </div>
           <span class="step-flow-label">Line ปรึกษา<br>บอกยอดหนี้</span>
-          <span class="step-flow-sub">บัตร · สินเชื่อ · รถ<br>รายได้สุทธิ</span>
+          <span class="step-flow-sub">คลิกดูรายละเอียด</span>
         </div>
 
         <div class="step-flow-sep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
 
-        <div class="step-flow-item">
+        <div class="step-flow-item" onclick="toggleStep('s2')">
           <div class="step-flow-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="15.65" y2="15.65"/><line x1="8" y1="11" x2="14" y2="11"/><line x1="11" y1="8" x2="11" y2="14"/>
             </svg>
           </div>
           <span class="step-flow-label">วิเคราะห์ DSR<br>(ภาระหนี้)</span>
-          <span class="step-flow-sub">คำนวณค่างวดใหม่<br>เทียบทุกตัวเลือก</span>
+          <span class="step-flow-sub">คลิกดูรายละเอียด</span>
         </div>
 
         <div class="step-flow-sep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
 
-        <div class="step-flow-item">
+        <div class="step-flow-item" onclick="toggleStep('s3')">
           <div class="step-flow-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
               <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
             </svg>
           </div>
           <span class="step-flow-label">เตรียมเอกสาร<br>ยื่นกู้</span>
-          <span class="step-flow-sub">ทีมตรวจก่อนยื่น<br>ลดโอกาส reject</span>
+          <span class="step-flow-sub">คลิกดูรายละเอียด</span>
         </div>
 
         <div class="step-flow-sep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>
 
-        <div class="step-flow-item">
+        <div class="step-flow-item" onclick="toggleStep('s4')">
           <div class="step-flow-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
             </svg>
           </div>
           <span class="step-flow-label">ปิดหนี้เก่า<br>เลือกบ้าน/คอนโด</span>
-          <span class="step-flow-sub">ปิดทันทีหลังได้เงิน<br>พร้อมกู้ 6-12 เดือน</span>
+          <span class="step-flow-sub">คลิกดูรายละเอียด</span>
         </div>
 
+      </div>
+
+      <!-- Step detail cards -->
+      <div class="step-detail-wrap" id="s1">
+        <div class="step-detail-card">
+          <div class="step-detail-title">1 · Line ปรึกษา — บอกยอดหนี้</div>
+          <ul class="step-detail-list">
+            <li>แจ้งยอดหนี้ทุกประเภท: บัตรเครดิต · สินเชื่อส่วนบุคคล · รถ · ผ่อนสินค้า</li>
+            <li>บอกรายได้รวม: เงินเดือน + OT/คอมมิชชั่น + โบนัส</li>
+            <li>ทีมคำนวณ DSR ปัจจุบันให้ฟรี ไม่ต้องสมัครสมาชิก</li>
+            <li>ปรึกษาได้ทาง <strong>Line ปรึกษา</strong> หรือ <strong>โทร ปรึกษา</strong> มุมขวาล่าง</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step-detail-wrap" id="s2">
+        <div class="step-detail-card">
+          <div class="step-detail-title">2 · วิเคราะห์ DSR — ภาระหนี้</div>
+          <ul class="step-detail-list">
+            <li>คำนวณ DSR ก่อน/หลังปิดหนี้ทุก Scenario ทันที</li>
+            <li>เปรียบเทียบ 4 แผน: ปิดบัตร / ปิดรถ / รวมหนี้ไว้กับบ้าน / refinance</li>
+            <li>เห็นค่างวดใหม่ + วงเงินกู้บ้านที่เพิ่มขึ้นหลังปรับหนี้</li>
+            <li>ใช้เครื่องมือคำนวณ DSR ฟรีบนหน้านี้ หรือให้ทีมช่วยวิเคราะห์</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step-detail-wrap" id="s3">
+        <div class="step-detail-card">
+          <div class="step-detail-title">3 · เตรียมเอกสารยื่นกู้</div>
+          <ul class="step-detail-list">
+            <li>สลิปเงินเดือน / หนังสือรับรองรายได้ 3 เดือนล่าสุด</li>
+            <li>Statement บัญชีธนาคาร 6 เดือน</li>
+            <li>บัตรประชาชน + ทะเบียนบ้าน (ฉบับจริง)</li>
+            <li>ทีมตรวจ Checklist ก่อนยื่น ลดโอกาส reject จากธนาคาร</li>
+            <li>แนะนำธนาคารที่มีโอกาสอนุมัติสูงสุดสำหรับโปรไฟล์คุณ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step-detail-wrap" id="s4">
+        <div class="step-detail-card">
+          <div class="step-detail-title">4 · ปิดหนี้เก่า — เลือกบ้าน/คอนโด</div>
+          <ul class="step-detail-list">
+            <li>ใช้เงินกู้บ้านปิดหนี้เก่าทุกรายการทันที — เหลือผ่อนก้อนเดียว</li>
+            <li>DSR ดีขึ้น + ดอกเบี้ยเฉลี่ยลดลง (จาก 18–28% → 3–5%)</li>
+            <li>เลือกบ้านมือ 1 หรือคอนโดลงทุนที่ตรงงบ + ทำเล</li>
+            <li>หลังปิดดีล 6–12 เดือน ประวัติเครดิตดีขึ้น พร้อมกู้เพิ่มได้</li>
+          </ul>
+        </div>
       </div>
 
     </div>
@@ -664,6 +725,19 @@
   </div>
 
   <script>
+    function toggleStep(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#stepFlow .step-flow-item');
+      var allDetails = document.querySelectorAll('.step-detail-wrap');
+      var isOpen = el.classList.contains('show');
+      allDetails.forEach(function(d){ d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var stepNum = parseInt(id.replace('s','')) - 1;
+        allItems[stepNum] && allItems[stepNum].classList.add('active');
+      }
+    }
     function toggleTheme() {
       var html = document.documentElement;
       var current = html.getAttribute('data-theme') || 'dark';
