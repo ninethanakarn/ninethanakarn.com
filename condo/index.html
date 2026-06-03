@@ -700,15 +700,17 @@
       }
     }
     document.addEventListener('click', function(e) {
-      if (!_activeCrit) return;
-      var flow = document.getElementById('crit-flow');
-      var details = document.querySelectorAll('.crit-detail-wrap');
-      var inside = flow && flow.contains(e.target);
-      details.forEach(function(d) { if (d.contains(e.target)) inside = true; });
-      if (!inside) {
-        document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
-        document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
-        _activeCrit = null;
+      // Close criteria detail panels when clicking outside
+      if (_activeCrit) {
+        var flow = document.getElementById('crit-flow');
+        var details = document.querySelectorAll('.crit-detail-wrap');
+        var inside = flow && flow.contains(e.target);
+        details.forEach(function(d) { if (d.contains(e.target)) inside = true; });
+        if (!inside) {
+          document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+          document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+          _activeCrit = null;
+        }
       }
       // Close DSR details when clicking outside
       var dsrDetails = document.querySelector('.dsr-details');
