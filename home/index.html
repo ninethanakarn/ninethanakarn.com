@@ -769,6 +769,12 @@
         allItems[idx] && allItems[idx].classList.add('active');
       }
     }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#critFlow') && !e.target.closest('.crit-detail-wrap')) {
+        document.querySelectorAll('.crit-detail-wrap').forEach(function(d){ d.classList.remove('show'); });
+        document.querySelectorAll('#critFlow .crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
+      }
+    });
     function showBrand(brandId) {
       document.getElementById('lpn-toc').classList.add('hidden');
       document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
