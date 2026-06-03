@@ -1869,11 +1869,12 @@
     }
     .guide-tip strong { color: var(--accent-dark); }
     body.theme-dark .guide-tip strong { color: #38bdf8; }
-    /* Theme icon show/hide inside header */
-    .header-theme-btn .icon-sun { display: none; }
-    .header-theme-btn .icon-moon { display: inline; }
-    body.theme-dark .header-theme-btn .icon-moon { display: none; }
-    body.theme-dark .header-theme-btn .icon-sun { display: inline; }
+    /* Theme icon show/hide */
+    .theme-icon { font-size: 1.1rem; }
+    .theme-icon-light { display: none; }
+    .theme-icon-dark { display: inline; }
+    body.theme-dark .theme-icon-dark { display: none; }
+    body.theme-dark .theme-icon-light { display: inline; }
     /* Standard site-header */
     .site-header { position: sticky; top: 0; z-index: 100; background: #111; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; align-self: stretch; box-sizing: border-box; }
     .site-header .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; height: 56px; display: flex; align-items: center; gap: 12px; box-sizing: border-box; }
@@ -1882,7 +1883,8 @@
     .header-brand-name { font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.2; }
     .header-brand-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.55); line-height: 1.2; }
     /* Override fixed theme-toggle when inside header */
-    .site-header .theme-toggle { position: static !important; display: flex !important; top: auto !important; right: auto !important; z-index: auto !important; box-shadow: none; width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.25); font-size: 1rem; flex-shrink: 0; }
+    .site-header .theme-toggle { position: static !important; display: inline-flex !important; top: auto !important; right: auto !important; z-index: auto !important; box-shadow: none !important; width: 36px; height: 36px; border-radius: 8px; background: transparent; border: 1px solid rgba(255,255,255,0.45); color: #fff; font-size: 1rem; flex-shrink: 0; padding: 0; align-items: center; justify-content: center; }
+    .site-header .theme-toggle:hover { background: rgba(255,255,255,0.1); transform: none; }
     /* Hero section */
     .loan-hero { width: 100%; align-self: stretch; background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%); color: #fff; text-align: center; padding: 32px 20px 28px; box-sizing: border-box; margin: 0; }
     .loan-hero h1 { margin: 0 0 8px; font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; color: #fff; }
@@ -1899,9 +1901,9 @@
         <div class="header-brand-name">นายธนาคารประจำบ้าน</div>
         <div class="header-brand-tagline">Mr. Home Banker</div>
       </div>
-      <button type="button" class="header-theme-btn" id="theme-toggle" title="สลับโหมดสว่าง/มืด" aria-label="สลับโหมดสว่างมืด">
-        <span class="icon-moon" aria-hidden="true">🌙</span>
-        <span class="icon-sun" aria-hidden="true">☀️</span>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon theme-icon-dark">🌙</span>
+        <span class="theme-icon theme-icon-light">☀️</span>
       </button>
     </div>
   </header>
