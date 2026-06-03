@@ -4115,23 +4115,7 @@
       }
       function fmt(n) { return Math.round(n).toLocaleString("th-TH"); }
 
-      // Comma-format number text inputs while typing
-      var COMMA_INPUT_IDS = ["f-salary","f-fixed-income","f-var-income","f-bonus","f-fixed-debt","f-var-debt","extra-prepay"];
       var selectedDsr = 70; // DSR % สำหรับคำนวณวงเงิน (default 70%)
-      function formatNumInput(e) {
-        var el = e.target;
-        var caret = el.selectionStart;
-        var prevLen = el.value.length;
-        var digits = el.value.replace(/[^0-9]/g, "");
-        if (digits === "") { el.value = ""; return; }
-        var formatted = parseInt(digits, 10).toLocaleString("th-TH");
-        // Use Western digits only (regex fallback for locales with Thai digits)
-        formatted = formatted.replace(/[๐-๙]/g, function(d){ return d.charCodeAt(0) - 3664; });
-        el.value = formatted;
-        // Restore caret position (accounting for added commas)
-        var newLen = el.value.length;
-        el.selectionStart = el.selectionEnd = caret + (newLen - prevLen);
-      }
 
       function calcIncome() {
         return v("f-salary") + v("f-fixed-income") + v("f-var-income") + v("f-bonus") / 12;
@@ -4198,12 +4182,7 @@
        "f-fixed-debt","f-var-debt","annual-rate"].forEach(function(id) {
         var el = document.getElementById(id);
         el.addEventListener("input", updatePreviews);
-        if (COMMA_INPUT_IDS.indexOf(id) !== -1) {
-          el.addEventListener("input", formatNumInput);
-        }
       });
-      // extra-prepay: comma formatting only
-      document.getElementById("extra-prepay").addEventListener("input", formatNumInput);
 
       // DSR selector buttons
       document.querySelectorAll(".dsr-btn").forEach(function(btn) {
