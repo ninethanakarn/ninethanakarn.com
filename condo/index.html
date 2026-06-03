@@ -31,6 +31,22 @@
     .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
     .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
     .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; display:grid; place-items:center; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink:0; transition:transform .15s, box-shadow .15s; overflow:hidden; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; flex-shrink:0; }
+    .crit-flow-label { font-size:11.5px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:18px; color:var(--muted); flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:1rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { border:1px solid; border-radius:12px; padding:1rem 1.1rem; font-size:0.85rem; line-height:1.65; }
+    .crit-detail-title { font-weight:700; margin-bottom:0.6rem; font-size:0.92rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; display:grid; gap:0.35rem; }
+    .crit-detail-list li { padding:0.15rem 0 0.15rem 1.1rem; position:relative; color:var(--text); }
+    .crit-detail-list li::before { content:'›'; position:absolute; left:0; font-weight:700; }
     /* App-icon link buttons */
     .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
     .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
@@ -457,43 +473,100 @@
   </div>
 
   <!-- ===== CRITERIA SECTION ===== -->
-  <section class="section" style="background: var(--bg-subtle);">
+  <section class="section" style="background: var(--bg-subtle);" id="criteria-section">
     <div class="container">
       <h2 class="section-title">วิธีการคัดคอนโดมือ 1</h2>
       <p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 1.25rem;">
-        คอนโดทุกตัวใน portfolio ต้องผ่านเกณฑ์ 4 ข้อนี้ก่อนนำเสนอ — ไม่มีข้อยกเว้น
+        คอนโดทุกตัวใน portfolio ต้องผ่านเกณฑ์ 4 ข้อนี้ก่อนนำเสนอ — ไม่มีข้อยกเว้น · คลิกปุ่มเพื่อดูรายละเอียด
       </p>
 
-      <div class="criteria-grid">
-        <div class="criteria-item">
-          <span class="criteria-icon">📈</span>
-          <div class="criteria-text">
-            <strong>Gross Rental Yield ≥ 5%</strong>
-            <span>คุ้มดอกเบี้ยกู้เฉลี่ยตลาด ถ้าต่ำกว่าเสี่ยง negative cash flow</span>
+      <div class="crit-flow" id="crit-flow">
+        <div class="crit-flow-item" data-crit="yield" onclick="toggleCrit('yield')">
+          <div class="crit-flow-ico" style="background:linear-gradient(135deg,#16a34a,#22c55e);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </div>
+          <div class="crit-flow-label">Yield<br>≥ 5%</div>
+          <div class="crit-flow-sub">คลิกดูรายละเอียด</div>
         </div>
-        <div class="criteria-item">
-          <span class="criteria-icon">📍</span>
-          <div class="criteria-text">
-            <strong>Location: มหา'ลัย / นิคม / รถไฟฟ้า ≤ 3 กม.</strong>
-            <span>Demand จริงจากกลุ่มผู้เช่าที่มีรายได้สม่ำเสมอ</span>
+        <div class="crit-flow-sep"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+        <div class="crit-flow-item" data-crit="location" onclick="toggleCrit('location')">
+          <div class="crit-flow-ico" style="background:linear-gradient(135deg,#dc2626,#f87171);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
+          <div class="crit-flow-label">Location<br>ทำเลดี</div>
+          <div class="crit-flow-sub">คลิกดูรายละเอียด</div>
         </div>
-        <div class="criteria-item">
-          <span class="criteria-icon">🏛️</span>
-          <div class="criteria-text">
-            <strong>ผู้พัฒนา Top 20 SET Listed</strong>
-            <span>มั่นใจคุณภาพก่อสร้าง + นิติบุคคลบริหารระยะยาว</span>
+        <div class="crit-flow-sep"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+        <div class="crit-flow-item" data-crit="developer" onclick="toggleCrit('developer')">
+          <div class="crit-flow-ico" style="background:linear-gradient(135deg,#1e40af,#3b82f6);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><line x1="9" y1="22" x2="9" y2="12"/><line x1="15" y1="22" x2="15" y2="12"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
           </div>
+          <div class="crit-flow-label">Developer<br>Top 20 SET</div>
+          <div class="crit-flow-sub">คลิกดูรายละเอียด</div>
         </div>
-        <div class="criteria-item">
-          <span class="criteria-icon">💰</span>
-          <div class="criteria-text">
-            <strong>ราคา 1.5–4.5 ล้านบาท</strong>
-            <span>สภาพคล่องเช่าสูงสุด กลุ่มผู้เช่ากำลังจ่ายสม่ำเสมอ</span>
+        <div class="crit-flow-sep"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></div>
+        <div class="crit-flow-item" data-crit="price" onclick="toggleCrit('price')">
+          <div class="crit-flow-ico" style="background:linear-gradient(135deg,#d97706,#f59e0b);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
+          <div class="crit-flow-label">ราคา<br>1.5–4.5 ล้าน</div>
+          <div class="crit-flow-sub">คลิกดูรายละเอียด</div>
         </div>
       </div>
+
+      <!-- Detail panels -->
+      <div class="crit-detail-wrap" id="crit-detail-yield">
+        <div class="crit-detail-card" style="border-color:rgba(22,163,74,0.3); background:rgba(22,163,74,0.06);">
+          <div class="crit-detail-title" style="color:#16a34a;">📈 Gross Rental Yield ≥ 5%</div>
+          <ul class="crit-detail-list">
+            <li>Yield = (ค่าเช่าต่อปี ÷ ราคาซื้อ) × 100 — ต้องได้ ≥ 5% ก่อนหักค่าใช้จ่าย</li>
+            <li>ดอกเบี้ยกู้เฉลี่ยตลาดปี 2569 อยู่ที่ ~3–4% — Yield 5% ยังมี buffer บวก</li>
+            <li>Yield ต่ำกว่า 4% = เสี่ยง Negative Cash Flow ทันที → ปฏิเสธทรัพย์</li>
+            <li>ตรวจสอบจากราคาเช่าจริงในพื้นที่ ไม่ใช่ตัวเลขของ developer</li>
+            <li>Net Yield หักค่าส่วนกลาง ประกัน ภาษี จะต่ำกว่า Gross ~1–1.5%</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="crit-detail-wrap" id="crit-detail-location">
+        <div class="crit-detail-card" style="border-color:rgba(220,38,38,0.3); background:rgba(220,38,38,0.06);">
+          <div class="crit-detail-title" style="color:#dc2626;">📍 Location — ทำเลที่มี Real Demand</div>
+          <ul class="crit-detail-list">
+            <li><strong>ใกล้มหาวิทยาลัย</strong> — ผู้เช่านักศึกษา+อาจารย์ Demand สม่ำเสมอตลอดปี</li>
+            <li><strong>ใกล้นิคมอุตสาหกรรม</strong> — พนักงานโรงงาน Real Demand สูง ราคาเช่าแข่งขันได้</li>
+            <li><strong>ติดรถไฟฟ้า ≤ 3 กม.</strong> — ในโซนขยายตัวของเมือง ไม่ใช่ชานเมืองห่างไกล</li>
+            <li>ทำเลชานเมืองไม่มีจุดขาย = สงครามราคาเช่า + Resale ยาก → No-Go</li>
+            <li>New Supply > 30% ในโซนเดียวกันภายใน 1 ปี → ต้องประเมินซ้ำก่อนตัดสินใจ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="crit-detail-wrap" id="crit-detail-developer">
+        <div class="crit-detail-card" style="border-color:rgba(30,64,175,0.3); background:rgba(30,64,175,0.06);">
+          <div class="crit-detail-title" style="color:#1e40af;">🏛️ Developer — Top 20 SET Listed</div>
+          <ul class="crit-detail-list">
+            <li>บริษัทจดทะเบียนใน SET หมวดอสังหาริมทรัพย์ — มีการกำกับดูแลจาก ก.ล.ต.</li>
+            <li>คุณภาพก่อสร้างผ่านมาตรฐาน มีระบบรับประกันโครงสร้างหลังโอน</li>
+            <li>นิติบุคคลอาคารชุดที่แข็งแกร่ง — บริหารพื้นที่ส่วนกลางได้ยาวนาน</li>
+            <li>ตัวอย่าง: LPN, AP, SENA, Origin, SC Asset, Pruksa, Land & House</li>
+            <li>Developer ที่เคยทิ้งงาน / มีคดีฟ้องร้องเรื่องโครงสร้าง → ปฏิเสธทันที</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="crit-detail-wrap" id="crit-detail-price">
+        <div class="crit-detail-card" style="border-color:rgba(217,119,6,0.3); background:rgba(217,119,6,0.06);">
+          <div class="crit-detail-title" style="color:#d97706;">💰 ราคา 1.5–4.5 ล้านบาท</div>
+          <ul class="crit-detail-list">
+            <li>ช่วงราคานี้มีสภาพคล่องเช่าสูงสุด — กลุ่มผู้เช่ารายได้ 20,000–60,000 บ./เดือน</li>
+            <li>ค่าเช่าตลาดอยู่ที่ 6,000–18,000 บ./เดือน — ให้ Yield 5%+ ได้จริง</li>
+            <li>ต่ำกว่า 1.5 ล้าน — คุณภาพก่อสร้างและนิติบุคคลมักไม่แข็งแกร่ง</li>
+            <li>เกิน 4.5 ล้าน — กลุ่มผู้เช่าแคบลง Yield ยากจะถึง 5% ในทำเลส่วนใหญ่</li>
+            <li>ราคาต้องสอดคล้องกับ DSR ของลูกค้า — คำนวณก่อนเสนอเสมอ</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -618,6 +691,37 @@
       document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
     }
     function toggleDevPanel(id) {}
+    var _activeCrit = null;
+    function toggleCrit(key) {
+      var panels = ['yield','location','developer','price'];
+      if (_activeCrit === key) {
+        // collapse
+        document.getElementById('crit-detail-' + key).classList.remove('show');
+        document.querySelector('[data-crit="' + key + '"]').classList.remove('active');
+        _activeCrit = null;
+      } else {
+        // collapse previous
+        if (_activeCrit) {
+          document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+          document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+        }
+        document.getElementById('crit-detail-' + key).classList.add('show');
+        document.querySelector('[data-crit="' + key + '"]').classList.add('active');
+        _activeCrit = key;
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (!_activeCrit) return;
+      var flow = document.getElementById('crit-flow');
+      var details = document.querySelectorAll('.crit-detail-wrap');
+      var inside = flow && flow.contains(e.target);
+      details.forEach(function(d) { if (d.contains(e.target)) inside = true; });
+      if (!inside) {
+        document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+        document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+        _activeCrit = null;
+      }
+    });
     function toggleTheme() {
       var html = document.documentElement;
       var current = html.getAttribute('data-theme') || 'dark';
