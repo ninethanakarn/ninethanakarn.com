@@ -308,17 +308,19 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
 </head>
 <body>
 
-<header class="topnav">
-  <div class="container topnav-inner">
-    <a href="#" class="brand" aria-label="นายธนาคารประจำบ้าน หน้าแรก">
-      <img src="logo1.png" alt="โลโก้ นายธนาคารประจำบ้าน" onerror="this.style.display='none'">
-      <span class="brand-text">นายธนาคารประจำบ้าน<small>Mr. Home Banker</small></span>
+<header class="topnav" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+  <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+    <a href="/" aria-label="นายธนาคารประจำบ้าน หน้าแรก" style="display:flex;align-items:center;flex-shrink:0;">
+      <img src="logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;" onerror="this.style.display='none'">
     </a>
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="สลับโหมดมืด/สว่าง">
-        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
-      </button>
+    <div style="flex:1;min-width:0;">
+      <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+      <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
     </div>
+    <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+    <button id="themeToggle" aria-label="สลับโหมดมืด/สว่าง" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+      <span id="themeIconEmoji">🌙</span>
+    </button>
   </div>
 </header>
 
@@ -582,17 +584,15 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
 (function() {
   const root = document.body;
   const toggle = document.getElementById('themeToggle');
-  const icon = document.getElementById('themeIcon');
-  const sunIcon = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>';
-  const moonIcon = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+  const emoji = document.getElementById('themeIconEmoji');
   const saved = localStorage.getItem('nine-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const isDark = saved === 'dark' || (!saved && prefersDark);
-  if (isDark) { root.classList.add('theme-dark'); icon.innerHTML = moonIcon; }
+  if (isDark) { root.classList.add('theme-dark'); if (emoji) emoji.textContent = '☀️'; }
   toggle.addEventListener('click', () => {
     root.classList.toggle('theme-dark');
     const dark = root.classList.contains('theme-dark');
-    icon.innerHTML = dark ? moonIcon : sunIcon;
+    if (emoji) emoji.textContent = dark ? '☀️' : '🌙';
     localStorage.setItem('nine-theme', dark ? 'dark' : 'light');
   });
   document.querySelectorAll('a[href^="#"]').forEach(link => {
