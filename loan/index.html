@@ -98,6 +98,8 @@
       transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
+    .icon-btn { width:36px;height:36px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;border-radius:8px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0; }
+    .icon-btn:hover { background:rgba(255,255,255,.2);transform:translateY(-1px); }
     /* theme-toggle — standard style matching debt/home/condo pages */
     .theme-toggle {
       all: unset;
@@ -1878,6 +1880,7 @@
         <div class="header-brand-name">นายธนาคารประจำบ้าน</div>
         <div class="header-brand-tagline">Mr. Home Banker</div>
       </div>
+      <button type="button" class="icon-btn" onclick="window.print()" title="พิมพ์ / Save PDF">🖨️</button>
       <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
         <span class="theme-icon theme-icon-dark">🌙</span>
         <span class="theme-icon theme-icon-light">☀️</span>
