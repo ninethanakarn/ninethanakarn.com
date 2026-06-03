@@ -685,6 +685,15 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
   fOverlay.addEventListener('click', function(e){ if(e.target === fOverlay) fOverlay.classList.remove('open'); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') fOverlay.classList.remove('open'); });
 })();
+
+  // Click-outside collapse for guide/details sections
+  document.addEventListener('click', function(e) {
+    document.querySelectorAll('details').forEach(function(d) {
+      if (d.open && !d.contains(e.target)) {
+        d.removeAttribute('open');
+      }
+    });
+  });
 </script>
 </body>
 </html>
