@@ -4530,6 +4530,13 @@
 
       renderSavedPlans();
     })();
+
+    // Click-outside collapse for all <details> elements
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
   </script>
 </body>
 </html>
