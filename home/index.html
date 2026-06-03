@@ -509,7 +509,7 @@
 
       <!-- DSR Explainer -->
       <div style="margin-top:1.5rem;">
-        <details style="border:1px solid var(--card-border); border-radius:12px; overflow:hidden;">
+        <details class="dsr-details" style="border:1px solid var(--card-border); border-radius:12px; overflow:hidden;">
           <summary style="padding:0.9rem 1.2rem; cursor:pointer; font-weight:600; font-size:0.9rem; background:var(--section-bg); list-style:none; display:flex; align-items:center; gap:0.5rem;">
             <span>💡 DSR คืออะไร? — คลิกดูคำอธิบาย</span>
           </summary>
@@ -742,6 +742,11 @@
       if (!e.target.closest('#critFlow') && !e.target.closest('#stepFlow2') && !e.target.closest('.crit-detail-wrap')) {
         document.querySelectorAll('.crit-detail-wrap').forEach(function(d){ d.classList.remove('show'); });
         document.querySelectorAll('.crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
+      }
+      // Close DSR details when clicking outside
+      var dsrDetails = document.querySelector('.dsr-details');
+      if (dsrDetails && dsrDetails.open && !dsrDetails.contains(e.target)) {
+        dsrDetails.removeAttribute('open');
       }
     });
     function showBrand(brandId) {
