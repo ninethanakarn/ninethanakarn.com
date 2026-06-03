@@ -712,15 +712,9 @@
           _activeCrit = null;
         }
       }
-      // Close DSR details when clicking outside
-      var dsrDetails = document.querySelector('.dsr-details');
-      if (dsrDetails && dsrDetails.open && !dsrDetails.contains(e.target)) {
-        dsrDetails.removeAttribute('open');
-      }
-      // Close guide details when clicking outside
-      var guideDetails = document.querySelector('details.guide');
-      if (guideDetails && guideDetails.open && !guideDetails.contains(e.target)) {
-        guideDetails.removeAttribute('open');
+      // Close all <details> when clicking outside
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
       }
     });
     function toggleTheme() {

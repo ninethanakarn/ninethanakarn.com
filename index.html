@@ -688,11 +688,9 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
 
   // Click-outside collapse for guide/details sections
   document.addEventListener('click', function(e) {
-    document.querySelectorAll('details').forEach(function(d) {
-      if (d.open && !d.contains(e.target)) {
-        d.removeAttribute('open');
-      }
-    });
+    if (!e.target.closest('details')) {
+      document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+    }
   });
 </script>
 </body>
