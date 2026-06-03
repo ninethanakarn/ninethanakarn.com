@@ -100,21 +100,25 @@
 
     /* theme-toggle — standard style matching debt/home/condo pages */
     .theme-toggle {
-      background: transparent;
-      border: 1px solid #9ca3af;
-      color: #fff;
-      padding: 0.4rem 0.6rem;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      font-size: 1rem;
-      line-height: 1;
+      all: unset;
+      background: transparent !important;
+      border: 1px solid #9ca3af !important;
+      color: #fff !important;
+      padding: 0.4rem 0.6rem !important;
+      border-radius: 0.5rem !important;
+      cursor: pointer !important;
+      font-size: 1rem !important;
+      line-height: 1 !important;
       transition: background 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      flex-shrink: 0;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.3rem !important;
+      flex-shrink: 0 !important;
+      box-shadow: none !important;
+      width: auto !important;
+      height: auto !important;
     }
-    .theme-toggle:hover { background: rgba(255,255,255,0.1); }
+    .theme-toggle:hover { background: rgba(255,255,255,0.1) !important; }
 
     .wrap {
       width: 100%;
@@ -129,12 +133,13 @@
       margin-right: auto;
     }
 
-    header {
+    header:not(.site-header) {
       text-align: center;
       margin-bottom: 28px;
     }
     header.site-header {
       margin-bottom: 0;
+      text-align: left;
     }
 
     .site-brand-block {
