@@ -350,6 +350,12 @@
   </div>
 
   <script>
+    document.addEventListener('click', function(e) {
+      var guideDetails = document.querySelector('details.guide');
+      if (guideDetails && guideDetails.open && !guideDetails.contains(e.target)) {
+        guideDetails.removeAttribute('open');
+      }
+    });
     function toggleTheme() {
       var html = document.documentElement;
       var current = html.getAttribute('data-theme') || 'dark';

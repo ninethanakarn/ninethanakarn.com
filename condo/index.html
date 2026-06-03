@@ -717,6 +717,11 @@
       if (dsrDetails && dsrDetails.open && !dsrDetails.contains(e.target)) {
         dsrDetails.removeAttribute('open');
       }
+      // Close guide details when clicking outside
+      var guideDetails = document.querySelector('details.guide');
+      if (guideDetails && guideDetails.open && !guideDetails.contains(e.target)) {
+        guideDetails.removeAttribute('open');
+      }
     });
     function toggleTheme() {
       var html = document.documentElement;
