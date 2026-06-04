@@ -133,6 +133,7 @@
     .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
     .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; letter-spacing: 0.02em; }
     .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
     .dev-info { flex: 1; min-width: 0; }
     .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
     .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
@@ -243,6 +244,14 @@
             <div class="dev-info-sub">SET Listed · 35+ ปี · 6 แบรนด์ · ทาวน์โฮม–Luxury 2.19 – 60 ล้าน</div>
           </div>
           <div class="dev-chevron">▾</div>
+        </button>
+        <button class="dev-icon-btn" data-dev="pruksa" type="button">
+          <div class="dev-logo-badge dev-logo-pruksa">PSH</div>
+          <div class="dev-info">
+            <div class="dev-info-name">พฤกษา (Pruksa Holding)</div>
+            <div class="dev-info-sub">SET Listed · 30+ ปี · 14 แบรนด์ · ทาวน์โฮม–Luxury 1.30 – 85 ล้าน</div>
+          </div>
+          <div class="dev-chevron">▸</div>
         </button>
       </div>
 
@@ -547,6 +556,362 @@
 
       </div><!-- /dev-brand-panel#dev-lpn -->
 
+      <!-- Pruksa Brand Panel -->
+      <div class="dev-brand-panel" id="dev-pruksa">
+
+        <div class="brand-toc" id="pruksa-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🏠 ทาวน์โฮม — 7 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showBrand('pruksa-ville','pruksa-toc')">
+                <span class="brand-list-name">Pruksa Ville</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.30–2.89 ล้าน</span><span>ผ่อน 5,800–13,000 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-baan-pruksa','pruksa-toc')">
+                <span class="brand-list-name">บ้านพฤกษา (Baan Pruksa)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.49–3.2 ล้าน</span><span>ผ่อน 6,700–14,400 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-connect','pruksa-toc')">
+                <span class="brand-list-name">The Connect</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.55–2.99 ล้าน</span><span>ผ่อน 7,000–13,400 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-natura','pruksa-toc')">
+                <span class="brand-list-name">Natura</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.89–3.46 ล้าน</span><span>ผ่อน 8,500–15,500 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-villette-lite','pruksa-toc')">
+                <span class="brand-list-name">Villette Lite</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 2.29–3.5 ล้าน</span><span>ผ่อน 10,300–15,700 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-patio','pruksa-toc')">
+                <span class="brand-list-name">PATIO</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 3.69–9.9 ล้าน</span><span>ผ่อน 16,600–44,500 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-plant-citi','pruksa-toc')">
+                <span class="brand-list-name">The Plant CITI</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 4.19–12 ล้าน</span><span>ผ่อน 18,800–53,900 บ./เดือน</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🏡 บ้านเดี่ยว — 7 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showBrand('pruksa-nara','pruksa-toc')">
+                <span class="brand-list-name">Pruksa Nara (ต่างจังหวัด)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.59–3.5 ล้าน</span><span>ผ่อน 7,100–15,700 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-plant','pruksa-toc')">
+                <span class="brand-list-name">The Plant</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 2.89–5.89 ล้าน</span><span>ผ่อน 13,000–26,500 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-passorn','pruksa-toc')">
+                <span class="brand-list-name">Passorn (ภัสสร)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 3.99–8.99 ล้าน</span><span>ผ่อน 17,900–40,400 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-palm','pruksa-toc')">
+                <span class="brand-list-name">The Palm</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 9–25 ล้าน</span><span>ผ่อน 40,400–112,300 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-pine','pruksa-toc')">
+                <span class="brand-list-name">PINE Wellness Residence</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา เริ่ม 13.99 ล้าน</span><span>ผ่อน เริ่ม 62,800 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-palm-residences','pruksa-toc')">
+                <span class="brand-list-name">The Palm Residences</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 30–80 ล้าน</span><span>ผ่อน 134,700–359,200 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-reserve-villas','pruksa-toc')">
+                <span class="brand-list-name">The Reserve Villas</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 65–85 ล้าน</span><span>ผ่อน 291,900–381,700 บ./เดือน</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* ผ่อน/รายได้คำนวณจากดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%</p>
+        </div>
+
+        <!-- Pruksa Brand Details -->
+        <div id="brand-pruksa-ville" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry – Mid</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2–3 ชั้น</span></div>
+              <div class="card-title">Pruksa Ville</div>
+              <div class="card-meta">ทาวน์โฮมในฟังก์ชั่นบ้านเดี่ยว · พื้นที่ใช้สอยกว้าง · เหมาะครอบครัวขยาย Real Demand</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.30 – 2.89 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">ทาวน์โฮม 2–3 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">ฟังก์ชั่นบ้านเดี่ยว</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัวขยาย</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>5,800 – 13,000 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>9,700 – 21,700 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Pruksa Ville → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-baan-pruksa" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น</span></div>
+              <div class="card-title">บ้านพฤกษา (Baan Pruksa)</div>
+              <div class="card-meta">ทำเลดี จ่ายน้อย ได้มากกว่า · ทาวน์โฮมราคาเข้าถึง · เหมาะบ้านหลังแรก</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.49 – 3.2 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">ทาวน์โฮม 2 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">ราคาประหยัด ทำเลดี</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">บ้านหลังแรก</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>6,700 – 14,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>11,200 – 24,000 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ บ้านพฤกษา → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-connect" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry – Mid</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น</span></div>
+              <div class="card-title">The Connect</div>
+              <div class="card-meta">Nordic / Modern Design · ทำเลใกล้รถไฟฟ้า · เหมาะวัยทำงาน Modern Lifestyle</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.55 – 2.99 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">ทาวน์โฮม 2 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">Design</div><div class="stat-value">Nordic / Modern</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">วัยทำงาน</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>7,000 – 13,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>11,700 – 22,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Connect → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-natura" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม / บ้านแฝด</span></div>
+              <div class="card-title">Natura</div>
+              <div class="card-meta">Empower Nature for Trendy Living · คุณภาพชีวิตระดับบ้านเดี่ยว · ทาวน์โฮม / บ้านแฝด</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.89 – 3.46 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">ทาวน์โฮม / บ้านแฝด</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Nature Trendy Living</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัว Modern</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>8,500 – 15,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>14,200 – 25,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Natura → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-villette-lite" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น</span></div>
+              <div class="card-title">Villette Lite</div>
+              <div class="card-meta">ฟังก์ชั่นบ้านเดี่ยว · สังคมพร้อม · ทาวน์โฮม 2 ชั้น สไตล์ Modern</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">2.29 – 3.5 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">ทาวน์โฮม 2 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">ฟังก์ชั่นบ้านเดี่ยว</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัว Middle</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>10,300 – 15,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>17,200 – 26,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Villette Lite → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-patio" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid – High</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 3 ชั้น</span></div>
+              <div class="card-title">PATIO</div>
+              <div class="card-meta">Colonial Design · หน้ากว้าง 3 ชั้น · สระน้ำเกลือ · EV Charger · Clubhouse · Premium Urban Family</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">3.69 – 9.9 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">ทาวน์โฮม 3 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">Design</div><div class="stat-value">Colonial · หน้ากว้าง</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Premium Urban Family</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>16,600 – 44,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>27,700 – 74,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ PATIO → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-plant-citi" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid – High</span><span style="font-size:0.75rem;color:var(--muted);">Home Office 3–3.5 ชั้น</span></div>
+              <div class="card-title">The Plant CITI</div>
+              <div class="card-meta">Home Office + อยู่อาศัย · พาณิชย์รวมในที่เดียว · เหมาะธุรกิจส่วนตัว</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">4.19 – 12 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Home Office 3–3.5 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Live + Work in One</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">เจ้าของธุรกิจ SME</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>18,800 – 53,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>31,300 – 89,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Plant CITI → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-nara" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry – Mid</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว / ทาวน์เฮ้าส์ ต่างจังหวัด</span></div>
+              <div class="card-title">Pruksa Nara</div>
+              <div class="card-meta">Real Demand ต่างจังหวัด · ทำเลนิคมอุตสาหกรรม + ท่องเที่ยว · ชลบุรี · ขอนแก่น · อยุธยา</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.59 – 3.5 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว / ทาวน์เฮ้าส์</div></div>
+                <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">ต่างจังหวัด</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Real Demand ต่างจังหวัด</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>7,100 – 15,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>11,800 – 26,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Pruksa Nara → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-plant" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น / บ้านแฝด</span></div>
+              <div class="card-title">The Plant</div>
+              <div class="card-meta">Let's Plant Our Own Life · บ้านเดี่ยว 2 ชั้น + บ้านแฝด · เหมาะครอบครัวเติบโต</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">2.89 – 5.89 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว / บ้านแฝด</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Plant Your Life</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัวเติบโต</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>13,000 – 26,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>21,700 – 44,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Plant → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-passorn" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid – High</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น</span></div>
+              <div class="card-title">Passorn (ภัสสร)</div>
+              <div class="card-meta">Passionate Living A Fulfilled Life · Scandinavian-Wellness · เหมาะ Career Winner + ครอบครัว Health-Conscious</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">3.99 – 8.99 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว 2 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">Design</div><div class="stat-value">Scandinavian Wellness</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Career Winner / ครอบครัว</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>17,900 – 40,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>29,800 – 67,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Passorn → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-palm" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">High</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว Premium</span></div>
+              <div class="card-title">The Palm</div>
+              <div class="card-meta">A Reflection on Your Success · บ้านเดี่ยว Premium · สำหรับผู้ประสบความสำเร็จ</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">9 – 25 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว Premium</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Success Reflection</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ผู้ประสบความสำเร็จ</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>40,400 – 112,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>67,300 – 187,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Palm → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-pine" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">High</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว + บ้านแฝด 3 ชั้น</span></div>
+              <div class="card-title">PINE Wellness Residence</div>
+              <div class="card-meta">Wellness Residence for Multigenerations · บ้านเดี่ยว 3 ชั้น + บ้านแฝด · ออกแบบเพื่อสุขภาพหลายรุ่น</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">เริ่ม 13.99 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว / บ้านแฝด</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Wellness Multigen</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัวหลายรุ่น</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 62,800 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 104,700 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ PINE Wellness Residence → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-palm-residences" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว Super Luxury 3 ชั้น + ลิฟต์</span></div>
+              <div class="card-title">The Palm Residences</div>
+              <div class="card-meta">Well-Living Mastery · Super Luxury 3 ชั้น + ลิฟต์ส่วนตัว · เปิดตัวปลายปี 2567</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">30 – 80 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว Super Luxury</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Well-Living Mastery</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Ultra HNW</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>134,700 – 359,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>224,500 – 598,700 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Palm Residences → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-reserve-villas" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury</span><span style="font-size:0.75rem;color:var(--muted);">วิลล่า Super Luxury</span></div>
+              <div class="card-title">The Reserve Villas</div>
+              <div class="card-meta">The Rarity Today, The Legacy Tomorrow · วิลล่า 26 ยูนิต · Sukhumvit 89/1 · เปิดตัว 1Q69</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">65 – 85 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">วิลล่า Super Luxury</div></div>
+                <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Legacy Villa</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Ultra HNW</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>291,900 – 381,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>486,500 – 636,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Reserve Villas → LINE</a></div>
+          </div>
+        </div>
+
+      </div><!-- /dev-brand-panel#dev-pruksa -->
+
     </div>
   </section>
 
@@ -781,14 +1146,16 @@
         document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
       }
     });
-    function showBrand(brandId) {
-      document.getElementById('lpn-toc').classList.add('hidden');
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'lpn-toc';
+      document.getElementById(tocId).classList.add('hidden');
       document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
       var target = document.getElementById('brand-' + brandId);
       if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
     }
-    function showToc() {
-      document.getElementById('lpn-toc').classList.remove('hidden');
+    function showToc(tocId) {
+      tocId = tocId || 'lpn-toc';
+      document.getElementById(tocId).classList.remove('hidden');
       document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
     }
     function toggleTheme() {
