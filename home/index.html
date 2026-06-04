@@ -53,6 +53,15 @@
     .toc-brand-row { cursor: pointer; transition: background 0.15s; }
     .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
     .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
     .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
     .back-to-toc:hover { background: #222; transform: scale(1.04); }
     .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
@@ -236,25 +245,43 @@
       <div class="brand-toc" id="lpn-toc">
         <div class="toc-group">
           <div class="toc-group-title">🏠 ทาวน์โฮม — 3 แบรนด์</div>
-          <table class="toc-table">
-            <thead><tr><th>แบรนด์</th><th>ช่วงราคา</th><th>ผ่อน/เดือน</th><th>รายได้ (DSR 60%)</th></tr></thead>
-            <tbody>
-              <tr class="toc-brand-row" onclick="showBrand('venue-24')"><td><span class="toc-brand-name">Venue 24</span></td><td style="font-size:0.82rem;color:var(--muted);">2.19–3.5 ล้าน</td><td style="font-size:0.82rem;color:var(--muted);">9,800–15,700</td><td style="font-size:0.82rem;color:var(--muted);">16,300–26,200</td></tr>
-              <tr class="toc-brand-row" onclick="showBrand('lumpini-townville')"><td><span class="toc-brand-name">Lumpini Townville</span></td><td style="font-size:0.82rem;color:var(--muted);">2.6–5.95 ล้าน</td><td style="font-size:0.82rem;color:var(--muted);">11,700–26,700</td><td style="font-size:0.82rem;color:var(--muted);">19,500–44,500</td></tr>
-              <tr class="toc-brand-row" onclick="showBrand('lumpini-town-place')"><td><span class="toc-brand-name">Lumpini Town Place</span></td><td style="font-size:0.82rem;color:var(--muted);">4.1–10.8 ล้าน</td><td style="font-size:0.82rem;color:var(--muted);">18,400–48,500</td><td style="font-size:0.82rem;color:var(--muted);">30,700–80,800</td></tr>
-            </tbody>
-          </table>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('venue-24')">
+              <span class="brand-list-name">Venue 24</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 2.19–3.5 ล้าน</span><span>ผ่อน 9,800–15,700 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('lumpini-townville')">
+              <span class="brand-list-name">Lumpini Townville</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 2.6–5.95 ล้าน</span><span>ผ่อน 11,700–26,700 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('lumpini-town-place')">
+              <span class="brand-list-name">Lumpini Town Place</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 4.1–10.8 ล้าน</span><span>ผ่อน 18,400–48,500 บ./เดือน</span></div>
+            </li>
+          </ul>
         </div>
         <div class="toc-group">
           <div class="toc-group-title">🏠 บ้านเดี่ยว — 3 แบรนด์</div>
-          <table class="toc-table">
-            <thead><tr><th>แบรนด์</th><th>ช่วงราคา</th><th>ผ่อน/เดือน</th><th>รายได้ (DSR 60%)</th></tr></thead>
-            <tbody>
-              <tr class="toc-brand-row" onclick="showBrand('haus-24')"><td><span class="toc-brand-name">Haus 24</span></td><td style="font-size:0.82rem;color:var(--muted);">4.29–7 ล้าน</td><td style="font-size:0.82rem;color:var(--muted);">19,300–31,400</td><td style="font-size:0.82rem;color:var(--muted);">32,200–52,300</td></tr>
-              <tr class="toc-brand-row" onclick="showBrand('villa-168')"><td><span class="toc-brand-name">Villa 168</span></td><td style="font-size:0.82rem;color:var(--muted);">8.99–15 ล้าน</td><td style="font-size:0.82rem;color:var(--muted);">40,400–67,400</td><td style="font-size:0.82rem;color:var(--muted);">67,300–112,300</td></tr>
-              <tr class="toc-brand-row" onclick="showBrand('baan-365')"><td><span class="toc-brand-name">Baan 365</span></td><td style="font-size:0.82rem;color:var(--muted);">18–60 ล้าน</td><td style="font-size:0.82rem;color:var(--muted);">80,800–269,400</td><td style="font-size:0.82rem;color:var(--muted);">134,700–449,000</td></tr>
-            </tbody>
-          </table>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('haus-24')">
+              <span class="brand-list-name">Haus 24</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 4.29–7 ล้าน</span><span>ผ่อน 19,300–31,400 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('villa-168')">
+              <span class="brand-list-name">Villa 168</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 8.99–15 ล้าน</span><span>ผ่อน 40,400–67,400 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('baan-365')">
+              <span class="brand-list-name">Baan 365</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 18–60 ล้าน</span><span>ผ่อน 80,800–269,400 บ./เดือน</span></div>
+            </li>
+          </ul>
         </div>
       </div>
 
