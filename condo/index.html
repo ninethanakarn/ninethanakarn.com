@@ -70,12 +70,14 @@
     .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; }
     .toc-group { margin-bottom: 1.5rem; }
     .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
-    .toc-table { width: 100%; border-collapse: collapse; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
-    .toc-table th { text-align: left; padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); background: var(--section-bg); font-weight: 600; }
-    .toc-table td { padding: 0.7rem 0.75rem; font-size: 0.88rem; border-top: 1px solid var(--card-border); }
-    .toc-brand-row { cursor: pointer; transition: background 0.15s; }
-    .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
-    .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
     .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
     .back-to-toc:hover { background: #222; transform: scale(1.04); }
     .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
@@ -221,20 +223,44 @@
         <div class="brand-toc" id="lpn-condo-toc">
           <div class="toc-group">
             <div class="toc-group-title">🏙️ คอนโดมิเนียม — 9 แบรนด์</div>
-            <table class="toc-table">
-              <thead><tr><th>แบรนด์</th><th>ช่วงราคา</th><th>ผ่อน/เดือน</th></tr></thead>
-              <tbody>
-                <tr class="toc-brand-row" onclick="showCondo('condotown')"><td><span class="toc-brand-name">Lumpini Condotown</span></td><td style="font-size:0.82rem;color:var(--muted);">790K–1.59M</td><td style="font-size:0.82rem;color:var(--muted);">3,500–7,100</td></tr>
-                <tr class="toc-brand-row" onclick="showCondo('earn')"><td><span class="toc-brand-name">EARN by L.P.N.</span></td><td style="font-size:0.82rem;color:var(--muted);">999K–1.14M</td><td style="font-size:0.82rem;color:var(--muted);">4,500–5,100</td></tr>
-                <tr class="toc-brand-row" onclick="showCondo('parkbeach')"><td><span class="toc-brand-name">Lumpini Parkbeach / Seaview</span></td><td style="font-size:0.82rem;color:var(--muted);">2.3M–3.9M</td><td style="font-size:0.82rem;color:var(--muted);">10,300–17,500</td></tr>
-                <tr class="toc-brand-row" onclick="showCondo('ville')"><td><span class="toc-brand-name">Lumpini Ville</span></td><td style="font-size:0.82rem;color:var(--muted);">1.59M–3.5M</td><td style="font-size:0.82rem;color:var(--muted);">7,100–15,700</td></tr>
-                <tr class="toc-brand-row" onclick="showCondo('place168')"><td><span class="toc-brand-name">Place 168</span></td><td style="font-size:0.82rem;color:var(--muted);">1.99M–2.56M</td><td style="font-size:0.82rem;color:var(--muted);">8,900–11,500</td></tr>
-                <tr class="toc-brand-row" onclick="showCondo('park')"><td><span class="toc-brand-name">Lumpini Park</span></td><td style="font-size:0.82rem;color:var(--muted);">1.99M–2.69M</td><td style="font-size:0.82rem;color:var(--muted);">8,900–12,100</td></tr>
-                <tr class="toc-brand-row" onclick="showCondo('lplace')"><td><span class="toc-brand-name">Lumpini Place</span></td><td style="font-size:0.82rem;color:var(--muted);">1.15M–2.35M</td><td style="font-size:0.82rem;color:var(--muted);">5,200–10,600</td></tr>
-                <tr class="toc-brand-row" onclick="showCondo('suite')"><td><span class="toc-brand-name">Lumpini Suite</span></td><td style="font-size:0.82rem;color:var(--muted);">2.89M–4.07M</td><td style="font-size:0.82rem;color:var(--muted);">13,000–18,300</td></tr>
-                <tr class="toc-brand-row" onclick="showCondo('selected')"><td><span class="toc-brand-name">Lumpini Selected</span></td><td style="font-size:0.82rem;color:var(--muted);">1.69M–3.43M</td><td style="font-size:0.82rem;color:var(--muted);">7,600–15,400</td></tr>
-              </tbody>
-            </table>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('condotown')">
+                <span class="brand-list-name">Lumpini Condotown</span>
+                <div class="brand-list-meta"><span>ราคา 790K–1.59M</span><span>ผ่อน 3,500–7,100 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('earn')">
+                <span class="brand-list-name">EARN by L.P.N.</span>
+                <div class="brand-list-meta"><span>ราคา 999K–1.14M</span><span>ผ่อน 4,500–5,100 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('parkbeach')">
+                <span class="brand-list-name">Lumpini Parkbeach / Seaview</span>
+                <div class="brand-list-meta"><span>ราคา 2.3M–3.9M</span><span>ผ่อน 10,300–17,500 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('ville')">
+                <span class="brand-list-name">Lumpini Ville</span>
+                <div class="brand-list-meta"><span>ราคา 1.59M–3.5M</span><span>ผ่อน 7,100–15,700 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('place168')">
+                <span class="brand-list-name">Place 168</span>
+                <div class="brand-list-meta"><span>ราคา 1.99M–2.56M</span><span>ผ่อน 8,900–11,500 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('park')">
+                <span class="brand-list-name">Lumpini Park</span>
+                <div class="brand-list-meta"><span>ราคา 1.99M–2.69M</span><span>ผ่อน 8,900–12,100 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('lplace')">
+                <span class="brand-list-name">Lumpini Place</span>
+                <div class="brand-list-meta"><span>ราคา 1.15M–2.35M</span><span>ผ่อน 5,200–10,600 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('suite')">
+                <span class="brand-list-name">Lumpini Suite</span>
+                <div class="brand-list-meta"><span>ราคา 2.89M–4.07M</span><span>ผ่อน 13,000–18,300 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('selected')">
+                <span class="brand-list-name">Lumpini Selected</span>
+                <div class="brand-list-meta"><span>ราคา 1.69M–3.43M</span><span>ผ่อน 7,600–15,400 บ./เดือน</span></div>
+              </li>
+            </ul>
           </div>
           <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* ผ่อน/รายได้คำนวณจากดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%</p>
         </div>
