@@ -76,6 +76,8 @@
     .toc-brand-row { cursor: pointer; transition: background 0.15s; }
     .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
     .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .toc-table th:not(:first-child),
+    .toc-table td:not(:first-child) { white-space: nowrap; }
     @media (max-width: 480px) {
       .toc-table th { padding: 0.45rem 0.5rem; font-size: 0.72rem; }
       .toc-table td { padding: 0.6rem 0.5rem; font-size: 0.78rem; }
@@ -226,8 +228,7 @@
         <div class="brand-toc" id="lpn-condo-toc">
           <div class="toc-group">
             <div class="toc-group-title">🏙️ คอนโดมิเนียม — 9 แบรนด์</div>
-            <table class="toc-table" style="table-layout:fixed;width:100%;">
-              <colgroup><col style="width:55%"><col style="width:25%"><col style="width:20%"></colgroup>
+            <table class="toc-table" style="width:100%;">
               <thead><tr><th>แบรนด์</th><th>ช่วงราคา</th><th>ผ่อน/เดือน</th></tr></thead>
               <tbody>
                 <tr class="toc-brand-row" onclick="showCondo('condotown')"><td><span class="toc-brand-name">Lumpini Condotown</span></td><td style="font-size:0.82rem;color:var(--muted);">790K–1.59M</td><td style="font-size:0.82rem;color:var(--muted);">3,500–7,100</td></tr>
