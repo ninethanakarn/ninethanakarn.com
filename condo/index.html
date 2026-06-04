@@ -77,6 +77,10 @@
     .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
     .toc-brand-name { font-weight: 600; color: #3b82f6; }
     @media (max-width: 480px) {
+      .toc-table { table-layout: fixed; }
+      .toc-table th:nth-child(1), .toc-table td:nth-child(1) { width: 45%; word-break: break-word; }
+      .toc-table th:nth-child(2), .toc-table td:nth-child(2) { width: 28%; }
+      .toc-table th:nth-child(3), .toc-table td:nth-child(3) { width: 27%; }
       .toc-table th { padding: 0.4rem 0.45rem; font-size: 0.7rem; }
       .toc-table td { padding: 0.55rem 0.45rem; font-size: 0.75rem; }
       .toc-brand-name { font-size: 0.78rem; }
