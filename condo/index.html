@@ -76,12 +76,16 @@
     .toc-brand-row { cursor: pointer; transition: background 0.15s; }
     .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
     .toc-brand-name { font-weight: 600; color: #3b82f6; }
-    .toc-table th:not(:first-child),
-    .toc-table td:not(:first-child) { white-space: nowrap; }
     @media (max-width: 480px) {
-      .toc-table th { padding: 0.45rem 0.5rem; font-size: 0.72rem; }
-      .toc-table td { padding: 0.6rem 0.5rem; font-size: 0.78rem; }
-      .toc-brand-name { font-size: 0.8rem; }
+      .toc-table thead { display: none; }
+      .toc-table, .toc-table tbody { display: block; }
+      .toc-brand-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0; padding: 0.65rem 0.75rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background .15s; }
+      .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
+      .toc-brand-row td { display: inline; padding: 0; border: none; font-size: 0.8rem; }
+      .toc-brand-row td:first-child { width: 100%; display: block; margin-bottom: 0.2rem; }
+      .toc-brand-row td:nth-child(2) { font-size: 0.73rem; color: var(--muted) !important; }
+      .toc-brand-row td:nth-child(2)::after { content: " · "; color: var(--muted); }
+      .toc-brand-row td:nth-child(3) { font-size: 0.73rem; color: var(--muted) !important; }
     }
     .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
     .back-to-toc:hover { background: #222; transform: scale(1.04); }
