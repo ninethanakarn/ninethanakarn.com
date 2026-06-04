@@ -74,6 +74,19 @@
     .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
     [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
     [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+    @media print {
+      .site-header, .hero, .guide-wrap, .star-divider,
+      .float-cta-pair, .sticky-cta, footer, .card-footer { display: none !important; }
+      body { background: white !important; color: #111 !important; }
+      .section { background: white !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      .callout { border: 1px solid #ccc !important; background: #f9f9f9 !important; }
+      body::before {
+        content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn · โทร 02-334-0940";
+        display: block; font-size: 0.8rem; color: #666;
+        border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; margin-bottom: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
