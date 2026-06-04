@@ -304,6 +304,25 @@ body.theme-dark .stat-icon svg { color: #93c5fd; }
 .hero-flow-sub { font-size: 8.5px; color: rgba(255,255,255,0.45); text-align: center; line-height: 1.3; }
 .hero-flow-sep { display: flex; align-items: center; padding-top: 14px; color: rgba(255,255,255,0.28); flex-shrink: 0; padding-left: 1px; padding-right: 1px; }
 .hero-flow-sep svg { width: 13px; height: 13px; }
+@media print {
+  body * { visibility: hidden; }
+  #services, #services * { visibility: visible; }
+  #services { position: absolute; top: 80px; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+  .float-cta-pair, .bank-modal-overlay { display: none !important; }
+  body::before {
+    content: "นายธนาคารประจำบ้าน — Mr. Home Banker";
+    visibility: visible; display: block;
+    font-size: 1.1rem; font-weight: 700; color: #111;
+    position: absolute; top: 1.5rem; left: 1.5rem;
+  }
+  body::after {
+    content: "LINE: @ninethanakarn  ·  โทร 02-334-0940  ·  ninethanakarn.com";
+    visibility: visible; display: block;
+    font-size: 0.8rem; color: #444;
+    position: absolute; top: 3rem; left: 1.5rem;
+    border-bottom: 1px solid #ddd; padding-bottom: 0.5rem; width: calc(100% - 3rem);
+  }
+}
 </style>
 </head>
 <body>
