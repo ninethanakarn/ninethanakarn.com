@@ -64,6 +64,7 @@
     .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); }
     .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
     .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
     .dev-info { flex: 1; min-width: 0; }
     .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
     .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
@@ -219,9 +220,19 @@
           <div class="dev-logo-badge dev-logo-lpn">LPN</div>
           <div class="dev-info">
             <div class="dev-info-name">ลุมพินี (L.P.N. Development)</div>
-            <div class="dev-info-sub">SET Listed · 35+ ปี · 9 แบรนด์คอนโด · Entry–High · 790K – 15+ ล้าน</div>
+            <div class="dev-info-sub">SET Listed · 35+ ปี · 10 แบรนด์คอนโด · Entry–High · 790K – 15+ ล้าน</div>
+            <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
           </div>
           <div class="dev-chevron">▾</div>
+        </button>
+        <button class="dev-icon-btn" data-dev="pruksa" type="button" onclick="toggleDevPanel('pruksa')">
+          <div class="dev-logo-badge dev-logo-pruksa">PSH</div>
+          <div class="dev-info">
+            <div class="dev-info-name">พฤกษา (Pruksa Holding)</div>
+            <div class="dev-info-sub">SET Listed · 30+ ปี · 6 แบรนด์คอนโด · Entry–Luxury · 1.36 – 50+ ล้าน</div>
+            <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+          </div>
+          <div class="dev-chevron">▸</div>
         </button>
       </div>
 
@@ -561,6 +572,166 @@
         </div>
 
       </div><!-- /dev-lpn -->
+
+      <!-- Pruksa Condo Brand Panel -->
+      <div id="dev-pruksa" class="dev-brand-panel">
+
+        <div class="brand-toc" id="pruksa-condo-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🏙️ คอนโดมิเนียม — 6 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('pruksa-the-privacy','pruksa-condo-toc')">
+                <span class="brand-list-name">The Privacy</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.36–3.69M</span><span>ผ่อน 6,100–16,600 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('pruksa-plum','pruksa-condo-toc')">
+                <span class="brand-list-name">Plum Condo</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.49–1.99M</span><span>ผ่อน 6,700–8,900 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('pruksa-chapter-one','pruksa-condo-toc')">
+                <span class="brand-list-name">Chapter One</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.79–2.99M</span><span>ผ่อน 8,000–13,400 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('pruksa-the-tree','pruksa-condo-toc')">
+                <span class="brand-list-name">The Tree</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 2.29–5.5M</span><span>ผ่อน 10,300–24,700 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('pruksa-the-reserve','pruksa-condo-toc')">
+                <span class="brand-list-name">The Reserve</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 4.8–42M</span><span>ผ่อน 21,600–188,600 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('pruksa-chapter','pruksa-condo-toc')">
+                <span class="brand-list-name">Chapter</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 5.5–50M</span><span>ผ่อน 24,700–224,500 บ./เดือน</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* ผ่อน/รายได้คำนวณจากดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%</p>
+        </div>
+
+        <!-- Pruksa Condo Brand Details -->
+        <div id="condo-pruksa-the-privacy" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('pruksa-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry – Mid</span><span style="font-size:0.75rem;color:var(--muted);">Low Rise + High Rise</span></div>
+              <div class="card-title">The Privacy</div>
+              <div class="card-meta">World Class Design · Low Rise 8 ชั้น (ราคาเข้าถึง) + High Rise 34 ชั้น · ความเป็นส่วนตัวสูง</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.36 – 3.69M+</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Low Rise / High Rise</div></div>
+                <div class="stat-item"><div class="stat-label">Design</div><div class="stat-value">World Class</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">คนรุ่นใหม่ / Urban</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>6,100 – 16,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>10,200 – 27,700 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Privacy → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-pruksa-plum" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('pruksa-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry</span><span style="font-size:0.75rem;color:var(--muted);">Low Rise 5–8 ชั้น</span></div>
+              <div class="card-title">Plum Condo</div>
+              <div class="card-meta">คอนโดแนวคิดใหม่ ราคาเข้าถึงได้ · Low Rise ใกล้รถไฟฟ้า · เหมาะ First-Jobber / Gen Z</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.49 – 1.99M</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Low Rise 5–8 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">แนวรถไฟฟ้าสายใหม่</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">First-Jobber / Gen Z</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>6,700 – 8,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>11,200 – 14,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Plum Condo → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-pruksa-chapter-one" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('pruksa-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry – Mid</span><span style="font-size:0.75rem;color:var(--muted);">Low / Mid Rise</span></div>
+              <div class="card-title">Chapter One</div>
+              <div class="card-meta">ทุกไลฟ์สไตล์คนรุ่นใหม่ · Design ดี ราคาไม่แพง · Low-Mid Rise ใกล้รถไฟฟ้า</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.79 – 2.99M</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Low / Mid Rise</div></div>
+                <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">บางโพ ลาดพร้าว จรัญ</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">คนรุ่นใหม่</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>8,000 – 13,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>13,300 – 22,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Chapter One → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-pruksa-the-tree" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('pruksa-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">High Rise 33–40 ชั้น</span></div>
+              <div class="card-title">The Tree</div>
+              <div class="card-meta">Life Beyond Ordinary · Nature-Inspired High Rise · ใจกลางเมือง ติดรถไฟฟ้า BTS/MRT</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">2.29 – 5.5M</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">High Rise 33–40 ชั้น</div></div>
+                <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">หัวมาก พัฒนาการ จรัญ</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban วัยทำงาน</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>10,300 – 24,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>17,200 – 41,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Tree → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-pruksa-the-reserve" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('pruksa-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">High</span><span style="font-size:0.75rem;color:var(--muted);">High Rise · ยูนิตน้อย</span></div>
+              <div class="card-title">The Reserve</div>
+              <div class="card-meta">Living at Your Pace is the New Luxury · Super Luxury ยูนิตน้อย · สาทร สุขุมวิท พหลโยธิน</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">4.8 – 42M</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">High Rise Luxury</div></div>
+                <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">สาทร สุขุมวิท พหลฯ</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Affluent Professional</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>21,600 – 188,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>36,000 – 314,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Reserve → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-pruksa-chapter" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('pruksa-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Premium</span><span style="font-size:0.75rem;color:var(--muted);">Low Rise + High Rise</span></div>
+              <div class="card-title">Chapter</div>
+              <div class="card-meta">Minimal Luxury Condominium · ทำเลพรีเมียม ทองหล่อ จุฬา-สามย่าน เจริญนคร-Riverside</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">5.5 – 50M</div></div>
+                <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Low Rise / High Rise</div></div>
+                <div class="stat-item"><div class="stat-label">Design</div><div class="stat-value">Minimal Luxury</div></div>
+                <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban Professional</div></div>
+              </div>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>24,700 – 224,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>41,200 – 374,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Chapter → LINE</a></div>
+          </div>
+        </div>
+
+      </div><!-- /dev-pruksa -->
+
     </div>
   </section>
 
@@ -766,14 +937,16 @@
 
 
   <script>
-    function showCondo(brandId) {
-      document.getElementById('lpn-condo-toc').classList.add('hidden');
+    function showCondo(brandId, tocId) {
+      tocId = tocId || 'lpn-condo-toc';
+      document.getElementById(tocId).classList.add('hidden');
       document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
       var target = document.getElementById('condo-' + brandId);
       if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
     }
-    function showCondoToc() {
-      document.getElementById('lpn-condo-toc').classList.remove('hidden');
+    function showCondoToc(tocId) {
+      tocId = tocId || 'lpn-condo-toc';
+      document.getElementById(tocId).classList.remove('hidden');
       document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
     }
     function toggleDevPanel(id) {
@@ -789,7 +962,7 @@
         btn.classList.add('active');
         panel.style.display = 'block';
         btn.querySelector('.dev-chevron').textContent = '▾';
-        showCondoToc();
+        showCondoToc(id + '-condo-toc');
       }
     }
     var _activeCrit = null;
