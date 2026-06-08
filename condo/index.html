@@ -67,6 +67,7 @@
     .dev-logo-pruksa { background: #00a651; color: #fff; }
     .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
     .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
     .dev-brand-panel { display: none; }
     .dev-brand-panel.active { display: block; }
     .dev-info { flex: 1; min-width: 0; }
@@ -252,6 +253,15 @@
           <div class="dev-info">
             <div class="dev-info-name">ริสแลนด์ (Risland Thailand)</div>
             <div class="dev-info-sub">⚠️ <strong>ไม่ได้ list SET ไทย</strong> (บริษัทจำกัด · ทุน 2,000 ล้าน) · เครือ Country Garden จีน (HKSE: 2007.HK · Top-3 จีน) · 4 แบรนด์คอนโด · Affordable–Luxury · 2.49 – 50+ ล้าน · เฉพาะกรุงเทพ (ไม่มีในชลบุรี/EEC)</div>
+            <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+          </div>
+          <div class="dev-chevron">▸</div>
+        </button>
+        <button class="dev-icon-btn" data-dev="siri" type="button" onclick="toggleDevPanel('siri')">
+          <div class="dev-logo-badge dev-logo-siri">SIRI</div>
+          <div class="dev-info">
+            <div class="dev-info-name">แสนสิริ (Sansiri)</div>
+            <div class="dev-info-sub">SET Listed (SIRI) · 40+ ปี · Top-3 อสังหาฯไทย · <strong>18 แบรนด์คอนโด</strong> · Super Luxury–Entry · 0.69 – 80+ ล้าน · กรุงเทพ + หัวหิน + พัทยา + เชียงใหม่</div>
             <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
           </div>
           <div class="dev-chevron">▸</div>
@@ -1199,6 +1209,451 @@
         </div>
 
       </div><!-- /dev-risland -->
+
+      <!-- Sansiri Condo Brand Panel -->
+      <div id="dev-siri" class="dev-brand-panel">
+
+        <div class="brand-toc" id="siri-condo-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🟣 Super Luxury · Ultra-HNW (2 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-98-wireless','siri-condo-toc')">
+                <span class="brand-list-name">98 Wireless ⭐ Super Luxury Flagship</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>เริ่ม 80 ล้าน</span><span>Pathumwan · 77 ยูนิต Exclusive</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-khun-by-yoo','siri-condo-toc')">
+                <span class="brand-list-name">Khun by Yoo Inspired by Starck</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>30+ ล้าน</span><span>Thonglor · Designer Luxury</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🟠 Premium · Sukhumvit/CBD (4 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-via','siri-condo-toc')">
+                <span class="brand-list-name">VIA Series (VIA 34/61)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>12.9–22 ล้าน</span><span>สุขุมวิท 34/61 · Premium Quiet Soi</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-widen','siri-condo-toc')">
+                <span class="brand-list-name">WIDEN by Sansiri</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>เริ่ม 8.9 ล้าน</span><span>Premium Wide-Open Layout</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-monument','siri-condo-toc')">
+                <span class="brand-list-name">The Monument Thong Lo</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>สอบถามราคา</span><span>ทองหล่อ · Iconic Luxury</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-xt','siri-condo-toc')">
+                <span class="brand-list-name">XT Series (Phayathai · Ekkamai · Huaikhwang)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>3.89–14.9 ล้าน</span><span>3 ทำเล Premium · BTS/MRT</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🔵 Mid-Range · Transit-Oriented (6 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-line-vibe','siri-condo-toc')">
+                <span class="brand-list-name">The Line Vibe</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>เริ่ม 6.99 ล้าน</span><span>Mid-Upper · BTS/MRT</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-base','siri-condo-toc')">
+                <span class="brand-list-name">The Base Series (หลายทำเล)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.49–6.59 ล้าน</span><span>Affordable Mid · BTS/MRT</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-move','siri-condo-toc')">
+                <span class="brand-list-name">The Muve Series</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.59–2.82 ล้าน</span><span>Mid-Entry · ใกล้รถไฟฟ้า</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-haus','siri-condo-toc')">
+                <span class="brand-list-name">HAUS / Mekin Haus</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>สอบถามราคา</span><span>Boutique · Lifestyle</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-canvas','siri-condo-toc')">
+                <span class="brand-list-name">Canvas</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>สอบถามราคา</span><span>Boutique Lifestyle</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-shush','siri-condo-toc')">
+                <span class="brand-list-name">SHUSH Ratchathewi</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>สอบถามราคา</span><span>ราชเทวี · Boutique</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🟢 Entry/Affordable · Mass (3 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-dcondo','siri-condo-toc')">
+                <span class="brand-list-name">dcondo (ดีคอนโด)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.45–2.19 ล้าน</span><span>Mass Affordable · หลายทำเล</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-way','siri-condo-toc')">
+                <span class="brand-list-name">VAY Series (เวย์)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>0.99–1.59 ล้าน</span><span>Entry · นักศึกษา</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-condome','siri-condo-toc')">
+                <span class="brand-list-name">Condo Me Series</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>0.69–1.39 ล้าน</span><span>Cheapest · First Buyer</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🌴 Resort/Out-of-Town (3 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-hay-huahin','siri-condo-toc')">
+                <span class="brand-list-name">HAY Hua Hin</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>สอบถามราคา</span><span>หัวหิน · Resort Condo</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-la-habana','siri-condo-toc')">
+                <span class="brand-list-name">La Habana</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>สอบถามราคา</span><span>Resort/Lifestyle</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-la-casita','siri-condo-toc')">
+                <span class="brand-list-name">La Casita</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>สอบถามราคา</span><span>Resort/Lifestyle</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* แสนสิริ (SET: SIRI) Top-3 อสังหาฯไทย · 40+ ปี · <strong>18 แบรนด์คอนโด</strong> ครอบคลุม Super Luxury–Entry (0.69M–80M+) · ครบทุก segment<br>
+          * แต่ละ Series มีหลายโครงการ — โทร <strong>Sansiri 1685</strong> ยืนยันราคา + ทำเล + inventory ปัจจุบันก่อนนำเสนอลูกค้า · ดูบ้านเดี่ยว+ทาวน์โฮม Sansiri ในเว็บ /home/</p>
+        </div>
+
+        <!-- 18 Brand Cards (short format) -->
+
+        <div id="condo-siri-98-wireless" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Super Luxury · Flagship</span><span style="font-size:0.75rem;color:var(--muted);">77 ยูนิต Exclusive · 25 ชั้น · เสร็จ 2017</span></div>
+            <div class="card-title">98 Wireless ⭐</div>
+            <div class="card-meta">Super Luxury Flagship ของ Sansiri · Pathumwan ใจกลาง CBD · ติด Lumpini Park + Ploenchit · ดีไซน์ระดับ world-class · Limousine service · Penthouse 553 ตร.ม. + Super Penthouse 1,000 ตร.ม.</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">เริ่ม 80 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ราคา/ตร.ม.</div><div class="stat-value">~550,000 บ./ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">2BR/3BR/Penthouse/Super Penthouse</div></div>
+              <div class="stat-item"><div class="stat-label">โครงสร้าง</div><div class="stat-value">25 ชั้น · 77 ยูนิต · 2 ไร่</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> Wireless Road · Lumpini · Pathumwan กรุงเทพ · ติด Lumpini Park · เดินถึง BTS เพลินจิต · <strong>ชลบุรี:</strong> ไม่มี (Single-Location Super Luxury)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Ultra-HNW segment · Penthouse stock มีน้อย · โทร Sansiri 1685 verify</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ 98 Wireless → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-khun-by-yoo" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Super Luxury · Designer</span><span style="font-size:0.75rem;color:var(--muted);">Inspired by Philippe Starck</span></div>
+            <div class="card-title">Khun by Yoo Inspired by Starck</div>
+            <div class="card-meta">Super Luxury Designer Condo · collaboration กับ Philippe Starck (designer ระดับโลก) · ทำเลทองหล่อ · ดีไซน์ iconic</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">30+ ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Designer Luxury Condo</div></div>
+              <div class="stat-item"><div class="stat-label">Designer</div><div class="stat-value">Philippe Starck</div></div>
+              <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">Thonglor · Sukhumvit</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> ทองหล่อ-สุขุมวิท · <strong>ชลบุรี:</strong> ไม่มี (Designer collaboration · BKK only)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>HNW segment · โทร Sansiri 1685 verify ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Khun by Yoo → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-via" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Sukhumvit Soi</span><span style="font-size:0.75rem;color:var(--muted);">2 ทำเล (VIA 34 · VIA 61)</span></div>
+            <div class="card-title">VIA Series</div>
+            <div class="card-meta">Premium Condo สุขุมวิทซอย · ทำเลเงียบใน CBD · มี 2 โครงการ: VIA 34 (สุขุมวิท 34 ใกล้ทองหล่อ) + VIA 61 (สุขุมวิท 61 ใกล้พร้อมพงษ์/เอกมัย)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">12.9 – 22 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">สุขุมวิท 34 + 61</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban Pro · HNW</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> สุขุมวิท 34 (BTS ทองหล่อ) + สุขุมวิท 61 (BTS เอกมัย/พร้อมพงษ์) · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ราคา + ชั้น + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VIA Series → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-widen" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Wide-Open</span><span style="font-size:0.75rem;color:var(--muted);">Premium Layout</span></div>
+            <div class="card-title">WIDEN by Sansiri</div>
+            <div class="card-meta">Premium Condo · Concept "Wide-Open Layout" · ห้องโปร่งกว้าง · เพดานสูง · เหมาะคนที่ต้องการ space เกินมาตรฐาน</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">เริ่ม 8.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Wide-Open Layout</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Premium Urban Family</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> verify กับ Sansiri 1685 · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ WIDEN → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-monument" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury · Iconic Thonglor</span><span style="font-size:0.75rem;color:var(--muted);">Iconic Tower ทองหล่อ</span></div>
+            <div class="card-title">The Monument Thong Lo</div>
+            <div class="card-meta">Luxury Iconic Tower ใจกลางทองหล่อ · แลนด์มาร์คใหม่ของย่าน · ดีไซน์ landmark · เหมาะ HNW + Expat</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">สอบถามราคา</div></div>
+              <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">ทองหล่อ</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Luxury Iconic</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">HNW + Expat</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> ทองหล่อ · ใจกลาง CBD สุขุมวิท · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Monument → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-xt" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Transit-Oriented</span><span style="font-size:0.75rem;color:var(--muted);">3 ทำเล (พญาไท · เอกมัย · ห้วยขวาง)</span></div>
+            <div class="card-title">XT Series</div>
+            <div class="card-meta">Premium High-rise ใกล้ BTS/MRT · 3 โครงการ: XT Phayathai (พญาไท) · XT Ekkamai (เอกมัย) · XT Huaikhwang (ห้วยขวาง) · Modern Urban Lifestyle</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">3.89 – 14.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ</div><div class="stat-value">3 ทำเล</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban Pro · BTS users</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> XT Phayathai (BTS พญาไท · Airport Link) · XT Ekkamai (BTS เอกมัย) · XT Huaikhwang (MRT ห้วยขวาง) · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>3 โครงการ ต่างทำเล · โทร Sansiri 1685 verify ทำเลที่สนใจ</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ XT Series → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-line-vibe" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid-Upper · Transit</span><span style="font-size:0.75rem;color:var(--muted);">ใกล้รถไฟฟ้า · Modern</span></div>
+            <div class="card-title">The Line Vibe</div>
+            <div class="card-meta">Mid-Upper Condo · ทำเลใกล้รถไฟฟ้า · Modern Lifestyle · เหมาะคนทำงาน CBD ที่ต้องการคอนโดคุณภาพในราคาเข้าถึง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">เริ่ม 6.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Mid-Upper Condo</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid-Upper</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban Pro</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> verify กับ Sansiri 1685 · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Line Vibe → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-base" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid · Affordable Series</span><span style="font-size:0.75rem;color:var(--muted);">หลายทำเล · ใกล้ BTS/MRT</span></div>
+            <div class="card-title">The Base Series</div>
+            <div class="card-meta">Mid-Affordable Condo Series ของ Sansiri · หลายโครงการในกรุงเทพ · ทำเลใกล้ BTS/MRT · เหมาะ first jobber + นักลงทุน yield</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">1.49 – 6.59 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Mid-Affordable</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">First Jobber · นักลงทุน</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> หลายโครงการในกรุงเทพ · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Series ใหญ่ หลายทำเล · โทร Sansiri 1685 verify ทำเลที่สนใจ + ราคา</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Base → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-move" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid-Entry · Modern</span><span style="font-size:0.75rem;color:var(--muted);">ใกล้รถไฟฟ้า · Mass</span></div>
+            <div class="card-title">The Muve Series</div>
+            <div class="card-meta">Mid-Entry Mass Condo · ใกล้รถไฟฟ้า · ราคาเข้าถึง · เหมาะ first jobber + นักศึกษา</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">1.59 – 2.82 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Mid-Entry Mass</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid-Entry</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">First Jobber · นักศึกษา</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> หลายโครงการในกรุงเทพ · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Muve → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-haus" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid · Boutique Lifestyle</span><span style="font-size:0.75rem;color:var(--muted);">Boutique Brand</span></div>
+            <div class="card-title">HAUS / Mekin Haus</div>
+            <div class="card-meta">Boutique Lifestyle Condo · จำนวนยูนิตน้อย · ดีไซน์เน้นเอกลักษณ์ · เหมาะคนที่ต้องการความ exclusive</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">สอบถามราคา</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Boutique Lifestyle</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid Boutique</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Lifestyle Urban</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> verify กับ Sansiri 1685 · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ราคา + ทำเล</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ HAUS → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-canvas" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid · Boutique</span><span style="font-size:0.75rem;color:var(--muted);">Lifestyle Niche</span></div>
+            <div class="card-title">Canvas</div>
+            <div class="card-meta">Boutique Lifestyle Condo · ดีไซน์ Creative · เหมาะกลุ่ม Modern Lifestyle Urban</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">สอบถามราคา</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Boutique Condo</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid Boutique</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Creative Urban</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> verify กับ Sansiri 1685 · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Canvas → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-shush" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid · Boutique Ratchathewi</span><span style="font-size:0.75rem;color:var(--muted);">ราชเทวี · Niche</span></div>
+            <div class="card-title">SHUSH Ratchathewi</div>
+            <div class="card-meta">Boutique Condo ราชเทวี · ทำเลใกล้สยาม · เหมาะกลุ่ม Mid Urban</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">สอบถามราคา</div></div>
+              <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">ราชเทวี</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid Boutique</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban Pro</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> ราชเทวี · BTS ราชเทวี · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ SHUSH → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-dcondo" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mass · Affordable Series</span><span style="font-size:0.75rem;color:var(--muted);">หลายโครงการทั่วประเทศ</span></div>
+            <div class="card-title">dcondo (ดีคอนโด)</div>
+            <div class="card-meta">Mass Affordable Series ของ Sansiri · หลายโครงการในกรุงเทพ + ต่างจังหวัด · เหมาะนักศึกษา + first jobber + นักลงทุน Yield</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">1.45 – 2.19 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Mass Affordable</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Entry-Mid</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">นักศึกษา · first jobber</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> กรุงเทพ + ปริมณฑล + ต่างจังหวัด (เชียงใหม่ · ภูเก็ต) · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Series ใหญ่ที่สุด · โทร Sansiri 1685 verify ทำเลที่สนใจ</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ dcondo → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-way" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · นักศึกษา</span><span style="font-size:0.75rem;color:var(--muted);">Affordable Series</span></div>
+            <div class="card-title">VAY Series (เวย์)</div>
+            <div class="card-meta">Entry Affordable Series · เหมาะนักศึกษา + first jobber ที่งบจำกัด · ทำเลใกล้มหาวิทยาลัย</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">0.99 – 1.59 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Entry Affordable</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Entry</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">นักศึกษา · first jobber</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> ใกล้มหาวิทยาลัย · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VAY → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-condome" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · Cheapest</span><span style="font-size:0.75rem;color:var(--muted);">First Home Buyer</span></div>
+            <div class="card-title">Condo Me Series</div>
+            <div class="card-meta">Entry Condo ราคาถูกที่สุดของ Sansiri · เหมาะ first home buyer + นักศึกษา · เริ่ม 690K</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">0.69 – 1.39 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Cheapest Entry</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Entry</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">First Home Buyer</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> ปริมณฑล + ต่างจังหวัด · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>ราคาถูกที่สุดของ Sansiri · โทร 1685 verify ทำเลที่ลูกค้าสนใจ</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Condo Me → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-hay-huahin" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Resort · หัวหิน</span><span style="font-size:0.75rem;color:var(--muted);">Resort Condo</span></div>
+            <div class="card-title">HAY Hua Hin</div>
+            <div class="card-meta">Resort Condo · หัวหิน · เหมาะ Second Home + นักลงทุน + Long-stay · ใกล้หาดหัวหิน + Centara Hua Hin Beach Resort</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">สอบถามราคา</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Resort Condo</div></div>
+              <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">หัวหิน</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Second Home · นักลงทุน Resort</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> หัวหิน ประจวบคีรีขันธ์ · <strong>ชลบุรี:</strong> ไม่มี (focus ภาคใต้-ตะวันตก)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ HAY Hua Hin → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-la-habana" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Resort/Lifestyle</span><span style="font-size:0.75rem;color:var(--muted);">Resort Brand</span></div>
+            <div class="card-title">La Habana</div>
+            <div class="card-meta">Resort/Lifestyle Condo · positioning Resort Living · verify กับ Sansiri 1685 สำหรับทำเลและ inventory</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">สอบถามราคา</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Resort/Lifestyle</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid-Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Resort Lifestyle</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> verify กับ Sansiri 1685 · <strong>ชลบุรี:</strong> verify</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ La Habana → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-la-casita" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Resort/Lifestyle</span><span style="font-size:0.75rem;color:var(--muted);">Resort Brand</span></div>
+            <div class="card-title">La Casita</div>
+            <div class="card-meta">Resort/Lifestyle Condo · positioning Resort Living · verify กับ Sansiri 1685 สำหรับทำเลและ inventory</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">สอบถามราคา</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Resort/Lifestyle</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid-Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Resort Lifestyle</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> verify กับ Sansiri 1685 · <strong>ชลบุรี:</strong> verify</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ La Casita → LINE</a></div></div>
+        </div>
+
+        <!-- Sansiri Condo Note -->
+        <div class="callout info" style="margin-top:1rem;">
+          <span class="callout-icon">🏢</span>
+          <span>
+            <strong>Sansiri (SET: SIRI) Condo Portfolio:</strong> Top-3 อสังหาฯไทย · 18 แบรนด์ครอบคลุม Super Luxury → Entry (0.69M–80M+) · ครบทุก segment<br>
+            <strong>ใน BKK Premium:</strong> 98 Wireless · Khun by Yoo · VIA · The Monument · XT · WIDEN<br>
+            <strong>ใน BKK Mid/Mass:</strong> The Line Vibe · The Base · The Muve · HAUS · Canvas · SHUSH · dcondo · VAY · Condo Me<br>
+            <strong>Resort:</strong> HAY Hua Hin · La Habana · La Casita<br>
+            <strong>ชลบุรี/EEC:</strong> ส่วนใหญ่ไม่มีโครงการ Sansiri ในชลบุรี — ต้อง verify กับ <strong>Sansiri 1685</strong> สำหรับทำเลเฉพาะ
+          </span>
+        </div>
+
+      </div><!-- /dev-siri -->
 
     </div>
   </section>
