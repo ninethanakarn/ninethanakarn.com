@@ -136,6 +136,7 @@
     .dev-logo-pruksa { background: #00a651; color: #fff; }
     .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
     .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
     .dev-info { flex: 1; min-width: 0; }
     .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
     .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
@@ -271,6 +272,15 @@
           <div class="dev-info">
             <div class="dev-info-name">ริสแลนด์ (Risland Thailand)</div>
             <div class="dev-info-sub">⚠️ <strong>ไม่ได้ list SET ไทย</strong> (บริษัทจำกัด · ทุน 2,000 ล้าน) · เครือ Country Garden จีน (HKSE: 2007.HK · Top-3 จีน) · 1 แบรนด์บ้าน · บ้านแฝด + Pool Villa ติดทะเลสาบ 3.99 – 35.9 ล้าน · พระราม 2 (สมุทรสาคร) เท่านั้น</div>
+            <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+          </div>
+          <div class="dev-chevron">▸</div>
+        </button>
+        <button class="dev-icon-btn" data-dev="siri" type="button">
+          <div class="dev-logo-badge dev-logo-siri">SIRI</div>
+          <div class="dev-info">
+            <div class="dev-info-name">แสนสิริ (Sansiri)</div>
+            <div class="dev-info-sub">SET Listed (SIRI) · 40+ ปี · Top-3 อสังหาฯไทย · 12 แบรนด์บ้านเดี่ยว+แฝด · Ultra Luxury–Entry · 1.79 – 75 ล้าน · กรุงเทพ-ปริมณฑล + ภูเก็ต/เชียงใหม่/พัทยา · ทาวน์โฮม +8 แบรนด์</div>
             <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
           </div>
           <div class="dev-chevron">▸</div>
@@ -1436,6 +1446,308 @@
         </div>
 
       </div><!-- /dev-brand-panel#dev-risland -->
+
+      <!-- Sansiri Brand Panel -->
+      <div class="dev-brand-panel" id="dev-siri">
+
+        <div class="brand-toc" id="siri-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🟣 บ้านเดี่ยว Ultra Luxury แสนสิริ — 5 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showBrand('siri-narasiri','siri-toc')">
+                <span class="brand-list-name">Narasiri (นาราสิริ) ⭐ Flagship</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>35–75+ ล้าน</span><span>Resort-style Luxury</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-luxury-collection','siri-toc')">
+                <span class="brand-list-name">Sansiri Luxury Collection</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>70+ ล้าน</span><span>World-class Premium</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-narisiri','siri-toc')">
+                <span class="brand-list-name">Narisiri (นริศสิริ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>40–50+ ล้าน</span><span>Premium High-end</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-else','siri-toc')">
+                <span class="brand-list-name">Else</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>43.90–59 ล้าน</span><span>Premium Urban</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-demi','siri-toc')">
+                <span class="brand-list-name">Demi</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>สอบถามราคา</span><span>Boutique Townhome Premium</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🔵 บ้านเดี่ยว Upper-Mid แสนสิริ — 3 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showBrand('siri-setthasiri','siri-toc')">
+                <span class="brand-list-name">Setthasiri (เศรษฐสิริ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>7.99–29.9 ล้าน</span><span>บ้านเดี่ยวคุณภาพ ครอบครัวใหญ่</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-burasiri','siri-toc')">
+                <span class="brand-list-name">Burasiri (บุราสิริ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>6.99–29.99 ล้าน</span><span>บ้านเดี่ยวขนาดกลาง-ใหญ่</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-habitia','siri-toc')">
+                <span class="brand-list-name">Habitia (ฮาบิเทีย)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>6.79–7.99 ล้าน</span><span>บ้านเดี่ยว/บ้านแฝด Modern</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🟢 บ้านเดี่ยว+บ้านแฝด Mid/Entry แสนสิริ — 4 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showBrand('siri-saransiri','siri-toc')">
+                <span class="brand-list-name">Saransiri (สราญสิริ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>5.99–13.9 ล้าน</span><span>บ้านเดี่ยวสบายๆ ครอบครัว</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-mabel','siri-toc')">
+                <span class="brand-list-name">Mabel</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>4.99–5.59 ล้าน</span><span>บ้านเดี่ยว Compact</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-kanasiri','siri-toc')">
+                <span class="brand-list-name">Kanasiri (คณาสิริ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>2.39–5.79 ล้าน</span><span>บ้านแฝด Affordable</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('siri-anasiri','siri-toc')">
+                <span class="brand-list-name">Anasiri (อณาสิริ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.79–6.99 ล้าน</span><span>Entry · บ้านเดี่ยว+แฝด</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* แสนสิริ (SET: SIRI) Top-3 อสังหาฯไทย · 40+ ปี · แบรนด์บ้านเดี่ยว+แฝด 12 แบรนด์ · ทาวน์โฮม 8 แบรนด์ (Siri Place · Siri Avenue · Siri Square · Town Avenue · Met Town · Tiger Lane · 1517 Nimman · The Tales Story One) · จะเพิ่มในรอบหน้า<br>
+          * แต่ละแบรนด์มีหลายโครงการในหลายทำเล — โทร <strong>Sansiri 1685</strong> ยืนยันราคา + ทำเล + inventory ปัจจุบันก่อนนำเสนอลูกค้า</p>
+        </div>
+
+        <!-- Brand Cards (12 brands · short format) -->
+
+        <div id="brand-siri-narasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Ultra Luxury · Flagship</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว Resort-style</span></div>
+            <div class="card-title">Narasiri (นาราสิริ) ⭐</div>
+            <div class="card-meta">Flagship บ้านเดี่ยว Ultra Luxury ของ Sansiri · Resort-style Premium ครอบครัวใหญ่ · ทำเลศักยภาพสูง (กรุงเทพกรีฑา ฯลฯ)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">35 – 75+ ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว Ultra Luxury</div></div>
+              <div class="stat-item"><div class="stat-label">Concept</div><div class="stat-value">Resort-style Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">HNW ครอบครัวใหญ่</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพกรีฑา + ทำเล premium อื่นๆ · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory ปัจจุบัน</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Narasiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-luxury-collection" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Ultra Luxury · World-class</span><span style="font-size:0.75rem;color:var(--muted);">Premium Collection</span></div>
+            <div class="card-title">Sansiri Luxury Collection</div>
+            <div class="card-meta">คอลเลคชั่นพรีเมียมสูงสุด · World-class standards · บ้านเดี่ยว + คอนโดในกลุ่ม Top-tier · ออกแบบโดย world-class architect</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">70+ ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Premium Collection</div></div>
+              <div class="stat-item"><div class="stat-label">Standard</div><div class="stat-value">World-class</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Ultra HNW</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพชั้นในเท่านั้น · <strong>ชลบุรี:</strong> ไม่มี (Single Premium tier focus BKK)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Ultra HNW segment — verify โครงการ + ราคา กับ Sansiri 1685</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Sansiri Luxury Collection → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-narisiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Ultra Luxury · High-end</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว Premium</span></div>
+            <div class="card-title">Narisiri (นริศสิริ)</div>
+            <div class="card-meta">บ้านเดี่ยว Premium High-end · positioning ระหว่าง Setthasiri + Narasiri · ทำเลศักยภาพสูงในกรุงเทพ</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">40 – 50+ ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว Premium</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">High-end</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">HNW ครอบครัว</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพชั้นใน premium zones · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory ปัจจุบัน</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Narisiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-else" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury · Urban</span><span style="font-size:0.75rem;color:var(--muted);">Premium Urban Single House</span></div>
+            <div class="card-title">Else</div>
+            <div class="card-meta">บ้านเดี่ยว Premium Urban · ทำเลใจกลางเมือง · เน้นกลุ่ม Modern Urban HNW Family</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">43.90 – 59 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว Urban</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Luxury</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban HNW</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพชั้นใน · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory ปัจจุบัน</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Else → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-demi" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Premium Boutique</span><span style="font-size:0.75rem;color:var(--muted);">Townhome Premium</span></div>
+            <div class="card-title">Demi</div>
+            <div class="card-meta">Boutique Premium Townhome · จำนวนยูนิตน้อย exclusive · ดีไซน์เน้นเอกลักษณ์</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">สอบถามราคา</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Boutique Townhome</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Premium Urban</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพชั้นใน · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Boutique brand · stock จำกัด · โทร Sansiri 1685 verify</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Demi → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-setthasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Upper-Mid · Family</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยวคุณภาพครอบครัวใหญ่</span></div>
+            <div class="card-title">Setthasiri (เศรษฐสิริ)</div>
+            <div class="card-meta">บ้านเดี่ยวคุณภาพ · ครอบครัวใหญ่ · หลายทำเลทั่วกรุงเทพและปริมณฑล · brand popular ของ Sansiri</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">7.99 – 29.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว Upper-Mid</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Premium Family</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัวใหญ่ Upper-Mid</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพ + ปริมณฑล (รัชดา · ราชพฤกษ์ · พระราม 5 · กรุงเทพกรีฑา ฯลฯ) · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>หลายโครงการเปิดขาย · โทร Sansiri 1685 verify ทำเลที่ต้องการ + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Setthasiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-burasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Upper-Mid · Family</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยวขนาดกลาง-ใหญ่</span></div>
+            <div class="card-title">Burasiri (บุราสิริ)</div>
+            <div class="card-meta">บ้านเดี่ยว Upper-Mid ขนาดกลาง-ใหญ่ · ฟังก์ชั่นครบ ครอบครัวพร้อม</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">6.99 – 29.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Upper-Mid</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัวกลาง-ใหญ่</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพ + ปริมณฑล · ภูเก็ต · เชียงใหม่ · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Burasiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-habitia" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid · Modern</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว/บ้านแฝด Modern</span></div>
+            <div class="card-title">Habitia (ฮาบิเทีย)</div>
+            <div class="card-meta">บ้านเดี่ยว/บ้านแฝด Modern · เหมาะครอบครัวรุ่นใหม่ · ดีไซน์ functional</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">6.79 – 7.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว/บ้านแฝด</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid Modern</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัวรุ่นใหม่</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพ + ปริมณฑล · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Habitia → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-saransiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid · Family</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยวสบายๆ</span></div>
+            <div class="card-title">Saransiri (สราญสิริ)</div>
+            <div class="card-meta">บ้านเดี่ยวสบายๆ · ราคาเข้าถึงครอบครัว · หลายทำเลในกรุงเทพและปริมณฑล</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">5.99 – 13.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว Mid</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid Family</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">ครอบครัว Mid</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพ + ปริมณฑล · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Saransiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-mabel" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid · Compact</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว Compact</span></div>
+            <div class="card-title">Mabel</div>
+            <div class="card-meta">บ้านเดี่ยว Compact · ราคาเข้าถึง · เหมาะครอบครัวเริ่มต้น</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">4.99 – 5.59 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว Compact</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid Entry</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">First Family</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> กรุงเทพ + ปริมณฑล · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Mabel → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-kanasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry-Mid · Twin House</span><span style="font-size:0.75rem;color:var(--muted);">บ้านแฝด Affordable</span></div>
+            <div class="card-title">Kanasiri (คณาสิริ)</div>
+            <div class="card-meta">บ้านแฝด Affordable · ราคาเข้าถึงง่าย · เหมาะกู้บ้านหลังแรก · หลายทำเลใน BKK + ปริมณฑล</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">2.39 – 5.79 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านแฝด</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Entry-Mid</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">กู้บ้านหลังแรก</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย:</strong> บางนา · ราชพฤกษ์ · พระราม 2 · ปทุมธานี · ฯลฯ · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Kanasiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-anasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · Most Accessible</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว+บ้านแฝด Entry</span></div>
+            <div class="card-title">Anasiri (อณาสิริ)</div>
+            <div class="card-meta">บ้านเดี่ยว + บ้านแฝด Entry tier ของ Sansiri · ราคาเข้าถึงง่ายที่สุด · brand ที่มีทำเลครอบคลุมที่สุด · เหมาะกู้บ้านหลังแรก</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">1.79 – 6.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">บ้านเดี่ยว+บ้านแฝด</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Entry (Affordable)</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">First Family + กู้บ้านหลังแรก</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเลที่เปิดขาย (มากที่สุดของ Sansiri):</strong> สรงประภา · บางนา · ปิ่นเกล้า-กาญจนาฯ · ปทุมธานี · บางใหญ่ · ฯลฯ · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>brand ที่มีทำเลเยอะที่สุด · โทร Sansiri 1685 verify ทำเลใกล้ลูกค้า + ราคา + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Anasiri → LINE</a></div></div>
+        </div>
+
+        <!-- Sansiri Note -->
+        <div class="callout info" style="margin-top:1rem;">
+          <span class="callout-icon">🏢</span>
+          <span>
+            <strong>Sansiri (SET: SIRI):</strong> Top-3 อสังหาฯไทย · ก่อตั้ง 2527 (40+ ปี) · Portfolio ใหญ่ที่สุดของไทย (~39 แบรนด์รวม)<br>
+            <strong>บ้านเดี่ยว+แฝด:</strong> 12 แบรนด์ (ใน panel นี้)<br>
+            <strong>ทาวน์โฮม:</strong> 8 แบรนด์ (Siri Place · Siri Avenue · Siri Square · Town Avenue · Met Town · Tiger Lane · 1517 Nimman · The Tales Story One) — รอเพิ่มในรอบหน้า<br>
+            <strong>คอนโด:</strong> 19+ แบรนด์ (98Wireless · Khun by yoo · XT · The Line · Edge · The Base · dcondo ฯลฯ) — รอเพิ่มใน /condo/ รอบหน้า
+          </span>
+        </div>
+
+      </div><!-- /dev-brand-panel#dev-siri -->
 
     </div>
   </section>
