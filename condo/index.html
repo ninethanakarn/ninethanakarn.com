@@ -68,6 +68,7 @@
     .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
     .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
     .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
     .dev-brand-panel { display: none; }
     .dev-brand-panel.active { display: block; }
     .dev-info { flex: 1; min-width: 0; }
@@ -262,6 +263,15 @@
           <div class="dev-info">
             <div class="dev-info-name">แสนสิริ (Sansiri)</div>
             <div class="dev-info-sub">SET Listed (SIRI) · 40+ ปี · Top-3 อสังหาฯไทย · <strong>18 แบรนด์คอนโด</strong> · Super Luxury–Entry · 0.69 – 80+ ล้าน · กรุงเทพ + หัวหิน + พัทยา + เชียงใหม่</div>
+            <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+          </div>
+          <div class="dev-chevron">▸</div>
+        </button>
+        <button class="dev-icon-btn" data-dev="ap" type="button" onclick="toggleDevPanel('ap')">
+          <div class="dev-logo-badge dev-logo-ap">AP</div>
+          <div class="dev-info">
+            <div class="dev-info-name">เอพี ไทยแลนด์ (AP Thailand)</div>
+            <div class="dev-info-sub">SET Listed (AP) · Top-tier developer · <strong>5 แบรนด์คอนโด</strong> · Entry–Luxury · 1.79 – 40+ ล้าน · กรุงเทพ-ปริมณฑล (ไม่มีในชลบุรี/EEC)</div>
             <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
           </div>
           <div class="dev-chevron">▸</div>
@@ -1654,6 +1664,191 @@
         </div>
 
       </div><!-- /dev-siri -->
+
+      <!-- AP Condo Brand Panel -->
+      <div id="dev-ap" class="dev-brand-panel">
+
+        <div class="brand-toc" id="ap-condo-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🟣 Luxury · ใจกลางเมือง (1 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('ap-the-address','ap-condo-toc')">
+                <span class="brand-list-name">THE ADDRESS (ดิ แอดเดรส)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>8.59–40 ล้าน</span><span>Luxury · European Classic</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🟠 Premium-Luxury · CBD/Riverside (1 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('ap-rhythm','ap-condo-toc')">
+                <span class="brand-list-name">RHYTHM (ริทึ่ม)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>6.5–16.9 ล้าน</span><span>Premium · Design-driven</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🔵 Mid · Modern Luxury ติดราง (1 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('ap-life','ap-condo-toc')">
+                <span class="brand-list-name">LIFE (ไลฟ์)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>2.89–5.39 ล้าน</span><span>Mid · ติด BTS/MRT ทำเลทอง</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🟢 Entry-Mid · Volume (2 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('ap-aspire','ap-condo-toc')">
+                <span class="brand-list-name">ASPIRE (แอสปายร์) — แบรนด์ volume สูงสุด</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.79–3.69 ล้าน</span><span>Entry-Mid · คุ้มค่า · Modula</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('ap-good-day','ap-condo-toc')">
+                <span class="brand-list-name">GOOD DAY (กู๊ดเดย์) — แบรนด์ใหม่</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>เริ่ม 1.79 ล้าน</span><span>Entry · First Jobber · Low-Rise</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* AP (Thailand) PLC (SET: AP) Top-tier developer · <strong>5 แบรนด์คอนโด</strong> ครอบคลุม Luxury→Entry (1.79M–40M+) · ผ่อน/รายได้คำนวณดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%<br>
+          * <strong>AP ไม่มีคอนโดในชลบุรี/พัทยา/EEC</strong> (โฟกัสกรุงเทพ-ปริมณฑล) · ราคา "เริ่มต้น" เป็นยูนิตโปร 1BR เล็กสุด — โทร <strong>AP 1623</strong> ยืนยันราคา + inventory ปัจจุบัน · ดูบ้านเดี่ยว/ทาวน์โฮม AP ในเว็บ /home/ (รอเพิ่ม)</p>
+        </div>
+
+        <!-- AP Condo Brand Details -->
+        <div id="condo-ap-the-address" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('ap-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury · ใจกลางเมือง</span><span style="font-size:0.75rem;color:var(--muted);">High-rise CBD</span></div>
+            <div class="card-title">THE ADDRESS (ดิ แอดเดรส)</div>
+            <div class="card-meta">"CREATE YOUR OWN ETIQUETTE" · Luxury Condo สไตล์ European Classic ผสาน modern · ทำเลใจกลางเมือง · แบรนด์เปิดน้อยต่อปี (Exclusive)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">8.59 – 40 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">31 – 86 ตร.ม. (1–3BR)</div></div>
+              <div class="stat-item"><div class="stat-label">ราคา/ตร.ม.</div><div class="stat-value">~140,000–150,000 บ.</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Luxury · High-rise</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li><strong>THE ADDRESS สยาม-ราชเทวี</strong> ⭐ — ราชเทวี/สยาม · BTS ราชเทวี 150 ม. + ARL พญาไท · High-rise 880 ยูนิต · เริ่ม 8.59 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Flagship ปัจจุบัน</span></li>
+              <li>THE ADDRESS สาทร — สีลม/สาทร (ซ.สาทร 12) · BTS ช่องนนทรี / MRT ลุมพินี · 40 ชั้น 562 ยูนิต · พร้อมอยู่</li>
+              <li><strong style="color:var(--text);">ชลบุรี/EEC</strong> — ไม่มีโครงการ (AP โฟกัสกรุงเทพ)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>38,600 – 179,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>64,300 – 299,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>แบรนด์เปิดน้อย · โทร AP 1623 verify inventory + ราคาชั้น/วิว</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ THE ADDRESS → LINE</a></div></div>
+        </div>
+
+        <div id="condo-ap-rhythm" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('ap-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium-Luxury · CBD/Riverside</span><span style="font-size:0.75rem;color:var(--muted);">Design-driven High-rise</span></div>
+            <div class="card-title">RHYTHM (ริทึ่ม)</div>
+            <div class="card-meta">"THE REFLECTION ON PERFECTION" · Premium Condo design-driven · form meets function · ทำเล CBD/ริมแม่น้ำ · เหมาะ Urban Professional/นักลงทุน</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">6.5 – 16.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">35 – 177 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio/1BR/2BR/Penthouse</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Premium-Luxury</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li><strong>RHYTHM เจริญนคร ไอคอนิค</strong> ⭐ — ริมแม่น้ำเจ้าพระยา ตรงข้าม ICONSIAM · BTS กรุงธนบุรี · เริ่ม 7.7 ล้าน (สูงสุด 16.9M) · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Flagship ใหม่</span></li>
+              <li>RHYTHM เอกมัย เอสเตท — เอกมัย-ทองหล่อ (สุขุมวิท 63) · BTS เอกมัย ~1.2 กม. · 32 ชั้น 303 ยูนิต · เริ่ม 6.5 ล้าน · พร้อมอยู่</li>
+              <li style="color:var(--muted);font-size:0.78rem;">รางน้ำ · สาทร-นราธิวาส — ปิดการขาย (resale)</li>
+              <li><strong style="color:var(--text);">ชลบุรี/EEC</strong> — ไม่มีโครงการ (AP โฟกัสกรุงเทพ)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>29,200 – 75,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>48,700 – 126,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร AP 1623 verify ราคาชั้น/วิว (ริมน้ำ premium) + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ RHYTHM → LINE</a></div></div>
+        </div>
+
+        <div id="condo-ap-life" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('ap-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid · Modern Luxury</span><span style="font-size:0.75rem;color:var(--muted);">ติดราง ทำเลทอง</span></div>
+            <div class="card-title">LIFE (ไลฟ์)</div>
+            <div class="card-meta">"A successful life journey begins at LIFE" · Mid Modern Luxury · ติด BTS/MRT ทำเลทอง · novelty space design · เหมาะ Urban Professional + นักลงทุน yield</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.89 – 5.39 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">26 – 75 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio/1BR/1BR Plus/2BR</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid · ติดราง</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (10 โครงการ — เด่นๆ)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li><strong>LIFE พหลฯ-ลาดพร้าว</strong> ⭐ — ลาดพร้าว · BTS ห้าแยกลาดพร้าว 200 ม. + MRT พหลโยธิน · 41 ชั้น 598 ยูนิต · ตรงข้าม 2 Central · เริ่ม 5.39 ล้าน</li>
+              <li>LIFE รัชดา-พระราม 9 — New CBD พระราม 9 · MRT พระราม 9 750 ม. · เริ่ม 3.49 ล้าน</li>
+              <li>LIFE สาทร เซียร์รา — สาทร/ตลาดพลู · BTS ตลาดพลู 150 ม. · 40 ชั้น · เริ่ม 3.69 ล้าน</li>
+              <li>LIFE เจริญนคร-สาทร — สาทร/เจริญนคร · BTS กรุงธนบุรี 650 ม. · เริ่ม 3.89 ล้าน</li>
+              <li>LIFE อุดมสุข สเตชั่น — สุขุมวิท · BTS อุดมสุข 100 ม. · เริ่ม 4.29 ล้าน</li>
+              <li>LIFE พระราม 4-อโศก — สุขุมวิท · MRT ~450 ม. · เริ่ม 4.49 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี/EEC</strong> — ไม่มีโครงการ (AP โฟกัสกรุงเทพ)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>13,000 – 24,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>21,700 – 40,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">📈</span><span><strong>Yield play:</strong> ติด BTS/MRT ทำเลทอง · ปล่อยเช่าง่าย demand สูง · เหมาะนักลงทุน + คนทำงานในเมือง</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ LIFE → LINE</a></div></div>
+        </div>
+
+        <div id="condo-ap-aspire" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('ap-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry-Mid · Volume สูงสุด</span><span style="font-size:0.75rem;color:var(--muted);">คุ้มค่า · ใกล้ BTS/MRT</span></div>
+            <div class="card-title">ASPIRE (แอสปายร์)</div>
+            <div class="card-meta">"LIVE AS YOU ASPIRE" · แบรนด์ volume สูงสุดของ AP · คุ้มค่า ใกล้รถไฟฟ้า · Modula layout ปรับพื้นที่ได้ · บางโครงการ pet-friendly · เหมาะ first jobber + นักลงทุน yield</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.79 – 3.69 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">24 – 60 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio/1BR/1BR Plus/2BR</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Entry-Mid (Volume)</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (7+ โครงการ — เด่นๆ)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>ASPIRE สุขุมวิท-พระราม 4 — สุขุมวิท · เริ่ม 3.69 ล้าน</li>
+              <li>ASPIRE อ่อนนุช สเตชั่น — สุขุมวิท · BTS อ่อนนุช · เริ่ม 3.59 ล้าน</li>
+              <li>ASPIRE ห้วยขวาง — รัชดา/พระราม 9 · MRT ห้วยขวาง · เริ่ม 3.39 ล้าน</li>
+              <li>ASPIRE อิสรภาพ สเตชั่น — ปิ่นเกล้า/ฝั่งธน · MRT อิสรภาพ · เริ่ม 3.29 ล้าน</li>
+              <li>ASPIRE สุขุมวิท 103 — สุขุมวิท · BTS อุดมสุข ~3 นาที · pet-friendly · เริ่ม 2.59 ล้าน</li>
+              <li>ASPIRE รัชโยธิน — BTS รัชโยธิน 350 ม. · เริ่ม 2.25 ล้าน</li>
+              <li>ASPIRE รัตนาธิเบศร์ เวสต์ตัน — นนทบุรี · MRT สีม่วง · เริ่ม 1.79 ล้าน (เข้าถึงง่ายสุด)</li>
+              <li><strong style="color:var(--text);">ชลบุรี/EEC</strong> — ไม่มีโครงการ (AP โฟกัสกรุงเทพ)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>8,000 – 16,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>13,400 – 27,700 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">📈</span><span><strong>Yield play:</strong> ราคาเข้าถึง + ใกล้ BTS/MRT = ปล่อยเช่าง่าย · แบรนด์ volume ตัวเลือกทำเลเยอะสุดของ AP · เหมาะนักลงทุนงบ &lt; 4M</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ ASPIRE → LINE</a></div></div>
+        </div>
+
+        <div id="condo-ap-good-day" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('ap-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · แบรนด์ใหม่</span><span style="font-size:0.75rem;color:var(--muted);">Low-Rise · First Jobber</span></div>
+            <div class="card-title">GOOD DAY (กู๊ดเดย์)</div>
+            <div class="card-meta">"EVERY DAY IS A GOOD DAY" · แบรนด์ใหม่ล่าสุดของ AP · Low-Rise สำหรับ first jobber · 3 เสา: Good Design · Good Convenience · Good Access · ราคาเข้าถึง แต่งครบพร้อมอยู่</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 1.79 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">26 – 35 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 1BR Plus</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Entry · Low-Rise</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li><strong>GOOD DAY สุขุมวิท 93</strong> — สุขุมวิท/บางจาก · BTS บางจาก 1.3 กม. (+ shuttle) · Low-Rise 8 ชั้น 3 อาคาร 604 ยูนิต · แต่งครบพร้อมอยู่ · เริ่ม 1.89 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">โครงการเดียวที่ทำตลาด (แบรนด์ใหม่)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี/EEC</strong> — ไม่มีโครงการ (AP โฟกัสกรุงเทพ)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 8,000 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · 1.79M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 13,400 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>แบรนด์ใหม่ มี 1 โครงการ · โทร AP 1623 verify inventory + โครงการใหม่ที่กำลังเปิด</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ GOOD DAY → LINE</a></div></div>
+        </div>
+
+      </div><!-- /dev-ap -->
 
     </div>
   </section>
