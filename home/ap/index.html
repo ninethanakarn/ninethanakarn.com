@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="บ้านมือ 1 อยู่เอง — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ">
+  <meta property="og:url" content="https://ninethanakarn.com/home/ap/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="บ้านมือ 1 อยู่เอง">
+  <meta name="twitter:description" content="บ้านใหม่จาก developer Top 20 SET สำหรับครอบครัวที่อยากอยู่เอง">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>บ้านเอพี (AP Thailand) 11 แบรนด์ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg,#1e40af,#3b82f6); display:grid; place-items:center; box-shadow:0 4px 16px rgba(30,64,175,0.2); flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(30,64,175,0.35); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; stroke-width:1.8; }
+    .crit-flow-label { font-size:11px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:20px; color:rgba(59,130,246,0.4); font-size:1.1rem; flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:0.75rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2); border-radius:12px; padding:0.875rem 1rem; font-size:0.82rem; line-height:1.6; }
+    .crit-detail-title { font-weight:700; color:#3b82f6; margin-bottom:0.5rem; font-size:0.88rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; }
+    .crit-detail-list li { padding:0.2rem 0; color:var(--text); }
+    .crit-detail-list li::before { content:'• '; color:#3b82f6; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .toc-table { width: 100%; border-collapse: collapse; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .toc-table th { text-align: left; padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); background: var(--section-bg); font-weight: 600; }
+    .toc-table td { padding: 0.7rem 0.75rem; font-size: 0.88rem; border-top: 1px solid var(--card-border); }
+    .toc-brand-row { cursor: pointer; transition: background 0.15s; }
+    .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
+    .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+
+    /* Card image */
+    .card-img-wrap { border-radius: 12px 12px 0 0; overflow: hidden; aspect-ratio: 16/9; background: var(--section-bg); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .property-card:hover .card-img-wrap img { transform: scale(1.04); }
+
+    /* Developer icon grid */
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 1.25rem; }
+    .dev-icon-btn {
+      display: flex; align-items: center; gap: 0.875rem;
+      background: var(--section-bg); border: 1.5px solid var(--card-border);
+      border-radius: 12px; padding: 0.875rem 1.1rem;
+      cursor: pointer; text-align: left; width: 100%;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    }
+    .dev-icon-btn:hover { border-color: rgba(59,130,246,0.5); background: rgba(59,130,246,0.04); }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; letter-spacing: 0.02em; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    /* PSH category accordion (2-level) */
+    .cat-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; }
+    .cat-chevron { transition: transform 0.2s; font-size: 0.85rem; flex-shrink: 0; margin-left: 0.5rem; }
+    .cat-toggle.open .cat-chevron { transform: rotate(90deg); }
+    .cat-list { display: none; }
+    .cat-list.open { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; transition: transform 0.2s; }
+    .dev-icon-btn.active .dev-chevron { transform: rotate(-180deg); }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; min-width:26px; min-height:26px; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏡 บ้านเอพี (AP Thailand)</h1>
+      <p class="hero-subtitle">11 แบรนด์แนวราบ · บ้านเดี่ยว 6 + ทาวน์โฮม/แฝด 5 · SET: AP · คัดเฉพาะมือ 1</p>
+      <p style="margin-top:0.6rem;"><a href="/home/" style="color:#3b82f6;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+<!-- AP Brand Panel -->
+      <div id="dev-ap">
+
+        <div class="brand-toc" id="ap-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🏡 บ้านเดี่ยว เอพี — 6 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showBrand('ap-palazzo','ap-toc')">
+                <span class="brand-list-name">THE PALAZZO — Ultra Luxury</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>49.9–120 ล้าน</span><span>Neo Classic · 2 โครงการ Exclusive</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-beon','ap-toc')">
+                <span class="brand-list-name">BEON — Ultra Luxury (ใหม่ 2025)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>45–90 ล้าน</span><span>3 ชั้น · ลิฟต์+สระ · 23 ครอบครัว</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-baan-klang-krung','ap-toc')">
+                <span class="brand-list-name">BAAN KLANG KRUNG — Urban Luxury</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>28.6–48.9 ล้าน</span><span>Vertical Estate · ใจกลางเมือง</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-the-city','ap-toc')">
+                <span class="brand-list-name">THE CITY — Premium</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>11.9–40 ล้าน</span><span>Modern Luxury · ~23 โครงการ</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-centro','ap-toc')">
+                <span class="brand-list-name">CENTRO — Entry-Mid (Flagship)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>4.59–18 ล้าน</span><span>Volume สูงสุด · ~33 โครงการ</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-moden','ap-toc')">
+                <span class="brand-list-name">MODEN — Mid</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>4–12 ล้าน</span><span>Modern/Minimal · starter family</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🏠 ทาวน์โฮม + บ้านแฝด เอพี — 5 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showBrand('ap-classe','ap-toc')">
+                <span class="brand-list-name">บ้านกลางเมือง CLASSE — Luxury</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>13.9–25 ล้าน</span><span>3–3.5 ชั้น · พร้อมอยู่</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-the-edition','ap-toc')">
+                <span class="brand-list-name">บ้านกลางเมือง THE EDITION</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>3.98–11.9 ล้าน</span><span>3 ชั้น Premium · ใจกลางเมือง</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-grande-pleno','ap-toc')">
+                <span class="brand-list-name">GRANDE PLENO — Premium</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>2.59–9 ล้าน</span><span>ทาวน์โฮม+บ้านแฝด · 22 โครงการ</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-baan-klang-muang','ap-toc')">
+                <span class="brand-list-name">บ้านกลางเมือง (Baan Klang Muang)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>3.59–7 ล้าน</span><span>Premium Urban Townhome</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('ap-pleno','ap-toc')">
+                <span class="brand-list-name">PLENO — Mid (Volume สูงสุด)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.59–5.79 ล้าน</span><span>ทาวน์โฮม · 28+ โครงการ</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* AP (Thailand) PLC (SET: AP) Top-tier developer · <strong>11 แบรนด์แนวราบ active</strong> (บ้านเดี่ยว 6 + ทาวน์โฮม/แฝด 5) · ผ่อน/รายได้คำนวณดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%<br>
+          * <strong>11 แบรนด์นี้ไม่มีในชลบุรี/EEC</strong> — AP ใช้แบรนด์ <strong>APITOWN</strong> สำหรับต่างจังหวัด/EEC (ระยอง/ฉะเชิงเทรา active · ชลบุรี-บางแสน coming soon · 1.99–13M) · CLASSE/THE EDITION = sub-line ของบ้านกลางเมือง · โทร <strong>AP 1623</strong> verify ราคา + inventory</p>
+        </div>
+
+        <!-- AP Brand Details -->
+        <div class="psh-cat">🏡 บ้านเดี่ยว เอพี — 6 แบรนด์</div>
+        <div id="brand-ap-palazzo" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Ultra Luxury</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น · Multi-Gen</span></div>
+            <div class="card-title">THE PALAZZO</div>
+            <div class="card-meta">"MASTERPIECE FOR GENERATIONS" · บ้านเดี่ยว Ultra Luxury · American Neo Classic + Beaux Arts + Biophilic · รองรับ multi-generational · Exclusive ไซส์ใหญ่</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">49.9 – 120 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">520 – 1,140 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">เริ่ม 100 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">บ้านเดี่ยว 2 ชั้น · Multi-Gen</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li>กรุงเทพกรีฑา — ใกล้มอเตอร์เวย์ 2 สาย · 23 ยูนิต Exclusive · เริ่ม 56.9 ล้าน (สูงสุด 120)</li>
+              <li>ปิ่นเกล้า-บรมราชชนนี — เริ่ม 49.9 ล้าน (สูงสุด 80)</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ (AP ใช้ APITOWN สำหรับต่างจังหวัด)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>224,100 – 538,800 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>373,500 – 898,000 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ THE PALAZZO → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-beon" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Ultra Luxury · ใหม่ 2025</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 3 ชั้น · ลิฟต์+สระ</span></div>
+            <div class="card-title">BEON</div>
+            <div class="card-meta">"LIVING IN THE EDGE OF CONTRAST" · บ้านเดี่ยว Ultra Luxury 3 ชั้น · Ultra Volume & Vertiplex · เพดาน 6.8 ม. · แบรนด์ใหม่ล่าสุด (เปิด พ.ย. 2025) · เหมาะครอบครัวเมืองรุ่นใหม่ระดับบน</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">45 – 90 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">635 – 825 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">153 – 204 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">6 นอน · 7 น้ำ · 5 จอด · 3 ชั้น + ลิฟต์</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li>เกษตร-นวมินทร์ — ซ.นวลจันทร์ · เชื่อมเอกมัย-ทองหล่อ · 10 นาทีถึง Central EastVille · 23 ครอบครัว Exclusive · เริ่ม 45 ล้าน · <span style="background:rgba(34,197,94,0.15);color:#16a34a;border:1px solid rgba(34,197,94,0.3);border-radius:4px;padding:0.05rem 0.35rem;font-size:0.75rem;">ใหม่ พ.ย. 2025</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>202,100 – 404,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>336,800 – 673,500 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BEON → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-baan-klang-krung" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Ultra Luxury · Urban</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2–3 ชั้น · ใจกลางเมือง</span></div>
+            <div class="card-title">BAAN KLANG KRUNG</div>
+            <div class="card-meta">"The Pinnacle of Vertical Estate Living" · บ้านเดี่ยวหรูใจกลางเมือง ทำเลหายาก · Modern Classic + Vertical Estate · เหมาะผู้บริหาร/เจ้าของธุรกิจ</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">28.6 – 48.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">400 – 620 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">urban plot ใจกลางเมือง</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">บ้านเดี่ยว 2–3 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li>สาธุประดิษฐ์ 57 — สาทร-พระราม 3 · Central พระราม 3 2.7 กม. · King's College Int'l 2.9 กม. · เริ่ม 48.9 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>128,400 – 219,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>214,100 – 366,000 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>inventory บาง (เหลือ ~1 โครงการ) · โทร AP 1623 verify สต็อกมือ 1 คงเหลือ</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BAAN KLANG KRUNG → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-the-city" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">Premium / High-end</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น Modern Luxury</span></div>
+            <div class="card-title">THE CITY</div>
+            <div class="card-meta">"WHERE FUNCTION MEETS LUXURY" · บ้านเดี่ยว Premium Modern Luxury · open-plan โปร่งโล่ง · ทำเลศักยภาพทั่วกรุงเทพ · high-volume (~23 โครงการ)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">11.9 – 40 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">262 – 580 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">โมเดลใหญ่ ~100 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">บ้านเดี่ยว 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>ทวีวัฒนา — ธนบุรี · บรมราชชนนี ~4.2 กม. · เริ่ม 11.9 ล้าน</li>
+              <li>พระราม 5-นครอินทร์ 2 — รร.นานาชาติ 800 ม. · เริ่ม 12.9 ล้าน</li>
+              <li>เพชรเกษม-บางบอน — รร.สารสาสน์หนองแขม 1.7 กม. · เริ่ม 14.9 ล้าน</li>
+              <li>เสรีไทย-วงแหวน — รามอินทรา · วงแหวนกาญจนาฯ 2.8 กม. · เริ่ม 14.9 ล้าน</li>
+              <li>สุขสวัสดิ์-พระราม 3 — MRT บางปะกอก 1.7 กม. · เริ่ม 15 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>53,400 – 179,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>89,100 – 299,300 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ THE CITY → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-centro" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Entry-Mid · Flagship</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น · ครอบครัว</span></div>
+            <div class="card-title">CENTRO</div>
+            <div class="card-meta">"SPACE COMPLETES LIFE" · บ้านเดี่ยว Entry-Mid แบรนด์เรือธง volume สูงสุดของ AP (~33 โครงการ) · เหมาะครอบครัว middle–upper-middle เน้น function</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">4.59 – 18 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">154 – 375 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">เริ่ม ~88 ตร.วา (รุ่นใหญ่)</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 4–5 น้ำ · 2–3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>ประชาอุทิศ 90 — สมุทรปราการ · ใกล้ทางด่วน · เริ่ม 4.59 ล้าน</li>
+              <li>ราชพฤกษ์ — นนทบุรี · สถานีบางพลู 3 นาที · เริ่ม 4.99 ล้าน</li>
+              <li>พหลโยธิน-สายไหม — เริ่ม 8.59 ล้าน</li>
+              <li>ศรีนครินทร์-บางนา 2 — MRT ศรีอุดม 4.1 กม. · เริ่ม 10.9 ล้าน</li>
+              <li>ทวีวัฒนา 2 — บรมราชชนนี 4.1 กม. · เริ่ม 10.9 ล้าน</li>
+              <li>บางนา / สุขุมวิท-บางนา / ลาดพร้าว-เสรีไทย — เริ่ม 11.9 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ (AP ใช้ APITOWN สำหรับต่างจังหวัด)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>20,600 – 80,800 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>34,400 – 134,700 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ CENTRO → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-moden" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid · Modern/Minimal</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น · starter family</span></div>
+            <div class="card-title">MODEN</div>
+            <div class="card-meta">"NEW DEFINITION DEFINED" · บ้านเดี่ยว Mid สไตล์ Modern/Minimal (Japanese) · Zero-Wasted Space · เหมาะคนรุ่นใหม่ + ครอบครัวเริ่มต้น</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">4 – 12 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">160 – 263 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ active</div><div class="stat-value">~11 โครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 5 น้ำ · 3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>ประชาอุทิศ 90 — สมุทรปราการ · ใกล้ทางด่วน · เริ่ม 4.39 ล้าน</li>
+              <li>บางนา-เทพารักษ์ — สมุทรปราการ · เริ่ม ~4 ล้าน</li>
+              <li>รังสิตคลอง 4-วงแหวน — ปทุมธานี · 207 ยูนิต · 4.99–8 ล้าน</li>
+              <li><span style="font-size:0.78rem;">โซนอื่น: ราชพฤกษ์ · พระราม 2 · พระราม 9 · เพชรเกษม-บางแค · รามอินทรา</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>18,000 – 53,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>29,900 – 89,800 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ MODEN → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat">🏠 ทาวน์โฮม + บ้านแฝด เอพี — 5 แบรนด์</div>
+        <div id="brand-ap-classe" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">Luxury Townhome</span><span style="font-size:0.75rem;color:var(--muted);">บ้านแฝด/ทาวน์โฮม 3–3.5 ชั้น</span></div>
+            <div class="card-title">บ้านกลางเมือง CLASSE</div>
+            <div class="card-meta">sub-line Luxury ของบ้านกลางเมือง · ทาวน์โฮม/บ้านแฝดหรู 3–3.5 ชั้น ใจกลางเมือง · "นวัตกรรมที่อยู่อาศัยเหนือระดับ" · ส่วนใหญ่พร้อมอยู่ (มือ 1 Ready-to-move)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">13.9 – 25 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">190 – 364 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ active</div><div class="stat-value">3 โครงการ (พร้อมอยู่)</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–3.5 ชั้น · ที่จอดในตัว</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (พร้อมอยู่ มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li>สุขุมวิท 77 — อ่อนนุช · BTS อ่อนนุช-บางจาก · 190–259 ตร.ม. · 13.9–25 ล้าน</li>
+              <li>รัชดา-ลาดพร้าว — MRT ลาดพร้าว · 234–364 ตร.ม. · 18.8–25 ล้าน</li>
+              <li>รัชโยธิน — BTS รัชโยธิน · 214–238 ตร.ม. · เริ่ม 24.9 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>62,400 – 112,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>104,000 – 187,200 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ CLASSE → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-the-edition" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · 3 ชั้น</span><span style="font-size:0.75rem;color:var(--muted);">บ้านแฝด/ทาวน์โฮม villa-style</span></div>
+            <div class="card-title">บ้านกลางเมือง THE EDITION</div>
+            <div class="card-meta">sub-line Premium 3 ชั้น ของบ้านกลางเมือง · "LIVING IN UNIQUENESS" · ทาวน์โฮม/บ้านแฝด villa-style ใจกลางเมือง · เหมาะ young urbanite + work/live/leisure</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">3.98 – 11.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">151 – 307 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ active</div><div class="stat-value">~12 โครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 2 จอด · 3 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>สาทร-สุขสวัสดิ์ — สุขสวัสดิ์/พระราม 3 · ใกล้ทางด่วน 2 สาย · ทาวน์โฮม 3.99–6 ล้าน</li>
+              <li>พหลฯ-รามอินทรา — รามอินทรา · BTS สายหยุด · เริ่ม 8.99–10.99 ล้าน</li>
+              <li><span style="font-size:0.78rem;">โซนอื่น: บางนา · พระราม 9 · วิภาวดี 60 · สาทร-กัลปพฤกษ์ · ศรีนครินทร์</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>17,900 – 53,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>29,800 – 89,100 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ THE EDITION → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-grande-pleno" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม + บ้านแฝด 2 ชั้น</span></div>
+            <div class="card-title">GRANDE PLENO</div>
+            <div class="card-meta">"THE SUPERIOR LEVEL OF HAPPINESS" · ทาวน์โฮม/บ้านแฝด Premium · พื้นที่ใช้สอยมากขึ้น · upgrade จาก PLENO · เหมาะครอบครัวหลายสมาชิก (22 โครงการ)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.59 – 9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">110 – 224 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ active</div><div class="stat-value">22 โครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3 นอน · 2–3 น้ำ · 2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>รามอินทรา-จตุโชติ — เลียบกาญจนาฯ · MRT สีชมพู · ทาวน์โฮม 3.59 / บ้านแฝด 5.49–7.29 ล้าน</li>
+              <li>พหลโยธิน-เพิ่มสิน 28 — สายไหม · BTS สะพานใหม่ · ทาวน์โฮม 3.69 / บ้านแฝด 6.39 ล้าน</li>
+              <li>ราชพฤกษ์ — นนทบุรี · ทาวน์โฮมเริ่ม 3.99 ล้าน</li>
+              <li>สุขุมวิท-แพรกษา — สมุทรปราการ · BTS แพรกษา ~3 กม. · ~5 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>11,600 – 40,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>19,400 – 67,300 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ GRANDE PLENO → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-baan-klang-muang" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium Urban Townhome</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2–3 ชั้น · ใจกลางเมือง</span></div>
+            <div class="card-title">บ้านกลางเมือง (Baan Klang Muang)</div>
+            <div class="card-meta">"THE PORTRAIT OF SUCCESS" · ทาวน์โฮม Premium ใจกลางเมือง best-in-class · เชื่อมต่อเมืองสะดวก · security 24/7 · เหมาะ Urban Professional (มี sub-line CLASSE/THE EDITION)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (Series หลัก)</div><div class="stat-value">3.59 – 7 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">106 – 218 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ active</div><div class="stat-value">18 โครงการ (รวม sub-line)</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3 นอน · 3 น้ำ · 2 จอด · 2–3 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>รามอินทรา — MRT สีชมพู · 3 ชั้น · เริ่ม 3.59 ล้าน</li>
+              <li>กัลปพฤกษ์ — ฝั่งธน · เริ่ม 3.99 ล้าน</li>
+              <li>ปิ่นเกล้า-บรมฯ — ใกล้ทางด่วนศรีรัช · เริ่ม 4.69 ล้าน</li>
+              <li>พหลฯ-รามอินทรา — ลาดปลาเค้า · BTS สายหยุด 5 นาที · เริ่ม 4.77 ล้าน</li>
+              <li>สุขสวัสดิ์-พระราม 3 — เริ่ม 4.79 ล้าน</li>
+              <li>สุขุมวิท-อ่อนนุช — BTS อ่อนนุช · เริ่ม 4.88 ล้าน</li>
+              <li>บางนา-วงแหวน — 3 ชั้น + คลับเฮาส์ · เริ่ม 4.99 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>16,100 – 31,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>26,900 – 52,300 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ บ้านกลางเมือง → LINE</a></div></div>
+        </div>
+
+        <div id="brand-ap-pleno" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('ap-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid · Volume สูงสุด</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น · First Home</span></div>
+            <div class="card-title">PLENO</div>
+            <div class="card-meta">"เพิ่มพื้นที่ความสุข" · ทาวน์โฮม Mid แบรนด์ volume สูงสุดของ AP (28+ โครงการ) · ฟังก์ชันยืดหยุ่น · เหมาะ first jobber + บ้านหลังแรก (มี sub-series PLENO TOWN ราคาประหยัดกว่า)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.59 – 5.79 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">93 – 154 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ active</div><div class="stat-value">28+ โครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">2–3 นอน · 2–3 น้ำ · 1–2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>PLENO TOWN ลำลูกกา-คลอง 5 — ปทุมธานี · BTS ส่วนต่อขยาย · เริ่ม ~1.59 ล้าน</li>
+              <li>PLENO TOWN ธรรมศาสตร์-รังสิต — ใกล้ ม.ธรรมศาสตร์ · 1.99–4.49 ล้าน</li>
+              <li>แจ้งวัฒนะ-ติวานนท์ — นนทบุรี · เริ่ม 2.69 ล้าน</li>
+              <li>ราชพฤกษ์ 2 — นนทบุรี · 2.79–5.79 ล้าน</li>
+              <li>PLENO TOWN แจ้งวัฒนะ 14 — MRT สีชมพู แจ้งวัฒนะ · เริ่ม 2.99 ล้าน</li>
+              <li>สุขุมวิท-บางนา 4 — ใกล้ MEGA Bangna · เริ่ม 4.69 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ (AP ใช้ APITOWN สำหรับต่างจังหวัด)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>7,100 – 26,000 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>11,900 – 43,300 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ PLENO → LINE</a></div></div>
+        </div>
+
+      </div><!-- /dev-brand-panel#dev-ap -->
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
+      </div>
+    </div>
+  </footer>
+<script>
+    function toggleCrit(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#critFlow .crit-flow-item');
+      var allDetails = document.querySelectorAll('.crit-detail-wrap');
+      var isOpen = el.classList.contains('show');
+      allDetails.forEach(function(d){ d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = parseInt(id.replace('c','')) - 1;
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    function toggleStep2(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#stepFlow2 .crit-flow-item');
+      var ids = ['s2_1','s2_2','s2_3','s2_4'];
+      var isOpen = el.classList.contains('show');
+      ids.forEach(function(i){ var d=document.getElementById(i); if(d) d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = ids.indexOf(id);
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#critFlow') && !e.target.closest('#stepFlow2') && !e.target.closest('.crit-detail-wrap')) {
+        document.querySelectorAll('.crit-detail-wrap').forEach(function(d){ d.classList.remove('show'); });
+        document.querySelectorAll('.crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
+      }
+      // Close all <details> when clicking outside
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'lpn-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc(tocId) {
+      tocId = tocId || 'lpn-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleCat(el) {
+      el.classList.toggle('open');
+      var list = el.parentElement.querySelector('.cat-list');
+      if (list) list.classList.toggle('open');
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+
+    // Developer icon toggle
+    document.querySelectorAll('.dev-icon-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var devId = this.dataset.dev;
+        var panel = document.getElementById('dev-' + devId);
+        var isActive = this.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.dev-icon-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.dev-brand-panel').forEach(function(p) { p.classList.remove('active'); });
+        // Open this one (toggle off if already active)
+        if (!isActive) {
+          this.classList.add('active');
+          if (panel) panel.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

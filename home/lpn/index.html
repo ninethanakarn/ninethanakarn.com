@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="บ้านมือ 1 อยู่เอง — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ">
+  <meta property="og:url" content="https://ninethanakarn.com/home/lpn/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="บ้านมือ 1 อยู่เอง">
+  <meta name="twitter:description" content="บ้านใหม่จาก developer Top 20 SET สำหรับครอบครัวที่อยากอยู่เอง">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>บ้านลุมพินี (LPN) 5 แบรนด์ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg,#1e40af,#3b82f6); display:grid; place-items:center; box-shadow:0 4px 16px rgba(30,64,175,0.2); flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(30,64,175,0.35); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; stroke-width:1.8; }
+    .crit-flow-label { font-size:11px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:20px; color:rgba(59,130,246,0.4); font-size:1.1rem; flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:0.75rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2); border-radius:12px; padding:0.875rem 1rem; font-size:0.82rem; line-height:1.6; }
+    .crit-detail-title { font-weight:700; color:#3b82f6; margin-bottom:0.5rem; font-size:0.88rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; }
+    .crit-detail-list li { padding:0.2rem 0; color:var(--text); }
+    .crit-detail-list li::before { content:'• '; color:#3b82f6; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .toc-table { width: 100%; border-collapse: collapse; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .toc-table th { text-align: left; padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); background: var(--section-bg); font-weight: 600; }
+    .toc-table td { padding: 0.7rem 0.75rem; font-size: 0.88rem; border-top: 1px solid var(--card-border); }
+    .toc-brand-row { cursor: pointer; transition: background 0.15s; }
+    .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
+    .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+
+    /* Card image */
+    .card-img-wrap { border-radius: 12px 12px 0 0; overflow: hidden; aspect-ratio: 16/9; background: var(--section-bg); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .property-card:hover .card-img-wrap img { transform: scale(1.04); }
+
+    /* Developer icon grid */
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 1.25rem; }
+    .dev-icon-btn {
+      display: flex; align-items: center; gap: 0.875rem;
+      background: var(--section-bg); border: 1.5px solid var(--card-border);
+      border-radius: 12px; padding: 0.875rem 1.1rem;
+      cursor: pointer; text-align: left; width: 100%;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    }
+    .dev-icon-btn:hover { border-color: rgba(59,130,246,0.5); background: rgba(59,130,246,0.04); }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; letter-spacing: 0.02em; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    /* PSH category accordion (2-level) */
+    .cat-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; }
+    .cat-chevron { transition: transform 0.2s; font-size: 0.85rem; flex-shrink: 0; margin-left: 0.5rem; }
+    .cat-toggle.open .cat-chevron { transform: rotate(90deg); }
+    .cat-list { display: none; }
+    .cat-list.open { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; transition: transform 0.2s; }
+    .dev-icon-btn.active .dev-chevron { transform: rotate(-180deg); }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; min-width:26px; min-height:26px; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏠 บ้านลุมพินี (LPN)</h1>
+      <p class="hero-subtitle">5 แบรนด์แนวราบ · ทาวน์โฮม 2 + บ้านเดี่ยว 3 · SET: LPN · คัดเฉพาะมือ 1</p>
+      <p style="margin-top:0.6rem;"><a href="/home/" style="color:#3b82f6;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+<!-- LPN Brand Panel -->
+      <div id="dev-lpn">
+
+      <!-- สารบัญ -->
+      <div class="brand-toc" id="lpn-toc">
+        <div class="toc-group">
+          <div class="toc-group-title">🏠 ทาวน์โฮม ลุมพินี — 2 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('venue-24')">
+              <span class="brand-list-name">Venue 24</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 2.19–4.09 ล้าน</span><span>ผ่อน 9,800–18,400 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('lumpini-town-place')">
+              <span class="brand-list-name">Lumpini Town Place</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 4.39–6.6 ล้าน</span><span>ผ่อน 19,700–29,600 บ./เดือน</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-title">🏠 บ้านเดี่ยว ลุมพินี — 3 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('haus-24')">
+              <span class="brand-list-name">Haus 24</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 4.29–7 ล้าน</span><span>ผ่อน 19,300–31,400 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('villa-168')">
+              <span class="brand-list-name">Villa 168</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 8.99–15 ล้าน</span><span>ผ่อน 40,400–67,400 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('baan-365')">
+              <span class="brand-list-name">Baan 365</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 18–60 ล้าน</span><span>ผ่อน 80,800–269,400 บ./เดือน</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Brand Details -->
+      <div class="psh-cat">🏠 ทาวน์โฮม ลุมพินี — 2 แบรนด์</div>
+        <div id="brand-venue-24" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <!-- VENUE 24 -->
+        <div class="property-card">
+          <div class="card-img-wrap">
+            <img src="/images/venue24.png" alt="VENUE 24" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge badge-success">Entry – Mid</span>
+              <span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม 2 ชั้น</span>
+            </div>
+            <div class="card-title">VENUE 24</div>
+            <div class="card-meta">Modern / Nordic style · ทาวน์โฮมดีไซน์ใหม่ (รีแบรนด์จาก Venue 168) · Clubhouse + Fitness + Co-working + CCTV 24 ชม. · ใกล้รถไฟฟ้า เหมาะ First Home / First Jobber · ทาวน์โฮม LPN ที่ active สุด</div>
+            <div class="card-stats">
+              <div class="stat-item">
+                <div class="stat-label">ราคา (รวม Series)</div>
+                <div class="stat-value">2.19 – 4.09 ล้าน</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">พื้นที่ใช้สอย</div>
+                <div class="stat-value">105 – 141 ตร.ม.</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">ที่ดิน</div>
+                <div class="stat-value">16 – 22 ตร.วา · หน้ากว้าง 5–5.5 ม.</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">ฟังก์ชันบ้าน</div>
+                <div class="stat-value">3 นอน · 2 น้ำ · 2 จอด · 2 ชั้น</div>
+              </div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>คูคต Station — ลำลูกกา ปทุมธานี · BTS สายสีเขียว สถานีคูคต · เริ่ม 2.19 ล้าน</li>
+              <li>เวสต์เกต — บางบัวทอง นนทบุรี · MRT สีม่วง คลองบางไผ่ · Central Westgate / IKEA · เริ่ม 2.19 ล้าน</li>
+              <li>ประชาอุทิศ 90 — พระสมุทรเจดีย์ สมุทรปราการ · ตรงข้ามตลาดรวยมาร์เก็ต · เริ่ม 2.22 ล้าน</li>
+              <li>ราชพฤกษ์ — ปากเกร็ด นนทบุรี · MRT สีม่วง บางรักน้อยท่าอิฐ · เริ่ม 2.69 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Venue 24 (LPN ชลบุรีมีแต่คอนโด)</li>
+            </ul>
+            <div class="callout info">
+              <span class="callout-icon">💳</span>
+              <span>ผ่อนประมาณ <strong>9,800 – 18,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>16,300 – 30,700 บ./เดือน</strong> (DSR 60%)</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VENUE 24 → LINE</a>
+          </div>
+        </div>
+
+      </div><!-- /brand-venue-24 -->
+
+      <div class="psh-cat">🏠 บ้านเดี่ยว ลุมพินี — 3 แบรนด์</div>
+        <div id="brand-haus-24" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <!-- HAUS 24 -->
+        <div class="property-card">
+          <div class="card-img-wrap">
+            <img src="/images/haus24.png" alt="HAUS 24" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge badge-warning">Mid – High</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านแฝด + บ้านเดี่ยว 2 ชั้น</span>
+            </div>
+            <div class="card-title">HAUS 24</div>
+            <div class="card-meta">"Simple living filled with happiness 24 hours" · บ้านแฝด+บ้านเดี่ยว Modern ทรง L-Shape · <strong>Private Courtyard หลังบ้านทุกหลัง</strong> · พัฒนาโดยพรสันติ (เครือ LPN) · เหมาะคนรุ่นใหม่/ครอบครัวเริ่มต้นขยาย</div>
+            <div class="card-stats">
+              <div class="stat-item">
+                <div class="stat-label">ราคา (รวม Series)</div>
+                <div class="stat-value">4.29 – 7 ล้าน</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">พื้นที่ใช้สอย</div>
+                <div class="stat-value">162 – 191 ตร.ม.</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">ที่ดิน</div>
+                <div class="stat-value">35 – 50 ตร.วา</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">ฟังก์ชันบ้าน</div>
+                <div class="stat-value">2–3 นอน · 3 น้ำ · 2 จอด · 2 ชั้น</div>
+              </div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>คูคต Station — ลำลูกกา ปทุมธานี · BTS สีเขียว สถานีคูคต ~3 กม. · เริ่ม 4.29 ล้าน</li>
+              <li>เวสต์เกต — บางบัวทอง นนทบุรี · ติดถนนลาดปลาดุก · Central Westgate · เริ่ม 4.49 ล้าน</li>
+              <li>แก้วอินทร์ — บางใหญ่ นนทบุรี · มอเตอร์เวย์บางใหญ่-กาญจน์ · Central Westgate · เริ่ม 5.19 ล้าน</li>
+              <li>ราชพฤกษ์ — ปากเกร็ด นนทบุรี · MRT สีม่วง บางรักน้อยท่าอิฐ · รร.นานาชาติเด่นหล้า · เริ่ม 5.79 ล้าน</li>
+              <li>บางใหญ่ — นนทบุรี · MRT สีม่วง คลองบางไผ่ · สอบถามราคา</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Haus 24 (LPN ชลบุรีมีแต่คอนโด)</li>
+            </ul>
+            <div class="callout info">
+              <span class="callout-icon">💳</span>
+              <span>ผ่อนประมาณ <strong>19,300 – 31,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>32,200 – 52,300 บ./เดือน</strong> (DSR 60%)</span>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ HAUS 24 → LINE</a>
+          </div>
+        </div>
+
+      </div><!-- /brand-haus-24 -->
+
+      <div id="brand-lumpini-town-place" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap">
+            <img src="/images/lumpini-townplace.png" alt="Lumpini Town Place" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge badge-warning">Mid – High</span>
+              <span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม 3 ชั้น</span>
+            </div>
+            <div class="card-title">LUMPINI TOWN PLACE</div>
+            <div class="card-meta">ทาวน์โฮม 3–3.5 ชั้น สไตล์ Modernist · <strong>จุดเด่น: ที่จอด 3 คัน</strong> · พื้นที่กว้าง ใจกลางเมือง · เหมาะครอบครัวขยาย/กำลังซื้อสูง ที่ต้องการทาวน์โฮมระดับบนใกล้รถไฟฟ้า</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">4.39 – 6.6 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">133 – 209 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">เริ่ม 19.9 ตร.วา · หน้ากว้าง 5.5 ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3 นอน · 3 น้ำ · 3 จอด · 3–3.5 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li><strong>ลาดพร้าว 101-โพธิ์แก้ว</strong> ⭐ — บางกะปิ กทม. (ลาดพร้าว 101 ซ.56) · MRT สีเหลือง ≤ 3 กม. · ใกล้ทางด่วนฉลองรัช · เอกมัย-ทองหล่อ · เริ่ม 5.98 ล้าน · <span style="font-size:0.75rem; background:rgba(34,197,94,0.15); color:#16a34a; border:1px solid rgba(34,197,94,0.3); border-radius:4px; padding:0.05rem 0.35rem;">Active มือ 1</span></li>
+              <li style="color:var(--muted); font-size:0.78rem;">สุขุมวิท-ศรีนครินทร์ · พระราม 2-ท่าข้าม · สุขุมวิท 62 — <strong>ปิดการขาย</strong>แล้ว (resale)</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Town Place (LPN ชลบุรีมีแต่คอนโด)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>19,700 – 29,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>32,800 – 49,400 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div>
+          <div class="card-footer">
+            <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ TOWN PLACE → LINE</a>
+          </div>
+        </div>
+      </div><!-- /brand-lumpini-town-place -->
+
+      <div id="brand-villa-168" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap">
+            <img src="/images/villa168.png" alt="Villa 168" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">High</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว 2 ชั้น</span>
+            </div>
+            <div class="card-title">VILLA 168</div>
+            <div class="card-meta">"ครบทุกมิติ" · บ้านเดี่ยว Modern Tropical · <strong>Private Courtyard ส่วนตัวทุกหลัง</strong> · Smart Home · EV Charger · พัฒนาโดยพรสันติ (เครือ LPN) · เหมาะครอบครัวระดับบน</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">8.99 – 15 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">183 – 378 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">50 – 80 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 2–5 น้ำ · 2–4 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>นิวกรุงเทพกรีฑา — ลาดกระบัง กทม. · ARL ลาดกระบัง · มอเตอร์เวย์ · สนามบินสุวรรณภูมิ · 105 ยูนิต (28 ไร่) · 247–378 ตร.ม. · 59–80 ตร.วา · เริ่ม 8.99 ล้าน</li>
+              <li>เวสต์เกต — บางบัวทอง นนทบุรี · MRT สีม่วง คลองบางไผ่ · Central Westgate · Exclusive ~20 ยูนิต · 183–268 ตร.ม. · เริ่ม 9–15 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Villa 168 (LPN ชลบุรีมีแต่คอนโด)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>40,400 – 67,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>67,300 – 112,300 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div>
+          <div class="card-footer">
+            <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VILLA 168 → LINE</a>
+          </div>
+        </div>
+      </div><!-- /brand-villa-168 -->
+
+      <div id="brand-baan-365" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap">
+            <img src="/images/baan365.png" alt="Baan 365" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge" style="background:rgba(217,119,6,0.15);color:#d97706;border:1px solid rgba(217,119,6,0.35);">Luxury</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว 3 ชั้น</span>
+            </div>
+            <div class="card-title">BAAN 365</div>
+            <div class="card-meta">"Livable Simple Luxury House / A Place of Mind" · บ้านเดี่ยว 3 ชั้น Urban Luxury Resort (ไทย + Western functionalism) · <strong>ลิฟต์ส่วนตัว + สระว่ายน้ำส่วนตัว</strong> (บางแบบ) · Smart Home · Prime Location · เหมาะเจ้าของกิจการ/ผู้บริหารรายได้สูง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">18 – 60 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">331 – 493 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">50 – 70 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 5–6 น้ำ · 2–3 จอด · 3 ชั้น + ลิฟต์</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>พระราม 3 — ยานนาวา กทม. · ริมแม่น้ำเจ้าพระยา · ใกล้สะพานภูมิพล/เลียบวงแหวนอุตสาหกรรม · 99 ยูนิต (บ้านเดี่ยว 3 ชั้น 41 + ทาวน์โฮม 4.5 ชั้น 58 พร้อมสระ) · 18–60 ล้าน · <span style="font-size:0.75rem; background:rgba(217,119,6,0.15); color:#d97706; border:1px solid rgba(217,119,6,0.35); border-radius:4px; padding:0.05rem 0.35rem;">Last Chance</span></li>
+              <li>สุขุมวิท 77 — สวนหลวง กทม. (อ่อนนุช 46) · BTS สีเขียว อ่อนนุช-อุดมสุข · Exclusive 38 หลัง · 331–493 ตร.ม. · 50/60/70 ตร.วา · เริ่ม 27 ล้าน · เสร็จ 2027 · <span style="font-size:0.75rem; background:rgba(34,197,94,0.15); color:#16a34a; border:1px solid rgba(34,197,94,0.3); border-radius:4px; padding:0.05rem 0.35rem;">Active</span></li>
+              <li>เจษฎาราชพฤกษ์ — บางกร่าง เมืองนนทบุรี · มูลค่า ~1,350 ลบ. · ส่งมอบ Q3/2026 · <span style="font-size:0.75rem; background:rgba(139,92,246,0.12); color:#7c3aed; border:1px solid rgba(139,92,246,0.3); border-radius:4px; padding:0.05rem 0.35rem;">Pre-launch (ยังไม่เปิดราคา)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Baan 365 (LPN ชลบุรีมีแต่คอนโด)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>80,800 – 269,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>134,700 – 449,000 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div>
+          <div class="card-footer">
+            <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BAAN 365 → LINE</a>
+          </div>
+        </div>
+      </div><!-- /brand-baan-365 -->
+
+
+      </div><!-- /dev-brand-panel#dev-lpn -->
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
+      </div>
+    </div>
+  </footer>
+<script>
+    function toggleCrit(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#critFlow .crit-flow-item');
+      var allDetails = document.querySelectorAll('.crit-detail-wrap');
+      var isOpen = el.classList.contains('show');
+      allDetails.forEach(function(d){ d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = parseInt(id.replace('c','')) - 1;
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    function toggleStep2(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#stepFlow2 .crit-flow-item');
+      var ids = ['s2_1','s2_2','s2_3','s2_4'];
+      var isOpen = el.classList.contains('show');
+      ids.forEach(function(i){ var d=document.getElementById(i); if(d) d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = ids.indexOf(id);
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#critFlow') && !e.target.closest('#stepFlow2') && !e.target.closest('.crit-detail-wrap')) {
+        document.querySelectorAll('.crit-detail-wrap').forEach(function(d){ d.classList.remove('show'); });
+        document.querySelectorAll('.crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
+      }
+      // Close all <details> when clicking outside
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'lpn-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc(tocId) {
+      tocId = tocId || 'lpn-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleCat(el) {
+      el.classList.toggle('open');
+      var list = el.parentElement.querySelector('.cat-list');
+      if (list) list.classList.toggle('open');
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+
+    // Developer icon toggle
+    document.querySelectorAll('.dev-icon-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var devId = this.dataset.dev;
+        var panel = document.getElementById('dev-' + devId);
+        var isActive = this.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.dev-icon-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.dev-brand-panel').forEach(function(p) { p.classList.remove('active'); });
+        // Open this one (toggle off if already active)
+        if (!isActive) {
+          this.classList.add('active');
+          if (panel) panel.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
