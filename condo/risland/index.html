@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คอนโดมือ 1 ลงทุนปล่อยเช่า · คัดจาก developer Top 20 SET · Yield ≥ 5% · MRT ≤ 3 กม. · ราคา 1.5–4.5 ล้าน — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="คอนโดมือ 1 ลงทุนปล่อยเช่า — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คัดคอนโดมือ 1 จาก developer Top 20 SET · Yield ≥ 5% · MRT/BTS ≤ 3 กม. · ราคา 1.5–4.5 ล้าน">
+  <meta property="og:url" content="https://ninethanakarn.com/condo/risland/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="คอนโดมือ 1 ลงทุนปล่อยเช่า">
+  <meta name="twitter:description" content="คัดคอนโดมือ 1 จาก developer Top 20 SET · Yield ≥ 5%">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>คอนโดริสแลนด์ (Risland) 4 แบรนด์ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; display:grid; place-items:center; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink:0; transition:transform .15s, box-shadow .15s; overflow:hidden; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; flex-shrink:0; }
+    .crit-flow-label { font-size:11.5px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:18px; color:var(--muted); flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:1rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { border:1px solid; border-radius:12px; padding:1rem 1.1rem; font-size:0.85rem; line-height:1.65; }
+    .crit-detail-title { font-weight:700; margin-bottom:0.6rem; font-size:0.92rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; display:grid; gap:0.35rem; }
+    .crit-detail-list li { padding:0.15rem 0 0.15rem 1.1rem; position:relative; color:var(--text); }
+    .crit-detail-list li::before { content:'›'; position:absolute; left:0; font-weight:700; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .dev-icon-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 1.5px solid var(--card-border); border-radius: 12px; background: var(--card-bg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; width: 100%; }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏙️ คอนโดริสแลนด์ (Risland)</h1>
+      <p class="hero-subtitle">4 แบรนด์คอนโด · Affordable–Luxury · 2.49 – 50+ ล้าน · เครือ Country Garden · เฉพาะกรุงเทพ</p>
+      <p style="margin-top:0.6rem;"><a href="/condo/" style="color:#3b82f6;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ คอนโดในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+<!-- Risland Thailand Condo Brand Panel -->
+      <div id="dev-risland">
+
+        <div class="brand-toc" id="risland-condo-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🏙️ คอนโด ริสแลนด์ — 4 แบรนด์</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('risland-artisan','risland-condo-toc')">
+                <span class="brand-list-name">Artisan — Premium Mixed-use (1 โครงการ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคาเริ่ม 2.8 ล้าน</span><span>ผ่อนเริ่ม 12,600 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('risland-cloud','risland-condo-toc')">
+                <span class="brand-list-name">CLOUD ⭐ Luxury (2 โครงการ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 2.99–49.93 ล้าน</span><span>Thonglor-Phetchaburi · SKV 23</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('risland-skyrise','risland-condo-toc')">
+                <span class="brand-list-name">Skyrise Avenue — Mid-Upper (1 โครงการ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 2.79–12.3 ล้าน</span><span>SKV 64 · BTS ปุณณวิถี 450 ม.</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('risland-livin','risland-condo-toc')">
+                <span class="brand-list-name">The Livin — Mid Affordable (2 โครงการ)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.59–5.5 ล้าน</span><span>ผ่อน 7,100–24,700 บ./เดือน</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* ผ่อน/รายได้คำนวณจากดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%<br>
+          * Risland Thailand เป็นเครือ Country Garden (Top-3 อสังหาฯจีน) · 4 brand series (Artisan/CLOUD/Skyrise Avenue/The Livin) · ทุกโครงการอยู่กรุงเทพชั้นใน · ไม่มีคอนโดในชลบุรี/EEC/ปริมณฑล · บ้านแนวราบ 1 แบรนด์ (Lake Serene พระราม 2) ดูเว็บ /home/</p>
+        </div>
+
+        <!-- Artisan Ratchada -->
+        <div class="psh-cat">🏙️ คอนโด ริสแลนด์ — 4 แบรนด์</div>
+        <div id="condo-risland-artisan" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('risland-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid-Upper · Mixed-use</span><span style="font-size:0.75rem;color:var(--muted);">High-rise 34 ชั้น · 4 อาคาร · พร้อมอยู่</span></div>
+              <div class="card-title">Artisan Ratchada (อาร์ติซาน รัชดา)</div>
+              <div class="card-meta">Mixed-use คอนโดระดับพรีเมียม · 4 อาคาร 34 ชั้น · 1,337 ยูนิต · ครบ Lifestyle ในตัว · ใจกลาง New CBD รัชดา-พระราม 9 · ใกล้ MRT ศูนย์วัฒนธรรม · สร้างเสร็จ ธ.ค. 2020</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคามือ 1</div><div class="stat-value">เริ่ม 2.8 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">28 – 78 ตร.ม. (1BR/2BR)</div></div>
+                <div class="stat-item"><div class="stat-label">โครงสร้าง</div><div class="stat-value">4 อาคาร · 34 ชั้น · 8.3 ไร่</div></div>
+                <div class="stat-item"><div class="stat-label">จำนวนยูนิต</div><div class="stat-value">1,337 ยูนิต</div></div>
+              </div>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบห้อง (2 Types)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">1 Bedroom</strong> — 28 – 42 ตร.ม. · เริ่ม 2.8 ล้าน</li>
+                <li><strong style="color:var(--text);">2 Bedroom</strong> — 72 – 78 ตร.ม. · ราคาสูงสุดประมาณ 8 ล้าน</li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพชั้นใน — CBD ใหม่ (Ratchada-Rama 9)</strong></li>
+                <li><strong>Artisan Ratchada</strong> — กรุงเทพฯ (ห้วยขวาง · ถ.เทียมร่วมมิตร) · ย่านรัชดา-พระราม 9 (New CBD) · ใกล้ <strong>MRT ศูนย์วัฒนธรรมแห่งประเทศไทย</strong> · Mixed-use ครบ Lifestyle · สร้างเสร็จ ธ.ค. 2020 · <span class="badge badge-warning" style="font-size:0.7rem;padding:0.05rem 0.35rem;">ต้อง verify inventory มือ 1 คงเหลือ</span></li>
+                <li><strong style="color:var(--text);">ชลบุรี / EEC</strong> — ไม่มีโครงการ Artisan (Risland ไม่มีคอนโดใน EEC เลย)</li>
+              </ul>
+
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>12,600 – 35,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 2.8–8M)</span><br>รายได้ขั้นต่ำ <strong>21,000 – 59,800 บ./เดือน</strong> (DSR 60%)<br>
+              <span style="color:#fbbf24;">💡 Risland claim "ผ่อนเริ่ม 6,000 บ./เดือน" สำหรับ promotion พิเศษ — verify เงื่อนไขกับ Sales Gallery</span></span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏪</span><span><strong>Mixed-use ในตัว 20 ร้านค้า:</strong> Convenience Store · Drugstore · Beauty Salon · ร้านอาหาร · ร้านค้า + Co-working · ห้องประชุม · ห้องอ่านหนังสือ · สระว่ายน้ำ · Fitness · Sauna · Steam · BBQ Garden · สนามเด็กเล่น · CCTV 24 ชม. · Keycard Access</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first jobber + young professional ที่ทำงานย่าน New CBD รัชดา-พระราม 9 · นักลงทุน Yield (Yield ตลาดศูนย์วัฒนธรรม 4-5% สำหรับ 1BR) · ลูกค้าที่ต้องการ mixed-use ครบ lifestyle ไม่ต้องออกนอกโครงการ</span></div>
+
+              <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span><strong>Action ก่อนนำเสนอ:</strong> โครงการสร้างเสร็จมา 5+ ปี (ธ.ค. 2020) · stock มือ 1 จาก Risland อาจเหลือน้อย/หมด · <strong>โทร Risland Sales Gallery 1407 ยืนยัน inventory มือ 1 คงเหลือ + เงื่อนไข promotion ผ่อนเริ่ม 6,000</strong> ก่อนนำเสนอลูกค้า · ถ้า stock หมดต้องไปดูตลาด resale</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Artisan Ratchada → LINE</a></div>
+          </div>
+        </div>
+
+        <!-- CLOUD Series — 2 projects in 1 card -->
+        <div id="condo-risland-cloud" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('risland-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury · 2 โครงการ</span><span style="font-size:0.75rem;color:var(--muted);">High-rise · ใจกลางสุขุมวิท CBD · พร้อมอยู่</span></div>
+              <div class="card-title">CLOUD Series ⭐</div>
+              <div class="card-meta">Luxury / Attainable Luxury High-rise · "ชีวิตเหนือเส้นขอบฟ้า ความหรูที่จับต้องได้" · 2 โครงการในใจกลางสุขุมวิท · CLOUD Thonglor-Phetchaburi (mass-luxury 661 ยูนิต) + Cloud Residences SKV 23 (372 ยูนิต ใจกลาง CBD)</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.99 – 49.93 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio · 1BR · 1BR+ · 2BR · Double Space · Penthouse</div></div>
+                <div class="stat-item"><div class="stat-label">โครงการมือ 1 active</div><div class="stat-value">2 ทำเล (CBD สุขุมวิท)</div></div>
+                <div class="stat-item"><div class="stat-label">ยูนิตรวม Series</div><div class="stat-value">1,033 ยูนิต (661 + 372)</div></div>
+              </div>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบห้อง CLOUD Thonglor-Phetchaburi (5 Types)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">1 Bedroom Suite</strong> — เริ่ม 2.99 ล้าน</li>
+                <li><strong style="color:var(--text);">Studio</strong> — เริ่ม 3.29 ล้าน</li>
+                <li><strong style="color:var(--text);">1 Bedroom Plus</strong> — สอบถามราคา</li>
+                <li><strong style="color:var(--text);">2 Bedroom</strong> — เริ่ม 5.99 ล้าน</li>
+                <li><strong style="color:var(--text);">Penthouse</strong> — สูงสุด ~12.9 ล้าน · พื้นที่ 24–102.47 ตร.ม.</li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบห้อง Cloud Residences SKV 23 (5 Types)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">1 Bedroom</strong> — 29–30 ตร.ม. · เริ่ม 5.97 ล้าน</li>
+                <li><strong style="color:var(--text);">1 Bedroom Plus</strong> — 41–43 ตร.ม.</li>
+                <li><strong style="color:var(--text);">2 Bedroom</strong> — 57–60 ตร.ม.</li>
+                <li><strong style="color:var(--text);">Double Space</strong> — 47–95 ตร.ม.</li>
+                <li><strong style="color:var(--text);">Penthouse</strong> — 79–99 ตร.ม. · ชั้น 40–43 · 2BR 2BA · สูงสุด 49.93 ล้าน</li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มือ 1 active เท่านั้น)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพชั้นใน — CBD สุขุมวิท (2 โครงการ active)</strong></li>
+                <li><strong>CLOUD Thonglor-Phetchaburi</strong> — กรุงเทพฯ (วัฒนา/ห้วยขวาง · ฝั่งเพชรบุรีตัดใหม่) · ใกล้ MRT เพชรบุรี + BTS พร้อมพงษ์ + BTS ทองหล่อ · High-rise 55 ชั้น · 661 ยูนิต · 3 ไร่ · มูลค่า 3,600+ ล้าน · <strong>เสร็จ ธ.ค. 2022 พร้อมอยู่</strong> · ราคา 2.99–12.9 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (พร้อมอยู่)</span></li>
+                <li><strong>Cloud Residences Sukhumvit 23</strong> — กรุงเทพฯ (วัฒนา · 122 ซอยสุขุมวิท 23 · คลองเตยเหนือ) · <strong>เดิน 3 นาทีถึง BTS อโศก + MRT สุขุมวิท</strong> · ใจกลาง CBD สุขุมวิท · High-rise 43 ชั้น · <strong>372 ยูนิต</strong> · เสร็จ มิ.ย. 2025 · ราคา <strong>5.97–49.93 ล้าน</strong> · เฉลี่ย ~270,000 บ./ตร.ม. · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (พร้อมอยู่)</span></li>
+                <li><strong style="color:var(--text);">ชลบุรี / EEC</strong> — ไม่มีโครงการ CLOUD (Luxury Sukhumvit-only brand · Risland ไม่มีคอนโดใน EEC เลย)</li>
+              </ul>
+
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>13,400 – 224,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 2.99–49.93M)</span><br>รายได้ขั้นต่ำ <strong>22,400 – 373,700 บ./เดือน</strong> (DSR 60%)</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🌆</span><span><strong>CLOUD Thonglor-Phetchaburi Facility (4,000+ ตร.ม. Sky Facilities):</strong><br>
+              · CLOUD Gourmet · Sky Library · Working Bar · Kid's Lounge<br>
+              · Sky Fitness · Sky Golf Simulator · Sky Yoga Studio · Sky Theater<br>
+              · Semi-outdoor U-shape Sky Pool with Sun Deck + Jacuzzi + Kid's Pool<br>
+              · Sky Lounge · Sky Rooftop Garden · Sauna · CCTV 24 ชม.</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">⭐</span><span><strong>Cloud Residences SKV 23 Facility (2,000+ ตร.ม. Triple Sky Floating):</strong><br>
+              · <strong>ชั้น 28:</strong> Infinite-edge Lap Pool<br>
+              · <strong>ชั้น 29:</strong> 270° Fitness Club + Yoga Studio<br>
+              · <strong>ชั้น 30:</strong> Rooftop Bar & Dining + Sky Common Pavilion</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> นักลงทุน Yield 4-6% ใน CBD · expat ที่ต้องการ Penthouse premium · ครอบครัวที่ต้องการคอนโดใจกลางเมือง · นักศึกษา ABAC/Assumption · ผู้ทำงานสุขุมวิท</span></div>
+
+              <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span><strong>Action ก่อนนำเสนอ:</strong> ทั้ง 2 โครงการพร้อมอยู่แล้ว (Thonglor 2022 · SKV 23 มิ.ย. 2025) · stock มือ 1 อาจเหลือบางส่วน · <strong>โทร Risland Sales Gallery 1407 ยืนยัน inventory + ชั้น/วิว + เงื่อนไข promotion</strong> ก่อนนำเสนอลูกค้า · ราคามือ 1 อาจถูกกว่ามือสองในตลาด (Resale market actively listed)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ CLOUD Series → LINE</a></div>
+          </div>
+        </div>
+
+        <!-- Skyrise Avenue Sukhumvit 64 -->
+        <div id="condo-risland-skyrise" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('risland-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid-Upper · พร้อมอยู่</span><span style="font-size:0.75rem;color:var(--muted);">ติด Cloud11 + ตรงข้าม True Digital Park</span></div>
+              <div class="card-title">Skyrise Avenue Sukhumvit 64</div>
+              <div class="card-meta"><strong style="color:var(--text);">"The New Oasis in Town"</strong> — คอนโด Modern Minimal ใจกลาง <strong>Cloud11</strong> (mega lifestyle complex ใหญ่สุดในไทย) + <strong>True Digital Park</strong> (tech hub Asia) · เดินถึง <strong>BTS ปุณณวิถี 450 ม.</strong> · พื้นที่ส่วนกลาง <strong>5+ ไร่</strong> · 49 ชั้น 1,961 ยูนิต · มูลค่าโครงการ 9,000+ ล้าน · เสร็จ พ.ย. 2024 · เข้าใจกลางสุขุมวิท 4-5 สถานี</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">2.79 – 12.3 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่</div><div class="stat-value">28 – 100 ตร.ม. (4 Types)</div></div>
+                <div class="stat-item"><div class="stat-label">BTS ปุณณวิถี</div><div class="stat-value">450 ม. · เดิน 5 นาที</div></div>
+                <div class="stat-item"><div class="stat-label">โครงสร้าง</div><div class="stat-value">49 ชั้น · 1,961 ยูนิต · 5+ ไร่</div></div>
+              </div>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบห้อง (4 Types)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">1 Bedroom · 1 Bathroom</strong> — 28 – 35 ตร.ม. · เริ่ม 2.79 ล้าน</li>
+                <li><strong style="color:var(--text);">2 Bedrooms · 2 Bathrooms</strong> — 45 – 55 ตร.ม.</li>
+                <li><strong style="color:var(--text);">3 Bedrooms · 2 Bathrooms</strong> — 80 – 100 ตร.ม. · สูงสุด ~12.3 ล้าน</li>
+                <li><strong style="color:var(--text);">Duplex Units</strong> — 35 – 55 ตร.ม. · loft-style</li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเล (มือ 1 active)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพ — สุขุมวิทใต้ (บางจาก)</strong></li>
+                <li><strong>Skyrise Avenue Sukhumvit 64</strong> — กรุงเทพฯ (บางจาก · พระโขนง) · <strong>BTS ปุณณวิถี 450 ม.</strong> · ติด Cloud11 (mixed-use lifestyle complex) · ตรงข้าม True Digital Park · พื้นที่ส่วนกลาง 5+ ไร่ · เสร็จ พ.ย. 2024 · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (พร้อมอยู่)</span></li>
+                <li><strong style="color:var(--text);">ชลบุรี / EEC</strong> — ไม่มีโครงการ Skyrise Avenue (Single-Location Brand · Risland ไม่มีคอนโดใน EEC)</li>
+              </ul>
+
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>12,500 – 55,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 2.79–12.3M)</span><br>รายได้ขั้นต่ำ <strong>20,900 – 92,000 บ./เดือน</strong> (DSR 60%)</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🚇</span><span><strong>Transit + Lifestyle:</strong> BTS ปุณณวิถี 450 ม. (เดิน 5 นาที) · เข้าเมือง 4-5 สถานี ถึง อโศก · ติด <strong>Cloud11</strong> (mega lifestyle complex · ใหญ่ที่สุดในไทย) + ตรงข้าม <strong>True Digital Park</strong> (tech hub · co-working) · เหมาะ tech workers + creative professionals</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🌳</span><span><strong>Facility (พื้นที่ส่วนกลาง 5+ ไร่):</strong> Reception Hall · Large Swimming Pool · Sauna · Fitness Center · Library · Garden · Co-working Lounge · Wi-Fi · 24-hour Security + CCTV · Covered Parking · Elevator (Concept "Oasis in Town" — เน้นพื้นที่สีเขียวขนาดใหญ่)</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> Tech workers True Digital Park · พนักงานบริษัทย่านสุขุมวิทใต้ · นักลงทุน Yield play (Yield ปุณณวิถี-อ่อนนุช 5-7% สำหรับ 1BR) · ลูกค้าที่ต้องการคอนโดติดรถไฟฟ้า + lifestyle complex ในตัว · 1,961 ยูนิต = ตลาดมือสองคึกคัก</span></div>
+
+              <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span><strong>Action ก่อนนำเสนอ:</strong> โครงการเสร็จ พ.ย. 2024 (1+ ปี) · stock มือ 1 จาก Risland เหลือบางส่วน · <strong>โทร Risland Sales Gallery 1407 ยืนยัน inventory + ชั้น/วิวที่ว่าง + เงื่อนไข promotion มือ 1</strong> ก่อนนำเสนอลูกค้า · ราคามือ 1 อาจแข่งกับ resale ที่ active ในตลาด</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Skyrise Avenue → LINE</a></div>
+          </div>
+        </div>
+
+        <!-- The Livin Series — 2 projects in 1 card -->
+        <div id="condo-risland-livin" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('risland-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid (Affordable) · 2 โครงการ</span><span style="font-size:0.75rem;color:var(--muted);">High-rise Mass · ใกล้รถไฟฟ้า · พร้อมอยู่</span></div>
+              <div class="card-title">The Livin Series</div>
+              <div class="card-meta">Affordable High-rise · Concept "Livin Beyond Boundary — unlimited life" · ราคาเข้าถึงในย่านชุมชน/มหาวิทยาลัย · 2 โครงการ: The Livin Ramkhamhaeng (EBD ตะวันออก · MRT Interchange ลำสาลี) + The Livin Phetkasem (ฝั่งธนบุรี · ใกล้ MRT บางหว้า)</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.59 – 5.5 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">22 – 55 ตร.ม. (Studio/1BR/2BR)</div></div>
+                <div class="stat-item"><div class="stat-label">โครงการมือ 1 active</div><div class="stat-value">2 ทำเล (EBD + ฝั่งธนฯ)</div></div>
+                <div class="stat-item"><div class="stat-label">ยูนิตรวม Series</div><div class="stat-value">4,105 ยูนิต (1,938 + 2,167)</div></div>
+              </div>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบห้อง The Livin Ramkhamhaeng (3 Types)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">Studio</strong> — 22–24 ตร.ม. · เริ่ม 1.59 ล้าน</li>
+                <li><strong style="color:var(--text);">1 Bedroom</strong> — 28–32 ตร.ม.</li>
+                <li><strong style="color:var(--text);">1 Bedroom Plus</strong> — ขนาดใหญ่ขึ้น</li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบห้อง The Livin Phetkasem (3 Types)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">Studio</strong> — 24 ตร.ม. · เริ่ม 1.9 ล้าน</li>
+                <li><strong style="color:var(--text);">1 Bedroom</strong> — 28–38 ตร.ม.</li>
+                <li><strong style="color:var(--text);">2 Bedroom</strong> — 45–55 ตร.ม. · สูงสุด ~5.5 ล้าน</li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มือ 1 active เท่านั้น)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพชั้นรอบตะวันออก — EBD (Eastern Business District)</strong></li>
+                <li><strong>The Livin Ramkhamhaeng</strong> — กรุงเทพฯ (บางกะปิ · ใกล้แยกลำสาลี) · <strong>MRT Interchange แยกลำสาลี 170 ม.</strong> (เชื่อม 3 สาย: เหลือง+ส้ม+น้ำตาล) · High-rise 42 ชั้น · 1,938 ยูนิต · ~9 ไร่ · มูลค่า 4,900 ล้าน · ชั้นพักอาศัยเริ่มชั้น 7 · เสร็จ มิ.ย. 2024 · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (พร้อมอยู่)</span></li>
+                <li><strong style="color:var(--text);">กรุงเทพชั้นรอบตะวันตก — ฝั่งธนบุรี</strong></li>
+                <li><strong>The Livin Phetkasem</strong> — กรุงเทพฯ (685 ถ.เพชรเกษม · บางหว้า · ภาษีเจริญ) · ใกล้ <strong>MRT บางหว้า</strong> (สายสีน้ำเงิน) · ใกล้ The Mall บางแค + คลองภาษีเจริญ · 2 ตึก (A 32 ชั้น + B 33 ชั้น) · <strong>2,167 ยูนิต</strong> · 9.8 ไร่ · พื้นที่สีเขียว 4.8 ไร่ · เสร็จ มี.ค. 2023 · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (พร้อมอยู่)</span></li>
+                <li><strong style="color:var(--text);">ชลบุรี / EEC</strong> — ไม่มีโครงการ The Livin (Affordable BKK-only brand · Risland ไม่มีคอนโดใน EEC เลย)</li>
+              </ul>
+
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>7,100 – 24,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 1.59–5.5M)</span><br>รายได้ขั้นต่ำ <strong>11,800 – 41,200 บ./เดือน</strong> (DSR 60%)</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🚇</span><span><strong>Ramkhamhaeng (EBD · MRT Interchange):</strong> ใกล้แยกลำสาลี 170 ม. = สถานี <strong>Interchange 3 สาย</strong> (เหลือง+ส้ม+น้ำตาล) เปิดในอนาคต · ใกล้ Airport Link หัวหมาก · The Mall บางกะปิ · 25+ facilities (running track · rooftop garden · concierge service)</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🌳</span><span><strong>Phetkasem (ฝั่งธนฯ · พื้นที่สีเขียว 4.8 ไร่):</strong> ใกล้ MRT บางหว้า (สายสีน้ำเงิน) · 25+ ฟังก์ชั่น 24 ชม. (Steam · Sauna · Yoga · Co-working · <strong>Golf Simulator</strong> · Library · Futsal · <strong>ท่าเรือคลองภาษีเจริญ</strong>) · 7 ร้านค้า commercial · มี Tower A + B</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong><br>
+              · <strong>Ramkhamhaeng:</strong> นักศึกษา ม.รามคำแหง · บุคลากร The Mall บางกะปิ · first jobber EBD · นักลงทุน Yield 5-7% (studio)<br>
+              · <strong>Phetkasem:</strong> ครอบครัวฝั่งธนฯ ที่ต้องการคอนโด Affordable พร้อม facility ครบ · ลูกค้าทำงาน CBD ที่ใช้ MRT สีน้ำเงิน · นักลงทุน Yield ปานกลาง</span></div>
+
+              <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span><strong>Action ก่อนนำเสนอ:</strong> ทั้ง 2 โครงการพร้อมอยู่แล้ว (Ramkhamhaeng มิ.ย. 2024 · Phetkasem มี.ค. 2023) · stock มือ 1 จาก Risland เหลือบางส่วน · <strong>โทร Risland Sales Gallery 1407 ยืนยัน inventory + ชั้น/วิว + เงื่อนไข promotion มือ 1</strong> ก่อนนำเสนอลูกค้า · ราคา resale คึกคักทั้ง 2 ที่</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Livin Series → LINE</a></div>
+          </div>
+        </div>
+
+      </div><!-- /dev-risland -->
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลใน portfolio นี้เป็น research summary ไม่ใช่คำแนะนำซื้อ/ขาย<br>
+        ตัวเลขราคา ค่าเช่า และดอกเบี้ยอาจเปลี่ยนแปลง กรุณา verify ก่อนตัดสินใจ
+      </div>
+    </div>
+  </footer>
+<script>
+    function showCondo(brandId, tocId) {
+      tocId = tocId || 'lpn-condo-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('condo-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showCondoToc(tocId) {
+      tocId = tocId || 'lpn-condo-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleDevPanel(id) {
+      var btn = document.querySelector('[data-dev="' + id + '"]');
+      var panel = document.getElementById('dev-' + id);
+      if (!btn || !panel) return;
+      var isOpen = btn.classList.contains('active');
+      // ปิดทุก panel ก่อน
+      document.querySelectorAll('.dev-icon-btn').forEach(function(b) {
+        b.classList.remove('active');
+        b.querySelector('.dev-chevron').textContent = '▸';
+      });
+      document.querySelectorAll('.dev-brand-panel').forEach(function(p) {
+        p.style.display = 'none';
+      });
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      // ถ้ากดปุ่มที่ยังไม่ได้เปิด ให้เปิด
+      if (!isOpen) {
+        btn.classList.add('active');
+        panel.style.display = 'block';
+        btn.querySelector('.dev-chevron').textContent = '▾';
+        showCondoToc(id + '-condo-toc');
+      }
+    }
+    var _activeCrit = null;
+    function toggleCrit(key) {
+      var panels = ['yield','location','developer','price'];
+      if (_activeCrit === key) {
+        // collapse
+        document.getElementById('crit-detail-' + key).classList.remove('show');
+        document.querySelector('[data-crit="' + key + '"]').classList.remove('active');
+        _activeCrit = null;
+      } else {
+        // collapse previous
+        if (_activeCrit) {
+          document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+          document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+        }
+        document.getElementById('crit-detail-' + key).classList.add('show');
+        document.querySelector('[data-crit="' + key + '"]').classList.add('active');
+        _activeCrit = key;
+      }
+    }
+    document.addEventListener('click', function(e) {
+      // Close criteria detail panels when clicking outside
+      if (_activeCrit) {
+        var flow = document.getElementById('crit-flow');
+        var details = document.querySelectorAll('.crit-detail-wrap');
+        var inside = flow && flow.contains(e.target);
+        details.forEach(function(d) { if (d.contains(e.target)) inside = true; });
+        if (!inside) {
+          document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+          document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+          _activeCrit = null;
+        }
+      }
+      // Close all <details> when clicking outside
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</body>
+</html>

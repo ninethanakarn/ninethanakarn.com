@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คอนโดมือ 1 ลงทุนปล่อยเช่า · คัดจาก developer Top 20 SET · Yield ≥ 5% · MRT ≤ 3 กม. · ราคา 1.5–4.5 ล้าน — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="คอนโดมือ 1 ลงทุนปล่อยเช่า — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คัดคอนโดมือ 1 จาก developer Top 20 SET · Yield ≥ 5% · MRT/BTS ≤ 3 กม. · ราคา 1.5–4.5 ล้าน">
+  <meta property="og:url" content="https://ninethanakarn.com/condo/siri/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="คอนโดมือ 1 ลงทุนปล่อยเช่า">
+  <meta name="twitter:description" content="คัดคอนโดมือ 1 จาก developer Top 20 SET · Yield ≥ 5%">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>คอนโดแสนสิริ (Sansiri) 12 แบรนด์ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; display:grid; place-items:center; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink:0; transition:transform .15s, box-shadow .15s; overflow:hidden; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; flex-shrink:0; }
+    .crit-flow-label { font-size:11.5px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:18px; color:var(--muted); flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:1rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { border:1px solid; border-radius:12px; padding:1rem 1.1rem; font-size:0.85rem; line-height:1.65; }
+    .crit-detail-title { font-weight:700; margin-bottom:0.6rem; font-size:0.92rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; display:grid; gap:0.35rem; }
+    .crit-detail-list li { padding:0.15rem 0 0.15rem 1.1rem; position:relative; color:var(--text); }
+    .crit-detail-list li::before { content:'›'; position:absolute; left:0; font-weight:700; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .dev-icon-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 1.5px solid var(--card-border); border-radius: 12px; background: var(--card-bg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; width: 100%; }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏙️ คอนโดแสนสิริ (Sansiri)</h1>
+      <p class="hero-subtitle">12 แบรนด์คอนโด active · Super Luxury–Entry · 0.88 – 80+ ล้าน · SET: SIRI · คัดเฉพาะมือ 1</p>
+      <p style="margin-top:0.6rem;"><a href="/condo/" style="color:#3b82f6;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ คอนโดในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+<!-- Sansiri Condo Brand Panel -->
+      <div id="dev-siri">
+
+        <div class="brand-toc" id="siri-condo-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🟣 Super Luxury · Ultra-HNW (1 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-98-wireless','siri-condo-toc')">
+                <span class="brand-list-name">98 Wireless ⭐ Super Luxury Flagship</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>เริ่ม 80 ล้าน</span><span>Pathumwan · 77 ยูนิต Exclusive</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🟠 Premium · Sukhumvit/CBD (3 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-via','siri-condo-toc')">
+                <span class="brand-list-name">VIA Series (VIA 34/61)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>12.9–22 ล้าน</span><span>สุขุมวิท 34/61 · Premium Quiet Soi</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-widen','siri-condo-toc')">
+                <span class="brand-list-name">WIDEN by Sansiri</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>8.9–49.9 ล้าน</span><span>นางลิ้นจี่ · Wide-Open · เสร็จ 2028</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-xt','siri-condo-toc')">
+                <span class="brand-list-name">XT Series (Phayathai · Ekkamai · Huaikhwang)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>3.89–14.9 ล้าน</span><span>3 ทำเล Premium · BTS/MRT</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🔵 Mid-Range · Transit-Oriented (4 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-line-vibe','siri-condo-toc')">
+                <span class="brand-list-name">The Line Vibe ⭐ Yield Play</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>เริ่ม 3.29 ล้าน</span><span>ห้าแยกลาดพร้าว · yield ~6% · พร้อมอยู่</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-base','siri-condo-toc')">
+                <span class="brand-list-name">The Base Series (หลายทำเล)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.49–6.59 ล้าน</span><span>Affordable Mid · BTS/MRT</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-move','siri-condo-toc')">
+                <span class="brand-list-name">The Muve Series</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.59–2.82 ล้าน</span><span>Mid-Entry · ใกล้รถไฟฟ้า</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-shush','siri-condo-toc')">
+                <span class="brand-list-name">SHUSH Ratchathewi — Luxury</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>เริ่ม 8.99 ล้าน</span><span>BTS ราชเทวี 140ม · Loft · เสร็จ 2026</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🟢 Entry/Affordable · Mass (3 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-dcondo','siri-condo-toc')">
+                <span class="brand-list-name">dcondo (ดีคอนโด)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.45–2.19 ล้าน</span><span>Mass Affordable · หลายทำเล</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-way','siri-condo-toc')">
+                <span class="brand-list-name">VAY Series (เวย์)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>0.99–2.29 ล้าน</span><span>Entry · หน้านิคม/ใกล้ ม.</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showCondo('siri-condome','siri-condo-toc')">
+                <span class="brand-list-name">Condo Me Series</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>0.88–1.39 ล้าน</span><span>Cheapest · First Buyer</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">🌴 Resort/Out-of-Town (1 แบรนด์)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('siri-hay-huahin','siri-condo-toc')">
+                <span class="brand-list-name">HAY Hua Hin</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>1.39–1.49 ล้าน</span><span>หัวหิน · Resort · พร้อมอยู่</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* แสนสิริ (SET: SIRI) Top-3 อสังหาฯไทย · 40+ ปี · <strong>12 แบรนด์คอนโด active (มือ 1)</strong> ครอบคลุม Super Luxury–Entry (0.88M–80M+) · คัดเฉพาะแบรนด์ที่ยังมีมือ 1 ขายอยู่ (ตัด resale/sold out ออก)<br>
+          * แต่ละ Series มีหลายโครงการ — โทร <strong>Sansiri 1685</strong> ยืนยันราคา + ทำเล + inventory ปัจจุบันก่อนนำเสนอลูกค้า · ดูบ้านเดี่ยว+ทาวน์โฮม Sansiri ในเว็บ /home/</p>
+        </div>
+
+        <!-- 18 Brand Cards (short format) -->
+
+        <div class="psh-cat">🟣 Super Luxury · Ultra-HNW (1 แบรนด์)</div>
+        <div id="condo-siri-98-wireless" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Super Luxury · Flagship</span><span style="font-size:0.75rem;color:var(--muted);">77 ยูนิต Exclusive · 25 ชั้น · เสร็จ 2017</span></div>
+            <div class="card-title">98 Wireless ⭐</div>
+            <div class="card-meta">Super Luxury Flagship ของ Sansiri · Pathumwan ใจกลาง CBD · ติด Lumpini Park + Ploenchit · ดีไซน์ระดับ world-class · Limousine service · Penthouse 553 ตร.ม. + Super Penthouse 1,000 ตร.ม.</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">เริ่ม 80 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ราคา/ตร.ม.</div><div class="stat-value">~550,000 บ./ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">2BR/3BR/Penthouse/Super Penthouse</div></div>
+              <div class="stat-item"><div class="stat-label">โครงสร้าง</div><div class="stat-value">25 ชั้น · 77 ยูนิต · 2 ไร่</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> Wireless Road · Lumpini · Pathumwan กรุงเทพ · ติด Lumpini Park · เดินถึง BTS เพลินจิต · <strong>ชลบุรี:</strong> ไม่มี (Single-Location Super Luxury)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Ultra-HNW segment · Penthouse stock มีน้อย · โทร Sansiri 1685 verify</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ 98 Wireless → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat">🟠 Premium · Sukhumvit/CBD (3 แบรนด์)</div>
+        <div id="condo-siri-via" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Sukhumvit Soi</span><span style="font-size:0.75rem;color:var(--muted);">2 ทำเล (VIA 34 · VIA 61)</span></div>
+            <div class="card-title">VIA Series</div>
+            <div class="card-meta">Premium Condo สุขุมวิทซอย · ทำเลเงียบใน CBD · มี 2 โครงการ: VIA 34 (สุขุมวิท 34 ใกล้ทองหล่อ) + VIA 61 (สุขุมวิท 61 ใกล้พร้อมพงษ์/เอกมัย)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">12.9 – 22 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ทำเล</div><div class="stat-value">สุขุมวิท 34 + 61</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban Pro · HNW</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> สุขุมวิท 34 (BTS ทองหล่อ) + สุขุมวิท 61 (BTS เอกมัย/พร้อมพงษ์) · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ราคา + ชั้น + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VIA Series → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-widen" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Wide-Open</span><span style="font-size:0.75rem;color:var(--muted);">High-rise 34 ชั้น · เสร็จ 2028 · pet-friendly</span></div>
+            <div class="card-title">WIDEN by Sansiri</div>
+            <div class="card-meta">"EXPAND THE NEW VERSE OF LIFE" · Premium Condo ห้องกว้างเกินมาตรฐาน · เลี้ยงสัตว์ได้ · Well-being living · freehold · JV แสนสิริ-โตคิว · เหมาะครอบครัว/คนรักสัตว์/ชาวต่างชาติ</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">8.9 – 49.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">45 – 209 ตร.ม. (1–3BR + Suite)</div></div>
+              <div class="stat-item"><div class="stat-label">โครงสร้าง</div><div class="stat-value">34 ชั้น · 215 ยูนิต · เสร็จ 2028</div></div>
+              <div class="stat-item"><div class="stat-label">สถานะ</div><div class="stat-value">Active มือ 1 (ก่อสร้าง)</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li><strong>WIDEN นางลิ้นจี่</strong> — ทุ่งมหาเมฆ/สาทร · MRT ลุมพินี ~2.5 กม. · BRT ถนนจันทน์ 1.2 กม. · วิวโค้งน้ำบางกะเจ้า · เริ่ม 8.9 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (เสร็จ 2028)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>40,000 – 224,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>66,700 – 373,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>ยังก่อสร้าง (เสร็จ 2028) · โทร Sansiri 1685 verify ราคาชั้น/วิว + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ WIDEN → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-xt" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Transit-Oriented</span><span style="font-size:0.75rem;color:var(--muted);">3 ทำเล (พญาไท · เอกมัย · ห้วยขวาง)</span></div>
+            <div class="card-title">XT Series</div>
+            <div class="card-meta">Premium High-rise ใกล้ BTS/MRT · 3 โครงการ: XT Phayathai (พญาไท) · XT Ekkamai (เอกมัย) · XT Huaikhwang (ห้วยขวาง) · Modern Urban Lifestyle</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">3.89 – 14.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ</div><div class="stat-value">3 ทำเล</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Premium</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">Urban Pro · BTS users</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> XT Phayathai (BTS พญาไท · Airport Link) · XT Ekkamai (BTS เอกมัย) · XT Huaikhwang (MRT ห้วยขวาง) · <strong>ชลบุรี:</strong> ไม่มี</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>3 โครงการ ต่างทำเล · โทร Sansiri 1685 verify ทำเลที่สนใจ</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ XT Series → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat">🔵 Mid-Range · Transit-Oriented (4 แบรนด์)</div>
+        <div id="condo-siri-line-vibe" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid · ⭐ Yield Play ~6%</span><span style="font-size:0.75rem;color:var(--muted);">พร้อมอยู่ · ติด BTS+MRT 2 สาย</span></div>
+            <div class="card-title">The Line Vibe</div>
+            <div class="card-meta">"Vibe is Everything" · JV แสนสิริ × BTS Group · High-rise ติด 2 สายรถไฟฟ้า ตรงข้าม Central Ladprao · <strong>rental yield เฉลี่ย ~6%</strong> (เข้าเกณฑ์ Touch ≥5%) · เหมาะนักลงทุน yield play + คนทำงาน New CBD</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">เริ่ม 3.29 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">31.5 – 73.25 ตร.ม. (1–2BR)</div></div>
+              <div class="stat-item"><div class="stat-label">โครงสร้าง</div><div class="stat-value">33 ชั้น · 940 ยูนิต · เสร็จ 2024</div></div>
+              <div class="stat-item"><div class="stat-label">สถานะ</div><div class="stat-value">Active มือ 1 (พร้อมอยู่)</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li><strong>The Line Vibe ห้าแยกลาดพร้าว</strong> ⭐ — จตุจักร/พหลโยธิน (New CBD) · ตรงข้าม Central Ladprao · <strong>BTS ห้าแยกลาดพร้าว 300 ม. + MRT พหลโยธิน 700 ม.</strong> · เริ่ม 3.29 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">พร้อมอยู่</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 14,800 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · 1BR 3.29M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 24,600 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">📈</span><span><strong>Yield Play (จุดเด่นลงทุน):</strong> ติด BTS+MRT 2 สาย + ตรงข้าม Central · demand เช่าสูง · yield เคลม ~6% (เกินเกณฑ์ Touch 5%) · 1BR ราคาเข้าถึง = ปล่อยเช่าง่าย</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Line Vibe → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-base" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid · Affordable Series</span><span style="font-size:0.75rem;color:var(--muted);">หลายทำเล · ใกล้ BTS/MRT</span></div>
+            <div class="card-title">The Base Series</div>
+            <div class="card-meta">Mid-Affordable Condo Series ของ Sansiri · หลายโครงการในกรุงเทพ · ทำเลใกล้ BTS/MRT · เหมาะ first jobber + นักลงทุน yield</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">1.49 – 6.59 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Mid-Affordable</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">First Jobber · นักลงทุน</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> หลายโครงการในกรุงเทพ · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Series ใหญ่ หลายทำเล · โทร Sansiri 1685 verify ทำเลที่สนใจ + ราคา</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Base → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-move" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid-Entry · Modern</span><span style="font-size:0.75rem;color:var(--muted);">ใกล้รถไฟฟ้า · Mass</span></div>
+            <div class="card-title">The Muve Series</div>
+            <div class="card-meta">Mid-Entry Mass Condo · ใกล้รถไฟฟ้า · ราคาเข้าถึง · เหมาะ first jobber + นักศึกษา</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">1.59 – 2.82 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Mid-Entry Mass</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Mid-Entry</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">First Jobber · นักศึกษา</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> หลายโครงการในกรุงเทพ · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>โทร Sansiri 1685 verify ทำเล + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Muve → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-shush" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury · CBD ราชเทวี</span><span style="font-size:0.75rem;color:var(--muted);">High-rise · Loft เพดาน 4.5 ม. · เสร็จ 2026</span></div>
+            <div class="card-title">SHUSH Ratchathewi</div>
+            <div class="card-meta">"Museum of Art, Gallery of Life" · Luxury Condo CBD ราชเทวี · <strong>BTS ราชเทวี เพียง 140 ม.</strong> · 5 นาทีถึงสยาม · ห้อง Loft เพดานสูง 4.5 ม. (~90% ของยูนิต) · hotel-standard + Concierge · เหมาะ capital gain ใจกลางเมือง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">เริ่ม 8.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">28.5 – 117 ตร.ม. (1–3BR/Loft)</div></div>
+              <div class="stat-item"><div class="stat-label">โครงสร้าง</div><div class="stat-value">32 ชั้น · 383 ยูนิต · เสร็จ 2026</div></div>
+              <div class="stat-item"><div class="stat-label">สถานะ</div><div class="stat-value">Active มือ 1 (pre-sale)</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ</strong></li>
+              <li><strong>SHUSH ราชเทวี</strong> — ถ.พญาไท ทุ่งพญาไท ราชเทวี (CBD) · <strong>BTS ราชเทวี 140 ม.</strong> · ใกล้สยาม/จุฬาฯ · เริ่ม 8.99 ล้าน · ~245,000 บ./ตร.ม. · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (โอน 2026)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 40,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · 8.99M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 67,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Luxury capital-gain play (ราคา/ตร.ม. สูง · yield ปล่อยเช่าอาจ &lt;5%) · ยังก่อสร้าง · โทร Sansiri 1685 verify</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ SHUSH → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat">🟢 Entry/Affordable · Mass (3 แบรนด์)</div>
+        <div id="condo-siri-dcondo" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mass · Affordable Series</span><span style="font-size:0.75rem;color:var(--muted);">หลายโครงการทั่วประเทศ</span></div>
+            <div class="card-title">dcondo (ดีคอนโด)</div>
+            <div class="card-meta">Mass Affordable Series ของ Sansiri · หลายโครงการในกรุงเทพ + ต่างจังหวัด · เหมาะนักศึกษา + first jobber + นักลงทุน Yield</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">1.45 – 2.19 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ประเภท</div><div class="stat-value">Mass Affordable</div></div>
+              <div class="stat-item"><div class="stat-label">Tier</div><div class="stat-value">Entry-Mid</div></div>
+              <div class="stat-item"><div class="stat-label">กลุ่มเป้าหมาย</div><div class="stat-value">นักศึกษา · first jobber</div></div>
+            </div>
+            <div class="callout info"><span class="callout-icon">📍</span><span><strong>ทำเล:</strong> กรุงเทพ + ปริมณฑล + ต่างจังหวัด (เชียงใหม่ · ภูเก็ต) · <strong>ชลบุรี:</strong> verify กับ Sansiri 1685</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Series ใหญ่ที่สุด · โทร Sansiri 1685 verify ทำเลที่สนใจ</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ dcondo → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-way" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · Real Demand หน้านิคม/ม.</span><span style="font-size:0.75rem;color:var(--muted);">Low-Rise · แต่งครบพร้อมอยู่</span></div>
+            <div class="card-title">VAY Series (เวย์)</div>
+            <div class="card-meta">"ซื้อคุ้มกว่าเช่า" · Entry Condo แต่งครบพร้อมเฟอร์ฯ · เจาะ first jobber · ทำเลเน้น <strong>หน้านิคม/แหล่งงาน + ใกล้มหาวิทยาลัย/Red Line</strong> (ตรง Real Demand criteria Touch) · เหมาะนักลงทุน yield + อยู่เอง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">0.99 – 2.29 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">23 – 44 ตร.ม. (Studio/1BR)</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ active</div><div class="stat-value">4 ทำเล (BKK 2 + ตจว. 2)</div></div>
+              <div class="stat-item"><div class="stat-label">สถานะ</div><div class="stat-value">Active มือ 1</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+              <li>Vay พระราม 9 — พระราม 9 (New CBD) · 26.5–42.75 ตร.ม. · เริ่ม 2.29 ล้าน</li>
+              <li>Vay ชินเขต — งามวงศ์วาน · ใกล้ Red Line + ม.ธรรมศาสตร์ + The Mall งามวงศ์วาน · 24.5–35.25 ตร.ม. · เริ่ม 1.59 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี / EEC + ตจว.</strong></li>
+              <li>Vay อมตะ — ศรีราชา ชลบุรี · ติดนิคมอมตะซิตี้ · Low-Rise พร้อมอยู่ · เริ่ม 0.99 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active</span></li>
+              <li>Vay อยุธยา — อยุธยา · ใกล้ Central อยุธยา + นิคมโรจนะ/ไฮเทค · 23.25–44.25 ตร.ม. · เริ่ม 1.39 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">พร้อมอยู่</span></li>
+              <li style="color:var(--muted);font-size:0.78rem;">โพธิสาร + โพธิสาร 2 (ศรีราชา) — Sold Out</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>4,400 – 10,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>7,400 – 17,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>บางโครงการ &lt; 1.5M (เช็ค liquidity/yield รายตัว) · โทร Sansiri 1685 verify ทำเล + inventory</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VAY → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-condome" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · ถูกสุดของ Sansiri</span><span style="font-size:0.75rem;color:var(--muted);">Low-Rise · แต่งครบพร้อมอยู่</span></div>
+            <div class="card-title">Condo Me Series</div>
+            <div class="card-meta">"ให้คุณมีคอนโดแรกเป็นของตัวเอง" · Entry Condo ราคาต่ำสุดของ Sansiri (เริ่มต่ำล้าน) · สืบทอดจากแบรนด์ The Muve · ทำเลหน้านิคม/แหล่งชุมชน · เหมาะ first buyer + ผู้มีรายได้น้อย-ปานกลาง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">0.88 – 1.39 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">23 – 37 ตร.ม. (1BR)</div></div>
+              <div class="stat-item"><div class="stat-label">โครงการ active</div><div class="stat-value">3 ทำเล (ปริมณฑล)</div></div>
+              <div class="stat-item"><div class="stat-label">สถานะ</div><div class="stat-value">Active มือ 1 (แบรนด์ใหม่)</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">ปริมณฑล</strong></li>
+              <li>Condo Me สินสาคร — สมุทรสาคร · ตรงข้ามนิคมฯ สินสาคร · 24.75–25 ตร.ม. · เริ่ม 0.88 ล้าน</li>
+              <li>Condo Me นวนคร — รังสิต/นวนคร · ใกล้นิคมนวนคร · 23.25–35.75 ตร.ม. · เริ่ม 0.999 ล้าน (โครงการแรกของแบรนด์)</li>
+              <li>Condo Me บางนา-บางบ่อ — บางนา · 25–37.25 ตร.ม. · เริ่ม 1.09 ล้าน</li>
+              <li style="color:var(--muted);font-size:0.78rem;">อ่อนนุช-พระราม 9 — Sold Out</li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Condo Me (มีแบรนด์ VAY ในชลบุรีแทน)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>4,000 – 6,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>6,600 – 10,400 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>ราคา &lt; 1.5M ทุกโครงการ (resale liquidity ต่ำ · เน้น real demand หน้านิคม) · โทร Sansiri 1685 verify</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Condo Me → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat">🌴 Resort/Out-of-Town (1 แบรนด์)</div>
+        <div id="condo-siri-hay-huahin" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Resort · หัวหิน · พร้อมอยู่</span><span style="font-size:0.75rem;color:var(--muted);">Low-Rise 8 ชั้น · ราคาต่ำสุดกลุ่ม resort</span></div>
+            <div class="card-title">HAY Hua Hin</div>
+            <div class="card-meta">Tropical resort condo · "สดใส เรียบง่าย สนุกไม่หยุดนิ่ง" · entry-level vacation/investment · ราคาต่ำสุดในกลุ่ม resort หัวหิน · แต่งครบ · เหมาะ Second Home + yield play seasonal</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา</div><div class="stat-value">1.39 – 1.49 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">24.5 – 37.75 ตร.ม. (1BR/1BR Plus)</div></div>
+              <div class="stat-item"><div class="stat-label">โครงสร้าง</div><div class="stat-value">8 ชั้น · 252 ยูนิต · เสร็จ 2022</div></div>
+              <div class="stat-item"><div class="stat-label">สถานะ</div><div class="stat-value">มือ 1 clearance (พร้อมอยู่)</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">หัวหิน (ประจวบคีรีขันธ์)</strong></li>
+              <li><strong>HAY Hua Hin</strong> — ติดถนนเพชรเกษม ต.หนองแก · ~2 กม. จากตลาด/ใจกลางหัวหิน · เริ่ม 1.39 ล้าน · ~58,000–60,000 บ./ตร.ม. · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">มือ 1 เหลือ (พร้อมอยู่)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มี (resort focus หัวหิน)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>6,200 – 6,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>10,400 – 11,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span>Resort condo demand เป็น seasonal/vacation (ไม่ใช่ real demand ตาม criteria) · ห่างหาด ~2 กม. · โทร Sansiri 1685 verify inventory + rental yield จริง</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ HAY Hua Hin → LINE</a></div></div>
+        </div>
+
+        <!-- Sansiri Condo Note -->
+        <div class="callout info" style="margin-top:1rem;">
+          <span class="callout-icon">🏢</span>
+          <span>
+            <strong>Sansiri (SET: SIRI) Condo Portfolio:</strong> Top-3 อสังหาฯไทย · <strong>12 แบรนด์ active (มือ 1)</strong> ครอบคลุม Super Luxury → Entry (0.88M–80M+) · คัดเฉพาะแบรนด์ที่ยังมีมือ 1 ขายอยู่<br>
+            <strong>Premium:</strong> 98 Wireless · VIA · WIDEN · XT<br>
+            <strong>Mid/Mass:</strong> The Line Vibe (⭐ yield ~6%) · The Base · The Muve · SHUSH · dcondo · VAY · Condo Me<br>
+            <strong>Resort:</strong> HAY Hua Hin<br>
+            <strong>ตัดออก (resale/sold out):</strong> <span style="color:var(--muted);">Khun by Yoo · The Monument · La Habana · La Casita (มือ 1 หมด) · HAUS-Mekin (เชียงใหม่) · Canvas (ภูเก็ต)</span><br>
+            <strong>ชลบุรี/EEC:</strong> Sansiri ชลบุรีมีคอนโด VAY (อมตะ ศรีราชา) — แนวราบไม่มี · verify กับ <strong>Sansiri 1685</strong>
+          </span>
+        </div>
+
+      </div><!-- /dev-siri -->
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลใน portfolio นี้เป็น research summary ไม่ใช่คำแนะนำซื้อ/ขาย<br>
+        ตัวเลขราคา ค่าเช่า และดอกเบี้ยอาจเปลี่ยนแปลง กรุณา verify ก่อนตัดสินใจ
+      </div>
+    </div>
+  </footer>
+<script>
+    function showCondo(brandId, tocId) {
+      tocId = tocId || 'lpn-condo-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('condo-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showCondoToc(tocId) {
+      tocId = tocId || 'lpn-condo-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleDevPanel(id) {
+      var btn = document.querySelector('[data-dev="' + id + '"]');
+      var panel = document.getElementById('dev-' + id);
+      if (!btn || !panel) return;
+      var isOpen = btn.classList.contains('active');
+      // ปิดทุก panel ก่อน
+      document.querySelectorAll('.dev-icon-btn').forEach(function(b) {
+        b.classList.remove('active');
+        b.querySelector('.dev-chevron').textContent = '▸';
+      });
+      document.querySelectorAll('.dev-brand-panel').forEach(function(p) {
+        p.style.display = 'none';
+      });
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      // ถ้ากดปุ่มที่ยังไม่ได้เปิด ให้เปิด
+      if (!isOpen) {
+        btn.classList.add('active');
+        panel.style.display = 'block';
+        btn.querySelector('.dev-chevron').textContent = '▾';
+        showCondoToc(id + '-condo-toc');
+      }
+    }
+    var _activeCrit = null;
+    function toggleCrit(key) {
+      var panels = ['yield','location','developer','price'];
+      if (_activeCrit === key) {
+        // collapse
+        document.getElementById('crit-detail-' + key).classList.remove('show');
+        document.querySelector('[data-crit="' + key + '"]').classList.remove('active');
+        _activeCrit = null;
+      } else {
+        // collapse previous
+        if (_activeCrit) {
+          document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+          document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+        }
+        document.getElementById('crit-detail-' + key).classList.add('show');
+        document.querySelector('[data-crit="' + key + '"]').classList.add('active');
+        _activeCrit = key;
+      }
+    }
+    document.addEventListener('click', function(e) {
+      // Close criteria detail panels when clicking outside
+      if (_activeCrit) {
+        var flow = document.getElementById('crit-flow');
+        var details = document.querySelectorAll('.crit-detail-wrap');
+        var inside = flow && flow.contains(e.target);
+        details.forEach(function(d) { if (d.contains(e.target)) inside = true; });
+        if (!inside) {
+          document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+          document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+          _activeCrit = null;
+        }
+      }
+      // Close all <details> when clicking outside
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</body>
+</html>
