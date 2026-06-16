@@ -138,6 +138,12 @@
     .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
     .dev-logo-siri { background: #c2410c; color: #fff; }
     .dev-logo-ap { background: #15336b; color: #fff; }
+    /* PSH category accordion (2-level) */
+    .cat-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; }
+    .cat-chevron { transition: transform 0.2s; font-size: 0.85rem; flex-shrink: 0; margin-left: 0.5rem; }
+    .cat-toggle.open .cat-chevron { transform: rotate(90deg); }
+    .cat-list { display: none; }
+    .cat-list.open { display: block; }
     .dev-info { flex: 1; min-width: 0; }
     .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
     .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
@@ -558,8 +564,8 @@
 
         <div class="brand-toc" id="pruksa-toc">
           <div class="toc-group">
-            <div class="toc-group-title">🏠 ทาวน์โฮม พฤกษา — 7 แบรนด์</div>
-            <ul class="brand-list">
+            <div class="toc-group-title cat-toggle" onclick="toggleCat(this)">🏠 ทาวน์โฮม พฤกษา — 7 แบรนด์<span class="cat-chevron">▸</span></div>
+            <ul class="brand-list cat-list">
               <li class="brand-list-item" onclick="showBrand('pruksa-ville','pruksa-toc')">
                 <span class="brand-list-name">Pruksa Ville</span>
                 <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
@@ -598,8 +604,8 @@
             </ul>
           </div>
           <div class="toc-group">
-            <div class="toc-group-title">🏡 บ้านเดี่ยว พฤกษา — 6 แบรนด์</div>
-            <ul class="brand-list">
+            <div class="toc-group-title cat-toggle" onclick="toggleCat(this)">🏡 บ้านเดี่ยว พฤกษา — 6 แบรนด์<span class="cat-chevron">▸</span></div>
+            <ul class="brand-list cat-list">
               <li class="brand-list-item" onclick="showBrand('pruksa-the-plant','pruksa-toc')">
                 <span class="brand-list-name">The Plant</span>
                 <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
@@ -2627,6 +2633,11 @@
       tocId = tocId || 'lpn-toc';
       document.getElementById(tocId).classList.remove('hidden');
       document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleCat(el) {
+      el.classList.toggle('open');
+      var list = el.parentElement.querySelector('.cat-list');
+      if (list) list.classList.toggle('open');
     }
     function toggleTheme() {
       var html = document.documentElement;
