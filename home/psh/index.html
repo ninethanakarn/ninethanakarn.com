@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="บ้านพฤกษา (Pruksa) 13 แบรนด์ — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="บ้านพฤกษา (SET: PSH) 13 แบรนด์แนวราบ · ทาวน์โฮม 7 + บ้านเดี่ยว 6 · คัดเฉพาะมือ 1 · ผ่อน/DSR ครบ">
+  <meta property="og:url" content="https://ninethanakarn.com/home/psh/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="บ้านพฤกษา (Pruksa) 13 แบรนด์">
+  <meta name="twitter:description" content="บ้านพฤกษา 13 แบรนด์แนวราบ · คัดเฉพาะมือ 1 จาก developer Top 20 SET">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>บ้านพฤกษา (Pruksa) 13 แบรนด์ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg,#1e40af,#3b82f6); display:grid; place-items:center; box-shadow:0 4px 16px rgba(30,64,175,0.2); flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(30,64,175,0.35); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; stroke-width:1.8; }
+    .crit-flow-label { font-size:11px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:20px; color:rgba(59,130,246,0.4); font-size:1.1rem; flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:0.75rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2); border-radius:12px; padding:0.875rem 1rem; font-size:0.82rem; line-height:1.6; }
+    .crit-detail-title { font-weight:700; color:#3b82f6; margin-bottom:0.5rem; font-size:0.88rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; }
+    .crit-detail-list li { padding:0.2rem 0; color:var(--text); }
+    .crit-detail-list li::before { content:'• '; color:#3b82f6; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .toc-table { width: 100%; border-collapse: collapse; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .toc-table th { text-align: left; padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); background: var(--section-bg); font-weight: 600; }
+    .toc-table td { padding: 0.7rem 0.75rem; font-size: 0.88rem; border-top: 1px solid var(--card-border); }
+    .toc-brand-row { cursor: pointer; transition: background 0.15s; }
+    .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
+    .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+
+    /* Card image */
+    .card-img-wrap { border-radius: 12px 12px 0 0; overflow: hidden; aspect-ratio: 16/9; background: var(--section-bg); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .property-card:hover .card-img-wrap img { transform: scale(1.04); }
+
+    /* Developer icon grid */
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 1.25rem; }
+    .dev-icon-btn {
+      display: flex; align-items: center; gap: 0.875rem;
+      background: var(--section-bg); border: 1.5px solid var(--card-border);
+      border-radius: 12px; padding: 0.875rem 1.1rem;
+      cursor: pointer; text-align: left; width: 100%;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    }
+    .dev-icon-btn:hover { border-color: rgba(59,130,246,0.5); background: rgba(59,130,246,0.04); }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; letter-spacing: 0.02em; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: #ffffff; color: #1a1a1a; border: 1.5px solid #cbd5e1; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    /* PSH category accordion (2-level) */
+    .cat-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; }
+    .cat-chevron { transition: transform 0.2s; font-size: 0.85rem; flex-shrink: 0; margin-left: 0.5rem; }
+    .cat-toggle.open .cat-chevron { transform: rotate(90deg); }
+    .cat-list { display: none; }
+    .cat-list.open { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; transition: transform 0.2s; }
+    .dev-icon-btn.active .dev-chevron { transform: rotate(-180deg); }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; min-width:26px; min-height:26px; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏡 บ้านพฤกษา (Pruksa)</h1>
+      <p class="hero-subtitle">13 แบรนด์แนวราบ · ทาวน์โฮม 7 + บ้านเดี่ยว 6 · SET: PSH · คัดเฉพาะมือ 1</p>
+      <p style="margin-top:0.6rem;"><a href="/home/" style="color:#3b82f6;font-weight:600;font-size:0.9rem;text-decoration:none;">← กลับ บ้านในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+<!-- Pruksa Brand Panel -->
+      <div id="dev-pruksa">
+
+        <div class="brand-toc" id="pruksa-toc">
+          <div class="toc-group">
+            <div class="toc-group-title cat-toggle" onclick="toggleCat(this)">🏠 ทาวน์โฮม พฤกษา — 7 แบรนด์<span class="cat-chevron">▸</span></div>
+            <ul class="brand-list cat-list">
+              <li class="brand-list-item" onclick="showBrand('pruksa-ville','pruksa-toc')">
+                <span class="brand-list-name">Pruksa Ville</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.30–2.89 ล้าน</span><span>ผ่อน 5,800–13,000 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-baan-pruksa','pruksa-toc')">
+                <span class="brand-list-name">บ้านพฤกษา (Baan Pruksa)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.49–3.2 ล้าน</span><span>ผ่อน 6,700–14,400 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-connect','pruksa-toc')">
+                <span class="brand-list-name">The Connect</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.55–2.99 ล้าน</span><span>ผ่อน 7,000–13,400 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-natura','pruksa-toc')">
+                <span class="brand-list-name">Natura</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.89–3.46 ล้าน</span><span>ผ่อน 8,500–15,500 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-villette-lite','pruksa-toc')">
+                <span class="brand-list-name">Villette Lite</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 2.29–3.5 ล้าน</span><span>ผ่อน 10,300–15,700 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-patio','pruksa-toc')">
+                <span class="brand-list-name">PATIO</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 3.69–17.99 ล้าน</span><span>ผ่อน 16,600–80,700 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-plant-citi','pruksa-toc')">
+                <span class="brand-list-name">The Plant CITI</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 1.99–12 ล้าน</span><span>ผ่อน 8,900–53,900 บ./เดือน</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title cat-toggle" onclick="toggleCat(this)">🏡 บ้านเดี่ยว พฤกษา — 6 แบรนด์<span class="cat-chevron">▸</span></div>
+            <ul class="brand-list cat-list">
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-plant','pruksa-toc')">
+                <span class="brand-list-name">The Plant</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 2.88–6 ล้าน</span><span>ผ่อน 12,900–26,900 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-passorn','pruksa-toc')">
+                <span class="brand-list-name">Passorn (ภัสสร)</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 4.59–12 ล้าน</span><span>ผ่อน 20,600–53,900 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-palm','pruksa-toc')">
+                <span class="brand-list-name">The Palm</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 6.99–25.9 ล้าน</span><span>ผ่อน 31,400–116,400 บ./เดือน</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-pine','pruksa-toc')">
+                <span class="brand-list-name">PINE Wellness Residence</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 12 – 20 ล้าน</span><span>4 แบบบ้าน · Multi-Gen Wellness</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-palm-residences','pruksa-toc')">
+                <span class="brand-list-name">The Palm Residences</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 35–80 ล้าน</span><span>2 โครงการ · 219 ยูนิต Exclusive</span></div>
+              </li>
+              <li class="brand-list-item" onclick="showBrand('pruksa-the-reserve-villas','pruksa-toc')">
+                <span class="brand-list-name">The Reserve Villas</span>
+                <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+                <div class="brand-list-meta"><span>ราคา 65–85 ล้าน</span><span>Rare Collection 26 ยูนิต · ใจกลางสุขุมวิท</span></div>
+              </li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* ผ่อน/รายได้คำนวณจากดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%</p>
+        </div>
+
+        <!-- Pruksa Brand Details -->
+        <div id="brand-pruksa-ville" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-ville.png" alt="Pruksa Ville" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry – Mid</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น</span></div>
+              <div class="card-title">Pruksa Ville</div>
+              <div class="card-meta">ทาวน์โฮมในฟังก์ชั่นบ้านเดี่ยว · 3–4 ห้องนอน · เหมาะครอบครัวขยาย Real Demand</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.55 – 2.89 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">95 – 149 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">18 – 24.5 ตร.ว.</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชัน</div><div class="stat-value">3–4 นอน · 2 น้ำ · 1–2 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+                <li>รังสิต-เวิร์คพอยท์ — ปทุมธานี · ใกล้รถไฟฟ้าสายสีแดง รังสิต · เริ่ม 1.69 ล้าน</li>
+                <li>รังสิต-คลองสอง — ปทุมธานี · Future Park รังสิต 5 กม. · เริ่ม 1.89 ล้าน</li>
+                <li>เทพารักษ์-ศรีนครินทร์ — สมุทรปราการ · BTS ศรีนครินทร์ 6.2 กม. · เริ่ม 1.89 ล้าน</li>
+                <li>ดอนเมือง-สรงประภา — กรุงเทพฯ · สายสีแดง ดอนเมือง 7 กม. · เริ่ม 2.49 ล้าน</li>
+                <li>ลาดกระบัง-ประชาพัฒนา — กรุงเทพฯ · Airport Link ลาดกระบัง · เริ่ม 2.39 ล้าน</li>
+                <li>ศรีนครินทร์-บางนา — กรุงเทพฯ · 388 ยูนิต · เริ่ม 2.59 ล้าน</li>
+                <li>บางนา-อ่อนนุช — กรุงเทพฯ · Mega Bangna 10 กม. · เริ่ม 2.69 ล้าน</li>
+                <li>กรุงเทพกรีฑา-วงแหวน — กรุงเทพฯ · Airport Link ลาดกระบัง · เริ่ม 2.79 ล้าน</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong></li>
+                <li>แหลมฉบัง-บางละมุง 2 — บางละมุง ชลบุรี · เริ่ม 1.55 ล้าน · <span style="background:rgba(34,197,94,0.15);color:#16a34a;border:1px solid rgba(34,197,94,0.3);border-radius:4px;padding:0.05rem 0.35rem;font-size:0.75rem;">เปิดจอง</span></li>
+                <li>สุขุมวิท-เทศบาล 7 — ศรีราชา ชลบุรี · ใกล้นิคมแหลมฉบัง · เริ่ม 1.79 ล้าน</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>6,900 – 13,000 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>11,500 – 21,700 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Pruksa Ville → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-baan-pruksa" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-baan-pruksa.png" alt="บ้านพฤกษา Baan Pruksa" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น</span></div>
+              <div class="card-title">บ้านพฤกษา (Baan Pruksa)</div>
+              <div class="card-meta">ทำเลดี จ่ายน้อย ได้มากกว่า · ทาวน์โฮมราคาเข้าถึง · เหมาะบ้านหลังแรก / ใกล้นิคมอุตสาหกรรม</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.49 – 3.49 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">95 – 114 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">16 – 18 ตร.ว.</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชัน</div><div class="stat-value">2–4 นอน · 2 น้ำ · 1–2 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+                <li>สุขสวัสดิ์-ประชาอุทิศ 2 — กรุงเทพฯ · เริ่ม 1.49 ล้าน</li>
+                <li>นวนคร-พหลโยธิน — ปทุมธานี · ใกล้นิคมนวนคร · เริ่ม 1.59 ล้าน</li>
+                <li>รังสิต-Avenue 2 — ปทุมธานี · Future Park รังสิต · เริ่ม 1.59 ล้าน</li>
+                <li>มหิดล-ศาลายา — นครปฐม · ม.มหิดล 3.1 กม. · เริ่ม 1.65 ล้าน</li>
+                <li>ลาดกระบัง-ฉลองกรุง — กรุงเทพฯ · นิคมลาดกระบัง 6.6 กม. · เริ่ม 1.89 ล้าน</li>
+                <li>Prime ศรีนครินทร์-บางนา — สมุทรปราการ · ใกล้นิคมบางพลี · เริ่ม 2.19 ล้าน</li>
+                <li>พระราม 2 โครงการ 2 — สมุทรสาคร · นิคมสินสาคร 6 กม. · เริ่ม 2.69 ล้าน</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong></li>
+                <li>หนองมน-ชลบุรี 3 — เมืองชลบุรี · ม.บูรพา 5 กม. · เริ่ม 2.1 ล้าน · <span style="background:rgba(34,197,94,0.15);color:#16a34a;border:1px solid rgba(34,197,94,0.3);border-radius:4px;padding:0.05rem 0.35rem;font-size:0.75rem;">เปิดขาย</span></li>
+                <li>นารา หนองมน — เมืองชลบุรี · ม.บูรพา · เริ่ม 2.4 ล้าน · <span style="background:rgba(34,197,94,0.15);color:#16a34a;border:1px solid rgba(34,197,94,0.3);border-radius:4px;padding:0.05rem 0.35rem;font-size:0.75rem;">พร้อมอยู่</span></li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>6,700 – 15,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>11,200 – 26,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ บ้านพฤกษา → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-connect" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-the-connect.png" alt="The Connect" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry – Mid</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น</span></div>
+              <div class="card-title">The Connect</div>
+              <div class="card-meta">Modern Minimal Design · ทำเลใกล้รถไฟฟ้า · เหมาะวัยทำงาน Modern Lifestyle</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.79 – 3.89 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">95 – 160 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">18 – 37 ตร.ว.</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชัน</div><div class="stat-value">2–4 นอน · 2–3 น้ำ · 1–3 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+                <li>กรุงเทพฯ–ปทุมธานี — ปทุมธานี · Big C ปทุมฯ 0.5 กม. · เริ่ม 1.79 ล้าน</li>
+                <li>@ประชาอุทิศ — กรุงเทพฯ (ทุ่งครุ) · เริ่ม ~1.99 ล้าน</li>
+                <li>บางนา–ศรีวารี 1 — สมุทรปราการ · King Power ศรีวารี 0.5 กม. · เริ่ม 2.09 ล้าน</li>
+                <li>ดอนเมือง สเตชั่น — กรุงเทพฯ · สนามบินดอนเมือง 6.7 กม. · เริ่ม 2.49 ล้าน</li>
+                <li>บางนา–ศรีวารี 2 — สมุทรปราการ · เริ่ม 2.89 ล้าน</li>
+                <li>เพชรเกษม 69 — กรุงเทพฯ · MRT สายน้ำเงิน 1.2 กม. · เริ่ม 2.89 ล้าน</li>
+                <li>บางนา–วงแหวน — สมุทรปราการ · มอเตอร์เวย์กรุงเทพ–ชลบุรี · เริ่ม 2.89 ล้าน</li>
+                <li>พระราม 5 — นนทบุรี · ถ.นครอินทร์ · เริ่ม 2.99 ล้าน</li>
+                <li>@ทิพวัล สเตชั่น — สมุทรปราการ · MRT สายสีเหลือง 1 กม. · เริ่ม 3.35 ล้าน</li>
+                <li>ปัญญา–รามอินทรา — กรุงเทพฯ · ใกล้ Fashion Island · สอบถามราคา</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการภายใต้แบรนด์ The Connect (พฤกษาใช้แบรนด์ บ้านพฤกษา / พฤกษาวิลล์ ในชลบุรีแทน)</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>8,000 – 17,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>13,300 – 29,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Connect → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-natura" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-natura.png" alt="Natura" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น / บ้านเดี่ยว</span></div>
+              <div class="card-title">Natura</div>
+              <div class="card-meta">Empower Nature for Trendy Living · พื้นที่กว้าง หน้ากว้าง 7.5 ม.+ · ครอบครัว Modern</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">1.89 – 4.66 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">103 – 157 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">16 – 50 ตร.ว.</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชัน</div><div class="stat-value">3 นอน · 2 น้ำ · 1–2 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong> <span style="font-size:0.75rem;">(โครงการสร้างเสร็จแล้ว มีหน่วยเหลือ/มือสอง)</span></li>
+                <li>Trend ประชาอุทิศ 90 — สมุทรปราการ · เริ่ม 1.89 ล้าน</li>
+                <li>Trend สุขสวัสดิ์-ประชาอุทิศ 90 — สมุทรปราการ · เริ่ม 2.25 ล้าน</li>
+                <li>Trend รัตนาธิเบศร์-ราชพฤกษ์ — นนทบุรี · BTS สีม่วง บางพลู 3 กม. · เริ่ม 2.39 ล้าน</li>
+                <li>Trend ศรีนครินทร์ — สมุทรปราการ · เริ่ม 2.29 ล้าน</li>
+                <li>Trend ปิ่นเกล้า-สาย 5 — นครปฐม · เริ่ม 2.49 ล้าน</li>
+                <li>Trend วงแหวน-ลำลูกกา คลอง 5 — ปทุมธานี · เริ่ม 2.78 ล้าน</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Natura (พฤกษาใช้แบรนด์ บ้านพฤกษา / The Plant ในชลบุรีแทน)</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>8,500 – 15,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>14,200 – 25,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Natura → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-villette-lite" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-villette-lite.png" alt="Villette Lite" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น</span></div>
+              <div class="card-title">Villette Lite</div>
+              <div class="card-meta">ฟังก์ชั่นบ้านเดี่ยว · สังคมพร้อม · ทาวน์โฮม 2 ชั้น สไตล์ Modern</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคาเริ่มต้น</div><div class="stat-value">2.29 – 3 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">110 – 125 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">16.9 – 19.9 ตร.ว.</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชัน</div><div class="stat-value">3 นอน · 2 น้ำ · 2 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong> <span style="font-size:0.75rem;">(โครงการสร้างเสร็จแล้ว — verify inventory กับ Pruksa 1739)</span></li>
+                <li>รัตนาธิเบศร์ — นนทบุรี · MRT สีม่วง 3.5 กม. · ใกล้ Central Westgate · เริ่ม 2.29 ล้าน</li>
+                <li>ราชพฤกษ์-ปิ่นเกล้า — นนทบุรี · 4 เส้นทางเข้า ใกล้ทางด่วน · เริ่ม 2.39 ล้าน</li>
+                <li>ติวานนท์-แจ้งวัฒนะ — นนทบุรี/ปทุมธานี · ปากเกร็ด 113 ยูนิต · สอบถามราคา</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Villette Lite (พฤกษาใช้แบรนด์ Pruksa Ville / บ้านพฤกษา ในชลบุรีแทน)</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>10,300 – 15,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>17,200 – 26,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Villette Lite → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-patio" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-patio.png" alt="PATIO" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid – Luxury</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 3–3.5 ชั้น + บ้านแฝด</span></div>
+              <div class="card-title">PATIO</div>
+              <div class="card-meta">THE FUTURE IS HERE · Colonial/Smart Home · หน้ากว้าง 3–3.5 ชั้น · สระน้ำเกลือ · EV Charger · Clubhouse</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">3.69 – 17.99 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">110 – 340 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">18 – 43 ตร.วา</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 2–4 น้ำ · 2 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+                <li>บางนา-วงแหวน — สมุทรปราการ · 372 ยูนิต · ทาวน์โฮม 2–3 ชั้น · เริ่ม 3.69 ล้าน</li>
+                <li>ราชพฤกษ์-พระราม 5 — นนทบุรี (บางกรวย) · ทาวน์โฮม 3 ชั้น · เริ่ม 3.99 ล้าน</li>
+                <li>กัลปพฤกษ์-สาทร — กรุงเทพฯ · ทาวน์โฮม 3–3.5 ชั้น · เริ่ม 4.59 ล้าน</li>
+                <li>วัชรพล-รามอินทรา — กรุงเทพฯ · ทาวน์โฮม 3.5 ชั้น · 180–226 ตร.ม. · เริ่ม 4.99 ล้าน</li>
+                <li>งามวงศ์วาน-ประชาชื่น — นนทบุรี · ทาวน์โฮม 3–3.5 ชั้น · เริ่ม 4.49 ล้าน</li>
+                <li>วิภาวดี-พหลโยธิน 92 — ปทุมธานี/กรุงเทพฯ เหนือ · เริ่ม 5.39 ล้าน</li>
+                <li>กรุงเทพกรีฑา-วงแหวน — กรุงเทพฯ · ทาวน์โฮม 3.5 ชั้น · 340 ตร.ม. · เริ่ม 14 ล้าน</li>
+                <li>รัชโยธิน — กรุงเทพฯ · ทาวน์โฮม 4 ชั้น + บ้านแฝด 3 ชั้น · 240–263 ตร.ม. · 23–43 ตร.วา · 14–17.99 ล้าน</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ PATIO (พฤกษาใช้แบรนด์ Pruksa Ville / บ้านพฤกษา ในชลบุรีแทน เพราะ PATIO เน้น Premium Urban เฉพาะกรุงเทพ)</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>16,600 – 80,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>27,700 – 134,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ PATIO → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-plant-citi" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-the-plant-citi.png" alt="The Plant CITI" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid – High + SME</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม + Home Office 2–3.5 ชั้น</span></div>
+              <div class="card-title">The Plant CITI</div>
+              <div class="card-meta">ทาวน์โฮมคนทุก GEN · Live + Work · ชั้น 1 เปิดร้าน ชั้น 2–3 อยู่อาศัย · เหมาะธุรกิจส่วนตัว/SME</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.99 – 12 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">121 – 296 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">18 – 71 ตร.วา</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">Live + Work · 2–3.5 ชั้น · EV Charger</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+                <li>วงแหวน-ลำลูกกา คลอง 5 — ปทุมธานี · ทาวน์โฮม + บ้านแฝด + บ้านเดี่ยว 2 ชั้น · เริ่ม 1.99 ล้าน · <span style="background:rgba(34,197,94,0.15);color:#16a34a;border:1px solid rgba(34,197,94,0.3);border-radius:4px;padding:0.05rem 0.35rem;font-size:0.75rem;">Active มิ.ย. 2026</span></li>
+                <li>แจ้งวัฒนะ — นนทบุรี (ปากเกร็ด) · MT02 เมืองทอง 300 ม. · 367 ยูนิต · เริ่ม 4.19 ล้าน</li>
+                <li>ดอนเมือง-พหลโยธิน 2 — ปทุมธานี · Home Office 3.5 ชั้น · Solar Cell ทุกยูนิต · 14 ยูนิต · เริ่ม 7.39 ล้าน</li>
+                <li>บางนา-วงแหวน — สมุทรปราการ · Home Office 3.5 ชั้น · ใจกลาง Pruksa Avenue · 24 ยูนิต · เริ่ม 8–12 ล้าน</li>
+                <li>เมกา บางนา — กรุงเทพฯ/สมุทรปราการ · Home Office 3.5 ชั้น · ใกล้ Mega Bangna · เหลือ 2 ยูนิต · เริ่ม 5.59 ล้าน</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ The Plant CITI (พฤกษาใช้แบรนด์ Pruksa Ville / บ้านพฤกษา / The Plant ในชลบุรีแทน — Home Office Premium ยังไม่เปิด market ชลบุรี)</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>8,900 – 53,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>14,900 – 89,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Plant CITI → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-plant" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-the-plant.png" alt="The Plant" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Entry Premium</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น / บ้านแฝด</span></div>
+              <div class="card-title">The Plant</div>
+              <div class="card-meta">Let's Plant Our Own Life · บ้านเดี่ยว + บ้านแฝด Modern · เหมาะครอบครัวเติบโต</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.88 – 6 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">114 – 180 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">35 – 60 ตร.วา</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 2 น้ำ · 2 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+                <li>ปิ่นเกล้า-สาย 5 — นครปฐม · บ้านเดี่ยว+บ้านแฝด · 114–166 ตร.ม. · เริ่ม 2.89 ล้าน</li>
+                <li>สุขุมวิท-บางปู — สมุทรปราการ · ใกล้นิคมบางปู · BTS สายสีเขียว · เริ่ม 2.88 ล้าน</li>
+                <li>ศรีนครินทร์-เทพารักษ์ — สมุทรปราการ · บ้านเดี่ยว+บ้านแฝด · 127–161 ตร.ม. · 35–60 ตร.วา · เริ่ม 3.79 ล้าน</li>
+                <li>รังสิต อเวนิว — ปทุมธานี · บ้านเดี่ยว+บ้านแฝด · เริ่ม 3.89 ล้าน</li>
+                <li>ปิ่นเกล้า-กาญจนาภิเษก — กรุงเทพฯ (ตลิ่งชัน-บางแค) · บ้านเดี่ยว+บ้านแฝด · เริ่ม 4.19 ล้าน</li>
+                <li>รามคำแหง-วงแหวน — กรุงเทพฯ · บ้านเดี่ยว+บ้านแฝด · 138–152 ตร.ม. · เริ่ม 4.39 ล้าน</li>
+                <li>บางนา-วงแหวน — สมุทรปราการ · บ้านเดี่ยว+บ้านแฝด · 138–161 ตร.ม. · เริ่ม 5.29 ล้าน</li>
+                <li>บางนา กม.5-ศรีนครินทร์ — สมุทรปราการ · บ้านเดี่ยว+บ้านแฝด · 149–159 ตร.ม. · เริ่ม 4.89 ล้าน</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ The Plant (พฤกษาใช้แบรนด์ บ้านพฤกษา / Pruksa Ville ในชลบุรีแทน)</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>12,900 – 26,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>21,500 – 44,900 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Plant → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-passorn" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-passorn.png" alt="Passorn" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Upper-Mid</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น (ทุกหลัง 4 นอน)</span></div>
+              <div class="card-title">Passorn (ภัสสร)</div>
+              <div class="card-meta">Well-Living Community · Neo Classic / Scandinavian · 4 ห้องนอนทุกหลัง · Passive Home Design · EV Charger · สระน้ำเกลือ</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">4.59 – 12 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">125 – 332 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">35 – 82 ตร.วา</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 2–4 น้ำ · 2–3 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+                <li>ราชพฤกษ์-ติวานนท์ 2 — นนทบุรี · บ้านเดี่ยว+บ้านแฝด · 156–239 ตร.ม. · 35–50 ตร.วา · เริ่ม 4.59 ล้าน</li>
+                <li>รามคำแหง-ราษฎร์พัฒนา — กรุงเทพฯ · 232 ยูนิต · บ้านเดี่ยว+บ้านแฝด · 125–180 ตร.ม. · เริ่ม 4.95 ล้าน</li>
+                <li>ราชพฤกษ์ — นนทบุรี · บ้านเดี่ยว Neo Classic · 201–268 ตร.ม. · 51–54 ตร.วา · เริ่ม 8 ล้าน</li>
+                <li>ศรีนครินทร์-เทพารักษ์ — สมุทรปราการ · บ้านเดี่ยว · 212–332 ตร.ม. · เริ่ม 8.99 ล้าน</li>
+                <li>บางนา-วงแหวน 2 — สมุทรปราการ · บ้านเดี่ยว · 223–268 ตร.ม. · 51–59 ตร.วา · เริ่ม 8.99 ล้าน</li>
+                <li>7 รัตนาธิเบศร์ — นนทบุรี · 602 หลัง · พื้นที่ 167 ไร่ · 215–273 ตร.ม. · สอบถามราคา</li>
+                <li>สรงประภา — กรุงเทพฯ (ดอนเมือง) · บ้านเดี่ยว 3 ชั้น Modern · 96 หลัง · 10–15 ล้าน</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ Passorn (พฤกษาใช้แบรนด์ บ้านพฤกษา / Pruksa Ville ในชลบุรีแทน)</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>20,600 – 53,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>34,400 – 89,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Passorn → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-palm" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-the-palm.png" alt="The Palm" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">Luxury</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว Luxury (บ้านเดี่ยวล้วน)</span></div>
+              <div class="card-title">The Palm</div>
+              <div class="card-meta">A Reflection on Your Success · Well-Living Club · Tropical/French/Verdant Minimalist · Solar Roof · EV Charger · สระน้ำเกลือ + Concierge</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">6.99 – 25.9 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">183 – 529 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">54 – 133 ตร.วา</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4–5 นอน · 3–5 น้ำ · 2–3 จอด</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล</strong></li>
+                <li>กรุงเทพกรีฑา-วงแหวน — กรุงเทพฯ · Tropical Urban Forest · 183–292 ตร.ม. · 62–120 ตร.วา · เริ่ม 6.99 ล้าน</li>
+                <li>แจ้งวัฒนะ-ชัยพฤกษ์ 2 — นนทบุรี · Luxury · 318–469 ตร.ม. · 73–133 ตร.วา · เริ่ม 14.9 ล้าน</li>
+                <li>วิภาวดี 64 — กรุงเทพฯ (หลักสี่) · 3 ชั้น · 295–421 ตร.ม. · 54.4+ ตร.วา · เริ่ม 17.9 ล้าน</li>
+                <li>ทวีวัฒนา — กรุงเทพฯ · French Haussmann · 369–468 ตร.ม. · 100+ ตร.วา · 19–25 ล้าน</li>
+                <li>The Palm Courtyard บางนา กม.8 — สมุทรปราการ · ใกล้ Mega Bangna · 346–529 ตร.ม. · เริ่ม 25 ล้าน</li>
+                <li>บางนา-วงแหวน 2 — สมุทรปราการ · Verdant Minimalist · 466 ตร.ม. · 70+ ตร.วา · เริ่ม 25.9 ล้าน</li>
+                <li><strong style="color:var(--text);">ชลบุรี</strong> — ไม่มีโครงการ The Palm (พฤกษา Luxury ยังไม่เปิด market ชลบุรี — ลูกค้าที่ต้องการบ้านหรูในชลบุรีให้ดู Sansiri / AP Thai แทน)</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>31,400 – 116,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>52,300 – 194,000 บ./เดือน</strong> (DSR 60%)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Palm → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-pine" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-pine.png" alt="PINE Wellness Residence" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">⭐ High · Multi-Gen Wellness</span><span style="font-size:0.75rem;color:var(--muted);">British Timeless Elegance · 3 ชั้น · Single-Project</span></div>
+              <div class="card-title">PINE Wellness Residence</div>
+              <div class="card-meta"><strong style="color:var(--text);">"Wellness Residence for Multi-Generations"</strong> — บ้านเดี่ยว + บ้านแฝด 3 ชั้น สไตล์ British Timeless Elegance · ออกแบบรองรับครอบครัวหลายรุ่น (ผู้สูงอายุ + วัยกลาง + เด็ก) · มาพร้อม <strong>Concierge Service + Health &amp; Wellness Service</strong> · 1 โครงการ Active ที่ประชาชื่น · 4 แบบบ้าน</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">12 – 20 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">235 – 255+ ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">39 – 51.4+ ตร.วา</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 4–5 น้ำ + ห้องแม่บ้าน · 3 จอด</div></div>
+              </div>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบบ้าน (4 PINE Series — verified 2 หลัก)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">MONTEREY PINE</strong> (บ้านเดี่ยว) — 255 ตร.ม. · 51.4 ตร.วา · 4 นอน 5 น้ำ + 1 ห้องแม่บ้าน · 1 ห้องนั่งเล่น · 2 พื้นที่ครอบครัว · 1 พื้นที่อเนกประสงค์ · 3 ที่จอดรถ</li>
+                <li><strong style="color:var(--text);">VIRGINIA PINE</strong> (บ้านแฝด) — 235 ตร.ม. · 39.0 ตร.วา · 4 นอน 4 น้ำ · 1 ห้องนั่งเล่น · 2 พื้นที่ครอบครัว · 1 พื้นที่อเนกประสงค์ · 3 ที่จอดรถ</li>
+                <li><em>+ 2 PINE Series อื่น (รอ verify spec จาก Sales Gallery)</em></li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มือ 1 active · 1 โครงการเดียว)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ และปริมณฑล (Single-Project Premium Brand)</strong></li>
+                <li><strong>PINE Wellness Residence Prachachuen</strong> ⭐ — นนทบุรี (ต.ท่าทราย อ.เมืองนนทบุรี · ถ.สามัคคี) · <strong>MRT สามัคคี สายสีชมพู 1.6 กม.</strong> · ใกล้ถ.ประชาชื่น/ติวานนท์/งามวงศ์วาน/แจ้งวัฒนะ · ใกล้ทางด่วนศรีรัช · 62 ยูนิต · ราคา 12 – 20 ล้าน (เริ่ม 12.9M promotion) · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (มือ 1)</span></li>
+                <li><strong style="color:var(--text);">ชลบุรี / EEC</strong> — <strong>ไม่มีโครงการ PINE Wellness</strong> (Single-Project Premium Brand เปิดเฉพาะประชาชื่น · ลูกค้าชลบุรีที่ต้องการบ้านหรู Multi-Gen ให้ดู AssetWise The Honor / Sansiri Baan Sansiri Pattanakarn แทน)</li>
+              </ul>
+
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>53,800 – 89,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 12–20M)</span><br>รายได้ขั้นต่ำ <strong>89,700 – 149,500 บ./เดือน</strong> (DSR 60%)</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🇬🇧</span><span><strong>British Timeless Elegance Design:</strong> ดีไซน์สไตล์อังกฤษ classical-modern · เพดานสูง · งานสถาปัตย์ symmetric · facade เน้น stone + dark wood · gardens · brand เดียวของ Pruksa ที่ใช้ดีไซน์ British classical</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">👨‍👩‍👧‍👦</span><span><strong>Multi-Generation Wellness Design:</strong> ออกแบบเพื่อครอบครัว 3 รุ่น (ผู้สูงอายุ + วัยกลาง + เด็ก) · ทุกหลังมี <strong>3 พื้นที่ครอบครัว</strong> (ชั้น 1 ผู้สูงอายุ · ชั้น 2 พ่อแม่ · ชั้น 3 เด็ก) · พื้นที่อเนกประสงค์สำหรับ home gym/yoga · ห้องนอนชั้น 1 พร้อมห้องน้ำสำหรับผู้สูงอายุ</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🛎️</span><span><strong>Concierge + Health &amp; Wellness Service:</strong> บริการพิเศษเฉพาะลูกบ้าน · Health Concierge ช่วยจัดการนัดหมอ · Wellness service (ออกกำลังกาย · โยคะ · ตรวจสุขภาพประจำปี) · เป็น <strong>brand แรกของ Pruksa ที่รวม Wellness service ใน home purchase</strong></span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวหลายรุ่น (พ่อแม่/ปู่ย่าตายาย + ลูก) · ผู้ประกอบการที่ต้องการบ้านสำหรับครอบครัวใหญ่ · ลูกค้าที่ใส่ใจ Wellness + Health · ครอบครัวที่ทำงานย่านงามวงศ์วาน/ติวานนท์/แจ้งวัฒนะ · ใกล้ MRT สายสีชมพู</span></div>
+
+              <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span><strong>Action ก่อนนำเสนอ:</strong> 62 ยูนิตเท่านั้น (Exclusive) · stock จำกัด · <strong>โทร Pruksa 1739 หรือ PINE Sales Gallery</strong> ยืนยัน inventory คงเหลือ + แบบบ้าน 4 PINE Series ที่ยังเปิดขาย + ราคาแปลงปัจจุบัน · ราคาแตกต่างตามตำแหน่งแปลง (มุม/ติดสวน/ติดทะเลสาบ premium)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ PINE Wellness Residence → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-palm-residences" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-the-palm-residences.png" alt="The Palm Residences" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">⭐ Super Luxury · "Well-Living Mastery"</span><span style="font-size:0.75rem;color:var(--muted);">2 โครงการ · 219 ยูนิต · Pool Villa ทุกหลัง</span></div>
+              <div class="card-title">The Palm Residences</div>
+              <div class="card-meta"><strong style="color:var(--text);">"Well-Living Mastery"</strong> — Super Luxury Pool Villa ของ Pruksa · 2 โครงการ active mua-1 (Watcharapol 40 ยูนิต Pre-sale Q4/2024 + Pattanakarn 179 ยูนิต Pre-sale พ.ย. 2024) · พูลวิลล่าส่วนตัวทุกหลัง · เปิดตัว Pre-sale ปลายปี 2567</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">35 – 80 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">409 – 470 ตร.ม. (Watcharapol verified)</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">เริ่ม 100 ตร.วา (Watcharapol)</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 5 น้ำ · 3–4 จอด + Private Pool</div></div>
+              </div>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบบ้าน Watcharapol (2 Models verified)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">EMBRACE</strong> — 409 ตร.ม. · 4 นอน 5 น้ำ · Private Pool · 3 ที่จอดรถ (entry)</li>
+                <li><strong style="color:var(--text);">EMPIRE</strong> — 470 ตร.ม. · 4 นอน 5 น้ำ · Private Pool · 4 ที่จอดรถ (top)</li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มือ 1 active · 2 โครงการ)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพชั้นใน (2 โครงการ active)</strong></li>
+                <li><strong>The Palm Residences Watcharapol</strong> ⭐ — กรุงเทพฯ (บางเขน · ใจกลางวัชรพล) · ใกล้ BTS สายสีชมพู วัชรพล · <strong>18 ไร่ 27.2 ตร.วา · 40 ยูนิต Exclusive (freehold villas)</strong> · ที่ดินเริ่ม 100 ตร.วา · พื้นที่ใช้สอย 409–470 ตร.ม. · 2 แบบบ้าน (EMBRACE/EMPIRE) · Private Pool ทุกหลัง · <strong>35 – 47 ล้าน</strong> · ราคา/ตร.ม. ~86,720–107,500 · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (Pre-sale)</span></li>
+                <li><strong>The Palm Residences Pattanakarn</strong> ⭐ — กรุงเทพฯ (สวนหลวง · ซอยพัฒนาการ 44) · ใกล้ทองหล่อ · <strong>61 ไร่ 3 งาน · 179 ยูนิต บ้านเดี่ยว 2 ชั้น</strong> · Pre-sale เปิด พ.ย. 2024 · <strong>45 – 80 ล้าน</strong> · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (Pre-sale)</span></li>
+                <li><strong style="color:var(--text);">ชลบุรี / EEC</strong> — <strong>ไม่มีโครงการ The Palm Residences</strong> (Super Luxury Tier 35M+ ยังไม่เปิด market ชลบุรี · Ultra HNW segment กระจุกในกรุงเทพชั้นใน · ลูกค้าที่ต้องการ Super Luxury Pool Villa ในชลบุรี/พัทยา ให้ดู AssetWise The Honor Yothinpattana (40–60M) · Pruksa The Reserve Villas สุขุมวิท 89/1 (65–85M) แทน)</li>
+              </ul>
+
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>157,100 – 359,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 35–80M)</span><br>รายได้ขั้นต่ำ <strong>261,800 – 598,700 บ./เดือน</strong> (DSR 60%)</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>Concept "Well-Living Mastery":</strong> The Palm Residences เน้น Health + Wellness สำหรับ HNW Family · Master Bedroom suite · Sub-zero refrigerator · Smart Home automation · Pool Villa private · Concierge service · Family Multi-Generational Living</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> Ultra HNW Family (Top 1%) · เจ้าของธุรกิจขนาดกลาง-ใหญ่ · ครอบครัวที่ต้องการ Pool Villa Luxury แต่ยังอยากอยู่ในเมือง · ลูกค้า Pruksa Loyalty (จาก The Palm/The Reserve) ที่ upgrade · ใกล้ที่ทำงาน CBD แต่ต้องการบ้านเดี่ยวหรู</span></div>
+
+              <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span><strong>Action ก่อนนำเสนอ:</strong> ทั้ง 2 โครงการอยู่ใน Pre-sale phase (เปิด Q4/2024) · stock จำกัดมาก (Watcharapol 40 + Pattanakarn 179 = 219 ยูนิต รวม) · <strong>โทร Pruksa 1739 หรือ The Palm Sales Gallery</strong> ยืนยัน inventory + แบบบ้านที่ยังเหลือ + plot ที่ว่าง + Concierge package · Pre-sale promotion: ส่วนลดสูงสุด 2 ล้านบาท</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Palm Residences → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="brand-pruksa-the-reserve-villas" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('pruksa-toc')">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-img-wrap">
+              <img src="/images/pruksa-the-reserve-villas.png" alt="The Reserve Villas" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">⭐ Rare Collection · Super Luxury Villa</span><span style="font-size:0.75rem;color:var(--muted);">26 ยูนิต · ปลุกแบรนด์ในรอบ 8 ปี</span></div>
+              <div class="card-title">The Reserve Villas</div>
+              <div class="card-meta"><strong style="color:var(--text);">"The Rarity Today, The Legacy Tomorrow"</strong> — Super Luxury Pool Villa 3.5 ชั้น ของพฤกษา · พฤกษาปลุกแบรนด์ <strong>"The Reserve" ในรอบ 8 ปี</strong> · 1 โครงการเดียว <strong>Rare Collection 26 ครอบครัว Exclusive</strong> ใจกลางสุขุมวิท · ออกแบบโดย A49 · เปิด Pre-sale 1Q/2569 · พร้อมอยู่บางส่วน 2569</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">65 – 85 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">282 – 462 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">36 – 50+ ตร.วา</div></div>
+                <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">5–6 น้ำ + แม่บ้าน + ลิฟต์ + Pool · 4 จอด</div></div>
+              </div>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">🏠 แบบบ้าน (2 Residences verified · 3.5 ชั้น)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">Residence I</strong> (บ้านเดี่ยว 3.5 ชั้น) — ที่ดินเริ่ม <strong>50 ตร.วา</strong> · พื้นที่ใช้สอย <strong>462 ตร.ม.</strong> · ลิฟต์ส่วนตัว · Pool · ห้องแม่บ้าน · 4 จอด</li>
+                <li><strong style="color:var(--text);">Residence II</strong> (บ้านแฝด 3.5 ชั้น) — ที่ดินเริ่ม <strong>36 ตร.วา</strong> · พื้นที่ใช้สอย <strong>282 ตร.ม.</strong> · ลิฟต์ส่วนตัว · Pool · ห้องแม่บ้าน · 4 จอด</li>
+              </ul>
+
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มือ 1 active · Single-Location)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพชั้นใน — สุขุมวิทใต้ (1 โครงการ Rare Collection)</strong></li>
+                <li><strong>The Reserve Villas Sukhumvit 89/1</strong> ⭐ — กรุงเทพฯ (พระโขนง · ซอยสุขุมวิท 89/1) · <strong>400 ม. จากถนนสุขุมวิท</strong> · ใกล้ BTS อ่อนนุช + บางจาก · <strong>5 ไร่ 1 งาน 23.9 ตร.วา · 26 ยูนิต Rare Collection</strong> · 2 แบบบ้าน 3.5 ชั้น (Residence I/II) · ออกแบบโดย <strong>A49</strong> · เปิด Pre-sale 1Q/2569 · พร้อมอยู่บางส่วน 2569 · <strong>65 – 85 ล้าน</strong> · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (Pre-sale)</span></li>
+                <li><strong style="color:var(--text);">ชลบุรี / EEC</strong> — <strong>ไม่มีโครงการ The Reserve Villas</strong> (Rare Collection Single-Location Brand 65M+ เปิดเฉพาะสุขุมวิท 89/1 · Ultra HNW segment เน้นทำเลใจกลางกรุงเทพ · ลูกค้าที่ต้องการ Super Luxury Pool Villa ในชลบุรี/พัทยา ให้ดู AssetWise The Honor (40–60M) หรือ Sansiri Narasiri Bangna km.10 (60–150M) แทน)</li>
+              </ul>
+
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>291,900 – 381,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 65–85M)</span><br>รายได้ขั้นต่ำ <strong>486,500 – 636,200 บ./เดือน</strong> (DSR 60%)</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>Brand Story:</strong> The Reserve เป็นแบรนด์ Super Luxury ของพฤกษาที่ <strong>หยุดเปิดโครงการใหม่ 8 ปี</strong> · เลือกกลับมาเปิดด้วย Rare Collection 26 ยูนิตเท่านั้นในใจกลางสุขุมวิท · ปกติเปิดเฉพาะคอนโด Luxury (เช่น The Reserve Sukhumvit 61) · ครั้งนี้เปิดเป็น Villa รูปแบบใหม่ของแบรนด์ · เน้น "หาที่ไหนไม่ได้อีกแล้ว" สำหรับ Generational Home</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎨</span><span><strong>A49 Design Edge:</strong> ออกแบบโดย <strong>Architects 49 (A49)</strong> — บริษัทออกแบบ Top-tier ของไทย ผลงานเด่น The Met (Sathorn) · 137 Pillars Bangkok · One Bangkok · เพิ่มน้ำหนัก architectural value ของ The Reserve Villas</span></div>
+
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> Ultra HNW (Top 0.5%) ที่ต้องการบ้านใจกลางสุขุมวิท · นักธุรกิจ Listed Tier 1 · Expat C-Suite · ลูกค้า Pruksa Loyalty ระดับสูงสุด · ครอบครัวที่มีลูกเรียน Int'l School ย่านสุขุมวิท (Bangkok Prep · Brighton · Patana) · ผู้ที่ต้องการ "หายาก" ระดับ Rare Collection</span></div>
+
+              <div class="callout warning" style="margin-top:0.5rem;"><span class="callout-icon">⚠️</span><span><strong>Action ก่อนนำเสนอ:</strong> <strong>Rare Collection 26 ยูนิตเท่านั้น</strong> · stock จำกัดสูง · ลูกค้า HNW มักต้องการ private viewing เอง · <strong>โทร Pruksa Luxury 1739 ระบุ "The Reserve Villas"</strong> เพื่อจัด private appointment + verify inventory + เลือก plot ที่ยังว่าง · ราคาแตกต่างมากตามตำแหน่ง (Residence I vs II · มุม vs กลาง · ติด clubhouse vs ไม่ติด)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Reserve Villas → LINE</a></div>
+          </div>
+        </div>
+
+      </div><!-- /dev-brand-panel#dev-pruksa -->
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
+      </div>
+    </div>
+  </footer>
+<script>
+    function toggleCrit(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#critFlow .crit-flow-item');
+      var allDetails = document.querySelectorAll('.crit-detail-wrap');
+      var isOpen = el.classList.contains('show');
+      allDetails.forEach(function(d){ d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = parseInt(id.replace('c','')) - 1;
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    function toggleStep2(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#stepFlow2 .crit-flow-item');
+      var ids = ['s2_1','s2_2','s2_3','s2_4'];
+      var isOpen = el.classList.contains('show');
+      ids.forEach(function(i){ var d=document.getElementById(i); if(d) d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = ids.indexOf(id);
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#critFlow') && !e.target.closest('#stepFlow2') && !e.target.closest('.crit-detail-wrap')) {
+        document.querySelectorAll('.crit-detail-wrap').forEach(function(d){ d.classList.remove('show'); });
+        document.querySelectorAll('.crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
+      }
+      // Close all <details> when clicking outside
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'lpn-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc(tocId) {
+      tocId = tocId || 'lpn-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleCat(el) {
+      el.classList.toggle('open');
+      var list = el.parentElement.querySelector('.cat-list');
+      if (list) list.classList.toggle('open');
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+
+    // Developer icon toggle
+    document.querySelectorAll('.dev-icon-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var devId = this.dataset.dev;
+        var panel = document.getElementById('dev-' + devId);
+        var isActive = this.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.dev-icon-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.dev-brand-panel').forEach(function(p) { p.classList.remove('active'); });
+        // Open this one (toggle off if already active)
+        if (!isActive) {
+          this.classList.add('active');
+          if (panel) panel.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
