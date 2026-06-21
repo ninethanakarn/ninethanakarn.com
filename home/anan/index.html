@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="บ้านมือ 1 อยู่เอง — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ">
+  <meta property="og:url" content="https://ninethanakarn.com/home/anan/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="บ้านมือ 1 อยู่เอง">
+  <meta name="twitter:description" content="บ้านใหม่จาก developer Top 20 SET สำหรับครอบครัวที่อยากอยู่เอง">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>บ้าน Ananda (ANAN) 6 แบรนด์ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg,#1e40af,#3b82f6); display:grid; place-items:center; box-shadow:0 4px 16px rgba(30,64,175,0.2); flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(30,64,175,0.35); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; stroke-width:1.8; }
+    .crit-flow-label { font-size:11px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:20px; color:rgba(59,130,246,0.4); font-size:1.1rem; flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:0.75rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2); border-radius:12px; padding:0.875rem 1rem; font-size:0.82rem; line-height:1.6; }
+    .crit-detail-title { font-weight:700; color:#3b82f6; margin-bottom:0.5rem; font-size:0.88rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; }
+    .crit-detail-list li { padding:0.2rem 0; color:var(--text); }
+    .crit-detail-list li::before { content:'• '; color:#3b82f6; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .toc-table { width: 100%; border-collapse: collapse; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .toc-table th { text-align: left; padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); background: var(--section-bg); font-weight: 600; }
+    .toc-table td { padding: 0.7rem 0.75rem; font-size: 0.88rem; border-top: 1px solid var(--card-border); }
+    .toc-brand-row { cursor: pointer; transition: background 0.15s; }
+    .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
+    .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+
+    /* Card image */
+    .card-img-wrap { border-radius: 12px 12px 0 0; overflow: hidden; aspect-ratio: 16/9; background: var(--section-bg); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .property-card:hover .card-img-wrap img { transform: scale(1.04); }
+
+    /* Developer icon grid */
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 1.25rem; }
+    .dev-icon-btn {
+      display: flex; align-items: center; gap: 0.875rem;
+      background: var(--section-bg); border: 1.5px solid var(--card-border);
+      border-radius: 12px; padding: 0.875rem 1.1rem;
+      cursor: pointer; text-align: left; width: 100%;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    }
+    .dev-icon-btn:hover { border-color: rgba(59,130,246,0.5); background: rgba(59,130,246,0.04); }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; letter-spacing: 0.02em; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: linear-gradient(135deg, #f5f2ea, #e6e0d2); color: #1a1a1a; border: 1.5px solid #cdc4b0; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    /* PSH category accordion (2-level) */
+    .cat-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; }
+    .cat-chevron { transition: transform 0.2s; font-size: 0.85rem; flex-shrink: 0; margin-left: 0.5rem; }
+    .cat-toggle.open .cat-chevron { transform: rotate(90deg); }
+    .cat-list { display: none; }
+    .cat-list.open { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; transition: transform 0.2s; }
+    .dev-icon-btn.active .dev-chevron { transform: rotate(-180deg); }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; min-width:26px; min-height:26px; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏡 บ้าน Ananda (ANAN)</h1>
+      <p class="hero-subtitle">6 แบรนด์แนวราบ active · Affordable–Super Luxury · 2.69 – 80 ล้าน · SET: ANAN</p>
+      <p style="margin-top:0.6rem;"><a href="/home/" style="color:#3b82f6;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+<!-- Ananda Brand Panel -->
+      <div id="dev-anan">
+
+      <!-- สารบัญ -->
+      <div class="brand-toc" id="anan-toc">
+        <div class="toc-group">
+          <div class="toc-group-title">🏠 ทาวน์โฮม/บ้านแฝด — 3 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('anda')">
+              <span class="brand-list-name">Anda</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคาเริ่ม 2.69 ล้าน</span><span>ผ่อน 12,100 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('unio-town')">
+              <span class="brand-list-name">Unio Town</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 2.69–3.59 ล้าน</span><span>ผ่อน 12,100–16,100 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('urbanio')">
+              <span class="brand-list-name">Urbanio</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคาเริ่ม 5.39 ล้าน</span><span>Premium · ทาวน์โฮม 3 ชั้น</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-title">🏡 บ้านเดี่ยว — 3 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('atoll')">
+              <span class="brand-list-name">Atoll</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคาเริ่ม 3.99 ล้าน</span><span>Mid · ใกล้ BTS คลองสี่</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('airi')">
+              <span class="brand-list-name">Airi</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 9.9–35 ล้าน</span><span>Premium · สไตล์ญี่ปุ่น</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('artale')">
+              <span class="brand-list-name">Artale</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 38–80 ล้าน</span><span>Super Luxury · Pool Villa</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Brand Details -->
+      <div class="psh-cat">🏠 ทาวน์โฮม/บ้านแฝด — 3 แบรนด์</div>
+        <div id="brand-anda" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/anda.webp" alt="Anda" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge badge-success">Affordable</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านแฝด + ทาวน์โฮม 2 ชั้น</span>
+            </div>
+            <div class="card-title">ANDA</div>
+            <div class="card-meta">บ้านแฝด+ทาวน์โฮม Affordable สไตล์ Nordic · first jobber/ครอบครัวใหม่ · ใกล้ทางด่วนศรีสมาน (ปทุมธานี)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 2.69 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">108 – 157 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">17.4 – 73.4 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 2–3 น้ำ · 1–2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Anda ราชพฤกษ์-แจ้งวัฒนะ — บางคูวัด เมืองปทุมธานี · ใกล้ทางด่วนศรีสมาน ~5 นาที · แนว MRT สีชมพู/ม่วง · 290 ยูนิต · พร้อมอยู่ · เริ่ม 2.69 ล้าน (Rowan/Bergen ทาวน์โฮม · Oslo/Stockholm แฝด)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">อยุธยา-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 12,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 20,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านแฝด+ทาวน์โฮม 2 ชั้นสไตล์ Nordic · 4 แบบ (Rowan/Bergen ทาวน์โฮม · Oslo/Stockholm แฝด) · 108–157 ตร.ม. · พร้อมอยู่</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first jobber/ครอบครัวใหม่งบเข้าถึง 2.7M (ตรงกรอบ Touch) · คนทำงานโซนปทุมธานี/แจ้งวัฒนะ ใกล้ทางด่วนศรีสมาน</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ ANDA → LINE</a></div>
+        </div>
+      </div><!-- /brand-anda -->
+
+      <div id="brand-unio-town" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/unio-town.webp" alt="Unio Town" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge badge-success">Affordable</span>
+              <span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม 2 ชั้น · เครือ Helix</span>
+            </div>
+            <div class="card-title">UNIO TOWN</div>
+            <div class="card-meta">ทาวน์โฮม Affordable "Wheel of Life" (เครือ Helix) · งบประหยัด · กระจาย กทม.ฝั่งใต้/ตะวันออก + สมุทรปราการ</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.69 – 3.59 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">112 – 133 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">16.5 – 20.1 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">2–3 นอน · 2–3 น้ำ · 2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>ประชาอุทิศ 76 — ทุ่งครุ กรุงเทพฯ · ใกล้ทางด่วน · 427 ยูนิต · 112–115 ตร.ม. · พร้อมอยู่ · เริ่ม 2.69 ล้าน</li>
+              <li>ศรีนครินทร์-บางนา — บางแก้ว บางพลี สมุทรปราการ · BTS สีเหลือง ศรีแบริ่ง/สีเขียว แบริ่ง ~10 นาที · เฟสท้าย "หลังสุดท้าย" · เริ่ม 3.29 ล้าน</li>
+              <li>สุขสวัสดิ์ 30 — ราษฎร์บูรณะ กรุงเทพฯ · ใกล้ทางด่วนเฉลิมมหานคร · หน้ากว้าง 5.7 ม. · 115–133 ตร.ม. · เริ่ม 3.59 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">อยุธยา-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>12,100 – 16,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>20,200 – 26,900 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮม 2 ชั้น Modern Loft งบประหยัด (เครือ Helix) · หน้ากว้าง 5.7 ม. (สุขสวัสดิ์) · จอด 2 คัน · กระจายหลายโซน</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first jobber/ครอบครัวเริ่มต้นงบ 2.7–3.6M (ตรงกรอบ Touch) · ปล่อยเช่าทำเลใกล้ BTS (ศรีนครินทร์-บางนา ติด 2 สาย) · ⚠️ ศรีนครินทร์-บางนา เฟสท้ายใกล้หมด · ตัด เพชรเกษม110/สวนหลวง-พัฒนาการ/ลำลูกกา-คลอง4 (resale)</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ UNIO TOWN → LINE</a></div>
+        </div>
+      </div><!-- /brand-unio-town -->
+
+      <div id="brand-urbanio" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/urbanio.webp" alt="Urbanio" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge badge-warning">Premium</span>
+              <span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม 3 ชั้น · เครือ Helix</span>
+            </div>
+            <div class="card-title">URBANIO</div>
+            <div class="card-meta">ทาวน์โฮม 3 ชั้น Premium (เครือ Helix) · ติด Interchange หลักสี่ · ใกล้ศูนย์ราชการ/ดอนเมือง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 5.39 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">~180 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">เริ่ม ~20.2 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3 นอน · 3 น้ำ · 2 จอด · 3–3.5 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Urbanio Mezz วิภาวดี-แจ้งวัฒนะ — หลักสี่ กรุงเทพฯ (แจ้งวัฒนะ 10) · ติดทางด่วนแจ้งวัฒนะ+ศรีรัช · ใกล้ Interchange หลักสี่ (สีชมพู+แดง) · ศูนย์ราชการ/ดอนเมือง · 221 ยูนิต · พร้อมอยู่ · เริ่ม 5.39 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">อยุธยา-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 24,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 40,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮม 3–3.5 ชั้น Premium (เครือ Helix) · ติด Interchange หลักสี่ (รถไฟฟ้า 2 สาย ชมพู+แดง) · ใกล้ศูนย์ราชการแจ้งวัฒนะ + ดอนเมือง · 3 นอน 3 น้ำ</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวขยาย/คนทำงานศูนย์ราชการที่ต้องการทาวน์โฮมระดับบนติด interchange · ⚠️ เกินกรอบ Touch (5.39M premium)</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ URBANIO → LINE</a></div>
+        </div>
+      </div><!-- /brand-urbanio -->
+
+      <div class="psh-cat">🏡 บ้านเดี่ยว — 3 แบรนด์</div>
+        <div id="brand-atoll" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/atoll.webp" alt="Atoll" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว + บ้านแฝด 2 ชั้น</span>
+            </div>
+            <div class="card-title">ATOLL</div>
+            <div class="card-meta">บ้านเดี่ยว+แฝด Mid Modern · ใกล้ BTS คลองสี่ · งบเข้าถึงสำหรับบ้านเดี่ยว (ปทุมธานี)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 3.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">130 – 185 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">38 – 60 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 2–3 น้ำ · 2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Atoll วงแหวน-ลำลูกกา — ลาดสวาย ลำลูกกา ปทุมธานี · BTS สีเขียว คลองสี่ ~550–600 ม. · ทางด่วนกาญจนาฯ+โทลล์เวย์ · 138 ยูนิต · พร้อมอยู่ · เริ่ม 3.99 ล้าน (DH 130 แฝด · SH 155/185 เดี่ยว)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี (Atoll Bali Beach = ฉะเชิงเทรา ทาวน์โฮมเก่า resale) · <strong style="color:var(--text);">อยุธยา-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 17,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 29,900 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยว+แฝด 2 ชั้น Modern · 3 แบบ (DH 130 แฝด · SH 155/185 เดี่ยว) · ใกล้ BTS คลองสี่ ~600 ม. (บ้านเดี่ยวติดรถไฟฟ้าหายาก) · หน้ากว้าง</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวที่อยากได้บ้านเดี่ยว/แฝดงบเข้าถึง 3.99M (เริ่มต้นในกรอบ Touch) ใกล้ BTS · คนทำงานโซนลำลูกกา/ปทุมธานี</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ ATOLL → LINE</a></div>
+        </div>
+      </div><!-- /brand-atoll -->
+
+      <div id="brand-airi" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/airi.webp" alt="Airi" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">Premium</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว 2 ชั้น</span>
+            </div>
+            <div class="card-title">AIRI</div>
+            <div class="card-meta">บ้านเดี่ยว Premium สไตล์ญี่ปุ่น (SHAKKEI) · Exclusive · ใกล้ทางด่วน/รถไฟฟ้า · กทม.-ปริมณฑล</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">9.9 – 35 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">220 – 369 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">57 – 122 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 3–5 น้ำ · 2–3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Sukhumvit-Bangna KM.5 — บางพลี สมุทรปราการ · ใกล้ รร.นานาชาติ · Modern Classic 40 ยูนิต · พร้อมอยู่ · เริ่ม 20 ล้าน (Maroon 322 / Lapis 369 ตร.ม.)</li>
+              <li>แจ้งวัฒนะ — หลักสี่ กรุงเทพฯ · MRT สีชมพู แจ้งวัฒนะ 14 ~5 นาที · 85 ยูนิต · 220–285 ตร.ม. · พร้อมอยู่ (เหลือน้อย) · โปรเริ่ม 9.9 ล้าน</li>
+              <li>พระราม 2 — บางขุนเทียน กรุงเทพฯ · ทางด่วนพระราม 2 · 79 ยูนิต · พร้อมอยู่ (เหลือ ~3 ยูนิต) · โปร 9.9 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">อยุธยา-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 44,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 74,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยว 2 ชั้น Modern Luxury สไตล์ญี่ปุ่น (SHAKKEI/Simple Japanese) · Exclusive 40–85 ยูนิต · บางตัวมีสระ/คลับเฮาส์ส่วนกลาง</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวระดับบนที่ชอบบ้านสไตล์ญี่ปุ่น · ⚠️ เกินกรอบ Touch (9.9–35M) · แจ้งวัฒนะ/พระราม2 เหลือน้อย (ระบายสต๊อก) · ตัวใหม่สุด = บางนา KM.5 · ตัด พระราม5-ราชพฤกษ์ (เหลือ 1 ยูนิต)</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ AIRI → LINE</a></div>
+        </div>
+      </div><!-- /brand-airi -->
+
+      <div id="brand-artale" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/artale.webp" alt="Artale" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge" style="background:rgba(217,119,6,0.15);color:#d97706;border:1px solid rgba(217,119,6,0.35);">Super Luxury</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว/แฝด 3.5 ชั้น + Pool</span>
+            </div>
+            <div class="card-title">ARTALE</div>
+            <div class="card-meta">บ้านเดี่ยว/แฝด Super Luxury Pool Villa · flagship แนวราบ Ananda · in-town บนที่ดินหายาก · สระส่วนตัวทุกหลัง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">38 – 80 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">335 – 546 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">42 – 74 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4–5 นอน · 4–6 น้ำ · 3–4 จอด · 3.5 ชั้น + สระ</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Artale Asoke-Rama 9 — ห้วยขวาง กรุงเทพฯ (พระราม 9 ซ.13) · MRT พระราม 9/ประดิษฐ์มนูธรรม ~1.3 กม. · ติดทางด่วน · 87 ยูนิต · 3.5 ชั้น สระ+Jacuzzi ทุกหลัง · พร้อมอยู่ · เริ่ม 38 ล้าน (official) / 35 ล้าน (ข่าว) · ARCHE 335 / APEX 434 / AMPLE 546 ตร.ม.</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">อยุธยา-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 170,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 284,400 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> flagship แนวราบ Super Luxury Pool Villa 3.5 ชั้น · สระว่ายน้ำส่วนตัว + Jacuzzi ทุกหลัง · บนที่ดินหายากใจกลางพระราม 9 · 3 แบบ (ARCHE/APEX/AMPLE 335–546 ตร.ม.) · จอด 3–4 คัน</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> เจ้าของกิจการ/ผู้บริหารระดับสูงที่ต้องการบ้านหรู in-town · ⚠️ เกินกรอบ Touch มาก (35–80M) เน้นอยู่เอง prestige · ราคา official 38–80M / ข่าว 35–60M · ตัด พัฒนาการ-ทองหล่อ/เกษตร-นวมินทร์/เอกมัย-รามอินทรา (sold out/หางแถว)</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ ARTALE → LINE</a></div>
+        </div>
+      </div><!-- /brand-artale -->
+
+        <!-- Ananda Home Recap -->
+        <div class="callout info" style="margin-top:1rem;">
+          <span class="callout-icon">🏢</span>
+          <span>
+            <strong>Ananda + Helix (SET: ANAN):</strong> แนวราบ <strong>6 แบรนด์ active</strong> (condo-led เพิ่งเอาจริงแนวราบ — ส่วนใหญ่แบรนด์ละ 1 โครงการ active)<br>
+            <strong>ทาวน์โฮม/แฝด:</strong> Anda (2.69M) · Unio Town (2.69–3.59M · Helix) · Urbanio (5.39M Premium · Helix)<br>
+            <strong>บ้านเดี่ยว:</strong> Atoll (3.99M Mid) · Airi (9.9–35M Premium ญี่ปุ่น) · Artale (38–80M Super Luxury Pool Villa · flagship)<br>
+            <strong>ตัดออก (sold out/resale):</strong> Artale พัฒนาการ-ทองหล่อ/เกษตร-นวมินทร์/เอกมัย-รามอินทรา · Airi พระราม5-ราชพฤกษ์ · Unio Town เพชรเกษม110/สวนหลวง-พัฒนาการ/ลำลูกกา-คลอง4 · Atoll Bali Beach (ฉะเชิงเทรา ทาวน์โฮมเก่า)<br>
+            <strong>ทำเล:</strong> กทม.-ปริมณฑลล้วน (ปทุมธานี/สมุทรปราการ/หลักสี่) · ไม่มีในชลบุรี-EEC/อยุธยา · ดูคอนโด Ananda ใน <strong>/condo/anan/</strong><br>
+            <strong>⚠️ เกณฑ์ Touch 1.5-4.5M:</strong> เข้ากรอบ = Anda (2.69M) · Unio Town (2.69–3.59M) · Atoll (เริ่ม 3.99M) · เกินกรอบ = Urbanio/Airi/Artale (เน้นอยู่เอง) · ราคาโปรเปลี่ยนบ่อย โทรเช็ค 02-316-2222
+          </span>
+        </div>
+
+      </div><!-- /dev-brand-panel#dev-anan -->
+        <div style="text-align:center;margin:1.5rem 0 0.5rem;"><a href="/home/" style="display:inline-block;background:#3b82f6;color:#fff;font-weight:600;font-size:0.95rem;padding:0.7rem 1.6rem;border-radius:8px;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
+      </div>
+    </div>
+  </footer>
+<script>
+    function toggleCrit(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#critFlow .crit-flow-item');
+      var allDetails = document.querySelectorAll('.crit-detail-wrap');
+      var isOpen = el.classList.contains('show');
+      allDetails.forEach(function(d){ d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = parseInt(id.replace('c','')) - 1;
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    function toggleStep2(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#stepFlow2 .crit-flow-item');
+      var ids = ['s2_1','s2_2','s2_3','s2_4'];
+      var isOpen = el.classList.contains('show');
+      ids.forEach(function(i){ var d=document.getElementById(i); if(d) d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = ids.indexOf(id);
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#critFlow') && !e.target.closest('#stepFlow2') && !e.target.closest('.crit-detail-wrap')) {
+        document.querySelectorAll('.crit-detail-wrap').forEach(function(d){ d.classList.remove('show'); });
+        document.querySelectorAll('.crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
+      }
+      // Close all <details> when clicking outside
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'anan-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc(tocId) {
+      tocId = tocId || 'anan-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleCat(el) {
+      el.classList.toggle('open');
+      var list = el.parentElement.querySelector('.cat-list');
+      if (list) list.classList.toggle('open');
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+
+    // Developer icon toggle
+    document.querySelectorAll('.dev-icon-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var devId = this.dataset.dev;
+        var panel = document.getElementById('dev-' + devId);
+        var isActive = this.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.dev-icon-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.dev-brand-panel').forEach(function(p) { p.classList.remove('active'); });
+        // Open this one (toggle off if already active)
+        if (!isActive) {
+          this.classList.add('active');
+          if (panel) panel.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
