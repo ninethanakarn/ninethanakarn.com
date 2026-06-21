@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="บ้านมือ 1 อยู่เอง — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คัดบ้านมือ 1 จาก developer Top 20 SET สำหรับครอบครัวที่อยากซื้อบ้านอยู่เอง · วิเคราะห์ DSR · เลือกธนาคารที่อนุมัติ">
+  <meta property="og:url" content="https://ninethanakarn.com/home/bri/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="บ้านมือ 1 อยู่เอง">
+  <meta name="twitter:description" content="บ้านใหม่จาก developer Top 20 SET สำหรับครอบครัวที่อยากอยู่เอง">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>บ้าน Britania (BRI) 5 แบรนด์ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg,#1e40af,#3b82f6); display:grid; place-items:center; box-shadow:0 4px 16px rgba(30,64,175,0.2); flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(30,64,175,0.35); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; stroke-width:1.8; }
+    .crit-flow-label { font-size:11px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:20px; color:rgba(59,130,246,0.4); font-size:1.1rem; flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:0.75rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2); border-radius:12px; padding:0.875rem 1rem; font-size:0.82rem; line-height:1.6; }
+    .crit-detail-title { font-weight:700; color:#3b82f6; margin-bottom:0.5rem; font-size:0.88rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; }
+    .crit-detail-list li { padding:0.2rem 0; color:var(--text); }
+    .crit-detail-list li::before { content:'• '; color:#3b82f6; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .toc-table { width: 100%; border-collapse: collapse; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .toc-table th { text-align: left; padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); background: var(--section-bg); font-weight: 600; }
+    .toc-table td { padding: 0.7rem 0.75rem; font-size: 0.88rem; border-top: 1px solid var(--card-border); }
+    .toc-brand-row { cursor: pointer; transition: background 0.15s; }
+    .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
+    .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+
+    /* Card image */
+    .card-img-wrap { border-radius: 12px 12px 0 0; overflow: hidden; aspect-ratio: 16/9; background: var(--section-bg); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .property-card:hover .card-img-wrap img { transform: scale(1.04); }
+
+    /* Developer icon grid */
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 1.25rem; }
+    .dev-icon-btn {
+      display: flex; align-items: center; gap: 0.875rem;
+      background: var(--section-bg); border: 1.5px solid var(--card-border);
+      border-radius: 12px; padding: 0.875rem 1.1rem;
+      cursor: pointer; text-align: left; width: 100%;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    }
+    .dev-icon-btn:hover { border-color: rgba(59,130,246,0.5); background: rgba(59,130,246,0.04); }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; letter-spacing: 0.02em; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: linear-gradient(135deg, #f5f2ea, #e6e0d2); color: #1a1a1a; border: 1.5px solid #cdc4b0; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    /* PSH category accordion (2-level) */
+    .cat-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; }
+    .cat-chevron { transition: transform 0.2s; font-size: 0.85rem; flex-shrink: 0; margin-left: 0.5rem; }
+    .cat-toggle.open .cat-chevron { transform: rotate(90deg); }
+    .cat-list { display: none; }
+    .cat-list.open { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; transition: transform 0.2s; }
+    .dev-icon-btn.active .dev-chevron { transform: rotate(-180deg); }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; min-width:26px; min-height:26px; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏡 บ้าน Britania (BRI)</h1>
+      <p class="hero-subtitle">5 แบรนด์แนวราบ active · Affordable–Ultra Luxury · เริ่ม 2.39 ล้าน · SET: BRI · เครือ Origin</p>
+      <p style="margin-top:0.6rem;"><a href="/home/" style="color:#3b82f6;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+<!-- Britania Brand Panel -->
+      <div id="dev-bri">
+
+      <!-- สารบัญ -->
+      <div class="brand-toc" id="bri-toc">
+        <div class="toc-group">
+          <div class="toc-group-title">🏠 Affordable–Mid (ทาวน์โฮม/แฝด/เดี่ยว) — 2 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('brighton')">
+              <span class="brand-list-name">Brighton</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 2.39–5.69 ล้าน</span><span>ผ่อน 10,700–25,500 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('britania')">
+              <span class="brand-list-name">Britania</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 2.39–9.99 ล้าน</span><span>ผ่อน 10,700–44,900 บ./เดือน</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-title">🏡 Premium–Luxury (บ้านเดี่ยว/Pool Villa) — 3 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('grand-britania')">
+              <span class="brand-list-name">Grand Britania</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 4.59–15.9 ล้าน</span><span>ผ่อน 20,600–71,400 บ./เดือน</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('belgravia')">
+              <span class="brand-list-name">Belgravia</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>ราคา 26.9–39 ล้าน</span><span>Luxury + Pool Villa</span></div>
+            </li>
+            <li class="brand-list-item" onclick="showBrand('balco')">
+              <span class="brand-list-name">Balco</span>
+              <div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div>
+              <div class="brand-list-meta"><span>เริ่ม 35 ล้าน</span><span>Pool Villa · ภูเก็ต</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Brand Details -->
+      <div class="psh-cat">🏠 Affordable–Mid (ทาวน์โฮม/แฝด/เดี่ยว) — 2 แบรนด์</div>
+        <div id="brand-brighton" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/brighton.webp" alt="Brighton" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge badge-success">Affordable</span>
+              <span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม + บ้านแฝด 2 ชั้น</span>
+            </div>
+            <div class="card-title">BRIGHTON</div>
+            <div class="card-meta">ทาวน์โฮม+บ้านแฝดสไตล์อังกฤษ Affordable · เจาะ EEC (นิคม) + ปริมณฑล · ราคาเข้าถึงต่ำสุดในเครือ Britania</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.39 – 5.69 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">105 – 130 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">18 – 26 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">2–3 นอน · 3 น้ำ · 2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Brighton คูคต สเตชั่น — ลำลูกกา ปทุมธานี · ใกล้ BTS คูคต · บ้านแฝด เริ่ม ~3.19 ล้าน (สูงสุด 5.69)</li>
+              <li>Brighton บางนา กม.26 — บางบ่อ สมุทรปราการ · 3.99 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong></li>
+              <li>Brighton บางปะกง — ฉะเชิงเทรา · ใกล้มอเตอร์เวย์ กทม.-ชลบุรี + บูรพาวิถี · Bromley 105 / Bolney 130 ตร.ม. · 2.6–3.6 ล้าน</li>
+              <li>Brighton อมตะ-ศุขประยูร — พานทอง ชลบุรี · ใกล้นิคมอมตะนคร · 2.39 ล้าน</li>
+              <li><strong style="color:var(--text);">หัวหิน-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>10,700 – 25,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>17,800 – 42,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮม+แฝด สไตล์อังกฤษ (British) · รุ่น Bromley (105 ตร.ม.) / Bolney (130 ตร.ม.) หน้ากว้าง 5.5–8 ม. · ราคาเข้าถึงต่ำสุดในเครือ Britania</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first jobber/ครอบครัวเริ่มต้นงบ 2.4–4M · ปล่อยเช่าพนักงานนิคมอมตะ/บางปะกง (EEC Real Demand) · คนทำงานโซนปทุมธานี/สมุทรปราการ</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BRIGHTON → LINE</a></div>
+        </div>
+      </div><!-- /brand-brighton -->
+
+      <div id="brand-britania" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/britania.webp" alt="Britania" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว + แฝด + ทาวน์โฮม</span>
+            </div>
+            <div class="card-title">BRITANIA</div>
+            <div class="card-meta">บ้านสไตล์อังกฤษครบทุกประเภท (เดี่ยว/แฝด/ทาวน์โฮม) · Mid · ส่วนกลางใหญ่ · กระจายปริมณฑล + EEC</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.39 – 9.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">105 – 235 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">18 – 99 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 3–4 น้ำ · 2–3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Britania เวสต์เกต — บางใหญ่ นนทบุรี · ใกล้ Central Westgate + MRT คลองบางไผ่ · 150–230 ตร.ม. · 5.39–10 ล้าน</li>
+              <li>Britania แพรกษา สเตชั่น — เมือง สมุทรปราการ · 10 นาที BTS แพรกษา + นิคมบางปู · 3.99 ล้าน</li>
+              <li>Britania บางนา กม.26 — บางบ่อ สมุทรปราการ · 3 นาที บูรพาวิถี · 4.99 ล้าน · (+ ราชพฤกษ์/วงแหวน หลายโครงการ 4.79–9.99 ล้าน)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong></li>
+              <li>Britania บางแสน — ชลบุรี · ม.บูรพา ~3.8 กม. · มอเตอร์เวย์ กทม.-ชลบุรี 6.6 กม. · 150–235 ตร.ม. · 5.39–10 ล้าน</li>
+              <li>Britania อมตะ-พานทอง — ชลบุรี ใกล้นิคมอมตะ · 2.99 ล้าน · Britania ระยอง 4.69 ล้าน · Britania บางนา กม.42 (ฉะเชิงเทรา) 2.39 ล้าน</li>
+              <li><strong style="color:var(--text);">หัวหิน-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>10,700 – 44,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>17,800 – 74,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> แบรนด์แกนกลาง บ้านสไตล์อังกฤษครบ 3 ประเภท (เดี่ยว/แฝด/ทาวน์โฮม) · ส่วนกลางใหญ่ (clubhouse) · กระจายปริมณฑล+EEC · รุ่นเด่น Bamburgh (235 ตร.ม.) / Branscombe (200)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวที่ต้องการบ้านเดี่ยว/แฝดงบ 3–10M หลากทำเล · ปล่อยเช่า/อยู่เอง EEC (บางแสน campus ม.บูรพา, อมตะ นิคม) · งบยืดหยุ่นเลือกประเภทได้</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BRITANIA → LINE</a></div>
+        </div>
+      </div><!-- /brand-britania -->
+
+      <div class="psh-cat">🏡 Premium–Luxury (บ้านเดี่ยว/Pool Villa) — 3 แบรนด์</div>
+        <div id="brand-grand-britania" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/grand-britania.webp" alt="Grand Britania" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge badge-warning">Premium</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว 2 ชั้น</span>
+            </div>
+            <div class="card-title">GRAND BRITANIA</div>
+            <div class="card-meta">บ้านเดี่ยว Premium Modern British · เน้นโซนสุวรรณภูมิ/กรุงเทพกรีฑา + ฝั่งตะวันตก · ที่จอด 3 + ห้องแม่บ้าน</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">4.59 – 15.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">225 – 300 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">56 – 72 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 4–5 น้ำ · 3 จอด + แม่บ้าน · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Grand Britania กรุงเทพกรีฑา-สุวรรณภูมิ — ลาดกระบัง กทม. · ~5 นาที มอเตอร์เวย์ · 7 นาที สุวรรณภูมิ · 225–300 ตร.ม. · 13–20 ล้าน</li>
+              <li>Grand Britania บางนา-สุวรรณภูมิ — บางพลี สมุทรปราการ · เชื่อมมอเตอร์เวย์ ใกล้สุวรรณภูมิ · เริ่ม 6.29 ล้าน</li>
+              <li>Grand Britania นนทบุรีสเตชั่น — ใกล้รถไฟฟ้า · 8.59 ล้าน · (+ ทวีวัฒนา/ราชพฤกษ์/วงแหวน 6.99–15.9 ล้าน)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong></li>
+              <li>Grand Britania ระยอง — 8.59 ล้าน (เพียง 1 โครงการ · Grand Britania แทบไม่ลง EEC)</li>
+              <li><strong style="color:var(--text);">หัวหิน-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>20,600 – 71,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>34,300 – 119,000 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยว Premium Modern British 2 ชั้น · ทุกรุ่น 4 นอน + ห้องแม่บ้าน + จอด 3 · รุ่น Twerton (225)/Claverton (280)/Bathamton (300) · เน้นทำเลใกล้สุวรรณภูมิ</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวระดับบน/ผู้บริหารที่ต้องการบ้านเดี่ยวหรูใกล้สุวรรณภูมิ-กรุงเทพกรีฑา · งบ 5–16M · เน้นอยู่เอง (เกินกรอบ yield play)</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ GRAND BRITANIA → LINE</a></div>
+        </div>
+      </div><!-- /brand-grand-britania -->
+
+      <div id="brand-belgravia" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/belgravia.webp" alt="Belgravia" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge" style="background:rgba(217,119,6,0.15);color:#d97706;border:1px solid rgba(217,119,6,0.35);">Luxury</span>
+              <span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว Luxury + Pool Villa</span>
+            </div>
+            <div class="card-title">BELGRAVIA</div>
+            <div class="card-meta">บ้านเดี่ยว Luxury + Pool Villa Modern British · Exclusive จำกัด 35–65 หลัง · บางโครงการ JV Sotetsu (ญี่ปุ่น)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">26.9 – 39 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">360 – 500 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">70 – 100 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4–5 นอน · 5–6 น้ำ · 3–4 จอด · 2 ชั้น + สระ</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Belgravia Exclusive ราชพฤกษ์-พระราม 5 — นนทบุรี · ถ.นครอินทร์ ใกล้ MRT สีม่วง · บ้านเดี่ยว Luxury · JV Sotetsu · จำกัด 35 หลัง · 400–500 ตร.ม. · 39 ล้าน</li>
+              <li>Belgravia Exclusive Pool Villa บางนา-พระราม 9 — ประเวศ กทม. · ใกล้ Mega บางนา · Pool Villa สระทุกหลัง · 65 ยูนิต · 360–500 ตร.ม. · 26.9 ล้าน</li>
+              <li>Belgravia ปิ่นเกล้า-บรมราชชนนี — กรุงเทพฯ · <span style="font-size:0.75rem; background:rgba(139,92,246,0.12); color:#7c3aed; border:1px solid rgba(139,92,246,0.3); border-radius:4px; padding:0.05rem 0.35rem;">Pre-launch (ยังไม่เปิดราคา)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 120,800 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 201,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยว Luxury + Pool Villa (สระส่วนตัวทุกหลัง รุ่นบางนา-พระราม 9) Modern British · Exclusive จำกัด 35–65 หลัง · ราชพฤกษ์-พระราม 5 = JV Sotetsu Real Estate (ญี่ปุ่น) 49%</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ผู้บริหาร/เจ้าของกิจการระดับสูงที่ต้องการบ้านลักชัวรี/พูลวิลล่าในเมือง · งบ 27–40M+ · เน้นอยู่เอง prestige (เกินกรอบ yield play)</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BELGRAVIA → LINE</a></div>
+        </div>
+      </div><!-- /brand-belgravia -->
+
+      <div id="brand-balco" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-img-wrap"><img src="/images/balco.webp" alt="Balco" loading="lazy"></div>
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+              <span class="badge" style="background:rgba(217,119,6,0.15);color:#d97706;border:1px solid rgba(217,119,6,0.35);">Ultra-Luxury</span>
+              <span style="font-size:0.75rem; color:var(--muted);">Pool Villa ตากอากาศ 3 ชั้น</span>
+            </div>
+            <div class="card-title">BALCO</div>
+            <div class="card-meta">Pool Villa ตากอากาศหรู ภูเก็ต (บางเทา/เชิงทะเล) · แบรนด์ใหม่ 2025 · สระส่วนตัว + Rooftop Jacuzzi</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 35 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">355 – 490 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">60 – 83 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 5–6 น้ำ · 2–3 จอด · 3 ชั้น + สระ</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong> — ไม่มี · <strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+              <li><strong style="color:var(--text);">🏝️ ภูเก็ต/ต่างจังหวัด</strong></li>
+              <li>Balco Bangtao Beach — ถลาง ภูเก็ต · หาดบางเทา ~1 กม. · 3 ชั้น · 35 ยูนิต · 355–490 ตร.ม. · เริ่ม 35 ล้าน</li>
+              <li>Balco Lagoon Cherngtalay — ถลาง ภูเก็ต · เชิงทะเล ใกล้ Boat Avenue · off-plan เสร็จ มิ.ย.2570 · เริ่ม 35 ล้าน</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 157,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 262,000 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> Pool Villa ตากอากาศหรู 3 ชั้น · สระส่วนตัว + Rooftop Jacuzzi · ในโซน Origin Resort World บางเทา/เชิงทะเล ภูเก็ต · Exclusive 20–35 ยูนิต</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> นักลงทุน Holiday Home/villa rental ภูเก็ต ระดับ ultra-luxury · เจ้าของกิจการที่ต้องการบ้านพักตากอากาศ · งบ 35M+ · ⚠️ ตลาด resort villa เฉพาะกลุ่ม</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BALCO → LINE</a></div>
+        </div>
+      </div><!-- /brand-balco -->
+
+        <!-- Britania Home Recap -->
+        <div class="callout info" style="margin-top:1rem;">
+          <span class="callout-icon">🏢</span>
+          <span>
+            <strong>Britania (SET: BRI · เครือ Origin Property):</strong> บริษัทแนวราบ · <strong>5 แบรนด์ active มือ 1</strong> (Affordable–Ultra Luxury)<br>
+            <strong>ทาวน์โฮม/แฝด:</strong> Brighton (2.39–5.69M) · <strong>ครบทุกประเภท:</strong> Britania (2.39–9.99M) · <strong>บ้านเดี่ยว Premium:</strong> Grand Britania (4.59–15.9M) · <strong>Luxury+Pool Villa:</strong> Belgravia (26.9–39M) · <strong>Pool Villa ภูเก็ต:</strong> Balco (35M+)<br>
+            <strong>ยังไม่เปิด (pre-launch ไม่มีข้อมูล public):</strong> Bristol Bangkok (JV มูลค่า 1,050 ลบ. เปิด H2/2025 — รอราคา/ประเภทบ้าน)<br>
+            <strong>ทำเล:</strong> กทม.-ปริมณฑล (สุวรรณภูมิ/ราชพฤกษ์/บางนา) · ชลบุรี-EEC (บางแสน campus, อมตะ/บางปะกง นิคม, ระยอง) · ภูเก็ต (Balco villa) · ดูคอนโดเครือ Origin ใน <strong>/condo/ori/</strong><br>
+            <strong>⚠️ เกณฑ์ Touch:</strong> Brighton/Britania เข้ากรอบ (ใกล้นิคม EEC Real Demand) · Grand Britania/Belgravia/Balco เกินกรอบ (เน้นอยู่เอง/villa) · ราคา "เริ่มต้น" ต่างรุ่นต่างราคา โทรเช็ค Britania 1509
+          </span>
+        </div>
+
+      </div><!-- /dev-brand-panel#dev-bri -->
+        <div style="text-align:center;margin:1.5rem 0 0.5rem;"><a href="/home/" style="display:inline-block;background:#3b82f6;color:#fff;font-weight:600;font-size:0.95rem;padding:0.7rem 1.6rem;border-radius:8px;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
+      </div>
+    </div>
+  </footer>
+<script>
+    function toggleCrit(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#critFlow .crit-flow-item');
+      var allDetails = document.querySelectorAll('.crit-detail-wrap');
+      var isOpen = el.classList.contains('show');
+      allDetails.forEach(function(d){ d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = parseInt(id.replace('c','')) - 1;
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    function toggleStep2(id) {
+      var el = document.getElementById(id);
+      var allItems = document.querySelectorAll('#stepFlow2 .crit-flow-item');
+      var ids = ['s2_1','s2_2','s2_3','s2_4'];
+      var isOpen = el.classList.contains('show');
+      ids.forEach(function(i){ var d=document.getElementById(i); if(d) d.classList.remove('show'); });
+      allItems.forEach(function(i){ i.classList.remove('active'); });
+      if (!isOpen) {
+        el.classList.add('show');
+        var idx = ids.indexOf(id);
+        allItems[idx] && allItems[idx].classList.add('active');
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('#critFlow') && !e.target.closest('#stepFlow2') && !e.target.closest('.crit-detail-wrap')) {
+        document.querySelectorAll('.crit-detail-wrap').forEach(function(d){ d.classList.remove('show'); });
+        document.querySelectorAll('.crit-flow-item').forEach(function(i){ i.classList.remove('active'); });
+      }
+      // Close all <details> when clicking outside
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'bri-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc(tocId) {
+      tocId = tocId || 'bri-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleCat(el) {
+      el.classList.toggle('open');
+      var list = el.parentElement.querySelector('.cat-list');
+      if (list) list.classList.toggle('open');
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+
+    // Developer icon toggle
+    document.querySelectorAll('.dev-icon-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var devId = this.dataset.dev;
+        var panel = document.getElementById('dev-' + devId);
+        var isActive = this.classList.contains('active');
+        // Close all
+        document.querySelectorAll('.dev-icon-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.dev-brand-panel').forEach(function(p) { p.classList.remove('active'); });
+        // Open this one (toggle off if already active)
+        if (!isActive) {
+          this.classList.add('active');
+          if (panel) panel.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
