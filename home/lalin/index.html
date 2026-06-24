@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="บ้าน/แนวราบมือ 1 ลลิล พร็อพเพอร์ตี้ (LALIN) · ทาวน์โฮม Lio / บ้านเดี่ยว Lanceo · Greenville · ดีไซน์ French Colonial · 1.19–12 ล้าน — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="บ้าน ลลิล พร็อพเพอร์ตี้ (LALIN) — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="แนวราบมือ 1 ลลิล (LALIN) · ทาวน์โฮม/บ้านเดี่ยว/แฝด · French Colonial · 1.19–12 ล้าน">
+  <meta property="og:url" content="https://ninethanakarn.com/home/lalin/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="บ้าน ลลิล พร็อพเพอร์ตี้ (LALIN)">
+  <meta name="twitter:description" content="แนวราบมือ 1 ลลิล · ทาวน์โฮม/บ้านเดี่ยว/แฝด · French Colonial · 1.19–12 ล้าน">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>บ้าน ลลิล พร็อพเพอร์ตี้ (LALIN) — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; display:grid; place-items:center; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink:0; transition:transform .15s, box-shadow .15s; overflow:hidden; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; flex-shrink:0; }
+    .crit-flow-label { font-size:11.5px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:18px; color:var(--muted); flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:1rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { border:1px solid; border-radius:12px; padding:1rem 1.1rem; font-size:0.85rem; line-height:1.65; }
+    .crit-detail-title { font-weight:700; margin-bottom:0.6rem; font-size:0.92rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; display:grid; gap:0.35rem; }
+    .crit-detail-list li { padding:0.15rem 0 0.15rem 1.1rem; position:relative; color:var(--text); }
+    .crit-detail-list li::before { content:'›'; position:absolute; left:0; font-weight:700; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .dev-icon-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 1.5px solid var(--card-border); border-radius: 12px; background: var(--card-bg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; width: 100%; }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: linear-gradient(135deg, #f5f2ea, #e6e0d2); color: #1a1a1a; border: 1.5px solid #cdc4b0; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    .dev-logo-cmc { background: #facc15; color: #1a1a1a; }
+    .dev-logo-chewa { background: #f97316; color: #fff; }
+    .dev-logo-mjd { background: #800000; color: #fff; }
+    .dev-logo-sena { background: #0d9488; color: #fff; }
+    .dev-logo-lalin { background: #16a34a; color: #fff; }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏡 บ้าน ลลิล พร็อพเพอร์ตี้ (LALIN)</h1>
+      <p class="hero-subtitle">5 แบรนด์แนวราบ active มือ 1 · ทาวน์โฮม/บ้านเดี่ยว/แฝด · 1.19 – 12 ล้าน · ดีไซน์ French Colonial + นวัตกรรม LI · SET: LALIN</p>
+      <p style="margin-top:0.6rem;"><a href="/home/" style="color:#bfdbfe;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ℹ️ Developer Note (neutral — ไม่ใช่ distressed แต่ small-cap ไม่เข้า Top 20) -->
+    <div class="callout info" style="margin-bottom:1.25rem;">
+      <span class="callout-icon">ℹ️</span>
+      <span>
+        <strong>ก่อนตัดสินใจ — สถานะผู้พัฒนา ลลิล พร็อพเพอร์ตี้ (LALIN):</strong> อยู่ <strong>SET กระดานหลัก · ทำอสังหาฯ 30+ ปี</strong> · การเงินอนุรักษ์นิยม หนี้ต่ำ ปันผลสม่ำเสมอ — <strong>ไม่ใช่ distressed</strong> (ต่างจาก CMC/CHEWA/MJD)<br>
+        ℹ️ <strong>ข้อควรทราบ (เกณฑ์ผู้พัฒนาข้อ 3):</strong> market cap ~3,977 ลบ. (มิ.ย. 2026) = <strong>small-cap ยังไม่เข้า Top 20 SET หมวดอสังหาฯ</strong> · จุดเด่น = ดีไซน์ <strong>French Colonial</strong> + นวัตกรรม LI (Lalin Innovation) ประหยัดพลังงาน<br>
+        🏠 <strong>ลลิล = ผู้พัฒนาแนวราบล้วน</strong> (บ้าน/ทาวน์โฮม) · <strong>เลิกทำคอนโดตั้งแต่ ~2014</strong> — คอนโดเดิม LIB (ลิปป์) / Levo (ลีโว) เป็น legacy ปี 2013–14 ปิดการขายมือ 1 แล้ว เหลือแต่ตลาด resale · จึง<strong>ไม่มีหน้าคอนโด</strong>
+      </span>
+    </div>
+
+<!-- LALIN Home Brand Panel -->
+      <div id="dev-lalin">
+
+      <!-- สารบัญ -->
+      <div class="brand-toc" id="lalin-toc">
+        <div class="toc-group">
+          <div class="toc-group-title">🏘️ ทาวน์โฮม — 1 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('lio')"><span class="brand-list-name">Lio (ไลโอ)</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>1.19–2.5 ล้าน</span><span>ทาวน์โฮมหลัก · เจาะ EEC</span></div></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-title">🏡 บ้านเดี่ยว/แฝด — 4 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('lanceo')"><span class="brand-list-name">Lanceo (แลนซีโอ)</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>2.19–10 ล้าน</span><span>ไลน์หลัก · กระจายทุกภาค+EEC</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('baan-lalin')"><span class="brand-list-name">บ้านลลิล / The Prestige</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>3.8–8 ล้าน</span><span>French Colonial · Mid-high</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('baan-burirom')"><span class="brand-list-name">บ้านบุรีรมย์</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>3.9–6 ล้าน</span><span>French Colonial · ธีมรีสอร์ท</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('greenville')"><span class="brand-list-name">Lalin Greenville (+LUXE)</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>6–12 ล้าน</span><span>บ้านเดี่ยวพรีเมียม</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Brand Details: ทาวน์โฮม -->
+      <div class="psh-cat">🏘️ ทาวน์โฮม — 1 แบรนด์</div>
+
+        <div id="brand-lio" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge badge-success">Affordable</span><span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม (บางรุ่นชั้นเดียว)</span></div>
+            <div class="card-title">Lio (ไลโอ)</div>
+            <div class="card-meta">ทาวน์โฮม Affordable "Life is OK" · แบรนด์ทาวน์โฮมหลักของลลิล · ราคาเข้าถึง + เจาะแรงงานนิคม EEC · กทม.-ปริมณฑล/ชลบุรี</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.19 – 2.5 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">82 – 130 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">17.6 – 21.4 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">2–4 นอน · 1–3 น้ำ · 1–2 จอด · 1–3 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Lio ราชพฤกษ์-345 — ปทุมธานี · เริ่ม 1.89M</li>
+              <li>Lio 2 วงแหวนฯ-ปิ่นเกล้า — นนทบุรี/บางใหญ่ · เริ่ม 1.99M</li>
+              <li>Lio Bliss ลาดกระบัง-สุวรรณภูมิ — กทม. · เริ่ม 2.39M</li>
+              <li>Lio Elite วัชรพล-สายไหม — กทม. · เริ่ม 2.49M</li>
+              <li>Lio Bliss เทพารักษ์-บางบ่อ — สมุทรปราการ · เริ่ม 1.79M</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong></li>
+              <li>Lio Prime ศรีราชา-แหลมฉบัง — ชลบุรี · ใกล้นิคม · เริ่ม 1.39M</li>
+              <li>Lio Prime ศรีราชา-บ่อวิน — ชลบุรี · ชั้นเดียว · เริ่ม 1.19M</li>
+              <li>Lio Nov ชลบุรี-อ่างศิลา — ชลบุรี · เริ่ม 1.59M</li>
+              <li>Lio Nov / Bliss ปลวกแดง — ระยอง (EEC) · เริ่ม 1.49M</li>
+              <li><strong style="color:var(--text);">ราชบุรี-นครราชสีมา</strong> — Lalin Town Lio เพชรเกษม-แยกเขางู (ราชบุรี · เริ่ม 1.9M)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 5,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮม 2 ชั้น (บางรุ่นชั้นเดียวในโซน EEC) · ดีไซน์ Modern Bauhaus (รุ่นเดิม) → French Colonial + สวน Provence (รุ่นใหม่) · นวัตกรรม LI–Lalin Innovation (หลังคากันร้อน / LED นาโนซิลเวอร์)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวเริ่มต้น/first jobber/พนักงานนิคม · โซน กทม.-ปริมณฑล (1.79–2.5M) เข้ากรอบ Touch · โซน EEC (1.19–1.49M ชั้นเดียว) ต่ำกว่ากรอบล่าง = segment แรงงานนิคม</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Lio → LINE</a></div>
+        </div>
+      </div><!-- /brand-lio -->
+
+      <!-- Brand Details: บ้านเดี่ยว/แฝด -->
+      <div class="psh-cat">🏡 บ้านเดี่ยว/แฝด — 4 แบรนด์</div>
+
+      <div id="brand-lanceo" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว + บ้านแฝด</span></div>
+            <div class="card-title">Lanceo (แลนซีโอ)</div>
+            <div class="card-meta">บ้านเดี่ยว/แฝด "Modern Organic Contemporary" (รุ่นหรู Prestige = French Colonial) · ไลน์ขายหลักกระจายทุกภาค · entry–premium · กทม.-ปริมณฑล/EEC</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.19 – 10 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">95 – 209 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">18 – 100 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">2–5 นอน · 1–3 น้ำ · 1–2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Lanceo Prestige บางนา-ศรีวารี — สมุทรปราการ · French Colonial · ไลน์หรู</li>
+              <li>Lanceo CRIB ลำลูกกา-รังสิต (คลอง 2/4/6) — ปทุมธานี · ไลน์ขายหลัก</li>
+              <li>Lanceo CRIB เพชรเกษม-พระราม 2-สมุทรสาคร — โซนตะวันตก</li>
+              <li>Lanceo PRIDE บางใหญ่-เวสต์เกต — นนทบุรี</li>
+              <li>Lanceo NOV ปิ่นเกล้า — กทม.</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong></li>
+              <li>Lanceo PRIME / CRIB ศรีราชา-บ่อวิน — ชลบุรี · ใกล้นิคม Amata/Hemaraj</li>
+              <li>Lanceo NOV / CRIB พัทยา-จอมเทียน — ชลบุรี</li>
+              <li>Lanceo CRIB ระยอง-เนินสำลี — ระยอง</li>
+              <li>Lanceo CRIB ฉะเชิงเทรา-ศรีโสธร — ฉะเชิงเทรา</li>
+              <li><strong style="color:var(--text);">ราชบุรี-นครราชสีมา</strong> — Lanceo CRIB นครราชสีมา-บายพาสศาลปกครอง (โคราช)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 9,800 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 16,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> สถาปัตย์ Modern Organic Contemporary · รุ่นหรู Prestige/CRIB = สไตล์ French Colonial (Versailles/Provence) · นวัตกรรม LI–Lalin Innovation ประหยัดพลังงาน · มี sub-line ครบ entry→premium (PRIME/CRIB/PRIDE/NOV/Prestige)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวที่อยากได้บ้านเดี่ยว/แฝดราคาเข้าถึง–กลาง · entry PRIME/CRIB (2.19–4.5M) เข้ากรอบ Touch · เป็นแบรนด์เดียวของลลิลที่ลงโซน EEC (ศรีราชา/บ่อวิน ใกล้นิคม) — ตอบโจทย์ผู้เช่า/ผู้ซื้อพนักงานโรงงาน</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Lanceo → LINE</a></div>
+        </div>
+      </div><!-- /brand-lanceo -->
+
+      <div id="brand-baan-lalin" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid-high</span><span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว + บ้านแฝด</span></div>
+            <div class="card-title">บ้านลลิล / The Prestige</div>
+            <div class="card-meta">บ้านเดี่ยว/แฝด Mid-high "BEYOND LUXURY of Living" · สไตล์ French Colonial · ของใหม่ออกใต้ชื่อ "The Prestige" · กทม.-ปริมณฑล</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">3.8 – 8 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">134 – 220 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">35 – 93 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–5 นอน · 2–3 น้ำ · 2–3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>The Prestige วงแหวนฯ-ลำลูกกา คลอง 6 — ปทุมธานี</li>
+              <li>The Prestige อ่อนนุช-สุวรรณภูมิ — สมุทรปราการ</li>
+              <li>The Prestige ประชาอุทิศ-สุขสวัสดิ์ — สมุทรปราการ</li>
+              <li>บ้านลลิล รังสิต-คลอง 2 — ปทุมธานี</li>
+              <li>บ้านลลิล อินเดอะพาร์ค รัตนาธิเบศร์-เวสต์เกต — นนทบุรี/บางใหญ่</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+              <li><strong style="color:var(--text);">ราชบุรี-นครราชสีมา</strong> — The Prestige เพชรเกษม-แยกเขางู (ราชบุรี · เปิด VVIP 2024)</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 17,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 28,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยว/แฝด 2 ชั้น สไตล์ French Colonial (Versailles/Provence) · "The Prestige" = positioning หรูสุดของไลน์ บ้านลลิล (slogan "BEYOND LUXURY of Living") · นวัตกรรม LI</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวกำลังซื้อกลาง-บน ปริมณฑล (own-stay) · ⚠️ 3.8–8M ส่วนใหญ่เกินกรอบ Touch 1.5–4.5M · รุ่นเก่าชื่อ "บ้านลลิล" เปล่าๆ หลายตัวเป็น resale — เลือกเฉพาะ The Prestige (มือ 1)</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ บ้านลลิล / The Prestige → LINE</a></div>
+        </div>
+      </div><!-- /brand-baan-lalin -->
+
+      <div id="brand-baan-burirom" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว (+แฝดบางโครงการ)</span></div>
+            <div class="card-title">บ้านบุรีรมย์</div>
+            <div class="card-meta">บ้านเดี่ยว Mid ดีไซน์ใหม่ French Colonial · ธีมรีสอร์ท/สวนกลางใกล้ธรรมชาติ · กทม.-ปริมณฑล (พระราม 2/รังสิต/เทพารักษ์)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">3.9 – 6 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">105 – 220 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">36 – 100 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–5 นอน · 2–4 น้ำ · 1–2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>บ้านบุรีรมย์ พระราม 2-เอกชัย — กทม. (บางบอน) · 4.69–6M</li>
+              <li>บ้านบุรีรมย์ รังสิต-ลำลูกกา คลอง 4 — ปทุมธานี</li>
+              <li>บ้านบุรีรมย์ The Innovation เทพารักษ์-ตำหรุ — สมุทรปราการ · เริ่ม 3.9M</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">ราชบุรี-นครราชสีมา</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 17,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 29,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยว 2 ชั้น ดีไซน์ใหม่ "สไตล์ French Colonial" (แบบบ้าน Diana/Carnation/Louis) · ธีมรีสอร์ท สวนกลางใกล้ธรรมชาติ · นวัตกรรม LI</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวต้องการบ้านเดี่ยวใกล้ธรรมชาติ ปริมณฑล (own-stay) · The Innovation เริ่ม 3.9M = ขอบบนกรอบ Touch · ที่เหลือเกินกรอบ · รุ่นเก่า (รามอินทรา-ซาฟารี) = resale</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ บ้านบุรีรมย์ → LINE</a></div>
+        </div>
+      </div><!-- /brand-baan-burirom -->
+
+      <div id="brand-greenville" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(239,68,68,0.12);color:#ef4444;border:1px solid rgba(239,68,68,0.3);">Premium</span><span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยวพรีเมียม</span></div>
+            <div class="card-title">Lalin Greenville (+LUXE)</div>
+            <div class="card-meta">บ้านเดี่ยวพรีเมียม "PERFECTION of Living" (LUXE = "New Prestige Modern Living") · Modern Luxury · กทม. (สต๊อกพร้อมอยู่)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">6 – 12 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">152 – 326 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">20 – 100+ ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–5 นอน · 2–5 น้ำ · 2–4 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Lalin Greenville The Executive ประเวศ (อ่อนนุช-สุวรรณภูมิ) — กทม.</li>
+              <li>Lalin Greenville พระราม 2-เอกชัย — กทม. (บางบอน)</li>
+              <li>Lalin Greenville พระราม 9-อ่อนนุช-สุวรรณภูมิ — กทม.</li>
+              <li>Lalin Greenville LUXE รามอินทรา — กทม. (คลองสามวา)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">ราชบุรี-นครราชสีมา</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 27,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 45,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยว Modern Luxury (ไม่ใช่ French Colonial) · LUXE ออกแบบโดย KTGY · low-density · มาตรฐาน "PERFECTION of Living" · นวัตกรรม LI</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> กำลังซื้อสูงต้องการบ้านเดี่ยว low-density (own-stay) · ⚠️ 6–12M เกินกรอบ Touch · เป็นสต๊อก/พร้อมอยู่ ไม่มี launch ใหม่ใต้ชื่อนี้ (ของใหม่ไปอยู่ Lanceo/Lio) — เช็คยูนิตคงเหลือ</span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Lalin Greenville → LINE</a></div>
+        </div>
+      </div><!-- /brand-greenville -->
+
+      <!-- LALIN Home Recap -->
+      <div class="callout info" style="margin-top:1rem;">
+        <span class="callout-icon">🏢</span>
+        <span>
+          <strong>ลลิล พร็อพเพอร์ตี้ (SET: LALIN):</strong> ผู้พัฒนาแนวราบล้วน · ดีไซน์ <strong>French Colonial</strong> + นวัตกรรม LI (Lalin Innovation) · <strong>5 แบรนด์ active มือ 1</strong><br>
+          <strong>ทาวน์โฮม:</strong> Lio (1.19M · เจาะ กทม.-ปริมณฑล + EEC) · <strong>บ้านเดี่ยว/แฝด:</strong> Lanceo (2.19M · ไลน์หลัก กระจายทุกภาค+EEC) · บ้านลลิล/The Prestige (3.8M) · บ้านบุรีรมย์ (3.9M) · Lalin Greenville+LUXE (6M+ พรีเมียม)<br>
+          <strong>⚠️ ระวังชื่อ / ตัดออก:</strong> "ลลิลทาวน์ / Lalin Town" = คำนำหน้าชื่อบริษัท <strong>ไม่ใช่แบรนด์</strong> (แบรนด์จริงคือ Lio/Lanceo ที่ตามหลัง) · <strong>คอนโด LIB (ลิปป์) / Levo (ลีโว) = legacy ปี 2013–14 ปิดการขายมือ 1 (resale เท่านั้น) — ไม่มีหน้าคอนโด</strong> · Greenville = สต๊อกพร้อมอยู่ ไม่มี launch ใหม่<br>
+          <strong>ทำเล:</strong> กทม.-ปริมณฑลเป็นหลัก + EEC (Lanceo/Lio ศรีราชา-บ่อวิน-พัทยา-ระยอง-ฉะเชิงเทรา) + ราชบุรี/นครราชสีมา (Lanceo/Lio บางโครงการ)<br>
+          <strong>ℹ️ บริบทผู้พัฒนา:</strong> SET กระดานหลัก · งบแข็ง ปันผลดี <strong>ไม่ใช่ distressed</strong> · แต่ small-cap ~3,977 ลบ. <strong>ยังไม่เข้า Top 20</strong> (เกณฑ์ข้อ 3) · เข้ากรอบ Touch 1.5–4.5M: Lio (โซน กทม.) + Lanceo entry (PRIME/CRIB) · บ้านลลิล/บุรีรมย์/Greenville ขอบบน–เกินกรอบ
+        </span>
+      </div>
+
+      </div><!-- /dev-lalin -->
+        <div style="text-align:center;margin:1.5rem 0 0.5rem;"><a href="/home/" style="display:inline-block;background:#3b82f6;color:#fff;font-weight:600;font-size:0.95rem;padding:0.7rem 1.6rem;border-radius:8px;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลใน portfolio นี้เป็น research summary ไม่ใช่คำแนะนำซื้อ/ขาย<br>
+        ตัวเลขราคา ค่าเช่า และดอกเบี้ยอาจเปลี่ยนแปลง กรุณา verify ก่อนตัดสินใจ
+      </div>
+    </div>
+  </footer>
+<script>
+    var _activeCrit = null;
+    function toggleCrit(key) {
+      if (_activeCrit === key) {
+        document.getElementById('crit-detail-' + key).classList.remove('show');
+        document.querySelector('[data-crit="' + key + '"]').classList.remove('active');
+        _activeCrit = null;
+      } else {
+        if (_activeCrit) {
+          document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+          document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+        }
+        document.getElementById('crit-detail-' + key).classList.add('show');
+        document.querySelector('[data-crit="' + key + '"]').classList.add('active');
+        _activeCrit = key;
+      }
+    }
+    document.addEventListener('click', function(e) {
+      if (_activeCrit) {
+        var flow = document.getElementById('crit-flow');
+        var details = document.querySelectorAll('.crit-detail-wrap');
+        var inside = flow && flow.contains(e.target);
+        details.forEach(function(d) { if (d.contains(e.target)) inside = true; });
+        if (!inside) {
+          document.getElementById('crit-detail-' + _activeCrit).classList.remove('show');
+          document.querySelector('[data-crit="' + _activeCrit + '"]').classList.remove('active');
+          _activeCrit = null;
+        }
+      }
+      if (!e.target.closest('details')) {
+        document.querySelectorAll('details').forEach(function(d) { d.removeAttribute('open'); });
+      }
+    });
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'lalin-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc(tocId) {
+      tocId = tocId || 'lalin-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleCat(el) {
+      el.classList.toggle('open');
+      var list = el.parentElement.querySelector('.cat-list');
+      if (list) list.classList.toggle('open');
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+
+    // Developer icon toggle
+    document.querySelectorAll('.dev-icon-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var devId = this.dataset.dev;
+        var panel = document.getElementById('dev-' + devId);
+        var isActive = this.classList.contains('active');
+        document.querySelectorAll('.dev-icon-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.dev-brand-panel').forEach(function(p) { p.classList.remove('active'); });
+        if (!isActive) {
+          this.classList.add('active');
+          if (panel) panel.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
