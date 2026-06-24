@@ -899,3 +899,22 @@ tr:nth-child(even) td {
     min-width: 0;
   }
 }
+
+/* ===== tier badge = dev button color (match /home/ & /condo/ landing buttons) ===== */
+#dev-lpn .badge{background:#1e40af!important;color:#fff!important;border:none!important}
+#dev-pruksa .badge{background:#00a651!important;color:#fff!important;border:none!important}
+#dev-asw .badge{background:#d4af37!important;color:#1a1a1a!important;border:none!important}
+#dev-risland .badge{background:linear-gradient(135deg,#f5f2ea,#e6e0d2)!important;color:#1a1a1a!important;border:1.5px solid #cdc4b0!important}
+#dev-siri .badge{background:#c2410c!important;color:#fff!important;border:none!important}
+#dev-ap .badge{background:#15336b!important;color:#fff!important;border:none!important}
+#dev-bri .badge{background:#6b7280!important;color:#fff!important;border:none!important}
+#dev-ori .badge{background:#6b7280!important;color:#fff!important;border:none!important}
+#dev-anan .badge{background:#2563eb!important;color:#fff!important;border:none!important}
+#dev-cmc .badge{background:#facc15!important;color:#1a1a1a!important;border:none!important}
+#dev-chewa .badge{background:#f59e0b!important;color:#1a1a1a!important;border:none!important}
+#dev-mjd .badge{background:#800000!important;color:#fff!important;border:none!important}
+#dev-sena .badge{background:#0d9488!important;color:#fff!important;border:none!important}
+#dev-fpt .badge{background:#dc2626!important;color:#fff!important;border:none!important}
+#dev-sc .badge{background:#f37021!important;color:#fff!important;border:none!important}
+#dev-noble .badge{background:#000!important;color:#fff!important;border:1.5px solid rgba(255,255,255,0.55)!important}
+#dev-lalin .badge{background:#16a34a!important;color:#fff!important;border:none!important}
