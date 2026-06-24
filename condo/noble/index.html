@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คอนโดมือ 1 Noble Development (โนเบิล) · Nue line ติดรถไฟฟ้า 1.69–3.59M + Noble luxury · TRIS BBB- — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="คอนโด Noble Development (โนเบิล) — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คอนโดมือ 1 Noble — Nue ติดรถไฟฟ้า (Epic Asok-R9/District R9/Srinakarin-Lasalle) 1.69M+ · Noble luxury · TRIS BBB-">
+  <meta property="og:url" content="https://ninethanakarn.com/condo/noble/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="คอนโด Noble Development (โนเบิล)">
+  <meta name="twitter:description" content="คอนโดมือ 1 Noble — Nue ติดรถไฟฟ้า 1.69M+ · Noble luxury · TRIS BBB-">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>คอนโด Noble Development (โนเบิล) — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; display:grid; place-items:center; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink:0; transition:transform .15s, box-shadow .15s; overflow:hidden; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; flex-shrink:0; }
+    .crit-flow-label { font-size:11.5px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:18px; color:var(--muted); flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:1rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { border:1px solid; border-radius:12px; padding:1rem 1.1rem; font-size:0.85rem; line-height:1.65; }
+    .crit-detail-title { font-weight:700; margin-bottom:0.6rem; font-size:0.92rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; display:grid; gap:0.35rem; }
+    .crit-detail-list li { padding:0.15rem 0 0.15rem 1.1rem; position:relative; color:var(--text); }
+    .crit-detail-list li::before { content:'›'; position:absolute; left:0; font-weight:700; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .dev-icon-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 1.5px solid var(--card-border); border-radius: 12px; background: var(--card-bg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; width: 100%; }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: linear-gradient(135deg, #f5f2ea, #e6e0d2); color: #1a1a1a; border: 1.5px solid #cdc4b0; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    .dev-logo-cmc { background: #facc15; color: #1a1a1a; }
+    .dev-logo-chewa { background: #f59e0b; color: #1a1a1a; }
+    .dev-logo-mjd { background: #800000; color: #fff; }
+    .dev-logo-sena { background: #0d9488; color: #fff; }
+    .dev-logo-fpt { background: #dc2626; color: #fff; }
+    .dev-logo-sc { background: #f37021; color: #fff; }
+    .dev-logo-noble { background: #6d28d9; color: #fff; }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏙️ คอนโด Noble Development (โนเบิล)</h1>
+      <p class="hero-subtitle">~10 แบรนด์คอนโด active มือ 1 · 2 ไลน์: Nue (mass ติดรถไฟฟ้า) + Noble (luxury) · 1.69 – 30 ล้าน · TRIS BBB- · SET: NOBLE</p>
+      <p style="margin-top:0.6rem;"><a href="/condo/" style="color:#bfdbfe;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ คอนโดในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ℹ️ Developer Note (neutral — ข้อเท็จจริง) -->
+    <div class="callout info" style="margin-bottom:1.25rem;">
+      <span class="callout-icon">ℹ️</span>
+      <span>
+        <strong>ก่อนตัดสินใจ — สถานะผู้พัฒนา Noble Development (ข้อมูลตามข้อเท็จจริง):</strong> SET กระดานหลัก (จดทะเบียน 2540) · <strong>TRIS เรตติ้ง "BBB" / หุ้นกู้ "BBB-" · แนวโน้ม Stable</strong> (ปรับกลับจาก Negative มี.ค. 2025 · investment grade) · ผู้นำตลาด <strong>คอนโดติดรถไฟฟ้า (transit-oriented)</strong> · มี BTS Group + Hongkong Land ร่วมทุน · ไม่พบทิ้งงาน/สร้างไม่เสร็จ/คดีโครงสร้าง/ผิดนัดหุ้นกู้<br>
+        ℹ️ <strong>ขนาด: mid developer — ไม่ใช่ Top-20</strong> (market cap ~2,380 ลบ. · P/BV 0.35x · รายได้ 2024 ~11,568 ลบ. · 2025 หด -37%) · ผู้ถือหุ้นใหญ่เปลี่ยนเป็นกลุ่มทุนฮ่องกง (Frank Fong ~41%) + ธงชัย บุศราพันธ์ (CEO)<br>
+        ℹ️ <strong>จุดที่นักลงทุนปล่อยเช่าควรรู้:</strong> presale พึ่ง<strong>ผู้ซื้อต่างชาติ &gt;70% (ครึ่งหนึ่งเป็นจีน)</strong> — บางตึก real demand ผู้เช่าไทยอาจบาง · ควรเช็คสัดส่วนต่างชาติ + new supply รายโครงการก่อนลงทุน
+      </span>
+    </div>
+
+<!-- Noble Condo Brand Panel -->
+      <div id="dev-noble">
+
+        <!-- สารบัญ -->
+        <div class="brand-toc" id="noble-condo-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🚇 Nue / Nue by Noble — mass ติดรถไฟฟ้า (เข้ากรอบ Touch)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('nue-epic')"><span class="brand-list-name">Nue Epic Asok–Rama 9</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 2.89M</span><span>Mid · ติด MRT พระราม 9 · New CBD</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('nue-district')"><span class="brand-list-name">Nue District R9</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 3.59M</span><span>Mid · MRT พระราม 9 180 ม. · พร้อมอยู่</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('nue-srinakarin')"><span class="brand-list-name">Nue Noble Srinakarin-Lasalle</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 1.99M</span><span>Affordable · MRT เหลือง 60 ม.</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('nue-zsquare')"><span class="brand-list-name">Nue Z-Square Suan Luang</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 1.69M</span><span>Affordable · MRT สวนหลวง R9</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('nue-mega')"><span class="brand-list-name">Nue Mega Plus Bangna</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 2.29M</span><span>Affordable-Mid · ติด Mega Bangna</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('nue-khukhot')"><span class="brand-list-name">Nue คูคต (Coast / Cross / Core)</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 1.69M</span><span>Affordable · ติด BTS คูคต</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('nue-riverest')"><span class="brand-list-name">Nue Riverest Ratburana</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 1.99M</span><span>Mid · ริมเจ้าพระยา</span></div></li>
+            </ul>
+          </div>
+          <div class="toc-group">
+            <div class="toc-group-title">💎 Noble — premium / luxury (กลางเมือง)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('noble-create')"><span class="brand-list-name">Noble Create</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 3.39M</span><span>Mid · MRT เหลือง ประดิษฐ์มนูธรรม</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('noble-around')"><span class="brand-list-name">Noble Around Ari</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 5.39M</span><span>Luxury · BTS อารีย์ 90 ม.</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('noble-form')"><span class="brand-list-name">Noble Form Thonglor</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 12M</span><span>Luxury · BTS ทองหล่อ 1 นาที</span></div></li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* ผ่อน/รายได้คำนวณจากดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%</p>
+        </div>
+
+        <!-- Brand Details: Nue line -->
+        <div class="psh-cat">🚇 Nue / Nue by Noble — mass ติดรถไฟฟ้า (เข้ากรอบ Touch)</div>
+
+        <div id="condo-nue-epic" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid</span><span style="font-size:0.75rem;color:var(--muted);">1BR / 2BR / Combined</span></div>
+              <div class="card-title">Nue Epic Asok–Rama 9</div>
+              <div class="card-meta">คอนโด Mid ไลน์ "Nue by Noble" "ความสุข…เป็นเรื่อง EPIC ที่สุด" · ติด MRT พระราม 9 · ส่วนกลาง ~11 ไร่ · New CBD (JV STECON)</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 2.89 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">26 – 61 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR M/L/Plus / 2BR / Combined</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">ส่วนกลาง ~11 ไร่ + 22 functions + pet zone</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Nue Epic Asok–Rama 9 — ห้วยขวาง กรุงเทพฯ · <strong>ติด MRT พระราม 9</strong> + ARL 1 สถานี + ติด Central Rama 9 · เริ่ม 2.89M (ตอกเข็ม ก.ย. 2568 · เสร็จ มี.ค. 2572)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 13,000 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 21,700 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> high-rise ใจกลาง New CBD พระราม 9 · ส่วนกลางใหญ่ ~11 ไร่ + 22 functions + สวน + อาคาร pet zone แยก · JV กับ STECON Group มูลค่า &gt;14,000 ลบ. (flagship 2024–26)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> คนทำงาน CBD + นักลงทุนปล่อยเช่า — <strong>2.89M เข้ากรอบ Touch + ติด MRT = real demand ผู้เช่าไทยทำงานพระราม 9/อโศก</strong> (เช็ค new supply โซนพระราม 9 ที่มีหลายตึก)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Epic → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-nue-district" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid</span><span style="font-size:0.75rem;color:var(--muted);">1BR / 2BR · พร้อมอยู่</span></div>
+              <div class="card-title">Nue District R9</div>
+              <div class="card-meta">คอนโด Mid "บาลานซ์ชีวิตคนเมืองทุกโหมด ใจกลาง New CBD" · MRT พระราม 9 180 ม. · ส่วนกลาง &gt;8 ไร่ · พร้อมอยู่</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 3.59 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">26 – 46 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR M / L / Plus / 2BR</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">ส่วนกลาง &gt;8 ไร่ · 8 zones · 50 functions</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Nue District R9 — ห้วยขวาง กรุงเทพฯ (ถ.พระราม 9) · <strong>180 ม. จาก Central Rama 9 + MRT พระราม 9</strong> · 2 ตึก (33+41 ชั้น) 1,441 ยูนิต · เริ่ม 3.59M (พร้อมอยู่ · furnished · เหลือไม่กี่ยูนิต)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 16,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 26,800 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> high-rise 2 ตึก ใจกลาง New CBD · ส่วนกลาง &gt;8 ไร่ 8 zones 50 functions · <strong>พร้อมอยู่ตกแต่งครบ</strong> (ไม่ต้องรอสร้าง)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ผู้เช่า/ผู้ซื้อทำงานพระราม 9-อโศก ที่อยากได้ห้องพร้อมอยู่ติด MRT · <strong>3.59M เข้ากรอบ Touch</strong> (เช็ค new supply โซนพระราม 9 ก่อนลงทุน)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue District R9 → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-nue-srinakarin" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Affordable</span><span style="font-size:0.75rem;color:var(--muted);">Studio / 1BR / 2BR · พร้อมอยู่</span></div>
+              <div class="card-title">Nue Noble Srinakarin-Lasalle</div>
+              <div class="card-meta">คอนโด Affordable "มากกว่าพื้นที่ เพราะได้ทั้ง Community" · ติด MRT สายสีเหลือง ศรีลาซาล 60 ม. · พร้อมอยู่</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 1.99 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">22 – 34.8 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR 22 / 26.6 / 30.4 / 2BR 34.8</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">Infinity pool 24 ม. + Gym + rooftop garden 360°</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Nue Noble Srinakarin-Lasalle — กรุงเทพฯ (ศรีนครินทร์) · <strong>MRT สายสีเหลือง ศรีลาซาล 60 ม.</strong> · 43 ชั้น 1,019 ยูนิต · เริ่ม 1.99M (พร้อมอยู่ · furnished)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 8,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> high-rise 43 ชั้น ติด MRT เหลือง · infinity pool 24 ม. + rooftop garden 360° · <strong>พร้อมอยู่ตกแต่งครบ</strong> · เชื่อมศรีนครินทร์ R9/Huamark interchange</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first jobber + นักลงทุนปล่อยเช่า — <strong>1.99M เข้ากรอบ Touch + ติด MRT เหลือง 60 ม. = real demand</strong> (โซนศรีนครินทร์มี supply พอควร เช็คค่าเช่าตลาดก่อน)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Srinakarin-Lasalle → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-nue-zsquare" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Affordable</span><span style="font-size:0.75rem;color:var(--muted);">1BR / 1BR Plus · พร้อมอยู่</span></div>
+              <div class="card-title">Nue Z-Square Suan Luang Station</div>
+              <div class="card-meta">คอนโด Affordable low-rise "SYNC ชีวิตติดห้าง" · MRT สวนหลวง R9 ~3 นาที + SeaconSquare · พร้อมอยู่</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 1.69 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">26 – 35 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR 26 / 30 / 1BR Plus 35</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">2 อาคาร 8 ชั้น · 289 ยูนิต (pool/gym)</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Nue Z-Square — สวนหลวง กรุงเทพฯ · <strong>MRT สวนหลวง R9 ~3 นาที</strong> + SeaconSquare ~3 นาที · low-rise 8 ชั้น 289 ยูนิต · เริ่ม 1.69M (พร้อมอยู่ · EIA ผ่าน)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 7,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> low-rise 8 ชั้น "ติดห้าง" · ติด MRT สวนหลวง R9 + SeaconSquare · <strong>พร้อมอยู่ ไม่มีภาระค้ำ · EIA ผ่าน 2565</strong> · ราคาเข้าถึงง่ายสุดในไลน์</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first home/นักลงทุนงบจำกัด — <strong>1.69M ถูกสุด เข้ากรอบ Touch + ติด MRT = real demand</strong> ผู้เช่าทำงานย่านพัฒนาการ-ศรีนครินทร์</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Z-Square → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-nue-mega" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Affordable-Mid</span><span style="font-size:0.75rem;color:var(--muted);">Studio / 1BR</span></div>
+              <div class="card-title">Nue Mega Plus Bangna</div>
+              <div class="card-meta">คอนโด Affordable-Mid "LIVE MEGA LIFE" · ติด Mega Bangna · ส่วนกลาง 5 ชั้น 38 functions · บางนา-ตราด</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 2.29 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">26 – 30 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Ambivert 26 / Extrovert 30 / Introvert 30</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">mega facilities 5 ชั้น · 38 functions</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Nue Mega Plus Bangna — บางแก้ว/บางพลี สมุทรปราการ (ถ.บางนา-ตราด) · <strong>ติด Mega Bangna</strong> (ไม่ติดรถไฟฟ้าโดยตรง) · 38 ชั้น 1,005 ยูนิต · เริ่ม 2.29M</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 10,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 17,200 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> high-rise 38 ชั้น · ส่วนกลาง "mega" 5 ชั้น 38 functions · ติด Mega Bangna (ห้าง/IKEA) · concept "LIVE MEGA LIFE"</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> คนทำงานย่านบางนา-Mega + ปล่อยเช่า · 2.29M เข้ากรอบ Touch · <strong>⚠️ ไม่ติดรถไฟฟ้า + โซนบางนา supply สูง</strong> — เช็ค demand เช่าจริงก่อนลงทุน</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Mega Plus → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-nue-khukhot" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Affordable</span><span style="font-size:0.75rem;color:var(--muted);">Studio / 1BR / Duplex</span></div>
+              <div class="card-title">Nue คูคต (Coast / Cross / Core)</div>
+              <div class="card-meta">คอนโด Affordable 3 โครงการพี่น้องติด BTS คูคต (สายสีเขียว) · low-rise 8 ชั้น · ราคาเข้าถึงง่าย · ปริมณฑลโซนเหนือ</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 1.69 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">22.8 – 58.2 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio / 1BR / 1BR Plus / Duplex</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">low-rise 8 ชั้น (pool/gym/co-working)</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล (ทั้ง 3 โครงการ <strong>ติด BTS คูคต</strong> · ลำลูกกา ปทุมธานี)</strong></li>
+                <li>Nue Coast คูคต · เริ่ม 1.69M (4 อาคาร 8 ชั้น 692 ยูนิต · ใหม่สุด เสร็จ เม.ย. 2570)</li>
+                <li>Nue Cross คูคต · เริ่ม 1.89M (พร้อมอยู่)</li>
+                <li>Nue Core คูคต · ยูนิตทั่วไป 1.89M / Duplex เริ่ม 3.75M (เสร็จ ต.ค. 2024 · เหลือ duplex ท้าย)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 7,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> 3 โครงการ low-rise ติด BTS คูคต (ปลายสายสีเขียว) · Core มี Duplex 2 ชั้น 58 ตร.ม. · ราคาเข้าถึงง่ายสุดในพอร์ต (เริ่ม 1.69M)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first home/นักลงทุนงบจำกัดที่เน้นติด BTS · 1.69M เข้ากรอบ Touch · <strong>⚠️ คูคตเป็นปลายสาย demand เช่ายังบาง + supply คอนโดโซนนี้สูง</strong> — เช็ค yield จริงก่อน</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue คูคต → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-nue-riverest" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid</span><span style="font-size:0.75rem;color:var(--muted);">Studio / 1BR / 2BR</span></div>
+              <div class="card-title">Nue Riverest Ratburana</div>
+              <div class="card-meta">คอนโด Mid ริมแม่น้ำเจ้าพระยา "Rest by the Rare River Oasis" · ส่วนกลาง 30 functions + pet tower · ราษฎร์บูรณะ</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 1.99 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">22.55 – 50.25 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio 22.55 / 1BR Plus 34.4 / 2BR 50.25</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">4 zones · 30 functions + pet tower (ริมน้ำ)</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Nue Riverest Ratburana — ราษฎร์บูรณะ กรุงเทพฯ · ริมเจ้าพระยา เชื่อม Rama 3-สาทร ~10 นาที · ~12 ไร่ 8 อาคาร 18–35 ชั้น · เริ่ม 1.99M (freehold · EIA ผ่าน)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 8,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> คอนโดริมแม่น้ำเจ้าพระยา ~12 ไร่ · 4 zones 30 functions (Sky/Forest/Valley/River) + pet tower · concept "vacation 24 ชม. ทั้ง 7 วัน"</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> คนชอบวิวแม่น้ำงบเข้าถึง + ปล่อยเช่า · 1.99M เข้ากรอบ Touch · <strong>⚠️ ราษฎร์บูรณะไม่ติดรถไฟฟ้าตรง (ใกล้ MRT สีม่วงใต้/แดง)</strong> — เช็ค demand เช่าโซนนี้</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Riverest → LINE</a></div>
+          </div>
+        </div>
+
+        <!-- Brand Details: Noble line -->
+        <div class="psh-cat">💎 Noble — premium / luxury (กลางเมือง)</div>
+
+        <div id="condo-noble-create" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">1BR / 2BR</span></div>
+              <div class="card-title">Noble Create</div>
+              <div class="card-meta">คอนโด Mid ไลน์ "Noble" ระดับเริ่มต้น · ใกล้ MRT สายสีเหลือง · สวนใหญ่ + EV · ลาดพร้าว/ประดิษฐ์มนูธรรม</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 3.39 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">25 – 50 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR 25/30 / 1BR Plus 39 / 2BR 50</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สวนใหญ่ + pool + sauna + co-working + EV</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Noble Create — ลาดพร้าว/จตุจักร กรุงเทพฯ (ถ.ประดิษฐ์มนูธรรม) · <strong>ใกล้ MRT สายสีเหลือง</strong> · 33 ชั้น 1,250 ยูนิต · เริ่ม 3.39M (เสร็จ 2026) · <span style="font-size:0.78rem;">หมายเหตุ: บางแหล่งระบุทำเล "เอกมัย-รามอินทรา" — โทรเช็คก่อน quote</span></li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 15,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 25,300 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> high-rise 33 ชั้น · จุดเด่น "สวนใหญ่" + pool/fitness/yoga/sauna/co-working + EV · ไลน์ "Noble" ระดับเริ่มต้น (เกรดสูงกว่า Nue)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> คนทำงานโซนลาดพร้าว-รัชดา ที่อยากได้แบรนด์ Noble งบเข้าถึง · <strong>3.39M เข้ากรอบ Touch</strong> (ช่วงบน 6.78M เกิน · own-stay)</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Noble Create → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-noble-around" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(109,40,217,0.15);color:#6d28d9;border:1px solid rgba(109,40,217,0.35);">Luxury</span><span style="font-size:0.75rem;color:var(--muted);">1BR · พร้อมอยู่</span></div>
+              <div class="card-title">Noble Around Ari</div>
+              <div class="card-meta">คอนโด Luxury "the science of living meets the fine art of living" · BTS อารีย์ 90 ม. · ดีไซน์ Modernist · พร้อมอยู่</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 5.39 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">26.4 – 44.7 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR S 26.4 / M 34.8 / Plus 44.7</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">pool + sky facilities (ดีไซน์ Mies van der Rohe)</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Noble Around Ari — พญาไท กรุงเทพฯ (ถ.พหลโยธิน สามเสนใน) · <strong>BTS อารีย์ 90 ม.</strong> · เริ่ม 5.39M (พร้อมอยู่)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 24,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 40,300 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> luxury low-density ติด BTS อารีย์ 90 ม. · ดีไซน์ Modernist สาย Mies van der Rohe · <strong>พร้อมอยู่</strong> · ทำเลอารีย์ (ย่าน hip กลางเมือง)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> มืออาชีพ/ปล่อยเช่า expat ทำเลอารีย์ · <strong>⚠️ 5.39M เกินกรอบ Touch (capital-gain/own-stay)</strong> — yield play ต้องเช็คค่าเช่าตลาดอารีย์</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Noble Around Ari → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-noble-form" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(109,40,217,0.15);color:#6d28d9;border:1px solid rgba(109,40,217,0.35);">Luxury</span><span style="font-size:0.75rem;color:var(--muted);">1BR / 2BR · พร้อมอยู่</span></div>
+              <div class="card-title">Noble Form Thonglor</div>
+              <div class="card-meta">คอนโด Luxury "One FORM for everything life" · BTS ทองหล่อ 1 นาที + ติด The Commons · แต่งครบ พร้อมอยู่</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 12 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">31.77 – 73.76 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR Simplex / 1BR+ / 2BR M / 2BR L</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">46 ชั้น 451 ยูนิต · pool + sky lounge (furnished)</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Noble Form Thonglor — วัฒนา กรุงเทพฯ (ซ.สุขุมวิท 55) · <strong>BTS ทองหล่อ 1 นาที + ติด The Commons</strong> · 46 ชั้น 451 ยูนิต · เริ่ม 12M (พร้อมอยู่ · furnished)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">หัวหิน</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 53,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 89,800 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> luxury high-rise 46 ชั้น ทำเล prime ทองหล่อ · BTS ทองหล่อ 1 นาที + ติด The Commons · <strong>แต่งครบ พร้อมอยู่</strong> · 1 ใน flagship premium 2024</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ผู้บริหาร/ปล่อยเช่า expat ทำเล prime ทองหล่อ · <strong>⚠️ 12M เกินกรอบ Touch มาก (own-stay luxury)</strong></span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Noble Form → LINE</a></div>
+          </div>
+        </div>
+
+        <!-- Noble Condo Recap -->
+        <div class="callout info" style="margin-top:1rem;">
+          <span class="callout-icon">🏢</span>
+          <span>
+            <strong>Noble Development (SET: NOBLE):</strong> condo-led · คอนโด <strong>active มือ 1 ~10 แบรนด์</strong> · 2 ไลน์<br>
+            <strong>🚇 Nue (mass ติดรถไฟฟ้า · กรอบ Touch):</strong> Nue Epic Asok-R9 (2.89M) · District R9 (3.59M) · Srinakarin-Lasalle (1.99M) · Z-Square สวนหลวง (1.69M) · Mega Plus บางนา (2.29M) · คูคต Coast/Cross/Core (1.69M) · Riverest ราษฎร์บูรณะ (1.99M)<br>
+            <strong>💎 Noble (luxury):</strong> Noble Create (3.39M) · Around Ari (5.39M) · Form Thonglor (12M)<br>
+            <strong>มือ 1 (เพิ่มเติม specs ยังไม่ครบ):</strong> Nue Evo Pattanakarn · Nue Ren แจ้งวัฒนะ · Nue Connex ดอนเมือง · Nue Noble Centre บางนา · The Embassy Wireless (ultra-lux)<br>
+            <strong>ตัดออก (พร้อมอยู่ปิดการขาย/resale):</strong> Nue Noble งามวงศ์วาน · Ratchada-Ladprao · Evo Ari · Nue Noble Faichai-วังหลัง/แจ้งวัฒนะ · <strong>sold out:</strong> Noble Ploenchit (2017) · Noble BE19 (100%) · State 39 · Recole · Revolve Ratchada · Nue Ratchada (2019)<br>
+            <strong>⚠️ ระวังชื่อ:</strong> "Noble Curve/Geo/Gable" = แบรนด์<strong>แนวราบ</strong> (ดู /home/noble/) ไม่ใช่คอนโด · "Noble Ambience / Nue Hot" = ไม่ยืนยัน<br>
+            <strong>ทำเล:</strong> กทม.-ปริมณฑลล้วน (ไม่มี EEC/หัวหิน ฝั่งคอนโด · มี pipeline หัวหิน low-rise) · ดูแนวราบ Noble ใน <strong>/home/noble/</strong><br>
+            <strong>ℹ️ บริบทผู้พัฒนา:</strong> NOBLE = TRIS BBB- · <strong>mid developer (ไม่ใช่ Top-20)</strong> · presale พึ่งต่างชาติ/จีน &gt;70% (ดูกล่อง ℹ️ บนสุด) · ของเข้ากรอบ Touch = Nue ติดรถไฟฟ้า (Epic/District/Srinakarin/Z-Square) · <strong>เช็ค new supply + สัดส่วนต่างชาติรายตึกก่อนลงทุน</strong> · ราคาโปรเปลี่ยนได้ โทรเช็คก่อน quote
+          </span>
+        </div>
+
+      </div><!-- /dev-noble -->
+        <div style="text-align:center;margin:1.5rem 0 0.5rem;"><a href="/condo/" style="display:inline-block;background:#3b82f6;color:#fff;font-weight:600;font-size:0.95rem;padding:0.7rem 1.6rem;border-radius:8px;text-decoration:none;">&larr; กลับ คอนโดในพอร์ต (ทุก developer)</a></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลใน portfolio นี้เป็น research summary ไม่ใช่คำแนะนำซื้อ/ขาย<br>
+        ตัวเลขราคา ค่าเช่า และดอกเบี้ยอาจเปลี่ยนแปลง กรุณา verify ก่อนตัดสินใจ
+      </div>
+    </div>
+  </footer>
+<script>
+    function showCondo(brandId, tocId) {
+      tocId = tocId || 'noble-condo-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('condo-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showCondoToc(tocId) {
+      tocId = tocId || 'noble-condo-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleDevPanel(id) {
+      var btn = document.querySelector('[data-dev="' + id + '"]');
+      var panel = document.getElementById('dev-' + id);
+      if (!btn || !panel) return;
+      var isOpen = btn.classList.contains('active');
+      document.querySelectorAll('.dev-icon-btn').forEach(function(b) {
+        b.classList.remove('active');
+        b.querySelector('.dev-chevron').textContent = '▸';
+      });
+      document.querySelectorAll('.dev-brand-panel').forEach(function(p) {
+        p.style.display = 'none';
+      });
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      if (!isOpen) {
+        btn.classList.add('active');
+        panel.style.display = 'block';
+        btn.querySelector('.dev-chevron').textContent = '▾';
+        showCondoToc(id + '-condo-toc');
+      }
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</body>
+</html>

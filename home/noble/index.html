@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="บ้าน/แนวราบมือ 1 Noble Development (โนเบิล) · Noble Norse/Curve/Terra/Aqua + Nue/New · 4.99–400 ล้าน · TRIS BBB- — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="บ้าน Noble Development (โนเบิล) — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="แนวราบมือ 1 Noble · Norse/Curve/Terra/Aqua หรู + Nue/New เข้าถึง · 4.99M ถึง 400M · TRIS BBB-">
+  <meta property="og:url" content="https://ninethanakarn.com/home/noble/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="บ้าน Noble Development (โนเบิล)">
+  <meta name="twitter:description" content="แนวราบมือ 1 Noble · Norse/Curve/Terra/Aqua + Nue/New · TRIS BBB-">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>บ้าน Noble Development (โนเบิล) — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; display:grid; place-items:center; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink:0; transition:transform .15s, box-shadow .15s; overflow:hidden; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; flex-shrink:0; }
+    .crit-flow-label { font-size:11.5px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:18px; color:var(--muted); flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:1rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { border:1px solid; border-radius:12px; padding:1rem 1.1rem; font-size:0.85rem; line-height:1.65; }
+    .crit-detail-title { font-weight:700; margin-bottom:0.6rem; font-size:0.92rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; display:grid; gap:0.35rem; }
+    .crit-detail-list li { padding:0.15rem 0 0.15rem 1.1rem; position:relative; color:var(--text); }
+    .crit-detail-list li::before { content:'›'; position:absolute; left:0; font-weight:700; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .dev-icon-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 1.5px solid var(--card-border); border-radius: 12px; background: var(--card-bg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; width: 100%; }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: linear-gradient(135deg, #f5f2ea, #e6e0d2); color: #1a1a1a; border: 1.5px solid #cdc4b0; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    .dev-logo-cmc { background: #facc15; color: #1a1a1a; }
+    .dev-logo-chewa { background: #f59e0b; color: #1a1a1a; }
+    .dev-logo-mjd { background: #800000; color: #fff; }
+    .dev-logo-sena { background: #0d9488; color: #fff; }
+    .dev-logo-fpt { background: #dc2626; color: #fff; }
+    .dev-logo-sc { background: #f37021; color: #fff; }
+    .dev-logo-noble { background: #6d28d9; color: #fff; }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏡 บ้าน Noble Development (โนเบิล)</h1>
+      <p class="hero-subtitle">~10 แบรนด์แนวราบ active · 2 ไลน์: Noble (หรู) + Nue/New (เข้าถึง) · 4.99 – 400 ล้าน · TRIS BBB- · SET: NOBLE</p>
+      <p style="margin-top:0.6rem;"><a href="/home/" style="color:#bfdbfe;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- ℹ️ Developer Note (neutral — ข้อเท็จจริง) -->
+    <div class="callout info" style="margin-bottom:1.25rem;">
+      <span class="callout-icon">ℹ️</span>
+      <span>
+        <strong>ก่อนตัดสินใจ — สถานะผู้พัฒนา Noble Development (ข้อมูลตามข้อเท็จจริง):</strong> SET กระดานหลัก (จดทะเบียน 2540) · <strong>TRIS เรตติ้ง "BBB" / หุ้นกู้ "BBB-" · แนวโน้ม Stable</strong> (ปรับกลับจาก Negative มี.ค. 2025 · investment grade) · <strong>condo-led</strong> — แนวราบเป็นพอร์ตรอง แต่เร่งขยายช่วง 2566–2568 (collection หรู "THE RARITY SELECTION") · ไม่พบทิ้งงาน/สร้างไม่เสร็จ/คดีโครงสร้าง/ผิดนัดหุ้นกู้<br>
+        ℹ️ <strong>ขนาด: mid developer — ไม่ใช่ Top-20</strong> (market cap ~2,380 ลบ. · P/BV 0.35x · รายได้ 2024 ~11,568 ลบ. · 2025 หด -37%) · ผู้ถือหุ้นใหญ่เปลี่ยนเป็นกลุ่มทุนฮ่องกง (Frank Fong ~41%) + ธงชัย บุศราพันธ์ (CEO)<br>
+        ℹ️ <strong>หมายเหตุแนวราบ:</strong> แนวราบ Noble กระจุก<strong>กทม.-ปริมณฑลล้วน</strong> (ไม่มี EEC/ตจว.) · มือ 1 ส่วนใหญ่ "พร้อมอยู่" (ระบายสต๊อกบ้านสร้างเสร็จ ไม่ใช่ off-plan)
+      </span>
+    </div>
+
+<!-- Noble Home Brand Panel -->
+      <div id="dev-noble">
+
+      <!-- สารบัญ -->
+      <div class="brand-toc" id="noble-toc">
+        <div class="toc-group">
+          <div class="toc-group-title">🏡 Noble — บ้านเดี่ยว/ทาวน์โฮมหรู — 5 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('noble-norse')"><span class="brand-list-name">Noble Norse กรุงเทพกรีฑา</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>19–30 ล้าน</span><span>Luxury · บ้านเดี่ยว</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('noble-curve')"><span class="brand-list-name">Noble Curve เอกมัย-รามอินทรา</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>9.9–25 ล้าน</span><span>Luxury · ทาวน์โฮมหรู</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('noble-terra')"><span class="brand-list-name">Noble Terra พระราม 9-เอกมัย</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>39–100 ล้าน</span><span>Super-Lux · บ้านเดี่ยว 3 ชั้น</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('noble-aqua')"><span class="brand-list-name">Noble Aqua Riverfront ราษฎร์บูรณะ</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 28.9 ล้าน</span><span>Super-Lux · บ้านริมน้ำ</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('noble-curate')"><span class="brand-list-name">Noble Curate</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 80 ล้าน</span><span>Ultra-Lux · ที่ดิน+บ้านสั่งสร้าง</span></div></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <div class="toc-group-title">🏠 Nue / New — ทาวน์โฮม/บ้านเข้าถึง — 5 แบรนด์</div>
+          <ul class="brand-list">
+            <li class="brand-list-item" onclick="showBrand('nue-cove')"><span class="brand-list-name">Nue Cove North ราชพฤกษ์</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>4.99–5.9 ล้าน</span><span>Mid · ทาวน์โฮม 3.5 ชั้น (ถูกสุด)</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('nue-connex')"><span class="brand-list-name">Nue Connex House ดอนเมือง</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>5.55–9.9 ล้าน</span><span>Mid · ทาวน์โฮม</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('nue-shade')"><span class="brand-list-name">Nue Shade ราชพฤกษ์-แจ้งวัฒนะ</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>6.3–7.99 ล้าน</span><span>Mid · บ้านเดี่ยวหน้ากว้าง</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('nue-hybe')"><span class="brand-list-name">Nue Hybe สุขสวัสดิ์</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>6.99–8 ล้าน</span><span>Mid · ทาวน์โฮม+ช้อปเฮาส์</span></div></li>
+            <li class="brand-list-item" onclick="showBrand('nue-verse')"><span class="brand-list-name">Nue Verse กรุงเทพกรีฑา</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 7.9 ล้าน</span><span>Mid · ทาวน์โฮม</span></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Brand Details: Noble line -->
+      <div class="psh-cat">🏡 Noble — บ้านเดี่ยว/ทาวน์โฮมหรู — 5 แบรนด์</div>
+
+      <div id="brand-noble-norse" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(109,40,217,0.15);color:#6d28d9;border:1px solid rgba(109,40,217,0.35);">Luxury</span><span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว 2 ชั้น</span></div>
+            <div class="card-title">Noble Norse กรุงเทพกรีฑา</div>
+            <div class="card-meta">บ้านเดี่ยว Luxury "Blending life with nature" · ดีไซน์ Modern Barn House + คอร์ดกลางบ้าน · ติดถนนกรุงเทพกรีฑาตัดใหม่</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">19 – 30 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">244 – 343 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">52.5 – 64.4 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4–5 นอน · 4–5 น้ำ · 3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Noble Norse กรุงเทพกรีฑา — เขตสะพานสูง กรุงเทพฯ (ถ.กรุงเทพกรีฑาตัดใหม่ · เชื่อมพระราม 9/เอกมัย/Motorway) · รุ่น LUFT 244 / VIN 262 / SOL 343 ตร.ม. · 19–30M</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 85,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 142,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยวหรู Modern Barn House + Courtyard กลางบ้าน · แนวคิด BIOPHILIC (Nature in Space) · ใช้สอย 244–343 ตร.ม. ที่ดินเริ่ม 52.5 ตร.วา</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวกำลังซื้อสูงย่านกรุงเทพกรีฑา · <strong>⚠️ 19–30M เกินกรอบ Touch มาก (own-stay luxury)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Noble Norse → LINE</a></div>
+        </div>
+      </div><!-- /brand-noble-norse -->
+
+      <div id="brand-noble-curve" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(109,40,217,0.15);color:#6d28d9;border:1px solid rgba(109,40,217,0.35);">Luxury</span><span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮมหรู (URBAN HOME)</span></div>
+            <div class="card-title">Noble Curve เอกมัย-รามอินทรา</div>
+            <div class="card-meta">ทาวน์โฮม Luxury "URBAN HOME นิยามใหม่ของบ้าน" · อยู่+ทำงาน+ครีเอทีฟในหลังเดียว · ถ.ประดิษฐ์มนูธรรม (ใกล้ Crystal Park)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">9.9 – 25 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">175.5 – 454.5 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">สอบถามโครงการ (รวม 23 ไร่)</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 แบบบ้าน (จำนวนนอน/น้ำ สอบถาม)</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Noble Curve เอกมัย-รามอินทรา — เขตลาดพร้าว กรุงเทพฯ (ถ.ประดิษฐ์มนูธรรม · ใกล้ Crystal Park) · เริ่ม 13.9M (ช่วง 9.9–25M) · พร้อมอยู่</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 62,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · ฐานเริ่ม 13.9M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 104,000 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮมหรู "URBAN HOME" ออกแบบให้อยู่+ทำงาน+ครีเอทีฟในหลังเดียว · ใช้สอยกว้างถึง 454.5 ตร.ม. · ทำเลเอกมัย-รามอินทรา</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> คนเมืองทำงานบ้าน/SME ที่ต้องการทาวน์โฮมหรู · <strong>⚠️ 9.9–25M เกินกรอบ Touch (own-stay)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Noble Curve → LINE</a></div>
+        </div>
+      </div><!-- /brand-noble-curve -->
+
+      <div id="brand-noble-terra" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(109,40,217,0.15);color:#6d28d9;border:1px solid rgba(109,40,217,0.35);">Super-Luxury</span><span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว 3 ชั้น · RARITY</span></div>
+            <div class="card-title">Noble Terra พระราม 9-เอกมัย</div>
+            <div class="card-meta">บ้านเดี่ยว 3 ชั้น Super-Luxury collection "THE RARITY SELECTION" · "Oneness with Nature" · CBD พระราม 9-เอกมัย (29 หลัง)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">39 – 100 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">382 – 498 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">50.1 – 87.8 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">บ้านเดี่ยว 3 ชั้น (multi-suite · คอร์ดต้นไม้)</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Noble Terra พระราม 9-เอกมัย — เขตวังทองหลาง กรุงเทพฯ (ซ.จำเนียรเสริม · เข้าออกพระราม 9/ประดิษฐ์มนูธรรม) · 29 หลัง · รุ่น RADIX 382 / POLLINIS 409 / CORTEX 457 / FOLIUM 498 ตร.ม. · เริ่ม 39M (เว็บทางการ 42.9M+)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 175,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · ฐานเริ่ม 39M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 291,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยว 3 ชั้นหรู unique collection "THE RARITY SELECTION BY NOBLE" · คอร์ดปลูกต้นไม้กลางบ้าน · concept "Rare seeks rare" · 382–498 ตร.ม.</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ผู้มีกำลังซื้อสูงใจกลางเมือง CBD พระราม 9 · <strong>⚠️ 39–100M เกินกรอบ Touch สุดขั้ว (own-stay luxury)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Noble Terra → LINE</a></div>
+        </div>
+      </div><!-- /brand-noble-terra -->
+
+      <div id="brand-noble-aqua" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(109,40,217,0.15);color:#6d28d9;border:1px solid rgba(109,40,217,0.35);">Super-Luxury</span><span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยว 3 ชั้น ริมน้ำ · RARITY</span></div>
+            <div class="card-title">Noble Aqua Riverfront ราษฎร์บูรณะ</div>
+            <div class="card-meta">บ้านเดี่ยว 3 ชั้น Super-Luxury ริมแม่น้ำเจ้าพระยา · collection "THE RARITY SELECTION" · วิวโค้งน้ำ 2 สะพาน (53 หลัง)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 28.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">บ้านเดี่ยว 3 ชั้น (รายรุ่นสอบถาม)</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">สอบถามโครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">บ้านเดี่ยว 3 ชั้น ริมน้ำ</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Noble Aqua Riverfront ราษฎร์บูรณะ — ราษฎร์บูรณะ กรุงเทพฯ · ติดแม่น้ำเจ้าพระยา (วิวโค้งน้ำ 2 สะพาน: พระราม 9 + ภูมิพล) · 53 หลัง · เริ่ม 28.9M</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 129,800 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 216,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยวริมแม่น้ำเจ้าพระยา 3 ชั้น collection "THE RARITY SELECTION" · จุดขายคือวิวแม่น้ำ + ทำเลริมน้ำในเมืองที่หายาก</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> กลุ่ม Hi-end ที่ต้องการบ้านริมน้ำในเมือง · <strong>⚠️ เริ่ม 28.9M เกินกรอบ Touch สุดขั้ว (own-stay luxury)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Noble Aqua → LINE</a></div>
+        </div>
+      </div><!-- /brand-noble-aqua -->
+
+      <div id="brand-noble-curate" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(76,29,149,0.18);color:#5b21b6;border:1px solid rgba(76,29,149,0.4);">Ultra-Luxury</span><span style="font-size:0.75rem; color:var(--muted);">ที่ดิน+บ้านสั่งสร้าง (15 หลัง)</span></div>
+            <div class="card-title">Noble Curate</div>
+            <div class="card-meta">ที่ดิน+บ้านสั่งสร้าง Ultra-Luxury · ออกแบบเองโดย 1 ใน 6 สถาปนิกไอคอน (Noble Bespoke) · เพียง 15 ครอบครัว · ถ.ประดิษฐ์มนูธรรม</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 80 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">สั่งสร้าง ~1,000 ตร.ม.+ (custom)</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">161 – 247 ตร.วา/แปลง</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">กำหนดเอง (bespoke)</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Noble Curate — เขตลาดพร้าว กรุงเทพฯ (ถ.ประดิษฐ์มนูธรรม · ติด Crystal Park) · 15 แปลง limited · ที่ดิน 161–247 ตร.วา · เริ่ม 80M</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 359,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · เฉพาะค่าที่ดิน-บ้านเริ่ม 80M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 598,700 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ซื้อที่ดินแล้วออกแบบบ้านเองผ่าน 1 ใน 6 สถาปนิกไอคอนของไทย (Noble Bespoke Service) · สังคม 15 หลัง · คลับเฮาส์ + security เต็มรูปแบบ (license-plate scan)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> Hi-end สุดที่ต้องการบ้าน 1-of-a-kind · <strong>⚠️ เริ่ม 80M เกินกรอบ Touch สุดขั้ว — ไม่ใช่ตลาด Touch ใส่เพื่อความครบของพอร์ต</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Noble Curate → LINE</a></div>
+        </div>
+      </div><!-- /brand-noble-curate -->
+
+      <!-- Brand Details: Nue/New line -->
+      <div class="psh-cat">🏠 Nue / New — ทาวน์โฮม/บ้านเข้าถึง — 5 แบรนด์</div>
+
+      <div id="brand-nue-cove" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge badge-success">Mid</span><span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม 3.5 ชั้น</span></div>
+            <div class="card-title">Nue Cove North ราชพฤกษ์</div>
+            <div class="card-meta">ทาวน์โฮม 3.5 ชั้น ไลน์ Nue/New (entry-mid) · ราคาเข้าถึงสุดในแนวราบ Noble · ราชพฤกษ์ (ใกล้ Lotus North)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">4.99 – 5.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">ทาวน์โฮม 3.5 ชั้น (สอบถามรุ่น)</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">สอบถามโครงการ (93 ยูนิต)</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">ทาวน์โฮม 3.5 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Nue Cove North ราชพฤกษ์ — นนทบุรี (ถ.ราชพฤกษ์ · ใกล้ Lotus North) · 93 ยูนิต · 4.99–5.9M · พร้อมอยู่</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 22,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 37,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮม 3.5 ชั้น ไลน์ Nue/New (entry-mid ของ Noble) · ราคาเข้าถึงสุดในพอร์ตแนวราบ · ทำเลราชพฤกษ์</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวเริ่มต้นโซนราชพฤกษ์-นนทบุรี · <strong>⚠️ 4.99M เกินกรอบบน Touch เล็กน้อย (own-stay)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Cove → LINE</a></div>
+        </div>
+      </div><!-- /brand-nue-cove -->
+
+      <div id="brand-nue-connex" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม</span></div>
+            <div class="card-title">Nue Connex House ดอนเมือง</div>
+            <div class="card-meta">ทาวน์โฮม ไลน์ Nue/New · ทำเลดอนเมือง (ใกล้สนามบิน/วิภาวดี) · ราคาเข้าถึง-กลาง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">5.55 – 9.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">ทาวน์โฮม (สอบถามรุ่น)</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">สอบถามโครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">ทาวน์โฮม</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · เหลือยูนิตท้าย)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Nue Connex House ดอนเมือง — ดอนเมือง กรุงเทพฯ · 5.55–9.9M · มือ 1 (เหลือ ~2 ยูนิต)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 24,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 41,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮม ไลน์ Nue/New ทำเลดอนเมือง (ใกล้สนามบิน/ถ.วิภาวดี) · มีพี่น้อง Nue Connex Bizz (ช้อปเฮาส์/โฮมออฟฟิศ เริ่ม 9.9M)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัว/คนทำงานโซนดอนเมือง-ดอนเมืองทอลล์เวย์ · <strong>⚠️ 5.55M+ เกินกรอบ Touch (own-stay)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Connex → LINE</a></div>
+        </div>
+      </div><!-- /brand-nue-connex -->
+
+      <div id="brand-nue-shade" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem; color:var(--muted);">บ้านเดี่ยวหน้ากว้าง</span></div>
+            <div class="card-title">Nue Shade ราชพฤกษ์-แจ้งวัฒนะ</div>
+            <div class="card-meta">บ้านเดี่ยวหน้ากว้าง ไลน์ Nue/New · ทำเลราชพฤกษ์ 345 · ราคากลาง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">6.3 – 7.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">บ้านเดี่ยวหน้ากว้าง (สอบถามรุ่น)</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">สอบถามโครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">บ้านเดี่ยวหน้ากว้าง</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Nue Shade ราชพฤกษ์-แจ้งวัฒนะ — นนทบุรี (ถ.ราชพฤกษ์ 345) · 6.3–7.99M · พร้อมอยู่</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 28,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 47,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> บ้านเดี่ยวหน้ากว้าง ไลน์ Nue/New · ทำเลราชพฤกษ์ 345 (เชื่อมแจ้งวัฒนะ/ชัยพฤกษ์)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวที่ต้องการบ้านเดี่ยวงบกลางโซนราชพฤกษ์ · <strong>⚠️ 6.3M+ เกินกรอบ Touch (own-stay)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Shade → LINE</a></div>
+        </div>
+      </div><!-- /brand-nue-shade -->
+
+      <div id="brand-nue-hybe" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม + ช้อปเฮาส์</span></div>
+            <div class="card-title">Nue Hybe สุขสวัสดิ์</div>
+            <div class="card-meta">ทาวน์โฮม + ช้อปเฮาส์ ไลน์ Nue/New · ทำเลสุขสวัสดิ์ · อยู่+ค้าขายได้</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">6.99 – 8 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">ทาวน์โฮม/ช้อปเฮาส์ (สอบถามรุ่น)</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">สอบถามโครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">ทาวน์โฮม + ช้อปเฮาส์</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Nue Hybe สุขสวัสดิ์ — กรุงเทพฯ/สมุทรปราการ (ถ.สุขสวัสดิ์) · 6.99–8M · พร้อมอยู่</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 31,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 52,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮม + ช้อปเฮาส์ ไลน์ Nue/New ทำเลสุขสวัสดิ์ · ตอบโจทย์อยู่อาศัย + ค้าขาย/SME ในหลังเดียว</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวค้าขาย/SME โซนสุขสวัสดิ์-พระประแดง · <strong>⚠️ 6.99M+ เกินกรอบ Touch (own-stay/ค้าขาย)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Hybe → LINE</a></div>
+        </div>
+      </div><!-- /brand-nue-hybe -->
+
+      <div id="brand-nue-verse" class="brand-detail">
+        <button class="back-to-toc" onclick="showToc()">← กลับสารบัญ</button>
+        <div class="property-card">
+          <div class="card-body">
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem; color:var(--muted);">ทาวน์โฮม</span></div>
+            <div class="card-title">Nue Verse กรุงเทพกรีฑา</div>
+            <div class="card-meta">ทาวน์โฮม ไลน์ Nue/New · ทำเลกรุงเทพกรีฑาตัดใหม่ (โซนเดียวกับ Noble Norse แต่ราคาเข้าถึงกว่า)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 7.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">ทาวน์โฮม (สอบถามรุ่น)</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">สอบถามโครงการ</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">ทาวน์โฮม</div></div>
+            </div>
+            <div style="font-size:0.82rem; color:var(--muted); margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+            <ul style="font-size:0.82rem; color:var(--muted); padding-left:1.1rem; line-height:1.8; margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Nue Verse กรุงเทพกรีฑา — เขตสะพานสูง กรุงเทพฯ (ถ.กรุงเทพกรีฑาตัดใหม่) · เริ่ม 7.9M · พร้อมอยู่</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี · <strong style="color:var(--text);">พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 35,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 59,200 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ทาวน์โฮม ไลน์ Nue/New ทำเลกรุงเทพกรีฑาตัดใหม่ (ทำเล premium โซนเดียวกับ Noble Norse แต่ format ทาวน์โฮม)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> คนทำงานต้องการทาวน์โฮมทำเลดีกรุงเทพกรีฑา · <strong>⚠️ 7.9M+ เกินกรอบ Touch (own-stay)</strong></span></div>
+          </div>
+          <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Nue Verse → LINE</a></div>
+        </div>
+      </div><!-- /brand-nue-verse -->
+
+      <!-- Noble Home Recap -->
+      <div class="callout info" style="margin-top:1rem;">
+        <span class="callout-icon">🏢</span>
+        <span>
+          <strong>Noble Development (SET: NOBLE):</strong> condo-led · แนวราบเป็นพอร์ตรอง · แนวราบ active <strong>~10 แบรนด์ (พร้อมอยู่)</strong> · 2 ไลน์<br>
+          <strong>🏡 Noble (หรู):</strong> Norse กรุงเทพกรีฑา (19M บ้านเดี่ยว) · Curve เอกมัย-รามอินทรา (13.9M ทาวน์โฮม) · <strong>RARITY:</strong> Terra พระราม9-เอกมัย (39M+) · Aqua ราษฎร์บูรณะ (28.9M ริมน้ำ) · Curate (80M ที่ดิน+บ้านสั่งสร้าง)<br>
+          <strong>🏠 Nue/New (เข้าถึง):</strong> Cove ราชพฤกษ์ (4.99M ถูกสุด) · Connex ดอนเมือง (5.55M) · Shade ราชพฤกษ์ (6.3M) · Hybe สุขสวัสดิ์ (6.99M) · Verse กรุงเทพกรีฑา (7.9M) · + Connex Bizz (ช้อปเฮาส์)<br>
+          <strong>ตัดออก (sold out/resale ไม่มีมือ 1):</strong> Noble Gable วัชรพล · Geo (วัชรพล/พระราม 5) · Cube พัฒนาการ · Tara/Wana · Park Bangplee (เสร็จ 2014)<br>
+          <strong>⚠️ ระวังชื่อ:</strong> Gable/Geo/Curve/Terra/Aqua/Cube = <strong>ชื่อรุ่นโครงการ ไม่ใช่ tier-brand แยก</strong> (แบรนด์แม่ = "Noble") · <strong>"Noble Heart" = ไม่มีจริง (ไม่ยืนยัน อย่าใช้)</strong> · Nue/New = สะกดสลับในเว็บ Noble เป็นแบรนด์เดียวกัน<br>
+          <strong>ทำเล:</strong> กทม.-ปริมณฑลล้วน (ไม่มี EEC/ตจว.) · ดูคอนโด Noble ใน <strong>/condo/noble/</strong> (พอร์ตหลัก ~10 แบรนด์ Nue+Noble)<br>
+          <strong>ℹ️ บริบทผู้พัฒนา:</strong> NOBLE = TRIS BBB- · <strong>mid developer (ไม่ใช่ Top-20)</strong> · presale พึ่งต่างชาติ/จีน &gt;70% (ดูกล่อง ℹ️ บนสุด) · แนวราบเกือบทั้งหมดเกินกรอบ Touch (own-stay luxury · Nue Cove 4.99M ใกล้สุด) · ราคาโปรเปลี่ยนได้ โทรเช็คก่อน quote
+        </span>
+      </div>
+
+      </div><!-- /dev-noble -->
+        <div style="text-align:center;margin:1.5rem 0 0.5rem;"><a href="/home/" style="display:inline-block;background:#3b82f6;color:#fff;font-weight:600;font-size:0.95rem;padding:0.7rem 1.6rem;border-radius:8px;text-decoration:none;">&larr; กลับ บ้านในพอร์ต (ทุก developer)</a></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลใน portfolio นี้เป็น research summary ไม่ใช่คำแนะนำซื้อ/ขาย<br>
+        ตัวเลขราคา ค่าเช่า และดอกเบี้ยอาจเปลี่ยนแปลง กรุณา verify ก่อนตัดสินใจ
+      </div>
+    </div>
+  </footer>
+<script>
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'noble-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc(tocId) {
+      tocId = tocId || 'noble-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleCat(el) {
+      el.classList.toggle('open');
+      var list = el.parentElement.querySelector('.cat-list');
+      if (list) list.classList.toggle('open');
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+
+    // Developer icon toggle
+    document.querySelectorAll('.dev-icon-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var devId = this.dataset.dev;
+        var panel = document.getElementById('dev-' + devId);
+        var isActive = this.classList.contains('active');
+        document.querySelectorAll('.dev-icon-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelectorAll('.dev-brand-panel').forEach(function(p) { p.classList.remove('active'); });
+        if (!isActive) {
+          this.classList.add('active');
+          if (panel) panel.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
