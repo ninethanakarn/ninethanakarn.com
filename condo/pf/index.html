@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="คอนโดมือ 1 พร็อพเพอร์ตี้ เพอร์เฟค (PF) · iCondo/Metro Sky/Metro Luxe/The Sky · 🔴 No-Go distressed (default หุ้นกู้) — พิจารณาเฉพาะพร้อมอยู่ · นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="คอนโด พร็อพเพอร์ตี้ เพอร์เฟค (Property Perfect) — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คอนโดมือ 1 PF · 🔴 No-Go ผู้พัฒนา distressed (ผิดนัดหุ้นกู้ + TRIS D + SP) · iCondo/Metro Sky campus+interchange เข้ากรอบ · เฉพาะพร้อมอยู่">
+  <meta property="og:url" content="https://ninethanakarn.com/condo/pf/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="คอนโด พร็อพเพอร์ตี้ เพอร์เฟค (Property Perfect)">
+  <meta name="twitter:description" content="คอนโดมือ 1 PF · 🔴 No-Go distressed (ผิดนัดหุ้นกู้) · เฉพาะพร้อมอยู่ · iCondo/Metro Sky เข้ากรอบ">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>คอนโด พร็อพเพอร์ตี้ เพอร์เฟค (Property Perfect · PF) — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
+    .dev-logo-pf { background: #334155; color: #fff; }
+    .dev-info { flex: 1; min-width: 0; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>🏙️ คอนโด พร็อพเพอร์ตี้ เพอร์เฟค (Property Perfect)</h1>
+      <p class="hero-subtitle">คอนโดมือ 1 พร้อมอยู่ · iCondo/Metro Sky/Metro Luxe/The Sky · 1.2 – 8.8 ล้าน · 🔴 No-Go ผู้พัฒนา distressed (PF) — อ่าน risk บนสุด</p>
+      <p style="margin-top:0.6rem;"><a href="/condo/" style="color:#bfdbfe;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ คอนโดในพอร์ต (ทุก developer)</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- 🚨 Developer Risk Note (แดงเด่น — distressed หนักสุด · อ่านก่อนตัดสินใจ) -->
+    <div class="callout" style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.45);border-left:5px solid #ef4444;margin-bottom:1.25rem;">
+      <span class="callout-icon">🚨</span>
+      <span>
+        <strong style="color:#dc2626;">อ่านก่อนตัดสินใจ — 🔴 Property Perfect (SET: PF) เป็น No-Go ผู้พัฒนา (distressed หนักสุดในเว็บนี้):</strong> <strong>ผิดนัดชำระหุ้นกู้จริง (default) 5 รุ่น ~1,847 ลบ.</strong> + ปรับโครงสร้างหุ้นกู้ 15 รุ่น (ยืด 2 ปี) · <strong>TRIS ลดเครดิตเป็น "D"</strong> (Distressed Debt Restructuring · เคยถูกลดเป็น SD) · ขาดทุนสุทธิ 3 ปีติด (ปี 2566–2568: −196 / −1,009 / <strong>−2,813 ลบ.</strong> · 9 ไตรมาสติด)<br>
+        <strong>ราคาหุ้น 0.04 บาท</strong> (แก้พาร์ 6→1) · <strong>ขึ้นเครื่องหมาย SP (ห้ามซื้อขายชั่วคราว) + CB + CS</strong> — ผู้สอบบัญชี (EY) <strong>ไม่แสดงความเห็น (Disclaimer)</strong> ต่องบปี 2568 · เครือ GRAND / ROH โดน SP พร้อมกัน<br>
+        ✅ <strong>ไม่พบ</strong>ทิ้งงาน/สร้างไม่เสร็จ/คดีโครงสร้าง — ตระกูลอรรถญาณสกุล (ชายนิด) บริหาร · ความเสี่ยงคือ <strong>"การเงิน/สภาพคล่องบริษัทแม่"</strong> ล้วน<br>
+        👉 โครงการที่ <strong>สร้างเสร็จ พร้อมอยู่ นิติฯ เดินแล้ว</strong> ยังพิจารณาได้ (ไม่เสี่ยงสร้างไม่เสร็จ) — แต่เสี่ยง (1) <strong>นิติบุคคลระยะยาว</strong> หาก PF ล้ม (2) <strong>resale ขายต่อยาก</strong> (ชื่อ dev เสีย) → <strong>yield play พร้อมอยู่เท่านั้น ห้ามพรีเซล/วางเงินดาวน์ก้อนใหญ่</strong> · เช็ค Admin ก่อนตัดสินใจ
+      </span>
+    </div>
+
+<!-- PF Condo Brand Panel -->
+      <div id="dev-pf">
+
+        <!-- สารบัญ -->
+        <div class="brand-toc" id="pf-condo-toc">
+          <div class="toc-group">
+            <div class="toc-group-title">🏙️ คอนโด พร็อพเพอร์ตี้ เพอร์เฟค — 4 แบรนด์ (active มือ 1 · พร้อมอยู่)</div>
+            <ul class="brand-list">
+              <li class="brand-list-item" onclick="showCondo('icondo')"><span class="brand-list-name">iCondo</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>1.2–5.5M</span><span>Mass · campus ศาลายา · ถูกสุด เข้ากรอบ</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('metrosky')"><span class="brand-list-name">Metro Sky</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>1.99–6M</span><span>Mid · interchange รถไฟฟ้า · เข้ากรอบ</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('metroluxe')"><span class="brand-list-name">Metro Luxe</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>เริ่ม 1.9M</span><span>Mid · ริมน้ำ/campus เกษตร · เข้ากรอบ</span></div></li>
+              <li class="brand-list-item" onclick="showCondo('thesky')"><span class="brand-list-name">The Sky</span><div class="brand-list-cta">คลิ๊กดูรายละเอียด →</div><div class="brand-list-meta"><span>3.39–8.8M</span><span>Mid-Premium · BTS อุดมสุข</span></div></li>
+            </ul>
+          </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;">* ผ่อน/รายได้คำนวณจากดอกเบี้ย 3.5% · กู้ 100% · 30 ปี · DSR 60%</p>
+        </div>
+
+        <!-- Brand Details -->
+        <div class="psh-cat">🏙️ คอนโด พร็อพเพอร์ตี้ เพอร์เฟค — 4 แบรนด์ (active มือ 1 · พร้อมอยู่)</div>
+
+        <div id="condo-icondo" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mass · Campus</span><span style="font-size:0.75rem;color:var(--muted);">Studio / 1BR / 2BR · พร้อมอยู่</span></div>
+              <div class="card-title">iCondo</div>
+              <div class="card-meta">คอนโด low-rise mass ใกล้มหาวิทยาลัย concept "The Campus 4.0" · ราคาเข้าถึงสุดของ PF · เข้ากรอบ Touch · ⚠️ พร้อมอยู่ระบายสต๊อก (ดู risk การเงินบนสุด)</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.2 – 5.5 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">30 – 36 ตร.ม. (ศาลายา)</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio / 1BR / 2BR</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สระ + fitness + co-working + รปภ. (low-rise 8 ชั้น)</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>iCondo ศาลายา 2 (The Campus) — นครปฐม ศาลายา · ม.มหิดล ศาลายา ~1 กม. · low-rise 880 ยูนิต · เริ่ม 1.65M · พร้อมอยู่</li>
+                <li>iCondo Activ พัฒนาการ — ARL หัวหมาก · เริ่ม 2.27M · พร้อมอยู่</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+                <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 7,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · อิงเริ่ม ~1.65M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> low-rise 8 ชั้น concept "The Campus 4.0" ใกล้มหาวิทยาลัย · ส่วนกลาง co-working เน้นนักศึกษา · ราคาถูกสุดของ PF</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> นักลงทุนปล่อยเช่านักศึกษา ม.มหิดล ศาลายา (real demand campus · 1.65M เข้ากรอบ ถูกสุด) · ⚠️ ผู้พัฒนา distressed — ซื้อเฉพาะตัวพร้อมอยู่ + เช็คนิติฯ/สภาพจริง</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ iCondo → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-metrosky" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">1BR / 2BR / Duplex · พร้อมอยู่</span></div>
+              <div class="card-title">Metro Sky</div>
+              <div class="card-meta">คอนโด Mid high-rise ติดรถไฟฟ้า (interchange) · แบรนด์ระบายสต๊อกหลักของ PF · เข้ากรอบ Touch · ⚠️ พร้อมอยู่ (ดู risk บนสุด)</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.99 – 6 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">25 – 65 ตร.ม.</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 2BR / Duplex</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สระ + fitness + sky facilities + co-working</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Metro Sky สาทร-วุฒากาศ — ติด BTS วุฒากาศ + MRT บางหว้า (interchange) · เริ่ม 1.99M · พร้อมอยู่</li>
+                <li>Metro Sky บางซ่อน (ประชาชื่น) — MRT บางซ่อน (ม่วง) + บางซื่อ · เริ่ม 3.33M · พร้อมอยู่</li>
+                <li>Metro Sky พหลโยธิน — ติดรถไฟฟ้า</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+                <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 8,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · อิงเริ่ม ~1.99M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> high-rise ติด interchange (วุฒากาศ = BTS+MRT บางหว้า / บางซ่อน = เชื่อม 3 สาย) · sky facilities · จุดเด่น = ทำเลติดรถไฟฟ้าเชื่อมต่อ</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> นักลงทุนปล่อยเช่าติดรถไฟฟ้า (1.99M เข้ากรอบ · interchange demand แน่น) · ⚠️ distressed dev — เฉพาะพร้อมอยู่ + เช็คนิติฯ</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Metro Sky → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-metroluxe" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(59,130,246,0.15);color:#1e40af;border:1px solid rgba(59,130,246,0.3);">Mid</span><span style="font-size:0.75rem;color:var(--muted);">Studio / 1BR / 2BR · พร้อมอยู่</span></div>
+              <div class="card-title">Metro Luxe</div>
+              <div class="card-meta">คอนโด Mid ริมน้ำ / ใกล้มหาวิทยาลัย · ชื่อ "Luxe" แต่ราคา affordable · เข้ากรอบ Touch · ⚠️ พร้อมอยู่ (ดู risk บนสุด)</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 1.9 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">สอบถามโครงการ</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio / 1BR / 2BR</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สระ + fitness + co-working (riverfront บางตัว)</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>Metro Luxe รัตนาธิเบศร์ Riverfront — นนทบุรี ริมเจ้าพระยา · MRT ไทรม้า (ม่วง) · เริ่ม 1.9M · พร้อมอยู่</li>
+                <li>Metro Luxe เกษตร — ม.เกษตรศาสตร์ + BTS ม.เกษตรฯ · เริ่ม 2.06M · พร้อมอยู่ (campus)</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+                <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 8,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · อิงเริ่ม ~1.9M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> riverfront (รัตนาธิเบศร์ ริมเจ้าพระยา) / campus (เกษตร ติด BTS ม.เกษตร) · ราคาเข้าถึงแม้ชื่อ Luxe</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> นักลงทุนปล่อยเช่า campus ม.เกษตร / คนทำงานริมน้ำ (1.9–2.06M เข้ากรอบ) · ⚠️ distressed dev — เฉพาะพร้อมอยู่</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Metro Luxe → LINE</a></div>
+          </div>
+        </div>
+
+        <div id="condo-thesky" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc()">← กลับสารบัญ</button>
+          <div class="property-card">
+            <div class="card-body">
+              <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid-Premium</span><span style="font-size:0.75rem;color:var(--muted);">1BR / 2BR / Duplex · พร้อมอยู่</span></div>
+              <div class="card-title">The Sky</div>
+              <div class="card-meta">คอนโด high-rise ติด BTS อุดมสุข · ห้องหลากหลาย ราคาบนไลน์เกินกรอบ · ⚠️ พร้อมอยู่ระบายสต๊อก (ดู risk บนสุด)</div>
+              <div class="card-stats">
+                <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">3.39 – 8.8 ล้าน</div></div>
+                <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">22.6 – 35 ตร.ม. (1BR) + 2BR/Duplex</div></div>
+                <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 2BR / Duplex</div></div>
+                <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สระ + fitness + sky facilities (5 อาคาร 898 ยูนิต)</div></div>
+              </div>
+              <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1 · พร้อมอยู่)</strong></div>
+              <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+                <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+                <li>The Sky สุขุมวิท (อุดมสุข) — BTS อุดมสุข ~250–350 ม. · 5 อาคาร 898 ยูนิต · เริ่ม 3.39M · พร้อมอยู่ระบายสต๊อก</li>
+                <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — The Sky ศรีราชา (⚠️ คนละตัว · EEC — เช็ค oversupply supply)</li>
+                <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+              </ul>
+              <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 15,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · อิงเริ่ม ~3.39M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 25,300 บ./เดือน</strong> (DSR 60%)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> high-rise 5 อาคาร ติด BTS อุดมสุข · sky facilities · ห้องหลากหลาย (1BR–Duplex)</span></div>
+              <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> คนทำงานสุขุมวิท/ปล่อยเช่าติด BTS (entry 3.39M แตะขอบบนกรอบ · 2BR+ เกิน) · ⚠️ distressed dev · The Sky ศรีราชา EEC เช็ค oversupply</span></div>
+            </div>
+            <div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Sky → LINE</a></div>
+          </div>
+        </div>
+
+        <!-- PF Condo Recap -->
+        <div class="callout" style="margin-top:1rem;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.35);border-left:5px solid #ef4444;">
+          <span class="callout-icon">🏢</span>
+          <span>
+            <strong>พร็อพเพอร์ตี้ เพอร์เฟค (SET: PF):</strong> 🔴 <strong>No-Go ผู้พัฒนา</strong> — distressed หนักสุดในเว็บนี้ (ผิดนัดหุ้นกู้ default + TRIS "D" + ขึ้น SP ห้ามซื้อขาย) ดู risk เต็มบนสุด<br>
+            <strong>คอนโด active (4 แบรนด์ในการ์ด · พร้อมอยู่ นิติฯ เดิน):</strong> iCondo (1.65M campus ศาลายา ถูกสุด) · Metro Sky (1.99M interchange วุฒากาศ) · Metro Luxe (1.9M ริมน้ำ/เกษตร) · The Sky (3.39M อุดมสุข)<br>
+            <strong>⚠️ ตัดออก (resale / sold out / resort ไม่ลง policy):</strong> <strong>The Lake</strong> (เมืองทองธานี · โครงการเก่า · dev เบต้า แคปปิตอล · resale) · <strong>Bella Costa</strong> (resort ริมทะเลหัวหิน/ปราณบุรี · สร้างเสร็จ 2559 · resale) · <strong>The Sky ศรีราชา</strong> (EEC — เช็ค oversupply)<br>
+            <strong>ทำเล:</strong> ในการ์ด = กทม.-ปริมณฑลล้วน (ติดรถไฟฟ้า/campus) · ดูแนวราบ PF ใน <strong>/home/pf/</strong><br>
+            <strong>🔴 บริบทผู้พัฒนา:</strong> No-Go — แม้คอนโดพร้อมอยู่ (ไม่เสี่ยงสร้างไม่เสร็จ) แต่เสี่ยง (1) นิติบุคคลระยะยาวหาก PF ล้ม (2) resale ขายต่อยาก (ชื่อ dev เสีย) → <strong>yield play พร้อมอยู่เท่านั้น ห้ามพรีเซล</strong> · เช็ค Admin ก่อนตัดสินใจ
+          </span>
+        </div>
+
+      </div><!-- /dev-pf -->
+        <div style="text-align:center;margin:1.5rem 0 0.5rem;"><a href="/condo/" style="display:inline-block;background:#3b82f6;color:#fff;font-weight:600;font-size:0.95rem;padding:0.7rem 1.6rem;border-radius:8px;text-decoration:none;">&larr; กลับ คอนโดในพอร์ต (ทุก developer)</a></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลใน portfolio นี้เป็น research summary ไม่ใช่คำแนะนำซื้อ/ขาย<br>
+        ตัวเลขราคา ค่าเช่า และดอกเบี้ยอาจเปลี่ยนแปลง กรุณา verify ก่อนตัดสินใจ
+      </div>
+    </div>
+  </footer>
+<script>
+    function showCondo(brandId, tocId) {
+      tocId = tocId || 'pf-condo-toc';
+      document.getElementById(tocId).classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('condo-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showCondoToc(tocId) {
+      tocId = tocId || 'pf-condo-toc';
+      document.getElementById(tocId).classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</body>
+</html>
