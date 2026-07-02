@@ -59,8 +59,10 @@
     .brand-toc.hidden { display: none; }
     .brand-detail { display: none; }
     .brand-detail.active { display: block; }
-    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .dev-icon-btn { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 1.5px solid var(--card-border); border-radius: 12px; background: var(--card-bg); cursor: pointer; text-align: left; transition: border-color .15s, background .15s; width: 100%; }
+    .dev-icon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 8px; background: var(--section-bg); border-radius: 16px; padding: 24px 16px; border: 1px solid var(--card-border); margin-bottom: 1.25rem; }
+    .dev-ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-weight: 800; font-size: 0.82rem; line-height: 1; letter-spacing: 0.02em; flex-shrink: 0; }
+    .dev-tool-label { font-size: 11.5px; font-weight: 500; line-height: 1.3; color: var(--text); }
+    .dev-icon-btn { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; padding: 8px 4px; border-radius: 12px; transition: background .2s; text-decoration: none; color: inherit; border: none; background: transparent; cursor: pointer; }
     .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); }
     .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; }
     .dev-logo-lpn { background: #1e40af; color: #fff; }
@@ -236,166 +238,26 @@
 
       <!-- Developer icon grid -->
       <div class="dev-icon-grid">
-        <a class="dev-icon-btn" href="/condo/lpn/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-lpn">LPN</div>
-          <div class="dev-info">
-            <div class="dev-info-name">ลุมพินี (L.P.N. Development)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโดลุมพินี →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/psh/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-pruksa">PSH</div>
-          <div class="dev-info">
-            <div class="dev-info-name">พฤกษา (Pruksa Holding)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโดพฤกษา →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/asw/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-asw">ASW</div>
-          <div class="dev-info">
-            <div class="dev-info-name">แอสเซทไวส์ (AssetWise)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโดแอสเซทไวส์ →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/risland/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-risland">RIS</div>
-          <div class="dev-info">
-            <div class="dev-info-name">ริสแลนด์ (Risland Thailand)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโดริสแลนด์ →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/siri/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-siri">SIRI</div>
-          <div class="dev-info">
-            <div class="dev-info-name">แสนสิริ (Sansiri)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโดแสนสิริ →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/ap/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-ap">AP</div>
-          <div class="dev-info">
-            <div class="dev-info-name">เอพี ไทยแลนด์ (AP Thailand)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโดเอพี →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/ori/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-ori">ORI</div>
-          <div class="dev-info">
-            <div class="dev-info-name">Origin (Origin Property)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด Origin →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/anan/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-anan">ANAN</div>
-          <div class="dev-info">
-            <div class="dev-info-name">อนันดา (Ananda Development)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด Ananda →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/cmc/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-cmc">CMC</div>
-          <div class="dev-info">
-            <div class="dev-info-name">เจ้าพระยามหานคร (CMC Group)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด CMC →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/chewa/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-chewa">CHEWA</div>
-          <div class="dev-info">
-            <div class="dev-info-name">ชีวาทัย (Chewathai)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด Chewathai →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/mjd/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-mjd">MJD</div>
-          <div class="dev-info">
-            <div class="dev-info-name">เมเจอร์ ดีเวลลอปเม้นท์ (Major Development)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด MJD →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/sena/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-sena">SENA</div>
-          <div class="dev-info">
-            <div class="dev-info-name">เสนา ดีเวลลอปเม้นท์ (SENA Development)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด SENA →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/fpt/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-fpt">FPT</div>
-          <div class="dev-info">
-            <div class="dev-info-name">เฟรเซอร์ส พร็อพเพอร์ตี้ (Frasers · เดิม Golden Land)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด FPT →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/sc/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-sc">SC</div>
-          <div class="dev-info">
-            <div class="dev-info-name">เอสซี แอสเสท (SC Asset)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด SC →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/noble/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-noble">NOBLE</div>
-          <div class="dev-info">
-            <div class="dev-info-name">โนเบิล ดีเวลลอปเมนท์ (Noble)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด Noble →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/uv/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-uv">GU</div>
-          <div class="dev-info">
-            <div class="dev-info-name">Grand Unity (ยูนิเวนเจอร์ · UV)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด Grand Unity →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/spali/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-spali">SPALI</div>
-          <div class="dev-info">
-            <div class="dev-info-name">ศุภาลัย (Supalai)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด ศุภาลัย →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/lh/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-lh">LH</div>
-          <div class="dev-info">
-            <div class="dev-info-name">แลนด์ แอนด์ เฮ้าส์ (Land & Houses)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด แลนด์ แอนด์ เฮ้าส์ →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/qh/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-qh">QH</div>
-          <div class="dev-info">
-            <div class="dev-info-name">ควอลิตี้ เฮ้าส์ (Quality Houses)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด ควอลิตี้ เฮ้าส์ →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
-        <a class="dev-icon-btn" href="/condo/pf/" style="text-decoration:none;color:inherit;">
-          <div class="dev-logo-badge dev-logo-pf">PF</div>
-          <div class="dev-info">
-            <div class="dev-info-name">พร็อพเพอร์ตี้ เพอร์เฟค (Property Perfect)</div>
-            <div class="brand-list-cta">เปิดหน้า คอนโด พร็อพเพอร์ตี้ เพอร์เฟค →</div>
-          </div>
-          <div class="dev-chevron">→</div>
-        </a>
+        <a class="dev-icon-btn" href="/condo/lpn/"><div class="dev-ico dev-logo-lpn">LPN</div><span class="dev-tool-label">ลุมพินี</span></a>
+        <a class="dev-icon-btn" href="/condo/psh/"><div class="dev-ico dev-logo-pruksa">PSH</div><span class="dev-tool-label">พฤกษา</span></a>
+        <a class="dev-icon-btn" href="/condo/asw/"><div class="dev-ico dev-logo-asw">ASW</div><span class="dev-tool-label">แอสเซทไวส์</span></a>
+        <a class="dev-icon-btn" href="/condo/risland/"><div class="dev-ico dev-logo-risland">RIS</div><span class="dev-tool-label">ริสแลนด์</span></a>
+        <a class="dev-icon-btn" href="/condo/siri/"><div class="dev-ico dev-logo-siri">SIRI</div><span class="dev-tool-label">แสนสิริ</span></a>
+        <a class="dev-icon-btn" href="/condo/ap/"><div class="dev-ico dev-logo-ap">AP</div><span class="dev-tool-label">เอพี</span></a>
+        <a class="dev-icon-btn" href="/condo/ori/"><div class="dev-ico dev-logo-ori">ORI</div><span class="dev-tool-label">ออริจิ้น</span></a>
+        <a class="dev-icon-btn" href="/condo/anan/"><div class="dev-ico dev-logo-anan">ANAN</div><span class="dev-tool-label">อนันดา</span></a>
+        <a class="dev-icon-btn" href="/condo/cmc/"><div class="dev-ico dev-logo-cmc">CMC</div><span class="dev-tool-label">เจ้าพระยาฯ</span></a>
+        <a class="dev-icon-btn" href="/condo/chewa/"><div class="dev-ico dev-logo-chewa">CHEWA</div><span class="dev-tool-label">ชีวาทัย</span></a>
+        <a class="dev-icon-btn" href="/condo/mjd/"><div class="dev-ico dev-logo-mjd">MJD</div><span class="dev-tool-label">เมเจอร์</span></a>
+        <a class="dev-icon-btn" href="/condo/sena/"><div class="dev-ico dev-logo-sena">SENA</div><span class="dev-tool-label">เสนา</span></a>
+        <a class="dev-icon-btn" href="/condo/fpt/"><div class="dev-ico dev-logo-fpt">FPT</div><span class="dev-tool-label">เฟรเซอร์ส</span></a>
+        <a class="dev-icon-btn" href="/condo/sc/"><div class="dev-ico dev-logo-sc">SC</div><span class="dev-tool-label">เอสซี</span></a>
+        <a class="dev-icon-btn" href="/condo/noble/"><div class="dev-ico dev-logo-noble">NOBLE</div><span class="dev-tool-label">โนเบิล</span></a>
+        <a class="dev-icon-btn" href="/condo/uv/"><div class="dev-ico dev-logo-uv">GU</div><span class="dev-tool-label">แกรนด์ยูนิตี้</span></a>
+        <a class="dev-icon-btn" href="/condo/spali/"><div class="dev-ico dev-logo-spali">SPALI</div><span class="dev-tool-label">ศุภาลัย</span></a>
+        <a class="dev-icon-btn" href="/condo/lh/"><div class="dev-ico dev-logo-lh">LH</div><span class="dev-tool-label">แลนด์&เฮ้าส์</span></a>
+        <a class="dev-icon-btn" href="/condo/qh/"><div class="dev-ico dev-logo-qh">QH</div><span class="dev-tool-label">ควอลิตี้เฮ้าส์</span></a>
+        <a class="dev-icon-btn" href="/condo/pf/"><div class="dev-ico dev-logo-pf">PF</div><span class="dev-tool-label">เพอร์เฟค</span></a>
       </div>
 
       
