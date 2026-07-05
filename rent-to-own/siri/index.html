@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="โครงการแสนสิริ (Sansiri) คอนโด 10 + บ้าน 12 แบรนด์ สำหรับดีลเช่าซื้อ / ผ่อนตรง — นายธนาคารประจำบ้าน">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="แสนสิริ (Sansiri) — เช่าซื้อ / ผ่อนตรง — นายธนาคารประจำบ้าน">
+  <meta property="og:description" content="คอนโด 10 + บ้าน 12 แบรนด์แสนสิริ · ดูโครงการ แล้วปรึกษาดีลเช่าซื้อ/ผ่อนตรงที่เหมาะกับคุณผ่าน LINE">
+  <meta property="og:url" content="https://ninethanakarn.com/rent-to-own/siri/">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="แสนสิริ (Sansiri) — เช่าซื้อ / ผ่อนตรง">
+  <meta name="twitter:description" content="คอนโด 10 + บ้าน 12 แบรนด์แสนสิริ · ปรึกษาดีลเช่าซื้อ/ผ่อนตรงผ่าน LINE">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>แสนสิริ (Sansiri) — เช่าซื้อ / ผ่อนตรง — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="/home/assets/style.css">
+  <style>
+    .sticky-cta { display: none !important; }
+    body { padding-bottom: 0 !important; }
+    /* Criteria flow icons */
+    .crit-flow { display:flex; align-items:flex-start; justify-content:center; gap:4px; margin-bottom:0.5rem; flex-wrap:nowrap; }
+    .crit-flow-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; min-width:0; cursor:pointer; }
+    .crit-flow-ico { width:52px; height:52px; border-radius:16px; background:linear-gradient(135deg,#1e40af,#3b82f6); display:grid; place-items:center; box-shadow:0 4px 16px rgba(30,64,175,0.2); flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .crit-flow-item:hover .crit-flow-ico, .crit-flow-item.active .crit-flow-ico { transform:translateY(-3px); box-shadow:0 8px 24px rgba(30,64,175,0.35); }
+    .crit-flow-ico svg { width:26px; height:26px; color:#fff; stroke-width:1.8; }
+    .crit-flow-label { font-size:11px; color:var(--text); text-align:center; line-height:1.4; font-weight:600; }
+    .crit-flow-sub { font-size:9px; color:var(--muted); text-align:center; line-height:1.3; }
+    .crit-flow-sep { display:flex; align-items:center; padding-top:20px; color:rgba(59,130,246,0.4); font-size:1.1rem; flex-shrink:0; }
+    .crit-detail-wrap { display:none; margin-top:0.75rem; }
+    .crit-detail-wrap.show { display:block; }
+    .crit-detail-card { background:rgba(59,130,246,0.06); border:1px solid rgba(59,130,246,0.2); border-radius:12px; padding:0.875rem 1rem; font-size:0.82rem; line-height:1.6; }
+    .crit-detail-title { font-weight:700; color:#3b82f6; margin-bottom:0.5rem; font-size:0.88rem; }
+    .crit-detail-list { list-style:none; padding:0; margin:0; }
+    .crit-detail-list li { padding:0.2rem 0; color:var(--text); }
+    .crit-detail-list li::before { content:'• '; color:#3b82f6; }
+    /* Brand TOC / Detail navigation */
+    .brand-toc { display: block; }
+    .brand-toc.hidden { display: none; }
+    .brand-detail { display: none; }
+    .brand-detail.active { display: block; }
+    .toc-group { margin-bottom: 1.5rem; }
+    .toc-group-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .toc-table { width: 100%; border-collapse: collapse; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .toc-table th { text-align: left; padding: 0.55rem 0.75rem; font-size: 0.8rem; color: var(--muted); background: var(--section-bg); font-weight: 600; }
+    .toc-table td { padding: 0.7rem 0.75rem; font-size: 0.88rem; border-top: 1px solid var(--card-border); }
+    .toc-brand-row { cursor: pointer; transition: background 0.15s; }
+    .toc-brand-row:hover { background: rgba(59,130,246,0.08); }
+    .toc-brand-name { font-weight: 600; color: #3b82f6; }
+    .brand-list { list-style: none; padding: 0; margin: 0; border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; }
+    .brand-list-item { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.8rem 1rem; border-top: 1px solid var(--card-border); cursor: pointer; transition: background 0.15s; }
+    .brand-list-item:first-child { border-top: none; }
+    .brand-list-item:hover { background: rgba(59,130,246,0.08); }
+    .brand-list-item:active { background: rgba(59,130,246,0.14); }
+    .brand-list-name { font-weight: 600; color: #3b82f6; font-size: 0.95rem; }
+    .brand-list-meta { font-size: 0.8rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.25rem 0.75rem; }
+    .brand-list-meta span { white-space: nowrap; }
+    .brand-list-cta { font-size: 0.72rem; color: #3b82f6; margin-top: 0.1rem; }
+    .back-to-toc { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: #fff; font-weight: 600; cursor: pointer; margin-bottom: 1rem; padding: 0.5rem 1rem; border: 1.5px solid rgba(255,255,255,0.55); border-radius: 999px; background: #111; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: background .15s, transform .15s; text-decoration: none; }
+    .back-to-toc:hover { background: #222; transform: scale(1.04); }
+    .float-cta-pair { position: fixed; bottom: 20px; right: 20px; display: flex; gap: 10px; z-index: 200; align-items: center; }
+    .float-call { background: #111; color: #fff; border: 1.5px solid rgba(255,255,255,0.55); padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,.45); transition: transform .2s, background .15s; white-space: nowrap; }
+    .float-call:hover { background: #222; transform: scale(1.04); }
+    .float-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .float-line-btn { position: static; background: linear-gradient(135deg, #06C755, #04a847); color: #fff; padding: 13px 18px; border-radius: 999px; display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: 14px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.8); box-shadow: 0 4px 14px rgba(6,199,85,.4); z-index: 200; transition: transform .2s, box-shadow .2s; white-space: nowrap; }
+    .float-line-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(6,199,85,.5); }
+    .float-line-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .guide-wrap { max-width: 760px; margin: 0 auto 2rem; }
+    .guide {
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .guide summary {
+      padding: 0.9rem 1.2rem;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(59,130,246,0.08);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .guide summary::-webkit-details-marker { display: none; }
+    .guide summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform 0.2s;
+    }
+    .guide[open] summary::after { transform: rotate(-180deg); }
+    .guide-body { padding: 1.1rem 1.2rem; display: grid; gap: 0.85rem; }
+    .guide-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+    .guide-num {
+      width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; font-weight: 700; color: #fff;
+      flex-shrink: 0;
+    }
+    .guide-step-body b { color: #3b82f6; }
+    .guide-step-body p { margin: 0.2rem 0 0; font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
+    [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
+
+    /* Card image */
+    .card-img-wrap { border-radius: 12px 12px 0 0; overflow: hidden; aspect-ratio: 16/9; background: var(--section-bg); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .property-card:hover .card-img-wrap img { transform: scale(1.04); }
+
+    /* Developer icon grid */
+    .dev-icon-grid { display: flex; flex-direction: column; gap: 0.625rem; margin-bottom: 1.25rem; }
+    .dev-icon-btn {
+      display: flex; align-items: center; gap: 0.875rem;
+      background: var(--section-bg); border: 1.5px solid var(--card-border);
+      border-radius: 12px; padding: 0.875rem 1.1rem;
+      cursor: pointer; text-align: left; width: 100%;
+      transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    }
+    .dev-icon-btn:hover { border-color: rgba(59,130,246,0.5); background: rgba(59,130,246,0.04); }
+    .dev-icon-btn.active { border-color: #3b82f6; background: rgba(59,130,246,0.07); box-shadow: 0 0 0 3px rgba(59,130,246,0.12); }
+    .dev-logo-badge { border-radius: 8px; padding: 0.35rem 0.7rem; font-size: 0.78rem; font-weight: 700; flex-shrink: 0; letter-spacing: 0.02em; }
+    .dev-logo-lpn { background: #1e40af; color: #fff; }
+    .dev-logo-pruksa { background: #00a651; color: #fff; }
+    .dev-logo-asw { background: #d4af37; color: #1a1a1a; }
+    .dev-logo-risland { background: linear-gradient(135deg, #f5f2ea, #e6e0d2); color: #1a1a1a; border: 1.5px solid #cdc4b0; }
+    .dev-logo-siri { background: #c2410c; color: #fff; }
+    .dev-logo-ap { background: #15336b; color: #fff; }
+    /* PSH category accordion (2-level) */
+    .cat-toggle { cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; }
+    .cat-chevron { transition: transform 0.2s; font-size: 0.85rem; flex-shrink: 0; margin-left: 0.5rem; }
+    .cat-toggle.open .cat-chevron { transform: rotate(90deg); }
+    .cat-list { display: none; }
+    .cat-list.open { display: block; }
+    .dev-info { flex: 1; min-width: 0; }
+    .dev-info-name { font-weight: 700; font-size: 0.92rem; margin-bottom: 0.15rem; line-height: 1.3; }
+    .dev-info-sub { font-size: 0.78rem; color: var(--muted); line-height: 1.4; }
+    .dev-chevron { color: var(--muted); font-size: 0.85rem; flex-shrink: 0; transition: transform 0.2s; }
+    .dev-icon-btn.active .dev-chevron { transform: rotate(-180deg); }
+    .dev-brand-panel { display: none; }
+    .dev-brand-panel.active { display: block; }
+    /* App-icon link buttons */
+    .app-icon-grid { display:flex; justify-content:center; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .app-icon-btn { display:flex; flex-direction:column; align-items:center; gap:0.5rem; text-decoration:none; }
+    .app-icon-ico { width:52px !important; height:52px !important; border-radius:16px; display:grid; place-items:center; overflow:hidden; flex-shrink:0; transition:transform .15s, box-shadow .15s; }
+    .app-icon-btn:hover .app-icon-ico { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .app-icon-ico svg { width:26px !important; height:26px !important; min-width:26px; min-height:26px; max-width:26px; max-height:26px; color:#fff; stroke-width:2; }
+    .app-icon-label { font-size:11.5px; font-weight:500; color:var(--text,#111); text-align:center; line-height:1.3; }
+    @media print {
+      body * { visibility: hidden; }
+      .brand-detail.active, .brand-detail.active * { visibility: visible; }
+      .brand-detail.active { position: absolute; top: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+      .back-to-toc, .float-cta-pair, .card-footer { display: none !important; }
+      .property-card { box-shadow: none !important; border: 1px solid #ccc !important; }
+      body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
+    }
+      /* standalone dev page: show all brands expanded (no click-to-view) */
+    .brand-toc { display: none; }
+    .brand-detail { display: block; margin-bottom: 1.25rem; }
+    .back-to-toc { display: none; }
+    .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
+    .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+</head>
+<body>
+  <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
+    <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;">
+        <img src="/logo1.png" alt="นายธนาคารประจำบ้าน" style="width:40px;height:40px;border-radius:8px;object-fit:contain;cursor:pointer;">
+      </a>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.95rem;font-weight:700;color:#fff;line-height:1.2;">นายธนาคารประจำบ้าน</div>
+        <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);line-height:1.2;">Mr. Home Banker</div>
+      </div>
+      <button onclick="window.print()" title="พิมพ์ / Save PDF" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;">🖨️</button>
+      <button onclick="toggleTheme()" title="สลับโหมดกลางวัน/กลางคืน" style="background:transparent;border:1px solid rgba(255,255,255,0.45);border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:1rem;flex-shrink:0;color:#fff;display:flex;align-items:center;justify-content:center;">
+        <span class="theme-icon theme-icon-dark">🌙</span><span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>แสนสิริ (Sansiri) — เช่าซื้อ / ผ่อนตรง</h1>
+      <p class="hero-subtitle">คอนโด 10 + บ้าน 12 แบรนด์แสนสิริ · ดูโครงการ แล้วปรึกษาดีลเช่าซื้อ/ผ่อนตรงที่เหมาะกับคุณผ่าน LINE</p>
+      <p style="margin-top:0.6rem;"><a href="/rent-to-own/" style="color:#bfdbfe;font-weight:600;font-size:0.9rem;text-decoration:none;">&larr; กลับ เช่าซื้อ / ผ่อนตรง</a></p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="callout info" style="margin-bottom:1.25rem;"><span class="callout-icon">ℹ️</span><span>ตัวเลขผ่อนในการ์ดเป็นประมาณการ<strong>กู้ธนาคาร</strong> · เงื่อนไข<strong>เช่าซื้อ/ผ่อนตรง</strong>จริง (เงินดาวน์ · ดอกเบี้ยตกลง · ระยะสัญญา ≤36 เดือน) ขึ้นกับแต่ละดีล — ปรึกษา LINE @ninethanakarn</span></div>
+
+    <div class="callout info" style="margin-bottom:1.25rem;"><span class="callout-icon">✅</span><span><strong>สถานะผู้พัฒนา แสนสิริ (SET: SIRI):</strong> Top-3 อสังหาฯไทย 40+ ปี · <strong>large-cap market cap ~25,489 ลบ.</strong> (SET Factsheet 1 ก.ค. 2026) · ผ่านเกณฑ์ Top 20 SET สบาย · งบแข็ง (P/BV 0.50) — ไม่ distressed</span></div>
+
+<!-- Sansiri Brand Panel -->
+      <div id="dev-siri">
+
+        <div class="psh-cat" style="font-size:1.25rem;">🏙️ คอนโดแสนสิริ — 10 แบรนด์</div>
+        <div class="psh-cat">🟠 Premium · Sukhumvit/CBD (3 แบรนด์)</div>
+        <div id="condo-siri-via" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-via.webp" alt="VIA" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Sukhumvit Soi</span><span style="font-size:0.75rem;color:var(--muted);">2 ทำเล (VIA 34 · VIA 61)</span></div>
+            <div class="card-title">VIA</div>
+            <div class="card-meta">Premium Condo สุขุมวิทซอย · ทำเลเงียบใน CBD · มี 2 โครงการ: VIA 34 (สุขุมวิท 34 ใกล้ทองหล่อ) + VIA 61 (สุขุมวิท 61 ใกล้พร้อมพงษ์/เอกมัย)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">15 – 52 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">45 – 155 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 2BR / 3BR / Villa</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">Sky Pool · Fitness Technogym · Sky Lounge · Pet Yard</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li><strong>VIA 34</strong> — สุขุมวิท 34 · BTS ทองหล่อ 350 ม. · Low-Rise 45 ยูนิต · เริ่ม 22 ล้าน · พร้อมอยู่</li>
+              <li><strong>VIA 61</strong> — สุขุมวิท 61 · BTS เอกมัย 370 ม. · เริ่ม 15 ล้าน · เลี้ยงสัตว์ได้</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>67,400 – 233,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>112,300 – 389,200 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VIA → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-widen" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-widen.webp" alt="WIDEN by Sansiri" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Wide-Open</span><span style="font-size:0.75rem;color:var(--muted);">High-rise 34 ชั้น · เสร็จ 2028 · pet-friendly</span></div>
+            <div class="card-title">WIDEN by Sansiri</div>
+            <div class="card-meta">"EXPAND THE NEW VERSE OF LIFE" · Premium Condo ห้องกว้างเกินมาตรฐาน · เลี้ยงสัตว์ได้ · Well-being living · freehold · JV แสนสิริ-โตคิว · เหมาะครอบครัว/คนรักสัตว์/ชาวต่างชาติ</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">8.9 – 49.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">45 – 209 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 2BR / 3BR / Suite</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">Panoramic Pool (วิวบางกะเจ้า) · Fitness · Sky Lounge · Pet Playground</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li><strong>WIDEN นางลิ้นจี่</strong> — ทุ่งมหาเมฆ/สาทร · MRT ลุมพินี ~2.5 กม. · BRT ถนนจันทน์ 1.2 กม. · วิวโค้งน้ำบางกะเจ้า · เริ่ม 8.9 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (เสร็จ 2028)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>40,000 – 224,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>66,700 – 373,500 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ WIDEN → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-xt" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-xt.webp" alt="XT" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Premium · Transit-Oriented</span><span style="font-size:0.75rem;color:var(--muted);">4 ทำเล · ใหม่ XT 10 Ekkamai</span></div>
+            <div class="card-title">XT</div>
+            <div class="card-meta">Premium High-rise ใกล้ BTS/MRT · 4 โครงการ: XT 10 Ekkamai (ใหม่ 2025) · XT เอกมัย · XT ห้วยขวาง · XT พญาไท (Sold Out) · ใช้ส่วนกลางร่วมกันทุกโครงการ (Co-Sharing)</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">3.89 – 14.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">25 – 101 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 2BR</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">ส่วนกลาง 4,500 ตร.ม. · Sky Pool · Fitness · Co-Working (XT Club ใช้ร่วม)</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li><strong>XT 10 Ekkamai</strong> ⭐ใหม่ — ใกล้ Donki ทองหล่อ 150 ม. · เชื่อมเอกมัย-สุขุมวิท · เริ่ม 3.89 ล้าน · กำลังขาย (เปิด 2025)</li>
+              <li><strong>XT เอกมัย</strong> — BTS เอกมัย · เริ่ม ~4.2 ล้าน · พร้อมอยู่</li>
+              <li><strong>XT ห้วยขวาง</strong> — MRT ห้วยขวาง · เริ่ม ~3.99 ล้าน · พร้อมอยู่</li>
+              <li style="color:var(--muted);">XT พญาไท — BTS พญาไท + Airport Link · Sold Out (เหลือยูนิตใหญ่ 14.9 ล้าน+)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>17,500 – 66,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>29,200 – 111,500 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ XT → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat">🔵 Mid-Range · Transit-Oriented (4 แบรนด์)</div>
+        <div id="condo-siri-line-vibe" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-line-vibe.webp" alt="The Line Vibe" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid</span><span style="font-size:0.75rem;color:var(--muted);">พร้อมอยู่ · ติด BTS+MRT 2 สาย</span></div>
+            <div class="card-title">The Line Vibe</div>
+            <div class="card-meta">"Vibe is Everything" · JV แสนสิริ × BTS Group · High-rise ติด 2 สายรถไฟฟ้า ตรงข้าม Central Ladprao · เหมาะนักลงทุนปล่อยเช่า + คนทำงาน New CBD</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 4.09 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">31.5 – 73.25 ตร.ม. (1–2BR)</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 2BR</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สวน 8 ไร่ · Sky Pool (เกลือ) · Fitness · Co-Working · EV charger</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li><strong>The Line Vibe ห้าแยกลาดพร้าว</strong> ⭐ — จตุจักร/พหลโยธิน (New CBD) · ตรงข้าม Central Ladprao · <strong>BTS ห้าแยกลาดพร้าว 300 ม. + MRT พหลโยธิน 700 ม.</strong> · เริ่ม 4.09 ล้าน · ขายแล้ว >70% · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">พร้อมอยู่</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 18,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · 1BR 4.09M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 30,700 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Line Vibe → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-base" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-base.webp" alt="The Base" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid · Affordable</span><span style="font-size:0.75rem;color:var(--muted);">หลายทำเล · ใกล้ BTS/MRT</span></div>
+            <div class="card-title">The Base</div>
+            <div class="card-meta">Mid-Affordable Condo ของ Sansiri · <strong>มือ1 active เหลือ 2 โครงการ</strong> (Urban พระราม9 · รัชดา19) · ทำเลใกล้ BTS/MRT · ทำเลอื่นขายมือ1 หมดแล้ว (resale) · เหมาะ first jobber</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.2 – 6.59 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">23 – 58 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 1BR Plus / 2BR</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สระ resort-style · Fitness · Co-Working Hub · Sky Lounge · Rooftop</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong> (มือ1 เหลือ 2 โครงการ)</li>
+              <li><strong>The Base Urban พระราม 9</strong> — MRT พระราม 9 800 ม. (+ สีส้มอนาคต) · เริ่ม 3.79 ล้าน · พร้อมอยู่</li>
+              <li><strong>The Base รัชดา 19</strong> — MRT รัชดาภิเษก ~750 ม. · เริ่ม 2.2 ล้าน · เสร็จ 2026 (มีตึก pet-friendly)</li>
+              <li style="color:var(--muted);font-size:0.78rem;">ทำเลอื่น (สุขุมวิท/สาทร/วงศ์สว่าง ฯลฯ) = ขายมือ1 หมด เหลือ resale</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี (Central Pattaya = resale · มี VAY แทน)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>9,900 – 29,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>16,500 – 49,300 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Base → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-move" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-move.webp" alt="The Muve" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid-Entry · Modern</span><span style="font-size:0.75rem;color:var(--muted);">ใกล้รถไฟฟ้า · Mass</span></div>
+            <div class="card-title">The Muve</div>
+            <div class="card-meta">Mid-Entry Mass Condo · ใกล้รถไฟฟ้า · ราคาเข้าถึง · เหมาะ first jobber + นักศึกษา</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.29 – 2.89 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">24 – 39 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 1BR Plus</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">Co-Working · Skill-Up Studio · Fitness · Productive Garden · Rooftop</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong> (ทุกโครงการอยู่ใน กทม.)</li>
+              <li>The Muve บางหว้า — MRT/BTS บางหว้า 700 ม. · เริ่ม 1.59 ล้าน · ใหม่เสร็จ Q1 2026</li>
+              <li>The Muve ป่อ บางแค — MRT บางแค 190–380 ม. · เริ่ม 1.65 ล้าน</li>
+              <li>The Muve ประดิพัทธ์ — BTS สะพานควาย · 2.19–2.89 ล้าน (แพงสุดในแบรนด์)</li>
+              <li style="color:var(--muted);font-size:0.78rem;">+ รัชดา (1.29M) · สุขุมวิท 107 · ศรีนครินทร์ · บางนา</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>5,800 – 13,000 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>15,000 – 21,700 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ The Muve → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-shush" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-shush.webp" alt="SHUSH Ratchathewi" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury · CBD ราชเทวี</span><span style="font-size:0.75rem;color:var(--muted);">High-rise · Loft เพดาน 4.5 ม. · เสร็จ 2026</span></div>
+            <div class="card-title">SHUSH Ratchathewi</div>
+            <div class="card-meta">"Museum of Art, Gallery of Life" · Luxury Condo CBD ราชเทวี · <strong>BTS ราชเทวี เพียง 140 ม.</strong> · 5 นาทีถึงสยาม · ห้อง Loft เพดานสูง 4.5 ม. (~90% ของยูนิต) · hotel-standard + Concierge · เหมาะ capital gain ใจกลางเมือง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 8.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">31.25 – 117 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">1BR / 2BR / 3BR · ส่วนใหญ่ Loft เพดาน 4.5 ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">Lumina Pool (โอโซน) · Fitness + Sauna · Co-Working · Concierge</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li><strong>SHUSH ราชเทวี</strong> — ถ.พญาไท ทุ่งพญาไท ราชเทวี (CBD) · <strong>BTS ราชเทวี 140 ม.</strong> · ใกล้สยาม/จุฬาฯ · เริ่ม 8.99 ล้าน · ~245,000 บ./ตร.ม. · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (โอน 2026)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มี</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 40,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · 8.99M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 67,300 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ SHUSH → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat">🟢 Entry/Affordable · Mass (3 แบรนด์)</div>
+        <div id="condo-siri-dcondo" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-dcondo.webp" alt="dcondo" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mass · Affordable</span><span style="font-size:0.75rem;color:var(--muted);">หลายโครงการทั่วประเทศ</span></div>
+            <div class="card-title">dcondo (ดีคอนโด)</div>
+            <div class="card-meta">Mass Affordable ของ Sansiri · หลายโครงการในกรุงเทพ + ต่างจังหวัด · เหมาะนักศึกษา + first jobber</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.45 – 2.19 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">23 – 45 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio / 1BR / 1BR Plus / 2BR</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สระ overflow · Fitness · Co-Working · สวน · รปภ.24ชม.</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong> — หลายโครงการ ใกล้มหา'ลัย/แหล่งงาน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong></li>
+              <li>dcondo เซนส์ บางแสน — ม.บูรพา 800 ม. · เริ่ม 1.59 ล้าน · พร้อมอยู่</li>
+              <li>dcondo เวล ศรีราชา — ม.เกษตรศรีราชา 280 ม. + นิคมแหลมฉบัง · เริ่ม 1.45 ล้าน · พร้อมอยู่</li>
+              <li>dcondo vite พัทยา ⭐ใหม่ — พัทยาเหนือ · 2 กม. Terminal 21 · เริ่ม 1.69 ล้าน · เปิด 2026</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>6,500 – 9,800 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>15,000 – 16,300 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ dcondo → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-way" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-way.webp" alt="VAY" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · Real Demand หน้านิคม/ม.</span><span style="font-size:0.75rem;color:var(--muted);">Low-Rise · แต่งครบพร้อมอยู่</span></div>
+            <div class="card-title">VAY (เวย์)</div>
+            <div class="card-meta">"ซื้อคุ้มกว่าเช่า" · Entry Condo แต่งครบพร้อมเฟอร์ฯ · เจาะ first jobber · ทำเลเน้น <strong>หน้านิคม/แหล่งงาน + ใกล้มหาวิทยาลัย/Red Line</strong> (ตรง Real Demand criteria Touch) · เหมาะนักลงทุนปล่อยเช่า + อยู่เอง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">0.99 – 2.29 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">23 – 44 ตร.ม. (Studio/1BR)</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio / 1BR</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สระ · Fitness · Co-Working · Rooftop Garden · EV charger</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Vay พระราม 9 — พระราม 9 (New CBD) · 26.5–42.75 ตร.ม. · เริ่ม 2.29 ล้าน</li>
+              <li>Vay ชินเขต — งามวงศ์วาน · ใกล้ Red Line + ม.ธรรมศาสตร์ + The Mall งามวงศ์วาน · 24.5–35.25 ตร.ม. · เริ่ม 1.59 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC + ตจว.</strong></li>
+              <li>Vay อมตะ — ศรีราชา ชลบุรี · ติดนิคมอมตะซิตี้ · Low-Rise พร้อมอยู่ · เริ่ม 0.99 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active</span></li>
+              <li>Vay อยุธยา — อยุธยา · ใกล้ Central อยุธยา + นิคมโรจนะ/ไฮเทค · 23.25–44.25 ตร.ม. · เริ่ม 1.39 ล้าน · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">พร้อมอยู่</span></li>
+              <li style="color:var(--muted);font-size:0.78rem;">โพธิสาร + โพธิสาร 2 (ศรีราชา) — Sold Out</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>4,400 – 10,300 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>15,000 – 17,200 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ VAY → LINE</a></div></div>
+        </div>
+
+        <div id="condo-siri-condome" class="brand-detail">
+          <button class="back-to-toc" onclick="showCondoToc('siri-condo-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-condome.webp" alt="Condo Me" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · ถูกสุดของ Sansiri</span><span style="font-size:0.75rem;color:var(--muted);">Low-Rise · แต่งครบพร้อมอยู่</span></div>
+            <div class="card-title">Condo Me</div>
+            <div class="card-meta">"ให้คุณมีคอนโดแรกเป็นของตัวเอง" · Entry Condo ราคาต่ำสุดของ Sansiri (เริ่มต่ำล้าน) · แบรนด์คู่ขนานกับ The Muve (คนละ segment — Condo Me เน้นต่ำล้าน ชานเมือง/หน้านิคม · The Muve ติดรถไฟฟ้าในเมือง) · เหมาะ first buyer + ผู้มีรายได้น้อย-ปานกลาง</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">0.88 – 1.39 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">ขนาดห้อง</div><div class="stat-value">23 – 37 ตร.ม. (1BR)</div></div>
+              <div class="stat-item"><div class="stat-label">แบบห้อง</div><div class="stat-value">Studio / 1BR</div></div>
+              <div class="stat-item"><div class="stat-label">ส่วนกลาง</div><div class="stat-value">สระ · Fitness · Lobby · Laundry · รปภ.24ชม.</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 โครงการ active (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Condo Me สินสาคร — สมุทรสาคร · ตรงข้ามนิคมฯ สินสาคร · 24.75–25 ตร.ม. · เริ่ม 0.88 ล้าน</li>
+              <li>Condo Me นวนคร — รังสิต/นวนคร · ใกล้นิคมนวนคร · 23.25–35.75 ตร.ม. · เริ่ม 1.09 ล้าน (โครงการแรกของแบรนด์)</li>
+              <li>Condo Me บางนา-บางบ่อ — บางนา · 25–37.25 ตร.ม. · เริ่ม 1.09 ล้าน</li>
+              <li style="color:var(--muted);font-size:0.78rem;">อ่อนนุช-พระราม 9 — Sold Out</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong></li>
+              <li>Condo Me บ้านโพธิ์ — ฉะเชิงเทรา (EEC) · Toyota บ้านโพธิ์ 2.4 กม. · 1BR 23.25 / 1BR Plus 35.25 ตร.ม. · เริ่ม 0.90 ล้าน · พร้อมอยู่ <span style="font-size:0.78rem;">(ในชลบุรีเองใช้แบรนด์ VAY แทน)</span></li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>4,000 – 6,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100%)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 15,000 บ./เดือน</strong> (DSR 60%)</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Condo Me → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat" style="font-size:1.25rem;">🏡 บ้านแสนสิริ — 12 แบรนด์</div>
+        <div class="psh-cat">🟣 บ้านเดี่ยว Ultra Luxury แสนสิริ — 3 แบรนด์</div>
+        <div id="brand-siri-narasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-narasiri.webp" alt="Narasiri" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">⭐ Flagship Ultra Luxury · 20+ ปี Legacy</span><span style="font-size:0.75rem;color:var(--muted);">5 โครงการ · Sansiri Luxury Collection</span></div>
+            <div class="card-title">Narasiri (นาราสิริ) ⭐</div>
+            <div class="card-meta"><strong style="color:var(--text);">"Flagship Luxury Brand ที่สร้างชื่อให้ Sansiri"</strong> — บ้านเดี่ยว Ultra Luxury · 20+ ปี Legacy · 5 โครงการในทำเลศักยภาพสูง · กลุ่ม Sansiri Luxury Collection · มูลค่ารวม 23,000+ ล้าน · Narasiri Phahol-Watcharapol + Bangna ขายได้ 40%+ ของยูนิตทั้งหมด · ปี 2024 เติบโต 45%</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">35 – 150 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">347 – 843 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">90 – 332 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4–5 นอน · 6 น้ำ · 3–4 จอด + ห้องแม่บ้าน</div></div>
+            </div>
+
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (5 โครงการ verified)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพชั้นใน (3 โครงการ)</strong></li>
+              <li><strong>Narasiri Victoire Krungthep Kreetha</strong> ⭐ Top — กรุงเทพฯ (กรุงเทพกรีฑา) · ยูนิตหรูสุดของ Series · <strong>94 ยูนิต Exclusive</strong> · ส่วนกลาง 7+ ไร่ · 5 นอน 6 น้ำ 4 จอด + 2 ห้องแม่บ้าน · 678 ตร.ม. · <strong>65 – 120 ล้าน</strong> · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (Rare Item)</span></li>
+              <li><strong>Narasiri Krungthep Kreetha</strong> (เดิม) — กรุงเทพฯ (กรุงเทพกรีฑา) · <strong>75 – 95 ล้าน</strong> · <span class="badge badge-warning" style="font-size:0.7rem;padding:0.05rem 0.35rem;">ต้อง verify inventory</span></li>
+              <li><strong>Narasiri Phahol-Watcharapol</strong> — กรุงเทพฯ (วัชรพล · เทพรักษ์) · กลิ่นอายฝรั่งเศส · <strong>125 ยูนิต</strong> · 75 ไร่ · ที่ดิน 90–290 ตร.วา · 347–658 ตร.ม. · <strong>35 – 90 ล้าน</strong> (ราคาเข้าถึงสุดของ Series) · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active</span></li>
+              <li><strong style="color:var(--text);">ปริมณฑลตะวันตก (1 โครงการ)</strong></li>
+              <li><strong>Narasiri Borommaratchachonnani</strong> ⭐ — นครปฐม (พุทธมณฑล · ติด ถ.บรมราชชนนี) · 100 ม. จาก Design Village พุทธมณฑล · Design <strong>"Regency Revival" สไตล์อังกฤษ</strong> · <strong>77 ยูนิต Exclusive</strong> · ที่ดิน 133–212 ตร.วา · 570–843 ตร.ม. · <strong>55 – 120 ล้าน</strong> · โครงการแรก Luxury Collection ฝั่งธนบุรี · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (Landmark)</span></li>
+              <li><strong style="color:var(--text);">ปริมณฑลตะวันออก (1 โครงการ)</strong></li>
+              <li><strong>Narasiri Bangna km.10</strong> — สมุทรปราการ (บางพลี · ถ.บางนา-ตราด กม.10) · Design <strong>"New York Renaissance Revival"</strong> · <strong>56 ยูนิต Private</strong> · 38 ไร่ · ที่ดิน 116–332 ตร.วา · 4-5 นอน 6 น้ำ 3-4 จอด · ใกล้ Mega บางนา + สนามบินสุวรรณภูมิ · <strong>60 – 150 ล้าน</strong> (สูงสุดของ Series) · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — <strong>ไม่มีโครงการ Narasiri</strong> (Flagship Luxury Brand focus เฉพาะกรุงเทพชั้นใน + ปริมณฑลที่ติด CBD · ลูกค้า HNW ที่ต้องการบ้านหรูในชลบุรี/พัทยา ให้ดู Land &amp; Houses (Nantawan) หรือ Magnolia Quality Development แทน)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>157,200 – 673,500 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 35–150M)</span><br>รายได้ขั้นต่ำ <strong>262,000 – 1,122,500 บ./เดือน</strong> (DSR 60%)</span></div>
+
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>Design Concepts ของ Series:</strong> แต่ละโครงการมี architectural concept ต่างกัน — <strong>Regency Revival</strong> (Borom · สไตล์อังกฤษ) · <strong>French style</strong> (Phahol-Watcharapol) · <strong>New York Renaissance Revival</strong> (Bangna km.10) · <strong>European Heritage</strong> (Victoire Krungthep Kreetha) · เป็น Narasiri's signature ในด้าน timeless luxury design</span></div>
+
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> HNW ครอบครัวใหญ่ (5+ นอน) · ผู้ประกอบการ Tier 1 · ผู้สืบทอดธุรกิจ · Expat Premium · ลูกค้าที่ต้องการ Generational Home (เน้น lifestyle + capital appreciation ระยะยาว)</span></div>
+
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Narasiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-bugaan" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-bugaan.webp" alt="BuGaan" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">⭐ Luxury Collection · Ultra Luxury Villa 3 ชั้น</span><span style="font-size:0.75rem;color:var(--muted);">3 โครงการ Active · 104 ยูนิต Exclusive</span></div>
+            <div class="card-title">BuGaan (บูกาญจน์)</div>
+            <div class="card-meta"><strong style="color:var(--text);">"Exclusive 3-storey residences for distinctive living"</strong> — Ultra Luxury Villa 3 ชั้น · sub-brand ใน Sansiri Luxury Collection · 3 โครงการ Active (มือ 1) รวม <strong>104 ยูนิต Exclusive</strong> ·architectural designs ต่างกัน · private elevator + private pool ทุกหลัง · interior + furnishing ระดับ Aman Resort/Hyatt designer</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">35 – 115 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">430 – 655 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">68 – 93 ตร.วา (KTK verified)</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 5 น้ำ + ลิฟต์ + Pool</div></div>
+            </div>
+
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มือ 1 active · 3 โครงการ)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพชั้นใน (3 โครงการ Active)</strong></li>
+              <li><strong>BuGaan Krungthep Kreetha</strong> ⭐ (ที่แรกของ Series) — กรุงเทพฯ (กรุงเทพกรีฑา) · <strong>"Clubhouse Design"</strong> · เน้น Young Successors · <strong>48 ยูนิต</strong> Exclusive · <strong>3 แบบบ้าน: CREST (655 ตร.ม. · 93 ตร.วา) · BRILL (540 ตร.ม. · 85 ตร.วา) · ACME (430 ตร.ม. · 68 ตร.วา)</strong> · <strong>35 – 60 ล้าน</strong> (entry tier) · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active</span></li>
+              <li><strong>BuGaan Rama 9-Meng Jai</strong> ⭐ (Top tier) — กรุงเทพฯ (วังทองหลาง · ซอยสหการประมูล · ใกล้ Regent's International School) · <strong>"Modern Organic Architecture"</strong> (รูปทรงโค้ง · ผสานในร่ม-นอกร่ม) · <strong>8 ยูนิต Super-Exclusive</strong> · ต้นไม้ประธานอายุ <strong>1,000 ปี</strong> · 522 ตร.ม. · 4 นอน 5 น้ำ + private elevator + private pool · <strong>70 – 115 ล้าน</strong> · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active</span></li>
+              <li><strong>BuGaan Voyy กรุงเทพกรีฑา</strong> ⭐ใหม่ — กรุงเทพฯ (กรุงเทพกรีฑา) · <strong>"Modern Luxury Home for Young Successors"</strong> · บ้าน 3 ชั้น · <strong>48 ยูนิต Exclusive</strong> · Brighton College 2.3 กม. + MRT สายเหลือง คลองบ้านม้า · ที่ดินเริ่ม 100 ตร.วา · เริ่ม 55 ล้าน (โปรเปิดตัวเคยเริ่ม 36.9M) · <span class="badge badge-success" style="font-size:0.7rem;padding:0.05rem 0.35rem;">Active (โครงการใหม่)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — <strong>ไม่มีโครงการ BuGaan</strong> (Ultra Luxury Villa focus เฉพาะกรุงเทพชั้นใน · ลูกค้าที่ต้องการ Pool Villa Luxury ในชลบุรี/พัทยา ให้ดู Pruksa The Reserve Villas · AssetWise The Honor · Magnolia Quality Development แทน)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>157,200 – 516,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 35–115M)</span><br>รายได้ขั้นต่ำ <strong>262,000 – 860,700 บ./เดือน</strong> (DSR 60%)</span></div>
+
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎨</span><span><strong>Designer Edge ของแต่ละโครงการ:</strong><br>
+            · <strong>Krungthep Kreetha:</strong> Clubhouse Design (3 unit types · CREST/BRILL/ACME)<br>
+            · <strong>Rama 9-Meng Jai:</strong> Modern Organic Architecture · รูปทรงโค้งผสานธรรมชาติ · เก็บต้นไม้ประธาน 1,000 ปี · 8 ยูนิตเท่านั้น</span></div>
+
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> Ultra HNW Successor Family (รุ่นใหม่ที่สืบทอดธุรกิจ) · นักสะสมงานออกแบบ · ผู้ที่ต้องการ Villa Pool style ในเมือง · Generational Home · ลูกค้าที่มองหา "ความหายาก" (Rama 9 เพียง 8 ยูนิต)</span></div>
+
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ BuGaan → LINE</a></div></div>
+        </div>
+
+
+
+        <div id="brand-siri-else" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-else.webp" alt="Else" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge" style="background:rgba(139,92,246,0.15);color:#7c3aed;border:1px solid rgba(139,92,246,0.3);">Luxury · Urban Exclusive</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว Urban · ยูนิตน้อย</span></div>
+            <div class="card-title">Else (เอลส์)</div>
+            <div class="card-meta">"BE ANYTHING ELSE" · บ้านเดี่ยว Premium Urban · ทำเลใจกลางเมืองหายาก · โครงการยูนิตน้อย เน้นความเป็นส่วนตัว</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">เริ่ม 43.9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">364 – 457 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">173 – 204 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 5 น้ำ · 3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มือ 1)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li><strong>ELSE Bearing 32</strong> ⭐ — แบริ่ง/สมุทรปราการ · BTS แบริ่ง 2 กม. · MRT ศรีแบริ่ง 2.7 กม. · CBD 15 นาที · เริ่ม 43.9 ล้าน · <span style="background:rgba(34,197,94,0.15);color:#16a34a;border:1px solid rgba(34,197,94,0.3);border-radius:4px;padding:0.05rem 0.35rem;font-size:0.75rem;">เหลือมือ 1 เดียว</span></li>
+              <li style="color:var(--muted);font-size:0.78rem;">Rama 9 · รามอินทรา 34 · สุคนธสวัสดิ์ 26 · กรุงเทพกรีฑา — <strong>SOLD OUT</strong> ทั้งหมด</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Else (แบรนด์เน้นใจกลางเมืองกรุงเทพเท่านั้น)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 197,100 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · 43.9M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 328,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> Modern Classic Urban · สระว่ายน้ำ + เรือนรับรอง + EV Charger + Solar ทุกหลัง · ยูนิตน้อยเน้นความเป็นส่วนตัว</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวระดับบนที่ต้องการบ้านเดี่ยว Luxury ใจกลางเมือง · ผู้บริหาร/เจ้าของธุรกิจ · ผู้ที่เน้น privacy + green living</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Else → LINE</a></div></div>
+        </div>
+
+
+
+        <div class="psh-cat">🔵 บ้านเดี่ยว Upper-Mid แสนสิริ — 3 แบรนด์</div>
+        <div id="brand-siri-setthasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-setthasiri.webp" alt="Setthasiri" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Upper-Mid · Premium Family</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น · Flagship Family</span></div>
+            <div class="card-title">Setthasiri (เศรษฐสิริ)</div>
+            <div class="card-meta">"Portrait of Success" · บ้านเดี่ยวคุณภาพครอบครัวใหญ่ · ดีไซน์ Georgian / Modern Classic / Berlin · flagship family brand · หลายทำเลทั่วกรุงเทพ</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">8.99 – 35 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">188 – 504 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">เริ่ม ~50 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4–6 นอน · 4–5 น้ำ · 2–4 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Setthasiri กรุงเทพ-ปทุมธานี 2 — ติวานนท์ ปทุมธานี · วิวสนามกอล์ฟ · เริ่ม 8.99 ล้าน</li>
+              <li>Setthasiri พหลโยธิน-สายไหม — กรุงเทพฯ · Saimai Avenue · เริ่ม 9.99 ล้าน</li>
+              <li>Setthasiri เสรีไทย — รามอินทรา กรุงเทพฯ · MRT สีชมพู (นพรัตน์) · Fashion Island · เริ่ม 11.99 ล้าน</li>
+              <li>Setthasiri วัชรพล-เทพรักษ์ — กรุงเทพฯ · ทางด่วนรามอินทรา · เริ่ม 12.99 ล้าน</li>
+              <li>Setthasiri ราชพฤกษ์-นครอินทร์ — พระราม 5 นนทบุรี · Central Westgate · เริ่ม 12.99 ล้าน</li>
+              <li>Setthasiri บางนา-สุวรรณภูมิ — กรุงเทพฯ · Robinson ลาดกระบัง · สนามบินสุวรรณภูมิ · เริ่ม 12.99 ล้าน</li>
+              <li>Setthasiri ดอนเมือง — กรุงเทพฯ · สายสีแดง · สนามบินดอนเมือง · เริ่ม 12.99 ล้าน</li>
+              <li>Setthasiri งามวงศ์วาน — นนทบุรี · The Mall งามวงศ์วาน · เริ่ม 14.99 ล้าน</li>
+              <li>Setthasiri Great วงแหวน-จตุโชติ — กรุงเทพฯ · ทางด่วนจตุโชติ · The Promenade · เริ่ม 18.99 ล้าน</li>
+              <li>Setthasiri บางนา กม.10 — กรุงเทพฯ · Design Village บางนา · เริ่ม 24.9 ล้าน</li>
+              <li>Setthasiri ราชพฤกษ์-สาย 1 — นนทบุรี · Food Villa ราชพฤกษ์ · เริ่ม 25 ล้าน</li>
+              <li>Setthasiri ราชพฤกษ์-พรานนก — ฝั่งธน กรุงเทพฯ · prime zone · ~35 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Setthasiri (Sansiri ชลบุรีมีแต่คอนโด)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>40,400 – 157,200 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 8.99–35M)</span><br>รายได้ขั้นต่ำ <strong>67,300 – 262,000 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> Georgian / Modern Classic / Berlin · flagship family brand 15+ ทำเล · บ้านครอบครัวใหญ่ 4–6 นอน</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวใหญ่/3 รุ่น ที่มองหาบ้านเดี่ยว Premium ใกล้เมือง · ผู้บริหารระดับกลาง-สูง · ผู้ที่อยากได้แบรนด์ family หลายทำเลให้เลือก</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Setthasiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-burasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-burasiri.webp" alt="Burasiri" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Upper-Mid · Resort Family</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น · สไตล์รีสอร์ท</span></div>
+            <div class="card-title">Burasiri (บุราสิริ)</div>
+            <div class="card-meta">"Every Day Life is Good" · บ้านเดี่ยวบรรยากาศรีสอร์ท ใกล้ธรรมชาติ · สไตล์ New England Colonial / English Villa · ช่วงราคากว้าง เข้าถึงได้กว่า Setthasiri</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">4.59 – 40 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">135 – 426 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">50 – 140 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–5 นอน · 3–6 น้ำ · 2–4 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Burasiri บางนา — กรุงเทพฯ · บรรยากาศรีสอร์ทริมน้ำ · เริ่ม 4.59 ล้าน</li>
+              <li>Burasiri รังสิต — ปทุมธานี · เริ่ม 4.99 ล้าน</li>
+              <li>Burasiri ราชพฤกษ์-345 — นนทบุรี · ถ.345 · เริ่ม 4.99 ล้าน</li>
+              <li>Burasiri ปัญญาอินทรา — รามอินทรา กรุงเทพฯ · ทางด่วนจตุโชติ · บ้านสไตล์อังกฤษ · เริ่ม 5.29 ล้าน</li>
+              <li>Burasiri วงแหวน-อ่อนนุช — กรุงเทพฯ · วงแหวนตะวันออก · เริ่ม 6.69 ล้าน</li>
+              <li>Burasiri พระราม 2 — กรุงเทพฯ · ทางด่วนเฉลิมมหานคร · Central พระราม 2 · มูลค่า 1,600 ลบ. · เริ่ม 8 ล้าน</li>
+              <li>Burasiri วัชรพล — กรุงเทพฯ · ทางด่วนรามอินทรา · เริ่ม 10.99 ล้าน</li>
+              <li>Burasiri พัฒนาการ — กรุงเทพฯ · โซนกรุงเทพกรีฑา-รามคำแหง · เริ่ม 12.99 ล้าน</li>
+              <li>Burasiri จตุโชติ — กรุงเทพฯ · ทางด่วนจตุโชติ · Central Eastville · เริ่ม 12.99 ล้าน</li>
+              <li>Burasiri กรุงเทพกรีฑา — กรุงเทพฯ · ใกล้พระราม 9 · Brighton College · 14.99–40 ล้าน (flagship)</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Burasiri (Sansiri ชลบุรีมีแต่คอนโด)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>20,600 – 179,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 4.59–40M)</span><br>รายได้ขั้นต่ำ <strong>34,300 – 299,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> New England Colonial / English Villa · บรรยากาศรีสอร์ทใกล้ธรรมชาติ · กรุงเทพกรีฑา = JV แสนสิริ-โตคิว · ช่วงราคากว้างเข้าถึงกว่า Setthasiri</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวที่ชอบบรรยากาศรีสอร์ท/ธรรมชาติ · first move-up จากทาวน์โฮม/คอนโด · ผู้ที่ต้องการบ้านเดี่ยวคุ้มค่าหลายระดับราคา</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Burasiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-habitia" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-habitia.webp" alt="Habitia" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Mid · Modern European</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว/บ้านแฝด 2 ชั้น</span></div>
+            <div class="card-title">Habitia (ฮาบิเทีย)</div>
+            <div class="card-meta">"Modern European" · บ้านเดี่ยว/บ้านแฝดบนพื้นที่ใหญ่ บรรยากาศส่วนตัว · โครงการ unit น้อย (15–20 ยูนิต) · เหมาะครอบครัวระดับกลาง-บน</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">5.99 – 9.29 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">162 – 200 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">50 – 56 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 3–5 น้ำ · 2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Habitia ชัยพฤกษ์-วงแหวน — นนทบุรี · ทางด่วนศรีรัช ด่านแจ้งวัฒนะ · MRT สีม่วง คลองบางไผ่ · เริ่ม 5.99 ล้าน</li>
+              <li>Habitia Prime ราชพฤกษ์ — นนทบุรี · เริ่ม 6.89 ล้าน</li>
+              <li>Habitia Proud ประชาอุทิศ 72 — ทุ่งครุ กรุงเทพฯ · เริ่ม 6.99 ล้าน</li>
+              <li>Habitia Yard รามอินทรา — กรุงเทพฯ · MRT สายสีชมพู · เริ่ม 9.29 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Habitia (Sansiri ชลบุรีมีแต่คอนโด)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>26,900 – 41,700 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 5.99–9.29M)</span><br>รายได้ขั้นต่ำ <strong>44,800 – 69,500 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> Modern European · โครงการ unit น้อย (15–20 ยูนิต) บนพื้นที่ใหญ่ · บรรยากาศส่วนตัว</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวระดับกลาง-บนที่ต้องการบ้านเดี่ยว/แฝดส่วนตัว · ผู้ที่ชอบโครงการเล็ก unit น้อย · first home บ้านเดี่ยว</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Habitia → LINE</a></div></div>
+        </div>
+
+        <div class="psh-cat">🟢 บ้านเดี่ยว+บ้านแฝด Mid/Entry แสนสิริ — 4 แบรนด์</div>
+        <div id="brand-siri-saransiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-saransiri.webp" alt="Saransiri" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid · Modern Farmhouse</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว 2 ชั้น · ครอบครัวขยาย</span></div>
+            <div class="card-title">Saransiri (สราญสิริ)</div>
+            <div class="card-meta">"Love is all around" · บ้านเดี่ยว Modern/Urban Farmhouse · เหมาะครอบครัวขยาย ใกล้รถไฟฟ้า/สิ่งอำนวยความสะดวก · หลายทำเลทั่วกรุงเทพ-ปริมณฑล</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">5.89 – 15 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">158 – 204 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">เริ่ม ~50 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">4 นอน · 3–4 น้ำ · 2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Saransiri ประชาอุทิศ 90 — ทุ่งครุ กรุงเทพฯ · เริ่ม 5.89 ล้าน</li>
+              <li>Saransiri บางนา — กรุงเทพฯ · เริ่ม 6 ล้าน</li>
+              <li>Saransiri ราชพฤกษ์-345 — นนทบุรี · เริ่ม 6.59 ล้าน</li>
+              <li>Saransiri ศรีนครินทร์-แพรกษา — สมุทรปราการ · เริ่ม 6.99 ล้าน</li>
+              <li>Saransiri ราชพฤกษ์-346 — นนทบุรี · เริ่ม 6.99 ล้าน</li>
+              <li>Saransiri รามคำแหง — กรุงเทพฯ · MRT สีส้ม (ราษฎร์พัฒนา ~5 กม.) · เริ่ม 7.99 ล้าน</li>
+              <li>Saransiri ศาลายา-ปิ่นเกล้า — นครปฐม · เริ่ม 7.99 ล้าน</li>
+              <li>Saransiri Westgate — บางใหญ่ นนทบุรี · Central Westgate · MRT สีม่วง · เริ่ม 8 ล้าน</li>
+              <li>Saransiri Rama 2 — พระราม 2 กรุงเทพฯ · เริ่ม 9 ล้าน</li>
+              <li>Saransiri Grande พุทธมณฑลสาย 3 — กรุงเทพฯ · เริ่ม 15 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Saransiri (Sansiri ชลบุรีมีแต่คอนโด)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>26,400 – 67,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 5.89–15M)</span><br>รายได้ขั้นต่ำ <strong>44,000 – 112,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> Modern / Urban Farmhouse · หลายทำเลใกล้รถไฟฟ้า/สิ่งอำนวยความสะดวก · เหมาะครอบครัวขยาย</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> ครอบครัวขยาย (พ่อแม่+ลูก+ปู่ย่า) · ผู้ที่ต้องการบ้านเดี่ยว Mid ใกล้เมือง · first move-up จากทาวน์โฮม</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Saransiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-mabel" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-mabel.webp" alt="Mabel" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Mid-Entry · New Brand</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว Compact 2 ชั้น</span></div>
+            <div class="card-title">Mabel (เมเบล)</div>
+            <div class="card-meta">"My Home, My Label" · บ้านเดี่ยว Compact ดีไซน์ Minimal Japandi · แบรนด์ใหม่ของ Sansiri (เปิด 2024) · จับกลุ่ม New Gen / มีศักยภาพปล่อยเช่า</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">4.89 – 8.99 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">156 – 189 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">50.2 – 91.4 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 3 น้ำ · 2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Mabel ราชพฤกษ์ — นนทบุรี · โครงการใหม่ · เริ่ม 4.89 ล้าน</li>
+              <li>Mabel ประชาอุทิศ 90 — ทุ่งครุ กรุงเทพฯ · โครงการใหม่ · เริ่ม 4.99 ล้าน</li>
+              <li>Mabel บางนา กม.26 — สมุทรปราการ · ทะเลสาบ Bangna Lake 26 · ใกล้ทางด่วนบางนา + สุวรรณภูมิ · 105 ยูนิต · เริ่ม 5.59 ล้าน · <span style="background:rgba(34,197,94,0.15);color:#16a34a;border:1px solid rgba(34,197,94,0.3);border-radius:4px;padding:0.05rem 0.35rem;font-size:0.75rem;">พร้อมอยู่</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Mabel (แบรนด์ยังโฟกัสกรุงเทพ-ปริมณฑล)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>22,000 – 40,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 4.89–8.99M)</span><br>รายได้ขั้นต่ำ <strong>36,700 – 67,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> Compact 2 ชั้น ดีไซน์ Minimal Japandi · แบรนด์ใหม่ (เปิด 2024) · ก่อสร้าง Pre-cast</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> New Gen / คู่รักเริ่มต้น · ผู้ที่ต้องการบ้านเดี่ยว compact งบไม่สูง · มีศักยภาพปล่อยเช่า</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Mabel → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-kanasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-kanasiri.webp" alt="Kanasiri" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry-Mid · Smart Home</span><span style="font-size:0.75rem;color:var(--muted);">บ้านแฝด/บ้านเดี่ยว 2 ชั้น</span></div>
+            <div class="card-title">Kanasiri (คณาสิริ)</div>
+            <div class="card-meta">"บ้านดีไซน์ใหม่ เพื่อการเริ่มต้นครอบครัว" · บ้านแฝด/บ้านเดี่ยว Cool Living + Smart Home (Zigbee · motion sensor · WiFi camera) · เหมาะ first jumper จากทาวน์โฮม</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">3.59 – 6 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">113 – 159 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">35 – 58 ตร.วา · หน้ากว้าง 6.45 ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">3–4 นอน · 2–3 น้ำ · 2–3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Kanasiri ศาลายา-ปิ่นเกล้า — บางกรวย นนทบุรี · ใกล้ ม.มหิดล ศาลายา · Central ศาลายา · บรมราชชนนี · เริ่ม 3.59 ล้าน</li>
+              <li>Kanasiri บางนา — บางบ่อ สมุทรปราการ · บางนา-ตราด กม.26 · ใกล้ ABAC · วงแหวนรอบนอก · เริ่ม 3.69 ล้าน</li>
+              <li>Kanasiri พระราม 2-วงแหวน — พันท้ายนรสิงห์ สมุทรสาคร · พระราม 2 กม.18 · วงแหวนกาญจนาฯ · เริ่ม 4.39 ล้าน</li>
+              <li>Kanasiri วงแหวน-พระราม 5 · ชัยพฤกษ์-วงแหวน · ราชพฤกษ์-346 · รังสิต-คลอง 2 — <span style="font-size:0.78rem;">นนทบุรี/ปทุมธานี (สอบถามราคา · บางเฟสใกล้ปิด)</span></li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Kanasiri (Sansiri ชลบุรีมีแต่คอนโด)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>16,100 – 26,900 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 3.59–6M)</span><br>รายได้ขั้นต่ำ <strong>26,800 – 44,800 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> Cool Living + Smart Home (Zigbee · motion sensor · WiFi camera) · บ้านแฝด/เดี่ยว 2 ชั้น</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first jumper จากทาวน์โฮม · ครอบครัวเริ่มต้น · ผู้ที่ต้องการ Smart Home งบเข้าถึง</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Kanasiri → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-anasiri" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-anasiri.webp" alt="Anasiri" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Entry · เข้าถึงง่ายสุด</span><span style="font-size:0.75rem;color:var(--muted);">บ้านเดี่ยว+บ้านแฝด 2 ชั้น</span></div>
+            <div class="card-title">Anasiri (อณาสิริ)</div>
+            <div class="card-meta">"ความพอดีที่ลงตัว (Feel Just Right)" · บ้านเดี่ยว+บ้านแฝด Entry tier · ราคาเข้าถึงง่ายสุด · ทำเลครอบคลุมที่สุดของ Sansiri · ดีไซน์ Lagom / Modern Japanese / Barn House</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">2.39 – 9 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">99 – 238 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">30 – 60 ตร.วา</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">2–5 นอน · 2–3 น้ำ · 1–3 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (มากที่สุดของ Sansiri)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Anasiri บางนา — กรุงเทพฯ/สมุทรปราการ · ทางด่วนบางนา กม.26 · วิวทะเลสาบ · เริ่ม 2.39 ล้าน</li>
+              <li>Anasiri ศรีนครินทร์-แพรกษา — สมุทรปราการ · BTS สีเขียว (แพรกษา) · เริ่ม 2.99 ล้าน</li>
+              <li>Anasiri รามคำแหง — กรุงเทพฯ · MRT สีส้ม (ราษฎร์พัฒนา ~7 นาที) · เริ่ม 3.49 ล้าน</li>
+              <li>Anasiri พระราม 5-สิรินธร — นนทบุรี · ใกล้ทางด่วนศรีรัช · เริ่ม 3.79 ล้าน</li>
+              <li>Anasiri รังสิต-คลอง 3 — ปทุมธานี · Big C รังสิต 0.6 กม. · เริ่ม 4.19 ล้าน</li>
+              <li>Anasiri กรุงเทพฯ-ปทุมธานี 2 — ติวานนท์ ปทุมธานี · โซนสนามกอล์ฟ · เริ่ม 4.19 ล้าน</li>
+              <li>Anasiri พระราม 2-วงแหวน — สมุทรสาคร · ทางด่วนพระราม 2 ใหม่ · เริ่ม 4.49 ล้าน</li>
+              <li>Anasiri ชัยพฤกษ์-วงแหวน 2 — นนทบุรี · บางกรวย-ไทรน้อย · เริ่ม 4.59 ล้าน</li>
+              <li>Anasiri ศาลายา-ปิ่นเกล้า — นครปฐม · ใกล้ทางด่วน · เริ่ม 4.79 ล้าน</li>
+              <li>Anasiri ปิ่นเกล้า-กาญจนาฯ — กรุงเทพฯ ฝั่งตะวันตก · Central Westgate ~7.5 กม. · เริ่ม 4.99 ล้าน</li>
+              <li>Anasiri รัตนาธิเบศร์ (เวสต์เกต) — นนทบุรี · MRT บางพลู · Central Westgate · เริ่ม 5.29 ล้าน</li>
+              <li>Anasiri สรงประภา — ดอนเมือง กรุงเทพฯ · สายสีแดง · Central แจ้งวัฒนะ · เริ่ม 5.99 ล้าน</li>
+              <li>Anasiri ติวานนท์-ศรีสมาน — ปทุมธานี · ทางด่วนศรีสมาน 4.9 กม. · เริ่ม 6.99 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Anasiri (Sansiri ชลบุรีมีแต่คอนโด)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>10,700 – 40,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 2.39–9M)</span><br>รายได้ขั้นต่ำ <strong>17,800 – 67,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> Lagom / Modern Japanese / Barn House · บ้านเดี่ยว+แฝด Entry · ทำเลครอบคลุมที่สุดของ Sansiri</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first home buyer งบเข้าถึง · ครอบครัวเริ่มต้น · ผู้ที่ต้องการตัวเลือกทำเลเยอะสุด</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Anasiri → LINE</a></div></div>
+        </div>
+
+        <!-- Townhome Brand Cards (8 brands) -->
+
+        <div class="psh-cat">🟡 ทาวน์โฮม + ช้อปเฮาส์ แสนสิริ — 2 แบรนด์</div>
+        <div id="brand-siri-siri-place" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-siri-place.webp" alt="Siri Place" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-success">Townhome Mass · Active หลายโครงการ</span><span style="font-size:0.75rem;color:var(--muted);">ทาวน์โฮม 2 ชั้น · 16+ ทำเล</span></div>
+            <div class="card-title">Siri Place (สิริ เพลส)</div>
+            <div class="card-meta">"Dream Destination" · ทาวน์โฮม Mass ที่มีโครงการมากที่สุดของ Sansiri · ดีไซน์ 4 ซีรีส์เมืองระดับโลก (New York / Amsterdam / Paris / Kyoto) · active 16+ ทำเลทั่วกรุงเทพ-ปริมณฑล</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (รวม Series)</div><div class="stat-value">1.79 – 5 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">93 – 134 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">16 – 22 ตร.วา · หน้ากว้าง 5.2–5.7 ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">2–4 นอน · 2–3 น้ำ · 1–2 จอด · 2 ชั้น</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย (16+ โครงการ — เด่นๆ)</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li>Siri Place ราชพฤกษ์ — นนทบุรี · Robinson Lifestyle ราชพฤกษ์ · เริ่ม 1.79 ล้าน</li>
+              <li>Siri Place วงแหวน-ลำลูกกา — ปทุมธานี · Lotus รังสิต-นครนายก · เริ่ม 1.99 ล้าน</li>
+              <li>Siri Place พระราม 2-วงแหวน — กรุงเทพฯ · Portofino · เริ่ม 1.99 ล้าน</li>
+              <li>Siri Place ประชาอุทิศ 75 — กรุงเทพฯ · เริ่ม 1.99 ล้าน</li>
+              <li>Siri Place บางนา-สุวรรณภูมิ — สมุทรปราการ · The Passio ลาดกระบัง · เริ่ม 2.19 ล้าน</li>
+              <li>Siri Place รังสิต 2 / รังสิต-คลอง 2 — ปทุมธานี · Future Park รังสิต · เริ่ม 2.19–2.39 ล้าน</li>
+              <li>Siri Place ราชพฤกษ์-345/346 — นนทบุรี · เริ่ม 2.19–2.49 ล้าน</li>
+              <li>Siri Place เวสต์เกต / บางใหญ่ — นนทบุรี · Central Westgate · เริ่ม 2.89–3.69 ล้าน</li>
+              <li>Siri Place ประชาอุทิศ 90 — กรุงเทพฯ · Big C ประชาอุทิศ 90 · เริ่ม 2.99 ล้าน</li>
+              <li>Siri Place Mega Bangna — สมุทรปราการ · Mega Bangna · เริ่ม 3.39 ล้าน</li>
+              <li>Siri Place พุทธบูชา 39 — กรุงเทพฯ · Central พระราม 2 · เริ่ม 3.59 ล้าน</li>
+              <li>Siri Place พหลโยธิน 52 — กรุงเทพฯ · ตลาดยิ่งเจริญ · เริ่ม 3.69 ล้าน</li>
+              <li>Siri Place พัฒนาการ — กรุงเทพฯ · สวนหลวง ร.9 · เริ่ม 4.29 ล้าน</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Siri Place (Sansiri ชลบุรีมีแต่คอนโด)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>8,000 – 22,400 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · range 1.79–5M)</span><br>รายได้ขั้นต่ำ <strong>15,000 – 37,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ดีไซน์ 4 ซีรีส์เมืองโลก (New York / Amsterdam / Paris / Kyoto) · ทาวน์โฮมที่มีโครงการมากสุดของ Sansiri (16+ ทำเล)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> first home buyer / first jobber · ผู้ที่ต้องการทาวน์โฮมงบเข้าถึง · นักลงทุนปล่อยเช่า</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Siri Place → LINE</a></div></div>
+        </div>
+
+        <div id="brand-siri-siri-avenue" class="brand-detail">
+          <button class="back-to-toc" onclick="showToc('siri-toc')">← กลับสารบัญ</button>
+          <div class="property-card"><div class="card-img-wrap"><img src="/images/siri-siri-avenue.webp" alt="Siri Avenue" loading="lazy"></div><div class="card-body">
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;"><span class="badge badge-warning">Shophouse · Live + Work</span><span style="font-size:0.75rem;color:var(--muted);">อาคารพาณิชย์ 3–3.5 ชั้น</span></div>
+            <div class="card-title">Siri Avenue (สิริ อเวนิว)</div>
+            <div class="card-meta">"Live Where You Work" · อาคารพาณิชย์/ช้อปเฮาส์ดีไซน์ยุโรป · Live + Work ในตัวเดียว · rental potential ~20,000 บ./เดือน · เหมาะเจ้าของธุรกิจ SME</div>
+            <div class="card-stats">
+              <div class="stat-item"><div class="stat-label">ราคา (เหลือมือ 1)</div><div class="stat-value">เริ่ม 6.59 ล้าน</div></div>
+              <div class="stat-item"><div class="stat-label">พื้นที่ใช้สอย</div><div class="stat-value">เริ่ม 225 ตร.ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ที่ดิน</div><div class="stat-value">27.5 – 94 ตร.วา · หน้ากว้าง 5.5 ม.</div></div>
+              <div class="stat-item"><div class="stat-label">ฟังก์ชันบ้าน</div><div class="stat-value">Live + Work · 3–3.5 ชั้น · 2 จอด</div></div>
+            </div>
+            <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.25rem;"><strong style="color:var(--text);">📍 ทำเลที่เปิดขาย</strong></div>
+            <ul style="font-size:0.82rem;color:var(--muted);padding-left:1.1rem;line-height:1.8;margin-bottom:0.5rem;">
+              <li><strong style="color:var(--text);">กรุงเทพฯ-ปริมณฑล</strong></li>
+              <li><strong>บางนา</strong> ⭐ — บางนา กม.26 สมุทรปราการ · ติด Lotus's บางบ่อ 200 ม. · ทางด่วนบางนา-ตราด 1.5 กม. · เริ่ม 6.59 ล้าน · <span style="background:rgba(34,197,94,0.15);color:#16a34a;border:1px solid rgba(34,197,94,0.3);border-radius:4px;padding:0.05rem 0.35rem;font-size:0.75rem;">เหลือมือ 1 (~12–14 ยูนิต)</span></li>
+              <li style="color:var(--muted);font-size:0.78rem;">สายไหม · เพชรเกษม 81 — <strong>ปิดการขาย</strong>แล้ว</li>
+              <li><strong style="color:var(--text);">ชลบุรี-EEC</strong> — ไม่มีโครงการ Siri Avenue (Sansiri ชลบุรีมีแต่คอนโด)</li>
+              <li><strong style="color:var(--text);">อยุธยา-นครสวรรค์-พิษณุโลก-อุตรดิตถ์</strong> — ไม่มี</li>
+            </ul>
+            <div class="callout info"><span class="callout-icon">💳</span><span>ผ่อนประมาณ <strong>เริ่ม 29,600 บ./เดือน</strong> <span style="font-size:0.78rem;">(ดอกเบี้ย 3.5% · กู้ 100% · 6.59M)</span><br>รายได้ขั้นต่ำ <strong>เริ่ม 49,300 บ./เดือน</strong> (DSR 60%)</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🏛️</span><span><strong>ดีไซน์/จุดเด่น:</strong> ช้อปเฮาส์/อาคารพาณิชย์ดีไซน์ยุโรป · Live + Work 3–3.5 ชั้น · หน้ากว้าง 5.5 ม.</span></div>
+            <div class="callout info" style="margin-top:0.5rem;"><span class="callout-icon">🎯</span><span><strong>เหมาะกับ:</strong> เจ้าของธุรกิจ SME ที่อยู่+ทำงานที่เดียว · ผู้ที่ต้องการ rental income (เช่าชั้นล่าง ~20k/ด.) · ร้านค้า/ออฟฟิศ</span></div>
+          </div><div class="card-footer"><a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line btn-sm" target="_blank" rel="noopener">สนใจ Siri Avenue → LINE</a></div></div>
+        </div>
+
+        <div style="text-align:center;margin:1.5rem 0 0.5rem;">
+          <a href="/rent-to-own/" style="display:inline-block;background:#3b82f6;color:#fff;font-weight:600;font-size:0.95rem;padding:0.7rem 1.6rem;border-radius:8px;text-decoration:none;">&larr; กลับ เช่าซื้อ / ผ่อนตรง</a>
+        </div>
+
+      </div><!-- /dev-siri -->
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 ninethanakarn.com · ข้อมูลในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
+      </div>
+    </div>
+  </footer>
+<script>
+    function showBrand(brandId, tocId) {
+      tocId = tocId || 'siri-toc';
+      var toc = document.getElementById(tocId);
+      if (toc) toc.classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('brand-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showToc(tocId) {
+      tocId = tocId || 'siri-toc';
+      var toc = document.getElementById(tocId);
+      if (toc) toc.classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function showCondo(brandId, tocId) {
+      tocId = tocId || 'siri-condo-toc';
+      var toc = document.getElementById(tocId);
+      if (toc) toc.classList.add('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+      var target = document.getElementById('condo-' + brandId);
+      if (target) { target.classList.add('active'); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    }
+    function showCondoToc(tocId) {
+      tocId = tocId || 'siri-condo-toc';
+      var toc = document.getElementById(tocId);
+      if (toc) toc.classList.remove('hidden');
+      document.querySelectorAll('.brand-detail').forEach(function(el) { el.classList.remove('active'); });
+    }
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</body>
+</html>
