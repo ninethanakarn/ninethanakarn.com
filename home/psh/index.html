@@ -173,6 +173,24 @@
       body::before { content: "นายธนาคารประจำบ้าน · ninethanakarn.com · LINE: @ninethanakarn"; visibility: visible; display: block; font-size: 0.8rem; color: #666; margin-bottom: 0.5rem; position: absolute; top: 0.5rem; left: 1.5rem; }
     }
   </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKC3DMS6P5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKC3DMS6P5');
+</script>
+<!-- Conversion events: click โทร / click LINE -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ gtag('event','click_tel',{link_url:h}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
+}, true);
+</script>
 </head>
 <body>
   <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
@@ -818,7 +836,7 @@
         <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
       </div>
       <div class="footer-disclaimer">
-        © 2026 ninethanakarn.com · ข้อมูลในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
+        © 2026 ninethanakarn.com &#183; <a href="/privacy/" style="color:inherit;text-decoration:underline;">นโยบายความเป็นส่วนตัว</a> · ข้อมูลในหน้านี้เป็นข้อมูลเพื่อการศึกษาเท่านั้น ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน
       </div>
     </div>
   </footer>

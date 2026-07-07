@@ -145,6 +145,24 @@
     .back-to-toc { display: none; }
     .psh-cat { font-size: 1.08rem; font-weight: 700; margin: 1.75rem 0 0.85rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--card-border); display: flex; align-items: center; gap: 0.4rem; }
     .psh-cat:first-of-type { margin-top: 0.5rem; }  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKC3DMS6P5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKC3DMS6P5');
+</script>
+<!-- Conversion events: click โทร / click LINE -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ gtag('event','click_tel',{link_url:h}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
+}, true);
+</script>
 </head>
 <body>
   <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
@@ -347,7 +365,7 @@
         <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
       </div>
       <div class="footer-disclaimer">
-        © 2026 ninethanakarn.com · ข้อมูลใน portfolio นี้เป็น research summary ไม่ใช่คำแนะนำซื้อ/ขาย<br>
+        © 2026 ninethanakarn.com &#183; <a href="/privacy/" style="color:inherit;text-decoration:underline;">นโยบายความเป็นส่วนตัว</a> · ข้อมูลใน portfolio นี้เป็น research summary ไม่ใช่คำแนะนำซื้อ/ขาย<br>
         ตัวเลขราคา ค่าเช่า และดอกเบี้ยอาจเปลี่ยนแปลง กรุณา verify ก่อนตัดสินใจ
       </div>
     </div>

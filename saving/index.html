@@ -370,6 +370,16 @@ details.guide summary:hover{background:var(--pink-50)}
   .stat-item{flex:1}
 }
 </style>
+<!-- Conversion events: click โทร / click LINE -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ gtag('event','click_tel',{link_url:h}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
+}, true);
+</script>
 </head>
 <body>
 
@@ -605,7 +615,8 @@ details.guide summary:hover{background:var(--pink-50)}
   <div style="margin-top:6px">
     <a href="/tax/">เครื่องคำนวณภาษี</a> ·
     <a href="/loan/">เครื่องคำนวณกู้บ้าน</a> ·
-    <a href="/">หน้าหลัก</a>
+    <a href="/">หน้าหลัก</a> &#183;
+    <a href="/privacy/">นโยบายความเป็นส่วนตัว</a>
   </div>
   <div class="disclaimer">
     ⚠️ เครื่องมือนี้ใช้สำหรับวางแผนเบื้องต้นเท่านั้น ผลลัพธ์เป็นการประมาณการบนพื้นฐานดอกเบี้ยทบต้นรายเดือน

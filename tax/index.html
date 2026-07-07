@@ -602,6 +602,16 @@ body.dark .guide-tip{background:rgba(96,165,250,.08)}
 .guide-tip strong{color:var(--blue)}
 body.dark .guide-tip strong{color:#60a5fa}
 </style>
+<!-- Conversion events: click โทร / click LINE -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ gtag('event','click_tel',{link_url:h}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
+}, true);
+</script>
 </head>
 <body>
 <!-- HEADER -->
@@ -1091,7 +1101,7 @@ body.dark .guide-tip strong{color:#60a5fa}
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div>นายธนาคารประจำบ้าน — ที่ปรึกษาสินเชื่อมืออาชีพ 7+ ปี · <a href="https://ninethanakarn.com/">ninethanakarn.com</a></div>
+  <div>นายธนาคารประจำบ้าน — ที่ปรึกษาสินเชื่อมืออาชีพ 7+ ปี · <a href="https://ninethanakarn.com/">ninethanakarn.com</a> &#183; <a href="/privacy/">นโยบายความเป็นส่วนตัว</a></div>
   <div class="footer-disclaimer">⚠️ Disclaimer: เครื่องคำนวณนี้เป็นการประมาณการเบื้องต้นตามกฎหมายปี 2568 อาจคลาดเคลื่อนจากการคำนวณจริงของกรมสรรพากร ควรปรึกษานักบัญชีหรือสรรพากรเพื่อยืนยัน</div>
 </footer>
 

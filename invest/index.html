@@ -355,6 +355,16 @@ details.guide summary:hover{background:var(--gold-50)}
   .stat-item{flex:1}
 }
 </style>
+<!-- Conversion events: click โทร / click LINE -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ gtag('event','click_tel',{link_url:h}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
+}, true);
+</script>
 </head>
 <body>
 
@@ -600,7 +610,7 @@ details.guide summary:hover{background:var(--gold-50)}
   </section>
 
   <footer class="footer">
-    <div><a href="/">นายธนาคารประจำบ้าน</a> · <a href="tel:023340940">02-334-0940</a> · <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE @ninethanakarn</a></div>
+    <div><a href="/">นายธนาคารประจำบ้าน</a> · <a href="tel:023340940">02-334-0940</a> · <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE @ninethanakarn</a> &#183; <a href="/privacy/">นโยบายความเป็นส่วนตัว</a></div>
     <p class="disclaimer">ผลตอบแทนในอดีตไม่ได้การันตีอนาคต · ตัวเลขนี้เป็นเพียงการประมาณการเพื่อวางแผน ไม่ใช่คำแนะนำลงทุน · กรุณา recheck กับที่ปรึกษาการเงินก่อนตัดสินใจ</p>
   </footer>
 </div>

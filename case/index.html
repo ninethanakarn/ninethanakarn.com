@@ -161,6 +161,24 @@
     [data-theme="dark"] .guide { border-color: rgba(59,130,246,0.25); }
     [data-theme="dark"] .guide summary { background: rgba(59,130,246,0.1); }
   </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKC3DMS6P5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKC3DMS6P5');
+</script>
+<!-- Conversion events: click โทร / click LINE -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ gtag('event','click_tel',{link_url:h}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
+}, true);
+</script>
 </head>
 <body>
 
@@ -345,7 +363,7 @@
         <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
       </div>
       <div class="footer-disclaimer">
-        © 2026 ninethanakarn.com · เคสตัวอย่างใช้ชื่อสมมติเพื่อปกป้องความเป็นส่วนตัว · ตัวเลข DSR/วงเงิน/Timeline เป็นเคสจริง · ผลลัพธ์ของแต่ละเคสขึ้นกับเงื่อนไขเฉพาะตัว
+        © 2026 ninethanakarn.com &#183; <a href="/privacy/" style="color:inherit;text-decoration:underline;">นโยบายความเป็นส่วนตัว</a> · เคสตัวอย่างใช้ชื่อสมมติเพื่อปกป้องความเป็นส่วนตัว · ตัวเลข DSR/วงเงิน/Timeline เป็นเคสจริง · ผลลัพธ์ของแต่ละเคสขึ้นกับเงื่อนไขเฉพาะตัว
       </div>
     </div>
   </footer>
