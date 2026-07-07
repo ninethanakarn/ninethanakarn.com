@@ -174,6 +174,39 @@ document.addEventListener('click', function(e){
   else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
 }, true);
 </script>
+<!-- Structured Data: FinancialService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "นายธนาคารประจำบ้าน",
+  "alternateName": "Mr. Home Banker",
+  "legalName": "บริษัท ทัช เรียลเอสเตท จำกัด",
+  "url": "https://ninethanakarn.com/",
+  "logo": "https://ninethanakarn.com/logo1.png",
+  "image": "https://ninethanakarn.com/og-image.png",
+  "description": "ที่ปรึกษาทางการเงิน ปิดหนี้ รวมหนี้ บ้านมือ 1 คอนโดมือ 1 ลงทุน เช่าซื้อ-ผ่อนตรง ปรึกษาฟรี",
+  "telephone": "+66-2-334-0940",
+  "email": "ninethanakarn@gmail.com",
+  "taxID": "0135562017937",
+  "foundingDate": "2019",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "55/15 หมู่บ้านพฤกษา 40 หมู่ที่ 3 ตำบลคลองสาม",
+    "addressLocality": "อำเภอคลองหลวง",
+    "addressRegion": "ปทุมธานี",
+    "postalCode": "12120",
+    "addressCountry": "TH"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "sameAs": ["https://line.me/R/ti/p/@ninethanakarn"]
+}
+</script>
 </head>
 <body>
 
@@ -463,7 +496,55 @@ document.addEventListener('click', function(e){
   </div>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
+  <!-- Lead Form (self-contained) -->
+<section id="lead-form" style="max-width:640px;margin:2.5rem auto;padding:0 20px;font-family:'IBM Plex Sans Thai','Prompt',sans-serif;">
+  <div style="background:#ffffff;border:1px solid #e7e5e4;border-radius:20px;padding:28px 24px;box-shadow:0 12px 32px rgba(0,0,0,.08);">
+    <h2 style="font-family:'Prompt',sans-serif;font-size:1.35rem;color:#1e40af;margin:0 0 4px;">ให้เราติดต่อกลับ — ปรึกษาฟรี</h2>
+    <p style="color:#57534e;font-size:.95rem;margin:0 0 18px;line-height:1.6;">กรอกสั้น ๆ แล้วกดส่ง ระบบจะเปิด LINE พร้อมข้อความให้อัตโนมัติ กดส่งใน LINE อีกครั้งเดียวจบ</p>
+    <form onsubmit="return ntkSendLead(this)">
+      <label style="display:block;font-size:.9rem;font-weight:600;color:#1c1917;margin:0 0 4px;">ชื่อ</label>
+      <input name="lname" type="text" required placeholder="ชื่อที่ให้เราเรียก" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid #d6d3d1;border-radius:10px;font:inherit;font-size:.95rem;margin-bottom:14px;background:#fafaf9;color:#1c1917;">
+      <label style="display:block;font-size:.9rem;font-weight:600;color:#1c1917;margin:0 0 4px;">เบอร์โทร</label>
+      <input name="lphone" type="tel" required placeholder="08x-xxx-xxxx" pattern="[0-9\-\s]{9,12}" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid #d6d3d1;border-radius:10px;font:inherit;font-size:.95rem;margin-bottom:14px;background:#fafaf9;color:#1c1917;">
+      <label style="display:block;font-size:.9rem;font-weight:600;color:#1c1917;margin:0 0 4px;">เรื่องที่ต้องการปรึกษา</label>
+      <select name="ltopic" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid #d6d3d1;border-radius:10px;font:inherit;font-size:.95rem;margin-bottom:14px;background:#fafaf9;color:#1c1917;">
+        <option>ปิดหนี้ รวมหนี้</option>
+        <option>บ้านมือ 1 อยู่เอง</option>
+        <option>คอนโดมือ 1 ลงทุน</option>
+        <option>เช่าซื้อ / ผ่อนตรง</option>
+        <option>เรื่องอื่น ๆ</option>
+      </select>
+      <label style="display:block;font-size:.9rem;font-weight:600;color:#1c1917;margin:0 0 4px;">ช่วงเวลาที่สะดวกให้ติดต่อกลับ</label>
+      <select name="ltime" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid #d6d3d1;border-radius:10px;font:inherit;font-size:.95rem;margin-bottom:16px;background:#fafaf9;color:#1c1917;">
+        <option>เวลาไหนก็ได้ (จ–ส 9:00–17:00)</option>
+        <option>ช่วงเช้า (9:00–12:00)</option>
+        <option>ช่วงบ่าย (12:00–17:00)</option>
+      </select>
+      <label style="display:flex;gap:8px;align-items:flex-start;font-size:.85rem;color:#57534e;margin-bottom:18px;line-height:1.5;cursor:pointer;">
+        <input type="checkbox" required style="margin-top:3px;flex:none;">
+        <span>ยินยอมให้ติดต่อกลับตามข้อมูลที่ให้ไว้ ตาม<a href="/privacy/" target="_blank" style="color:#1e40af;text-decoration:underline;">นโยบายความเป็นส่วนตัว</a></span>
+      </label>
+      <button type="submit" style="width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:#06C755;color:#fff;border:none;border-radius:999px;padding:14px;font-family:'Prompt',sans-serif;font-weight:600;font-size:1.05rem;cursor:pointer;box-shadow:0 4px 14px rgba(6,199,85,.35);">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px;"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+        ส่งข้อความผ่าน LINE
+      </button>
+      <p style="text-align:center;font-size:.85rem;color:#a8a29e;margin:12px 0 0;">หรือโทรเลย <a href="tel:023340940" style="color:#1e40af;font-weight:600;">02-334-0940</a> (จ–ส 9:00–17:00)</p>
+    </form>
+  </div>
+</section>
+<script>
+function ntkSendLead(f){
+  var msg = 'สวัสดีครับ ต้องการปรึกษาเรื่อง: ' + f.ltopic.value
+    + '\nชื่อ: ' + f.lname.value
+    + '\nเบอร์โทร: ' + f.lphone.value
+    + '\nสะดวกให้ติดต่อกลับ: ' + f.ltime.value
+    + '\n(ส่งจากฟอร์มบนเว็บ ninethanakarn.com)';
+  if(typeof gtag === 'function'){ gtag('event','submit_lead',{topic:f.ltopic.value}); }
+  window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg), '_blank');
+  return false;
+}
+</script>
+<footer class="site-footer">
     <div class="container">
       <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
       <div class="footer-contact">
