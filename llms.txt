@@ -14,8 +14,8 @@
 - [โปรแกรมคำนวณสินเชื่อ](https://ninethanakarn.com/loan/): คำนวณวงเงินกู้ ค่างวด DSR
 - [กู้บ้านไม่ผ่าน 7 สาเหตุ + วิธีแก้](https://ninethanakarn.com/blog/home-loan-rejected-7-reasons.html)
 - [DSR คืออะไร เกณฑ์ 12 ธนาคาร](https://ninethanakarn.com/blog/dsr-calculator-guide.html)
-- [วิธีดึง e-Statement ทุกธนาคาร](https://ninethanakarn.com/blog/how-to-get-bank-estatement.html)
-- [เช็คลิสต์เอกสารวิเคราะห์สินเชื่อ](https://ninethanakarn.com/blog/loan-analysis-document-checklist.html)
+- [วิธีขอ statement บัญชีเงินเดือนย้อนหลัง 6 เดือน (12 ธนาคาร)](https://ninethanakarn.com/blog/how-to-get-salary-statement.html)
+- [ข้อมูลผู้กู้ + เอกสารก่อนเริ่มเคสปิดหนี้](https://ninethanakarn.com/blog/borrower-info-home-loan-application.html)
 - [บทความทั้งหมด](https://ninethanakarn.com/blog/)
 
 ## ข้อมูลบริษัท
