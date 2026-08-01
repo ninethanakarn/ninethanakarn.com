@@ -21,7 +21,7 @@
 ## ข้อมูลบริษัท
 
 - [เกี่ยวกับเรา](https://ninethanakarn.com/about/): อ.ธรรศ ผู้ก่อตั้ง + หลักการทำงาน
-- [เคสตัวอย่าง](https://ninethanakarn.com/case/): เคสจริงปิดหนี้-ซื้อบ้าน-ลงทุนคอนโด
+- [เคสตัวอย่าง](https://ninethanakarn.com/blog/#cases): เคสจริงปิดหนี้-ซื้อบ้าน-ลงทุนคอนโด
 - [นโยบายความเป็นส่วนตัว](https://ninethanakarn.com/privacy/)
 - [ข้อกำหนดการใช้บริการ](https://ninethanakarn.com/terms/)
 
