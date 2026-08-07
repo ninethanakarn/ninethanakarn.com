@@ -113,21 +113,19 @@ robots.txt
 | `/case/index.html` | `/blog/#cases` | ยุบเมนูเคสจริงเข้า blog hub 26 ก.ค. |
 | `/rent/index.html` | `/rent-to-own/` | เปลี่ยนชื่อ path |
 
-### หน้า noindex ที่ยังใช้งานอยู่ (ตั้งใจ — อย่าเติมเข้า sitemap)
+### หน้า redirect เพิ่มเติม (noindex — อย่าเติมเข้า sitemap · ห้ามลิงก์หา)
 
-หน้าเหล่านี้ **มีอยู่จริงและถูกส่งลิงก์ให้ลูกค้า** แต่ตั้ง `<meta name="robots" content="noindex">` ไว้ ถ้าเห็นว่า "ขาดจาก sitemap" **อย่ารีบเติม** — เติมเข้าไปจะขัดกับ noindex และ Search Console จะขึ้น error
+4 หน้านี้ถูกยุบเนื้อหาเข้าบทความอื่นแล้ว (เหตุผลจาก อ. 1 ส.ค. 2569: เนื้อหาซ้ำ ไว้เขียนใหม่ค่อยแยกหน้า) เหลือเป็น redirect stub เก็บ URL เดิมไว้ — **BOT01 ก็ถูกสั่งห้ามส่ง 2 ลิงก์บทความเอกสารนี้แล้ว** (ดู `line-bot/knowledge.js` หมวดลิงก์)
 
-**เหตุผลที่ปิด (อ.ยืนยัน 1 ส.ค. 2569): เนื้อหาซ้ำกับบทความอื่นบนเว็บ** ตั้งใจกัน duplicate content ไว้ก่อน ไว้เขียนใหม่ให้ไม่ซ้ำแล้วค่อยเปิด index — **อย่าเปิด index ให้เองโดยไม่ได้เขียนใหม่**
-
-| ไฟล์ | ใครใช้ |
+| จาก | ไป |
 |---|---|
-| `blog/how-to-get-bank-estatement.html` | BOT01 ส่งให้ลูกค้าตอนขอเอกสาร |
-| `blog/loan-analysis-document-checklist.html` | BOT01 ส่งให้ลูกค้าตอนขอเอกสาร |
-| `case/case-malee-debt-consolidation.html` | การ์ดเคสจริงใน `/blog/#cases` |
-| `case/case-prayuth-condo-investment.html` | การ์ดเคสจริงใน `/blog/#cases` |
+| `blog/how-to-get-bank-estatement.html` | `blog/how-to-get-ncb-credit-report.html` |
+| `blog/loan-analysis-document-checklist.html` | `blog/borrower-info-home-loan-application.html` |
+| `case/case-malee-debt-consolidation.html` | `/blog/#cases` |
+| `case/case-prayuth-condo-investment.html` | `/blog/#cases` |
 
-> **วิธีเช็คก่อนแตะ sitemap เสมอ:** `grep -o 'name="robots" content="[^"]*"' <ไฟล์>` — ไม่มีผลลัพธ์ = index ปกติ ควรอยู่ใน sitemap · เจอ `noindex` = ห้ามใส่
-> (`case/case-somchai-debt-then-home.html` ไม่มี noindex จึงอยู่ใน sitemap ถูกแล้ว — เคสจริง 3 ใบไม่ได้ตั้งค่าเหมือนกัน)
+> **วิธีเช็คก่อนแตะ sitemap เสมอ:** `grep -o 'name="robots" content="[^"]*"' <ไฟล์>` — ไม่มีผลลัพธ์ = index ปกติ ควรอยู่ใน sitemap · เจอ `noindex` = ห้ามใส่ (และมักเป็นหน้า redirect — ดู `http-equiv="refresh"` ประกอบ)
+> (`case/case-somchai-debt-then-home.html` เป็นบทความจริง ไม่มี noindex จึงอยู่ใน sitemap ถูกแล้ว — เคสจริง 3 ใบไม่ได้ตั้งค่าเหมือนกัน)
 
 ### ข้อเท็จจริงที่ต้องรู้
 
