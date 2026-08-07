@@ -1026,13 +1026,16 @@ function setupEvents(){
     window.print();
   });
 
-  // Customer name → toast on blur
-  $('#customerName').addEventListener('blur', () => {
-    const v = $('#customerName').value.trim();
-    if(v){
-      try{ localStorage.setItem('saving-customer', v); }catch(e){}
-    }
-  });
+  // Customer name → toast on blur (หน้านี้อาจไม่มีช่องชื่อ — เช็คก่อน bind กัน throw ทั้ง setupEvents)
+  const custEl = $('#customerName');
+  if(custEl){
+    custEl.addEventListener('blur', () => {
+      const v = custEl.value.trim();
+      if(v){
+        try{ localStorage.setItem('saving-customer', v); }catch(e){}
+      }
+    });
+  }
 
   // GA4 tracking — CTAs
   $('#ctaLoan').addEventListener('click', () => {
@@ -1048,7 +1051,8 @@ function setupEvents(){
 
 // ===== PDF Header =====
 function updatePdfHeader(){
-  const name = $('#customerName').value.trim();
+  const nameEl = $('#customerName');
+  const name = nameEl ? nameEl.value.trim() : '';
   $('#pdfCustomer').textContent = name ? 'คุณ ' + name : 'วางแผนเงินออม';
   // Thai date
   const months = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
@@ -1076,7 +1080,7 @@ function init(){
   // Customer name: load from localStorage
   try{
     const c = localStorage.getItem('saving-customer');
-    if(c) $('#customerName').value = c;
+    if(c && $('#customerName')) $('#customerName').value = c;
   }catch(e){}
 
   setupEvents();
