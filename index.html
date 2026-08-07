@@ -739,7 +739,6 @@ function ntkSendLead(f){
     + '\n(ส่งจากฟอร์มบนเว็บ ninethanakarn.com)';
   if(typeof gtag === 'function'){ gtag('event','submit_lead',{topic:f.ltopic.value}); }
   if(typeof fbq === 'function'){ fbq('track','Lead',{content_category:f.ltopic.value}); }
-  if(typeof fbq === 'function'){ fbq('track','Lead',{content_category:f.ltopic.value}); }
   window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg), '_blank');
   return false;
 }
