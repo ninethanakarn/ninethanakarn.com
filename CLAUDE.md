@@ -24,6 +24,8 @@
 
    > แก้ **ข้อความรอบๆ ปุ่ม** ได้ · แก้ **ตัวปุ่ม / href / onclick / event** ไม่ได้
 
+   📌 **งานค้างรอ WEB01 (7 ส.ค. 69):** `index.html` ยิง `fbq('track','Lead')` ซ้ำ 2 บรรทัดใน `ntkSendLead()` → Meta นับ lead หน้าแรกเกิน 2 เท่า — รายละเอียดใน `touch-real-estate-tools/_internal/SPEC-WEB01-pixel-duplicate-lead.md` (อีก 4 หน้าถูกต้อง ห้ามแตะ)
+
 2. **ห้าม merge branch `claude/business-forecast-5-years-mo3wdh` เข้า main** — repo นี้เป็น public แต่ branch นั้นเก็บเอกสารธุรกิจภายใน
 
 3. **ห้ามแตะปุ่ม CTA ของเพจ Facebook ที่ชี้ LINE OA** (นอก repo แต่กฎเดียวกัน) — LINE conversion 39% เป็นช่องทางหลัก
