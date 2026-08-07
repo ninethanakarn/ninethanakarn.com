@@ -17,14 +17,14 @@
 1. **ปุ่ม LINE ทุกจุด และสคริปต์ tracking** — เป็นงาน WEB01 ที่ถูกล็อกไว้ว่าต้องผ่านเทส "เคส 4" ก่อน (บัญชีที่ยังไม่เป็นเพื่อนกับ OA กด `oaMessage` แล้วเปิดแชท+ส่งข้อความได้จริงไหม) แก้ก่อนอาจต้องรื้อสองรอบ
 
    สิ่งที่อยู่ในขอบเขตนี้:
-   - ลิงก์ `line.me/R/oaMessage/...` — ปัจจุบัน **606 จุด ใน 73 ไฟล์**
+   - ลิงก์ `line.me/...` — **392 anchor / 753 occurrences ใน 73 ไฟล์** (WEB01 นับละเอียด 7 ส.ค. 69: 392 `<a href>` · 146 GA4 handler · 146 Pixel handler · 64 sameAs · 5 form JS)
    - event `click_line` — **73 จุด**
    - GA4 `gtag` (G-EKC3DMS6P5) · Meta Pixel `fbq` — ฝังครบทุกหน้าแล้ว
    - พารามิเตอร์ `gclid` (ยังไม่มีในโค้ดตอนนี้ — ถ้าเห็นเพิ่มมาแปลว่า WEB01 ลงมือแล้ว)
 
    > แก้ **ข้อความรอบๆ ปุ่ม** ได้ · แก้ **ตัวปุ่ม / href / onclick / event** ไม่ได้
 
-   📌 **งานค้างรอ WEB01 (7 ส.ค. 69):** `index.html` ยิง `fbq('track','Lead')` ซ้ำ 2 บรรทัดใน `ntkSendLead()` → Meta นับ lead หน้าแรกเกิน 2 เท่า — รายละเอียดใน `touch-real-estate-tools/_internal/SPEC-WEB01-pixel-duplicate-lead.md` (อีก 4 หน้าถูกต้อง ห้ามแตะ)
+   ✅ **บั๊ก Pixel Lead ซ้ำหน้าแรก — WEB01 แก้แล้ว 7 ส.ค. 69 (`2afbfc0`)** — จุดตัดข้อมูล: Lead หน้าแรกก่อน 7 ส.ค. 69 ถูกนับ 2 เท่า รอบรีวิว MKT01 ต้องหารครึ่งเฉพาะส่วนนั้น
 
 2. **ห้าม merge branch `claude/business-forecast-5-years-mo3wdh` เข้า main** — repo นี้เป็น public แต่ branch นั้นเก็บเอกสารธุรกิจภายใน
 
