@@ -402,6 +402,56 @@ document.addEventListener('click', function(e){
 </script>
 <link rel="canonical" href="https://ninethanakarn.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ใช้บริการมีค่าใช้จ่ายไหม?","acceptedAnswer":{"@type":"Answer","text":"การปรึกษาและวิเคราะห์เบื้องต้นฟรี ไม่มีค่าใช้จ่าย หากขั้นตอนใดมีค่าบริการ ทีมงานจะแจ้งให้ทราบชัดเจนก่อนเริ่มเสมอ"}},{"@type":"Question","name":"ต่างจากเดินเข้าไปคุยธนาคารเองยังไง?","acceptedAnswer":{"@type":"Answer","text":"มีทีมช่วยเตรียมเอกสารก่อนยื่นกู้ เปรียบเทียบเงื่อนไขจากธนาคารชั้นนำ 12 แห่ง แล้ววางแผนแก้จุดอ่อนให้ก่อน ประหยัดเวลา สะดวกมากกว่า มีที่ปรึกษาและช่วยแก้ปัญหาตลอดการยื่นกู้"}},{"@type":"Question","name":"ขั้นตอนใช้บริการเป็นยังไง?","acceptedAnswer":{"@type":"Answer","text":"4 ขั้น: ส่งข้อมูลและใบแจ้งยอดหนี้ทุกรายการ, ทีมวิเคราะห์และแจ้งผลเบื้องต้น, นัดคุยรายละเอียด, วางแผนปิดหนี้และวงเงินกู้แล้วเดินหน้ายื่นธนาคาร"}},{"@type":"Question","name":"นัดคุยที่ไหนได้บ้าง? อยู่ต่างจังหวัดใช้บริการได้ไหม?","acceptedAnswer":{"@type":"Answer","text":"การส่งเอกสารและปรึกษาเบื้องต้นทำผ่าน LINE/โทรศัพท์ได้จากทุกจังหวัด ส่วนการนัดคุยรายละเอียด (KYC) ก่อนเริ่มเคส นัดพบได้ที่สำนักงาน 3 แห่ง คือ รังสิต ศรีนครินทร์ และศรีราชา สำหรับบริการปิดหนี้-รวมหนี้ ลูกค้านอกพื้นที่สำนักงาน ทีมรับเคสได้เมื่อที่ทำงานมีสวัสดิการกู้ซื้อบ้านกับ ธอส. โดยยื่นกู้ที่สาขา ธอส. ใกล้บ้านได้ทั่วประเทศ"}},{"@type":"Question","name":"ข้อมูลหนี้และเอกสารที่ส่งให้ ปลอดภัยไหม?","acceptedAnswer":{"@type":"Answer","text":"ข้อมูลถูกเก็บและใช้เพื่อวิเคราะห์เคสของคุณเท่านั้น ไม่ส่งต่อบุคคลอื่นโดยไม่ได้รับความยินยอม ตามนโยบายความเป็นส่วนตัว (PDPA)"}}]}</script>
+<!-- WEB01: จำที่มาของผู้เข้าชม + ติด token ท้ายข้อความ prefill ปุ่ม LINE (SPEC-source-tracking-prefill.md) -->
+<script>
+(function(){
+  var TTL = 30*864e5, OA = '%40ninethanakarn';
+  var q = new URLSearchParams(location.search);
+  function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
+  function save(k,v){ if(v){ try{ localStorage.setItem(k,v); }catch(e){} } }
+  // เก็บ raw ไว้ด้วย key ชุดเดียวกับที่ /dsr/ (WEB03) ใช้อยู่ — ฟอร์ม DSR จะได้ค่าข้ามหน้าด้วย
+  save('ntk_gclid', q.get('gclid')||q.get('gbraid')||q.get('wbraid'));
+  save('ntk_utm_source', q.get('utm_source'));
+  save('ntk_utm_campaign', q.get('utm_campaign'));
+
+  function detect(){
+    var us = (q.get('utm_source')||'').toLowerCase();
+    var ref = (document.referrer||'').toLowerCase();
+    if(q.get('gclid')||q.get('gbraid')||q.get('wbraid')||us.indexOf('google')!==-1) return 'G';
+    if(q.get('fbclid')||/facebook|^fb$|instagram|^ig$|meta/.test(us)
+       ||ref.indexOf('facebook.')!==-1||ref.indexOf('instagram.')!==-1) return 'FB';
+    if(us.indexOf('tiktok')!==-1||ref.indexOf('tiktok.')!==-1) return 'TT';
+    if(/google\.|bing\.|search\.yahoo|duckduckgo\./.test(ref)) return 'ORG';
+    return null;                          // ไม่รู้ที่มา (รวมการเดินภายในเว็บ) → ไม่ทับค่าที่จำไว้
+  }
+
+  var st = null;
+  try{ st = JSON.parse(ls('ntk_src')||'null'); }catch(e){}
+  if(st && Date.now()-st.t > TTL) st = null;
+  var found = detect();
+  if(found){ st = {s:found, t:Date.now()};
+    try{ localStorage.setItem('ntk_src', JSON.stringify(st)); }catch(e){} }
+  var SRC = (st && st.s) || null;
+
+  window.NTK_SRC_CODE = SRC;
+  window.NTK_TAG = SRC ? ' ['+SRC+']' : '';
+  if(!SRC) return;                        // ไม่มี token = ไม่แตะอะไรเลย = พฤติกรรมเดิมทุกอย่าง
+
+  var p = location.pathname, MSG = 'สนใจสอบถามข้อมูลเพิ่มเติม';
+  if(p.indexOf('/debt/')===0)              MSG = 'สนใจปรึกษาเรื่องปิดหนี้ / รวมหนี้';
+  else if(p.indexOf('/condo/')===0)        MSG = 'สนใจปรึกษาเรื่องคอนโดลงทุน';
+  else if(p.indexOf('/home/')===0)         MSG = 'สนใจปรึกษาเรื่องกู้ซื้อบ้าน';
+  else if(p.indexOf('/rent-to-own/')===0)  MSG = 'สนใจปรึกษาเรื่องเช่าซื้อ / ผ่อนตรง';
+  else if(p.indexOf('/loan/')===0 || p.indexOf('/dsr/')===0) MSG = 'สนใจปรึกษาเรื่องสินเชื่อบ้าน';
+
+  document.addEventListener('click', function(e){
+    var el = e.target && e.target.nodeType===1 ? e.target : (e.target && e.target.parentElement);
+    var a = el && el.closest ? el.closest('a[href*="line.me"], a[href*="lin.ee"]') : null;
+    if(!a || a.hasAttribute('data-no-ref')) return;   // data-no-ref = ปุ่มที่มีข้อความของตัวเอง ห้ามทับ
+    a.href = 'https://line.me/R/oaMessage/'+OA+'/?'+encodeURIComponent(MSG+window.NTK_TAG);
+  }, true);
+})();
+</script>
 </head>
 <body>
 
@@ -600,7 +650,7 @@ document.addEventListener('click', function(e){
     <div style="margin-top:1.5rem;">
       <p style="font-size:0.82rem; color:var(--c-text-mute); text-align:center; margin-bottom:0.85rem;">ใช้บริการแล้ว? แชร์ประสบการณ์เพื่อเป็นกำลังใจให้ทีม 🙏</p>
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:0.6rem;">
-        <a href="https://line.me/R/oaMessage/%40ninethanakarn/?%E2%AD%90%20%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%3A%20" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.65rem 1.25rem; background:#06C755; color:#fff; border-radius:8px; font-weight:600; font-size:0.88rem; text-decoration:none; box-shadow:0 2px 8px rgba(6,199,85,0.3);">
+        <a href="https://line.me/R/oaMessage/%40ninethanakarn/?%E2%AD%90%20%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%3A%20" data-no-ref target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.65rem 1.25rem; background:#06C755; color:#fff; border-radius:8px; font-weight:600; font-size:0.88rem; text-decoration:none; box-shadow:0 2px 8px rgba(6,199,85,0.3);">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
           รีวิวผ่าน LINE
         </a>
@@ -739,7 +789,7 @@ function ntkSendLead(f){
     + '\n(ส่งจากฟอร์มบนเว็บ ninethanakarn.com)';
   if(typeof gtag === 'function'){ gtag('event','submit_lead',{topic:f.ltopic.value}); }
   if(typeof fbq === 'function'){ fbq('track','Lead',{content_category:f.ltopic.value}); }
-  window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg), '_blank');
+  window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg + (window.NTK_TAG || '')), '_blank');
   return false;
 }
 </script>

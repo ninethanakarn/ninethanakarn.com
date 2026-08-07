@@ -170,6 +170,56 @@ document.addEventListener('click', function(e){
 <link rel="canonical" href="https://ninethanakarn.com/rent-to-own/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://ninethanakarn.com/"},{"@type":"ListItem","position":2,"name":"เช่าซื้อ / ผ่อนตรง","item":"https://ninethanakarn.com/rent-to-own/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"เช่าซื้อเหมาะกับใคร?","acceptedAnswer":{"@type":"Answer","text":"คนที่ตอนนี้ยังกู้ธนาคารไม่ผ่าน แต่อยากล็อคบ้านไว้ก่อนและเข้าอยู่ได้เลย ระหว่างนั้นใช้เวลาแก้เครดิตเพื่อกลับไปกู้ธนาคารตามแผน"}},{"@type":"Question","name":"ต้องเตรียมเงินตั้งต้นเท่าไหร่?","acceptedAnswer":{"@type":"Answer","text":"เริ่มต้นประมาณ 6% ของราคาทรัพย์ เงื่อนไขแต่ละโครงการต่างกัน เช่น บ้าน 2 ล้านบาท เตรียมราว 120,000 บาท ตัวเลขจริงของแต่ละทรัพย์ทีมงานแจกแจงให้ก่อนตัดสินใจ"}},{"@type":"Question","name":"ระหว่างผ่อนเช่าซื้อ บ้านเป็นชื่อใคร?","acceptedAnswer":{"@type":"Answer","text":"กรรมสิทธิ์ยังเป็นของผู้ให้เช่าซื้อ จนกว่าจะรีไฟแนนซ์เข้าธนาคารหรือชำระครบตามสัญญาแล้วจึงโอนเป็นชื่อคุณ ควรอ่านเงื่อนไขการโอนให้ละเอียดก่อนเซ็น"}},{"@type":"Question","name":"ครบ 3 ปีแล้วยังกู้ธนาคารไม่ผ่าน จะเกิดอะไรขึ้น?","acceptedAnswer":{"@type":"Answer","text":"เป็นความเสี่ยงที่ใหญ่ที่สุดของเช่าซื้อ อาจไม่ได้ไปต่อและเสียเงินที่จ่ายมา เราจึงวางแผนแก้เครดิตให้ตั้งแต่วันแรกของสัญญา เพื่อให้ถึงเวลารีไฟแนนซ์แล้วผ่านจริง"}},{"@type":"Question","name":"เครดิตไม่ผ่านทุกธนาคาร สมัครเช่าซื้อได้ไหม?","acceptedAnswer":{"@type":"Answer","text":"เกณฑ์เช่าซื้อยืดหยุ่นกว่าธนาคาร แต่ยังมีการประเมินความสามารถในการผ่อนจริง ส่งข้อมูลมาให้ประเมินฟรีก่อน ถ้าผ่อนไม่ไหวจริงเราไม่แนะนำให้ฝืน"}}]}</script>
+<!-- WEB01: จำที่มาของผู้เข้าชม + ติด token ท้ายข้อความ prefill ปุ่ม LINE (SPEC-source-tracking-prefill.md) -->
+<script>
+(function(){
+  var TTL = 30*864e5, OA = '%40ninethanakarn';
+  var q = new URLSearchParams(location.search);
+  function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
+  function save(k,v){ if(v){ try{ localStorage.setItem(k,v); }catch(e){} } }
+  // เก็บ raw ไว้ด้วย key ชุดเดียวกับที่ /dsr/ (WEB03) ใช้อยู่ — ฟอร์ม DSR จะได้ค่าข้ามหน้าด้วย
+  save('ntk_gclid', q.get('gclid')||q.get('gbraid')||q.get('wbraid'));
+  save('ntk_utm_source', q.get('utm_source'));
+  save('ntk_utm_campaign', q.get('utm_campaign'));
+
+  function detect(){
+    var us = (q.get('utm_source')||'').toLowerCase();
+    var ref = (document.referrer||'').toLowerCase();
+    if(q.get('gclid')||q.get('gbraid')||q.get('wbraid')||us.indexOf('google')!==-1) return 'G';
+    if(q.get('fbclid')||/facebook|^fb$|instagram|^ig$|meta/.test(us)
+       ||ref.indexOf('facebook.')!==-1||ref.indexOf('instagram.')!==-1) return 'FB';
+    if(us.indexOf('tiktok')!==-1||ref.indexOf('tiktok.')!==-1) return 'TT';
+    if(/google\.|bing\.|search\.yahoo|duckduckgo\./.test(ref)) return 'ORG';
+    return null;                          // ไม่รู้ที่มา (รวมการเดินภายในเว็บ) → ไม่ทับค่าที่จำไว้
+  }
+
+  var st = null;
+  try{ st = JSON.parse(ls('ntk_src')||'null'); }catch(e){}
+  if(st && Date.now()-st.t > TTL) st = null;
+  var found = detect();
+  if(found){ st = {s:found, t:Date.now()};
+    try{ localStorage.setItem('ntk_src', JSON.stringify(st)); }catch(e){} }
+  var SRC = (st && st.s) || null;
+
+  window.NTK_SRC_CODE = SRC;
+  window.NTK_TAG = SRC ? ' ['+SRC+']' : '';
+  if(!SRC) return;                        // ไม่มี token = ไม่แตะอะไรเลย = พฤติกรรมเดิมทุกอย่าง
+
+  var p = location.pathname, MSG = 'สนใจสอบถามข้อมูลเพิ่มเติม';
+  if(p.indexOf('/debt/')===0)              MSG = 'สนใจปรึกษาเรื่องปิดหนี้ / รวมหนี้';
+  else if(p.indexOf('/condo/')===0)        MSG = 'สนใจปรึกษาเรื่องคอนโดลงทุน';
+  else if(p.indexOf('/home/')===0)         MSG = 'สนใจปรึกษาเรื่องกู้ซื้อบ้าน';
+  else if(p.indexOf('/rent-to-own/')===0)  MSG = 'สนใจปรึกษาเรื่องเช่าซื้อ / ผ่อนตรง';
+  else if(p.indexOf('/loan/')===0 || p.indexOf('/dsr/')===0) MSG = 'สนใจปรึกษาเรื่องสินเชื่อบ้าน';
+
+  document.addEventListener('click', function(e){
+    var el = e.target && e.target.nodeType===1 ? e.target : (e.target && e.target.parentElement);
+    var a = el && el.closest ? el.closest('a[href*="line.me"], a[href*="lin.ee"]') : null;
+    if(!a || a.hasAttribute('data-no-ref')) return;   // data-no-ref = ปุ่มที่มีข้อความของตัวเอง ห้ามทับ
+    a.href = 'https://line.me/R/oaMessage/'+OA+'/?'+encodeURIComponent(MSG+window.NTK_TAG);
+  }, true);
+})();
+</script>
 </head>
 <body>
 
@@ -1169,7 +1219,7 @@ function ntkSendLead(f){
     + '\n(ส่งจากฟอร์มบนเว็บ ninethanakarn.com)';
   if(typeof gtag === 'function'){ gtag('event','submit_lead',{topic:f.ltopic.value}); }
   if(typeof fbq === 'function'){ fbq('track','Lead',{content_category:f.ltopic.value}); }
-  window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg), '_blank');
+  window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg + (window.NTK_TAG || '')), '_blank');
   return false;
 }
 </script>

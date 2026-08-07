@@ -388,6 +388,56 @@ document.addEventListener('click', function(e){
 <link rel="canonical" href="https://ninethanakarn.com/debt/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://ninethanakarn.com/"},{"@type":"ListItem","position":2,"name":"ปิดหนี้ รวมหนี้","item":"https://ninethanakarn.com/debt/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"มีหนี้บัตรหลายใบ อยากมีบ้าน เริ่มยังไงดี?","acceptedAnswer":{"@type":"Answer","text":"เริ่มจากส่งใบแจ้งยอดหนี้ทุกรายการมาให้ทีมคำนวณภาระหนี้ (DSR) ก่อน จะได้รู้ว่าห่างจากเกณฑ์กู้แค่ไหน ต้องปิดตัวไหนก่อน และใช้เวลาประมาณเท่าไหร่"}},{"@type":"Question","name":"หนี้แบบไหนเอามารวมในสินเชื่อบ้านได้บ้าง?","acceptedAnswer":{"@type":"Answer","text":"หลักๆ คือบัตรเครดิต บัตรกดเงินสด และสินเชื่อส่วนบุคคล เงื่อนไขแต่ละธนาคารต่างกัน ทีมงานจะเทียบให้ว่าเคสของคุณเข้าเงื่อนไขธนาคารไหน"}},{"@type":"Question","name":"ผ่อน Shopee SPayLater / ผ่อนของในแอป นับเป็นหนี้ด้วยไหม?","acceptedAnswer":{"@type":"Answer","text":"นับ ยอดผ่อนในแอปส่วนใหญ่ถูกรายงานเข้าเครดิตบูโร ธนาคารเห็นตอนยื่นแน่นอน ควรแจ้งทีมงานให้ครบตั้งแต่แรก"}},{"@type":"Question","name":"ติดบูโร / เคยค้างชำระ ใช้บริการได้ไหม?","acceptedAnswer":{"@type":"Answer","text":"แยกเป็น 2 กรณี ติดบูโร: ใช้บริการได้ แต่บริษัทที่ทำงานต้องมีสวัสดิการกู้ซื้อบ้านกับ ธอส. เคยค้างชำระ: ได้ โดยประวัติผิดนัดไม่ควรเกิน 2 ครั้ง และพิจารณาเป็นรายเคส"}},{"@type":"Question","name":"มีหนี้นอกระบบด้วย เอามารวมได้ไหม?","acceptedAnswer":{"@type":"Answer","text":"แจ้งยอดเงินกับทีมได้เลย เพื่อรวมอยู่ในแผนดีลยื่นกู้ เงื่อนไขสำคัญคือต้องมีกระแสเงินสดหลังรวมหนี้ที่ผ่อนไหวจริง เพราะเป้าหมายคือให้คุณพ้นหนี้ ไม่ใช่สร้างหนี้ก้อนใหม่ที่ผ่อนไม่ไหว"}},{"@type":"Question","name":"อยู่ต่างจังหวัด / นอกพื้นที่สำนักงาน ใช้บริการได้ไหม?","acceptedAnswer":{"@type":"Answer","text":"พื้นที่หลักคือกรุงเทพฯ-ปริมณฑล และชลบุรี-ภาคตะวันออก (สำนักงานนัดคุย: รังสิต ศรีนครินทร์ ศรีราชา) ลูกค้านอกพื้นที่ ทีมรับเคสปิดหนี้-รวมหนี้ได้เมื่อที่ทำงานมีสวัสดิการกู้ซื้อบ้านกับ ธอส. เพราะยื่นกู้ที่สาขา ธอส. ใกล้บ้านได้ทั่วประเทศ ขั้นเตรียมเอกสารและวางแผนทีมดูแลผ่าน LINE และโทรศัพท์"}}]}</script>
+<!-- WEB01: จำที่มาของผู้เข้าชม + ติด token ท้ายข้อความ prefill ปุ่ม LINE (SPEC-source-tracking-prefill.md) -->
+<script>
+(function(){
+  var TTL = 30*864e5, OA = '%40ninethanakarn';
+  var q = new URLSearchParams(location.search);
+  function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
+  function save(k,v){ if(v){ try{ localStorage.setItem(k,v); }catch(e){} } }
+  // เก็บ raw ไว้ด้วย key ชุดเดียวกับที่ /dsr/ (WEB03) ใช้อยู่ — ฟอร์ม DSR จะได้ค่าข้ามหน้าด้วย
+  save('ntk_gclid', q.get('gclid')||q.get('gbraid')||q.get('wbraid'));
+  save('ntk_utm_source', q.get('utm_source'));
+  save('ntk_utm_campaign', q.get('utm_campaign'));
+
+  function detect(){
+    var us = (q.get('utm_source')||'').toLowerCase();
+    var ref = (document.referrer||'').toLowerCase();
+    if(q.get('gclid')||q.get('gbraid')||q.get('wbraid')||us.indexOf('google')!==-1) return 'G';
+    if(q.get('fbclid')||/facebook|^fb$|instagram|^ig$|meta/.test(us)
+       ||ref.indexOf('facebook.')!==-1||ref.indexOf('instagram.')!==-1) return 'FB';
+    if(us.indexOf('tiktok')!==-1||ref.indexOf('tiktok.')!==-1) return 'TT';
+    if(/google\.|bing\.|search\.yahoo|duckduckgo\./.test(ref)) return 'ORG';
+    return null;                          // ไม่รู้ที่มา (รวมการเดินภายในเว็บ) → ไม่ทับค่าที่จำไว้
+  }
+
+  var st = null;
+  try{ st = JSON.parse(ls('ntk_src')||'null'); }catch(e){}
+  if(st && Date.now()-st.t > TTL) st = null;
+  var found = detect();
+  if(found){ st = {s:found, t:Date.now()};
+    try{ localStorage.setItem('ntk_src', JSON.stringify(st)); }catch(e){} }
+  var SRC = (st && st.s) || null;
+
+  window.NTK_SRC_CODE = SRC;
+  window.NTK_TAG = SRC ? ' ['+SRC+']' : '';
+  if(!SRC) return;                        // ไม่มี token = ไม่แตะอะไรเลย = พฤติกรรมเดิมทุกอย่าง
+
+  var p = location.pathname, MSG = 'สนใจสอบถามข้อมูลเพิ่มเติม';
+  if(p.indexOf('/debt/')===0)              MSG = 'สนใจปรึกษาเรื่องปิดหนี้ / รวมหนี้';
+  else if(p.indexOf('/condo/')===0)        MSG = 'สนใจปรึกษาเรื่องคอนโดลงทุน';
+  else if(p.indexOf('/home/')===0)         MSG = 'สนใจปรึกษาเรื่องกู้ซื้อบ้าน';
+  else if(p.indexOf('/rent-to-own/')===0)  MSG = 'สนใจปรึกษาเรื่องเช่าซื้อ / ผ่อนตรง';
+  else if(p.indexOf('/loan/')===0 || p.indexOf('/dsr/')===0) MSG = 'สนใจปรึกษาเรื่องสินเชื่อบ้าน';
+
+  document.addEventListener('click', function(e){
+    var el = e.target && e.target.nodeType===1 ? e.target : (e.target && e.target.parentElement);
+    var a = el && el.closest ? el.closest('a[href*="line.me"], a[href*="lin.ee"]') : null;
+    if(!a || a.hasAttribute('data-no-ref')) return;   // data-no-ref = ปุ่มที่มีข้อความของตัวเอง ห้ามทับ
+    a.href = 'https://line.me/R/oaMessage/'+OA+'/?'+encodeURIComponent(MSG+window.NTK_TAG);
+  }, true);
+})();
+</script>
 </head>
 <body>
 
@@ -860,7 +910,7 @@ function ntkSendLead(f){
     + '\n(ส่งจากฟอร์มบนเว็บ ninethanakarn.com)';
   if(typeof gtag === 'function'){ gtag('event','submit_lead',{topic:f.ltopic.value}); }
   if(typeof fbq === 'function'){ fbq('track','Lead',{content_category:f.ltopic.value}); }
-  window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg), '_blank');
+  window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg + (window.NTK_TAG || '')), '_blank');
   return false;
 }
 </script>

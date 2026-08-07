@@ -140,6 +140,56 @@ document.addEventListener('click', function(e){
 </script>
 <link rel="canonical" href="https://ninethanakarn.com/condo/pf/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://ninethanakarn.com/"},{"@type":"ListItem","position":2,"name":"คอนโดมือ 1 ลงทุน","item":"https://ninethanakarn.com/condo/"},{"@type":"ListItem","position":3,"name":"คอนโด พร็อพเพอร์ตี้ เพอร์เฟค (Property Perfect · PF)","item":"https://ninethanakarn.com/condo/pf/"}]}</script>
+<!-- WEB01: จำที่มาของผู้เข้าชม + ติด token ท้ายข้อความ prefill ปุ่ม LINE (SPEC-source-tracking-prefill.md) -->
+<script>
+(function(){
+  var TTL = 30*864e5, OA = '%40ninethanakarn';
+  var q = new URLSearchParams(location.search);
+  function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
+  function save(k,v){ if(v){ try{ localStorage.setItem(k,v); }catch(e){} } }
+  // เก็บ raw ไว้ด้วย key ชุดเดียวกับที่ /dsr/ (WEB03) ใช้อยู่ — ฟอร์ม DSR จะได้ค่าข้ามหน้าด้วย
+  save('ntk_gclid', q.get('gclid')||q.get('gbraid')||q.get('wbraid'));
+  save('ntk_utm_source', q.get('utm_source'));
+  save('ntk_utm_campaign', q.get('utm_campaign'));
+
+  function detect(){
+    var us = (q.get('utm_source')||'').toLowerCase();
+    var ref = (document.referrer||'').toLowerCase();
+    if(q.get('gclid')||q.get('gbraid')||q.get('wbraid')||us.indexOf('google')!==-1) return 'G';
+    if(q.get('fbclid')||/facebook|^fb$|instagram|^ig$|meta/.test(us)
+       ||ref.indexOf('facebook.')!==-1||ref.indexOf('instagram.')!==-1) return 'FB';
+    if(us.indexOf('tiktok')!==-1||ref.indexOf('tiktok.')!==-1) return 'TT';
+    if(/google\.|bing\.|search\.yahoo|duckduckgo\./.test(ref)) return 'ORG';
+    return null;                          // ไม่รู้ที่มา (รวมการเดินภายในเว็บ) → ไม่ทับค่าที่จำไว้
+  }
+
+  var st = null;
+  try{ st = JSON.parse(ls('ntk_src')||'null'); }catch(e){}
+  if(st && Date.now()-st.t > TTL) st = null;
+  var found = detect();
+  if(found){ st = {s:found, t:Date.now()};
+    try{ localStorage.setItem('ntk_src', JSON.stringify(st)); }catch(e){} }
+  var SRC = (st && st.s) || null;
+
+  window.NTK_SRC_CODE = SRC;
+  window.NTK_TAG = SRC ? ' ['+SRC+']' : '';
+  if(!SRC) return;                        // ไม่มี token = ไม่แตะอะไรเลย = พฤติกรรมเดิมทุกอย่าง
+
+  var p = location.pathname, MSG = 'สนใจสอบถามข้อมูลเพิ่มเติม';
+  if(p.indexOf('/debt/')===0)              MSG = 'สนใจปรึกษาเรื่องปิดหนี้ / รวมหนี้';
+  else if(p.indexOf('/condo/')===0)        MSG = 'สนใจปรึกษาเรื่องคอนโดลงทุน';
+  else if(p.indexOf('/home/')===0)         MSG = 'สนใจปรึกษาเรื่องกู้ซื้อบ้าน';
+  else if(p.indexOf('/rent-to-own/')===0)  MSG = 'สนใจปรึกษาเรื่องเช่าซื้อ / ผ่อนตรง';
+  else if(p.indexOf('/loan/')===0 || p.indexOf('/dsr/')===0) MSG = 'สนใจปรึกษาเรื่องสินเชื่อบ้าน';
+
+  document.addEventListener('click', function(e){
+    var el = e.target && e.target.nodeType===1 ? e.target : (e.target && e.target.parentElement);
+    var a = el && el.closest ? el.closest('a[href*="line.me"], a[href*="lin.ee"]') : null;
+    if(!a || a.hasAttribute('data-no-ref')) return;   // data-no-ref = ปุ่มที่มีข้อความของตัวเอง ห้ามทับ
+    a.href = 'https://line.me/R/oaMessage/'+OA+'/?'+encodeURIComponent(MSG+window.NTK_TAG);
+  }, true);
+})();
+</script>
 </head>
 <body>
   <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
