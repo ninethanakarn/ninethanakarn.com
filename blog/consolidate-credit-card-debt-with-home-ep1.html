@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="จ่ายขั้นต่ำทุกเดือนแต่หนี้บัตรไม่ลด? รวมหนี้บัตรเครดิตด้วยบ้านช่วยลดดอกเบี้ย เหลือผ่อนก้อนเดียว พร้อมตัวอย่างคำนวณจริง และขั้นตอนเริ่มต้น ปรึกษาฟรี">
+  <meta name="keywords" content="รวมหนี้บัตรเครดิต, รวมหนี้บัตรเครดิตด้วยบ้าน, จ่ายขั้นต่ำหนี้ไม่ลด, รวมหนี้เข้าสินเชื่อบ้าน, ลดดอกเบี้ยบัตรเครดิต">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="รวมหนี้บัตรเครดิตด้วยบ้าน ลดดอกได้แค่ไหน (ตอน 1/2)">
+  <meta property="og:description" content="จ่ายขั้นต่ำทำไมหนี้ไม่ลด + ตัวอย่างคำนวณหนี้บัตร 400,000 บาท ค่างวดเบาลงได้แค่ไหนเมื่อย้ายมาไว้ในสินเชื่อบ้าน">
+  <meta property="og:url" content="https://ninethanakarn.com/blog/consolidate-credit-card-debt-with-home-ep1.html">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="รวมหนี้บัตรเครดิตด้วยบ้าน ลดดอกได้แค่ไหน (ตอน 1/2)">
+  <meta name="twitter:description" content="จ่ายขั้นต่ำทำไมหนี้ไม่ลด + ตัวอย่างคำนวณหนี้บัตร 400,000 บาท ค่างวดเบาลงได้แค่ไหนเมื่อย้ายมาไว้ในสินเชื่อบ้าน">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>รวมหนี้บัตรเครดิตด้วยบ้าน ลดดอกได้แค่ไหน เช็กก่อนตัดสินใจ — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="/condo/assets/style.css">
+  <style>
+    .article { max-width: 760px; margin: 0 auto; }
+    .article h2 { font-size: 1.5rem; margin: 2rem 0 1rem; line-height: 1.4; }
+    .article h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; line-height: 1.4; color: #60a5fa; }
+    .article p { font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+    .article ul, .article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .article li { line-height: 1.8; margin-bottom: 0.4rem; }
+    .article strong { color: #fbbf24; }
+    .article-meta {
+      font-size: 0.85rem;
+      color: var(--muted, #9ca3af);
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .toc {
+      background: var(--bg-subtle, rgba(255,255,255,0.03));
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .toc-title { font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--muted); }
+    .toc ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+    .toc li { margin-bottom: 0.3rem; }
+    .toc a { color: #60a5fa; font-size: 0.92rem; text-decoration: none; }
+    .cta-inline {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.05));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .example-box {
+      background: var(--bg-subtle, rgba(255,255,255,0.03));
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-left: 3px solid #fbbf24;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .next-ep-box {
+      background: var(--bg-subtle, rgba(255,255,255,0.03));
+      border: 1px dashed var(--border, rgba(255,255,255,0.2));
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKC3DMS6P5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKC3DMS6P5');
+</script>
+<!-- Conversion events: click โทร / click LINE -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ gtag('event','click_tel',{link_url:h}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
+}, true);
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1569572607963764');
+fbq('track', 'PageView');
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof fbq !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ fbq('track','Contact',{contact_method:'tel'}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ fbq('track','Contact',{contact_method:'line'}); }
+}, true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1569572607963764&ev=PageView&noscript=1"/></noscript>
+
+<!-- Structured Data: FinancialService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "นายธนาคารประจำบ้าน",
+  "alternateName": "Mr. Home Banker",
+  "legalName": "บริษัท ทัช เรียลเอสเตท จำกัด",
+  "url": "https://ninethanakarn.com/",
+  "logo": "https://ninethanakarn.com/logo1.png",
+  "image": "https://ninethanakarn.com/og-image.png",
+  "description": "ที่ปรึกษาทางการเงิน ปิดหนี้ รวมหนี้ บ้านมือ 1 คอนโดมือ 1 ลงทุน เช่าซื้อ-ผ่อนตรง ปรึกษาฟรี",
+  "telephone": "+66-2-334-0940",
+  "email": "ninethanakarn@gmail.com",
+  "taxID": "0135562017937",
+  "foundingDate": "2019",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "55/15 หมู่บ้านพฤกษา 40 หมู่ที่ 3 ตำบลคลองสาม",
+    "addressLocality": "อำเภอคลองหลวง",
+    "addressRegion": "ปทุมธานี",
+    "postalCode": "12120",
+    "addressCountry": "TH"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "sameAs": ["https://line.me/R/ti/p/@ninethanakarn", "https://www.youtube.com/@ninethanakarn", "https://www.facebook.com/ninethanakarn1", "https://www.instagram.com/ninethanakarn.touch", "https://www.tiktok.com/@ninethanakarn", "https://x.com/ninethanakarn"]
+}
+</script>
+<link rel="canonical" href="https://ninethanakarn.com/blog/consolidate-credit-card-debt-with-home-ep1.html">
+<!-- Structured Data: BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "รวมหนี้บัตรเครดิตด้วยบ้าน ลดดอกได้แค่ไหน เช็กก่อนตัดสินใจ",
+  "description": "จ่ายขั้นต่ำทุกเดือนแต่หนี้บัตรไม่ลด? รวมหนี้บัตรเครดิตด้วยบ้านช่วยลดดอกเบี้ย เหลือผ่อนก้อนเดียว พร้อมตัวอย่างคำนวณจริง และขั้นตอนเริ่มต้น",
+  "mainEntityOfPage": "https://ninethanakarn.com/blog/consolidate-credit-card-debt-with-home-ep1.html",
+  "image": "https://ninethanakarn.com/og-image.png",
+  "datePublished": "2026-07-20",
+  "dateModified": "2026-08-07",
+  "inLanguage": "th",
+  "author": {
+    "@type": "Person",
+    "name": "อ.ธรรศ",
+    "url": "https://ninethanakarn.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "นายธนาคารประจำบ้าน",
+    "logo": { "@type": "ImageObject", "url": "https://ninethanakarn.com/logo1.png" }
+  }
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://ninethanakarn.com/"},{"@type":"ListItem","position":2,"name":"บทความ","item":"https://ninethanakarn.com/blog/"},{"@type":"ListItem","position":3,"name":"รวมหนี้บัตรเครดิตด้วยบ้าน ลดดอกได้แค่ไหน เช็กก่อนตัดสินใจ","item":"https://ninethanakarn.com/blog/consolidate-credit-card-debt-with-home-ep1.html"}]}</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;"><img src="/logo1.png" alt="นายธนาคารประจำบ้าน" class="header-logo" style="cursor:pointer;"></a>
+      <div class="header-brand">
+        <div class="header-brand-name">นายธนาคารประจำบ้าน</div>
+        <div class="header-brand-tagline">ที่ปรึกษาทางการเงินมืออาชีพ · 7+ ปี</div>
+      </div>
+      <a href="index.html" class="header-back">← บทความ</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+        <span class="theme-icon theme-icon-dark">🌙</span>
+        <span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="breadcrumb" style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem; font-size: 0.85rem;">
+        <a href="index.html" style="color: rgba(255,255,255,0.7);">บทความ</a>
+        <span> › </span>
+        <span>รวมหนี้</span>
+      </div>
+      <h1>รวมหนี้บัตรเครดิตด้วยบ้าน ลดดอกได้แค่ไหน เช็กก่อนตัดสินใจ (ตอน 1/2)</h1>
+      <div class="article-meta">
+        <span>📅 อัพเดท 20 กรกฎาคม 2569</span>
+        <span>⏱️ อ่าน 3 นาที</span>
+        <span>👤 โดย อ.ธรรศ — ที่ปรึกษาทางการเงิน</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article">
+
+        <p>
+          จ่ายบัตรเครดิตขั้นต่ำตรงเวลาทุกเดือน ไม่เคยขาดสักงวด แต่พอเปิดใบแจ้งยอดทีไร เงินต้นแทบไม่ขยับเลย — ถ้าคุณกำลังเจอแบบนี้อยู่ คุณไม่ได้ทำอะไรผิดครับ และคุณไม่ได้เป็นคนเดียว กลไกของดอกเบี้ยบัตรเครดิตถูกออกแบบมาแบบนี้เอง
+        </p>
+        <p>
+          บทความตอนแรกของซีรีส์นี้จะพาไปดูว่าทำไมจ่ายขั้นต่ำแล้วหนี้ไม่ลด และการ "ย้ายหนี้ดอกแพงมาไว้ในบ้าน" ช่วยให้ค่างวดเบาลงได้มากแค่ไหน พร้อมตัวอย่างคำนวณให้เห็นภาพจริง
+        </p>
+
+        <div class="toc">
+          <div class="toc-title">📋 สารบัญบทความ</div>
+          <ul>
+            <li><a href="#why-min-payment">1. ทำไมจ่ายขั้นต่ำแล้วหนี้บัตรไม่ลดสักที</a></li>
+            <li><a href="#what-is">2. รวมหนี้บัตรเครดิตด้วยบ้าน คืออะไร</a></li>
+            <li><a href="#example">3. ตัวอย่างคำนวณ: หนี้บัตร 400,000 บาท</a></li>
+            <li><a href="#steps">4. ขั้นตอนคร่าวๆ ถ้าอยากเริ่ม</a></li>
+          </ul>
+        </div>
+
+        <h2 id="why-min-payment">1. ทำไมจ่ายขั้นต่ำแล้วหนี้บัตรไม่ลดสักที</h2>
+        <p>
+          เพราะดอกเบี้ยบัตรเครดิตเป็นหนึ่งในดอกเบี้ยที่แพงที่สุดที่คนทั่วไปเจอในชีวิตประจำวัน เมื่อคุณจ่ายขั้นต่ำ เงินส่วนใหญ่ที่จ่ายไปจะถูกหักไปเป็นดอกเบี้ยและค่าธรรมเนียมก่อน เหลือมาตัดเงินต้นเพียงนิดเดียว พอเดือนถัดไปมียอดใช้จ่ายใหม่เข้ามาสมทบ เงินต้นจึงแทบไม่ลดลงเลย เหมือนวิ่งอยู่บนสายพานที่หมุนสวนทางตลอดเวลา
+        </p>
+        <p>
+          ยิ่งถ้ามีบัตรกดเงินสดหรือสินเชื่อส่วนบุคคลร่วมด้วย ดอกเบี้ยยิ่งสูงขึ้นไปอีก การจ่ายขั้นต่ำหลายใบพร้อมกันจึงเป็นภาระที่หนักมากแต่แทบไม่ทำให้หนี้โดยรวมลดลง
+        </p>
+
+        <h2 id="what-is">2. รวมหนี้บัตรเครดิตด้วยบ้าน คืออะไร</h2>
+        <p>
+          หลักการคือย้ายหนี้ดอกแพงหลายก้อน มารวมไว้ในสินเชื่อที่มีบ้านเป็นหลักประกัน ซึ่งโดยธรรมชาติดอกเบี้ยต่ำกว่าหนี้บัตรมาก เพราะธนาคารมีหลักประกันรองรับ
+        </p>
+        <p>
+          ผลคือจากที่เคยจ่ายหลายก้อนหลายกำหนด เหลือผ่อนก้อนเดียวต่อเดือน ค่างวดรวมเบาลงอย่างเห็นได้ชัด เหมาะกับคนที่มีบ้านผ่อนมาระยะหนึ่งหรือบ้านปลอดภาระ (รายละเอียดเกณฑ์และความเสี่ยงอยู่ใน<a href="consolidate-credit-card-debt-with-home-ep2.html">ตอน 2/2</a>)
+        </p>
+
+        <h2 id="example">3. ตัวอย่างคำนวณ: หนี้บัตร 400,000 บาท (ตัวเลขสมมติ)</h2>
+
+        <div class="example-box">
+          <p style="margin-bottom: 0.75rem;"><strong>ก่อนรวมหนี้:</strong> หนี้บัตรรวม 400,000 บาท จ่ายขั้นต่ำเดือนแรกอาจสูงถึงราว <strong>32,000 บาท</strong> โดยเงินส่วนใหญ่หายไปกับดอกเบี้ย</p>
+          <p style="margin-bottom: 0;"><strong>หลังรวมหนี้เข้าสินเชื่อบ้าน:</strong> ยอดเดิมผ่อนแบบมีบ้านค้ำ ดอกต่ำกว่ามาก ระยะยาวขึ้น ค่างวดอาจเหลือประมาณ <strong>3,400 บาท/เดือน</strong> — ต่างกันเกือบสิบเท่า (ตัวเลขสมมติ: ดอกเบี้ยประมาณ 6% ต่อปี ผ่อน 15 ปี — อัตราจริงแล้วแต่ธนาคาร เงื่อนไข และโปรไฟล์ผู้กู้ อาจสูงหรือต่ำกว่านี้)</p>
+        </div>
+
+        <p>
+          <strong>ข้อควรระวัง:</strong> ค่างวดเบาลงเพราะยืดระยะเวลาด้วย ควรใช้ส่วนต่างโปะเพิ่มเพื่อปิดหนี้เร็วขึ้น (เจาะลึกใน<a href="consolidate-credit-card-debt-with-home-ep2.html">ตอน 2/2</a>)
+        </p>
+
+        <div class="cta-inline">
+          <h3 style="margin-top: 0; color: #fbbf24;">🧮 อยากรู้ตัวเลขจริงของตัวเองไหม?</h3>
+          <p style="margin-bottom: 1rem;">ลองคำนวณ DSR ของตัวเองฟรี ใส่รายได้และภาระหนี้ปัจจุบัน ระบบจะช่วยประเมินว่ารวมหนี้แล้วภาระต่อเดือนของคุณจะอยู่ตรงไหน</p>
+          <a href="/debt/" class="btn btn-line" style="display: inline-block;">
+            🧮 คำนวณ DSR ฟรี →
+          </a>
+        </div>
+
+        <h2 id="steps">4. ขั้นตอนคร่าวๆ ถ้าอยากเริ่ม</h2>
+        <ol>
+          <li><strong>สำรวจหนี้ทั้งหมด</strong> — ลิสต์ทุกก้อน ยอดคงเหลือ ดอกเบี้ย ค่างวด</li>
+          <li><strong>เช็คมูลค่าบ้านและภาระที่เหลือ</strong></li>
+          <li><strong>คำนวณ DSR ของตัวเอง</strong></li>
+          <li><strong>เปรียบเทียบเงื่อนไขหลายธนาคาร</strong> อย่ายื่นแค่ที่เดียว</li>
+        </ol>
+
+        <div class="next-ep-box">
+          📌 <strong>ตอนต่อไป (ตอน 2/2):</strong> วิธีนี้ไม่ได้เหมาะกับทุกคน — อ่าน<a href="consolidate-credit-card-debt-with-home-ep2.html">ความเสี่ยง 4 ข้อที่ต้องรู้ก่อนตัดสินใจ + เช็กลิสต์ 4 ข้อว่าคุณเหมาะกับวิธีนี้ไหม</a> ต่อได้เลยครับ
+        </div>
+
+        <p>
+          อยากให้ช่วยดูเคสของคุณโดยเฉพาะ <strong>ทัก LINE @ninethanakarn</strong> มาคุยกันได้เลย ปรึกษาฟรี ไม่มีค่าใช้จ่าย เราเปรียบเทียบเงื่อนไขจากหลายธนาคารให้ก่อนตัดสินใจ — ไม่มีการการันตีว่ากู้ผ่านแน่นอน แต่คุณจะเห็นภาพทางเลือกของตัวเองชัดขึ้นแน่นอนครับ
+        </p>
+
+        <div class="cta-inline">
+          <h3 style="margin-top: 0;">💬 อยากคุยรายละเอียดเป็นกรณีของคุณโดยเฉพาะ?</h3>
+          <p style="margin-bottom: 1rem;">ทักไลน์มาได้เลย ทีมงานยินดีช่วยดูตัวเลขให้ฟรีครับ</p>
+          <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener" style="display: inline-block;">
+            💬 ปรึกษา → LINE @ninethanakarn
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="star-divider"><span>★</span></div>
+  </div>
+
+  <section class="section" style="background: var(--bg-subtle);">
+    <div class="container">
+      <h2 class="section-title">บทความที่เกี่ยวข้อง</h2>
+      <div style="display: grid; gap: 1rem; max-width: 800px; margin: 0 auto;">
+        <a href="consolidate-credit-card-debt-with-home-ep2.html" style="display: block; padding: 1.25rem; background: var(--bg-subtle, rgba(255,255,255,0.03)); border: 1px solid var(--border, rgba(255,255,255,0.1)); border-radius: 8px; text-decoration: none; color: inherit;">
+          <span style="color: #60a5fa; font-size: 0.8rem; font-weight: 600;">🏠 รวมหนี้ในบ้าน · ตอน 2/2</span>
+          <div style="font-weight: 700; margin-top: 0.4rem;">รวมหนี้บัตรเครดิตด้วยบ้าน เสี่ยงไหม? เช็กตัวเอง 4 ข้อก่อนตัดสินใจ</div>
+        </a>
+        <a href="consolidate-debt-into-home-loan.html" style="display: block; padding: 1.25rem; background: var(--bg-subtle, rgba(255,255,255,0.03)); border: 1px solid var(--border, rgba(255,255,255,0.1)); border-radius: 8px; text-decoration: none; color: inherit;">
+          <span style="color: #60a5fa; font-size: 0.8rem; font-weight: 600;">🏠 รวมหนี้ในบ้าน</span>
+          <div style="font-weight: 700; margin-top: 0.4rem;">รวมหนี้ไว้ในหนี้บ้าน: ดอกบัตร 16-25% → ดอกบ้าน 5% ทำได้จริงไหม</div>
+        </a>
+        <a href="dsr-calculator-guide.html" style="display: block; padding: 1.25rem; background: var(--bg-subtle, rgba(255,255,255,0.03)); border: 1px solid var(--border, rgba(255,255,255,0.1)); border-radius: 8px; text-decoration: none; color: inherit;">
+          <span style="color: #60a5fa; font-size: 0.8rem; font-weight: 600;">📊 DSR</span>
+          <div style="font-weight: 700; margin-top: 0.4rem;">DSR คืออะไร? วิธีคำนวณ + เกณฑ์ผ่านกู้ 12 ธนาคารในปี 2569</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related links -->
+<section style="max-width:760px;margin:2rem auto;padding:0 20px;font-family:'IBM Plex Sans Thai','Prompt',sans-serif;">
+  <div style="background:#f5f5f4;border:1px solid #e7e5e4;border-radius:16px;padding:20px 22px;">
+    <div style="font-family:'Prompt',sans-serif;font-weight:600;margin-bottom:8px;">อ่านต่อ &amp; เครื่องมือที่เกี่ยวข้อง</div>
+    <ul style="margin:0;padding-left:1.3rem;line-height:2;"><li><a href="/debt/" style="color:#1e40af;">คำนวณ DSR ฟรี + บริการรวมหนี้ไว้ในสินเชื่อบ้าน</a></li><li><a href="/condo/" style="color:#1e40af;">Portfolio คอนโดลงทุนที่ผ่านการคัดกรอง</a></li><li><a href="/loan/" style="color:#1e40af;">App คำนวณค่างวดสินเชื่อ (ฟรี)</a></li></ul>
+  </div>
+</section>
+<footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 บริษัท ทัช เรียลเอสเตท จำกัด · ninethanakarn.com &#183; <a href="/privacy/" style="color:inherit;text-decoration:underline;">นโยบายความเป็นส่วนตัว</a> &#183; <a href="/terms/" style="color:inherit;text-decoration:underline;">ข้อกำหนดการใช้บริการ</a> &#183; <a href="/about/" style="color:inherit;text-decoration:underline;">เกี่ยวกับเรา</a> · บทความเพื่อการศึกษา ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน · ตัวอย่างคำนวณเป็นตัวเลขสมมติ อัตราจริงแล้วแต่ธนาคารและโปรไฟล์ผู้กู้ · กรุณา verify เงื่อนไขกับธนาคารโดยตรงก่อนตัดสินใจ
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta">
+    <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener">
+      💬 ปรึกษา → LINE
+    </a>
+    <a href="tel:023340940" class="btn-phone-sm">📞</a>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</body>
+</html>
