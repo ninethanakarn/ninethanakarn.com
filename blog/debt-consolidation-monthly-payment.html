@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var s=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',s);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e40af">
+  <meta name="description" content="รวมหนี้แล้วค่างวดลดจริงไหม? คิดแบบธนาคารให้ดูทีละขั้น — ค่างวดลดจาก 2 กลไก ดอกเบี้ยต่ำลง + ระยะผ่อนยาวขึ้น พร้อมความจริงที่ต้องรู้: ค่างวดลดไม่ได้แปลว่าดอกรวมถูกลงเสมอ">
+  <meta name="keywords" content="รวมหนี้ค่างวดลด, รวมหนี้ลดค่างวด, รวมหนี้ดอกเบี้ยถูกลง, รวมหนี้คุ้มไหม, รวมหนี้บัตรเครดิต, คำนวณรวมหนี้">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="นายธนาคารประจำบ้าน">
+  <meta property="og:title" content="รวมหนี้แล้วค่างวดลดจริงไหม? คิดแบบธนาคารให้ดูทีละขั้น">
+  <meta property="og:description" content="ค่างวดลดจริง แต่มาจาก 2 กลไกที่ต้องเข้าใจให้ครบ — ดอกต่ำลงเพราะมีหลักประกัน + ระยะผ่อนยาวขึ้น และความจริงที่คนขายไม่ค่อยบอก">
+  <meta property="og:url" content="https://ninethanakarn.com/blog/debt-consolidation-monthly-payment.html">
+  <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="th_TH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="รวมหนี้แล้วค่างวดลดจริงไหม? คิดแบบธนาคารให้ดูทีละขั้น">
+  <meta name="twitter:description" content="ค่างวดลดจริง แต่มาจาก 2 กลไกที่ต้องเข้าใจให้ครบ และความจริงที่คนขายไม่ค่อยบอก">
+  <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png">
+  <title>รวมหนี้แล้วค่างวดลดจริงไหม? คิดแบบธนาคารให้ดูทีละขั้น (2569) — นายธนาคารประจำบ้าน</title>
+  <link rel="stylesheet" href="/condo/assets/style.css">
+  <style>
+    .article { max-width: 760px; margin: 0 auto; }
+    .article h2 { font-size: 1.5rem; margin: 2rem 0 1rem; line-height: 1.4; }
+    .article h3 { font-size: 1.2rem; margin: 1.5rem 0 0.75rem; line-height: 1.4; color: #60a5fa; }
+    .article p { font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+    .article ul, .article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+    .article li { line-height: 1.8; margin-bottom: 0.4rem; }
+    .article strong { color: #fbbf24; }
+    .article-meta {
+      font-size: 0.85rem;
+      color: var(--muted, #9ca3af);
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .toc {
+      background: var(--bg-subtle, rgba(255,255,255,0.03));
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .toc-title { font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--muted); }
+    .toc ul { list-style: none; padding-left: 0; margin-bottom: 0; }
+    .toc li { margin-bottom: 0.3rem; }
+    .toc a { color: #60a5fa; font-size: 0.92rem; text-decoration: none; }
+    .cta-inline {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.05));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .example-box {
+      background: var(--bg-subtle, rgba(255,255,255,0.03));
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-left: 3px solid #fbbf24;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .scenario-table { width:100%; border-collapse:collapse; margin:1.25rem 0; font-size:0.95rem; }
+    .scenario-table th, .scenario-table td { border:1px solid var(--border, rgba(255,255,255,0.15)); padding:0.7rem 0.9rem; text-align:left; line-height:1.6; vertical-align:top; }
+    .scenario-table th { background: var(--bg-subtle, rgba(255,255,255,0.05)); font-weight:600; }
+    .table-wrap { overflow-x:auto; }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKC3DMS6P5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EKC3DMS6P5');
+</script>
+<!-- Conversion events: click โทร / click LINE -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof gtag !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ gtag('event','click_tel',{link_url:h}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ gtag('event','click_line',{link_url:h}); }
+}, true);
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1569572607963764');
+fbq('track', 'PageView');
+document.addEventListener('click', function(e){
+  var a = e.target && e.target.closest ? e.target.closest('a') : null;
+  if(!a || typeof fbq !== 'function') return;
+  var h = a.getAttribute('href') || '';
+  if(h.indexOf('tel:') === 0){ fbq('track','Contact',{contact_method:'tel'}); }
+  else if(h.indexOf('line.me') !== -1 || h.indexOf('lin.ee') !== -1){ fbq('track','Contact',{contact_method:'line'}); }
+}, true);
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1569572607963764&ev=PageView&noscript=1"/></noscript>
+
+<!-- Structured Data: FinancialService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "นายธนาคารประจำบ้าน",
+  "alternateName": "Mr. Home Banker",
+  "legalName": "บริษัท ทัช เรียลเอสเตท จำกัด",
+  "url": "https://ninethanakarn.com/",
+  "logo": "https://ninethanakarn.com/logo1.png",
+  "image": "https://ninethanakarn.com/og-image.png",
+  "description": "ที่ปรึกษาทางการเงิน ปิดหนี้ รวมหนี้ บ้านมือ 1 คอนโดมือ 1 ลงทุน เช่าซื้อ-ผ่อนตรง ปรึกษาฟรี",
+  "telephone": "+66-2-334-0940",
+  "email": "ninethanakarn@gmail.com",
+  "taxID": "0135562017937",
+  "foundingDate": "2019",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "55/15 หมู่บ้านพฤกษา 40 หมู่ที่ 3 ตำบลคลองสาม",
+    "addressLocality": "อำเภอคลองหลวง",
+    "addressRegion": "ปทุมธานี",
+    "postalCode": "12120",
+    "addressCountry": "TH"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "sameAs": ["https://line.me/R/ti/p/@ninethanakarn", "https://www.youtube.com/@ninethanakarn", "https://www.facebook.com/ninethanakarn1", "https://www.instagram.com/ninethanakarn.touch", "https://www.tiktok.com/@ninethanakarn", "https://x.com/ninethanakarn"]
+}
+</script>
+<link rel="canonical" href="https://ninethanakarn.com/blog/debt-consolidation-monthly-payment.html">
+<!-- Structured Data: BlogPosting -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "รวมหนี้แล้วค่างวดลดจริงไหม? คิดแบบธนาคารให้ดูทีละขั้น",
+  "description": "ค่างวดลดจริง แต่มาจาก 2 กลไกที่ต้องเข้าใจให้ครบ — ดอกเบี้ยต่ำลงเพราะมีหลักประกัน + ระยะผ่อนยาวขึ้น พร้อมความจริงที่ต้องรู้: ค่างวดลดไม่ได้แปลว่าดอกรวมทั้งสัญญาถูกลงเสมอ",
+  "mainEntityOfPage": "https://ninethanakarn.com/blog/debt-consolidation-monthly-payment.html",
+  "image": "https://ninethanakarn.com/og-image.png",
+  "datePublished": "2026-08-16",
+  "dateModified": "2026-08-16",
+  "inLanguage": "th",
+  "author": {
+    "@type": "Person",
+    "name": "อ.ธรรศ",
+    "url": "https://ninethanakarn.com/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "นายธนาคารประจำบ้าน",
+    "logo": { "@type": "ImageObject", "url": "https://ninethanakarn.com/logo1.png" }
+  }
+}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"หน้าแรก","item":"https://ninethanakarn.com/"},{"@type":"ListItem","position":2,"name":"บทความ","item":"https://ninethanakarn.com/blog/"},{"@type":"ListItem","position":3,"name":"รวมหนี้แล้วค่างวดลดจริงไหม? คิดแบบธนาคารให้ดูทีละขั้น","item":"https://ninethanakarn.com/blog/debt-consolidation-monthly-payment.html"}]}</script>
+<!-- WEB01: จำที่มาของผู้เข้าชม + ติด token ท้ายข้อความ prefill ปุ่ม LINE (SPEC-source-tracking-prefill.md) -->
+<script>
+(function(){
+  var TTL = 30*864e5, OA = '%40ninethanakarn';
+  var q = new URLSearchParams(location.search);
+  function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
+  function save(k,v){ if(v){ try{ localStorage.setItem(k,v); }catch(e){} } }
+  // เก็บ raw ไว้ด้วย key ชุดเดียวกับที่ /dsr/ (WEB03) ใช้อยู่ — ฟอร์ม DSR จะได้ค่าข้ามหน้าด้วย
+  save('ntk_gclid', q.get('gclid')||q.get('gbraid')||q.get('wbraid'));
+  save('ntk_utm_source', q.get('utm_source'));
+  save('ntk_utm_campaign', q.get('utm_campaign'));
+
+  function detect(){
+    var us = (q.get('utm_source')||'').toLowerCase();
+    var ref = (document.referrer||'').toLowerCase();
+    if(q.get('gclid')||q.get('gbraid')||q.get('wbraid')||us.indexOf('google')!==-1) return 'G';
+    if(q.get('fbclid')||/facebook|^fb$|instagram|^ig$|meta/.test(us)
+       ||ref.indexOf('facebook.')!==-1||ref.indexOf('instagram.')!==-1) return 'FB';
+    if(us.indexOf('tiktok')!==-1||ref.indexOf('tiktok.')!==-1) return 'TT';
+    if(/google\.|bing\.|search\.yahoo|duckduckgo\./.test(ref)) return 'ORG';
+    return null;                          // ไม่รู้ที่มา (รวมการเดินภายในเว็บ) → ไม่ทับค่าที่จำไว้
+  }
+
+  var st = null;
+  try{ st = JSON.parse(ls('ntk_src')||'null'); }catch(e){}
+  if(st && Date.now()-st.t > TTL) st = null;
+  var found = detect();
+  if(found){ st = {s:found, t:Date.now()};
+    try{ localStorage.setItem('ntk_src', JSON.stringify(st)); }catch(e){} }
+  var SRC = (st && st.s) || null;
+
+  window.NTK_SRC_CODE = SRC;
+  window.NTK_TAG = SRC ? ' ['+SRC+']' : '';
+  if(!SRC) return;                        // ไม่มี token = ไม่แตะอะไรเลย = พฤติกรรมเดิมทุกอย่าง
+
+  var p = location.pathname, MSG = 'สนใจสอบถามข้อมูลเพิ่มเติม';
+  if(p.indexOf('/debt/')===0)              MSG = 'สนใจปรึกษาเรื่องปิดหนี้ / รวมหนี้';
+  else if(p.indexOf('/condo/')===0)        MSG = 'สนใจปรึกษาเรื่องคอนโดลงทุน';
+  else if(p.indexOf('/home/')===0)         MSG = 'สนใจปรึกษาเรื่องกู้ซื้อบ้าน';
+  else if(p.indexOf('/rent-to-own/')===0)  MSG = 'สนใจปรึกษาเรื่องเช่าซื้อ / ผ่อนตรง';
+  else if(p.indexOf('/loan/')===0 || p.indexOf('/dsr/')===0) MSG = 'สนใจปรึกษาเรื่องสินเชื่อบ้าน';
+
+  document.addEventListener('click', function(e){
+    var el = e.target && e.target.nodeType===1 ? e.target : (e.target && e.target.parentElement);
+    var a = el && el.closest ? el.closest('a[href*="line.me"], a[href*="lin.ee"]') : null;
+    if(!a || a.hasAttribute('data-no-ref')) return;   // data-no-ref = ปุ่มที่มีข้อความของตัวเอง ห้ามทับ
+    a.href = 'https://line.me/R/oaMessage/'+OA+'/?'+encodeURIComponent(MSG+window.NTK_TAG);
+  }, true);
+})();
+</script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" aria-label="กลับหน้าหลัก" style="display:flex;align-items:center;flex-shrink:0;"><img src="/logo1.png" alt="นายธนาคารประจำบ้าน" class="header-logo" style="cursor:pointer;"></a>
+      <div class="header-brand">
+        <div class="header-brand-name">นายธนาคารประจำบ้าน</div>
+        <div class="header-brand-tagline">ที่ปรึกษาทางการเงินมืออาชีพ · 7+ ปี</div>
+      </div>
+      <a href="index.html" class="header-back">← บทความ</a>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+        <span class="theme-icon theme-icon-dark">🌙</span>
+        <span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="breadcrumb" style="color: rgba(255,255,255,0.7); margin-bottom: 0.5rem; font-size: 0.85rem;">
+        <a href="index.html" style="color: rgba(255,255,255,0.7);">บทความ</a>
+        <span> › </span>
+        <span>รวมหนี้</span>
+      </div>
+      <h1>รวมหนี้แล้วค่างวดลดจริงไหม? คิดแบบธนาคารให้ดูทีละขั้น</h1>
+      <div class="article-meta">
+        <span>📅 อัพเดท 16 สิงหาคม 2569</span>
+        <span>⏱️ อ่าน 4 นาที</span>
+        <span>👤 โดย อ.ธรรศ — ที่ปรึกษาทางการเงิน</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article">
+
+        <p>
+          "รวมหนี้แล้วค่างวดลด" เป็นประโยคที่ได้ยินบ่อยจนหลายคนสงสัยว่าจริงหรือโฆษณา — คำตอบตรงๆ คือ <strong>ลดจริงครับ แต่ต้องเข้าใจว่ามันลดเพราะอะไร</strong> เพราะกลไกที่ทำให้ลด มีทั้งส่วนที่คุณได้ประโยชน์เต็มๆ และส่วนที่เป็นการแลกเปลี่ยน ถ้าเข้าใจไม่ครบ อาจตัดสินใจพลาดได้
+        </p>
+        <p>
+          บทความนี้จะพาคิดแบบเดียวกับที่ธนาคารคิด ทีละขั้น ใช้ตัวเลขชุดเดียวตลอดทั้งบทความเพื่อให้เทียบกันได้ครับ
+        </p>
+
+        <div class="toc">
+          <div class="toc-title">📋 สารบัญบทความ</div>
+          <ul>
+            <li><a href="#why-high">1. ทำไมค่างวดหนี้บัตรถึงโหดตั้งแต่แรก</a></li>
+            <li><a href="#mechanism">2. ค่างวดลดเพราะ 2 กลไก — ไม่ใช่เวทมนตร์</a></li>
+            <li><a href="#example">3. ตัวเลขให้ดูชัดๆ: หนี้ 400,000 บาท</a></li>
+            <li><a href="#truth">4. ความจริงที่ต้องรู้: ค่างวดลด ≠ ดอกรวมถูกลงเสมอ</a></li>
+            <li><a href="#use-it">5. ใช้ค่างวดที่ลดให้เป็นประโยชน์จริง</a></li>
+          </ul>
+        </div>
+
+        <h2 id="why-high">1. ทำไมค่างวดหนี้บัตรถึงโหดตั้งแต่แรก</h2>
+        <p>
+          หนี้บัตรเครดิตและสินเชื่อส่วนบุคคลเป็นหนี้<strong>ไม่มีหลักประกัน</strong> — ธนาคารให้กู้โดยไม่มีอะไรค้ำนอกจากเครดิตของคุณ ความเสี่ยงของธนาคารจึงสูง และถูกชดเชยด้วยดอกเบี้ยที่แพง (เพดานตามเกณฑ์ ธปท.: บัตรเครดิต 16% · บัตรกดเงินสด/สินเชื่อส่วนบุคคล 25% ต่อปี)
+        </p>
+        <p>
+          นอกจากดอกแพงแล้ว การจ่ายขั้นต่ำของบัตรยังคิดเป็น<strong>เปอร์เซ็นต์ของยอดค้างทั้งก้อน</strong> ยอดค้างยิ่งใหญ่ ขั้นต่ำต่อเดือนยิ่งสูงตาม และเงินที่จ่ายส่วนใหญ่ถูกหักเป็นดอกเบี้ยก่อนถึงเงินต้น นี่คือเหตุผลที่หลายคนจ่ายไหวแค่ขั้นต่ำ แล้วรู้สึกว่าหนี้ไม่ลดสักที
+        </p>
+
+        <h2 id="mechanism">2. ค่างวดลดเพราะ 2 กลไก — ไม่ใช่เวทมนตร์</h2>
+        <h3>กลไกที่ 1: ดอกเบี้ยต่ำลง เพราะธนาคารได้หลักประกัน</h3>
+        <p>
+          เมื่อย้ายหนี้มาไว้ในสินเชื่อที่มีบ้านค้ำ ความเสี่ยงของธนาคารลดลงมาก ดอกเบี้ยจึงลดจากระดับ 16-25% ลงมาอยู่ระดับดอกเบี้ยบ้าน เงินที่จ่ายแต่ละเดือนถูกหักเป็นดอกน้อยลง เหลือไปตัดเงินต้นมากขึ้น — <strong>ส่วนนี้คือกำไรแท้ๆ ของการรวมหนี้</strong>
+        </p>
+        <h3>กลไกที่ 2: ระยะผ่อนยาวขึ้น</h3>
+        <p>
+          หนี้บัตรถูกออกแบบให้เคลียร์เร็ว แต่สินเชื่อบ้านผ่อนกันเป็นสิบปี ยอดเท่ากันพอหารด้วยจำนวนงวดที่เยอะขึ้นมาก ค่างวดต่อเดือนจึงเบาลงมาก — <strong>ส่วนนี้ไม่ใช่กำไร แต่เป็นการแลกเปลี่ยน</strong> เพราะยิ่งผ่อนนาน ดอกเบี้ยยิ่งเดินนาน
+        </p>
+        <p>
+          ค่างวดที่ลดฮวบเวลาเห็นในโฆษณา มาจากสองกลไกนี้ทำงานพร้อมกันครับ คนที่เข้าใจจะใช้กลไกแรกให้เต็มที่ และบริหารกลไกที่สองให้สั้นที่สุดเท่าที่ไหว
+        </p>
+
+        <h2 id="example">3. ตัวเลขให้ดูชัดๆ: หนี้ 400,000 บาท (ตัวเลขสมมติ)</h2>
+        <div class="example-box">
+          <p style="margin-bottom: 0.75rem;"><strong>ก่อนรวมหนี้:</strong> หนี้บัตรรวม 400,000 บาท จ่ายขั้นต่ำเดือนแรกอาจสูงถึงราว <strong>32,000 บาท</strong> โดยเงินส่วนใหญ่หายไปกับดอกเบี้ย</p>
+          <p style="margin-bottom: 0;"><strong>หลังรวมหนี้เข้าสินเชื่อบ้าน:</strong> ยอดเดิมผ่อนแบบมีบ้านค้ำ ค่างวดอาจเหลือประมาณ <strong>3,400 บาท/เดือน</strong> (ตัวเลขสมมติ: ดอกเบี้ยประมาณ 6% ต่อปี ผ่อน 15 ปี — อัตราจริงแล้วแต่ธนาคาร เงื่อนไข และโปรไฟล์ผู้กู้ อาจสูงหรือต่ำกว่านี้)</p>
+        </div>
+        <p>
+          แยกให้เห็นว่าแต่ละกลไกมีส่วนแค่ไหน: ส่วนใหญ่ของค่างวดที่หายไป มาจากการ<strong>เปลี่ยนวิธีจ่าย</strong> — จากขั้นต่ำที่คิดเป็นเปอร์เซ็นต์ของยอดค้าง มาเป็นงวดผ่อนคงที่ระยะยาว บวกกับดอกเบี้ยที่ถูกลงหลายเท่า ธนาคารมองว่าภาระต่อเดือนของคุณ (DSR) ดีขึ้นทันที ซึ่งเปิดทางให้เรื่องอื่นตามมา เช่น การกู้บ้านในอนาคต
+        </p>
+
+        <div class="cta-inline">
+          <h3 style="margin-top: 0; color: #fbbf24;">🧮 อยากเห็นตัวเลขของเคสตัวเอง?</h3>
+          <p style="margin-bottom: 1rem;">คำนวณ DSR ฟรี ใส่รายได้และภาระหนี้ปัจจุบัน ระบบจะช่วยประเมินว่ารวมหนี้แล้วภาระต่อเดือนของคุณจะอยู่ตรงไหน</p>
+          <a href="/dsr/" class="btn btn-line" style="display: inline-block;">
+            🧮 คำนวณ DSR ฟรี →
+          </a>
+        </div>
+
+        <h2 id="truth">4. ความจริงที่ต้องรู้: ค่างวดลด ≠ ดอกรวมถูกลงเสมอ</h2>
+        <p>
+          ตรงนี้คือจุดที่ผมอยากพูดตรงๆ ที่สุดในบทความครับ — ค่างวดต่อเดือนลดลงแน่นอน แต่<strong>ดอกเบี้ยรวมทั้งสัญญาจะถูกลงหรือไม่ ขึ้นกับพฤติกรรมหลังรวมหนี้ของคุณเอง</strong> ลองดู 3 เส้นทางที่เจอจริง:
+        </p>
+        <div class="table-wrap">
+        <table class="scenario-table">
+          <tr><th>เส้นทางหลังรวมหนี้</th><th>ผลลัพธ์</th></tr>
+          <tr><td><strong>ผ่อนตามตารางเฉยๆ</strong> จนครบสัญญา</td><td>ค่างวดเบาสบายตลอด แต่ดอกเบี้ยเดินครบทุกปีของสัญญา ดอกรวมทั้งชีวิตอาจไม่ต่างจากเดิมมาก</td></tr>
+          <tr><td><strong>ใช้ส่วนต่างที่เหลือโปะเพิ่ม</strong> สม่ำเสมอ</td><td>ได้ประโยชน์เต็มทั้งสองทาง — ดอกต่อปีถูกลง และจบสัญญาเร็วขึ้น นี่คือวิธีใช้การรวมหนี้ที่ถูกต้อง</td></tr>
+          <tr><td><strong>บัตรว่างแล้วกลับไปรูดใหม่</strong></td><td>อันตรายที่สุด — มีทั้งงวดบ้านก้อนใหม่และหนี้บัตรรอบสอง หนักกว่าจุดเริ่มต้น (<a href="consolidate-credit-card-debt-with-home-ep2.html">อ่านความเสี่ยงข้อนี้เต็มๆ</a>)</td></tr>
+        </table>
+        </div>
+        <p>
+          ทีมเราจะบอกลูกค้าเสมอว่า ให้มองค่างวดที่ลดลงเป็น <strong>"พื้นที่หายใจ"</strong> ไม่ใช่ "เงินเหลือให้ใช้เพิ่ม" — เดือนไหนไหวก็โปะ เดือนไหนตึงก็จ่ายตามงวดโดยไม่เสียประวัติ ความยืดหยุ่นนี้แหละคือมูลค่าที่แท้จริงของการรวมหนี้
+        </p>
+
+        <h2 id="use-it">5. ใช้ค่างวดที่ลดให้เป็นประโยชน์จริง</h2>
+        <ol>
+          <li><strong>รู้ตัวเลขตัวเองก่อน</strong> — ลิสต์หนี้ทุกก้อน แล้ว<a href="/dsr/">คำนวณ DSR</a> ดูว่าภาระปัจจุบันอยู่โซนไหน</li>
+          <li><strong>วางแผนส่วนต่างล่วงหน้า</strong> — ตกลงกับตัวเองก่อนรวมว่าส่วนต่างที่เหลือจะเอาไปทำอะไร ถ้าตอบว่า "ใช้จ่ายทั่วไป" ยังไม่ควรรวมครับ</li>
+          <li><strong>ตัดต้นเหตุพร้อมกัน</strong> — ลดวงเงินหรือปิดบัตรที่เป็นปัญหา ให้การรวมหนี้เป็นการจบปัญหา ไม่ใช่ย้ายปัญหา</li>
+          <li><strong>เทียบหลายทาง ก่อนเลือกทางเดียว</strong> — เงื่อนไขแต่ละธนาคารต่างกัน และบางเคสมีทางที่เหมาะกว่าการรวมหนี้ด้วยซ้ำ ปรึกษาก่อนตัดสินใจได้ฟรี</li>
+        </ol>
+
+        <div class="cta-inline">
+          <h3 style="margin-top: 0;">💬 อยากคุยรายละเอียดเป็นกรณีของคุณโดยเฉพาะ?</h3>
+          <p style="margin-bottom: 1rem;">ทักไลน์มาได้เลย ทีมงานยินดีช่วยดูตัวเลขให้ฟรีครับ — ไม่มีการการันตีผลอนุมัติ การพิจารณาเป็นดุลยพินิจของธนาคาร แต่คุณจะเห็นภาพทางเลือกของตัวเองชัดขึ้นแน่นอน</p>
+          <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener" style="display: inline-block;">
+            💬 ปรึกษา → LINE @ninethanakarn
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="star-divider"><span>★</span></div>
+  </div>
+
+  <section class="section" style="background: var(--bg-subtle);">
+    <div class="container">
+      <h2 class="section-title">บทความที่เกี่ยวข้อง</h2>
+      <div style="display: grid; gap: 1rem; max-width: 800px; margin: 0 auto;">
+        <a href="debt-consolidation-5-signals.html" style="display: block; padding: 1.25rem; background: var(--bg-subtle, rgba(255,255,255,0.03)); border: 1px solid var(--border, rgba(255,255,255,0.1)); border-radius: 8px; text-decoration: none; color: inherit;">
+          <span style="color: #60a5fa; font-size: 0.8rem; font-weight: 600;">🏠 รวมหนี้ในบ้าน</span>
+          <div style="font-weight: 700; margin-top: 0.4rem;">รวมหนี้เหมาะกับใคร? เช็ค 5 สัญญาณว่าถึงเวลาแล้ว</div>
+        </a>
+        <a href="consolidate-credit-card-debt-with-home-ep2.html" style="display: block; padding: 1.25rem; background: var(--bg-subtle, rgba(255,255,255,0.03)); border: 1px solid var(--border, rgba(255,255,255,0.1)); border-radius: 8px; text-decoration: none; color: inherit;">
+          <span style="color: #60a5fa; font-size: 0.8rem; font-weight: 600;">🏠 รวมหนี้ในบ้าน · ตอน 2/2</span>
+          <div style="font-weight: 700; margin-top: 0.4rem;">รวมหนี้บัตรเครดิตด้วยบ้าน เสี่ยงไหม? เช็กตัวเอง 4 ข้อก่อนตัดสินใจ</div>
+        </a>
+        <a href="consolidate-debt-into-home-loan.html" style="display: block; padding: 1.25rem; background: var(--bg-subtle, rgba(255,255,255,0.03)); border: 1px solid var(--border, rgba(255,255,255,0.1)); border-radius: 8px; text-decoration: none; color: inherit;">
+          <span style="color: #60a5fa; font-size: 0.8rem; font-weight: 600;">🏠 รวมหนี้ในบ้าน</span>
+          <div style="font-weight: 700; margin-top: 0.4rem;">รวมหนี้ไว้ในหนี้บ้าน: ดอกบัตร 16-25% → ดอกบ้าน 5% ทำได้จริงไหม</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related links -->
+<section style="max-width:760px;margin:2rem auto;padding:0 20px;font-family:'IBM Plex Sans Thai','Prompt',sans-serif;">
+  <div style="background:#f5f5f4;border:1px solid #e7e5e4;border-radius:16px;padding:20px 22px;">
+    <div style="font-family:'Prompt',sans-serif;font-weight:600;margin-bottom:8px;">อ่านต่อ &amp; เครื่องมือที่เกี่ยวข้อง</div>
+    <ul style="margin:0;padding-left:1.3rem;line-height:2;"><li><a href="/debt/" style="color:#1e40af;">คำนวณ DSR ฟรี + บริการรวมหนี้ไว้ในสินเชื่อบ้าน</a></li><li><a href="/condo/" style="color:#1e40af;">Portfolio คอนโดลงทุนที่ผ่านการคัดกรอง</a></li><li><a href="/loan/" style="color:#1e40af;">App คำนวณค่างวดสินเชื่อ (ฟรี)</a></li></ul>
+  </div>
+</section>
+<footer class="site-footer">
+    <div class="container">
+      <div><strong>นายธนาคารประจำบ้าน</strong> · Mr. Home Banker</div>
+      <div class="footer-contact">
+        <a href="https://line.me/R/ti/p/@ninethanakarn" target="_blank" rel="noopener">LINE: @ninethanakarn</a>
+        <a href="tel:023340940">📞 02-334-0940</a>
+        <a href="mailto:ninethanakarn@gmail.com">ninethanakarn@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">
+        © 2026 บริษัท ทัช เรียลเอสเตท จำกัด · ninethanakarn.com &#183; <a href="/privacy/" style="color:inherit;text-decoration:underline;">นโยบายความเป็นส่วนตัว</a> &#183; <a href="/terms/" style="color:inherit;text-decoration:underline;">ข้อกำหนดการใช้บริการ</a> &#183; <a href="/about/" style="color:inherit;text-decoration:underline;">เกี่ยวกับเรา</a> · บทความเพื่อการศึกษา ไม่ใช่คำแนะนำทางกฎหมายหรือการเงิน · ตัวอย่างคำนวณเป็นตัวเลขสมมติ อัตราจริงแล้วแต่ธนาคารและโปรไฟล์ผู้กู้ · กรุณา verify เงื่อนไขกับธนาคารโดยตรงก่อนตัดสินใจ
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta">
+    <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-line" target="_blank" rel="noopener">
+      💬 ปรึกษา → LINE
+    </a>
+    <a href="tel:023340940" class="btn-phone-sm">📞</a>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme') || 'dark';
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    (function() {
+      var saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</body>
+</html>
