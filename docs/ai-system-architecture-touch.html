@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>โครงสร้างระบบ AI ทัช เรียลเอสเตท</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --surface: #ffffff;
+    --ink: #1c1917;
+    --ink-2: #57534e;
+    --ink-3: #8a847d;
+    --line: #e2ddd6;
+    --line-strong: #c9c2b8;
+    --accent: #1e40af;
+    --accent-soft: #e6ecfa;
+    --accent-ink: #163387;
+    --human: #b45309;
+    --human-soft: #fbeedc;
+    --truth: #0f766e;
+    --truth-soft: #dcf1ee;
+    --danger: #b91c1c;
+    --danger-soft: #fbe3e3;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --display: "Prompt", "IBM Plex Sans Thai", system-ui, sans-serif;
+    --body: "IBM Plex Sans Thai", "Prompt", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15130f; --surface: #1e1b16; --ink: #f1ede6; --ink-2: #b9b2a7;
+      --ink-3: #8b847a; --line: #2f2a23; --line-strong: #4a4337;
+      --accent: #7c9cf0; --accent-soft: #1c2747; --accent-ink: #b7c8fa;
+      --human: #f0a24d; --human-soft: #3a2810; --truth: #4fc3b5; --truth-soft: #0f3330;
+      --danger: #f08787; --danger-soft: #3d1717;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15130f; --surface: #1e1b16; --ink: #f1ede6; --ink-2: #b9b2a7; --ink-3: #8b847a;
+    --line: #2f2a23; --line-strong: #4a4337;
+    --accent: #7c9cf0; --accent-soft: #1c2747; --accent-ink: #b7c8fa;
+    --human: #f0a24d; --human-soft: #3a2810; --truth: #4fc3b5; --truth-soft: #0f3330;
+    --danger: #f08787; --danger-soft: #3d1717;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15.5px; line-height: 1.7; }
+  main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.25; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); font-weight: 700; letter-spacing: -0.01em; }
+  h2 { font-size: 1.32rem; font-weight: 600; margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; font-weight: 600; margin-top: 28px; }
+  p { margin: 12px 0; max-width: 68ch; }
+  .eyebrow { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .lede { font-size: 1.08rem; color: var(--ink-2); max-width: 64ch; }
+  .notice { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; border: 1px solid var(--human); background: var(--human-soft); color: var(--ink); border-radius: 8px; padding: 12px 16px; margin: 22px 0 0; font-size: 0.93rem; }
+  .notice b { color: var(--human); font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; padding-top: 4px; }
+  .notice p { margin: 0; max-width: none; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 0.76rem; color: var(--ink-3); margin-top: 18px; }
+  figure { margin: 26px 0 0; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 18px 18px 12px; overflow-x: auto; }
+  figure svg { display: block; width: 100%; height: auto; min-width: 640px; color: var(--ink); font-family: var(--body); }
+  figcaption { font-size: 0.86rem; color: var(--ink-2); margin-top: 10px; max-width: 80ch; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.8rem; color: var(--ink-2); margin-top: 10px; }
+  .legend span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; border: 1.5px solid currentColor; }
+  .legend .l-ai::before { background: var(--accent-soft); border-color: var(--accent); }
+  .legend .l-human::before { background: var(--human-soft); border-color: var(--human); }
+  .legend .l-truth::before { background: var(--truth-soft); border-color: var(--truth); }
+  .legend .l-tool::before { background: var(--surface); border-color: var(--line-strong); }
+  .layers { display: grid; grid-template-columns: 74px 150px 1fr; margin-top: 20px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
+  .layers > div { padding: 11px 14px; border-top: 1px solid var(--line); font-size: 0.92rem; }
+  .layers > div:nth-child(-n+3) { border-top: 0; }
+  .layers .n { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-3); }
+  .layers .k { font-family: var(--display); font-weight: 600; }
+  .layers .v { color: var(--ink-2); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .tablewrap { overflow-x: auto; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-top: 1px solid var(--line); }
+  th { font-family: var(--display); font-weight: 600; font-size: 0.82rem; color: var(--ink-2); background: var(--bg); border-top: 0; }
+  td:first-child { white-space: nowrap; }
+  code { font-family: var(--mono); font-size: 0.82em; background: var(--accent-soft); color: var(--accent-ink); padding: 1px 5px; border-radius: 4px; }
+  .tag { display: inline-block; font-family: var(--mono); font-size: 0.74rem; font-weight: 500; padding: 1px 7px; border-radius: 4px; border: 1px solid; margin-right: 4px; white-space: nowrap; }
+  .tag.ai { color: var(--accent-ink); background: var(--accent-soft); border-color: var(--accent); }
+  .tag.human { color: var(--human); background: var(--human-soft); border-color: var(--human); }
+  .tag.truth { color: var(--truth); background: var(--truth-soft); border-color: var(--truth); }
+  .tag.lock { color: var(--danger); background: var(--danger-soft); border-color: var(--danger); }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); overflow: hidden; }
+  .steps li { display: grid; grid-template-columns: 34px 110px 1fr 150px; gap: 12px; padding: 11px 14px; border-top: 1px solid var(--line); font-size: 0.92rem; align-items: baseline; }
+  .steps li:first-child { border-top: 0; }
+  .steps li::before { counter-increment: s; content: counter(s, upper-alpha); font-family: var(--mono); color: var(--ink-3); font-size: 0.8rem; }
+  .steps .who { font-family: var(--display); font-weight: 600; }
+  .steps .st { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-2); text-align: right; }
+  ul.plain { padding-left: 1.2em; margin: 10px 0; max-width: 72ch; }
+  ul.plain li { margin: 5px 0; }
+  .gaps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-top: 16px; }
+  .gap { border: 1px solid var(--line); border-left: 3px solid var(--human); background: var(--surface); border-radius: 6px; padding: 12px 14px; font-size: 0.92rem; }
+  .gap b { font-family: var(--display); font-weight: 600; display: block; margin-bottom: 4px; }
+  .gap p { margin: 0; color: var(--ink-2); max-width: none; }
+  .src { font-size: 0.82rem; color: var(--ink-3); margin-top: 48px; border-top: 1px solid var(--line); padding-top: 14px; max-width: none; }
+  @media (max-width: 720px) {
+    .layers { grid-template-columns: 56px 1fr; }
+    .layers .v { grid-column: 1 / -1; border-top: 0; padding-top: 0; }
+    .steps li { grid-template-columns: 28px 1fr; }
+    .steps .st { grid-column: 2; text-align: left; }
+  }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="eyebrow">ทัช เรียลเอสเตท · นายธนาคารประจำบ้าน · ระบบ AI</div>
+  <h1>โครงสร้างระบบ AI ทัช เรียลเอสเตท</h1>
+  <p class="lede">ไม่ใช่บอทตัวเดียว แต่เป็นทีม AI หลายตัวที่แบ่งงานตามบทบาท ทำงานบน "ต้นทางความจริง" ชุดเดียวกัน โดยมี อ.ธรรศ เป็นจุดตัดสินใจเดียวกันทุกสาย: ยืนยันเกณฑ์ · ตรวจ "ผ่าน" · เจนภาพ · โพสต์</p>
+
+  <div class="notice"><b>ยังไม่ได้เทียบคลิป</b><p>เข้าถึง YouTube (youtu.be/NKB4-2R0wsc) จาก session นี้ไม่ได้ ชื่อชั้น 0–6 ด้านล่างจึงเป็นชื่อกลาง เมื่อได้หัวข้อหลักของคลิปจะเปลี่ยนชื่อ จัดลำดับ และเติมส่วนที่คลิปมีแต่เรายังไม่มี</p></div>
+
+  <div class="meta"><span>ร่าง 4 ก.ย. 2569</span><span>ที่มา: CLAUDE.md · git log · Notion HQ · /dsr/ · worker LINE bot</span><span>เอกสารภายใน · ห้าม merge เข้า main</span></div>
+
+  <h2>แผนที่ระบบ</h2>
+  <figure>
+    <svg viewBox="0 0 980 560" role="img" aria-label="แผนที่ระบบ AI: ชั้นคน อยู่บนสุด สั่งการและอนุมัติทีม AI 8 ตัวตรงกลาง ทีม AI อ่านและเขียนต้นทางความจริง 4 แหล่งด้านล่าง และส่งผลออกทางช่องทาง 4 ช่องด้านขวา">
+      <defs>
+        <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+        <marker id="arwA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--human)"/></marker>
+        <marker id="arwT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--truth)"/></marker>
+      </defs>
+
+      <!-- band labels -->
+      <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-3)" letter-spacing="1.2">
+        <text x="16" y="34">ชั้น 0 · คน</text>
+        <text x="16" y="164">ชั้น 2 · ทีม AI (session)</text>
+        <text x="16" y="424">ชั้น 1 · ต้นทางความจริง</text>
+        <text x="742" y="164">ชั้น 3 · ช่องทางออก</text>
+      </g>
+
+      <!-- Humans -->
+      <g>
+        <rect x="16" y="44" width="300" height="86" rx="8" fill="var(--human-soft)" stroke="var(--human)" stroke-width="1.5"/>
+        <text x="32" y="70" font-family="Prompt, sans-serif" font-weight="600" font-size="14" fill="var(--ink)">อ.ธรรศ</text>
+        <text x="32" y="90" font-size="11.5" fill="var(--ink-2)">ยืนยันเกณฑ์ · ตรวจ "ผ่าน" · เจนภาพ/วิดีโอ</text>
+        <text x="32" y="107" font-size="11.5" fill="var(--ink-2)">กดโพสต์ · ทำ KYC เคสจริง</text>
+        <text x="32" y="123" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--human)">ทำเอง 3 อย่าง: ผ่าน · เจน · โพสต์</text>
+
+        <rect x="340" y="44" width="300" height="86" rx="8" fill="var(--human-soft)" stroke="var(--human)" stroke-width="1.5"/>
+        <text x="356" y="70" font-family="Prompt, sans-serif" font-weight="600" font-size="14" fill="var(--ink)">ทีมแอดมิน</text>
+        <text x="356" y="90" font-size="11.5" fill="var(--ink-2)">โทร lead ภายใน 30 นาที · โทรซ้ำ 3 ครั้ง</text>
+        <text x="356" y="107" font-size="11.5" fill="var(--ink-2)">ตามเอกสาร วัน 1/3/7 · ลงสถานะในชีต</text>
+
+        <rect x="664" y="44" width="300" height="86" rx="8" fill="none" stroke="var(--human)" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="680" y="70" font-family="Prompt, sans-serif" font-weight="600" font-size="14" fill="var(--ink)">Case officer</text>
+        <text x="680" y="90" font-size="11.5" fill="var(--ink-2)">แผน ต.ค. 69 เมื่อเคส active ≥ 8</text>
+        <text x="680" y="107" font-size="11.5" fill="var(--ink-2)">รับเคสที่เซ็นแล้วตามจนปิด</text>
+      </g>
+
+      <!-- arrows humans -> AI -->
+      <line x1="166" y1="130" x2="166" y2="178" stroke="var(--human)" stroke-width="1.5" marker-end="url(#arwA)"/>
+      <text x="174" y="158" font-size="10.5" fill="var(--human)">ยืนยันมติ · "ผ่าน" · สั่งงาน</text>
+      <line x1="490" y1="130" x2="490" y2="178" stroke="var(--human)" stroke-width="1.5" marker-end="url(#arwA)"/>
+      <text x="498" y="158" font-size="10.5" fill="var(--human)">ลงสถานะ lead</text>
+
+      <!-- AI team -->
+      <g font-size="11" fill="var(--ink-2)">
+        <rect x="16" y="180" width="700" height="216" rx="10" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+
+        <rect x="30" y="194" width="160" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="40" y="214" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">BIZ04</text>
+        <text x="40" y="231">ออกกติกา/มติ · ประสาน</text>
+        <text x="40" y="246">ทุก session</text>
+
+        <rect x="200" y="194" width="160" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="210" y="214" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">BIZ01</text>
+        <text x="210" y="231">แผน 5 ปี · Action Plan</text>
+        <text x="210" y="246">ทบทวนสิ้น ต.ค. 69</text>
+
+        <rect x="370" y="194" width="160" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="380" y="214" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">MKT01</text>
+        <text x="380" y="231">โฆษณา FB · targeting</text>
+        <text x="380" y="246">รีวิว lead · Google Ads ต.ค.</text>
+
+        <rect x="540" y="194" width="160" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="550" y="214" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">content-pipeline</text>
+        <text x="550" y="231">เขียนบทความ 07:00 ทุกวัน</text>
+        <text x="550" y="246">จบที่ "รอตรวจ"</text>
+
+        <rect x="30" y="268" width="160" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="40" y="288" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">WEB02</text>
+        <text x="40" y="305">เนื้อหา · FAQ · llms.txt</text>
+        <text x="40" y="320">sitemap · CLAUDE.md</text>
+
+        <rect x="200" y="268" width="160" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--danger)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="210" y="288" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">WEB01</text>
+        <text x="210" y="305">ปุ่ม LINE · GA4 · Pixel</text>
+        <text x="210" y="320" fill="var(--danger)">ล็อกจนผ่านเทส "เคส 4"</text>
+
+        <rect x="370" y="268" width="160" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="380" y="288" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">WEB03</text>
+        <text x="380" y="305">ฟอร์ม DSR /dsr/ 7 ข้อ</text>
+        <text x="380" y="320">คำนวณในเครื่อง → /dsr-lead</text>
+
+        <rect x="540" y="268" width="160" height="60" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="550" y="288" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">BOT01</text>
+        <text x="550" y="305">บอท LINE OA · knowledge.js</text>
+        <text x="550" y="320">ติดตาม 1-3-7 (รอโควตา)</text>
+
+        <text x="30" y="360" font-size="10.5" fill="var(--ink-3)">ชื่อ session = หมวด + เลข 2 หลัก · ทุกตัวอ่าน CLAUDE.md ก่อนแตะเว็บ · แก้ FAQ/llms.txt แล้วต้องแจ้ง BOT01</text>
+        <text x="30" y="378" font-size="10.5" fill="var(--ink-3)">เส้นประแดง = ของที่ session อื่นห้ามแตะ</text>
+      </g>
+
+      <!-- AI -> channels -->
+      <line x1="716" y1="240" x2="756" y2="240" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw)"/>
+      <line x1="716" y1="300" x2="756" y2="300" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw)"/>
+
+      <!-- Channels -->
+      <g font-size="11" fill="var(--ink-2)">
+        <rect x="758" y="180" width="206" height="48" rx="7" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3"/>
+        <text x="770" y="199" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">เว็บ ninethanakarn.com</text>
+        <text x="770" y="216">GitHub Pages · push = ขึ้นเลย · 79 URL</text>
+
+        <rect x="758" y="236" width="206" height="48" rx="7" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3"/>
+        <text x="770" y="255" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">LINE OA @ninethanakarn</text>
+        <text x="770" y="272">ช่องทางหลัก · conversion 39%</text>
+
+        <rect x="758" y="292" width="206" height="48" rx="7" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3"/>
+        <text x="770" y="311" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">โฆษณา FB · Google Ads</text>
+        <text x="770" y="328">targeting พื้นที่ · Instant Form</text>
+
+        <rect x="758" y="348" width="206" height="48" rx="7" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3"/>
+        <text x="770" y="367" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">โซเชียล 6 แพลตฟอร์ม</text>
+        <text x="770" y="384">คลิป mascot 35 วิ · อ.กดโพสต์</text>
+      </g>
+
+      <!-- AI <-> truth arrows -->
+      <line x1="110" y1="396" x2="110" y2="436" stroke="var(--truth)" stroke-width="1.5" marker-end="url(#arwT)" marker-start="url(#arwT)"/>
+      <text x="118" y="420" font-size="10.5" fill="var(--truth)">อ่าน + แก้ (WEB02)</text>
+      <line x1="620" y1="396" x2="620" y2="436" stroke="var(--truth)" stroke-width="1.5" marker-end="url(#arwT)" marker-start="url(#arwT)"/>
+      <text x="628" y="420" font-size="10.5" fill="var(--truth)">อ่าน + แก้ (BOT01)</text>
+      <line x1="380" y1="396" x2="380" y2="436" stroke="var(--truth)" stroke-width="1.5" marker-end="url(#arwT)" marker-start="url(#arwT)"/>
+      <text x="388" y="420" font-size="10.5" fill="var(--truth)">สายพานเขียน · ทุกตัวอ่าน</text>
+
+      <!-- Truth sources -->
+      <g font-size="11" fill="var(--ink-2)">
+        <rect x="16" y="440" width="220" height="100" rx="8" fill="var(--truth-soft)" stroke="var(--truth)" stroke-width="1.5"/>
+        <text x="30" y="462" font-family="Prompt, sans-serif" font-weight="600" font-size="13" fill="var(--ink)">เกณฑ์รับเคส — 3 ที่ต้องตรงกัน</text>
+        <text x="30" y="481">① FAQ 5 หน้า + JSON-LD</text>
+        <text x="30" y="497">② llms.txt "หมายเหตุสำหรับ AI"</text>
+        <text x="30" y="513">③ line-bot/knowledge.js</text>
+        <text x="30" y="530" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--truth)">ผิดข้อเดียว = ไม่ผ่าน</text>
+
+        <rect x="250" y="440" width="220" height="100" rx="8" fill="var(--truth-soft)" stroke="var(--truth)" stroke-width="1.5"/>
+        <text x="264" y="462" font-family="Prompt, sans-serif" font-weight="600" font-size="13" fill="var(--ink)">CLAUDE.md</text>
+        <text x="264" y="481">กติกาของทุก session ที่แตะเว็บ</text>
+        <text x="264" y="497">ห้ามแตะ · คำต้องห้าม · ตัวเลขที่อ้างได้</text>
+        <text x="264" y="513">เช็กลิสต์ก่อน commit · เกณฑ์วัดผล</text>
+
+        <rect x="484" y="440" width="220" height="100" rx="8" fill="var(--truth-soft)" stroke="var(--truth)" stroke-width="1.5"/>
+        <text x="498" y="462" font-family="Prompt, sans-serif" font-weight="600" font-size="13" fill="var(--ink)">Notion HQ + คลังคอนเทนต์</text>
+        <text x="498" y="481">flow A–E ใครทำอะไร</text>
+        <text x="498" y="497">คลัง = กันหัวข้อซ้ำ · สถานะ 🟡🟢🔵</text>
+        <text x="498" y="513">MASTER Video · BIZ01 🔒</text>
+
+        <rect x="718" y="440" width="246" height="100" rx="8" fill="var(--truth-soft)" stroke="var(--truth)" stroke-width="1.5"/>
+        <text x="732" y="462" font-family="Prompt, sans-serif" font-weight="600" font-size="13" fill="var(--ink)">ชีต Lead Tracking + Dashboard</text>
+        <text x="732" y="481">lead → ติดต่อได้ → ผ่านเกณฑ์</text>
+        <text x="732" y="497">→ เอกสารครบ → เซ็น · แยกช่องทาง</text>
+        <text x="732" y="513">วัดทุกศุกร์ · ทบทวนสิ้นเดือน</text>
+      </g>
+    </svg>
+    <div class="legend"><span class="l-human">คน</span><span class="l-ai">ทีม AI</span><span class="l-truth">ต้นทางความจริง</span><span class="l-tool">ช่องทาง/เครื่องมือ</span></div>
+    <figcaption>คนอยู่บนสุดและตัดสินใจ ทีม AI 8 ตัวแบ่งงานตามบทบาทและส่งผลออก 4 ช่องทาง ทุกตัวทำงานจากต้นทางความจริง 4 แหล่งที่อยู่ล่างสุด ชั้นล่างคือชั้นที่ผิดแล้วพังทั้งสาย</figcaption>
+  </figure>
+
+  <div class="layers">
+    <div class="n">ชั้น 0</div><div class="k">คน</div><div class="v">อ.ธรรศ (ตัดสินใจ/อนุมัติ) · แอดมิน (โทร lead · ตามเอกสาร) · case officer (แผน ต.ค.)</div>
+    <div class="n">ชั้น 1</div><div class="k">ต้นทางความจริง</div><div class="v">เกณฑ์รับเคส 3 ที่ · CLAUDE.md · Notion HQ + คลังคอนเทนต์ · ชีต Lead Tracking</div>
+    <div class="n">ชั้น 2</div><div class="k">ทีม AI</div><div class="v">WEB01 · WEB02 · WEB03 · BOT01 · BIZ01 · BIZ04 · MKT01 · content-pipeline</div>
+    <div class="n">ชั้น 3</div><div class="k">เครื่องมือ/ช่องทาง</div><div class="v">GitHub Pages · LINE OA · Cloudflare Worker · GA4 + Meta Pixel · Notion · Google Sheets · GPT / Google Flow / ffmpeg</div>
+    <div class="n">ชั้น 4</div><div class="k">สายพานงาน</div><div class="v">① lead → เคส ② คอนเทนต์รายวัน ③ เปลี่ยนเกณฑ์ → sync 3 ที่</div>
+    <div class="n">ชั้น 5</div><div class="k">กติกาความปลอดภัย</div><div class="v">ห้ามแตะปุ่ม LINE · 3 ที่ต้องตรง · คำต้องห้าม · sitemap คอมมิตเดียวกัน · "โพสต์แล้ว" ต้อง HTTP 200</div>
+    <div class="n">ชั้น 6</div><div class="k">วัดผล/ป้อนกลับ</div><div class="v">click_line · submit_lead · dsr_result · token ที่มา gclid/utm · Dashboard ทุกศุกร์ · ทบทวน BIZ01 สิ้น ต.ค.</div>
+  </div>
+
+  <h2>ทีม AI — ใครเป็นเจ้าของอะไร</h2>
+  <p>ปัจจุบันไม่มีทะเบียน session กลาง ตารางนี้ประกอบจาก CLAUDE.md, git log และ Notion จึงเป็นทะเบียนฉบับแรก</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Session</th><th>บทบาท</th><th>ของที่เป็นเจ้าของ</th><th>ห้าม</th><th>สถานะ 4 ก.ย. 69</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag ai">WEB01</span></td><td>Tracking + ปุ่ม LINE</td><td>GA4 <code>gtag</code> · Meta Pixel <code>fbq</code> · event <code>click_line</code> 73 จุด · ลิงก์ line.me 392 anchor · token ที่มา <code>NTK_TAG</code> ทั้ง 77 หน้า · ฟอร์ม lead 5 หน้า</td><td>—</td><td><span class="tag lock">ล็อก</span> จนผ่านเทส "เคส 4"</td></tr>
+      <tr><td><span class="tag ai">WEB02</span></td><td>เนื้อหา + โครงสร้างเว็บ</td><td>ทุกหน้า HTML · FAQ · <code>llms.txt</code> · <code>sitemap.xml</code> · CLAUDE.md</td><td>แตะปุ่ม/onclick/event ของ WEB01 · แก้ FAQ/llms.txt แล้วไม่แจ้ง BOT01</td><td>ทำงานอยู่</td></tr>
+      <tr><td><span class="tag ai">WEB03</span></td><td>ฟอร์มประเมิน DSR</td><td><code>/dsr/</code> ตอบ 7 ข้อ คำนวณในเครื่อง (เพดาน DSR 60%) แล้ว POST ไป worker <code>/dsr-lead</code> ล้มเหลวเงียบ ลูกค้าไปต่อทาง LINE ได้</td><td>—</td><td>เปิดแล้ว 4 ส.ค. (CLAUDE.md ยังเขียนว่า "ยังไม่เปิด")</td></tr>
+      <tr><td><span class="tag ai">BOT01</span></td><td>บอท LINE OA</td><td><code>knowledge.js</code> ใน repo touch-real-estate-tools · Cloudflare Worker · ระบบติดตาม 1-3-7 · รายการลิงก์บทความที่ส่งลูกค้าได้</td><td>ส่งลิงก์ 2 บทความที่ยุบเป็น redirect</td><td>ทำงานอยู่ · โควตา LINE 300/เดือน</td></tr>
+      <tr><td><span class="tag ai">BIZ01</span></td><td>แผน 5 ปี + Action Plan</td><td>เอกสารใน Notion 🔒</td><td>merge เข้าเว็บ</td><td>ทบทวนสิ้น ต.ค. 69</td></tr>
+      <tr><td><span class="tag ai">BIZ04</span></td><td>ออกกติกา/มติ · ประสานข้าม session</td><td>CLAUDE.md (1 ส.ค.) · ประกาศแก้มติ (4 ส.ค.) · งานด่วน sync (6–8 ส.ค.) · ส่งต่องานระหว่าง session</td><td>—</td><td>ทำงานอยู่</td></tr>
+      <tr><td><span class="tag ai">MKT01</span></td><td>โฆษณา + รีวิวข้อมูล</td><td>targeting FB จำกัดพื้นที่ · คำถามจังหวัด/รายได้ใน Instant Form · แผนทดสอบ Google Ads ต.ค. · จุดตัด Pixel Lead ซ้ำก่อน 7 ส.ค.</td><td>แตะปุ่ม CTA เพจ FB ที่ชี้ LINE OA</td><td>ทำงานอยู่</td></tr>
+      <tr><td><span class="tag ai">content-pipeline</span></td><td>ผลิตบทความรายวัน (Phase A)</td><td>scheduled task 07:00 — เช็คคลัง → เขียน ≤ 800 คำ → เพจ "รอตรวจ" → รายงานจบรอบ</td><td>ผลิต infographic/แคปชั่นในรอบเช้า · deploy เอง · approve เอง · รันเมื่อ Notion หลุด</td><td>รันทุกวัน · เบรกเมื่อรอตรวจ ≥ 2</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>สายพาน ① lead → เคส</h2>
+  <figure>
+    <svg viewBox="0 0 980 300" role="img" aria-label="เส้นทาง lead: จากโฆษณาและ SEO เข้าเว็บ แยกเป็น 3 ทางเข้า LINE คือปุ่ม LINE ฟอร์ม lead และฟอร์ม DSR รวมที่ LINE OA ซึ่ง BOT01 ตอบ แอดมินโทรภายใน 30 นาที คัดตามเกณฑ์ ขอเอกสาร 5 รายการ ตามวัน 1 3 7 จนเซ็นและยื่นธนาคาร">
+      <defs><marker id="arw2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+      <g font-size="11" fill="var(--ink-2)">
+        <rect x="10" y="100" width="130" height="66" rx="7" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3"/>
+        <text x="22" y="121" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">ที่มา</text>
+        <text x="22" y="138">โฆษณา FB · SEO</text>
+        <text x="22" y="154">AI search · แนะนำ</text>
+
+        <line x1="140" y1="133" x2="176" y2="133" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw2)"/>
+
+        <rect x="178" y="88" width="150" height="90" rx="7" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3"/>
+        <text x="190" y="109" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">เว็บ</text>
+        <text x="190" y="126">ติด token ที่มา</text>
+        <text x="190" y="142" font-family="IBM Plex Mono, monospace" font-size="10">gclid / utm / referrer</text>
+        <text x="190" y="164" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--accent)">→ NTK_TAG</text>
+
+        <!-- three entries -->
+        <line x1="328" y1="110" x2="366" y2="60" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw2)"/>
+        <line x1="328" y1="133" x2="366" y2="133" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw2)"/>
+        <line x1="328" y1="156" x2="366" y2="206" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw2)"/>
+
+        <rect x="368" y="36" width="170" height="48" rx="7" fill="var(--accent-soft)" stroke="var(--danger)" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="380" y="55" font-family="Prompt, sans-serif" font-weight="600" font-size="12" fill="var(--ink)">ปุ่ม LINE 392 จุด</text>
+        <text x="380" y="72">click_line → เปิดแชท</text>
+
+        <rect x="368" y="109" width="170" height="48" rx="7" fill="var(--accent-soft)" stroke="var(--danger)" stroke-width="1.3" stroke-dasharray="4 3"/>
+        <text x="380" y="128" font-family="Prompt, sans-serif" font-weight="600" font-size="12" fill="var(--ink)">ฟอร์ม lead 5 หน้า</text>
+        <text x="380" y="145">submit_lead → เปิด LINE พร้อมข้อความ</text>
+
+        <rect x="368" y="182" width="170" height="48" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.3"/>
+        <text x="380" y="201" font-family="Prompt, sans-serif" font-weight="600" font-size="12" fill="var(--ink)">/dsr/ 7 ข้อ (WEB03)</text>
+        <text x="380" y="218">ผลทันที + POST /dsr-lead</text>
+
+        <line x1="538" y1="60" x2="590" y2="118" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw2)"/>
+        <line x1="538" y1="133" x2="590" y2="133" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw2)"/>
+        <line x1="538" y1="206" x2="590" y2="148" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw2)"/>
+
+        <rect x="592" y="96" width="170" height="74" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="604" y="117" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">LINE OA + BOT01</text>
+        <text x="604" y="134">ตอบด้วย knowledge.js</text>
+        <text x="604" y="150">ส่งลิงก์บทความเอกสาร</text>
+        <text x="604" y="164" font-family="IBM Plex Mono, monospace" font-size="10">worker · ชีต Lead</text>
+
+        <line x1="762" y1="133" x2="800" y2="133" stroke="var(--human)" stroke-width="1.5" marker-end="url(#arw2)"/>
+
+        <rect x="802" y="96" width="168" height="74" rx="7" fill="var(--human-soft)" stroke="var(--human)" stroke-width="1.5"/>
+        <text x="814" y="117" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">แอดมินโทร ≤ 30 นาที</text>
+        <text x="814" y="134">คัดเกณฑ์: พื้นที่ · รายได้</text>
+        <text x="814" y="150">ไม่ติด → โทรซ้ำ 3 ครั้ง</text>
+        <text x="814" y="164" font-family="IBM Plex Mono, monospace" font-size="10">ลงสถานะทุกครั้ง</text>
+
+        <!-- bottom row: after qualification -->
+        <line x1="886" y1="170" x2="886" y2="208" stroke="var(--human)" stroke-width="1.5" marker-end="url(#arw2)"/>
+        <text x="894" y="194" font-size="10.5" fill="var(--human)">ผ่านเกณฑ์</text>
+
+        <rect x="720" y="212" width="250" height="74" rx="7" fill="var(--human-soft)" stroke="var(--human)" stroke-width="1.5"/>
+        <text x="732" y="233" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">ขอเอกสาร 5 รายการ · ทีละชิ้น</text>
+        <text x="732" y="250">ตาม วัน 1 / 3 / 7 (แอดมิน · BOT01 เมื่อโควตาพร้อม)</text>
+        <text x="732" y="266">ส่งลิงก์คู่มือ e-statement / บูโร ทันทีที่ผ่าน</text>
+        <text x="732" y="280" font-family="IBM Plex Mono, monospace" font-size="10">จุดที่ lead หลุดมากที่สุด</text>
+
+        <line x1="720" y1="249" x2="682" y2="249" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw2)"/>
+
+        <rect x="520" y="212" width="160" height="74" rx="7" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.3"/>
+        <text x="532" y="233" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">เซ็น → ยื่นธนาคาร</text>
+        <text x="532" y="250">อนุมัติ = ดุลยพินิจธนาคาร</text>
+        <text x="532" y="266">ค่าบริการ 0.5% เก็บหลัง</text>
+        <text x="532" y="280">ลูกค้าได้รับเงิน</text>
+      </g>
+    </svg>
+    <figcaption>ทางเข้า 3 ทางรวมที่ LINE OA เสมอ ฟอร์มบนเว็บไม่เก็บข้อมูลบน server แต่เปิด LINE พร้อมข้อความ มีเพียง /dsr/ ที่ส่ง lead เข้า worker ด้วย งานที่ยังเป็นคนคือโทรและตามเอกสาร ซึ่งเป็นขั้นที่ lead หลุดมากที่สุด</figcaption>
+  </figure>
+
+  <h2>สายพาน ② คอนเทนต์รายวัน</h2>
+  <ol class="steps">
+    <li><span class="who">Claude 07:00</span><span>เช็คคลังกันซ้ำ → เขียน ≤ 800 คำ → สร้างเพจ Notion วางเนื้อหาเต็ม</span><span class="st">🟡 รอตรวจ</span></li>
+    <li><span class="who">อ.ธรรศ</span><span>อ่านในแชท → พิมพ์ "ผ่าน" หรือสั่งแก้</span><span class="st">🟢 ผ่านการตรวจ</span></li>
+    <li><span class="who">Claude</span><span>ประกอบ HTML → push → เช็ค HTTP 200 → sitemap คอมมิตเดียวกัน</span><span class="st">🔵 โพสต์แล้ว</span></li>
+    <li><span class="who">Claude</span><span>infographic 2 ขนาด + แคปชั่น 6 แพลตฟอร์ม + video prompts ตาม MASTER</span><span class="st">ในเพจบทความ</span></li>
+    <li><span class="who">อ. + Claude</span><span>อ.เจนภาพ/วิดีโอ (GPT → Google Flow) → Claude ตัดต่อ ffmpeg</span><span class="st">final.mp4 + ปก</span></li>
+    <li><span class="who">อ.ธรรศ</span><span>โพสต์ 6 แพลตฟอร์มตามแคปชั่นที่เตรียม</span><span class="st">จบ 1 ชิ้น</span></li>
+  </ol>
+  <p>เบรกอัตโนมัติของขั้น A: รอตรวจค้าง 2 ชิ้นขึ้นไปหยุดผลิตใหม่ · ต่อ Notion ไม่ได้ไม่เขียน · วันนี้มีแล้วไม่ผลิตซ้ำ · มาร์ค "โพสต์แล้ว" ได้หลัง HTTP 200 จริง (บทเรียน 7 ส.ค.: 3 บทความเคยถูกมาร์คทั้งที่ 404)</p>
+
+  <h2>สายพาน ③ เปลี่ยนเกณฑ์ → sync 3 ที่</h2>
+  <figure>
+    <svg viewBox="0 0 980 190" role="img" aria-label="ลำดับการเปลี่ยนเกณฑ์: อ.ยืนยันถ้อยคำ แล้ว BIZ04 ประกาศมติ แล้ว WEB02 แก้ FAQ ทั้งข้อความและ JSON-LD และ llms.txt แล้วแจ้ง BOT01 ให้แก้ knowledge.js แล้วตรวจว่าทั้ง 3 ที่ตรงกัน">
+      <defs><marker id="arw3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+      <g font-size="11" fill="var(--ink-2)">
+        <rect x="10" y="50" width="150" height="70" rx="7" fill="var(--human-soft)" stroke="var(--human)" stroke-width="1.5"/>
+        <text x="22" y="72" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">อ.ยืนยันถ้อยคำ</text>
+        <text x="22" y="90">ลงวันที่ เช่น 6 ส.ค. 69</text>
+        <text x="22" y="106">เอกสาร 3 → 5 รายการ</text>
+        <line x1="160" y1="85" x2="196" y2="85" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw3)"/>
+
+        <rect x="198" y="50" width="150" height="70" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="210" y="72" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">BIZ04</text>
+        <text x="210" y="90">ประกาศมติ + วันที่</text>
+        <text x="210" y="106">มอบงานให้ WEB02/BOT01</text>
+        <line x1="348" y1="85" x2="384" y2="85" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw3)"/>
+
+        <rect x="386" y="50" width="190" height="70" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="398" y="72" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">WEB02</text>
+        <text x="398" y="90">① FAQ 5 หน้า: ข้อความ + JSON-LD</text>
+        <text x="398" y="106">② llms.txt "หมายเหตุสำหรับ AI"</text>
+        <line x1="576" y1="85" x2="612" y2="85" stroke="var(--danger)" stroke-width="1.5" marker-end="url(#arw3)"/>
+        <text x="560" y="140" font-size="10.5" fill="var(--danger)">แจ้ง BOT01 ทุกครั้ง — ยังเป็น manual</text>
+
+        <rect x="614" y="50" width="170" height="70" rx="7" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="626" y="72" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="var(--accent-ink)">BOT01</text>
+        <text x="626" y="90">③ แก้ knowledge.js</text>
+        <text x="626" y="106">คัดถ้อยคำเต็มจากไฟล์นี้เสมอ</text>
+        <line x1="784" y1="85" x2="820" y2="85" stroke="currentColor" stroke-width="1.3" marker-end="url(#arw3)"/>
+
+        <rect x="822" y="50" width="148" height="70" rx="7" fill="var(--truth-soft)" stroke="var(--truth)" stroke-width="1.5"/>
+        <text x="834" y="72" font-family="Prompt, sans-serif" font-weight="600" font-size="12.5" fill="var(--ink)">ตรวจ 3 ที่ตรงกัน</text>
+        <text x="834" y="90">commit ระบุวันที่มติ</text>
+        <text x="834" y="106" fill="var(--truth)">ผิดข้อเดียว = ไม่ผ่าน</text>
+      </g>
+    </svg>
+    <figcaption>เส้นที่อันตรายที่สุดในระบบ เพราะแก้ข้อความเกณฑ์บนเว็บเท่ากับแก้สมองของบอทที่ตอบลูกค้าจริง จุดอ่อนคือรอยต่อ WEB02 → BOT01 ยังพึ่งการแจ้งด้วยมือ ไม่มีตัวเช็คอัตโนมัติ</figcaption>
+  </figure>
+
+  <h2>กติกาความปลอดภัยที่บังคับใช้อยู่</h2>
+  <ul class="plain">
+    <li><span class="tag lock">ล็อก</span> ห้ามแตะปุ่ม LINE / <code>click_line</code> / <code>gtag</code> / <code>fbq</code> — แก้ได้เฉพาะข้อความรอบๆ</li>
+    <li><span class="tag truth">3 ที่</span> เกณฑ์รับเคสต้องตรงกัน 100% · แก้แล้วแจ้ง BOT01 (วัดแบบ pass/fail)</li>
+    <li><span class="tag lock">คำ</span> ห้าม "มีเงินทอน" · การันตีกู้ผ่าน · "เท่านั้น" ในบริบทตัดขาดลูกค้า · ชื่อธนาคารในเรื่องเล่า (ยกเว้น ธอส.) · สูตร "ล้านละ 6,000" กับอายุเกิน 45</li>
+    <li><span class="tag truth">ตัวเลข</span> ทุกตัวมีที่มา · ทุกหน้าที่พูดถึงอนุมัติต้องบอกว่าเป็นดุลยพินิจธนาคาร</li>
+    <li><span class="tag ai">โครง</span> ย้าย/เพิ่ม/ลบหน้า → แก้ sitemap คอมมิตเดียวกัน · หน้า noindex ห้ามเข้า sitemap · <code>git add</code> ระบุไฟล์</li>
+    <li><span class="tag human">คน</span> "โพสต์แล้ว" มาร์คได้หลัง HTTP 200 · ห้าม approve เอง · ห้าม merge เอกสารภายในเข้า main</li>
+    <li><span class="tag truth">ข้อมูล</span> แอปคำนวณรันในเครื่อง ไม่ส่งข้อมูลออก · ฟอร์ม lead มี checkbox PDPA</li>
+  </ul>
+
+  <h2>วัดผลและป้อนกลับ</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>สัญญาณ</th><th>ที่มา</th><th>ใครดู · รอบ</th></tr></thead>
+    <tbody>
+      <tr><td><code>click_line</code> · <code>submit_lead</code> · <code>dsr_result</code> · Pixel Lead</td><td>GA4 / Meta</td><td>MKT01 — Lead หน้าแรกก่อน 7 ส.ค. นับ 2 เท่า ต้องหารครึ่ง</td></tr>
+      <tr><td>ที่มาของ lead (G / F / อื่น)</td><td><code>NTK_TAG</code> ในข้อความ LINE · gclid/utm ใน /dsr-lead</td><td>แอดมินลงชีต · MKT01</td></tr>
+      <tr><td>funnel รายเดือนแยกช่องทาง</td><td>ชีต Lead Tracking Dashboard</td><td>ทุกศุกร์ (targeting) · สิ้นเดือน (เป้า)</td></tr>
+      <tr><td>คุณภาพต้นทางความจริง</td><td>เทียบ FAQ ↔ llms.txt ↔ knowledge.js</td><td>WEB02/BOT01 ทุกครั้งที่แก้ — ยังเป็น manual</td></tr>
+      <tr><td>แผนธุรกิจ</td><td>BIZ01</td><td>ทบทวนสิ้น ต.ค. 69 หรือเมื่อ funnel ส.ค.–ก.ย. ออก</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>สิ่งที่โครงสร้างปัจจุบันยังขาด</h2>
+  <p>ข้อเสนอ รอ อ.ตัดสิน เรียงตามผลต่อความเสี่ยง</p>
+  <div class="gaps">
+    <div class="gap"><b>ตัวเช็ค sync 3 ที่แบบอัตโนมัติ</b><p>วันนี้พึ่ง "แจ้ง BOT01" ด้วยมือ เสนอสคริปต์เทียบข้อความเกณฑ์ใน FAQ/llms.txt กับ knowledge.js แล้วรายงานความต่างก่อน commit ทั้งสอง repo</p></div>
+    <div class="gap"><b>ทะเบียน session กลาง</b><p>ย้ายตาราง "ทีม AI ใครเป็นเจ้าของอะไร" ไปไว้ใต้ Notion HQ ให้ทุก session อ่านก่อนเริ่มงาน แทนที่จะกระจายใน CLAUDE.md และ git log</p></div>
+    <div class="gap"><b>CLAUDE.md ล้าสมัย 2 จุด</b><p>WEB03 เขียนว่า "ยังไม่เปิด" ทั้งที่ /dsr/ ขึ้นแล้ว 4 ส.ค. · กฎ IG ห้ามใส่ URL ถึง 21 ส.ค. หมดกำหนดแล้ว ควรเช็คผลอุทธรณ์</p></div>
+    <div class="gap"><b>ติดตาม 1-3-7 ยังเป็นคน</b><p>ข้อความ BOT01 เตรียมแล้ว รอโควตา LINE ระหว่างนี้ลงวันที่ในชีตทุกครั้งเพื่อวัด baseline ก่อนเปิดอัตโนมัติ</p></div>
+    <div class="gap"><b>สายพานคอนเทนต์อัตโนมัติแค่ขั้น A</b><p>ขั้น B–E ยังสั่งในแชท เสนอให้ B (deploy หลัง "ผ่าน") เป็นคำสั่งเดียวที่รวม HTML + sitemap + HTTP 200 + มาร์คสถานะ</p></div>
+    <div class="gap"><b>การ map กับคลิป</b><p>เมื่อได้หัวข้อหลักของคลิป จะเปลี่ยนชื่อชั้น 0–6 จัดลำดับใหม่ และเติมส่วนที่คลิปมีแต่เรายังไม่มี</p></div>
+  </div>
+
+  <p class="src">แหล่งอ้างอิงในระบบ: CLAUDE.md (BIZ04 · 1 ส.ค. 69) · llms.txt · dsr/index.html (WEB03) · index.html (ntkSendLead · token ที่มา) · Notion 🏠 HQ (7 ส.ค. 69) · Notion 📋 Prompt สายพานคอนเทนต์ (21 ก.ค. 69) · Notion 🔒 BIZ01 Action Plan (28 ก.ค. 69) · git log ถึง c8c14b5 · สำเนา Markdown: docs/ai-system-architecture-touch.md บน branch claude/ai-system-architecture-touch-jhjw7y</p>
+</main>
+</body>
+
+</html>
