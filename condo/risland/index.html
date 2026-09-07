@@ -227,6 +227,9 @@ document.addEventListener('click', function(e){
   var q = new URLSearchParams(location.search);
   function ls(k){ try{ return localStorage.getItem(k)||''; }catch(e){ return ''; } }
   function save(k,v){ if(v){ try{ localStorage.setItem(k,v); }catch(e){} } }
+  // ชื่อแคมเปญจะไปอยู่ในข้อความไลน์ + regex ฝั่ง worker → ต้องล้างเหลือ [a-z0-9_-] ยาวไม่เกิน 24
+  function clean(v){ return String(v||'').toLowerCase().replace(/[^a-z0-9_-]+/g,'-')
+                       .replace(/^-+/,'').slice(0,24).replace(/-+$/,''); }
   // เก็บ raw ไว้ด้วย key ชุดเดียวกับที่ /dsr/ (WEB03) ใช้อยู่ — ฟอร์ม DSR จะได้ค่าข้ามหน้าด้วย
   save('ntk_gclid', q.get('gclid')||q.get('gbraid')||q.get('wbraid'));
   save('ntk_utm_source', q.get('utm_source'));
@@ -247,12 +250,18 @@ document.addEventListener('click', function(e){
   try{ st = JSON.parse(ls('ntk_src')||'null'); }catch(e){}
   if(st && Date.now()-st.t > TTL) st = null;
   var found = detect();
-  if(found){ st = {s:found, t:Date.now()};
-    try{ localStorage.setItem('ntk_src', JSON.stringify(st)); }catch(e){} }
-  var SRC = (st && st.s) || null;
+  if(found){
+    // เก็บแคมเปญคู่กับที่มาในก้อนเดียว → หมดอายุพร้อมกัน ไม่มีทางจับคู่ที่มา/แคมเปญข้ามรอบ
+    st = {s:found, c:(found==='ORG' ? '' : clean(q.get('utm_campaign'))), t:Date.now()};
+    try{ localStorage.setItem('ntk_src', JSON.stringify(st)); }catch(e){}
+  }
+  var SRC  = (st && st.s) || null;
+  // ค่าที่เก็บก่อน 7 ก.ย. ไม่มี c → ได้ '' → token รูปแบบเดิม · ORG ไม่พ่วงแคมเปญ (กันไว้ทั้งตอนเขียนและตอนอ่าน)
+  var CAMP = (st && st.s !== 'ORG' && st.c) || '';
 
   window.NTK_SRC_CODE = SRC;
-  window.NTK_TAG = SRC ? ' ['+SRC+']' : '';
+  window.NTK_CAMP = CAMP;                 // /dsr/ อ่านค่านี้ไปประกอบ token ของปุ่มผลประเมินเอง
+  window.NTK_TAG = SRC ? ' ['+SRC+(CAMP ? ':'+CAMP : '')+']' : '';
   if(!SRC) return;                        // ไม่มี token = ไม่แตะอะไรเลย = พฤติกรรมเดิมทุกอย่าง
 
   var p = location.pathname, MSG = 'สนใจสอบถามข้อมูลเพิ่มเติม';
