@@ -155,9 +155,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 .header-logo {
-  height: 36px;
+  height: 40px;
   width: auto;
   flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff;
 }
 
 .header-brand {
