@@ -129,6 +129,15 @@
     '<input class="dsr-input" id="fName" name="name" type="text" placeholder="ชื่อเล่นก็ได้">' +
     '<label class="dsr-label" for="fPhone" style="margin-top:10px;">เบอร์โทร</label>' +
     '<input class="dsr-input" id="fPhone" name="phone" type="tel" required placeholder="08x-xxx-xxxx" pattern="[0-9\\-\\s]{9,12}">' +
+    // ช่วงเวลาโทรกลับ (อ.เคาะ 23 ต.ค. 69 · ชุดเดียวกันทุกช่องทาง) — value = ค่าที่ลงชีต 21 ตรงตัว ห้ามแก้โดยไม่แจ้ง BOT01
+    '<label class="dsr-label" for="fCallTime" style="margin-top:10px;">ช่วงเวลาที่สะดวกให้ทีมโทรกลับ (จ–ส)</label>' +
+    '<select class="dsr-select" id="fCallTime" name="callTime">' +
+      '<option value="เวลาไหนก็ได้" selected>เวลาไหนก็ได้</option>' +
+      '<option value="11.00-13.00">11.00–13.00 น. (พักกลางวัน)</option>' +
+      '<option value="13.00-15.00">13.00–15.00 น.</option>' +
+      '<option value="15.00-18.00">15.00–18.00 น.</option>' +
+      '<option value="18.00-20.00">18.00–20.00 น. (หลังเลิกงาน)</option>' +
+    '</select>' +
     '<input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0;" aria-hidden="true">' +
 
     '<label class="dsr-consent">' +
@@ -282,6 +291,7 @@
     var lineMsg = 'สวัสดีครับ ต้องการปรึกษาเรื่อง: ' + d.goal
       + '\nชื่อ: ' + (d.name || '-')
       + '\nเบอร์โทร: ' + d.phone
+      + '\nสะดวกให้ติดต่อกลับ: ' + d.callTime
       + '\nผลประเมินเบื้องต้น: ' + m.badge + (r.dsr < 999 && r.tier !== 4 ? ' (DSR ~' + r.dsr.toFixed(0) + '%)' : '')
       + '\n(ส่งจากฟอร์ม DSR บนเว็บ ninethanakarn.com) ' + NTK_SRC.token;
     html += '<a class="dsr-line-btn" href="https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(lineMsg) + '" data-no-ref target="_blank" rel="noopener">'
@@ -324,7 +334,8 @@
       defaults: f.defaults.value,
       goal: f.goal.value,
       name: f.name.value.trim(),
-      phone: f.phone.value.replace(/\D/g, '')
+      phone: f.phone.value.replace(/\D/g, ''),
+      callTime: f.callTime.value
     };
     var r = assessDsr(d);
     var badge = TIER_META[r.tier].badge;
@@ -347,6 +358,7 @@
           dsr: r.dsr >= 999 ? '-' : r.dsr.toFixed(0), province: d.province, defaults: d.defaults,
           gclid: NTK_SRC.gclid, utm_source: NTK_SRC.utm_source, utm_campaign: NTK_SRC.utm_campaign,
           page: PAGE,
+          callTime: d.callTime,
           website: f.website.value
         })
       }).catch(function () {});

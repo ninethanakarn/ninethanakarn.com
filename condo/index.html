@@ -626,11 +626,14 @@ document.addEventListener('click', function(e){
         <option>เช่าซื้อ / ผ่อนตรง</option>
         <option>เรื่องอื่น ๆ</option>
       </select>
-      <label style="display:block;font-size:.9rem;font-weight:600;color:#1c1917;margin:0 0 4px;">ช่วงเวลาที่สะดวกให้ติดต่อกลับ</label>
+      <label style="display:block;font-size:.9rem;font-weight:600;color:#1c1917;margin:0 0 4px;">ช่วงเวลาที่สะดวกให้ทีมโทรกลับ (จ–ส)</label>
       <select name="ltime" style="width:100%;box-sizing:border-box;padding:11px 14px;border:1px solid #d6d3d1;border-radius:10px;font:inherit;font-size:.95rem;margin-bottom:16px;background:#fafaf9;color:#1c1917;">
-        <option>เวลาไหนก็ได้ (จ–ส 9:00–17:00)</option>
-        <option>ช่วงเช้า (9:00–12:00)</option>
-        <option>ช่วงบ่าย (12:00–17:00)</option>
+        <!-- ช่วงเวลาโทรกลับ ชุดเดียวกันทุกช่องทาง (อ.เคาะ 23 ต.ค. 69) · value = ค่าที่ลงชีต 21 ตรงตัว ห้ามแก้โดยไม่แจ้ง BOT01 -->
+        <option value="เวลาไหนก็ได้" selected>เวลาไหนก็ได้</option>
+        <option value="11.00-13.00">11.00–13.00 น. (พักกลางวัน)</option>
+        <option value="13.00-15.00">13.00–15.00 น.</option>
+        <option value="15.00-18.00">15.00–18.00 น.</option>
+        <option value="18.00-20.00">18.00–20.00 น. (หลังเลิกงาน)</option>
       </select>
       <label style="display:flex;gap:8px;align-items:flex-start;font-size:.85rem;color:#57534e;margin-bottom:18px;line-height:1.5;cursor:pointer;">
         <input type="checkbox" required style="margin-top:3px;flex:none;">
