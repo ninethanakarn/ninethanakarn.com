@@ -362,9 +362,15 @@
   });
 
   /* ---------- หน้าแบรนด์: ปุ่มการ์ด + แถบล่างมือถือ ---------- */
+  // ล้างชื่อโครงการด้วยกฎเดียวกับ worker BOT01 (ไทย/อังกฤษ/ตัวเลข/ช่องว่าง/- . ( ) & ' / + · ≤80)
+  // ให้หัวข้อ · event GA · ชีต 21 ได้ชื่อเดียวกัน (เช่น การ์ด "KAVE (เคฟ) ⭐" → "KAVE (เคฟ)")
+  function cleanProject(s) {
+    return String(s || '').replace(/[^฀-๿A-Za-z0-9 \-.()&'\/+]/g, '').replace(/\s+/g, ' ').trim().slice(0, 80);
+  }
+
   function goToForm(project, source) {
     if (project) {
-      PROJECT = String(project).replace(/\s+/g, ' ').trim().slice(0, 80);
+      PROJECT = cleanProject(project);
       var t = document.getElementById('dsrTitle');
       if (t) t.textContent = 'สนใจ ' + PROJECT + '? เช็คก่อนว่ากู้' + UNIT + 'ผ่านไหม ใน 2 นาที';
     }
@@ -381,7 +387,7 @@
       var foot = cards[ci].querySelector('.card-footer');
       var tEl = cards[ci].querySelector('.card-title');
       if (!foot || !tEl || foot.querySelector('.dsr-card-btn')) continue;
-      var name = tEl.textContent.replace(/\s+/g, ' ').trim();
+      var name = cleanProject(tEl.textContent);
       var btn = document.createElement('a');
       btn.href = '#dsr-mount';
       btn.className = 'dsr-card-btn';
