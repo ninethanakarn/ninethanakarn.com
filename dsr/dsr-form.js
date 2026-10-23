@@ -26,6 +26,21 @@
   var PAGE = mount.getAttribute('data-page') || '/dsr/';
   var SHOW_INTRO = mount.getAttribute('data-intro') !== '0';
 
+  /* ---------- นำร่องหน้าแบรนด์ (ORDER BIZ04 23 ต.ค. 69 "การตลาดย้อนกลับ") — เปิดเฉพาะหน้าที่ตั้งค่าเท่านั้น ----------
+   * data-title  = หัวข้อแทน "ประเมินเบื้องต้นด้วยตัวเอง" เช่น "สนใจคอนโดพฤกษา? เช็คก่อนว่ากู้ผ่านไหม ใน 2 นาที"
+   * data-sub    = ข้อความเชื่อมใต้หัวข้อ (เบา ไม่สัญญาว่ากู้ผ่าน)
+   * data-unit   = "ห้องนี้" (คอนโด) / "หลังนี้" (บ้าน) — ใช้ในปุ่มการ์ด + หัวข้อเมื่อกดจากการ์ด
+   * data-cards  = "1" ฉีดปุ่ม "เช็คว่ากู้<unit>ผ่านไหม" ลง .property-card .card-footer ทุกใบ (ชื่อโครงการจาก .card-title)
+   * data-sticky = "1" แถบติดล่างจอมือถือ "เช็คโอกาสกู้ 2 นาที" ซ่อนเมื่อถึงฟอร์มแล้ว
+   * ไม่ตั้งค่าเหล่านี้ (/dsr/ /debt/) = พฤติกรรมเดิมทุกตัวอักษร · project ส่งเฉพาะเมื่อมีค่า */
+  var TITLE = mount.getAttribute('data-title') || '';
+  var SUB = mount.getAttribute('data-sub') || '';
+  var UNIT = mount.getAttribute('data-unit') || 'ห้องนี้';
+  var USE_CARDS = mount.getAttribute('data-cards') === '1';
+  var USE_STICKY = mount.getAttribute('data-sticky') === '1';
+  var PROJECT = '';
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+
   /* ---------- สไตล์ (ย้ายมาจาก <style> ของ /dsr/ ทั้งชุด — แหล่งเดียว) ---------- */
   if (!document.getElementById('dsr-form-css')) {
     var css = document.createElement('style');
@@ -62,7 +77,19 @@
       ".dsr-disclaimer { font-size:.8rem; color:#a8a29e; line-height:1.6; margin-top:14px; }",
       ".dsr-again { background:none; border:none; color:#1e40af; text-decoration:underline; font:inherit; font-size:.85rem; cursor:pointer; margin-top:10px; }",
       "@media (max-width:480px){ .dsr-stats{ grid-template-columns:1fr; } }"
-    ].join('\n');
+    ].concat(USE_CARDS || USE_STICKY ? [
+      // ปุ่มการ์ด + แถบล่างมือถือ (หน้าแบรนด์เท่านั้น)
+      // เลื่อนลงฟอร์ม/ผลแล้วไม่ให้หัวข้อมุดใต้ header ที่ติดบนจอ (สูง 56px)
+      "#dsrFormCard, #dsrResult { scroll-margin-top:72px; }",
+      ".card-footer:has(.dsr-card-btn) { display:flex; flex-wrap:wrap; gap:8px; }",
+      ".dsr-card-btn { display:inline-flex; align-items:center; justify-content:center; gap:6px; background:linear-gradient(135deg,#f59e0b,#d97706); color:#fff !important; border:none; border-radius:999px; padding:8px 14px; font-family:'Prompt',sans-serif; font-weight:600; font-size:.85rem; text-decoration:none; cursor:pointer; box-shadow:0 3px 10px rgba(217,119,6,.3); }",
+      ".dsr-bar { position:fixed; left:0; right:0; bottom:0; z-index:95; padding:10px 14px calc(10px + env(safe-area-inset-bottom)); background:rgba(17,17,17,.94); border-top:1px solid rgba(255,255,255,.12); transform:translateY(110%); transition:transform .2s ease; }",
+      ".dsr-bar.on { transform:none; }",
+      ".dsr-bar a { display:flex; align-items:center; justify-content:center; gap:8px; background:linear-gradient(135deg,#f59e0b,#d97706); color:#fff; border-radius:999px; padding:12px; font-family:'Prompt',sans-serif; font-weight:700; font-size:1rem; text-decoration:none; }",
+      // ยกปุ่มลอย โทร/LINE ขึ้นเหนือแถบ — ไม่บังกัน
+      "body.dsr-bar-on .float-cta-pair { bottom:84px !important; transition:bottom .2s ease; }",
+      "@media (min-width:769px){ .dsr-bar { display:none !important; } body.dsr-bar-on .float-cta-pair { bottom:20px !important; } }"
+    ] : []).join('\n');
     document.head.appendChild(css);
   }
 
@@ -70,13 +97,16 @@
   mount.innerHTML =
     '<div class="dsr-wrap">' +
     '<div class="dsr-card" id="dsrFormCard">' +
-    (SHOW_INTRO
+    (TITLE
+      ? '<h2 id="dsrTitle">' + esc(TITLE) + '</h2>' +
+        (SUB ? '<p class="dsr-sub">' + esc(SUB) + '</p>' : '')
+      : SHOW_INTRO
       ? '<h2>ประเมินเบื้องต้นด้วยตัวเอง</h2>' +
         '<p class="dsr-sub">ใช้เกณฑ์เดียวกับที่ทีมเราใช้คัดกรองเคสจริง ผลที่ได้เป็นประมาณการเบื้องต้น ไม่ใช่ผลอนุมัติ</p>'
       : '') +
     '<form id="dsrForm" autocomplete="off">' +
 
-    '<span class="dsr-num' + (SHOW_INTRO ? '' : ' first') + '">ข้อ 1/7</span>' +
+    '<span class="dsr-num' + (SHOW_INTRO || TITLE ? '' : ' first') + '">ข้อ 1/7</span>' +
     '<label class="dsr-label" for="fAge">อายุ (ปี)</label>' +
     '<p class="dsr-hint">อายุมีผลกับระยะเวลากู้ที่เหลือ — ยิ่งอายุมาก ระยะกู้สั้นลง ค่างวดต่อเดือนสูงขึ้น</p>' +
     '<input class="dsr-input" id="fAge" name="age" type="number" inputmode="numeric" min="20" max="75" required placeholder="เช่น 35">' +
@@ -292,6 +322,7 @@
       + '\nชื่อ: ' + (d.name || '-')
       + '\nเบอร์โทร: ' + d.phone
       + '\nสะดวกให้ติดต่อกลับ: ' + d.callTime
+      + (PROJECT ? '\nโครงการที่สนใจ: ' + PROJECT : '')
       + '\nผลประเมินเบื้องต้น: ' + m.badge + (r.dsr < 999 && r.tier !== 4 ? ' (DSR ~' + r.dsr.toFixed(0) + '%)' : '')
       + '\n(ส่งจากฟอร์ม DSR บนเว็บ ninethanakarn.com) ' + NTK_SRC.token;
     html += '<a class="dsr-line-btn" href="https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(lineMsg) + '" data-no-ref target="_blank" rel="noopener">'
@@ -313,13 +344,81 @@
 
   var form = document.getElementById('dsrForm');
 
+  // พารามิเตอร์ event: page เสมอ + project เฉพาะเมื่อมีค่า (/dsr/ /debt/ ได้ event รูปแบบเดิม)
+  function evp(extra) {
+    var o = {};
+    for (var k in extra) o[k] = extra[k];   // ลำดับเดิม: {topic|tier, page} — คงไว้ให้ /dsr/ /debt/ เหมือนเดิมทุกตัว
+    o.page = PAGE;
+    if (PROJECT) o.project = PROJECT;
+    return o;
+  }
+
   // วัดอัตรากรอก (MKT03 เทียบ /dsr/ vs /debt/ 14 วัน): ยิงครั้งเดียวเมื่อแตะช่องแรก
   var started = false;
   form.addEventListener('focusin', function () {
     if (started) return;
     started = true;
-    if (typeof gtag === 'function') gtag('event', 'dsr_form_start', { page: PAGE });
+    if (typeof gtag === 'function') gtag('event', 'dsr_form_start', evp({}));
   });
+
+  /* ---------- หน้าแบรนด์: ปุ่มการ์ด + แถบล่างมือถือ ---------- */
+  function goToForm(project, source) {
+    if (project) {
+      PROJECT = String(project).replace(/\s+/g, ' ').trim().slice(0, 80);
+      var t = document.getElementById('dsrTitle');
+      if (t) t.textContent = 'สนใจ ' + PROJECT + '? เช็คก่อนว่ากู้' + UNIT + 'ผ่านไหม ใน 2 นาที';
+    }
+    if (typeof gtag === 'function') gtag('event', 'dsr_cta_click', evp({ source: source }));
+    // ไม่ auto-focus ช่องแรก — บนมือถือจะเด้งคีย์บอร์ดทับหัวข้อ
+    // คำนวณตำแหน่งเอง (เผื่อ header ติดบนจอ) — smooth scrollIntoView บางเบราว์เซอร์ไม่เคารพ scroll-margin
+    var card = document.getElementById('dsrFormCard');
+    window.scrollTo({ top: card.getBoundingClientRect().top + window.pageYOffset - 72, behavior: 'smooth' });
+  }
+
+  if (USE_CARDS) {
+    var cards = document.querySelectorAll('.property-card');
+    for (var ci = 0; ci < cards.length; ci++) {
+      var foot = cards[ci].querySelector('.card-footer');
+      var tEl = cards[ci].querySelector('.card-title');
+      if (!foot || !tEl || foot.querySelector('.dsr-card-btn')) continue;
+      var name = tEl.textContent.replace(/\s+/g, ' ').trim();
+      var btn = document.createElement('a');
+      btn.href = '#dsr-mount';
+      btn.className = 'dsr-card-btn';
+      btn.setAttribute('data-dsr-project', name);
+      btn.textContent = 'เช็คว่ากู้' + UNIT + 'ผ่านไหม';
+      foot.insertBefore(btn, foot.firstChild);
+    }
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('.dsr-card-btn') : null;
+      if (!a) return;
+      e.preventDefault();
+      goToForm(a.getAttribute('data-dsr-project'), 'card');
+    });
+  }
+
+  if (USE_STICKY) {
+    var bar = document.createElement('div');
+    bar.className = 'dsr-bar';
+    bar.innerHTML = '<a href="#dsr-mount">✓ เช็คโอกาสกู้ 2 นาที</a>';
+    document.body.appendChild(bar);
+    bar.querySelector('a').addEventListener('click', function (e) { e.preventDefault(); goToForm('', 'bar'); });
+    // โชว์เฉพาะตอนฟอร์มยังอยู่ใต้จอ · ถึงฟอร์มหรือเลยลงไปแล้ว (footer) = ซ่อน ไม่บังเนื้อหา
+    var syncBar = function () {
+      var show = mount.getBoundingClientRect().top > window.innerHeight - 40;
+      bar.classList.toggle('on', show);
+      document.body.classList.toggle('dsr-bar-on', show);
+    };
+    // throttle ด้วยเวลา + เรียกท้ายอีกครั้งหลังหยุดเลื่อน (ไม่พึ่ง requestAnimationFrame — บาง in-app browser หน่วงเฟรม)
+    var lastRun = 0, trail = null;
+    window.addEventListener('scroll', function () {
+      var now = Date.now();
+      if (now - lastRun > 100) { lastRun = now; syncBar(); }
+      clearTimeout(trail); trail = setTimeout(syncBar, 120);
+    }, { passive: true });
+    window.addEventListener('resize', syncBar);
+    syncBar();
+  }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -341,26 +440,28 @@
     var badge = TIER_META[r.tier].badge;
 
     if (typeof gtag === 'function') {
-      gtag('event', 'submit_lead', { topic: d.goal, page: PAGE });
-      gtag('event', 'dsr_result', { tier: badge, page: PAGE });
+      gtag('event', 'submit_lead', evp({ topic: d.goal }));
+      gtag('event', 'dsr_result', evp({ tier: badge }));
     }
     if (typeof fbq === 'function') { fbq('track', 'Lead', { content_category: d.goal }); }
 
     // ส่ง lead เข้าระบบ (ไม่บล็อกการแสดงผล — ล้มเหลวเงียบ ลูกค้ายังไปต่อทาง LINE ได้)
+    var payload = {
+      name: d.name, phone: d.phone, goal: d.goal, tier: badge,
+      age: d.age, jobType: d.jobType, income: d.income, debt: d.debt, bnpl: d.bnpl,
+      dsr: r.dsr >= 999 ? '-' : r.dsr.toFixed(0), province: d.province, defaults: d.defaults,
+      gclid: NTK_SRC.gclid, utm_source: NTK_SRC.utm_source, utm_campaign: NTK_SRC.utm_campaign,
+      page: PAGE,
+      callTime: d.callTime,
+      website: f.website.value
+    };
+    if (PROJECT) payload.project = PROJECT;   // worker BOT01 ba5732ae: ท่อน "โครงการ:" ใน รหัสคลิกโฆษณา + Note + KV
     try {
       fetch('https://ninethanakarn-line-bot.touch-nachonkamol.workers.dev/dsr-lead', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         keepalive: true,
-        body: JSON.stringify({
-          name: d.name, phone: d.phone, goal: d.goal, tier: badge,
-          age: d.age, jobType: d.jobType, income: d.income, debt: d.debt, bnpl: d.bnpl,
-          dsr: r.dsr >= 999 ? '-' : r.dsr.toFixed(0), province: d.province, defaults: d.defaults,
-          gclid: NTK_SRC.gclid, utm_source: NTK_SRC.utm_source, utm_campaign: NTK_SRC.utm_campaign,
-          page: PAGE,
-          callTime: d.callTime,
-          website: f.website.value
-        })
+        body: JSON.stringify(payload)
       }).catch(function () {});
     } catch (err) {}
 
