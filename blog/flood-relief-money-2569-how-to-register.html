@@ -30,9 +30,11 @@
     .article ul, .article ol { padding-left: 1.5rem; margin-bottom: 1rem; }
     .article li { line-height: 1.8; margin-bottom: 0.4rem; }
     .article strong { color: #fbbf24; }
-    .article table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.95rem; }
+    .article table { width: 100%; min-width: 0; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.95rem; }
     .article th, .article td { border: 1px solid var(--border, rgba(255,255,255,0.15)); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; line-height: 1.6; }
     .article th { background: var(--bg-subtle, rgba(255,255,255,0.05)); font-weight: 600; }
+    .article th, .article td { overflow-wrap: anywhere; word-break: break-word; }
+    @media (max-width: 600px) { .article table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; } .article table thead, .article table tbody { display: table; width: 100%; } .article th, .article td { font-size: 0.88rem; padding: 0.5rem; } }
     .article-meta {
       font-size: 0.85rem;
       color: var(--muted, #9ca3af);
