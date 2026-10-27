@@ -133,6 +133,16 @@ document.addEventListener('click', function(e){
     </div>
   </header>
 
+<style>
+/* ปุ่ม Topbar ข้อความยาว "เช็คโอกาสกู้บ้านและคอนโดฟรี ใน 2 นาที" — ตัดบรรทัดได้ ไม่ล้นจอมือถือ (WEB02 · 27 ต.ค. 69) */
+.dh .bt-wrap{grid-template-columns:minmax(0,1fr)}
+.dh .bt-wrap>*{min-width:0}
+.dh .bt-go{white-space:normal;text-align:center;line-height:1.35}
+.dh .dh-tel{flex:0 0 auto}
+@media (max-width:420px){.dh-cta{flex-wrap:wrap}.dh .dh-cta .bt-go,.dh .dh-tel{flex:1 1 100%}}
+@media (min-width:768px){.dh .bt-wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+</style>
+  <style>@media (max-width:420px){.dh .bt-go{font-size:15px;padding-left:.75rem;padding-right:.75rem}}</style>
   <section class="bt dh">
     <div class="bt-wrap">
       <div class="bt-main">
@@ -150,7 +160,7 @@ document.addEventListener('click', function(e){
         <img src="/images/brand-topbar-advisor-2026-10-26.webp" alt="" width="52" height="52">
         <div><b>ดูแลโดย อ.ธรรศ · นายธนาคารประจำบ้าน</b><small>ที่ปรึกษาทางการเงิน ตั้งแต่ปี 2562</small></div>
       </div>
-      <div class="dh-cta"><a class="bt-go" href="#dsr-mount">เริ่มประเมินเลย ↓</a></div>
+      <div class="dh-cta"><a class="bt-go" href="#dsr-mount">✓ เช็คโอกาสกู้บ้านและคอนโดฟรี <span style="white-space:nowrap">ใน 2 นาที</span></a></div>
     </div>
   </section>
 
