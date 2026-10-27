@@ -158,6 +158,21 @@ document.addEventListener('click', function(e){
     </div>
   </footer>
 
+  <style>
+    /* ปุ่มลอย โทร/LINE — เดิมไม่มี CSS ทำให้ไอคอนขยายเต็มจอ (WEB02 แก้ตาม อ.สั่ง 27 ต.ค. 69 · สไตล์เดียวกับหน้าแบรนด์) */
+    .float-cta-pair{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:200;align-items:center}
+    .float-call,.float-line{display:flex;align-items:center;gap:7px;padding:13px 18px;border-radius:999px;font-weight:600;font-size:14px;line-height:1;text-decoration:none;white-space:nowrap;transition:transform .2s}
+    .float-call{background:#111;color:#fff;border:1.5px solid rgba(255,255,255,.55);box-shadow:0 4px 14px rgba(0,0,0,.45)}
+    .float-line{background:linear-gradient(135deg,#06C755,#04a847);color:#fff;border:1.5px solid rgba(255,255,255,.8);box-shadow:0 4px 14px rgba(6,199,85,.4)}
+    .float-call:hover,.float-line:hover{transform:scale(1.04);text-decoration:none;color:#fff}
+    .float-call svg,.float-line svg{width:18px;height:18px;flex-shrink:0}
+    @media (max-width:480px){
+      .float-cta-pair{left:12px;right:12px;bottom:12px;gap:8px}
+      .float-call,.float-line{flex:1;justify-content:center;padding:12px 10px;font-size:14px}
+      body{padding-bottom:76px}
+    }
+    @media print{.float-cta-pair{display:none!important}}
+  </style>
   <div class="float-cta-pair">
     <a href="tel:023340940" class="float-call" aria-label="โทรปรึกษา">
       <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.0 2.89 2 2 0 012 .67h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.52a16 16 0 006.29 6.29l1.42-1.42a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
