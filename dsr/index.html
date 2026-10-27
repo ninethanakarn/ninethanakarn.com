@@ -133,10 +133,51 @@ document.addEventListener('click', function(e){
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>เช็คโอกาสกู้บ้าน ใน 2 นาที</h1>
-      <p class="hero-subtitle">ตอบ 7 ข้อ รู้ทันที: ภาระหนี้ต่อรายได้ (DSR) ของคุณอยู่ตรงไหน · วงเงินกู้บ้านโดยประมาณ · ควรเตรียมอะไรก่อนยื่นจริง — ฟรี ไม่มีค่าใช้จ่าย</p>
+  <style>
+    /* Topbar /dsr/ (WEB02 · อ.สั่ง 27 ต.ค. 69) — สไตล์โปสเตอร์ รูปคู่ · ใช้ฐาน .bt จาก /condo/assets/style.css */
+    .dh .bt-wrap{grid-template-columns:1fr 40%;grid-template-areas:"main photo" "list list" "cta cta";gap:.2rem .8rem;padding:1.2rem 1rem 1.2rem;align-items:end}
+    .dh .bt-main{grid-area:main;align-self:center}
+    .dh-kick{display:inline-block;margin-bottom:.45rem;padding:.2rem .6rem;border-radius:999px;background:#dcfce7;color:#166534;font-size:.75rem;font-weight:700}
+    .dh .bt-title{font-size:1.6rem;line-height:1.25;margin-bottom:.3rem}
+    .dh .bt-title span{display:block;color:#1877f2}
+    .dh .bt-sub{margin:0;font-size:.9rem;font-weight:600;color:#33466b}
+    .dh-photo{grid-area:photo;align-self:end}
+    .dh-photo img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 6px 18px rgba(11,31,77,.18)}
+    .dh-list{grid-area:list;list-style:none;margin:.7rem 0 0;padding:0;display:grid;gap:.35rem}
+    .dh-list li{position:relative;padding-left:1.55rem;font-size:.92rem;line-height:1.5;color:#0b1f4d}
+    .dh-list li::before{content:"✓";position:absolute;left:0;top:.05rem;width:1.15rem;height:1.15rem;border-radius:50%;background:#1877f2;color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+    .dh-cta{grid-area:cta;display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:.85rem}
+    .dh-cta .bt-go{margin-left:0;flex:1 1 auto}
+    .dh-who{font-size:.78rem;color:#4b5d80;line-height:1.4}
+    .dh-who b{display:block;color:#0b1f4d;font-size:.85rem}
+    #dsr-mount{scroll-margin-top:70px}
+    @media (min-width:768px){
+      .dh .bt-wrap{grid-template-columns:1.5fr 1fr;grid-template-rows:1fr auto auto;grid-template-areas:"main photo" "list photo" "cta photo";padding:2rem 1rem 0;gap:0 2rem}
+      .dh .bt-main{align-self:end}
+      .dh .bt-title{font-size:2.4rem}
+      .dh .bt-sub{font-size:1.05rem}
+      .dh-photo img{max-width:420px;margin-left:auto;border-radius:18px 18px 0 0;box-shadow:0 -8px 28px rgba(11,31,77,.16)}
+      .dh-cta{margin:1rem 0 1.8rem}
+      .dh-cta .bt-go{flex:0 0 auto}
+    }
+  </style>
+  <section class="bt dh">
+    <div class="bt-wrap">
+      <div class="bt-main">
+        <span class="dh-kick">ฟรี · ไม่มีค่าใช้จ่าย</span>
+        <h1 class="bt-title">เช็คโอกาสกู้บ้าน <span>ใน 2 นาที</span></h1>
+        <p class="bt-sub">ตอบ 7 ข้อ รู้ทันที</p>
+      </div>
+      <div class="dh-photo"><img src="/images/brand-topbar-advisor-2026-10-26.webp" alt="ทีมนายธนาคารประจำบ้าน" width="525" height="480"></div>
+      <ul class="dh-list">
+        <li>ภาระหนี้ต่อรายได้ (DSR) ของคุณอยู่ตรงไหน</li>
+        <li>วงเงินกู้บ้านโดยประมาณ</li>
+        <li>ควรเตรียมอะไรก่อนยื่นจริง</li>
+      </ul>
+      <div class="dh-cta">
+        <a class="bt-go" href="#dsr-mount">เริ่มประเมินเลย ↓</a>
+        <div class="dh-who"><b>ทีมนายธนาคารประจำบ้าน</b>ที่ปรึกษาทางการเงิน ตั้งแต่ปี 2562</div>
+      </div>
     </div>
   </section>
 
