@@ -1015,3 +1015,13 @@ tr:nth-child(even) td {
 
 /* ป้ายรหัส SET ในหัวข้อหน้าแบรนด์ (.dh) — WEB02 27 ต.ค. 69 */
 .dh .bt-title .dh-code{display:inline-block;margin-left:.45rem;padding:.1rem .55rem;border-radius:6px;background:#e3edfc;color:#1d4fa8;font-size:.5em;font-weight:700;letter-spacing:.04em;vertical-align:middle}
+
+/* Topbar .dh สำหรับหน้า /blog/ (WEB02 · 27 ต.ค. 69) — รูป อ.เดี่ยว · หัวข้อบทความยาว · ปุ่มตัดบรรทัดได้ */
+.dh-blog .bt-wrap{grid-template-columns:minmax(0,1fr)}
+.dh-blog .bt-wrap>*{min-width:0}
+.dh-blog .bt-title{font-size:1.45rem;line-height:1.3}
+.dh-blog .bt-meta{margin:.5rem 0 0}
+.dh-blog .bt-go{white-space:normal;text-align:center;line-height:1.35}
+.dh-blog .dh-tel{flex:0 0 auto}
+@media (max-width:420px){.dh-blog .dh-cta{flex-wrap:wrap}.dh-blog .dh-cta .bt-go,.dh-blog .dh-tel{flex:1 1 100%}}
+@media (min-width:768px){.dh-blog .bt-wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}.dh-blog .bt-title{font-size:2rem}.dh-blog .dh-photo img{max-width:360px}}
