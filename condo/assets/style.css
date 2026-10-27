@@ -1012,3 +1012,6 @@ tr:nth-child(even) td {
   .dh-cta{margin:1rem 0 1.8rem}
   .dh-cta .bt-go{flex:0 0 auto}
 }
+
+/* ป้ายรหัส SET ในหัวข้อหน้าแบรนด์ (.dh) — WEB02 27 ต.ค. 69 */
+.dh .bt-title .dh-code{display:inline-block;margin-left:.45rem;padding:.1rem .55rem;border-radius:6px;background:#e3edfc;color:#1d4fa8;font-size:.5em;font-weight:700;letter-spacing:.04em;vertical-align:middle}
