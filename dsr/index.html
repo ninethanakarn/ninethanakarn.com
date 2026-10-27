@@ -133,38 +133,6 @@ document.addEventListener('click', function(e){
     </div>
   </header>
 
-  <style>
-    /* Topbar /dsr/ (WEB02 · อ.สั่ง 27 ต.ค. 69) — สไตล์โปสเตอร์ รูปคู่ · ใช้ฐาน .bt จาก /condo/assets/style.css */
-    .dh .bt-wrap{grid-template-columns:1fr;grid-template-areas:"main" "list" "adv" "cta";gap:0;padding:1.2rem 1rem 1.3rem}
-    .dh .bt-main{grid-area:main;align-self:center}
-    .dh-kick{display:inline-block;margin-bottom:.45rem;padding:.2rem .6rem;border-radius:999px;background:#dcfce7;color:#166534;font-size:.75rem;font-weight:700}
-    .dh .bt-title{font-size:1.6rem;line-height:1.25;margin-bottom:.3rem}
-    .dh .bt-title span{display:block;color:#1877f2}
-    .dh .bt-sub{margin:0;font-size:.9rem;font-weight:600;color:#33466b}
-    .dh-photo{grid-area:photo;display:none}
-    .dh-photo img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 6px 18px rgba(11,31,77,.18)}
-    .dh-list{grid-area:list;list-style:none;margin:.7rem 0 0;padding:0;display:grid;gap:.35rem}
-    .dh-list li{position:relative;padding-left:1.55rem;font-size:.92rem;line-height:1.5;color:#0b1f4d}
-    .dh-list li::before{content:"✓";position:absolute;left:0;top:.05rem;width:1.15rem;height:1.15rem;border-radius:50%;background:#1877f2;color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center}
-    .dh-adv{grid-area:adv;display:flex;align-items:center;gap:.7rem;margin-top:1rem}
-    .dh-adv img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 8px rgba(11,31,77,.2);background:#fff;flex-shrink:0}
-    .dh-adv b{display:block;font-size:.92rem;color:#0b1f4d;line-height:1.35}
-    .dh-adv small{display:block;font-size:.8rem;color:#4b5d80}
-    .dh-cta{grid-area:cta;margin-top:1rem}
-    .dh-cta .bt-go{margin-left:0;display:flex;width:100%}
-    #dsr-mount{scroll-margin-top:70px}
-    @media (min-width:768px){
-      .dh .bt-wrap{grid-template-columns:1.5fr 1fr;grid-template-rows:1fr auto auto auto;grid-template-areas:"main photo" "list photo" "adv photo" "cta photo";padding:2rem 1rem 0;gap:0 2rem}
-      .dh .bt-main{align-self:end}
-      .dh .bt-title{font-size:2.4rem}
-      .dh .bt-sub{font-size:1.05rem}
-      .dh-photo{display:block;align-self:end}
-      .dh-adv img{display:none}
-      .dh-photo img{max-width:420px;margin-left:auto;border-radius:18px 18px 0 0;box-shadow:0 -8px 28px rgba(11,31,77,.16)}
-      .dh-cta{margin:1rem 0 1.8rem}
-      .dh-cta .bt-go{display:inline-flex;width:auto}
-    }
-  </style>
   <section class="bt dh">
     <div class="bt-wrap">
       <div class="bt-main">
