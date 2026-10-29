@@ -6,7 +6,7 @@
   <title>App คำนวณสินเชื่อบ้าน — นายธนาคารประจำบ้าน</title>
 
   <!-- SEO -->
-  <meta name="description" content="App คำนวณสินเชื่อบ้าน คำนวณค่างวด ดอกเบี้ย เปรียบเทียบรีไฟแนนซ์ บันทึกแผนกู้ได้หลายแผน · โดยนายธนาคารประจำบ้าน ที่ปรึกษาสินเชื่อมืออาชีพ 7+ ปี" />
+  <meta name="description" content="App คำนวณสินเชื่อบ้าน คำนวณค่างวด ดอกเบี้ย บันทึกและเปรียบเทียบแผนกู้ได้หลายแผน · โดยนายธนาคารประจำบ้าน ที่ปรึกษาสินเชื่อมืออาชีพ 7+ ปี" />
   <meta name="theme-color" content="#1e40af" />
 
   <!-- Open Graph (Facebook / LINE / messaging apps) -->
@@ -15,7 +15,7 @@
   <meta property="og:locale" content="th_TH" />
   <meta property="og:url" content="https://ninethanakarn.com/loan/" />
   <meta property="og:title" content="App คำนวณสินเชื่อบ้าน — นายธนาคารประจำบ้าน" />
-  <meta property="og:description" content="คำนวณค่างวด ดอกเบี้ย เปรียบเทียบรีไฟแนนซ์ · โดยนายธนาคารประจำบ้าน 7+ ปี" />
+  <meta property="og:description" content="คำนวณค่างวด ดอกเบี้ย เปรียบเทียบแผนกู้ · โดยนายธนาคารประจำบ้าน 7+ ปี" />
   <meta property="og:image" content="https://ninethanakarn.com/og-image.png" />
   <meta property="og:image:secure_url" content="https://ninethanakarn.com/og-image.png" />
   <meta property="og:image:type" content="image/png" />
@@ -27,7 +27,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://ninethanakarn.com/loan/" />
   <meta name="twitter:title" content="App คำนวณสินเชื่อบ้าน — นายธนาคารประจำบ้าน" />
-  <meta name="twitter:description" content="คำนวณค่างวด ดอกเบี้ย เปรียบเทียบรีไฟแนนซ์ · โดยนายธนาคารประจำบ้าน 7+ ปี" />
+  <meta name="twitter:description" content="คำนวณค่างวด ดอกเบี้ย เปรียบเทียบแผนกู้ · โดยนายธนาคารประจำบ้าน 7+ ปี" />
   <meta name="twitter:image" content="https://ninethanakarn.com/og-image.png" />
   <meta name="twitter:image:alt" content="นายธนาคารประจำบ้าน — App คำนวณสินเชื่อบ้าน" />
 
@@ -2184,9 +2184,8 @@ document.addEventListener('click', function(e){
           <div class="guide-step">
             <div class="step-num">5</div>
             <div class="step-content">
-              <h4>บันทึก / เปรียบเทียบ / รีไฟแนนซ์</h4>
+              <h4>บันทึก / เปรียบเทียบ</h4>
               <p>กด <strong>💾 บันทึกแผนนี้</strong> → เปลี่ยนธนาคารหรือระยะผ่อนแล้วบันทึกแผนที่ 2 → เปิด <strong>เปรียบเทียบแผน</strong> เพื่อดูแบบเคียงข้างกัน</p>
-              <p>เลื่อนลงที่ <strong>section รีไฟแนนซ์</strong> — ใส่ยอดหนี้คงเหลือ อัตราใหม่ ระบบคำนวณว่าคุ้มไหมกับค่าธรรมเนียม</p>
             </div>
           </div>
 
@@ -2509,84 +2508,6 @@ document.addEventListener('click', function(e){
         </div>
       </div>
     </div>
-
-    <section class="card refinance-section no-pdf" id="refinance-section">
-      <div class="refinance-head">
-        <div>
-          <h2 class="refinance-title">🔄 คำนวณรีไฟแนนซ์</h2>
-          <p class="refinance-sub">เปรียบเทียบสินเชื่อเดิมกับการรีไฟแนนซ์ใหม่</p>
-        </div>
-        <button type="button" class="btn-plan btn-plan-secondary" id="refinance-toggle" aria-expanded="false" aria-controls="refinance-panel">
-          แสดง
-        </button>
-      </div>
-      <div class="refinance-panel" id="refinance-panel" hidden>
-        <form id="refinance-form" novalidate>
-          <div class="refinance-groups">
-            <div class="refinance-group">
-              <h3>สินเชื่อเดิม</h3>
-              <div class="field refinance-saved-row">
-                <label for="refinance-saved-select">📥 ใช้ข้อมูลจากแผนที่บันทึก</label>
-                <select id="refinance-saved-select">
-                  <option value="">— เลือกแผน —</option>
-                </select>
-              </div>
-              <div class="field">
-                <label for="ref-old-principal">จำนวนเงินกู้เดิม (บาท)</label>
-                <input type="number" id="ref-old-principal" min="1" step="1" placeholder="เช่น 3000000" required />
-              </div>
-              <div class="field">
-                <label for="ref-old-rate">อัตราดอกเบี้ยเดิม (%)</label>
-                <input type="number" id="ref-old-rate" min="0.01" max="29.99" step="0.01" placeholder="เช่น 6.5" required />
-              </div>
-              <div class="field">
-                <label for="ref-old-months">ระยะเวลาเดิม (เดือน)</label>
-                <input type="number" id="ref-old-months" min="1" max="600" step="1" placeholder="เช่น 360" required />
-              </div>
-              <div class="field">
-                <label for="ref-paid-months">ผ่อนมาแล้วกี่เดือน</label>
-                <input type="number" id="ref-paid-months" min="0" max="599" step="1" placeholder="เช่น 36" required />
-              </div>
-            </div>
-            <div class="refinance-group">
-              <h3>เงื่อนไขรีไฟแนนซ์ใหม่</h3>
-              <div class="field">
-                <label for="ref-new-rate">อัตราดอกเบี้ยใหม่ (%)</label>
-                <input type="number" id="ref-new-rate" min="0.01" max="29.99" step="0.01" placeholder="เช่น 4.5" required />
-              </div>
-              <div class="field">
-                <label for="ref-new-months">ระยะเวลาใหม่ (เดือน)</label>
-                <input type="number" id="ref-new-months" min="1" max="600" step="1" placeholder="เว้นว่าง = ใช้เวลาที่เหลือ" />
-                <div class="hint">ค่าเริ่มต้นเท่ากับเดือนที่เหลือของสินเชื่อเดิม (ถ้าไม่กรอก)</div>
-              </div>
-              <div class="field">
-                <label for="ref-fee">ค่าธรรมเนียมรีไฟแนนซ์ (บาท)</label>
-                <input type="number" id="ref-fee" min="0" step="1" placeholder="0" value="" />
-                <div class="hint">เช่น ค่าจัดทำ ค่าประเมิน ค่าจดจำนอง</div>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn-plan-save" id="refinance-submit">🔍 คำนวณรีไฟแนนซ์</button>
-        </form>
-
-        <div class="refinance-results-block" id="refinance-results" hidden>
-          <div class="refinance-scroll">
-            <table class="refinance-table" aria-label="ผลเปรียบเทียบรีไฟแนนซ์">
-              <thead>
-                <tr>
-                  <th scope="col">หัวข้อ</th>
-                  <th scope="col">ผ่อนต่อ (ไม่รีไฟแนนซ์)</th>
-                  <th scope="col">รีไฟแนนซ์ใหม่</th>
-                </tr>
-              </thead>
-              <tbody id="refinance-tbody"></tbody>
-            </table>
-          </div>
-          <div class="refinance-summary" id="refinance-summary" hidden></div>
-        </div>
-      </div>
-    </section>
-
 
     <section class="card no-pdf" style="margin-top:0;" aria-label="รีวิวจากลูกค้า">
       <p style="font-size:0.85rem; color:var(--muted); text-align:center; margin:0 0 0.85rem;">ใช้บริการแล้ว? แชร์ประสบการณ์เพื่อเป็นกำลังใจให้ทีม 🙏</p>
