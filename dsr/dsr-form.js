@@ -39,7 +39,11 @@
   var USE_CARDS = mount.getAttribute('data-cards') === '1';
   var USE_STICKY = mount.getAttribute('data-sticky') === '1';
   var PROJECT = '';
-  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  /* ทีมขาย 2 PIM (ORDER BIZ04 7 พ.ย. 69): หน้า /debt/ ตั้ง window.NTK_TEAM = 'PIM' เมื่อ URL มี team=pim
+   * → payload.team = 'pim' (worker BOT01 เขียนชีต 21P) + token [PIM] หน้า token ที่มาในข้อความ LINE + event team
+   * ไม่ตั้ง (ทุกหน้าอื่น รวม /dsr/) = พฤติกรรมเดิมทุกตัวอักษร */
+  var TEAM = window.NTK_TEAM === 'PIM' ? 'PIM' : '';
+  var esc =function (s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
 
   /* ---------- สไตล์ (ย้ายมาจาก <style> ของ /dsr/ ทั้งชุด — แหล่งเดียว) ---------- */
   if (!document.getElementById('dsr-form-css')) {
@@ -324,7 +328,7 @@
       + '\nสะดวกให้ติดต่อกลับ: ' + d.callTime
       + (PROJECT ? '\nโครงการที่สนใจ: ' + PROJECT : '')
       + '\nผลประเมินเบื้องต้น: ' + m.badge + (r.dsr < 999 && r.tier !== 4 ? ' (DSR ~' + r.dsr.toFixed(0) + '%)' : '')
-      + '\n(ส่งจากฟอร์ม DSR บนเว็บ ninethanakarn.com) ' + NTK_SRC.token;
+      + '\n(ส่งจากฟอร์ม DSR บนเว็บ ninethanakarn.com) ' + (TEAM ? '[PIM] ' : '') + NTK_SRC.token;
     html += '<a class="dsr-line-btn" href="https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(lineMsg) + '" data-no-ref target="_blank" rel="noopener">'
       + '<svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px;"><path d="M12 2C6.48 2 2 5.58 2 10c0 2.85 1.85 5.35 4.62 6.78-.13.44-.78 2.66-.85 2.95 0 0-.02.13.07.18.09.05.2.01.2.01.27-.04 3.16-2.06 3.66-2.42.75.11 1.51.16 2.3.16 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>'
       + (r.tier === 1 ? 'ให้ทีมตรวจละเอียดฟรี ทาง LINE' : r.tier === 3 ? 'ปรึกษาแผนปิดหนี้ฟรี ทาง LINE' : 'คุยกับทีมฟรี ทาง LINE') + '</a>';
@@ -350,6 +354,7 @@
     for (var k in extra) o[k] = extra[k];   // ลำดับเดิม: {topic|tier, page} — คงไว้ให้ /dsr/ /debt/ เหมือนเดิมทุกตัว
     o.page = PAGE;
     if (PROJECT) o.project = PROJECT;
+    if (TEAM) o.team = 'pim';
     return o;
   }
 
@@ -462,6 +467,7 @@
       website: f.website.value
     };
     if (PROJECT) payload.project = PROJECT;   // worker BOT01 ba5732ae: ท่อน "โครงการ:" ใน รหัสคลิกโฆษณา + Note + KV
+    if (TEAM) payload.team = 'pim';           // worker BOT01 (ORDER PIM 7 พ.ย. 69): team=pim → ชีต 21P · ไม่มี = ชีต 21
     try {
       fetch('https://ninethanakarn-line-bot.touch-nachonkamol.workers.dev/dsr-lead', {
         method: 'POST',

@@ -449,6 +449,27 @@ document.addEventListener('click', function(e){
 </script>
 </head>
 <body>
+<script>
+/* WEB03 7 พ.ย. 69 (ORDER BIZ04 ทีมขาย 2 PIM): /debt/?team=pim → token [PIM] หน้า token ที่มา ([PIM] [FB:camp]) ในทุกข้อความ LINE ของหน้านี้
+ * + window.NTK_TEAM ให้ฟอร์ม DSR ส่ง team=pim (worker BOT01 → ชีต 21P) · จำไว้ใน sessionStorage เฉพาะแท็บนี้ (รีโหลด/กดในหน้ายังเป็น PIM)
+ * ไม่มี team = ไม่แตะอะไร · ไม่แก้ snippet WEB01 ด้านบน (อ่าน NTK_TAG ตอนคลิกอยู่แล้ว จึงต่อ [PIM] ที่ตัวแปรได้เลย) */
+(function(){
+  var t = '';
+  try{ t = (new URLSearchParams(location.search).get('team')||'').toLowerCase(); }catch(e){}
+  try{ if(t === 'pim') sessionStorage.setItem('ntk_team','pim'); else t = sessionStorage.getItem('ntk_team') || ''; }catch(e){}
+  if(t !== 'pim') return;
+  window.NTK_TEAM = 'PIM';
+  window.NTK_TAG = ' [PIM]' + (window.NTK_TAG || '');
+  if(window.NTK_SRC_CODE) return;         // มีที่มา → snippet WEB01 ทับปุ่ม LINE ด้วย NTK_TAG ให้แล้ว
+  // ไม่มีที่มา (เช่น PIM ส่งลิงก์ให้ลูกค้าเอง) → snippet ไม่ทับปุ่ม → ทับเองแบบเดียวกัน ข้อความชุดเดียวกับ snippet ของหน้า /debt/
+  document.addEventListener('click', function(e){
+    var el = e.target && e.target.nodeType===1 ? e.target : (e.target && e.target.parentElement);
+    var a = el && el.closest ? el.closest('a[href*="line.me"], a[href*="lin.ee"]') : null;
+    if(!a || a.hasAttribute('data-no-ref')) return;
+    a.href = 'https://line.me/R/oaMessage/%40ninethanakarn/?'+encodeURIComponent('สนใจปรึกษาเรื่องปิดหนี้ / รวมหนี้'+window.NTK_TAG);
+  }, true);
+})();
+</script>
 
   <header class="site-header" style="position:sticky;top:0;z-index:100;background:#111;border-bottom:1px solid rgba(255,255,255,0.1);">
     <div style="max-width:1100px;margin:0 auto;padding:0 20px;height:56px;display:flex;align-items:center;gap:12px;box-sizing:border-box;">
@@ -957,7 +978,7 @@ function ntkSendLead(f){
     + '\nเบอร์โทร: ' + f.lphone.value
     + '\nสะดวกให้ติดต่อกลับ: ' + f.ltime.value
     + '\n(ส่งจากฟอร์มบนเว็บ ninethanakarn.com)';
-  if(typeof gtag === 'function'){ gtag('event','submit_lead',{topic:f.ltopic.value}); }
+  if(typeof gtag === 'function'){ gtag('event','submit_lead', window.NTK_TEAM ? {topic:f.ltopic.value, team:'pim'} : {topic:f.ltopic.value}); }
   if(typeof fbq === 'function'){ fbq('track','Lead',{content_category:f.ltopic.value}); }
   window.open('https://line.me/R/oaMessage/%40ninethanakarn/?' + encodeURIComponent(msg + (window.NTK_TAG || '')), '_blank');
   return false;
