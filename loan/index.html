@@ -4413,6 +4413,12 @@ document.addEventListener('click', function(e){
         });
       });
 
+      // รับรายได้ก่อนหักภาษีจาก /tax/ (?salary=<บาท/เดือน>) ใส่ช่องเงินเดือน
+      (function () {
+        var s = parseInt(new URLSearchParams(location.search).get("salary"), 10);
+        if (s > 0 && s < 10000000) { document.getElementById("f-salary").value = s; updatePreviews(); }
+      })();
+
       // Bank dropdown → auto-fill interest rate
       document.getElementById("f-bank").addEventListener("change", function() {
         var rate = this.value;

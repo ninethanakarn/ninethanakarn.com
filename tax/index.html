@@ -1308,9 +1308,9 @@ document.addEventListener('click', function(e){
 <!-- CTA -->
 <section class="cta-section">
   <h3>💼 รู้รายได้สุทธิแล้ว → คำนวณวงเงินกู้บ้านต่อ</h3>
-  <p>ใช้รายได้หลังภาษีเพื่อประเมินวงเงินกู้ที่ธนาคารจะอนุมัติ พร้อมเปรียบเทียบกับ DSR 60%</p>
+  <p>ธนาคารประเมินวงเงินจาก<strong>รายได้ก่อนหักภาษี</strong> (รายได้รวมต่อเดือน) ไม่ใช่รายได้หลังภาษี — ระบบจะส่งรายได้ที่คุณกรอกไปใส่ให้อัตโนมัติ · เพดาน DSR 60%</p>
   <div class="cta-buttons">
-    <a href="/loan/" class="btn btn-gold" onclick="gtag('event','tool_click',{tool:'loan_app',from:'tax'})">
+    <a href="/loan/" id="cta-loan" class="btn btn-gold" onclick="gtag('event','tool_click',{tool:'loan_app',from:'tax'})">
       🧮 คำนวณวงเงินกู้บ้าน →
     </a>
     <a href="https://line.me/R/ti/p/@ninethanakarn" class="btn btn-green" onclick="gtag('event','line_click',{from:'tax'})">
@@ -1676,6 +1676,7 @@ function generateSuggestions(taxable, dedDetail, gross){
 // MAIN RENDER
 // ============================================================
 function calc(){
+  syncLoanLink();
   const inc = calcIncome();
   const ded = calcDeductions(inc.net);
   const taxable = Math.max(inc.net - ded.total, 0);
@@ -1856,6 +1857,16 @@ function doPrint(){
   setTimeout(() => window.print(), 50);
 }
 
+// ส่งรายได้ก่อนหักภาษี (ต่อเดือน) ไป /loan/ — ธนาคารใช้รายได้ก่อนภาษี ไม่ใช่หลังภาษี (ORDER BIZ04 10 พ.ย. 69)
+function grossMonthlyIncome(){
+  const salary = state.incomeInput === 'month' ? n('salary-month') : n('salary-year') / 12;
+  return Math.round(salary + (n('bonus') + n('other-income')) / 12);
+}
+function syncLoanLink(){
+  const a = $('cta-loan'); if(!a) return;
+  const m = grossMonthlyIncome();
+  a.href = m > 0 ? '/loan/?salary=' + m : '/loan/';
+}
 window.addEventListener('DOMContentLoaded', () => {
   applyYearRules();
   // Press Enter to blur number input (better mobile UX)
