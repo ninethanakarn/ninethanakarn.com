@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>คำนวณภาษีเงินได้บุคคลธรรมดา 2568 (v2 Advanced) — นายธนาคารประจำบ้าน</title>
-<meta name="description" content="เครื่องคำนวณภาษีเงินได้บุคคลธรรมดา ปี 2568 ครบทุกลดหย่อน รองรับรายได้หลายแหล่ง (ม.40 1-8) เปรียบเทียบ scenarios และแนะนำการวางแผนภาษี โดยนายธนาคารประจำบ้าน">
+<title>คำนวณภาษีเงินได้บุคคลธรรมดา 2569 — นายธนาคารประจำบ้าน</title>
+<meta name="description" content="เครื่องคำนวณภาษีเงินได้บุคคลธรรมดา ปี 2569 ครบทุกลดหย่อน รองรับรายได้หลายแหล่ง (ม.40 1-8) เปรียบเทียบ scenarios และแนะนำการวางแผนภาษี โดยนายธนาคารประจำบ้าน">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ninethanakarn.com/tax/">
-<meta property="og:title" content="คำนวณภาษี 2568 v2 Advanced — นายธนาคารประจำบ้าน">
+<meta property="og:title" content="คำนวณภาษี 2569 — นายธนาคารประจำบ้าน">
 <meta property="og:description" content="ครบทุกลดหย่อน รายได้หลายแหล่ง (ม.40 1-8) เปรียบเทียบ scenarios และแนะนำการวางแผนภาษี">
 <meta property="og:image" content="https://ninethanakarn.com/og-image.png">
 
@@ -922,7 +922,7 @@ document.addEventListener('click', function(e){
 
       <div class="guide-tip">
         <strong>💡 เคล็ดลับ:</strong> ใส่ชื่อลูกค้าในช่องด้านล่าง แล้วกด 🖨️ เพื่อ Save PDF ส่งให้ลูกค้าได้เลย — ชื่อและวันที่จะขึ้นอัตโนมัติใน PDF<br>
-        <strong>⚠️ ปี 2568:</strong> SSF ถูกตัดสิทธิ์ลดหย่อนแล้ว · วงเงินกลุ่มเกษียณ (ประกันบำนาญ+PVD+RMF+กบข.) รวมไม่เกิน 500,000 บาท
+        <strong>📌 ปี 2569:</strong> บริจาคต้องผ่าน e-Donation เท่านั้นจึงลดหย่อนได้ · Easy E-Receipt / เที่ยวเมืองรอง ปี 2569 ยังไม่มีประกาศ (ระบบไม่นับ) · <strong>ตั้งแต่ปี 2568:</strong> SSF ถูกตัดสิทธิ์ลดหย่อนแล้ว · วงเงินกลุ่มเกษียณ (ประกันบำนาญ+PVD+RMF+กบข.) รวมไม่เกิน 500,000 บาท
       </div>
 
     </div>
@@ -961,7 +961,8 @@ document.addEventListener('click', function(e){
 <div class="year-wrap">
   <span class="year-label">ปีภาษี:</span>
   <select id="year" class="year-select" onchange="onYearChange()">
-    <option value="2568" selected>2568 (ปัจจุบัน)</option>
+    <option value="2569" selected>2569 (ปัจจุบัน)</option>
+    <option value="2568">2568</option>
     <option value="2567">2567</option>
     <option value="2566">2566</option>
   </select>
@@ -1120,8 +1121,11 @@ document.addEventListener('click', function(e){
             <span class="collapsible-arrow">▶</span>
           </div>
           <div class="collapsible-body">
+            <div class="hint-box" id="year-note">
+              <strong>📌 ปี 2569:</strong> เงินบริจาคที่จะใช้ลดหย่อนต้องบริจาคผ่านระบบ <strong>e-Donation</strong> เท่านั้น (กรมสรรพากร กติกาใหม่ มีผล 1 ม.ค. 2569) · บริจาคสถานศึกษา/การกีฬา ผ่าน e-Donation ลดหย่อนได้ <strong>2 เท่า</strong> ถึง 31 ธ.ค. 2570 (พ.ร.ฎ. ฉบับที่ 809–810 พ.ศ. 2569 ราชกิจจาฯ 12 ต.ค. 2569) · Easy E-Receipt และเที่ยวเมืองรอง ปี 2569 <strong>ยังไม่มีประกาศ</strong> ระบบจึงยังไม่นับ
+            </div>
             <div class="hint-box">
-              <strong>⚠️ ปี 2568:</strong> SSF ถูกตัดสิทธิ์ลดหย่อนแล้ว · เกษียณ (ประกันบำนาญ+PVD+RMF+กบข./กสจ.) รวมไม่เกิน <strong>฿500,000</strong>
+              <strong>⚠️ ตั้งแต่ปี 2568:</strong> SSF ถูกตัดสิทธิ์ลดหย่อนแล้ว · เกษียณ (ประกันบำนาญ+PVD+RMF+กบข./กสจ.) รวมไม่เกิน <strong>฿500,000</strong>
             </div>
             <div class="field">
               <div class="field-label"><span>ประกันสังคม (SSO)</span><span class="field-cap">≤฿9,000</span></div>
@@ -1187,7 +1191,7 @@ document.addEventListener('click', function(e){
             </div>
 
             <div class="field">
-              <div class="field-label"><span>Easy E-Receipt 2.0</span><span class="field-cap">≤฿50,000</span></div>
+              <div class="field-label"><span>Easy E-Receipt <span class="muted" id="lbl-ereceipt-note"></span></span><span class="field-cap" id="cap-ereceipt">≤฿50,000</span></div>
               <div class="input-wrap"><input class="input" type="number" id="d-easy-receipt" placeholder="0" oninput="calc()"><span class="input-suffix">บาท</span></div>
             </div>
             <div class="field">
@@ -1195,7 +1199,7 @@ document.addEventListener('click', function(e){
               <div class="input-wrap"><input class="input" type="number" id="d-new-home" placeholder="0" oninput="calc()"><span class="input-suffix">บาท</span></div>
             </div>
             <div class="field">
-              <div class="field-label"><span>เที่ยวเมืองรอง 2568</span><span class="field-cap">≤฿20,000</span></div>
+              <div class="field-label"><span>เที่ยวเมืองรอง <span class="muted" id="lbl-travel-note"></span></span><span class="field-cap" id="cap-travel">≤฿20,000</span></div>
               <div class="input-wrap"><input class="input" type="number" id="d-travel" placeholder="0" oninput="calc()"><span class="input-suffix">บาท</span></div>
             </div>
           </div>
@@ -1209,7 +1213,7 @@ document.addEventListener('click', function(e){
           </div>
           <div class="collapsible-body">
             <div class="field">
-              <div class="field-label"><span>บริจาคการศึกษา / กีฬา / รพ.รัฐ <span class="muted">(ลดหย่อนได้ 2 เท่า)</span></span><span class="field-cap">≤10% รายได้หลังหัก</span></div>
+              <div class="field-label"><span>บริจาคการศึกษา / กีฬา / รพ.รัฐ <span class="muted">(ลดหย่อนได้ 2 เท่า · ปี 2569 ต้องผ่าน e-Donation)</span></span><span class="field-cap">≤10% รายได้หลังหัก</span></div>
               <div class="input-wrap"><input class="input" type="number" id="d-donate-edu" placeholder="0" oninput="calc()"><span class="input-suffix">บาท</span></div>
             </div>
             <div class="field">
@@ -1260,7 +1264,7 @@ document.addEventListener('click', function(e){
   <!-- RIGHT: RESULT -->
   <div>
     <div class="result-card">
-      <div class="result-label">ภาษีที่ต้องชำระ (ปีภาษี <span id="r-year">2568</span>)</div>
+      <div class="result-label">ภาษีที่ต้องชำระ (ปีภาษี <span id="r-year">2569</span>)</div>
       <div class="result-main" id="r-tax">0</div>
       <div class="result-rate" id="r-rate">อัตราเฉลี่ย: <span class="num">0.00%</span></div>
 
@@ -1331,7 +1335,7 @@ document.addEventListener('click', function(e){
 const state = {
   mode: 'simple',         // 'simple' | 'advanced'
   incomeInput: 'month',   // 'month' | 'year'
-  year: 2568,
+  year: 2569,
   extraIncomes: [],       // [{id, type, amount}]
   scenarios: {A: null, B: null}
 };
@@ -1389,9 +1393,24 @@ function setIncomeMode(t){
   $('f-year').style.display = t === 'year' ? 'block' : 'none';
   calc();
 }
+function applyYearRules(){
+  // มาตรการที่ปี 2569 ยังไม่มีประกาศ (ตรวจกฎหมายออกใหม่ rd.go.th 10 พ.ย. 69): Easy E-Receipt · เที่ยวเมืองรอง
+  const pending = state.year >= 2569;
+  [['d-easy-receipt','lbl-ereceipt-note','cap-ereceipt','≤฿50,000'],['d-travel','lbl-travel-note','cap-travel','≤฿20,000']].forEach(([id,lbl,cap,capTxt]) => {
+    const inp = $(id); if(!inp) return;
+    inp.disabled = pending;
+    inp.placeholder = pending ? 'รอประกาศ' : '0';
+    if(pending) inp.value = '';
+    $(lbl).textContent = pending ? '(ปี ' + state.year + ' รอประกาศ — ยังไม่นับ)' : '';
+    $(cap).textContent = pending ? 'รอประกาศ' : capTxt;
+  });
+  const note = $('year-note');
+  if(note) note.style.display = pending ? '' : 'none';
+}
 function onYearChange(){
   state.year = Number($('year').value);
   $('r-year').textContent = state.year;
+  applyYearRules();
   gtag('event', 'tax_year_change', {year: state.year});
   calc();
 }
@@ -1532,9 +1551,9 @@ function calcDeductions(grossAfterExpense){
 
   // Government
   const homeInterest = Math.min(n('d-home-interest'), 100000);
-  const easyReceipt = Math.min(n('d-easy-receipt'), 50000);
+  const easyReceipt = state.year >= 2569 ? 0 : Math.min(n('d-easy-receipt'), 50000); // 2569: ยังไม่มีประกาศ (ตรวจ rd.go.th 10 พ.ย. 69)
   const newHome = Math.min(n('d-new-home'), 100000);
-  const travel = Math.min(n('d-travel'), 20000);
+  const travel = state.year >= 2569 ? 0 : Math.min(n('d-travel'), 20000); // 2569: ยังไม่มีประกาศ (ตรวจ rd.go.th 10 พ.ย. 69)
   const gov = homeInterest + easyReceipt + newHome + travel;
 
   // Donations (calculated after subtotal)
@@ -1838,6 +1857,7 @@ function doPrint(){
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  applyYearRules();
   // Press Enter to blur number input (better mobile UX)
   document.addEventListener('keydown', (e) => {
     if(e.key === 'Enter' && e.target.tagName === 'INPUT' && (e.target.type === 'number' || e.target.type === 'text')){
