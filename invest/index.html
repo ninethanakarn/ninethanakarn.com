@@ -652,13 +652,13 @@ document.addEventListener('click', function(e){
           <div class="step-num">3</div>
           <div class="step-content">
             <h4>เลือกผลตอบแทนต่อปี (%)</h4>
-            <p>ใช้ตัวเลขผลตอบแทนเฉลี่ยของสินทรัพย์ที่สนใจ:</p>
+            <p>ตัวเลขทุกปุ่มเป็น<strong>อัตราสมมติ</strong>สำหรับลองคำนวณเท่านั้น ไม่ใช่ผลตอบแทนที่คาดการณ์หรือรับรอง — ผลตอบแทนจริงขึ้นกับสินทรัพย์และช่วงเวลา:</p>
             <p>
-              <span class="eg">🏦 ฝากประจำ 1.5%</span>
-              <span class="eg">📜 พันธบัตร 3%</span>
-              <span class="eg">📈 SET เฉลี่ย 7%</span>
-              <span class="eg">🌏 RMF/LTF 8%</span>
-              <span class="eg">🚀 Global 10%</span>
+              <span class="eg">🏦 ฝากประจำ 1.5% (สมมติ)</span>
+              <span class="eg">📜 พันธบัตร 3% (สมมติ)</span>
+              <span class="eg">📈 หุ้นไทย 7% (สมมติ)</span>
+              <span class="eg">🌏 RMF/ThaiESG 8% (สมมติ)</span>
+              <span class="eg">🚀 หุ้นต่างประเทศ 10% (สมมติ)</span>
             </p>
             <p>หรือพิมพ์ตัวเลขเองได้ เช่น <span class="eg">6</span> <span class="eg">12</span></p>
           </div>
@@ -751,11 +751,11 @@ document.addEventListener('click', function(e){
         <span class="unit">% / ปี</span>
       </div>
       <div class="presets">
-        <button class="preset-chip" data-rate="1.5" type="button">🏦 ฝากประจำ 1.5%</button>
-        <button class="preset-chip" data-rate="3" type="button">📜 พันธบัตร 3%</button>
-        <button class="preset-chip" data-rate="7" type="button">📈 SET เฉลี่ย 7%</button>
-        <button class="preset-chip" data-rate="8" type="button">🌏 RMF/LTF 8%</button>
-        <button class="preset-chip" data-rate="10" type="button">🚀 Global 10%</button>
+        <button class="preset-chip" data-rate="1.5" type="button">🏦 ฝากประจำ 1.5% (สมมติ)</button>
+        <button class="preset-chip" data-rate="3" type="button">📜 พันธบัตร 3% (สมมติ)</button>
+        <button class="preset-chip" data-rate="7" type="button">📈 หุ้นไทย 7% (สมมติ)</button>
+        <button class="preset-chip" data-rate="8" type="button">🌏 RMF/ThaiESG 8% (สมมติ)</button>
+        <button class="preset-chip" data-rate="10" type="button">🚀 หุ้นต่างประเทศ 10% (สมมติ)</button>
       </div>
     </div>
 
@@ -919,7 +919,7 @@ function calc(){
 
   if(!init || !rate || !yrs){ document.getElementById('resultSection').style.display='none'; return; }
 
-  var r = rate / 12; // monthly rate
+  var r = Math.pow(1 + rate, 1/12) - 1; // อัตรารายเดือนเทียบเท่า → ครบ 12 เดือนได้ผลตอบแทนรายปีเท่าที่กรอกพอดี (แก้ 10 พ.ย. 69: เดิม rate/12 ทบรายเดือน ทำให้ 7% กลายเป็น 7.23%)
   var rows = [];
   var balance = init;
   var totalInvested = init;
