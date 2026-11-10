@@ -27,11 +27,12 @@
   var SHOW_INTRO = mount.getAttribute('data-intro') !== '0';
 
   /* ---------- นำร่องหน้าแบรนด์ (ORDER BIZ04 23 ต.ค. 69 "การตลาดย้อนกลับ") — เปิดเฉพาะหน้าที่ตั้งค่าเท่านั้น ----------
-   * data-title  = หัวข้อแทน "ประเมินเบื้องต้นด้วยตัวเอง" เช่น "สนใจคอนโดพฤกษา? เช็คก่อนว่ากู้ผ่านไหม ใน 2 นาที"
+   * data-title  = หัวข้อแทน "ประเมินเบื้องต้นด้วยตัวเอง" เช่น "สนใจคอนโดพฤกษา? ประเมินภาระหนี้ก่อนยื่นกู้ ประมาณ 2 นาที"
+   *               (10 พ.ย. 69 ห้ามคำ "เช็ค…กู้ผ่านไหม" / "ใน 2 นาที" — LEGAL01 · ORDER adcopy)
    * data-sub    = ข้อความเชื่อมใต้หัวข้อ (เบา ไม่สัญญาว่ากู้ผ่าน)
    * data-unit   = "ห้องนี้" (คอนโด) / "หลังนี้" (บ้าน) — ใช้ในปุ่มการ์ด + หัวข้อเมื่อกดจากการ์ด
-   * data-cards  = "1" ฉีดปุ่ม "เช็คว่ากู้<unit>ผ่านไหม" ลง .property-card .card-footer ทุกใบ (ชื่อโครงการจาก .card-title)
-   * data-sticky = "1" แถบติดล่างจอมือถือ "เช็คโอกาสกู้ 2 นาที" ซ่อนเมื่อถึงฟอร์มแล้ว
+   * data-cards  = "1" ฉีดปุ่ม "ประเมินภาระหนี้ก่อนยื่นกู้<unit>" ลง .property-card .card-footer ทุกใบ (ชื่อโครงการจาก .card-title)
+   * data-sticky = "1" แถบติดล่างจอมือถือ "ประเมินภาระหนี้ก่อนยื่นกู้ ประมาณ 2 นาที" ซ่อนเมื่อถึงฟอร์มแล้ว
    * ไม่ตั้งค่าเหล่านี้ (/dsr/ /debt/) = พฤติกรรมเดิมทุกตัวอักษร · project ส่งเฉพาะเมื่อมีค่า */
   var TITLE = mount.getAttribute('data-title') || '';
   var SUB = mount.getAttribute('data-sub') || '';
@@ -377,7 +378,8 @@
     if (project) {
       PROJECT = cleanProject(project);
       var t = document.getElementById('dsrTitle');
-      if (t) t.textContent = 'สนใจ ' + PROJECT + '? เช็คก่อนว่ากู้' + UNIT + 'ผ่านไหม ใน 2 นาที';
+      // 10 พ.ย. 69: เลิกคำ "เช็ค…กู้ผ่านไหม / ใน 2 นาที" (LEGAL01: เสี่ยงอ่านเป็นการพิจารณาสินเชื่อ + คำรับรองเวลา) → ชุดเดียวกับ /dsr/
+      if (t) t.textContent = 'สนใจ ' + PROJECT + '? ประเมินภาระหนี้ก่อนยื่นกู้' + UNIT + ' ประมาณ 2 นาที';
     }
     if (typeof gtag === 'function') gtag('event', 'dsr_cta_click', evp({ source: source }));
     // ไม่ auto-focus ช่องแรก — บนมือถือจะเด้งคีย์บอร์ดทับหัวข้อ
@@ -397,7 +399,7 @@
       btn.href = '#dsr-mount';
       btn.className = 'dsr-card-btn';
       btn.setAttribute('data-dsr-project', name);
-      btn.textContent = 'เช็คว่ากู้' + UNIT + 'ผ่านไหม';
+      btn.textContent = 'ประเมินภาระหนี้ก่อนยื่นกู้' + UNIT;
       foot.insertBefore(btn, foot.firstChild);
     }
     document.addEventListener('click', function (e) {
@@ -411,7 +413,7 @@
   if (USE_STICKY) {
     var bar = document.createElement('div');
     bar.className = 'dsr-bar';
-    bar.innerHTML = '<a href="#dsr-mount">✓ เช็คโอกาสกู้ 2 นาที</a>';
+    bar.innerHTML = '<a href="#dsr-mount">✓ ประเมินภาระหนี้ก่อนยื่นกู้ ประมาณ 2 นาที</a>';
     document.body.appendChild(bar);
     bar.querySelector('a').addEventListener('click', function (e) { e.preventDefault(); goToForm('', 'bar'); });
     // โชว์เฉพาะตอนฟอร์มยังอยู่ใต้จอ · ถึงฟอร์มหรือเลยลงไปแล้ว (footer) = ซ่อน ไม่บังเนื้อหา
